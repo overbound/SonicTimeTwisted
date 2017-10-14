@@ -32,7 +32,6 @@ var i;
 // input flags
 flag_player_input = true;
 pressingGamepad = -1;
-
 // computer controls
 computer_input_setup();
 

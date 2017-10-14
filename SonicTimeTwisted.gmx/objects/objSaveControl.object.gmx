@@ -51,6 +51,7 @@ y=slots[0].y;
 selectState =0;
 // left = 0 right = 1
 stageLeftRight = 1;
+stageDeleteConfirmSprite = sprDeleteConfirm;
 
 
 </string>
@@ -428,7 +429,7 @@ if selectState ==2 {
 
 if selectState==3 {
 
-    draw_sprite_ext(sprDeleteConfirm,0,x,y,image_xscale,image_yscale,0,c_white,1);
+    draw_sprite_ext(stageDeleteConfirmSprite,0,x,y,image_xscale,image_yscale,0,c_white,1);
 
 }
 </string>

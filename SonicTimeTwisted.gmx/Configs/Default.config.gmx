@@ -25,7 +25,7 @@
     <option_android_build_version>0</option_android_build_version>
     <option_android_color_depth>0</option_android_color_depth>
     <option_android_compile_sdk_version>23</option_android_compile_sdk_version>
-    <option_android_display_name>Sonic2K</option_android_display_name>
+    <option_android_display_name>Sonic Time Twisted</option_android_display_name>
     <option_android_facebook_app_display_name></option_android_facebook_app_display_name>
     <option_android_facebook_appid></option_android_facebook_appid>
     <option_android_facebook_enable>0</option_android_facebook_enable>
@@ -40,7 +40,7 @@
     <option_android_google_play_id></option_android_google_play_id>
     <option_android_google_tracking_id></option_android_google_tracking_id>
     <option_android_iap_suppress_toast>0</option_android_iap_suppress_toast>
-    <option_android_icade_support>0</option_android_icade_support>
+    <option_android_icade_support>-1</option_android_icade_support>
     <option_android_icon_170>Configs\Default\android\icons\icon170.png</option_android_icon_170>
     <option_android_icon_36>Configs\Default\android\icons\icon36.png</option_android_icon_36>
     <option_android_icon_48>Configs\Default\android\icons\icon48.png</option_android_icon_48>
@@ -55,7 +55,7 @@
     <option_android_inmobi_id></option_android_inmobi_id>
     <option_android_inmobi_test_enable>0</option_android_inmobi_test_enable>
     <option_android_install_location>auto</option_android_install_location>
-    <option_android_interpolate>-1</option_android_interpolate>
+    <option_android_interpolate>0</option_android_interpolate>
     <option_android_licensing_enable>0</option_android_licensing_enable>
     <option_android_licensing_key></option_android_licensing_key>
     <option_android_lint>-1</option_android_lint>
@@ -74,13 +74,13 @@
     <option_android_mopub_ads>0</option_android_mopub_ads>
     <option_android_orient_landscape>True</option_android_orient_landscape>
     <option_android_orient_landscape_flipped>True</option_android_orient_landscape_flipped>
-    <option_android_orient_portrait>True</option_android_orient_portrait>
-    <option_android_orient_portrait_flipped>True</option_android_orient_portrait_flipped>
+    <option_android_orient_portrait>False</option_android_orient_portrait>
+    <option_android_orient_portrait_flipped>False</option_android_orient_portrait_flipped>
     <option_android_orientation>2</option_android_orientation>
     <option_android_ouya_icon>Configs\Default\android\icons\ouyaIcon.png</option_android_ouya_icon>
-    <option_android_package_company>companyname</option_android_package_company>
+    <option_android_package_company>overboundstudio</option_android_package_company>
     <option_android_package_domain>com</option_android_package_domain>
-    <option_android_package_product>Sonic2K</option_android_package_product>
+    <option_android_package_product>SonicTimeTwisted</option_android_package_product>
     <option_android_permission_flags>8</option_android_permission_flags>
     <option_android_pocketchange_enable>0</option_android_pocketchange_enable>
     <option_android_pocketchange_id></option_android_pocketchange_id>
@@ -95,7 +95,7 @@
     <option_android_splash_time>0</option_android_splash_time>
     <option_android_support_lib_version>23.1.1</option_android_support_lib_version>
     <option_android_target_sdk_version>16</option_android_target_sdk_version>
-    <option_android_texture_page>1024</option_android_texture_page>
+    <option_android_texture_page>2048</option_android_texture_page>
     <option_android_use_test_ads>0</option_android_use_test_ads>
     <option_androidfire_GPU_device>0</option_androidfire_GPU_device>
     <option_androidfire_adcolony_enable_V4VC>false</option_androidfire_adcolony_enable_V4VC>
@@ -159,7 +159,7 @@
     <option_androidfire_push_id></option_androidfire_push_id>
     <option_androidfire_scale>-1</option_androidfire_scale>
     <option_androidfire_set_device_id></option_androidfire_set_device_id>
-    <option_androidfire_small_icon_png>Configs\Default\amazonfire\icons\small_icon</option_androidfire_small_icon_png>
+    <option_androidfire_small_icon_png>Configs\Default\amazonfire\icons\small_icon.png</option_androidfire_small_icon_png>
     <option_androidfire_splash_png>Configs\Default\amazonfire\splash.png</option_androidfire_splash_png>
     <option_androidfire_splash_time>0</option_androidfire_splash_time>
     <option_androidfire_support_lib_version>23.1.1</option_androidfire_support_lib_version>
@@ -222,7 +222,7 @@
     <option_androidtv_push_id></option_androidtv_push_id>
     <option_androidtv_scale>-1</option_androidtv_scale>
     <option_androidtv_set_device_id></option_androidtv_set_device_id>
-    <option_androidtv_small_icon_png>Configs\Default\androidtv\icons\small_icon</option_androidtv_small_icon_png>
+    <option_androidtv_small_icon_png>Configs\Default\androidtv\icons\small_icon.png</option_androidtv_small_icon_png>
     <option_androidtv_splash_png>Configs\Default\androidtv\splash.png</option_androidtv_splash_png>
     <option_androidtv_support_lib_version>23.1.1</option_androidtv_support_lib_version>
     <option_androidtv_texture_page>1024</option_androidtv_texture_page>

@@ -88,6 +88,13 @@ special_past_current_level=0;
 special_future_current_level=0;
 temp_superform = false;
 
+// depending on the OS, create a specific object containing the OS-specific logic
+os = get_os_type();
+if(os == os_android)
+{
+    instance_create(0,0,objAndroid);
+}
+
 </string>
           </argument>
         </arguments>
@@ -188,14 +195,20 @@ temp_superform = false;
 // ignore if we've paused manually
 if paused exit;
 
-/*
-// handle based on platform
+
 switch os_type
 {
-case os_windows:
-    // toggle focus
-    if not (lost_focus xor window_get_focus(window_handle())) {lost_focus = not lost_focus; game_pause(lost_focus);}
-    break;
+    case os_windows:
+    case os_macosx:
+        // toggle focus
+        if not (lost_focus xor window_has_focus()) {lost_focus = not lost_focus; game_pause(lost_focus);}
+        break;
+    case os_android:
+    case os_ios:
+        // toggle focus
+        if not (lost_focus xor (!os_is_paused())) {lost_focus = not lost_focus; game_pause(lost_focus);}
+        break;
+    
 }
 </string>
           </argument>

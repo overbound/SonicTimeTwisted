@@ -40,6 +40,7 @@ axis = "";
 inputFlash = 0;
 white = 0;
 timeOffset = 0;
+
 </string>
           </argument>
         </arguments>
@@ -413,6 +414,41 @@ if objProgram.paused {
         </arguments>
       </action>
     </event>
+    <event eventtype="7" enumb="10">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// draw lives - can be overriden by platform-specific code
+
+// lives setpiece
+draw_sprite(sprLives, character_id[view_current], 0+16, 0+view_hview-24);
+
+// lives string
+draw_set_color(c_white);
+draw_set_alpha(image_alpha);
+draw_set_valign(fa_top);
+draw_set_halign(fa_right);
+draw_set_font(objResources.fontLives);
+draw_text(0+94, 0+view_hview[view_current]-12, objGameData.player_lives[view_current]);
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="7" enumb="4">
       <action>
         <libid>1</libid>
@@ -463,21 +499,13 @@ d3d_set_projection_ortho(0, 0, view_wport, view_hport, 0);
 draw_set_font(objResources.fontHud);
 
 if !objProgram.paused {
-// lives setpiece
-draw_sprite(sprLives, character_id[view_current], 0+16, 0+view_hview-24);
 
 // Hud Graphic
 if not objScreen.split_screen draw_sprite(sprHud, 0, 0+16, 0+9);
 draw_sprite(sprHud, 1+(image_index mod 2)*(objSSLevel.timer &lt; 3600), 16, 25-(16*objScreen.split_screen));
 draw_sprite(sprHud, 3+(image_index mod 2)*(not objSSPlayer.rings), 16, 41-(16*objScreen.split_screen));
 
-// lives string
-draw_set_color(c_white);
-draw_set_alpha(image_alpha);
-draw_set_valign(fa_top);
-draw_set_halign(fa_right);
-draw_set_font(objResources.fontLives);
-draw_text(0+94, 0+view_hview[view_current]-12, objGameData.player_lives[view_current]);
+event_user(0);
 
 // score / time / rings string
 draw_set_font(objResources.fontHud);

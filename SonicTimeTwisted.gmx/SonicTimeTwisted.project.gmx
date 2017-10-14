@@ -3,29 +3,8 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <datafiles number="43" name="datafiles">
-    <datafile>
-      <name>GMXInput.dll</name>
-      <exists>-1</exists>
-      <size>159744</size>
-      <exportAction>2</exportAction>
-      <exportDir></exportDir>
-      <overwrite>0</overwrite>
-      <freeData>-1</freeData>
-      <removeEnd>0</removeEnd>
-      <store>0</store>
-      <ConfigOptions>
-        <Config name="Default">
-          <CopyToMask>9223372036854775807</CopyToMask>
-        </Config>
-      </ConfigOptions>
-      <filename>GMXInput.dll</filename>
-    </datafile>
-  </datafiles>
-  <NewExtensions>
-    <extension index="0">extensions\GetFocus</extension>
-    <extension index="1">extensions\SFML Input</extension>
-  </NewExtensions>
+  <datafiles number="43" name="datafiles"/>
+  <NewExtensions/>
   <sounds name="sound">
     <sounds name="BGM">
       <sounds name="General">
@@ -324,6 +303,13 @@
         <sprite>sprites\sprSelectStage</sprite>
         <sprite>sprites\sprCharSelect</sprite>
         <sprite>sprites\sprDeleteConfirm</sprite>
+        <sprite>sprites\sprDeleteConfirmTouchscreen</sprite>
+      </sprites>
+      <sprites name="Touchscreen">
+        <sprite>sprites\sprTouchscreenDPadBase</sprite>
+        <sprite>sprites\sprTouchscreenDPadJoy</sprite>
+        <sprite>sprites\sprTouchscreenButton</sprite>
+        <sprite>sprites\sprTouchscreenPauseButton</sprite>
       </sprites>
     </sprites>
     <sprites name="Scene Objects">
@@ -1754,6 +1740,7 @@
       </scripts>
       <script>scripts\extend_byte.gml</script>
       <script>scripts\minlerp.gml</script>
+      <script>scripts\get_os_type.gml</script>
     </scripts>
     <scripts name="Overlays">
       <scripts name="Parallax">
@@ -2204,6 +2191,12 @@
         </scripts>
         <script>scripts\PlayerUpdateRacerProgress.gml</script>
       </scripts>
+    </scripts>
+    <scripts name="Smartphone">
+      <script>scripts\smartphone_enable_virtual_keys.gml</script>
+      <script>scripts\smartphone_disable_virtual_keys.gml</script>
+      <script>scripts\smartphone_confirm.gml</script>
+      <script>scripts\smartphone_save_configuration.gml</script>
     </scripts>
   </scripts>
   <shaders name="shaders">
@@ -2807,11 +2800,25 @@
         <object>objects\objInputDummy</object>
         <object>objects\objInput</object>
       </objects>
+      <objects name="Smartphone">
+        <objects name="Android">
+          <object>objects\objAndroid</object>
+          <objects name="Object Extensions">
+            <object>objects\objTitleControl_Android</object>
+            <object>objects\objLevel_Android</object>
+            <object>objects\objHud_Android</object>
+            <object>objects\objSaveControl_Android</object>
+            <object>objects\objSSHud_Android</object>
+            <object>objects\objSSLevel_Android</object>
+          </objects>
+        </objects>
+      </objects>
       <object>objects\objGameData</object>
       <object>objects\objProgram</object>
       <object>objects\objMusic</object>
       <object>objects\objResources</object>
       <object>objects\objScreen</object>
+      <object>objects\objSSAlwaysActive</object>
     </objects>
     <objects name="Overlays">
       <objects name="Title Screen">

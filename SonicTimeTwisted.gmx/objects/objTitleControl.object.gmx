@@ -60,6 +60,10 @@ gamepadSupport = true;
 
 logoAlpha = 4;
 
+startText = 'PRESS START';
+option1Text = 'MAP KEYS OR GAMEPAD';
+option2Text = 'SCREEN SIZE';
+option3Text = 'ENABLE GAMEPAD F1';
 </string>
           </argument>
         </arguments>
@@ -703,16 +707,16 @@ case 5: draw_text_color(view_xview[0]+213, view_yview[0]+120, 'JOEVAN SALMON-JOH
 case 6: draw_text_color(view_xview[0]+213, view_yview[0]+120, 'MARC "DERZOCKER"',c_white,c_white,c_yellow,c_yellow,1) break;
 case 7: draw_text_color(view_xview[0]+213, view_yview[0]+120, 'DEVIN REEVES "MERCURY"',c_white,c_white,c_yellow,c_yellow,1)break;
 case 8: draw_text_color(view_xview[0]+213, view_yview[0]+120, 'SHANE "SPARKS"',c_white,c_white,c_yellow,c_yellow,1) break;
-case 12: if pauseState == 3 draw_text_color(view_xview[0]+213, view_yview[0]+228, 'PRESS START',c_white,c_white,c_yellow,c_yellow,1); start=true; break;
+case 12: if pauseState == 3 draw_text_color(view_xview[0]+213, view_yview[0]+228, startText,c_white,c_white,c_yellow,c_yellow,1); start=true; break;
 }
 
 draw_set_halign(fa_center);
 draw_set_color(c_yellow);
 if pauseState == 0 {
     draw_text_color(view_xview[view_current]+213, view_yview[view_current]+75, "PLAY",c_white,c_white,c_yellow,c_yellow,1);
-    if pauseState != 1 draw_text_color(view_xview[view_current]+213, view_yview[view_current]+91, "MAP KEYS OR GAMEPAD",c_white,c_white,c_yellow,c_yellow,1);
-    if pauseState != 2 draw_text_color(view_xview[view_current]+213, view_yview[view_current]+107, "SCREEN SIZE",c_white,c_white,c_yellow,c_yellow,1);
-    if pauseState != 4 draw_text_color(view_xview[view_current]+213, view_yview[view_current]+123, "ENABLE GAMEPAD F1",c_white,c_white,c_yellow,c_yellow,1);
+    if pauseState != 1 draw_text_color(view_xview[view_current]+213, view_yview[view_current]+91, option1Text,c_white,c_white,c_yellow,c_yellow,1);
+    if pauseState != 2 draw_text_color(view_xview[view_current]+213, view_yview[view_current]+107, option2Text,c_white,c_white,c_yellow,c_yellow,1);
+    if pauseState != 4 draw_text_color(view_xview[view_current]+213, view_yview[view_current]+123, option3Text,c_white,c_white,c_yellow,c_yellow,1);
     draw_text_color(view_xview[view_current]+213, view_yview[view_current]+139, "EXIT GAME",c_white,c_white,c_yellow,c_yellow,1);
     
     draw_sprite_ext(sprLevelSelect,image_index,view_xview[view_current]+213, view_yview[view_current]+81+pauseOffset,1,1,0,c_white,1);

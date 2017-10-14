@@ -434,6 +434,40 @@ if objProgram.paused {
         </arguments>
       </action>
     </event>
+    <event eventtype="7" enumb="10">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// draw lives - can be overriden by platform-specific code
+
+// lives setpiece
+draw_sprite(sprLives, character_id[view_current], view_xview[view_current]+16, view_yview[view_current]+view_hview-24);
+
+// lives string
+draw_set_color(c_white);
+draw_set_alpha(image_alpha);
+draw_set_valign(fa_top);
+draw_set_halign(fa_right);
+draw_set_font(objResources.fontLives);
+draw_text(view_xview[view_current]+94, view_yview[view_current]+view_hview[view_current]-12, objGameData.player_lives[view_current]);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
@@ -453,21 +487,14 @@ if objProgram.paused {
             <kind>1</kind>
             <string>/// Render HUD
 
-// lives setpiece
-draw_sprite(sprLives, character_id[view_current], view_xview[view_current]+16, view_yview[view_current]+view_hview-24);
 
 // Hud Graphic
 if not objScreen.split_screen draw_sprite(sprHud, 0, view_xview[view_current]+14, view_yview[view_current]+9);
 draw_sprite(sprHud, 1+(image_index mod 2)*(objLevel.timer&lt;3600), view_xview[view_current]+14, view_yview[view_current]+25-(16*objScreen.split_screen));
 draw_sprite(sprHud, 3+(image_index mod 2)*(not objGameData.rings[view_current]), view_xview[view_current]+14, view_yview[view_current]+41-(16*objScreen.split_screen));
 
-// lives string
-draw_set_color(c_white);
-draw_set_alpha(image_alpha);
-draw_set_valign(fa_top);
-draw_set_halign(fa_right);
-draw_set_font(objResources.fontLives);
-draw_text(view_xview[view_current]+94, view_yview[view_current]+view_hview[view_current]-12, objGameData.player_lives[view_current]);
+// Drawing lives - exported into a different event
+event_user(0);
 
 // score / time / rings string
 draw_set_font(objResources.fontHud);
