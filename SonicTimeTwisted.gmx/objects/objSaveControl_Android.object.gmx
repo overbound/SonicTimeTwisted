@@ -38,6 +38,7 @@ dir_snap = 0;
 snap_timer = 0;
 target = objSaveControl.selectCheck;
 objSaveControl.stageDeleteConfirmSprite = sprDeleteConfirmTouchscreen;
+use_target = false;
 </string>
           </argument>
         </arguments>
@@ -66,7 +67,7 @@ objSaveControl.stageDeleteConfirmSprite = sprDeleteConfirmTouchscreen;
     if(snap_timer &lt;= 0)
     {
         snap_timer = 0;
-        if(dir_snap)
+ /*       if(dir_snap)
         {
             keyboard_key_release(vk_right);
         }
@@ -74,6 +75,7 @@ objSaveControl.stageDeleteConfirmSprite = sprDeleteConfirmTouchscreen;
         {
             keyboard_key_release(vk_left);
         }
+        */
     }
 }
 </string>
@@ -106,26 +108,40 @@ if(device_mouse_check_button_pressed(0, mb_left))
     press_x = device_mouse_x_to_gui(0);
     press_y = device_mouse_y_to_gui(0);
 }
+if(use_target)
+{
+    // if a key is pressed: switch to using them instead
+    if input_check_pressed(cLEFT) {
+        use_target = false;
+    }
+    
+    if input_check_pressed(cRIGHT) {
+        use_target = false;
+    }
+}
 if(objSaveControl.selectState == 0)
 {
     // in this state, all movements are used to select a save slot
     // if we need to move the cursor to a different slot - do so
-    if(target &lt; objSaveControl.selectCheck)
+    if(use_target)
     {
-        with(objSaveControl)
+        if(target &lt; objSaveControl.selectCheck)
         {
-            xSpeed=-1;
-            selectCheck -=1;
-            audio_play_sound(sndBeep,10,false);
+            with(objSaveControl)
+            {
+                xSpeed=-1;
+                selectCheck -=1;
+                audio_play_sound(sndBeep,10,false);
+            }
         }
-    }
-    if(target &gt; objSaveControl.selectCheck)
-    {
-        with(objSaveControl)
+        if(target &gt; objSaveControl.selectCheck)
         {
-            xSpeed=1;
-            selectCheck +=1;
-            audio_play_sound(sndBeep,10,false);
+            with(objSaveControl)
+            {
+                xSpeed=1;
+                selectCheck +=1;
+                audio_play_sound(sndBeep,10,false);
+            }
         }
     }
     // drag the screen
@@ -204,38 +220,38 @@ if(objSaveControl.selectState == 0)
             }
             if(doClick)
             {
-                
-                    with(objSaveControl)
+                use_target = true;
+                with(objSaveControl)
+                {
+                    if(selectCheck != 7)
                     {
-                        if(selectCheck != 7)
-                        {
-                            if sprite_index == sprSaveDelete {
-                                selectState=3;
-                            }
-                            else
-                            {
-                                var filename = save_file_name(selectCheck);
-                                if !file_exists(filename) {
-                                    selectState = 2;
-                                    allowLevelStart = false;
-                                } else {
-                    
-                                    selectState = 1;
-                                }
-                            }
+                        if sprite_index == sprSaveDelete {
+                            selectState=3;
                         }
                         else
                         {
-                            if sprite_index == sprSaveControl{
-                                //selectState=3;
-                                sprite_index=sprSaveDelete;
-                                image_speed=.25;
+                            var filename = save_file_name(selectCheck);
+                            if !file_exists(filename) {
+                                selectState = 2;
+                                allowLevelStart = false;
                             } else {
-                                sprite_index=sprSaveControl;
-                                image_speed=0;
+                
+                                selectState = 1;
                             }
                         }
                     }
+                    else
+                    {
+                        if sprite_index == sprSaveControl{
+                            //selectState=3;
+                            sprite_index=sprSaveDelete;
+                            image_speed=.25;
+                        } else {
+                            sprite_index=sprSaveControl;
+                            image_speed=0;
+                        }
+                    }
+                }
                 
             }
         }
@@ -367,6 +383,7 @@ if(objSaveControl.selectState == 1)
             }
             if(doClick)
             {
+                use_target = true;
                 // clicked on the same slot - start playing
                 // clicked on a different slot - cancel
                 if(objSaveControl.selectCheck == clickedOnSlot)
@@ -428,6 +445,7 @@ if(objSaveControl.selectState == 1)
                     
                     if(doStart)
                     {
+                        use_target = true;
                         with(objSaveControl)
                         {
                             with slots[selectCheck] {
@@ -561,6 +579,7 @@ if(objSaveControl.selectState == 2)
             }
             if(doClick)
             {
+                use_target = true;
                 // clicked on the same slot - start playing
                 // clicked on a different slot - cancel
                 if(objSaveControl.selectCheck == clickedOnSlot)
@@ -634,6 +653,7 @@ if(objSaveControl.selectState == 3)
             }
             if(doClick)
             {
+                use_target = true;
                 // clicked on the same slot - start playing
                 // clicked on a different slot - cancel
                 if(objSaveControl.selectCheck == clickedOnSlot)

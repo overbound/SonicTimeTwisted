@@ -30,6 +30,12 @@
     instance_destroy();
 }
 event_inherited();
+with(menu)
+{
+    instance_destroy();
+}
+menu = instance_create(0,0,objMenu_Android);
+
 </string>
           </argument>
         </arguments>

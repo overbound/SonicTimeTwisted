@@ -431,7 +431,7 @@ if objProgram.paused {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// draw lives - can be overriden by platform-specific code
+            <string>/// draw lives &amp; progress bar - can be overriden by platform-specific code
 
 // lives setpiece
 draw_sprite(sprLives, character_id[view_current], 0+16, 0+view_hview-24);
@@ -444,6 +444,31 @@ draw_set_halign(fa_right);
 draw_set_font(objResources.fontLives);
 draw_text(0+94, 0+view_hview[view_current]-12, objGameData.player_lives[view_current]);
 
+// Progress bar
+draw_set_alpha(0.25);
+draw_set_color(c_white);
+draw_line_width(128, 224, 426 - 16, 224, 4);
+draw_set_alpha(1);
+
+var xmetalprog = 128 + objSSMetalSonic.progress * 280;
+if metalProgDisplay &gt; xmetalprog +2{
+    metalProgDisplay-=2;
+}
+else if metalProgDisplay &lt; xmetalprog -2 {
+    metalProgDisplay+=2;
+}
+
+var xplayerprog = 128 + objSSPlayer.progress * 280;
+if playerProgDisplay &gt; xplayerprog +2{
+    playerProgDisplay-=2;
+}
+else if playerProgDisplay &lt; xplayerprog -2{
+    playerProgDisplay+=2;
+}
+draw_sprite_ext(sprRacerIcon, 3, 128 + objSSMetalSonic.progress * 280, 224, 1, 1, 0, c_white, 1);
+draw_sprite(sprRacerIcon, objGameData.character_id[0]-1, 128 + objSSPlayer.progress * 280, 224);
+//draw_sprite_ext(sprRacerIcon, 3, metalProgDisplay, 224, 1, 1, 0, c_white, 1);
+//draw_sprite(sprRacerIcon, objGameData.character_id[0]-1, playerProgDisplay, 224);
 </string>
           </argument>
         </arguments>
@@ -505,6 +530,7 @@ if not objScreen.split_screen draw_sprite(sprHud, 0, 0+16, 0+9);
 draw_sprite(sprHud, 1+(image_index mod 2)*(objSSLevel.timer &lt; 3600), 16, 25-(16*objScreen.split_screen));
 draw_sprite(sprHud, 3+(image_index mod 2)*(not objSSPlayer.rings), 16, 41-(16*objScreen.split_screen));
 
+// level icons and progress bar moves to a separate overrideable event
 event_user(0);
 
 // score / time / rings string
@@ -513,33 +539,6 @@ if not objScreen.split_screen draw_text(112, 8, objGameData.player_score[view_cu
 draw_text(88, 40-(16*objScreen.split_screen), objSSPlayer.rings);
 draw_set_halign(fa_left);
 draw_text(56+timeOffset, 24-(16*objScreen.split_screen), time_stamp);
-
-
-// Progress bar
-draw_set_alpha(0.25);
-draw_set_color(c_white);
-draw_line_width(128, 224, 426 - 16, 224, 4);
-draw_set_alpha(1);
-
-var xmetalprog = 128 + objSSMetalSonic.progress * 280;
-if metalProgDisplay &gt; xmetalprog +2{
-    metalProgDisplay-=2;
-}
-else if metalProgDisplay &lt; xmetalprog -2 {
-    metalProgDisplay+=2;
-}
-
-var xplayerprog = 128 + objSSPlayer.progress * 280;
-if playerProgDisplay &gt; xplayerprog +2{
-    playerProgDisplay-=2;
-}
-else if playerProgDisplay &lt; xplayerprog -2{
-    playerProgDisplay+=2;
-}
-draw_sprite_ext(sprRacerIcon, 3, 128 + objSSMetalSonic.progress * 280, 224, 1, 1, 0, c_white, 1);
-draw_sprite(sprRacerIcon, objGameData.character_id[0]-1, 128 + objSSPlayer.progress * 280, 224);
-//draw_sprite_ext(sprRacerIcon, 3, metalProgDisplay, 224, 1, 1, 0, c_white, 1);
-//draw_sprite(sprRacerIcon, objGameData.character_id[0]-1, playerProgDisplay, 224);
 
 } else {
     draw_set_color(c_white)

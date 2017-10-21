@@ -53,7 +53,7 @@ spawn_id = noone;
 
 ringLifeCounter = 0; 
 
-
+menu = instance_create(0,0,objMenu);
 
 
 

@@ -164,6 +164,7 @@ instance_activate_object(objTransition);
 instance_activate_object(objTrack);
 instance_activate_object(objSSMetalSonic);
 instance_activate_object(objInput);
+instance_activate_object(objMenu);
 instance_activate_object(objSSAlwaysActive);
 instance_activate_region(x-1408,y-1408,2816,2816,true);
 //instance_activate_region(x-1536,y-1536,3072,3072,true);

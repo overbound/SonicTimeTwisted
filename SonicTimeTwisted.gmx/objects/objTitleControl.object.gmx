@@ -64,6 +64,9 @@ startText = 'PRESS START';
 option1Text = 'MAP KEYS OR GAMEPAD';
 option2Text = 'SCREEN SIZE';
 option3Text = 'ENABLE GAMEPAD F1';
+
+menu = instance_create(x,y,objMenu);
+menu.default_state = 1;
 </string>
           </argument>
         </arguments>

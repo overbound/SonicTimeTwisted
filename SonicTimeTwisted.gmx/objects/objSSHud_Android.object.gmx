@@ -46,6 +46,37 @@ if(objAndroid.hudmode == 0)
     draw_set_halign(fa_right);
     draw_set_font(objResources.fontLives);
     draw_text(lives_x_left + 78, lives_y_top, objGameData.player_lives[view_current]);
+    
+    
+
+    // Progress bar
+    var pbOffsetX = 72;
+    var pbOffsetY = 80;
+    
+    draw_set_alpha(0.25);
+    draw_set_color(c_white);
+    draw_line_width(pbOffsetX, pbOffsetY, pbOffsetX+282, pbOffsetY, 4);
+    draw_set_alpha(1);
+    
+    var xmetalprog = 128 + objSSMetalSonic.progress * 280;
+    if metalProgDisplay &gt; xmetalprog +2{
+        metalProgDisplay-=2;
+    }
+    else if metalProgDisplay &lt; xmetalprog -2 {
+        metalProgDisplay+=2;
+    }
+    
+    var xplayerprog = 128 + objSSPlayer.progress * 280;
+    if playerProgDisplay &gt; xplayerprog +2{
+        playerProgDisplay-=2;
+    }
+    else if playerProgDisplay &lt; xplayerprog -2{
+        playerProgDisplay+=2;
+    }
+    draw_sprite_ext(sprRacerIcon, 3, pbOffsetX + objSSMetalSonic.progress * 280, pbOffsetY, 1, 1, 0, c_white, 1);
+    draw_sprite(sprRacerIcon, objGameData.character_id[0]-1, pbOffsetX + objSSPlayer.progress * 280, pbOffsetY);
+    //draw_sprite_ext(sprRacerIcon, 3, metalProgDisplay, 224, 1, 1, 0, c_white, 1);
+    //draw_sprite(sprRacerIcon, objGameData.character_id[0]-1, playerProgDisplay, 224);
 }
 else
 {
@@ -53,6 +84,29 @@ else
     event_inherited();
 }
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="64">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>draw_text(100, 0, string(device_mouse_x_to_gui(0))+';'+string(device_mouse_y_to_gui(0)));
 </string>
           </argument>
         </arguments>

@@ -4,7 +4,9 @@
     <Config>Configs\Default</Config>
   </Configs>
   <datafiles number="43" name="datafiles"/>
-  <NewExtensions/>
+  <NewExtensions>
+    <extension index="0">extensions\MogaExtensionAndroid</extension>
+  </NewExtensions>
   <sounds name="sound">
     <sounds name="BGM">
       <sounds name="General">
@@ -310,6 +312,7 @@
         <sprite>sprites\sprTouchscreenDPadJoy</sprite>
         <sprite>sprites\sprTouchscreenButton</sprite>
         <sprite>sprites\sprTouchscreenPauseButton</sprite>
+        <sprite>sprites\sprTouchscreenRunButton</sprite>
       </sprites>
     </sprites>
     <sprites name="Scene Objects">
@@ -2800,25 +2803,12 @@
         <object>objects\objInputDummy</object>
         <object>objects\objInput</object>
       </objects>
-      <objects name="Smartphone">
-        <objects name="Android">
-          <object>objects\objAndroid</object>
-          <objects name="Object Extensions">
-            <object>objects\objTitleControl_Android</object>
-            <object>objects\objLevel_Android</object>
-            <object>objects\objHud_Android</object>
-            <object>objects\objSaveControl_Android</object>
-            <object>objects\objSSHud_Android</object>
-            <object>objects\objSSLevel_Android</object>
-          </objects>
-        </objects>
-      </objects>
       <object>objects\objGameData</object>
       <object>objects\objProgram</object>
       <object>objects\objMusic</object>
       <object>objects\objResources</object>
       <object>objects\objScreen</object>
-      <object>objects\objSSAlwaysActive</object>
+      <object>objects\objMenu</object>
     </objects>
     <objects name="Overlays">
       <objects name="Title Screen">
@@ -3040,6 +3030,21 @@
           <object>objects\objGalacnikFootPart</object>
           <object>objects\objGalacnikStatchPart</object>
           <object>objects\objGalacnikHandPart</object>
+        </objects>
+      </objects>
+    </objects>
+    <objects name="Ports">
+      <object>objects\objSSAlwaysActive</object>
+      <objects name="Android">
+        <object>objects\objAndroid</object>
+        <objects name="Object Extensions">
+          <object>objects\objTitleControl_Android</object>
+          <object>objects\objLevel_Android</object>
+          <object>objects\objHud_Android</object>
+          <object>objects\objSaveControl_Android</object>
+          <object>objects\objSSHud_Android</object>
+          <object>objects\objSSLevel_Android</object>
+          <object>objects\objMenu_Android</object>
         </objects>
       </objects>
     </objects>
@@ -3329,7 +3334,7 @@
       </rooms>
     </rooms>
   </rooms>
-  <constants number="59">
+  <constants number="66">
     <constant name="GAMEPAD_POV_Y">7</constant>
     <constant name="GAMEPAD_POV_X">6</constant>
     <constant name="GAMEPAD_AXIS_V">5</constant>
@@ -3389,6 +3394,13 @@
     <constant name="aPP1">'&amp;*(kjda'</constant>
     <constant name="aPP2">'A:Lfda'</constant>
     <constant name="aMM1">'^&amp;*(jkl'</constant>
+    <constant name="OPTION_NAME">0</constant>
+    <constant name="OPTION_TYPE">1</constant>
+    <constant name="OPTION_TYPE_SIMPLE">0</constant>
+    <constant name="OPTION_TYPE_WITH_VALUE">1</constant>
+    <constant name="OPTION_VALUE">2</constant>
+    <constant name="OPTION_TYPE_CONFIRM">2</constant>
+    <constant name="OPTION_TYPE_TITLE">3</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>

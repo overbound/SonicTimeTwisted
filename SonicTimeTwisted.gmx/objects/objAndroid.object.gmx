@@ -28,6 +28,8 @@
             <string>alpha = 0;
 vk_active = false;
 confirming = false;
+gyroscopeMode = false;
+gyroscopeTilt = 0;
 
 // load android-specific settings
 
@@ -36,12 +38,14 @@ var file = 'settings.ini';
 hudmode = 0; // 0 - smartphone mode, 1 - console mode
 input = 0; // 0 - touchscreen, 1 - gamepad, 2 - keyboard
 vkalpha = 0.8;
+gyroinss = 1; // use gyroscope controls in special stages
 
 if (file_exists(file)) {
     ini_open(file);
     hudmode = ini_read_real('smartphone','hudmode',0);
     input = ini_read_real('smartphone','input',0);
     vkalpha = ini_read_real('smartphone','vkalpha',0.8);
+    gyroinss = ini_read_real('smartphone','gyroinss',1);
 }
 vKey_dup = false;
 vKey_dlt = false;
@@ -133,20 +137,45 @@ if(!vk_active)
             alpha = 0;
         }
     }
+    /*
+    These conditions look goofy, but that's due to how
+    GMS processes "OR" and "AND" conditions, this speeds
+    things up a little bit.
+    */
+    
     if(objInput.flag_player_input)
     {
         if(instance_exists(objPlayer))
         {
-            smartphone_enable_virtual_keys();
+            smartphone_enable_virtual_keys(false);
         }
         else
         if(instance_exists(objSSPlayer))
         {
-            smartphone_enable_virtual_keys();
+            smartphone_enable_virtual_keys(true);
         }
     }
 }
-
+// if gyroscope mode is on (touchscreen selected + gyroscope activated + in special stage)
+// use it as left + right
+if(gyroscopeMode)
+{
+    var tilt = device_get_tilt_y();
+    if(tilt &lt; -0.15)
+    {
+        keyboard_key_press(vk_left);
+    }
+    else
+    if(tilt &gt; 0.15)
+    {
+        keyboard_key_press(vk_right);
+    }
+    else
+    {
+        keyboard_key_release(vk_left);
+        keyboard_key_release(vk_right);
+    }
+}
 </string>
           </argument>
         </arguments>
@@ -214,6 +243,7 @@ if(vKey_bs)
     vKey_bs = false;
 }
 vk_active = false;
+gyroscopeMode = false
 </string>
           </argument>
         </arguments>
@@ -262,10 +292,17 @@ bay = hView - 96;
 bsx = wView/2 - 12;
 bsy = 16;
 
-vKey_dup = virtual_key_add(dpadx, dpady, 64, 24, vk_up);
-vKey_dlt = virtual_key_add(dpadx, dpady, 24, 64, vk_left);
-vKey_ddn = virtual_key_add(dpadx, dpady + 40, 64, 24, vk_down);
-vKey_drt = virtual_key_add(dpadx + 40, dpady, 24, 64, vk_right);
+if(gyroscopeMode)
+{
+    vKey_dup = virtual_key_add(dpadx, dpady, 64, 64, vk_up);
+}
+else
+{
+    vKey_dup = virtual_key_add(dpadx, dpady, 64, 24, vk_up);
+    vKey_dlt = virtual_key_add(dpadx, dpady, 24, 64, vk_left);
+    vKey_ddn = virtual_key_add(dpadx, dpady + 40, 64, 24, vk_down);
+    vKey_drt = virtual_key_add(dpadx + 40, dpady, 24, 64, vk_right);
+}
 
 vKey_ba = virtual_key_add(bax, bay, 64, 64, ord('A'));
 /*
@@ -340,6 +377,7 @@ switch(room)
         if(instance_exists(objSSLevel))
         {
             instance_create(0,0,objSSLevel_Android);
+            smartphone_enable_virtual_keys(true);
         }
         break;
 }
@@ -367,68 +405,81 @@ switch(room)
             <kind>1</kind>
             <string>if(alpha &gt; 0)
 {
-    if(!surface_exists(vKeyJoy_surface))
+    if(gyroscopeMode)
     {
-        vKeyJoy_surface = surface_create(64, 64);
-    }
-    surface_set_target(vKeyJoy_surface);
-    draw_clear_alpha(c_black, 0);
-    draw_sprite(sprTouchscreenDPadBase, 0, 0, 0);
-    if(keyboard_check(vk_up))
-    {
-        if(keyboard_check(vk_right))
+        if(keyboard_check(vk_up))
         {
-            draw_sprite(sprTouchscreenDPadJoy, 0, 24, 8);
-        }
-        else
-        if(keyboard_check(vk_left))
-        {
-            draw_sprite(sprTouchscreenDPadJoy, 0, 8, 8);
+            draw_sprite_ext(sprTouchscreenRunButton, 1, dpadx, dpady, 1, 1, 0, c_white, alpha);
         }
         else
         {
-            draw_sprite(sprTouchscreenDPadJoy, 0, 16, 0);
+            draw_sprite_ext(sprTouchscreenRunButton, 0, dpadx, dpady, 1, 1, 0, c_white, alpha);
         }
     }
     else
     {
-        if(keyboard_check(vk_down))
+        if(!surface_exists(vKeyJoy_surface))
+        {
+            vKeyJoy_surface = surface_create(64, 64);
+        }
+        surface_set_target(vKeyJoy_surface);
+        draw_clear_alpha(c_black, 0);
+        draw_sprite(sprTouchscreenDPadBase, 0, 0, 0);
+        if(keyboard_check(vk_up))
         {
             if(keyboard_check(vk_right))
             {
-                draw_sprite(sprTouchscreenDPadJoy, 0, 24, 24);
+                draw_sprite(sprTouchscreenDPadJoy, 0, 24, 8);
             }
             else
             if(keyboard_check(vk_left))
             {
-                draw_sprite(sprTouchscreenDPadJoy, 0, 8, 24);
+                draw_sprite(sprTouchscreenDPadJoy, 0, 8, 8);
             }
             else
             {
-                draw_sprite(sprTouchscreenDPadJoy, 0, 16, 32);
+                draw_sprite(sprTouchscreenDPadJoy, 0, 16, 0);
             }
         }
         else
         {
-            if(keyboard_check(vk_right))
+            if(keyboard_check(vk_down))
             {
-                draw_sprite(sprTouchscreenDPadJoy, 0, 32, 16);
+                if(keyboard_check(vk_right))
+                {
+                    draw_sprite(sprTouchscreenDPadJoy, 0, 24, 24);
+                }
+                else
+                if(keyboard_check(vk_left))
+                {
+                    draw_sprite(sprTouchscreenDPadJoy, 0, 8, 24);
+                }
+                else
+                {
+                    draw_sprite(sprTouchscreenDPadJoy, 0, 16, 32);
+                }
             }
             else
-            if(keyboard_check(vk_left))
             {
-                draw_sprite(sprTouchscreenDPadJoy, 0, 0, 16);
-            }
-            else
-            {
-                draw_sprite(sprTouchscreenDPadJoy, 0, 16, 16);
+                if(keyboard_check(vk_right))
+                {
+                    draw_sprite(sprTouchscreenDPadJoy, 0, 32, 16);
+                }
+                else
+                if(keyboard_check(vk_left))
+                {
+                    draw_sprite(sprTouchscreenDPadJoy, 0, 0, 16);
+                }
+                else
+                {
+                    draw_sprite(sprTouchscreenDPadJoy, 0, 16, 16);
+                }
             }
         }
+        surface_reset_target();
+        
+        draw_surface_ext(vKeyJoy_surface, dpadx, dpady, 1, 1, 0, c_white, alpha);
     }
-    surface_reset_target();
-    
-    draw_surface_ext(vKeyJoy_surface, dpadx, dpady, 1, 1, 0, c_white, alpha);
- 
     if(keyboard_check(ord('A')))
     {
         draw_sprite_ext(sprTouchscreenButton, 1, bax, bay, 1, 1, 0, c_white, alpha);
