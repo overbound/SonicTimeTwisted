@@ -1741,6 +1741,10 @@
         <script>scripts\load_lives.gml</script>
         <script>scripts\delete_settings.gml</script>
       </scripts>
+      <scripts name="Menu">
+        <script>scripts\get_kb_label.gml</script>
+        <script>scripts\get_gp_label.gml</script>
+      </scripts>
       <script>scripts\extend_byte.gml</script>
       <script>scripts\minlerp.gml</script>
       <script>scripts\get_os_type.gml</script>
@@ -3334,7 +3338,7 @@
       </rooms>
     </rooms>
   </rooms>
-  <constants number="66">
+  <constants number="72">
     <constant name="GAMEPAD_POV_Y">7</constant>
     <constant name="GAMEPAD_POV_X">6</constant>
     <constant name="GAMEPAD_AXIS_V">5</constant>
@@ -3396,11 +3400,17 @@
     <constant name="aMM1">'^&amp;*(jkl'</constant>
     <constant name="OPTION_NAME">0</constant>
     <constant name="OPTION_TYPE">1</constant>
+    <constant name="OPTION_VALUE">2</constant>
+    <constant name="OPTION_ANIMATION">3</constant>
     <constant name="OPTION_TYPE_SIMPLE">0</constant>
     <constant name="OPTION_TYPE_WITH_VALUE">1</constant>
-    <constant name="OPTION_VALUE">2</constant>
     <constant name="OPTION_TYPE_CONFIRM">2</constant>
     <constant name="OPTION_TYPE_TITLE">3</constant>
+    <constant name="OPTION_ANIMATION_NONE">0</constant>
+    <constant name="OPTION_ANIMATION_LONGPRESS">1</constant>
+    <constant name="OPTION_TYPE_SUBMENU">4</constant>
+    <constant name="OPTION_TYPE_RETURN">5</constant>
+    <constant name="OPTION_ANIMATION_FLASHING">2</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>

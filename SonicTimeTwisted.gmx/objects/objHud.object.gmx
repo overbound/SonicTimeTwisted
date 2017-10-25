@@ -42,6 +42,8 @@ axis = -1;
 inputFlash = 0;
 white = 0;
 timeOffset = 0;
+
+menu = instance_create(0,0,objMenu);
 </string>
           </argument>
         </arguments>
@@ -140,6 +142,16 @@ if instance_exists(objLevel) {
             <string>/// Pause Menu
 
 if objProgram.paused {
+    if allowInput {
+        // allow the menu object to handle everything
+        if(!menu.active)
+        {
+            menu.wait_for_release = true;
+            menu.active = true;
+        }
+        with(menu) event_user(0);
+    }
+/*
     switch pauseState {
     case 0:
     if allowInput == true {
@@ -369,6 +381,7 @@ if objProgram.paused {
     }
     break;
     }
+    */
 }
 
         
@@ -509,8 +522,12 @@ draw_text(view_xview[view_current]+56+timeOffset, view_yview[view_current]+24-(1
 
 //white bg for pause
 draw_set_alpha(white)
+draw_set_color(c_black);
     draw_rectangle(view_xview,view_yview,view_xview+view_wview,view_yview+view_hview,false);
+draw_set_color(c_white);
 draw_set_alpha(image_alpha);
+with(menu) event_user(4);
+/*
 draw_set_halign(fa_center);
 if objProgram.paused {
     var viewSize = "FULLSCREEN"
@@ -575,6 +592,7 @@ if pauseState == 3 &amp;&amp; inputFlash &lt;= .5 {
         draw_text_color(view_xview[view_current]+213, view_yview[view_current]+155, "CANCEL",c_white,c_white,c_yellow,c_yellow,1);
     }
 }
+*/
 </string>
           </argument>
         </arguments>

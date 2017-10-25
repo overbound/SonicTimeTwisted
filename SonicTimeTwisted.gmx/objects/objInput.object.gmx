@@ -248,6 +248,31 @@ case "gamepad lost":
         </arguments>
       </action>
     </event>
+    <event eventtype="7" enumb="10">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Change gamepad status
+gamepad_update_enabled = !gamepad_update_enabled;
+save_gamepad_input_enabled(gamepad_update_enabled);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="7" enumb="5">
       <action>
         <libid>1</libid>
@@ -316,8 +341,7 @@ stream = ds_list_create();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>gamepad_update_enabled = !gamepad_update_enabled;
-save_gamepad_input_enabled(gamepad_update_enabled);
+            <string>event_user(0);
 </string>
           </argument>
         </arguments>

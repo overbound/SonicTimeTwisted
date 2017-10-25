@@ -45,10 +45,6 @@ if (!global.special_level_music_played) {
         objMusic.musicLoop = bgmSpecialFutureLoop;
     }
 }
-menu = instance_create(x,y,objMenu);
-menu.default_state = 3;
-menu.draw_with_view_offset = false;
-menu.delay_menu = true;
 </string>
           </argument>
         </arguments>
@@ -125,7 +121,7 @@ if started == false
             <kind>1</kind>
             <string>// Pause
 /// Pausing
-if started and not instance_exists(objTransition) and input_check_pressed(cSTART) {objProgram.paused = not objProgram.paused; game_pause(objProgram.paused);}
+if started and not instance_exists(objTransition) and input_check_pressed(cSTART) and (!objProgram.paused) {objProgram.paused = not objProgram.paused; game_pause(objProgram.paused);}
 </string>
           </argument>
         </arguments>

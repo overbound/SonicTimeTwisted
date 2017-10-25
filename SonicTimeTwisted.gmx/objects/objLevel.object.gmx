@@ -53,8 +53,6 @@ spawn_id = noone;
 
 ringLifeCounter = 0; 
 
-menu = instance_create(0,0,objMenu);
-
 
 
 </string>
@@ -215,14 +213,16 @@ if started and not instance_exists(objTransition) and input_check_pressed(cSTART
     if not objProgram.paused {
         objProgram.paused = true;
         game_pause(objProgram.paused);
-    } else {
+    }
+    /*
+      else {
         objProgram.paused = false;
         game_pause(objProgram.paused);
         with objHud {
         pauseState = 0;
         }
     }
-
+*/
 }
 </string>
           </argument>

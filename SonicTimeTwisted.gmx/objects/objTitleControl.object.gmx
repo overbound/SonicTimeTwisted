@@ -269,6 +269,30 @@ menu.default_state = 1;
           <argument>
             <kind>1</kind>
             <string>/// Start Menu
+if(pauseState == 0)
+{
+    if allowInput {
+        // allow the menu object to handle everything
+        if(!menu.active)
+        {
+            menu.wait_for_release = false;
+            menu.active = true;
+        }
+        
+        with(menu) event_user(0);
+    }
+}
+else
+if(pauseState == 3)
+{
+    if start == true
+        if input_check_pressed(cSTART) {
+            pauseState=0;
+            with objTitlescreenPlane { hsp = 0; image_speed = 0 }
+            with objTitleSonic image_speed = 0;
+        }
+}
+/*
     switch pauseState {
     case 0:
     if allowInput == true {
@@ -522,7 +546,7 @@ menu.default_state = 1;
         game_end();
     break;
     }
-    
+    */
 // fade in white for menu backer    
 if pauseState != 3 {
     if screenAlpha &lt; .75 {
@@ -685,6 +709,7 @@ audio_stop_all();
 
 // fade for menu
 draw_set_alpha(screenAlpha);
+draw_set_color(c_black);
 draw_rectangle(view_xview,view_yview,view_xview+view_wview,view_yview+view_hview,false);
     
 // setup
@@ -715,6 +740,7 @@ case 12: if pauseState == 3 draw_text_color(view_xview[0]+213, view_yview[0]+228
 
 draw_set_halign(fa_center);
 draw_set_color(c_yellow);
+/*
 if pauseState == 0 {
     draw_text_color(view_xview[view_current]+213, view_yview[view_current]+75, "PLAY",c_white,c_white,c_yellow,c_yellow,1);
     if pauseState != 1 draw_text_color(view_xview[view_current]+213, view_yview[view_current]+91, option1Text,c_white,c_white,c_yellow,c_yellow,1);
@@ -786,8 +812,11 @@ if pauseState == 4 &amp;&amp; inputFlash &lt;= .5 {
     break;
     }
 }
-draw_set_color(c_white);
+*/
 
+with(menu) event_user(4);
+
+draw_set_color(c_white);
 </string>
           </argument>
         </arguments>

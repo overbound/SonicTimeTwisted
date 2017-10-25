@@ -47,6 +47,11 @@ if (file_exists(file)) {
     vkalpha = ini_read_real('smartphone','vkalpha',0.8);
     gyroinss = ini_read_real('smartphone','gyroinss',1);
 }
+
+// The back key here is Android's "back" key, seen by GMS as backspace
+objProgram.back_button = vk_backspace;
+objProgram.back_button_label = "BACK"
+
 vKey_dup = false;
 vKey_dlt = false;
 vKey_ddn = false;
@@ -116,7 +121,7 @@ if(vk_active)
 {
     if(alpha &lt; vkalpha)
     {
-        alpha += 0.01;
+        alpha += 0.05;
         if(alpha &gt; vkalpha)
         {
             alpha = vkalpha;
@@ -198,7 +203,7 @@ if(gyroscopeMode)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>// disabling virtual controls
+            <string>/// Disable virtual controls
 
 if(vKey_dup)
 {
@@ -266,7 +271,7 @@ gyroscopeMode = false
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>// Initialize virtual controls.
+            <string>/// Initialize virtual controls.
 // Must be called on every room, but also on other special occasions
 // Because of this, it is now a user event
 

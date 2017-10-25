@@ -30,12 +30,19 @@
     instance_destroy();
 }
 event_inherited();
+
+// Could have used the built-in function to replace the instance, but
+// Android doesn't always agree with it
+var newMenu = instance_create(0,0,objMenu_Android);
+newMenu.large = menu.large;
+newMenu.default_state = menu.default_state;
+newMenu.delay_menu = menu.delay_menu;
+newMenu.draw_with_view_offset = menu.draw_with_view_offset;
 with(menu)
 {
     instance_destroy();
 }
-menu = instance_create(0,0,objMenu_Android);
-
+menu = newMenu;
 </string>
           </argument>
         </arguments>
@@ -59,129 +66,16 @@ menu = instance_create(0,0,objMenu_Android);
           <argument>
             <kind>1</kind>
             <string>// unless the screen is touched - enable input normally
-switch pauseState {
-    case 3:
-        // if the screen is touched - display the menu
-        if (start == true)
+if(pauseState == 3)
+{
+    if (start == true)
+    {
+        if(device_mouse_check_button_pressed(0, mb_left))
         {
-            if(device_mouse_check_button_pressed(0, mb_left))
-            {
-                smartphone_confirm();
-            }
+            pauseState = 0;
         }
-        break;
-    case 0:
-        // depending on where the screen is touched on the main menu - redirect there
-        if (allowInput == true) {
-            if(device_mouse_check_button_pressed(0, mb_left))
-            {
-                var click_x = device_mouse_x_to_gui(0);
-                var click_y = device_mouse_y_to_gui(0);
-                
-                if(point_in_rectangle(
-                    click_x, click_y, 113, 70, 312, 88))
-                {
-                    // play
-                    pauseOffset = 0;
-                    smartphone_confirm();
-                }
-                else
-                
-                if(point_in_rectangle(
-                    click_x, click_y, 113, 89, 312, 107))
-                {
-                    // switch hud mode
-                    pauseOffset = 16;
-                    objAndroid.hudmode = (objAndroid.hudmode + 1) mod 2;
-                    smartphone_save_configuration();
-                    event_user(0);
-                }
-                else
-                
-                if(point_in_rectangle(
-                    click_x, click_y, 113, 108, 312, 120))
-                {
-                    // switch input
-                    pauseOffset = 32;
-                    objAndroid.input = (objAndroid.input + 1) mod 3;
-                    smartphone_save_configuration();
-                    event_user(0);
-                    
-                }
-                else
-                
-                if(point_in_rectangle(
-                    click_x, click_y, 113, 121, 312, 137))
-                {
-                    pauseOffset = 48;
-                    // configure input
-                    switch(objAndroid.input)
-                    {
-                        case 0:
-                            // configure touchscreen
-                            
-                            break;
-                        case 1:
-                            // configure gamepad
-                            
-                            break;
-                        case 2:
-                            // configure keyboard
-                            
-                            break;
-                    }
-                }
-                else
-                
-                if(point_in_rectangle(
-                    click_x, click_y, 113, 137, 312, 153))
-                {
-                    // quit
-                    pauseOffset = 64;
-                    smartphone_confirm();
-                    
-                }
-            }
-            if input_check_pressed(cACTION) || input_check_pressed(cSTART) {
-                switch pauseOffset {
-                    case 16: // Controls
-                        pauseState = 1;
-                        allowInput = false;
-                        objInput.pressingGamepad = input_any_gamepad_button();
-                        objInput.alarm[0] = 20;
-                    break;
-                    case 32: // Window Size
-                        pauseState = 2;
-                        allowInput = false;
-                    break;
-                    case 48: // Enable Gamepad
-                        pauseState = 4;
-                        allowInput = false;
-                    break;
-                    case 64: // Exit
-                        pauseState = 5;
-                        allowInput = false;
-                    break;
-                
-                }
-            
-        } 
-        }
-        break;
-    case 6:
-        // place touchscreen controls
-        break;
-    case 7:
-        // place touchscreen controls
-        break;
-    case 8:
-        // place touchscreen controls
-        break;
-    default:
-        // disable all other options - they are not supported here
-        
+    }
 }
-/// Start Menu - Android-specific
 event_inherited();
 </string>
           </argument>

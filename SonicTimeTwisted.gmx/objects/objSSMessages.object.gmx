@@ -76,6 +76,8 @@ for (i=0; i&lt;4; i+=1)
     // go through each character
     for (j=0; j&lt;title_length[i]; j+=1) title_scale[i, j] = 12;
 }
+
+ss_instructions = "Jump and Hold B and A to Turn Into Super Sonic";
 </string>
           </argument>
         </arguments>
@@ -204,6 +206,38 @@ if flash == true {
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// manage failure :)
+var menu = objSSHud.menu;
+if closeMenu == false {
+    if(menu.active)
+    {
+        if(menu.state == 4 || menu.state == 5 || menu.state == 6)
+        {
+            //with(menu) event_user(0);
+        }
+    } 
+}
+
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="8" enumb="0">
       <action>
@@ -232,49 +266,42 @@ draw_set_color(c_white);
 draw_set_halign(fa_center);
 
 if closeMenu == false {
-    switch objSSPlayer.kill {
-        case 1:
-            draw_text(213,80,"OUT OF RINGS")
-        break;
-        
-        case 2:
-            draw_text(213,80,"OFF TRACK")
-        break;
-        
-        case 3:
-            draw_text(213,80,"METAL SONIC WINS")
-        break;
-    }
-    
-    if objSSPlayer.kill &gt; 0  &amp;&amp; alarm[1]== -1 { 
-        if objGameData.player_lives[0] &gt; 1 {
-            draw_text(213,96,"TRY AGAIN z1 LIFE")
-        } else { selectorOffset = 118; }
-        draw_text(213,112,"RETURN TO ACT")
-    
-        if input_check_pressed(cUP) {
-        if objGameData.player_lives[0] &gt; 1 {
-            selectorOffset = 102;
-            } else selectorOffset = 118;
-        } else if input_check_pressed(cDOWN) {
-            selectorOffset = 118;
-        }
-        
-        if input_check_pressed(cACTION) {
-            if selectorOffset == 102 {
-                if objGameData.player_lives[0] &gt; 1 {
-                objGameData.player_lives[0] -= 1;
-                save_lives(objGameData.player_lives[0]);
-                room_restart();
-                with objSSLevel loopMusic = true;
+    if(alarm[1]== -1)
+    {
+        if (objSSPlayer.kill &gt; 0)
+        {
+            var menu = objSSHud.menu;
+            // allow the menu object to handle everything
+            if(!menu.active)
+            {
+                var menuStatus = 4;
+                switch objSSPlayer.kill {
+                    case 1:
+                        menuStatus = 4;
+                    break;
+                    
+                    case 2:
+                        menuStatus = 5;
+                    break;
+                    
+                    case 3:
+                        menuStatus = 6;
+                    break;
                 }
-            } else {
-                closeMenu = true;
-                stop_all_music(false);
-                level_goback();
+                menu.wait_for_release = false;
+                menu.active = true;
+                menu.state = menuStatus;
+                with(menu) event_user(1);
+            }
+            if(menu.active)
+            {
+                if(menu.state == 4 || menu.state == 5 || menu.state == 6)
+                {
+                    with(menu) event_user(0);
+                    with(menu) event_user(4);
+                }
             }
         }
-        draw_sprite(sprLevelSelect,image_index,213,selectorOffset);
     }
 }
 </string>
@@ -396,7 +423,7 @@ if closing == 2 {
         if objProgram.special_future_current_level &gt;= 7 {
             draw_text(213,80,"Now You Have All the Chaos Emeralds");
             if objGameData.character_id[0] == 1
-                draw_text(213,94,"Jump and Hold B and A to Turn Into Super Sonic");
+                draw_text(213,94,ss_instructions);
         } else
         switch objGameData.character_id[0] {
             case 1:

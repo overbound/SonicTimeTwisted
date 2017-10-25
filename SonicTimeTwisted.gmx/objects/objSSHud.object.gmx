@@ -41,6 +41,10 @@ inputFlash = 0;
 white = 0;
 timeOffset = 0;
 
+menu = instance_create(x,y,objMenu);
+menu.default_state = 3;
+menu.draw_with_view_offset = false;
+menu.delay_menu = true;
 </string>
           </argument>
         </arguments>
@@ -187,7 +191,23 @@ if objProgram.paused {
           <argument>
             <kind>1</kind>
             <string>/// Pause Menu
-
+if objProgram.paused {
+    if allowInput {
+        // allow the menu object to handle everything
+        if(!menu.active)
+        {
+            menu.wait_for_release = true;
+            menu.active = true;
+            menu.state = menu.default_state;
+        }
+        
+        if(menu.state != 4 &amp;&amp; menu.state != 5 &amp;&amp; menu.state != 6)
+        {
+            with(menu) event_user(0);
+        }
+    }
+}
+/*
 if objProgram.paused {
     switch pauseState {
     case 0:
@@ -404,7 +424,7 @@ if objProgram.paused {
     break;
     }
 }
-
+*/
         if objInput.pressingGamepad == -1 {
             allowInput = true;
         }
@@ -541,8 +561,12 @@ draw_set_halign(fa_left);
 draw_text(56+timeOffset, 24-(16*objScreen.split_screen), time_stamp);
 
 } else {
-    draw_set_color(c_white)
+    draw_set_color(c_black);
     draw_rectangle(0,0,426,240,false);
+    draw_set_color(c_white);
+    with(menu) event_user(4);
+}
+    /*
     draw_set_halign(fa_center);
 
 if pauseState == 1 &amp;&amp; inputFlash &lt;= .5 { // set controls
@@ -598,6 +622,7 @@ if pauseState == 2 &amp;&amp; inputFlash &lt;= .5 {
     if pauseState != 2 draw_text_color(213, 139, "SCREEN SIZE",c_white,c_white,c_yellow,c_yellow,1);
     draw_sprite_ext(sprLevelSelect,image_index,213, 113+pauseOffset,1,1,0,c_white,1);
 }
+*/
 </string>
           </argument>
         </arguments>
