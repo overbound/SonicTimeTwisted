@@ -36,7 +36,6 @@ event_inherited();
 var newMenu = instance_create(0,0,objMenu_Android);
 newMenu.large = menu.large;
 newMenu.default_state = menu.default_state;
-newMenu.delay_menu = menu.delay_menu;
 newMenu.draw_with_view_offset = menu.draw_with_view_offset;
 with(menu)
 {
@@ -72,6 +71,7 @@ if(pauseState == 3)
     {
         if(device_mouse_check_button_pressed(0, mb_left))
         {
+            wait_for_release = true;
             pauseState = 0;
         }
     }

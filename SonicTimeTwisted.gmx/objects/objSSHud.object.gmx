@@ -44,7 +44,6 @@ timeOffset = 0;
 menu = instance_create(x,y,objMenu);
 menu.default_state = 3;
 menu.draw_with_view_offset = false;
-menu.delay_menu = true;
 </string>
           </argument>
         </arguments>
@@ -191,7 +190,15 @@ if objProgram.paused {
           <argument>
             <kind>1</kind>
             <string>/// Pause Menu
+
 if objProgram.paused {
+    // if there's already a menu being displayed (failure screen) - don't pause
+    // otherwise it locks the game
+    if(menu.active &amp;&amp; menu.state &gt;= 4 &amp;&amp; menu.state &lt;= 6)
+    {
+        objProgram.paused = false;
+        game_pause(objProgram.paused);
+    }
     if allowInput {
         // allow the menu object to handle everything
         if(!menu.active)
@@ -200,11 +207,11 @@ if objProgram.paused {
             menu.active = true;
             menu.state = menu.default_state;
         }
-        
         if(menu.state != 4 &amp;&amp; menu.state != 5 &amp;&amp; menu.state != 6)
         {
             with(menu) event_user(0);
         }
+        
     }
 }
 /*

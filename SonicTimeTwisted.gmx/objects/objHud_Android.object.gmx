@@ -30,7 +30,6 @@
 // Android doesn't always agree with it
 var newMenu = instance_create(0,0,objMenu_Android);
 newMenu.default_state = menu.default_state;
-newMenu.delay_menu = menu.delay_menu;
 newMenu.draw_with_view_offset = menu.draw_with_view_offset;
 with(menu)
 {

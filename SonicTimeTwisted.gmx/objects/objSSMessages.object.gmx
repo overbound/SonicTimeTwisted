@@ -206,38 +206,6 @@ if flash == true {
           </argument>
         </arguments>
       </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// manage failure :)
-var menu = objSSHud.menu;
-if closeMenu == false {
-    if(menu.active)
-    {
-        if(menu.state == 4 || menu.state == 5 || menu.state == 6)
-        {
-            //with(menu) event_user(0);
-        }
-    } 
-}
-
-</string>
-          </argument>
-        </arguments>
-      </action>
     </event>
     <event eventtype="8" enumb="0">
       <action>
@@ -291,12 +259,18 @@ if closeMenu == false {
                 menu.wait_for_release = false;
                 menu.active = true;
                 menu.state = menuStatus;
-                with(menu) event_user(1);
+                with(menu)
+                {
+                    delay_timer = delay_timer_default;
+                    event_user(1);
+                }
             }
             if(menu.active)
             {
                 if(menu.state == 4 || menu.state == 5 || menu.state == 6)
                 {
+                    // so weird this is managed in the draw event,
+                    // but it doesn't seem to work otherwise
                     with(menu) event_user(0);
                     with(menu) event_user(4);
                 }

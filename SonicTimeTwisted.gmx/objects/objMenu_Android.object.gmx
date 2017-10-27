@@ -89,7 +89,14 @@ else
             <string>/// step - called by parent object
 event_inherited();
 if(active)
-{    
+{   
+    if(wait_for_release)
+    {
+        if(device_mouse_check_button_released(0, mb_left))
+        {
+            wait_for_release = false;
+        }
+    }
     if(use_default_interface)
     {
         if(device_mouse_check_button_pressed(0, mb_left))
@@ -104,8 +111,11 @@ if(active)
                     var tmp_cursor = floor((clickGuiY - gui_y_offset)/20);
                     if(tmp_cursor &lt;= max_cursor)
                     {
-                        cursor = tmp_cursor;
-                        event_user(5);
+                        if (cursor != 0 || options[0, OPTION_TYPE] != OPTION_TYPE_TITLE)
+                        {
+                            cursor = tmp_cursor;
+                            event_user(5);
+                        }
                     }
                 }
             }

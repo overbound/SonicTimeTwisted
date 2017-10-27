@@ -38,7 +38,6 @@ dir_snap = 0;
 snap_timer = 0;
 target = objSaveControl.selectCheck;
 objSaveControl.stageDeleteConfirmSprite = sprDeleteConfirmTouchscreen;
-use_target = false;
 </string>
           </argument>
         </arguments>
@@ -108,42 +107,40 @@ if(device_mouse_check_button_pressed(0, mb_left))
     press_x = device_mouse_x_to_gui(0);
     press_y = device_mouse_y_to_gui(0);
 }
-if(use_target)
-{
-    // if a key is pressed: switch to using them instead
-    if input_check_pressed(cLEFT) {
-        use_target = false;
-    }
+
+// if a key is pressed: switch to using them instead
+if input_check_pressed(cLEFT) {
+    target = min (7, max(0, target - 1));
     
-    if input_check_pressed(cRIGHT) {
-        use_target = false;
-    }
 }
+
+if input_check_pressed(cRIGHT) {
+    target = min (7, max(0, target + 1));
+}
+
 if(objSaveControl.selectState == 0)
 {
     // in this state, all movements are used to select a save slot
     // if we need to move the cursor to a different slot - do so
-    if(use_target)
+    if(target &lt; objSaveControl.selectCheck)
     {
-        if(target &lt; objSaveControl.selectCheck)
+        with(objSaveControl)
         {
-            with(objSaveControl)
-            {
-                xSpeed=-1;
-                selectCheck -=1;
-                audio_play_sound(sndBeep,10,false);
-            }
-        }
-        if(target &gt; objSaveControl.selectCheck)
-        {
-            with(objSaveControl)
-            {
-                xSpeed=1;
-                selectCheck +=1;
-                audio_play_sound(sndBeep,10,false);
-            }
+            xSpeed=-1;
+            selectCheck -=1;
+            audio_play_sound(sndBeep,10,false);
         }
     }
+    if(target &gt; objSaveControl.selectCheck)
+    {
+        with(objSaveControl)
+        {
+            xSpeed=1;
+            selectCheck +=1;
+            audio_play_sound(sndBeep,10,false);
+        }
+    }
+    
     // drag the screen
     if(hold_pressed)
     {
@@ -220,7 +217,6 @@ if(objSaveControl.selectState == 0)
             }
             if(doClick)
             {
-                use_target = true;
                 with(objSaveControl)
                 {
                     if(selectCheck != 7)
@@ -383,7 +379,6 @@ if(objSaveControl.selectState == 1)
             }
             if(doClick)
             {
-                use_target = true;
                 // clicked on the same slot - start playing
                 // clicked on a different slot - cancel
                 if(objSaveControl.selectCheck == clickedOnSlot)
@@ -445,7 +440,6 @@ if(objSaveControl.selectState == 1)
                     
                     if(doStart)
                     {
-                        use_target = true;
                         with(objSaveControl)
                         {
                             with slots[selectCheck] {
@@ -579,7 +573,6 @@ if(objSaveControl.selectState == 2)
             }
             if(doClick)
             {
-                use_target = true;
                 // clicked on the same slot - start playing
                 // clicked on a different slot - cancel
                 if(objSaveControl.selectCheck == clickedOnSlot)
@@ -653,7 +646,6 @@ if(objSaveControl.selectState == 3)
             }
             if(doClick)
             {
-                use_target = true;
                 // clicked on the same slot - start playing
                 // clicked on a different slot - cancel
                 if(objSaveControl.selectCheck == clickedOnSlot)
