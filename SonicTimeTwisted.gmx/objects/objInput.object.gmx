@@ -158,7 +158,13 @@ if(gamepad_update_enabled) {
         //if (gamepad_axis_value(axis_gamepad[i], axis[i]) * axis_direction[i] &gt; axis_deadzone[i]) state |= axis_control[i];
         // if (gamepad_axis(pad, axis[i]) * axis_direction[i] &gt; axis_deadzone[i]) state |= axis_control[i];
 }
-    
+
+// custom control schemes (e.g. touchscreen)
+with(objAbstractInput)
+{
+    event_user(0);
+}    
+
 // axes
 x_axis = 0;
 if (state &amp; cLEFT &amp;&amp; flag_player_input) || (computer_cLEFT &amp;&amp; !flag_player_input) x_axis -= 1;
@@ -167,6 +173,7 @@ if (state &amp; cRIGHT &amp;&amp; flag_player_input) || (computer_cRIGHT &amp;&a
 y_axis = 0;
 if (state &amp; cUP &amp;&amp; flag_player_input) || (computer_cUP &amp;&amp; !flag_player_input) y_axis -= 1;
 if (state &amp; cDOWN &amp;&amp; flag_player_input) || (computer_cDOWN &amp;&amp; !flag_player_input) y_axis += 1;
+
 
 // pressing and releasing
 state_press = (state &amp; buffer) ^ state;

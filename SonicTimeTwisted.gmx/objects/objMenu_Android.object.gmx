@@ -29,6 +29,468 @@
 gui_y_offset = 108;
 gui_x_offset = 113;
 gui_x_length = 200;
+wait_for_release_click = false;
+
+// syncing some stuff with the input object for the button reposition screen
+dpadx = objAndroidInput.dpadx;
+dpady = objAndroidInput.dpady;
+bax = objAndroidInput.bax;
+bay = objAndroidInput.bay;
+bsx = objAndroidInput.bsx;
+bsy = objAndroidInput.bsy;
+bbx = objAndroidInput.bbx;
+bby = objAndroidInput.bby;
+vksize = objAndroidInput.vksize;
+dpadgraphic = 0;
+dpadSprite = sprTouchscreenDPadTemplate;
+buttonSprite = sprTouchscreenButton;
+dpadRadius = 0;
+
+// drag and drop variables
+device_dragging[0] = 0;
+device_dragging[1] = 0;
+device_dragging[2] = 0;
+device_dragging[3] = 0;
+device_dragging[4] = 0;
+device_xoffset[0] = 0;
+device_xoffset[1] = 0;
+device_xoffset[2] = 0;
+device_xoffset[3] = 0;
+device_xoffset[4] = 0;
+device_yoffset[0] = 0;
+device_yoffset[1] = 0;
+device_yoffset[2] = 0;
+device_yoffset[3] = 0;
+device_yoffset[4] = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="14">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>event_inherited();
+
+if(state == 1002)
+{
+    draw_sprite(dpadSprite, 0,
+        x_offset + dpadx - dpadRadius,
+        view_yview[view_current] + dpady - dpadRadius);
+    
+    draw_sprite(buttonSprite, 0,
+        x_offset + bax - dpadRadius,
+        view_yview[view_current] + bay - dpadRadius);
+    
+    draw_sprite(sprTouchscreenPauseButton, 0,
+        x_offset + bsx,
+        view_yview[view_current] + bsy);
+    
+    draw_sprite(sprTouchscreenSuperButtonYellow, 0,
+        x_offset + bbx,
+        view_yview[view_current] + bby);
+}
+else
+if(state == 1004 || state == 1005)
+{
+    draw_sprite(sprGyroscopeTest, 0, x_offset + 204, view_yview[view_current] + 200);
+    if(objAndroidInput.gyromode == 0)
+    {
+        // simple mode where tilting simply presses left and right
+        var tilt = device_get_tilt_y();
+        if(tilt &lt; -1*objAndroidInput.gyro_switch_on_angle)
+        {
+            draw_sprite(sprGyroscopeTest, 1,
+                x_offset + 188, view_yview[view_current] + 200);
+            draw_sprite(sprGyroscopeTest, 4,
+                x_offset + 220, view_yview[view_current] + 200);
+        }
+        else
+        if(tilt &gt; objAndroidInput.gyro_switch_on_angle)
+        {
+            draw_sprite(sprGyroscopeTest, 2,
+                x_offset + 188, view_yview[view_current] + 200);
+            draw_sprite(sprGyroscopeTest, 3,
+                x_offset + 220, view_yview[view_current] + 200);
+        }
+        else
+        {
+            draw_sprite(sprGyroscopeTest, 2,
+                x_offset + 188, view_yview[view_current] + 200);
+            draw_sprite(sprGyroscopeTest, 4,
+                x_offset + 220, view_yview[view_current] + 200);
+        }
+    }
+    else
+    if(objAndroidInput.gyromode == 1)
+    {
+        // pseudo-analog mode where depending on the tilt, left and right buttons are mashed more or less often
+        var tiltscale = 0;
+        var tilt = device_get_tilt_y();
+        var keyToPress = cRIGHT;
+        if(tilt &lt; 0)
+        {
+            var keyToPress = cLEFT;
+        }
+        tilt = abs(tilt);
+        if(tilt &lt; objAndroidInput.gyro_analog_start)
+        {
+            tiltscale = 0;
+        }
+        else
+        if(tilt &gt; objAndroidInput.gyro_analog_end)
+        {
+            tiltscale = 10;
+        }
+        else
+        {
+            tiltscale = 1 + ceil(((tilt - objAndroidInput.gyro_analog_start)/(objAndroidInput.gyro_analog_end - objAndroidInput.gyro_analog_start))*10);
+        }
+        for(var i=1; i&lt;= 10; i++)
+        {
+            if(keyToPress == cLEFT &amp;&amp; tiltscale &gt;= i)
+            {
+                draw_sprite(sprGyroscopeTest, 1, x_offset + 204 - (16*i),
+                view_yview[view_current] + 200);
+            }
+            else
+            {
+                draw_sprite(sprGyroscopeTest, 2, x_offset + 204 - (16*i),
+                view_yview[view_current] + 200);
+            }
+            if(keyToPress == cRIGHT &amp;&amp; tiltscale &gt;= i)
+            {
+                draw_sprite(sprGyroscopeTest, 3, x_offset + 204 + (16*i),
+                view_yview[view_current] + 200);
+            }
+            else
+            {
+                draw_sprite(sprGyroscopeTest, 4, x_offset + 204 + (16*i),
+                view_yview[view_current] + 200);
+            }
+        }
+    }
+}
+else
+if(state == 1006)
+{
+    draw_set_alpha(objAndroidInput.vkalpha);
+    draw_sprite(dpadSprite, 0,
+        x_offset + dpadx - dpadRadius,
+        view_yview[view_current] + dpady - dpadRadius);
+    
+    draw_sprite(buttonSprite, 0,
+        x_offset + bax - dpadRadius,
+        view_yview[view_current] + bay - dpadRadius);
+    
+    draw_sprite(sprTouchscreenPauseButton, 0,
+        x_offset + bsx,
+        view_yview[view_current] + bsy);
+    
+    draw_sprite(sprTouchscreenSuperButtonYellow, 0,
+        x_offset + bbx,
+        view_yview[view_current] + bby);
+    draw_set_alpha(1);
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="12">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Execute actions when option is selected - called by this object
+if(state != 7 &amp;&amp; state &lt; 1000)
+{
+    event_inherited();
+}
+else
+{
+    var usedState = state;
+    var usedCursor = cursor;
+    // if we're currently confirming a selection: use the action asociated with the
+    // object that asked for confirmation, not the one associated with the
+    // "confirm" option
+    if(state == 10 &amp;&amp; cursor == 1)
+    {
+        usedState = confirm_state;
+        usedCursor = confirm_cursor;
+    }
+    
+    if(active)
+    {
+        switch(usedState)
+        {
+            case 7:
+                // Options menu
+                switch(usedCursor)
+                {
+                    case 1: // input mode
+                        if(objAndroidInput.input == 0)
+                        {
+                            // TOUCHSCREEN -&gt; GAMEPAD
+                            objAndroidInput.input = 1;
+                            if(!objInput.gamepad_update_enabled)
+                            {
+                                with(objInput)
+                                {
+                                    event_user(0);
+                                }
+                            }
+                        }
+                        else
+                        {
+                            if(objInput.gamepad_update_enabled)
+                            {
+                                // GAMEPAD -&gt; KEYBOARD
+                                with(objInput)
+                                {
+                                    event_user(0);
+                                }
+                            }
+                            else
+                            {
+                                // KEYBOARD -&gt; TOUCHSCREEN
+                                objAndroidInput.input = 0;
+                            }
+                        }
+                        smartphone_save_configuration();
+                        event_user(1);
+                        break;
+                }
+                
+                break;
+            case 1001:
+                // Touchscreen config screen
+                switch(usedCursor)
+                {
+                    case 2:
+                        objAndroidInput.vksize = (objAndroidInput.vksize + 1) mod 3;
+                        break;
+                    case 3:
+                        objAndroidInput.dpadMode = (objAndroidInput.dpadMode + 1) mod 2;
+                        break;
+                    case 4:
+                        audio_play_sound(sndBeep,10,false);
+                        slide_dir = true;
+                        slide_timer = 30;
+                        slide_to_state = 1006;
+                        slide_to_cursor = 0;
+                        slide_from_state = state;
+                        break;
+                    case 5:
+                        objAndroidInput.gyroinss = (objAndroidInput.gyroinss + 1) mod 2;
+                        break;
+                }
+                smartphone_save_configuration();
+                event_user(1);
+                break;
+            case 1003:
+                // touchscreen reposition confirmation
+                switch(usedCursor)
+                {
+                    case 1:
+                        objAndroidInput.dpadx = dpadx;
+                        objAndroidInput.dpady = dpady;
+                        objAndroidInput.bax = bax;
+                        objAndroidInput.bay = bay;
+                        objAndroidInput.bsx = bsx;
+                        objAndroidInput.bsy = bsy;
+                        objAndroidInput.bbx = bbx;
+                        objAndroidInput.bby = bby;
+                        smartphone_save_configuration();
+                        audio_play_sound(sndBeep,10,false);
+                        slide_dir = false;
+                        slide_timer = 30;
+                        slide_to_state = 1001;
+                        slide_to_cursor = 0;
+                        slide_from_state = 1002;
+                        break;
+                    case 2:
+                        audio_play_sound(sndBeep,10,false);
+                        slide_dir = false;
+                        slide_timer = 30;
+                        slide_to_state = 1001;
+                        slide_to_cursor = 0;
+                        slide_from_state = 1002;
+                        break;
+                    case 3:
+                        objAndroidInput.dpadx = 64;
+                        objAndroidInput.dpady = 178;
+                        objAndroidInput.bax = 364;
+                        objAndroidInput.bay = 178;
+                        objAndroidInput.bsx = 200;
+                        objAndroidInput.bsy = 16;
+                        objAndroidInput.bbx = 324;
+                        objAndroidInput.bby = 88;
+                        audio_play_sound(sndBeep,10,false);
+                        slide_dir = false;
+                        slide_timer = 30;
+                        slide_to_state = 1001;
+                        slide_to_cursor = 0;
+                        slide_from_state = 1002;
+                        break;
+                }
+                break;
+            case 1004:
+                // touchscreen reposition confirmation
+                switch(usedCursor)
+                {
+                    case 1:
+                        objAndroidInput.gyromode = 1 - objAndroidInput.gyromode;
+                        smartphone_save_configuration();
+                        event_user(1);
+                        break;
+                    case 2:
+                        if(!objAndroidInput.gyromode)
+                        {
+                            audio_play_sound(sndBeep,10,false);
+                            slide_dir = true;
+                            slide_timer = 30;
+                            slide_to_state = 1005;
+                            slide_to_cursor = 0;
+                            slide_from_state = state;
+                        }
+                        else
+                        {
+                            audio_play_sound(sndBeep,10,false);
+                            slide_dir = true;
+                            slide_timer = 30;
+                            slide_to_state = 1005;
+                            slide_to_cursor = 0;
+                            slide_from_state = state;
+                        }
+                        break;
+                    case 3:
+                        if(objAndroidInput.gyromode)
+                        {
+                            audio_play_sound(sndBeep,10,false);
+                            slide_dir = true;
+                            slide_timer = 30;
+                            slide_to_state = 1005;
+                            slide_to_cursor = 0;
+                            slide_from_state = state;
+                        }
+                        break;
+                }
+                break;
+            case 1005:
+                if(!objAndroidInput.gyromode)
+                {
+                    switch(usedCursor)
+                    {
+                        case 1:
+                            objAndroidInput.gyro_switch_on_angle = max(0.05, objAndroidInput.gyro_switch_on_angle - 0.05);
+                            smartphone_save_configuration();
+                            event_user(1);
+                            break;
+                        case 2:
+                            objAndroidInput.gyro_switch_on_angle = min(1, objAndroidInput.gyro_switch_on_angle + 0.05);
+                            smartphone_save_configuration();
+                            event_user(1);
+                            break;
+                        case 3:
+                            audio_play_sound(sndBeep,10,false);
+                            slide_dir = false;
+                            slide_timer = 30;
+                            slide_to_state = 1004;
+                            slide_to_cursor = 2;
+                            slide_from_state = state;
+                            break;
+                    }
+                }
+                else
+                {
+                    switch(usedCursor)
+                    {
+                        case 1:
+                            objAndroidInput.gyro_analog_start = max(0.05, objAndroidInput.gyro_analog_start - 0.05);
+                            smartphone_save_configuration();
+                            event_user(1);
+                            break;
+                        case 2:
+                            objAndroidInput.gyro_analog_start = min(1, objAndroidInput.gyro_analog_start + 0.05);
+                            smartphone_save_configuration();
+                            event_user(1);
+                            break;
+                        case 3:
+                            objAndroidInput.gyro_analog_end = max(0.05, objAndroidInput.gyro_analog_end - 0.05);
+                            smartphone_save_configuration();
+                            event_user(1);
+                            break;
+                        case 4:
+                            objAndroidInput.gyro_analog_end = min(1, objAndroidInput.gyro_analog_end + 0.05);
+                            smartphone_save_configuration();
+                            event_user(1);
+                            break;
+                        case 5:
+                            audio_play_sound(sndBeep,10,false);
+                            slide_dir = false;
+                            slide_timer = 30;
+                            slide_to_state = 1004;
+                            slide_to_cursor = 2;
+                            slide_from_state = state;
+                            break;
+                    }
+                }
+                break;
+            case 1006:
+                switch(usedCursor)
+                {
+                    case 1:
+                        objAndroidInput.vkalpha = max(0.05, objAndroidInput.vkalpha - 0.05);
+                        smartphone_save_configuration();
+                        event_user(1);
+                        break;
+                    case 2:
+                        objAndroidInput.vkalpha = min(1, objAndroidInput.vkalpha + 0.05);
+                        smartphone_save_configuration();
+                        event_user(1);
+                        break;
+                    case 3:
+                        audio_play_sound(sndBeep,10,false);
+                        slide_dir = false;
+                        slide_timer = 30;
+                        slide_to_state = 1001;
+                        slide_to_cursor = 4;
+                        slide_from_state = state;
+                        break;
+                }
+                break;
+            default:
+                //show_message(string(state)+" - "+string(cursor));
+        }
+    }
+}
 </string>
           </argument>
         </arguments>
@@ -51,8 +513,284 @@ gui_x_length = 200;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>event_inherited();
+            <string>/// Init available options for every state - called by this object
+event_inherited();
+// just in case : deactivate virtual controls
+smartphone_disable_virtual_keys();
+// platform-specific options
+switch(state)
+{
+    case 7:
+        // redefine the options menu
+        large = true;
+        var inputLabel = "TOUCHSCREEN";
+        if(objAndroidInput.input == 1)
+        {
+            if(objInput.gamepad_update_enabled)
+            {
+                inputLabel = "GAMEPAD";
+            }
+            else
+            {
+                inputLabel = "KEYBOARD";
+            }
+        }
+        
+        options[0, OPTION_NAME] = 'OPTIONS';
+        options[0, OPTION_TYPE] = OPTION_TYPE_TITLE;
+        options[0, OPTION_VALUE] = '';
+        options[0, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
+        options[1, OPTION_NAME] = 'INPUT METHOD';
+        options[1, OPTION_TYPE] = OPTION_TYPE_WITH_VALUE;
+        options[1, OPTION_VALUE] = inputLabel;
+        options[1, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
+        options[2, OPTION_NAME] = 'CONFIGURE TOUCHSCREEN';
+        options[2, OPTION_TYPE] = OPTION_TYPE_SUBMENU;
+        options[2, OPTION_VALUE] = 1001;
+        options[2, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
+        options[3, OPTION_NAME] = 'MAP KEYS';
+        options[3, OPTION_TYPE] = OPTION_TYPE_SUBMENU;
+        options[3, OPTION_VALUE] = 8;
+        options[3, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
+        options[4, OPTION_NAME] = 'MAP GAMEPAD';
+        options[4, OPTION_TYPE] = OPTION_TYPE_SUBMENU;
+        options[4, OPTION_VALUE] = 9;
+        options[4, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
+        options[5, OPTION_NAME] = 'BACK';
+        options[5, OPTION_TYPE] = OPTION_TYPE_RETURN;
+        options[5, OPTION_VALUE] = 0;
+        options[5, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
+        break;
+    case 1001:
+    
+        var gyroLabel = 'NO';
+        if(objAndroidInput.gyroinss)
+        {
+            gyroLabel = 'YES';
+        }
+    
+        var dpadModeLabel = 'STATIC';
+        if(objAndroidInput.dpadMode)
+        {
+            dpadModeLabel = 'DYNAMIC';
+        }
+        
+        var dpadSizeLabel = 'LARGE';
+        if(objAndroidInput.vksize == 1)
+        {
+            dpadSizeLabel = 'MEDIUM';
+        }
+        else
+        if(objAndroidInput.vksize == 2)
+        {
+            dpadSizeLabel = 'SMALL';
+        }
+        var vkAlpha = round(objAndroidInput.vkalpha*100);
+        
+        // touchscreen configuration screen
+        options[0, OPTION_NAME] = 'TOUCHSCREEN CONFIGURATION';
+        options[0, OPTION_TYPE] = OPTION_TYPE_TITLE;
+        options[0, OPTION_VALUE] = '';
+        options[0, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
+        options[1, OPTION_NAME] = 'REPOSITION BUTTONS';
+        options[1, OPTION_TYPE] = OPTION_TYPE_SUBMENU;
+        options[1, OPTION_VALUE] = 1002;
+        options[1, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
+        options[2, OPTION_NAME] = 'BUTTON SIZE';
+        options[2, OPTION_TYPE] = OPTION_TYPE_WITH_VALUE;
+        options[2, OPTION_VALUE] = dpadSizeLabel;
+        options[2, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
+        options[3, OPTION_NAME] = 'D PAD MODE';
+        options[3, OPTION_TYPE] = OPTION_TYPE_WITH_VALUE;
+        options[3, OPTION_VALUE] = dpadModeLabel;
+        options[3, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
+        options[4, OPTION_NAME] = 'OPACITY';
+        options[4, OPTION_TYPE] = OPTION_TYPE_WITH_VALUE;
+        options[4, OPTION_VALUE] = vkAlpha;
+        options[4, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
+        options[5, OPTION_NAME] = 'USE GYROSCOPE IN SPECIAL STAGES';
+        options[5, OPTION_TYPE] = OPTION_TYPE_WITH_VALUE;
+        options[5, OPTION_VALUE] = gyroLabel;
+        options[5, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
+        options[6, OPTION_NAME] = 'CONFIGURE GYROSCOPE';
+        options[6, OPTION_TYPE] = OPTION_TYPE_SUBMENU;
+        options[6, OPTION_VALUE] = 1004;
+        options[6, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
+        options[7, OPTION_NAME] = 'BACK';
+        options[7, OPTION_TYPE] = OPTION_TYPE_RETURN;
+        options[7, OPTION_VALUE] = 7;
+        options[7, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
+        large = true;
+        break;
+    case 1002:
+        options[0, OPTION_NAME] = 'REPOSITION BUTTONS#PRESS BACK TO CONFIRM OR CANCEL';
+        options[0, OPTION_TYPE] = OPTION_TYPE_TITLE;
+        options[0, OPTION_VALUE] = '';
+        options[0, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
+        substate = 0;
+        //use_default_interface = false;
+        break
+    case 1003:
+        options[0, OPTION_NAME] = 'REPOSITION BUTTONS';
+        options[0, OPTION_TYPE] = OPTION_TYPE_TITLE;
+        options[0, OPTION_VALUE] = '';
+        options[0, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
+        options[1, OPTION_NAME] = 'SAVE CHANGES';
+        options[1, OPTION_TYPE] = OPTION_TYPE_SIMPLE;
+        options[1, OPTION_VALUE] = '';
+        options[1, OPTION_ANIMATION] = OPTION_ANIMATION_LONGPRESS;
+        options[2, OPTION_NAME] = 'DISCARD CHANGES';
+        options[2, OPTION_TYPE] = OPTION_TYPE_SIMPLE;
+        options[2, OPTION_VALUE] = '';
+        options[2, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
+        options[3, OPTION_NAME] = 'RESTORE DEFAULT POSITIONS';
+        options[3, OPTION_TYPE] = OPTION_TYPE_SIMPLE;
+        options[3, OPTION_VALUE] = '';
+        options[3, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
+        break
+    case 1004:
+        large = true;
+        options[0, OPTION_NAME] = 'GYROSCOPE CONFIGURATION';
+        options[0, OPTION_TYPE] = OPTION_TYPE_TITLE;
+        options[0, OPTION_VALUE] = '';
+        options[0, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
+        if(!objAndroidInput.gyromode)
+        {
+            options[1, OPTION_NAME] = 'MODE';
+            options[1, OPTION_TYPE] = OPTION_TYPE_WITH_VALUE;
+            options[1, OPTION_VALUE] = 'SIMULATE BUTTON';
+            options[1, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
+            
+            var angle = round(objAndroidInput.gyro_switch_on_angle * 90);
+            
+            options[2, OPTION_NAME] = 'BUTTON PRESS ANGLE';
+            options[2, OPTION_TYPE] = OPTION_TYPE_WITH_VALUE;
+            options[2, OPTION_VALUE] = string(angle);
+            options[2, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
+            
+            options[3, OPTION_NAME] = 'BACK';
+            options[3, OPTION_TYPE] = OPTION_TYPE_SIMPLE;
+            options[3, OPTION_VALUE] = 1001;
+            options[3, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
+        }
+        else
+        {
+            options[1, OPTION_NAME] = 'MODE';
+            options[1, OPTION_TYPE] = OPTION_TYPE_WITH_VALUE;
+            options[1, OPTION_VALUE] = 'PSEUDO ANALOG';
+            options[1, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
+            
+            var angle = round(objAndroidInput.gyro_analog_start * 90);
+            
+            options[2, OPTION_NAME] = 'MINIMUM ANGLE';
+            options[2, OPTION_TYPE] = OPTION_TYPE_WITH_VALUE;
+            options[2, OPTION_VALUE] = string(angle);
+            options[2, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
+            
+            var angle = round(objAndroidInput.gyro_analog_end * 90);
+            
+            options[3, OPTION_NAME] = 'MAXIMUM ANGLE';
+            options[3, OPTION_TYPE] = OPTION_TYPE_WITH_VALUE;
+            options[3, OPTION_VALUE] = string(angle);
+            options[3, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
+            options[4, OPTION_NAME] = 'BACK';
+            options[4, OPTION_TYPE] = OPTION_TYPE_RETURN;
+            options[4, OPTION_VALUE] = 1001;
+            options[4, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
+        }
+        break;
+    case 1005:
+        if(!objAndroidInput.gyromode)
+        {
+            var angle = round(objAndroidInput.gyro_switch_on_angle * 90);
+            options[0, OPTION_NAME] = 'BUTTON PRESS ANGLE '+string(angle);
+            options[0, OPTION_TYPE] = OPTION_TYPE_TITLE;
+            options[0, OPTION_VALUE] = '';
+            options[0, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
+        
+            options[1, OPTION_NAME] = 'DECREASE VALUE';
+            options[1, OPTION_TYPE] = OPTION_TYPE_SIMPLE;
+            options[1, OPTION_VALUE] = ' ANALOG';
+            options[1, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
+        
+            options[2, OPTION_NAME] = 'INCREASE VALUE';
+            options[2, OPTION_TYPE] = OPTION_TYPE_SIMPLE;
+            options[2, OPTION_VALUE] = ' ANALOG';
+            options[2, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
+            
+            options[3, OPTION_NAME] = 'BACK';
+            options[3, OPTION_TYPE] = OPTION_TYPE_RETURN;
+            options[3, OPTION_VALUE] = 1004;
+            options[3, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
+        }
+        else
+        {
+            var fangle = round(objAndroidInput.gyro_analog_start * 90);
+            
+            var tangle = round(objAndroidInput.gyro_analog_end * 90);
+            
+            options[0, OPTION_NAME] = 'TILT ANGLES '+string(fangle)+' TO '+string(tangle);
+            options[0, OPTION_TYPE] = OPTION_TYPE_TITLE;
+            options[0, OPTION_VALUE] = '';
+            options[0, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
+        
+            options[1, OPTION_NAME] = 'DECREASE MINIMUM ANGLE';
+            options[1, OPTION_TYPE] = OPTION_TYPE_SIMPLE;
+            options[1, OPTION_VALUE] = ' ANALOG';
+            options[1, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
+        
+            options[2, OPTION_NAME] = 'INCREASE MINIMUM ANGLE';
+            options[2, OPTION_TYPE] = OPTION_TYPE_SIMPLE;
+            options[2, OPTION_VALUE] = ' ANALOG';
+            options[2, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
+        
+            options[3, OPTION_NAME] = 'DECREASE MAXIMUM ANGLE';
+            options[3, OPTION_TYPE] = OPTION_TYPE_SIMPLE;
+            options[3, OPTION_VALUE] = ' ANALOG';
+            options[3, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
+        
+            options[4, OPTION_NAME] = 'INCREASE MAXIMUM ANGLE';
+            options[4, OPTION_TYPE] = OPTION_TYPE_SIMPLE;
+            options[4, OPTION_VALUE] = ' ANALOG';
+            options[4, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
+            
+            options[5, OPTION_NAME] = 'BACK';
+            options[5, OPTION_TYPE] = OPTION_TYPE_SIMPLE;
+            options[5, OPTION_VALUE] = '';
+            options[5, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
+        }
 
+        break;
+    case 1006:
+        var vkAlpha = round(objAndroidInput.vkalpha*100);
+        
+        // touchscreen configuration screen
+        options[0, OPTION_NAME] = 'OPACITY '+string(vkAlpha);
+        options[0, OPTION_TYPE] = OPTION_TYPE_TITLE;
+        options[0, OPTION_VALUE] = '';
+        options[0, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
+        options[1, OPTION_NAME] = 'DECREASE OPACITY';
+        options[1, OPTION_TYPE] = OPTION_TYPE_SIMPLE;
+        options[1, OPTION_VALUE] = '';
+        options[1, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
+        options[2, OPTION_NAME] = 'INCREASE OPACITY';
+        options[2, OPTION_TYPE] = OPTION_TYPE_SIMPLE;
+        options[2, OPTION_VALUE] = '';
+        options[2, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
+        options[3, OPTION_NAME] = 'BACK';
+        options[3, OPTION_TYPE] = OPTION_TYPE_SIMPLE;
+        options[3, OPTION_VALUE] = 7;
+        options[3, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
+        break;
+}
+
+// recalculating the Y offset
+max_cursor = array_height_2d(options) - 1;
+menu_y_offset = floor((view_hview[view_current] - 20 * array_height_2d(options))/2);
+
+
+// depending on whether the menu uses large or small length options,
+// the touch zone is different as well
 gui_y_offset = floor((240 - 20 * array_height_2d(options))/2) - 4;
 if(large)
 {
@@ -63,6 +801,90 @@ else
 {
     gui_x_offset = 113;
     gui_x_length = 200;
+}
+
+if(state == 1002)
+{
+    // for controls reposition, we want to show the title as if there were more options than one
+    menu_y_offset = floor((view_hview[view_current] - 20 * 7)/2);
+    
+    // make use of this code to initialize some stuff we don't want to reinit for each frame draw
+    dpadx = objAndroidInput.dpadx;
+    dpady = objAndroidInput.dpady;
+    bax = objAndroidInput.bax;
+    bay = objAndroidInput.bay;
+    bsx = objAndroidInput.bsx;
+    bsy = objAndroidInput.bsy;
+    bbx = objAndroidInput.bbx;
+    bby = objAndroidInput.bby;
+    vksize = objAndroidInput.vksize;
+    
+    // just for fun, make the dpad graphic depend on other options
+    // if gyroscope in special stages is deactivated and dpad is static, show the dpad (1)
+    // if gyroscope in special stages is activated and dpad is dynamic, show the UP button (2)
+    // else, show a combination of the two (0)
+    dpadgraphic = 0;
+    if((!objAndroidInput.gyroinss) &amp;&amp; (!objAndroidInput.dpadMode))
+    {
+        dpadgraphic = 1;
+    }
+    else
+    if(objAndroidInput.gyroinss &amp;&amp; objAndroidInput.dpadMode)
+    {
+        dpadgraphic = 2;
+    }
+    
+    switch(vksize)
+    {
+        case 0:
+            dpadRadius = 32;
+            switch(dpadgraphic)
+            {
+                case 0:
+                    dpadSprite = sprTouchscreenDPadTemplate;
+                    break;
+                case 1:
+                    dpadSprite = sprTouchscreenDPadBase;
+                    break;
+                case 2:
+                    dpadSprite = sprTouchscreenRunButton;
+                    break;
+            }
+            buttonSprite = sprTouchscreenButton;
+            break;
+        case 1:
+            dpadRadius = 24;
+            switch(dpadgraphic)
+            {
+                case 0:
+                    dpadSprite = sprTouchscreenDPadTemplateMed;
+                    break;
+                case 1:
+                    dpadSprite = sprTouchscreenDPadBaseMed;
+                    break;
+                case 2:
+                    dpadSprite = sprTouchscreenRunButtonMed;
+                    break;
+            }
+            buttonSprite = sprTouchscreenButtonMed;
+            break;
+        case 2:
+            dpadRadius = 16;
+            switch(dpadgraphic)
+            {
+                case 0:
+                    dpadSprite = sprTouchscreenDPadTemplateSmall;
+                    break;
+                case 1:
+                    dpadSprite = sprTouchscreenDPadBaseSmall;
+                    break;
+                case 2:
+                    dpadSprite = sprTouchscreenRunButtonSmall;
+                    break;
+            }
+            buttonSprite = sprTouchscreenButtonSmall;
+            break;
+    }
 }
 </string>
           </argument>
@@ -90,32 +912,148 @@ else
 event_inherited();
 if(active)
 {   
-    if(wait_for_release)
+    if(wait_for_release_click)
     {
         if(device_mouse_check_button_released(0, mb_left))
         {
-            wait_for_release = false;
+            wait_for_release_click = false;
         }
     }
-    if(use_default_interface)
+    else
     {
-        if(device_mouse_check_button_pressed(0, mb_left))
+        if(use_default_interface &amp;&amp; allow_input)
         {
-            var clickGuiX = device_mouse_x_to_gui(0);
-            var clickGuiY = device_mouse_y_to_gui(0);
-            
-            if(clickGuiX &gt;= gui_x_offset &amp;&amp; clickGuiX &lt;= gui_x_offset + gui_x_length)
+            if(device_mouse_check_button_pressed(0, mb_left))
             {
-                if(clickGuiY &gt;= gui_y_offset)
+                var clickGuiX = device_mouse_x_to_gui(0);
+                var clickGuiY = device_mouse_y_to_gui(0);
+                
+                if(clickGuiX &gt;= gui_x_offset &amp;&amp; clickGuiX &lt;= gui_x_offset + gui_x_length)
                 {
-                    var tmp_cursor = floor((clickGuiY - gui_y_offset)/20);
-                    if(tmp_cursor &lt;= max_cursor)
+                    if(clickGuiY &gt;= gui_y_offset)
                     {
-                        if (cursor != 0 || options[0, OPTION_TYPE] != OPTION_TYPE_TITLE)
+                        var tmp_cursor = floor((clickGuiY - gui_y_offset)/20);
+                        if(tmp_cursor &lt;= max_cursor)
                         {
-                            cursor = tmp_cursor;
-                            event_user(5);
+                            if (cursor != 0 || options[0, OPTION_TYPE] != OPTION_TYPE_TITLE)
+                            {
+                                cursor = tmp_cursor;
+                                event_user(5);
+                            }
                         }
+                    }
+                }
+            }
+            if(state == 1002)
+            {
+                // we are drag and dropping buttons here
+                var currentlyDragging = device_dragging[0] || device_dragging[1] || device_dragging[2] || device_dragging[3] || device_dragging[4];
+                
+                // allow to drag multiple buttons at once
+                // 0 - not dragging, 1 - dpad, 2 - jump button, 3 - pause button, 4 - super button
+                var device = 0;
+                if(device_dragging[device] &gt; 0)
+                {
+                    if(device_mouse_check_button(device, mb_any))
+                    {
+                        if(device_dragging[device] == 1)
+                        {
+                            dpadx = device_mouse_x_to_gui(device) - device_xoffset[device];
+                            dpady = device_mouse_y_to_gui(device) - device_yoffset[device];
+                        }
+                        else
+                        if(device_dragging[device] == 2)
+                        {
+                            bax = device_mouse_x_to_gui(device) - device_xoffset[device];
+                            bay = device_mouse_y_to_gui(device) - device_yoffset[device];
+                        }
+                        else
+                        if(device_dragging[device] == 3)
+                        {
+                            bsx = device_mouse_x_to_gui(device) - device_xoffset[device];
+                            bsy = device_mouse_y_to_gui(device) - device_yoffset[device];
+                        }
+                        else
+                        if(device_dragging[device] == 4)
+                        {
+                            bbx = device_mouse_x_to_gui(device) - device_xoffset[device];
+                            bby = device_mouse_y_to_gui(device) - device_yoffset[device];
+                        }
+                    }
+                    else
+                    {
+                        device_dragging[device] = 0;
+                    }
+                }
+                else
+                {
+                    if(device_mouse_check_button_pressed(device, mb_any))
+                    {
+                        // are we clicking on a button?
+                        var clickx = device_mouse_x_to_gui(device);
+                        var clicky = device_mouse_y_to_gui(device);
+                        var found = 0;
+                        var xoffset = 0;
+                        var yoffset = 0;
+                        if(point_in_circle(clickx, clicky, dpadx, dpady, dpadRadius))
+                        {
+                            // we are current moving the dpad
+                            xoffset = clickx - dpadx;
+                            yoffset = clicky - dpady;
+                            found = 1;
+                        }
+                        else
+                        if(point_in_circle(clickx, clicky, bax, bay, dpadRadius))
+                        {
+                            // we are current moving the jump button
+                            xoffset = clickx - bax;
+                            yoffset = clicky - bay;
+                            found = 2;
+                        }
+                        else
+                        if(point_in_rectangle(clickx, clicky, bsx, bsy, bsx + 24, bsy + 24))
+                        {
+                            // we are current moving the pause button
+                            xoffset = clickx - bsx;
+                            yoffset = clicky - bsy;
+                            found = 3;
+                        }
+                        else
+                        if(point_in_rectangle(clickx, clicky, bbx, bby, bbx + 24, bby + 24))
+                        {
+                            // we are current moving the super button
+                            xoffset = clickx - bbx;
+                            yoffset = clicky - bby;
+                            found = 4;
+                        }
+                        // is any other device already moving this button?
+                        for(var i = 0; i &lt;= 4;i++)
+                        {
+                            if(device == i)
+                            {
+                                continue;
+                            }
+                            if(found == device_dragging[device])
+                            {
+                                found = 0;
+                            }
+                        }
+                        device_dragging[device] = found;
+                        device_xoffset[device] = xoffset;
+                        device_yoffset[device] = yoffset;
+                    }
+                }
+                
+                if(!currentlyDragging)
+                {
+                    if(keyboard_check_pressed(objProgram.back_button))
+                    {
+                       audio_play_sound(sndBeep,10,false);
+                        slide_dir = true;
+                        slide_timer = 30;
+                        slide_to_state = 1003;
+                        slide_to_cursor = 0;
+                        slide_from_state = state;
                     }
                 }
             }

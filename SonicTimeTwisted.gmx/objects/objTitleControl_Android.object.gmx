@@ -25,12 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>with(objTitleEffects)
-{
-    instance_destroy();
-}
-event_inherited();
-
+            <string>event_inherited();
 // Could have used the built-in function to replace the instance, but
 // Android doesn't always agree with it
 var newMenu = instance_create(0,0,objMenu_Android);
@@ -64,14 +59,14 @@ menu = newMenu;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>// unless the screen is touched - enable input normally
+            <string>// when the screen is touched - display the main menu
 if(pauseState == 3)
 {
     if (start == true)
     {
         if(device_mouse_check_button_pressed(0, mb_left))
         {
-            wait_for_release = true;
+            menu.wait_for_release_click = true;
             pauseState = 0;
         }
     }
@@ -101,28 +96,7 @@ event_inherited();
             <kind>1</kind>
             <string>// init menu labels
 startText = 'TOUCH TO START';
-switch(objAndroid.hudmode)
-{
-    case 0:
-        option1Text = 'HUD MODE - SMARTPHONE';
-        break;
-    case 1:
-        option1Text = 'HUD MODE - CONSOLE';
-        break;
-}
-switch(objAndroid.input)
-{
-    case 0:
-        option2Text = 'INPUT - TOUCH SCREEN';
-        break;
-    case 1:
-        option2Text = 'INPUT - GAMEPAD';
-        break;
-    case 2:
-        option2Text = 'INPUT - KEYBOARD';
-        break;
-}
-option3Text = 'CONFIGURE INPUT';
+
 </string>
           </argument>
         </arguments>

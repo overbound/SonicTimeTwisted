@@ -2,7 +2,7 @@
 <object>
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
-  <visible>-1</visible>
+  <visible>0</visible>
   <depth>0</depth>
   <persistent>-1</persistent>
   <parentName>objSSAlwaysActive</parentName>
@@ -25,308 +25,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>alpha = 0;
-vk_active = false;
-confirming = false;
-gyroscopeMode = false;
-gyroscopeTilt = 0;
-
-// load android-specific settings
-
-var file = 'settings.ini';
-
-hudmode = 0; // 0 - smartphone mode, 1 - console mode
-input = 0; // 0 - touchscreen, 1 - gamepad, 2 - keyboard
-vkalpha = 0.8;
-gyroinss = 1; // use gyroscope controls in special stages
-
-if (file_exists(file)) {
-    ini_open(file);
-    hudmode = ini_read_real('smartphone','hudmode',0);
-    input = ini_read_real('smartphone','input',0);
-    vkalpha = ini_read_real('smartphone','vkalpha',0.8);
-    gyroinss = ini_read_real('smartphone','gyroinss',1);
-}
-
-// The back key here is Android's "back" key, seen by GMS as backspace
+            <string>// The back key here is Android's "back" key, seen by GMS as backspace
 objProgram.back_button = vk_backspace;
 objProgram.back_button_label = "BACK"
 
-vKey_dup = false;
-vKey_dlt = false;
-vKey_ddn = false;
-vKey_drt = false;
-vKey_ba = false;
-vKey_bb = false;
-vKey_bc = false;
-vKey_bs = false;
-
-vKeyJoy_surface = surface_create(64, 64);
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="3" enumb="2">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if(confirming &gt; 0)
-{
-    confirming--;
-    if(confirming &lt;= 0)
-    {
-        confirming = 0;
-        keyboard_key_release(vk_enter);
-    }
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="3" enumb="1">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>// make the virtual keys appear or disappear by fading
-// also, synchronize touchscreen status with availability to control the character
-if(vk_active)
-{
-    if(alpha &lt; vkalpha)
-    {
-        alpha += 0.05;
-        if(alpha &gt; vkalpha)
-        {
-            alpha = vkalpha;
-        }
-    }
-    if(!((instance_exists(objPlayer) || instance_exists(objSSPlayer)) &amp;&amp; objInput.flag_player_input))
-    {
-        smartphone_disable_virtual_keys();
-    }
-}
-if(!vk_active)
-{
-    if(alpha &gt; 0)
-    {
-        alpha -= 0.01;
-        if(alpha &lt; 0)
-        {
-            alpha = 0;
-        }
-    }
-    /*
-    These conditions look goofy, but that's due to how
-    GMS processes "OR" and "AND" conditions, this speeds
-    things up a little bit.
-    */
-    
-    if(objInput.flag_player_input)
-    {
-        if(instance_exists(objPlayer))
-        {
-            smartphone_enable_virtual_keys(false);
-        }
-        else
-        if(instance_exists(objSSPlayer))
-        {
-            smartphone_enable_virtual_keys(true);
-        }
-    }
-}
-// if gyroscope mode is on (touchscreen selected + gyroscope activated + in special stage)
-// use it as left + right
-if(gyroscopeMode)
-{
-    var tilt = device_get_tilt_y();
-    if(tilt &lt; -0.15)
-    {
-        keyboard_key_press(vk_left);
-    }
-    else
-    if(tilt &gt; 0.15)
-    {
-        keyboard_key_press(vk_right);
-    }
-    else
-    {
-        keyboard_key_release(vk_left);
-        keyboard_key_release(vk_right);
-    }
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="7" enumb="11">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Disable virtual controls
-
-if(vKey_dup)
-{
-    virtual_key_delete(vKey_dup);
-    vKey_dup = false;
-}
-if(vKey_dlt)
-{
-    virtual_key_delete(vKey_dlt);
-    vKey_dlt = false;
-}
-if(vKey_ddn)
-{
-    virtual_key_delete(vKey_ddn);
-    vKey_ddn = false;
-}
-if(vKey_drt)
-{
-    virtual_key_delete(vKey_drt);
-    vKey_drt = false;
-}
-if(vKey_ba)
-{
-    virtual_key_delete(vKey_ba);
-    vKey_ba = false;
-}
-/*
-if(vKey_bb)
-{
-    virtual_key_delete(vKey_bb);
-    vKey_bb = false;
-}
-if(vKey_bc)
-{
-    virtual_key_delete(vKey_bc);
-    vKey_bc = false;
-}
-*/
-if(vKey_bs)
-{
-    virtual_key_delete(vKey_bs);
-    vKey_bs = false;
-}
-vk_active = false;
-gyroscopeMode = false
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="7" enumb="10">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Initialize virtual controls.
-// Must be called on every room, but also on other special occasions
-// Because of this, it is now a user event
-
-
-var wView = 426;
-var hView = 240;
-
-dpadx = 32;
-dpady = hView - 96;
-
-/*
-bax = wView-144;
-bay = hView - 64;
-bbx = wView-96;
-bby = hView - 64;
-bcx = wView-48;
-bcy = hView - 64;
-bsx = wView-48;
-bsy = hView - 128;
-*/
-bax = wView - 96;
-bay = hView - 96;
-bsx = wView/2 - 12;
-bsy = 16;
-
-if(gyroscopeMode)
-{
-    vKey_dup = virtual_key_add(dpadx, dpady, 64, 64, vk_up);
-}
-else
-{
-    vKey_dup = virtual_key_add(dpadx, dpady, 64, 24, vk_up);
-    vKey_dlt = virtual_key_add(dpadx, dpady, 24, 64, vk_left);
-    vKey_ddn = virtual_key_add(dpadx, dpady + 40, 64, 24, vk_down);
-    vKey_drt = virtual_key_add(dpadx + 40, dpady, 24, 64, vk_right);
-}
-
-vKey_ba = virtual_key_add(bax, bay, 64, 64, ord('A'));
-/*
-vKey_bb = virtual_key_add(bbx, bby, 32, 32, ord('S'));
-vKey_bc = virtual_key_add(bcx, bcy, 32, 32, ord('D'));
-*/
-vKey_bs = virtual_key_add(bsx, bsy, 24, 24, vk_enter);
-
-vk_active = true;
-/*
-virtual_key_show(dup);
-virtual_key_show(dlt);
-virtual_key_show(ddn);
-virtual_key_show(drt);
-virtual_key_show(ba);
-virtual_key_show(bb);
-virtual_key_show(bc);
-virtual_key_show(bs);
-*/
+instance_create(0,0,objAndroidInput);
 </string>
           </argument>
         </arguments>
@@ -357,12 +60,30 @@ display_set_gui_size(426, 240);
 switch(room)
 {
     case titlescreen:
+         // remove previously created effects - sorry, will have to recreate them
          with(objTitleEffects)
+         {
+             instance_destroy();
+         }
+         with(objTitleLighting)
+         {
+             instance_destroy();
+         }
+         with(objTitlescreenPlane)
+         {
+             instance_destroy();
+         }
+         with(objTitleWater)
+         {
+             instance_destroy();
+         }
+         with(objTitleDynamo)
          {
              instance_destroy();
          }
          with(objTitleControl)
          {
+             alarm[0]=-1;
              instance_create(x,y,objTitleControl_Android);
              instance_destroy();
          }
@@ -385,119 +106,6 @@ switch(room)
             smartphone_enable_virtual_keys(true);
         }
         break;
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="8" enumb="64">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if(alpha &gt; 0)
-{
-    if(gyroscopeMode)
-    {
-        if(keyboard_check(vk_up))
-        {
-            draw_sprite_ext(sprTouchscreenRunButton, 1, dpadx, dpady, 1, 1, 0, c_white, alpha);
-        }
-        else
-        {
-            draw_sprite_ext(sprTouchscreenRunButton, 0, dpadx, dpady, 1, 1, 0, c_white, alpha);
-        }
-    }
-    else
-    {
-        if(!surface_exists(vKeyJoy_surface))
-        {
-            vKeyJoy_surface = surface_create(64, 64);
-        }
-        surface_set_target(vKeyJoy_surface);
-        draw_clear_alpha(c_black, 0);
-        draw_sprite(sprTouchscreenDPadBase, 0, 0, 0);
-        if(keyboard_check(vk_up))
-        {
-            if(keyboard_check(vk_right))
-            {
-                draw_sprite(sprTouchscreenDPadJoy, 0, 24, 8);
-            }
-            else
-            if(keyboard_check(vk_left))
-            {
-                draw_sprite(sprTouchscreenDPadJoy, 0, 8, 8);
-            }
-            else
-            {
-                draw_sprite(sprTouchscreenDPadJoy, 0, 16, 0);
-            }
-        }
-        else
-        {
-            if(keyboard_check(vk_down))
-            {
-                if(keyboard_check(vk_right))
-                {
-                    draw_sprite(sprTouchscreenDPadJoy, 0, 24, 24);
-                }
-                else
-                if(keyboard_check(vk_left))
-                {
-                    draw_sprite(sprTouchscreenDPadJoy, 0, 8, 24);
-                }
-                else
-                {
-                    draw_sprite(sprTouchscreenDPadJoy, 0, 16, 32);
-                }
-            }
-            else
-            {
-                if(keyboard_check(vk_right))
-                {
-                    draw_sprite(sprTouchscreenDPadJoy, 0, 32, 16);
-                }
-                else
-                if(keyboard_check(vk_left))
-                {
-                    draw_sprite(sprTouchscreenDPadJoy, 0, 0, 16);
-                }
-                else
-                {
-                    draw_sprite(sprTouchscreenDPadJoy, 0, 16, 16);
-                }
-            }
-        }
-        surface_reset_target();
-        
-        draw_surface_ext(vKeyJoy_surface, dpadx, dpady, 1, 1, 0, c_white, alpha);
-    }
-    if(keyboard_check(ord('A')))
-    {
-        draw_sprite_ext(sprTouchscreenButton, 1, bax, bay, 1, 1, 0, c_white, alpha);
-    }
-    else
-    {
-        draw_sprite_ext(sprTouchscreenButton, 0, bax, bay, 1, 1, 0, c_white, alpha);
-    }
-    /*
-    draw_sprite_ext(sprTouchscreenButton, 1, bbx, bby, 1, 1, 0, c_white, alpha);
-    draw_sprite_ext(sprTouchscreenButton, 2, bcx, bcy, 1, 1, 0, c_white, alpha);
-    */
-    draw_sprite_ext(sprTouchscreenPauseButton, 3, bsx, bsy, 1, 1, 0, c_white, alpha);
 }
 </string>
           </argument>

@@ -86,6 +86,9 @@ confirm_state = 0;
 confirm_cursor = 0;
 confirm_animation = 0;
 confirm_text = 0;
+// draw offset variables - could have been "var", but inheriting objects might want to use those
+x_offset = 0;
+y_offset = 0;
 </string>
           </argument>
         </arguments>
@@ -216,8 +219,8 @@ if(!(cursor == 0 &amp;&amp; options[0, OPTION_TYPE] == OPTION_TYPE_TITLE))
             <string>/// draw - called by parent object
 if(active)
 {
-    var x_offset = slide_x_shift;
-    var y_offset = menu_y_offset;
+    x_offset = slide_x_shift;
+    y_offset = menu_y_offset;
     if(draw_with_view_offset)
     {
         x_offset += view_xview[view_current];
@@ -545,7 +548,7 @@ switch(state)
         options[1, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
         options[2, OPTION_NAME] = 'EXIT GAME';
         options[2, OPTION_TYPE] = OPTION_TYPE_CONFIRM;
-        options[2, OPTION_VALUE] = false;
+        options[2, OPTION_VALUE] = 'EXIT GAME';
         options[2, OPTION_ANIMATION] = OPTION_ANIMATION_LONGPRESS;
         break;
     case 2:
@@ -618,10 +621,10 @@ switch(state)
             break;
         }
         
-        var gamepadStateLabel = "DISABLED";
+        var gamepadStateLabel = "NO";
         if(objInput.gamepad_update_enabled)
         {
-            gamepadStateLabel = "ENABLED";
+            gamepadStateLabel = "YES";
         }
     
         options[0, OPTION_NAME] = 'OPTIONS';
@@ -632,7 +635,7 @@ switch(state)
         options[1, OPTION_TYPE] = OPTION_TYPE_WITH_VALUE;
         options[1, OPTION_VALUE] = screenStateLabel;
         options[1, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
-        options[2, OPTION_NAME] = 'ENABLE GAMEPAD F1';
+        options[2, OPTION_NAME] = 'ENABLE GAMEPAD';
         options[2, OPTION_TYPE] = OPTION_TYPE_WITH_VALUE;
         options[2, OPTION_VALUE] = gamepadStateLabel;
         options[2, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;

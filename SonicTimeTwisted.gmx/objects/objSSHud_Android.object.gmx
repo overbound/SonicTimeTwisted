@@ -60,8 +60,7 @@ menu = newMenu;
           <argument>
             <kind>1</kind>
             <string>/// draw lives
-//if(objAndroid.hudmode == 0)
-if(true)
+if(objAndroidInput.input == 0)
 {
 /*
     var lives_x_left = view_xview[view_current] + view_wview[view_current] - 100;
@@ -115,7 +114,7 @@ if(true)
 }
 else
 {
-    // Console mode - the HUD is drawn in the bottom-left corner, as per usual
+    // Not using the touchscreen - the HUD is drawn in the bottom-left corner, as per usual
     event_inherited();
 }
 

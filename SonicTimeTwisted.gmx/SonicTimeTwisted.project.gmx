@@ -313,6 +313,20 @@
         <sprite>sprites\sprTouchscreenButton</sprite>
         <sprite>sprites\sprTouchscreenPauseButton</sprite>
         <sprite>sprites\sprTouchscreenRunButton</sprite>
+        <sprite>sprites\sprTouchscreenSuperButtonYellow</sprite>
+        <sprite>sprites\sprTouchscreenSuperButtonBlue</sprite>
+        <sprite>sprites\sprTouchscreenDPadTemplate</sprite>
+        <sprite>sprites\sprTouchscreenDPadBaseMed</sprite>
+        <sprite>sprites\sprTouchscreenDPadJoyMed</sprite>
+        <sprite>sprites\sprTouchscreenButtonMed</sprite>
+        <sprite>sprites\sprTouchscreenRunButtonMed</sprite>
+        <sprite>sprites\sprTouchscreenDPadBaseSmall</sprite>
+        <sprite>sprites\sprTouchscreenDPadJoySmall</sprite>
+        <sprite>sprites\sprTouchscreenButtonSmall</sprite>
+        <sprite>sprites\sprTouchscreenRunButtonSmall</sprite>
+        <sprite>sprites\sprTouchscreenDPadTemplateMed</sprite>
+        <sprite>sprites\sprTouchscreenDPadTemplateSmall</sprite>
+        <sprite>sprites\sprGyroscopeTest</sprite>
       </sprites>
     </sprites>
     <sprites name="Scene Objects">
@@ -2204,6 +2218,12 @@
       <script>scripts\smartphone_disable_virtual_keys.gml</script>
       <script>scripts\smartphone_confirm.gml</script>
       <script>scripts\smartphone_save_configuration.gml</script>
+      <scripts name="Android">
+        <script>scripts\android_vk_press.gml</script>
+        <script>scripts\android_vk_release.gml</script>
+        <script>scripts\android_vk_is_pressed.gml</script>
+        <script>scripts\android_manage_touchscreen_controls.gml</script>
+      </scripts>
     </scripts>
   </scripts>
   <shaders name="shaders">
@@ -3038,6 +3058,7 @@
       </objects>
     </objects>
     <objects name="Ports">
+      <object>objects\objAbstractInput</object>
       <object>objects\objSSAlwaysActive</object>
       <objects name="Android">
         <object>objects\objAndroid</object>
@@ -3049,6 +3070,7 @@
           <object>objects\objSSHud_Android</object>
           <object>objects\objSSLevel_Android</object>
           <object>objects\objMenu_Android</object>
+          <object>objects\objAndroidInput</object>
         </objects>
       </objects>
     </objects>
