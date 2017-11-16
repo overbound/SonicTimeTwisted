@@ -253,6 +253,7 @@ if closeMenu == false {
                     break;
                     
                     case 3:
+                    case 4:
                         menuStatus = 6;
                     break;
                 }

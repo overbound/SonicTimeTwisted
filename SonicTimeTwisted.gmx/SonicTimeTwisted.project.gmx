@@ -106,6 +106,8 @@
           <sound>sound\sndExplosionGeneral</sound>
           <sound>sound\sndEnterSpecialStage</sound>
           <sound>sound\sndSSSpeedBoost</sound>
+          <sound>sound\sndSSChaosEmerald</sound>
+          <sound>sound\sndSSTimeStone</sound>
         </sounds>
         <sounds name="Player">
           <sounds name="Effect">
@@ -1754,6 +1756,8 @@
         <script>scripts\load_big_ring.gml</script>
         <script>scripts\load_lives.gml</script>
         <script>scripts\delete_settings.gml</script>
+        <script>scripts\save_options.gml</script>
+        <script>scripts\load_options.gml</script>
       </scripts>
       <scripts name="Menu">
         <script>scripts\get_kb_label.gml</script>
@@ -1770,6 +1774,9 @@
       </scripts>
       <scripts name="Transitions">
         <script>scripts\transition_to.gml</script>
+      </scripts>
+      <scripts name="Hud">
+        <script>scripts\randomize_number.gml</script>
       </scripts>
     </scripts>
     <scripts name="Scene Objects">

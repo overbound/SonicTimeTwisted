@@ -67,6 +67,50 @@ device_yoffset[4] = 0;
         </arguments>
       </action>
     </event>
+    <event eventtype="7" enumb="16">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// special draw for some states
+if(objAndroidInput.input == 0)
+{
+    if(state == 11)
+    {
+        // draw selected state for every character if the touchscreen is used
+
+        draw_sprite(sprCharacterSelect, 1, x_offset+96, view_yview[view_current] + 112);
+        draw_sprite(sprSelector, 1, x_offset+96, view_yview[view_current] + 112);
+
+        draw_sprite(sprCharacterSelect, 0, x_offset+216, view_yview[view_current] + 112);
+        draw_sprite(sprSelector, 0, x_offset+216, view_yview[view_current] + 112);
+
+        draw_sprite(sprCharacterSelect, 2, x_offset+336, view_yview[view_current] + 112);
+        draw_sprite(sprSelector, 2, x_offset+336, view_yview[view_current] + 112);
+    }
+}
+else
+{
+    event_inherited();
+}
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="7" enumb="14">
       <action>
         <libid>1</libid>
@@ -254,7 +298,12 @@ else
                 // Options menu
                 switch(usedCursor)
                 {
-                    case 1: // input mode
+                    case 1: // score tally mode
+                        objProgram.score_tally_mode = (objProgram.score_tally_mode + 1) mod 3;
+                        save_options();
+                        event_user(1);
+                        break;
+                    case 2: // input mode
                         if(objAndroidInput.input == 0)
                         {
                             // TOUCHSCREEN -&gt; GAMEPAD
@@ -486,8 +535,6 @@ else
                         break;
                 }
                 break;
-            default:
-                //show_message(string(state)+" - "+string(cursor));
         }
     }
 }
@@ -535,31 +582,44 @@ switch(state)
                 inputLabel = "KEYBOARD";
             }
         }
-        
+        var tallyLabel = "RANDOM DIGITS";
+        switch(objProgram.score_tally_mode)
+        {
+            case 1:
+                tallyLabel = "VARIABLE SPEED";
+                break;
+            case 2:
+                tallyLabel = "CONSTANT SPEED";
+                break;
+        }
         options[0, OPTION_NAME] = 'OPTIONS';
         options[0, OPTION_TYPE] = OPTION_TYPE_TITLE;
         options[0, OPTION_VALUE] = '';
         options[0, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
-        options[1, OPTION_NAME] = 'INPUT METHOD';
+        options[1, OPTION_NAME] = 'SCORE TALLY MODE';
         options[1, OPTION_TYPE] = OPTION_TYPE_WITH_VALUE;
-        options[1, OPTION_VALUE] = inputLabel;
+        options[1, OPTION_VALUE] = tallyLabel;
         options[1, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
-        options[2, OPTION_NAME] = 'CONFIGURE TOUCHSCREEN';
-        options[2, OPTION_TYPE] = OPTION_TYPE_SUBMENU;
-        options[2, OPTION_VALUE] = 1001;
+        options[2, OPTION_NAME] = 'INPUT METHOD';
+        options[2, OPTION_TYPE] = OPTION_TYPE_WITH_VALUE;
+        options[2, OPTION_VALUE] = inputLabel;
         options[2, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
-        options[3, OPTION_NAME] = 'MAP KEYS';
+        options[3, OPTION_NAME] = 'CONFIGURE TOUCHSCREEN';
         options[3, OPTION_TYPE] = OPTION_TYPE_SUBMENU;
-        options[3, OPTION_VALUE] = 8;
+        options[3, OPTION_VALUE] = 1001;
         options[3, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
-        options[4, OPTION_NAME] = 'MAP GAMEPAD';
+        options[4, OPTION_NAME] = 'MAP KEYS';
         options[4, OPTION_TYPE] = OPTION_TYPE_SUBMENU;
-        options[4, OPTION_VALUE] = 9;
+        options[4, OPTION_VALUE] = 8;
         options[4, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
-        options[5, OPTION_NAME] = 'BACK';
-        options[5, OPTION_TYPE] = OPTION_TYPE_RETURN;
-        options[5, OPTION_VALUE] = 0;
+        options[5, OPTION_NAME] = 'MAP GAMEPAD';
+        options[5, OPTION_TYPE] = OPTION_TYPE_SUBMENU;
+        options[5, OPTION_VALUE] = 9;
         options[5, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
+        options[6, OPTION_NAME] = 'BACK';
+        options[6, OPTION_TYPE] = OPTION_TYPE_RETURN;
+        options[6, OPTION_VALUE] = 0;
+        options[6, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
         break;
     case 1001:
     
@@ -1058,32 +1118,55 @@ if(active)
                 }
             }
         }
+        else
+        if(allow_input)
+        {
+            if(state == 11)
+            {
+                if(device_mouse_check_button_pressed(0, mb_left))
+                {
+                    var clickGuiX = device_mouse_x_to_gui(0);
+                    var clickGuiY = device_mouse_y_to_gui(0);
+                    
+                    if(point_in_rectangle(clickGuiX, clickGuiY, 96 - 32, 112 - 32, 96 + 32, 112 + 32))
+                    {
+                        cursor = 8;
+                        event_user(5);
+                    }
+                    else
+                    if(point_in_rectangle(clickGuiX, clickGuiY, 216 - 32, 112 - 32, 216 + 32, 112 + 32))
+                    {
+                        cursor = 9;
+                        event_user(5);
+                    }
+                    else
+                    if(point_in_rectangle(clickGuiX, clickGuiY, 336 - 32, 112 - 32, 336 + 32, 112 + 32))
+                    {
+                        cursor = 10;
+                        event_user(5);
+                    }
+                    else
+                    if(clickGuiX &gt;= gui_x_offset &amp;&amp; clickGuiX &lt;= gui_x_offset + gui_x_length)
+                    {
+                        if(clickGuiY &gt;= gui_y_offset)
+                        {
+                            var tmp_cursor = floor((clickGuiY - gui_y_offset)/20);
+                            if(tmp_cursor &lt;= max_cursor)
+                            {
+                                if (options[tmp_cursor, OPTION_TYPE] == OPTION_TYPE_RETURN)
+                                {
+                                    cursor = tmp_cursor;
+                                    event_user(5);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
     
 }
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="8" enumb="64">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>//draw_text(100, 0, string(device_mouse_x_to_gui(0))+';'+string(device_mouse_y_to_gui(0)));
 </string>
           </argument>
         </arguments>
