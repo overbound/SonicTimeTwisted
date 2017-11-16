@@ -41,6 +41,7 @@
             <kind>1</kind>
             <string>groundz=12;
 z=300;
+chime_played = false;
 image_speed = 0;
 
 if objProgram.in_past == false {
@@ -48,6 +49,38 @@ if objProgram.in_past == false {
 } else {
     image_index = objProgram.special_past_current_level;
     sprite_index = sprSSStone;
+}
+
+// to avoid an enemy showing up during the tally, delete all of them now
+with(objSSEnemy)
+{
+    instance_destroy();
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>with(objSSPlayer)
+{
+    instance_create(x,y,objSSScoreCard);
 }
 </string>
           </argument>
@@ -75,6 +108,16 @@ if objProgram.in_past == false {
 
     z-=1;
 
+}
+else
+if(!chime_played)
+{
+    if (objProgram.in_past)
+        play_jingle(sndSSTimeStone, false);
+    else
+        play_jingle(sndSSChaosEmerald, false);
+    alarm_set(0, 150);
+    chime_played = true;
 }
 </string>
           </argument>

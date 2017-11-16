@@ -53,30 +53,45 @@ case 3: name_tag = "KNUCKLES"; break;
 default: name_tag = "SONIC";
 }
 
+// title color
+title_color = c_white;
+switch objGameData.character_id[0]
+{
+case 2: title_color = c_orange; break;
+case 3: title_color = c_red; break;
+default: title_color = c_blue;
+}
 
-// current act
-act = objLevel.act;
-
-
-// time bonus
-var total_time = objLevel.timer div 60;
-if total_time &gt; 480 time_bonus = 50000; else
-if total_time &gt; 465 time_bonus = 10000; else
-if total_time &gt; 450 time_bonus = 5000; else
-if total_time &gt; 420 time_bonus = 4000; else
-if total_time &gt; 390 time_bonus = 3000; else
-if total_time &gt; 330 time_bonus = 2000; else
-if total_time &gt; 270 time_bonus = 1000; else
-if total_time &gt; 210 time_bonus = 500; else
-if total_time == 1 time_bonus = 100000; else
+act = 0;
+var total_time = 0;
 time_bonus = 0;
+perfect_bonus = -1;
+if(instance_exists(objLevel))
+{
+    // time bonus
+    var total_time = objLevel.timer div 60;
+    if total_time &gt; 480 time_bonus = 50000; else
+    if total_time &gt; 465 time_bonus = 10000; else
+    if total_time &gt; 450 time_bonus = 5000; else
+    if total_time &gt; 420 time_bonus = 4000; else
+    if total_time &gt; 390 time_bonus = 3000; else
+    if total_time &gt; 330 time_bonus = 2000; else
+    if total_time &gt; 270 time_bonus = 1000; else
+    if total_time &gt; 210 time_bonus = 500; else
+    if total_time == 1 time_bonus = 100000; else
+    time_bonus = 0;
+    
+    // perfect bonus
+    if (objLevel.total_rings == 0) perfect_bonus = 50000; else
+    perfect_bonus = -1;
+    
+    // current act
+    act = objLevel.act;
+}
 
 // ring bonus
 rings_bonus = objGameData.rings[0]*10;
 
-// perfect bonus
-if (objLevel.total_rings == 0) perfect_bonus = 50000; else
-perfect_bonus = -1;
 
 // screen positions
 draw_set_font(objResources.fontTitle);
@@ -99,6 +114,30 @@ play_jingle(bgmClear, false);
 
 // start event
 alarm[0] = 60;
+
+// set this to true so that the drawing is relative to the view
+follow_view = true;
+
+/* the speed of the countdown depends on the score tally mode
+if the score tally mode is "random digits" or "variable speed",
+which are basically the same outside of what's displayed,
+then the "change" depends on the biggest bonus value from which
+to count down. Else, its value is mostly fixed
+objProgram.score_tally_mode : 0 - random digits, 1 - variable speed, 2 - constant speed
+*/
+max_change = 100;
+if(objProgram.score_tally_mode &lt; 2)
+{
+   max_change = max(1, max(time_bonus, rings_bonus, perfect_bonus) div (215));
+}
+
+// copies of variables containing bonuses
+// if the score tally is set to "random digits" mode, these variables, which
+// will be drawn, contain different values, unrelated to the real ones
+draw_time_bonus = time_bonus;
+draw_rings_bonus = rings_bonus;
+draw_perfect_bonus = perfect_bonus;
+draw_total_bonus = total_bonus;
 </string>
           </argument>
         </arguments>
@@ -362,11 +401,11 @@ case 2: // move offsets (scores)
 
 case 3: // apply scores
     var change;
-
+    
     // time bonus
     if time_bonus
     {
-        change = min(time_bonus, 100);
+        change = min(time_bonus, max_change);
         time_bonus -= change;
         total_bonus += change;
         player_add_score(change);
@@ -375,7 +414,7 @@ case 3: // apply scores
     // rings bonus    
     if rings_bonus
     {
-        change = min(rings_bonus, 100);
+        change = min(rings_bonus, max_change);
         rings_bonus -= change;
         total_bonus += change;
         player_add_score(change);
@@ -384,7 +423,7 @@ case 3: // apply scores
     // perfect bonus    
     if perfect_bonus
     {
-        change = min(perfect_bonus, 100);
+        change = min(perfect_bonus, max_change);
         perfect_bonus -= change;
         total_bonus += change;
         player_add_score(change);
@@ -400,12 +439,36 @@ case 3: // apply scores
         // finished
         state += 1;
         alarm[3] = 220;
+        
+        // the values to draw must represent actual values now, no matter the mode
+        draw_time_bonus = time_bonus;
+        draw_rings_bonus = rings_bonus;
+        draw_perfect_bonus = perfect_bonus;
+        draw_total_bonus = total_bonus;
     }
-    else if ((objScreen.image_index mod 4) == 0)
+    else
     {
-        // sound
-        audio_stop_sound(sndBeep);
-        audio_play_sound(sndBeep, 0, false);
+        if ((objScreen.image_index mod 4) == 0)
+        {
+            // sound
+            audio_stop_sound(sndBeep);
+            audio_play_sound(sndBeep, 0, false);
+        }
+        // refresh values to display
+        if(objProgram.score_tally_mode == 0)
+        {
+            draw_time_bonus = randomize_number(time_bonus);
+            draw_rings_bonus = randomize_number(rings_bonus);
+            draw_perfect_bonus = randomize_number(perfect_bonus);
+            draw_total_bonus = randomize_number(total_bonus);
+        }
+        else
+        {
+            draw_time_bonus = time_bonus;
+            draw_rings_bonus = rings_bonus;
+            draw_perfect_bonus = perfect_bonus;
+            draw_total_bonus = total_bonus;
+        }
     }
     break;
 }
@@ -432,36 +495,37 @@ case 3: // apply scores
           <argument>
             <kind>1</kind>
             <string>/// Draw scorecard
-
+var draw_x_offset, draw_y_offset;
+if(follow_view)
+{
+    draw_x_offset = view_xview[view_current];
+    draw_y_offset = view_yview[view_current];
+}
+else
+{
+    draw_x_offset = 0;
+    draw_y_offset = 0;
+}
 draw_set_font(objResources.fontHud);
-draw_text_color(view_xview[view_current]+score_ox + score_offset1, view_yview[view_current] + 112, 'TIME BONUS',c_white,c_white,c_yellow,c_yellow,1);
-//draw_sprite(sprScore, 0, view_xview[view_current]+score_ox + score_offset1, view_yview[view_current] + 112);
-draw_text_color(view_xview[view_current]+act_ox + title_offset2-32, view_yview[view_current] + 74, act,c_white,c_white,c_yellow,c_yellow,1);
-//draw_sprite(sprAct, act, view_xview[view_current]+act_ox + title_offset2, view_yview[view_current] + 62);
-draw_text_color(view_xview[view_current]+score_ox + score_offset2, view_yview[view_current] + 128, 'RING BONUS',c_white,c_white,c_yellow,c_yellow,1);
-//draw_sprite(sprScore, 1, view_xview[view_current]+score_ox + score_offset2, view_yview[view_current] + 128);
-if perfect_bonus &gt; -1 draw_text_color(view_xview[view_current]+score_ox + score_offset3, view_yview[view_current] + 144, 'PERFECT BONUS',c_white,c_white,c_yellow,c_yellow,1);
-draw_text_color(view_xview[view_current]+score_ox + score_offset4, view_yview[view_current] + 160, 'TOTAL',c_white,c_white,c_yellow,c_yellow,1);
+draw_text_color(draw_x_offset+score_ox + score_offset1, draw_y_offset + 112, 'TIME BONUS',c_white,c_white,c_yellow,c_yellow,1);
+draw_text_color(draw_x_offset+act_ox + title_offset2-32, draw_y_offset + 74, act,c_white,c_white,c_yellow,c_yellow,1);
+draw_text_color(draw_x_offset+score_ox + score_offset2, draw_y_offset + 128, 'RING BONUS',c_white,c_white,c_yellow,c_yellow,1);
+if perfect_bonus &gt; -1 draw_text_color(draw_x_offset+score_ox + score_offset3, draw_y_offset + 144, 'PERFECT BONUS',c_white,c_white,c_yellow,c_yellow,1);
+draw_text_color(draw_x_offset+score_ox + score_offset4, draw_y_offset + 160, 'TOTAL',c_white,c_white,c_yellow,c_yellow,1);
 // text
 draw_set_color(c_white);
 draw_set_alpha(image_alpha);
 draw_set_valign(fa_top);
 draw_set_halign(fa_left);
 draw_set_font(objResources.fontHud);
-if objGameData.character_id[0] == 1 {
-    draw_text_color(view_xview[view_current]+title_ox1 - title_offset1, view_yview[view_current] + 56, name_tag,c_white,c_white,c_blue,c_blue,1);
-} else if objGameData.character_id[0] == 2 {
-      draw_text_color(view_xview[view_current]+title_ox1 - title_offset1, view_yview[view_current] + 56, name_tag,c_white,c_white,c_orange,c_orange,1);
-} else {
-    draw_text_color(view_xview[view_current]+title_ox1 - title_offset1, view_yview[view_current] + 56, name_tag,c_white,c_white,c_red,c_red,1);
-}
-draw_text_color(view_xview[view_current]+title_ox2 + title_offset2, view_yview[view_current] + 74, "GOT THROUGH ACT",c_white,c_white,c_yellow,c_yellow,1);
+draw_text_color(draw_x_offset+title_ox1 - title_offset1, draw_y_offset + 56, name_tag,c_white,c_white,title_color,title_color,1);
+draw_text_color(draw_x_offset+title_ox2 + title_offset2, draw_y_offset + 74, "GOT THROUGH ACT",c_white,c_white,c_yellow,c_yellow,1);
 draw_set_halign(fa_right);
 draw_set_font(objResources.fontHud);
-draw_text(view_xview[view_current] + tally_ox + score_offset1, view_yview[view_current] + 113, time_bonus);
-draw_text(view_xview[view_current] + tally_ox + score_offset2, view_yview[view_current] + 129, rings_bonus);
-if perfect_bonus &gt; -1 draw_text(view_xview[view_current] + tally_ox + score_offset3, view_yview[view_current] + 145, perfect_bonus);
-draw_text(view_xview[view_current] + tally_ox + score_offset4, view_yview[view_current] + 161, total_bonus);
+draw_text(draw_x_offset + tally_ox + score_offset1, draw_y_offset + 113, draw_time_bonus);
+draw_text(draw_x_offset + tally_ox + score_offset2, draw_y_offset + 129, draw_rings_bonus);
+if perfect_bonus &gt; -1 draw_text(draw_x_offset + tally_ox + score_offset3, draw_y_offset + 145, draw_perfect_bonus);
+draw_text(draw_x_offset + tally_ox + score_offset4, draw_y_offset + 161, draw_total_bonus);
 </string>
           </argument>
         </arguments>

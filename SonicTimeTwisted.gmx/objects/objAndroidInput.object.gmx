@@ -151,7 +151,7 @@ ds_map_add(keys, cSTART, false);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>// make the virtual keys appear or disappear by fading
+            <string>/// make the virtual keys appear or disappear by fading
 // also, synchronize touchscreen status with availability to control the character
 if(vk_active)
 {
@@ -167,12 +167,13 @@ if(vk_active)
     
     // Let's see if touchscreen needs to be disabled
     // cutscene? disable. No playable character? Disable. No player flag input? Disable too
-
     
-    if(objProgram.cutscene || (!((instance_exists(objPlayer) || instance_exists(objSSPlayer))) &amp;&amp; objInput.flag_player_input))
+    if(!( (instance_exists(objPlayer) || instance_exists(objSSPlayer)) &amp;&amp; objInput.flag_player_input ))
     {
-        smartphone_disable_virtual_keys();
+        smartphone_disable_virtual_keys();    
     }
+    
+    
 }
 if(!vk_active)
 {
@@ -189,7 +190,7 @@ if(!vk_active)
     GMS processes "OR" and "AND" conditions, this speeds
     things up a little bit.
     */
-    if(objInput.flag_player_input &amp;&amp; (!objProgram.cutscene))
+    if(objInput.flag_player_input)
     {
         if(instance_exists(objPlayer))
         {
@@ -208,6 +209,14 @@ if(!vk_active)
         {
             smartphone_enable_virtual_keys(true);
         }
+    }
+    /*
+        I sruggled to figure out how the AAZ mini boss is supposed to work.
+        So let's just enable the controls when the mini-boss is present and be done with it
+    */
+    if(instance_exists(objAA1BossController))
+    {
+        smartphone_enable_virtual_keys(false);
     }
 }
 

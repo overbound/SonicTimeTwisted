@@ -47,8 +47,6 @@ if(fChar == "-" || fChar == "+")
                 axisLabel += " UP";
             }
             break;
-        default:
-            // nothing
     }
     return axisLabel;
 }
@@ -105,9 +103,9 @@ else
         case gp_padr:
              return "DPAD RIGHT";
              break;
-             
         default:
-show_debug_message(string(argument0));
+             show_debug_message(string(argument0));
              return "UNKNOWN";
+             break;
          }
 }

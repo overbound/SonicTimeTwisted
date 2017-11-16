@@ -625,7 +625,21 @@ case 5:
 break;
 case 6:
     if input_check(cA) &amp;&amp; input_check(cSTART) {
-        transition_to(objFadeWhite, charselect, 10)
+        //transition_to(objFadeWhite, charselect, 10);
+        if allowInput {
+            // allow the menu object to handle everything
+            if(!menu.active)
+            {
+                menu.wait_for_release = false;
+                menu.active = true;
+            }
+            
+            with(menu)
+            {
+                state = 11;
+                event_user(0);
+            }
+        }
     } else if input_check_pressed(cRIGHT) || input_check_pressed(cUP) || input_check_pressed(cDOWN) || input_check_pressed(cB) || input_check_pressed(cC){
         levelSelect = 0;
     }

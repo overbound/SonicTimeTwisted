@@ -93,6 +93,10 @@ back_button = vk_escape;
 // and this is the label for the button in question - is shown in some messages
 back_button_label = 'ESCAPE';
 
+// load other options from the INI file
+score_tally_mode = 0;
+load_options();
+
 // depending on the OS, create a specific object containing the OS-specific logic
 os = get_os_type();
 if(os == os_android)
