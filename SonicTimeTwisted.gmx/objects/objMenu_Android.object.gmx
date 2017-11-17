@@ -969,6 +969,7 @@ if(state == 1002)
           <argument>
             <kind>1</kind>
             <string>/// step - called by parent object
+
 event_inherited();
 if(active)
 {   

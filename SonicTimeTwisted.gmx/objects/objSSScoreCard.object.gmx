@@ -90,6 +90,13 @@ if(objProgram.score_tally_mode &lt; 2)
 {
    max_change = max(1, max(time_bonus, rings_bonus, perfect_bonus) div (215));
 }
+// copies of variables containing bonuses
+// if the score tally is set to "random digits" mode, these variables, which
+// will be drawn, contain different values, unrelated to the real ones
+draw_time_bonus = time_bonus;
+draw_rings_bonus = rings_bonus;
+draw_perfect_bonus = perfect_bonus;
+draw_total_bonus = total_bonus;
 </string>
           </argument>
         </arguments>

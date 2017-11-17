@@ -167,7 +167,14 @@ switch(code)
          }
          else
          {
-             return "UNKNOWN";
+             if(code >= ord("0") && code <= ord("9"))
+             {
+                 return chr(code) + " KEY";
+             }
+             else
+             {
+                 return "OTHER "+string(code);
+             }
          }
          
 }

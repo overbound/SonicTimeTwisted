@@ -163,6 +163,7 @@ case 8:
     draw_text_color(view_xview+160,view_yview+28,'JONATHAN ROSE "DIMENSION WARPED"',c_white,c_white,c_yellow,c_yellow,image_alpha);
     draw_text_color(view_xview+160,view_yview+42,'HECTOR BARREIRO "DAMIZEAN"',c_white,c_white,c_yellow,c_yellow,image_alpha);
     draw_text_color(view_xview+160,view_yview+56,'WILL "POLAR EXELION"',c_white,c_white,c_yellow,c_yellow,image_alpha);
+    draw_text_color(view_xview+160,view_yview+70,'ALEX KHAYRULLIN',c_white,c_white,c_yellow,c_yellow,image_alpha);
 break;
 
 case 9:
@@ -214,7 +215,7 @@ case 14:
     draw_text_color(view_xview+160, view_yview+42, 'FLARE, SHARD, ICUURD8B42, CHIMPO',c_white,c_white,c_yellow,c_yellow,image_alpha);
     draw_text_color(view_xview+160, view_yview+56, 'ROGUEYOSHI, THEOUAEGIS, SEGA SCOURGE',c_white,c_white,c_yellow,c_yellow,image_alpha);
     draw_text_color(view_xview+160, view_yview+70, 'SLINGERLAND, ANDREW75, SUPERBLIZ',c_white,c_white,c_yellow,c_yellow,image_alpha);
-    draw_text_color(view_xview+160, view_yview+84, 'DEBRA ANN, JOE PIERCE NOAH COPELAND',c_white,c_white,c_yellow,c_yellow,image_alpha); 
+    draw_text_color(view_xview+160, view_yview+84, 'DEBRA ANN, JOE PIERCE, NOAH COPELAND',c_white,c_white,c_yellow,c_yellow,image_alpha); 
 break;
 }
 
