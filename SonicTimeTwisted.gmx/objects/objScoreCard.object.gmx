@@ -138,6 +138,21 @@ draw_time_bonus = time_bonus;
 draw_rings_bonus = rings_bonus;
 draw_perfect_bonus = perfect_bonus;
 draw_total_bonus = total_bonus;
+// and these contain numbers of digits to show for the "random digits" mode
+digits_time_bonus = string_length(string(time_bonus));
+digits_rings_bonus = string_length(string(rings_bonus));
+var expected_total_bonus = time_bonus + rings_bonus;
+if(perfect_bonus &gt; 0)
+{
+    expected_total_bonus += perfect_bonus;
+    digits_perfect_bonus = string_length(string(abs(perfect_bonus)));
+}
+else
+{
+    digits_perfect_bonus = 0;
+}
+digits_total_bonus = string_length(string(expected_total_bonus));
+
 </string>
           </argument>
         </arguments>
@@ -457,10 +472,10 @@ case 3: // apply scores
         // refresh values to display
         if(objProgram.score_tally_mode == 0)
         {
-            draw_time_bonus = randomize_number(time_bonus);
-            draw_rings_bonus = randomize_number(rings_bonus);
-            draw_perfect_bonus = randomize_number(perfect_bonus);
-            draw_total_bonus = randomize_number(total_bonus);
+            draw_time_bonus = randomize_number(digits_time_bonus);
+            draw_rings_bonus = randomize_number(digits_rings_bonus);
+            draw_perfect_bonus = randomize_number(digits_perfect_bonus);
+            draw_total_bonus = randomize_number(digits_total_bonus);
         }
         else
         {
