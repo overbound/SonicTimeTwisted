@@ -433,8 +433,9 @@ if inputFlash &lt; 1
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// fade white for pause
+            <string>/// fade black for pause
 
+// it used to be white, hence the variable name
 if objProgram.paused {
     if white &lt; 0.5
         white+=.125;
@@ -520,79 +521,14 @@ draw_text(view_xview[view_current]+56+timeOffset, view_yview[view_current]+24-(1
 // TODO Remove FPS
 //draw_text(view_xview[view_current]+400,view_yview[view_current]+24, fps);
 
-//white bg for pause
+//black bg for pause
 draw_set_alpha(white)
 draw_set_color(c_black);
     draw_rectangle(view_xview,view_yview,view_xview+view_wview,view_yview+view_hview,false);
 draw_set_color(c_white);
 draw_set_alpha(image_alpha);
 with(menu) event_user(4);
-/*
-draw_set_halign(fa_center);
-if objProgram.paused {
-    var viewSize = "FULLSCREEN"
-    draw_text_color(view_xview[view_current]+213, view_yview[view_current]+107, "CONTINUE",c_white,c_white,c_yellow,c_yellow,1);
-    if pauseState != 1 draw_text_color(view_xview[view_current]+213, view_yview[view_current]+123, "MAP KEYS OR GAMEPAD",c_white,c_white,c_yellow,c_yellow,1);
-    if pauseState != 2 draw_text_color(view_xview[view_current]+213, view_yview[view_current]+139, "SCREEN SIZE",c_white,c_white,c_yellow,c_yellow,1);
-    if pauseState != 3 draw_text_color(view_xview[view_current]+213, view_yview[view_current]+155, "RESTART GAME",c_white,c_white,c_yellow,c_yellow,1);
-    draw_sprite_ext(sprLevelSelect,image_index,view_xview[view_current]+213, view_yview[view_current]+113+pauseOffset,1,1,0,c_white,1);
-}
 
-if pauseState == 1 &amp;&amp; inputFlash &lt;= .5 { // set controls
-    switch controlState {
-        case 0:
-            draw_text_color(view_xview[view_current]+213, view_yview[view_current]+123, "UP",c_white,c_white,c_yellow,c_yellow,1);
-        break;
-        case 1:
-            draw_text_color(view_xview[view_current]+213, view_yview[view_current]+123, "DOWN",c_white,c_white,c_yellow,c_yellow,1);
-        break;
-        case 2:
-            draw_text_color(view_xview[view_current]+213, view_yview[view_current]+123, "LEFT",c_white,c_white,c_yellow,c_yellow,1);
-        break;
-        case 3:
-            draw_text_color(view_xview[view_current]+213, view_yview[view_current]+123, "RIGHT",c_white,c_white,c_yellow,c_yellow,1);
-        break;
-        case 4:
-            draw_text_color(view_xview[view_current]+213, view_yview[view_current]+123, "A",c_white,c_white,c_yellow,c_yellow,1);
-        break;
-        case 5:
-            draw_text_color(view_xview[view_current]+213, view_yview[view_current]+123, "B",c_white,c_white,c_yellow,c_yellow,1);
-        break;
-        case 6:
-            draw_text_color(view_xview[view_current]+213, view_yview[view_current]+123, "C",c_white,c_white,c_yellow,c_yellow,1);
-        break;
-        case 7:
-            draw_text_color(view_xview[view_current]+213, view_yview[view_current]+123, "START",c_white,c_white,c_yellow,c_yellow,1);
-        break;
-    }
-}
-
-if pauseState == 2 &amp;&amp; inputFlash &lt;= .5 {
-
-    switch objScreen.window_state {
-        case 1:
-            draw_text_color(view_xview[view_current]+213, view_yview[view_current]+139, "WINDOW",c_white,c_white,c_yellow,c_yellow,1);
-        break;
-        case 2:
-            draw_text_color(view_xview[view_current]+213, view_yview[view_current]+139, "WINDOW 2X",c_white,c_white,c_yellow,c_yellow,1);
-        break;
-        case 3:
-            draw_text_color(view_xview[view_current]+213, view_yview[view_current]+139, "WINDOW 3X",c_white,c_white,c_yellow,c_yellow,1);
-        break;
-        case 4:
-            draw_text_color(view_xview[view_current]+213, view_yview[view_current]+139, "FULLSCREEN",c_white,c_white,c_yellow,c_yellow,1);
-        break;
-    }
-}
-
-if pauseState == 3 &amp;&amp; inputFlash &lt;= .5 {
-    if shouldExit {
-        draw_text_color(view_xview[view_current]+213, view_yview[view_current]+155, "CONFIRM?",c_white,c_white,c_yellow,c_yellow,1);
-    } else {
-        draw_text_color(view_xview[view_current]+213, view_yview[view_current]+155, "CANCEL",c_white,c_white,c_yellow,c_yellow,1);
-    }
-}
-*/
 </string>
           </argument>
         </arguments>

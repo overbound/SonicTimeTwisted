@@ -1762,6 +1762,7 @@
       <scripts name="Menu">
         <script>scripts\get_kb_label.gml</script>
         <script>scripts\get_gp_label.gml</script>
+        <script>scripts\menu_key_mapping_states.gml</script>
       </scripts>
       <script>scripts\extend_byte.gml</script>
       <script>scripts\minlerp.gml</script>
@@ -2230,6 +2231,10 @@
         <script>scripts\android_vk_release.gml</script>
         <script>scripts\android_vk_is_pressed.gml</script>
         <script>scripts\android_manage_touchscreen_controls.gml</script>
+        <script>scripts\android_manage_gyroscope_controls.gml</script>
+        <script>scripts\android_read_gyroscope_x.gml</script>
+        <script>scripts\android_read_gyroscope_y.gml</script>
+        <script>scripts\android_manage_touch_controls.gml</script>
       </scripts>
     </scripts>
   </scripts>
@@ -3367,7 +3372,7 @@
       </rooms>
     </rooms>
   </rooms>
-  <constants number="72">
+  <constants number="74">
     <constant name="GAMEPAD_POV_Y">7</constant>
     <constant name="GAMEPAD_POV_X">6</constant>
     <constant name="GAMEPAD_AXIS_V">5</constant>
@@ -3392,9 +3397,11 @@
     <constant name="cB">32</constant>
     <constant name="cC">64</constant>
     <constant name="cSTART">128</constant>
+    <constant name="cBACK">256</constant>
     <constant name="cACTION">cA | cB | cC</constant>
-    <constant name="cCANCEL">cB</constant>
+    <constant name="cCANCEL">cB | cBACK</constant>
     <constant name="cCONFIRM">cA | cSTART</constant>
+    <constant name="cPAUSE">cSTART | cBACK</constant>
     <constant name="BINDING_TYPE_NONE">0</constant>
     <constant name="BINDING_TYPE_KEY">1</constant>
     <constant name="BINDING_TYPE_BUTTON">2</constant>

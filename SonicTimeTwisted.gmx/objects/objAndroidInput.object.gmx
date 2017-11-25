@@ -29,6 +29,7 @@
 
 alpha = 0;
 gyroscopeMode = false;
+ggCurrentMode = 0; // galacnik gauntlet mode
 gyroscopeTilt = 0;
 
 // load android-specific settings
@@ -39,12 +40,17 @@ input = 0; // 0 - touchscreen, 1 - no touchscreen
 dpadMode = 0; // 0 - static, 1 - dynamic
 vkalpha = 0.8;
 gyroinss = 1; // use gyroscope controls in special stages
+gg_mode = 1; // controls in Galacnik Gauntlet - 0 - dpad, 1 - gyroscope, 2 - point on screen
 vksize = 0; // 0 - big controls, 1 - medium controls, 2 - small controls
 gyromode = 1; // 0 - gyroscope simply turns the buttons no and off; 1 - pseudo-analog mode
-gyro_switch_on_angle = 0.15; // angle on which the button is pressed
-gyro_analog_start = 0.2; // angle from which the analog control starts
-gyro_analog_end = 0.6; // angle to which the analog control goes
-
+gyro_switch_on_angle_x = 0.15; // angle on which the button is pressed
+gyro_analog_start_x = 0.2; // angle from which the analog control starts
+gyro_analog_end_x = 0.6; // angle to which the analog control goes
+gyro_switch_on_angle_y = 0.15; // angle on which the button is pressed
+gyro_analog_start_y = 0.2; // angle from which the analog control starts
+gyro_analog_end_y = 0.6; // angle to which the analog control goes
+gyro_origin_y = 0; // angle at which the Y axis is considered to be idle (if it's managed)
+gyro_origin_is_set = false; // whether the Y axis idle state is being set
 dpadx = 64;
 dpady = 178;
 bax = 364;
@@ -54,7 +60,6 @@ bsx = 200;
 bsy = 16;
 bbx = 324;
 bby = 88;
-
 
 
 if (file_exists(file)) {
@@ -73,25 +78,33 @@ if (file_exists(file)) {
     bbx = ini_read_real('smartphone','bbx',324);
     bby = ini_read_real('smartphone','bby',88);
     gyromode = ini_read_real('smartphone','gyromode',1);
-    gyro_switch_on_angle = ini_read_real('smartphone','gyro_switch_on_angle',0.15);
-    gyro_analog_start = ini_read_real('smartphone','gyro_analog_start',0.1);
-    gyro_analog_end = ini_read_real('smartphone','gyro_analog_end',0.6);
+    gyro_switch_on_angle_x = ini_read_real('smartphone','gyro_switch_on_angle_x',0.15);
+    gyro_analog_start_x = ini_read_real('smartphone','gyro_analog_start_x',0.1);
+    gyro_analog_end_x = ini_read_real('smartphone','gyro_analog_end_x',0.6);
+    gyro_switch_on_angle_y = ini_read_real('smartphone','gyro_switch_on_angle_y',0.15);
+    gyro_analog_start_y = ini_read_real('smartphone','gyro_analog_start_y',0.1);
+    gyro_analog_end_y = ini_read_real('smartphone','gyro_analog_end_y',0.6);
+    gg_mode = ini_read_real('smartphone','gg_mode',1);
 }
 
 
 vKeyJoy_surface = surface_create(64, 64);
 
-dpad_sectors = false;
-prev_dpad_pressed = 5;
-dpad_pressed = 5;
-jump_pressed = false;
+dpad_sectors = false; // initialize triangles matching directions on touchscreen here
+prev_dpad_pressed = 5; // previously pressed direction
+dpad_pressed = 5; // currently pressed direction
+jump_pressed = false; 
 super_pressed = false;
 start_pressed = false;
 up_pressed = false;
 superIsEnabled = false;
 
+/*
+in "pseudo-analog" mode, this timer will be used to know when to simulate a tap on a button
+*/
 gyro_analog_timer = 0;
 
+// variables used for dynamic gamepad : the D-pad appears wherever you put your finger
 dynamic_state = 0;
 dynamic_device = 0;
 dynamic_startx = 0;
@@ -106,6 +119,9 @@ ds_map_add(keys, cA, false);
 ds_map_add(keys, cB, false);
 ds_map_add(keys, cC, false);
 ds_map_add(keys, cSTART, false);
+
+notice = '';
+notice_timer = 0;
 </string>
           </argument>
         </arguments>
@@ -163,7 +179,38 @@ if(vk_active)
             alpha = vkalpha;
         }
     }
+    
+    // in Galacnik Gauntlet, check whether touchscreen controls are enabled
+    if(objProgram.current_level == 16)
+    {
+        ggCurrentMode = gg_mode;
+    }
+    else
+    {
+        ggCurrentMode = 0;
+    }
     android_manage_touchscreen_controls();
+    if(gyroscopeMode)
+    {
+        android_manage_gyroscope_controls(false);
+    }
+    else
+    {
+        switch(ggCurrentMode)
+        {
+            case 0:
+                // nothing special here
+                break;
+            case 1:
+                // GG gyroscope controls
+                android_manage_gyroscope_controls(true);
+                break;
+            case 2:
+                // GG point controls
+                android_manage_touch_controls();
+                break;
+        }
+    }
     
     // Let's see if touchscreen needs to be disabled
     // cutscene? disable. No playable character? Disable. No player flag input? Disable too
@@ -172,8 +219,6 @@ if(vk_active)
     {
         smartphone_disable_virtual_keys();    
     }
-    
-    
 }
 if(!vk_active)
 {
@@ -217,98 +262,6 @@ if(!vk_active)
     if(instance_exists(objAA1BossController))
     {
         smartphone_enable_virtual_keys(false);
-    }
-}
-
-
-// if gyroscope mode is on (touchscreen selected + gyroscope activated + in special stage)
-// use it as left + right
-if(gyroscopeMode)
-{
-    if(gyromode == 0)
-    {
-        // simple mode where tilting simply presses left and right
-        var tilt = device_get_tilt_y();
-        if(tilt &lt; -1*gyro_switch_on_angle)
-        {
-            android_vk_press(cLEFT);
-        }
-        else
-        if(tilt &gt; gyro_switch_on_angle)
-        {
-            android_vk_press(cRIGHT);
-        }
-        else
-        {
-            android_vk_release(cLEFT);
-            android_vk_release(cRIGHT);
-        }
-    }
-    else
-    if(gyromode == 1)
-    {
-        // pseudo-analog mode where depending on the tilt, left and right buttons are mashed more or less often
-        var tilt = device_get_tilt_y();
-        var keyToPress = cRIGHT;
-        if(tilt &lt; 0)
-        {
-            var keyToPress = cLEFT;
-        }
-        tilt = abs(tilt);
-        if(tilt &lt; gyro_analog_start)
-        {
-            android_vk_release(cLEFT);
-            android_vk_release(cRIGHT);
-        }
-        else
-        if(tilt &gt; gyro_analog_end)
-        {
-            android_vk_press(keyToPress);
-        }
-        else
-        {
-            gyro_analog_timer = (gyro_analog_timer + 1) mod 10;
-            var tiltscale = 1 + ceil(((tilt - gyro_analog_start)/(gyro_analog_end - gyro_analog_start))*10);
-            var pressed = 0;
-            // the tilt scale is divided in ten segments; depending on how much the phone is tilted, the button to press
-            // is mashed more or less often
-            android_vk_release(cRIGHT);
-            android_vk_release(cLEFT);
-            switch(tiltscale)
-            {
-                case 1:
-                    pressed = (gyro_analog_timer == 0);
-                    break;
-                case 2:
-                    pressed = (gyro_analog_timer == 0) || (gyro_analog_timer == 5);
-                    break;
-                case 3:
-                    pressed = (gyro_analog_timer == 3) || (gyro_analog_timer == 6) || (gyro_analog_timer == 9);
-                    break;
-                case 4:
-                    pressed = (gyro_analog_timer == 2) || (gyro_analog_timer == 5) || (gyro_analog_timer == 7) || (gyro_analog_timer == 9);
-                    break;
-                case 5:
-                    pressed = (gyro_analog_timer mod 2) == 1;
-                    break;
-                case 6:
-                    pressed = (gyro_analog_timer != 2) &amp;&amp; (gyro_analog_timer != 5) &amp;&amp; (gyro_analog_timer != 7) &amp;&amp; (gyro_analog_timer != 9);
-                    break;
-                case 7:
-                    pressed = (gyro_analog_timer != 3) &amp;&amp; (gyro_analog_timer != 6) &amp;&amp; (gyro_analog_timer != 9);
-                    break;
-                case 8:
-                    pressed = (gyro_analog_timer != 0) &amp;&amp; (gyro_analog_timer != 5);
-                    break;
-                case 9:
-                    pressed = (gyro_analog_timer != 0);
-                    break;
-            }
-            if(pressed)
-            {
-                android_vk_press(keyToPress);
-            }
-        }
     }
 }
 </string>
@@ -574,23 +527,6 @@ vk_active = true;
      }
      objInput.state |= state;
 }
-else
-{
-    // during regular play, any click on the screen should bring up the menu
-    // it's done to manage cases where a control means is not longer available
-    /*
-    if(instance_exists(objMenu_Android))
-    {
-        if(!objMenu_Android.active)
-        {
-            if(device_mouse_check_button_pressed(0, mb_left))
-            {
-                objInput.state |= cSTART;
-            }
-        }
-    }
-    */
-}
 </string>
           </argument>
         </arguments>
@@ -678,273 +614,283 @@ else
         }
     }
     else
+    switch(ggCurrentMode)
     {
-        var usedDpadX = dpadx;
-        var usedDpadY = dpady;
-        var drawDPad = (!dpadMode) || dynamic_state;
-        if(dpadMode == 1)
-        {
-            usedDpadX = dynamic_startx;
-            usedDpadY = dynamic_starty;
-        }
-        
-        if(!surface_exists(vKeyJoy_surface))
-        {
-            vKeyJoy_surface = surface_create(64, 64);
-        }
-        if(vksize == 0)
-        {
-            if(drawDPad)
+        case 0:
+            var usedDpadX = dpadx;
+            var usedDpadY = dpady;
+            var drawDPad = (!dpadMode) || dynamic_state;
+            if(dpadMode == 1)
             {
-                surface_set_target(vKeyJoy_surface);
-                draw_clear_alpha(c_black, 0);
-                draw_sprite(sprTouchscreenDPadBase, 0, 0, 0);
-                if(android_vk_is_pressed(cUP))
+                usedDpadX = dynamic_startx;
+                usedDpadY = dynamic_starty;
+            }
+            
+            if(!surface_exists(vKeyJoy_surface))
+            {
+                vKeyJoy_surface = surface_create(64, 64);
+            }
+            if(vksize == 0)
+            {
+                if(drawDPad)
                 {
-                    if(android_vk_is_pressed(cRIGHT))
+                    surface_set_target(vKeyJoy_surface);
+                    draw_clear_alpha(c_black, 0);
+                    draw_sprite(sprTouchscreenDPadBase, 0, 0, 0);
+                    if(android_vk_is_pressed(cUP))
                     {
-                        draw_sprite(sprTouchscreenDPadJoy, 0, 24, 8);
+                        if(android_vk_is_pressed(cRIGHT))
+                        {
+                            draw_sprite(sprTouchscreenDPadJoy, 0, 24, 8);
+                        }
+                        else
+                        if(android_vk_is_pressed(cLEFT))
+                        {
+                            draw_sprite(sprTouchscreenDPadJoy, 0, 8, 8);
+                        }
+                        else
+                        {
+                            draw_sprite(sprTouchscreenDPadJoy, 0, 16, 0);
+                        }
                     }
                     else
-                    if(android_vk_is_pressed(cLEFT))
                     {
-                        draw_sprite(sprTouchscreenDPadJoy, 0, 8, 8);
+                        if(android_vk_is_pressed(cDOWN))
+                        {
+                            if(android_vk_is_pressed(cRIGHT))
+                            {
+                                draw_sprite(sprTouchscreenDPadJoy, 0, 24, 24);
+                            }
+                            else
+                            if(android_vk_is_pressed(cLEFT))
+                            {
+                                draw_sprite(sprTouchscreenDPadJoy, 0, 8, 24);
+                            }
+                            else
+                            {
+                                draw_sprite(sprTouchscreenDPadJoy, 0, 16, 32);
+                            }
+                        }
+                        else
+                        {
+                            if(android_vk_is_pressed(cRIGHT))
+                            {
+                                draw_sprite(sprTouchscreenDPadJoy, 0, 32, 16);
+                            }
+                            else
+                            if(android_vk_is_pressed(cLEFT))
+                            {
+                                draw_sprite(sprTouchscreenDPadJoy, 0, 0, 16);
+                            }
+                            else
+                            {
+                                draw_sprite(sprTouchscreenDPadJoy, 0, 16, 16);
+                            }
+                        }
                     }
-                    else
-                    {
-                        draw_sprite(sprTouchscreenDPadJoy, 0, 16, 0);
-                    }
+                    surface_reset_target();
+                    
+                    draw_surface_ext(vKeyJoy_surface, usedDpadX - 32, usedDpadY - 32, 1, 1, 0, c_white, alpha);
+                    
+                }
+                if(android_vk_is_pressed(cC))
+                {
+                    draw_sprite_ext(sprTouchscreenButton, 1, bax - 32, bay - 32, 1, 1, 0, c_white, alpha);
                 }
                 else
                 {
-                    if(android_vk_is_pressed(cDOWN))
-                    {
-                        if(android_vk_is_pressed(cRIGHT))
-                        {
-                            draw_sprite(sprTouchscreenDPadJoy, 0, 24, 24);
-                        }
-                        else
-                        if(android_vk_is_pressed(cLEFT))
-                        {
-                            draw_sprite(sprTouchscreenDPadJoy, 0, 8, 24);
-                        }
-                        else
-                        {
-                            draw_sprite(sprTouchscreenDPadJoy, 0, 16, 32);
-                        }
-                    }
-                    else
-                    {
-                        if(android_vk_is_pressed(cRIGHT))
-                        {
-                            draw_sprite(sprTouchscreenDPadJoy, 0, 32, 16);
-                        }
-                        else
-                        if(android_vk_is_pressed(cLEFT))
-                        {
-                            draw_sprite(sprTouchscreenDPadJoy, 0, 0, 16);
-                        }
-                        else
-                        {
-                            draw_sprite(sprTouchscreenDPadJoy, 0, 16, 16);
-                        }
-                    }
+                    draw_sprite_ext(sprTouchscreenButton, 0, bax - 32, bay - 32, 1, 1, 0, c_white, alpha);
                 }
-                surface_reset_target();
-                
-                draw_surface_ext(vKeyJoy_surface, usedDpadX - 32, usedDpadY - 32, 1, 1, 0, c_white, alpha);
-                
-            }
-            if(android_vk_is_pressed(cC))
-            {
-                draw_sprite_ext(sprTouchscreenButton, 1, bax - 32, bay - 32, 1, 1, 0, c_white, alpha);
             }
             else
+            if(vksize == 1)
             {
-                draw_sprite_ext(sprTouchscreenButton, 0, bax - 32, bay - 32, 1, 1, 0, c_white, alpha);
-            }
-        }
-        else
-        if(vksize == 1)
-        {
-            if(drawDPad)
-            {
-                surface_set_target(vKeyJoy_surface);
-                draw_clear_alpha(c_black, 0);
-                draw_sprite(sprTouchscreenDPadBaseMed, 0, 0, 0);
-                
-                if(android_vk_is_pressed(cUP))
+                if(drawDPad)
                 {
-                    if(android_vk_is_pressed(cRIGHT))
-                    {
-                        draw_sprite(sprTouchscreenDPadJoyMed, 0, 20, 4);
-                    }
-                    else
-                    if(android_vk_is_pressed(cLEFT))
-                    {
-                        draw_sprite(sprTouchscreenDPadJoyMed, 0, 4, 4);
-                    }
-                    else
-                    {
-                        draw_sprite(sprTouchscreenDPadJoyMed, 0, 12, 0);
-                    }
-                }
-                else
-                {
-                    if(android_vk_is_pressed(cDOWN))
+                    surface_set_target(vKeyJoy_surface);
+                    draw_clear_alpha(c_black, 0);
+                    draw_sprite(sprTouchscreenDPadBaseMed, 0, 0, 0);
+                    
+                    if(android_vk_is_pressed(cUP))
                     {
                         if(android_vk_is_pressed(cRIGHT))
                         {
-                            draw_sprite(sprTouchscreenDPadJoyMed, 0, 20, 20);
+                            draw_sprite(sprTouchscreenDPadJoyMed, 0, 20, 4);
                         }
                         else
                         if(android_vk_is_pressed(cLEFT))
                         {
-                            draw_sprite(sprTouchscreenDPadJoyMed, 0, 4, 20);
+                            draw_sprite(sprTouchscreenDPadJoyMed, 0, 4, 4);
                         }
                         else
                         {
-                            draw_sprite(sprTouchscreenDPadJoyMed, 0, 12, 24);
+                            draw_sprite(sprTouchscreenDPadJoyMed, 0, 12, 0);
                         }
                     }
                     else
                     {
-                        if(android_vk_is_pressed(cRIGHT))
+                        if(android_vk_is_pressed(cDOWN))
                         {
-                            draw_sprite(sprTouchscreenDPadJoyMed, 0, 24, 12);
-                        }
-                        else
-                        if(android_vk_is_pressed(cLEFT))
-                        {
-                            draw_sprite(sprTouchscreenDPadJoyMed, 0, 0, 12);
-                        }
-                        else
-                        {
-                            draw_sprite(sprTouchscreenDPadJoyMed, 0, 12, 12);
-                        }
-                    }
-                }
-                
-                surface_reset_target();
-                
-                draw_surface_ext(vKeyJoy_surface, usedDpadX - 24, usedDpadY - 24, 1, 1, 0, c_white, alpha);
-            }
-            if(android_vk_is_pressed(cC))
-            {
-                draw_sprite_ext(sprTouchscreenButtonMed, 1, bax - 24, bay - 24, 1, 1, 0, c_white, alpha);
-            }
-            else
-            {
-                draw_sprite_ext(sprTouchscreenButtonMed, 0, bax - 24, bay - 24, 1, 1, 0, c_white, alpha);
-            }
-        }
-        else
-        if(vksize == 2)
-        {
-            if(drawDPad)
-            {
-                surface_set_target(vKeyJoy_surface);
-                draw_clear_alpha(c_black, 0);
-                draw_sprite(sprTouchscreenDPadBaseSmall, 0, 0, 0);
-                
-                if(android_vk_is_pressed(cUP))
-                {
-                    if(android_vk_is_pressed(cRIGHT))
-                    {
-                        draw_sprite(sprTouchscreenDPadJoySmall, 0, 13, 3);
-                    }
-                    else
-                    if(android_vk_is_pressed(cLEFT))
-                    {
-                        draw_sprite(sprTouchscreenDPadJoySmall, 0, 3, 3);
-                    }
-                    else
-                    {
-                        draw_sprite(sprTouchscreenDPadJoySmall, 0, 8, 0);
-                    }
-                }
-                else
-                {
-                    if(android_vk_is_pressed(cDOWN))
-                    {
-                        if(android_vk_is_pressed(cRIGHT))
-                        {
-                            draw_sprite(sprTouchscreenDPadJoySmall, 0, 13, 13);
-                        }
-                        else
-                        if(android_vk_is_pressed(cLEFT))
-                        {
-                            draw_sprite(sprTouchscreenDPadJoySmall, 0, 3, 13);
+                            if(android_vk_is_pressed(cRIGHT))
+                            {
+                                draw_sprite(sprTouchscreenDPadJoyMed, 0, 20, 20);
+                            }
+                            else
+                            if(android_vk_is_pressed(cLEFT))
+                            {
+                                draw_sprite(sprTouchscreenDPadJoyMed, 0, 4, 20);
+                            }
+                            else
+                            {
+                                draw_sprite(sprTouchscreenDPadJoyMed, 0, 12, 24);
+                            }
                         }
                         else
                         {
-                            draw_sprite(sprTouchscreenDPadJoySmall, 0, 8, 16);
+                            if(android_vk_is_pressed(cRIGHT))
+                            {
+                                draw_sprite(sprTouchscreenDPadJoyMed, 0, 24, 12);
+                            }
+                            else
+                            if(android_vk_is_pressed(cLEFT))
+                            {
+                                draw_sprite(sprTouchscreenDPadJoyMed, 0, 0, 12);
+                            }
+                            else
+                            {
+                                draw_sprite(sprTouchscreenDPadJoyMed, 0, 12, 12);
+                            }
                         }
-                    }
-                    else
-                    {
-                        if(android_vk_is_pressed(cRIGHT))
-                        {
-                            draw_sprite(sprTouchscreenDPadJoySmall, 0, 16, 8);
-                        }
-                        else
-                        if(android_vk_is_pressed(cLEFT))
-                        {
-                            draw_sprite(sprTouchscreenDPadJoySmall, 0, 0, 8);
-                        }
-                        else
-                        {
-                            draw_sprite(sprTouchscreenDPadJoySmall, 0, 8, 8);
-                        }
-                    }
-                }
-                surface_reset_target();
-                draw_surface_ext(vKeyJoy_surface, usedDpadX - 16, usedDpadY - 16, 1, 1, 0, c_white, alpha);
-            }
-            if(android_vk_is_pressed(cC))
-            {
-                draw_sprite_ext(sprTouchscreenButtonSmall, 1, bax - 16, bay - 16, 1, 1, 0, c_white, alpha);
-            }
-            else
-            {
-                draw_sprite_ext(sprTouchscreenButtonSmall, 0, bax - 16, bay - 16, 1, 1, 0, c_white, alpha);
-            }
-        }
-        
-        // draw triangles
-        
-        /*
-        var centerx = dpadx + 32;
-        var centery = dpady + 32;
-        if(is_array(dpad_sectors))
-        {
-            for(var i = 1; i &lt;= 9; i++)
-            {
-                if(i != 5)
-                {
-                    if(i == 1 || i == 3 || i == 7 || i == 9)
-                    {
-                        draw_set_color(c_red);
-                    }
-                    else
-                    {
-                        draw_set_color(c_green);
                     }
                     
-                    draw_triangle(
-                        dpad_sectors[i,0],
-                        dpad_sectors[i,1],
-                        dpad_sectors[i,2],
-                        dpad_sectors[i,3],
-                        dpadx,
-                        dpady,
-                        false
-                    );
+                    surface_reset_target();
+                    
+                    draw_surface_ext(vKeyJoy_surface, usedDpadX - 24, usedDpadY - 24, 1, 1, 0, c_white, alpha);
                 }
-            }        
-        }
-        draw_set_color(c_white);
-        */
+                if(android_vk_is_pressed(cC))
+                {
+                    draw_sprite_ext(sprTouchscreenButtonMed, 1, bax - 24, bay - 24, 1, 1, 0, c_white, alpha);
+                }
+                else
+                {
+                    draw_sprite_ext(sprTouchscreenButtonMed, 0, bax - 24, bay - 24, 1, 1, 0, c_white, alpha);
+                }
+            }
+            else
+            if(vksize == 2)
+            {
+                if(drawDPad)
+                {
+                    surface_set_target(vKeyJoy_surface);
+                    draw_clear_alpha(c_black, 0);
+                    draw_sprite(sprTouchscreenDPadBaseSmall, 0, 0, 0);
+                    
+                    if(android_vk_is_pressed(cUP))
+                    {
+                        if(android_vk_is_pressed(cRIGHT))
+                        {
+                            draw_sprite(sprTouchscreenDPadJoySmall, 0, 13, 3);
+                        }
+                        else
+                        if(android_vk_is_pressed(cLEFT))
+                        {
+                            draw_sprite(sprTouchscreenDPadJoySmall, 0, 3, 3);
+                        }
+                        else
+                        {
+                            draw_sprite(sprTouchscreenDPadJoySmall, 0, 8, 0);
+                        }
+                    }
+                    else
+                    {
+                        if(android_vk_is_pressed(cDOWN))
+                        {
+                            if(android_vk_is_pressed(cRIGHT))
+                            {
+                                draw_sprite(sprTouchscreenDPadJoySmall, 0, 13, 13);
+                            }
+                            else
+                            if(android_vk_is_pressed(cLEFT))
+                            {
+                                draw_sprite(sprTouchscreenDPadJoySmall, 0, 3, 13);
+                            }
+                            else
+                            {
+                                draw_sprite(sprTouchscreenDPadJoySmall, 0, 8, 16);
+                            }
+                        }
+                        else
+                        {
+                            if(android_vk_is_pressed(cRIGHT))
+                            {
+                                draw_sprite(sprTouchscreenDPadJoySmall, 0, 16, 8);
+                            }
+                            else
+                            if(android_vk_is_pressed(cLEFT))
+                            {
+                                draw_sprite(sprTouchscreenDPadJoySmall, 0, 0, 8);
+                            }
+                            else
+                            {
+                                draw_sprite(sprTouchscreenDPadJoySmall, 0, 8, 8);
+                            }
+                        }
+                    }
+                    surface_reset_target();
+                    draw_surface_ext(vKeyJoy_surface, usedDpadX - 16, usedDpadY - 16, 1, 1, 0, c_white, alpha);
+                }
+                if(android_vk_is_pressed(cC))
+                {
+                    draw_sprite_ext(sprTouchscreenButtonSmall, 1, bax - 16, bay - 16, 1, 1, 0, c_white, alpha);
+                }
+                else
+                {
+                    draw_sprite_ext(sprTouchscreenButtonSmall, 0, bax - 16, bay - 16, 1, 1, 0, c_white, alpha);
+                }
+            }
+            break;
+        case 1:
+            // gyroscope controls; display just the jump button, repurposed for resetting the Y axis
+            if(vksize == 0)
+            {
+                if(gyro_origin_is_set)
+                {
+                    draw_sprite_ext(sprTouchscreenButton, 1, bax - 32, bay - 32, 1, 1, 0, c_white, alpha);
+                }
+                else
+                {
+                    draw_sprite_ext(sprTouchscreenButton, 0, bax - 32, bay - 32, 1, 1, 0, c_white, alpha);
+                }
+            }
+            else
+            if(vksize == 1)
+            {
+                if(gyro_origin_is_set)
+                {
+                    draw_sprite_ext(sprTouchscreenButtonMed, 1, bax - 24, bay - 24, 1, 1, 0, c_white, alpha);
+                }
+                else
+                {
+                    draw_sprite_ext(sprTouchscreenButtonMed, 0, bax - 24, bay - 24, 1, 1, 0, c_white, alpha);
+                }
+            }
+            else
+            if(vksize == 2)
+            {
+                if(gyro_origin_is_set)
+                {
+                    draw_sprite_ext(sprTouchscreenButtonSmall, 1, bax - 16, bay - 16, 1, 1, 0, c_white, alpha);
+                }
+                else
+                {
+                    draw_sprite_ext(sprTouchscreenButtonSmall, 0, bax - 16, bay - 16, 1, 1, 0, c_white, alpha);
+                }
+            }
+            break;
+        case 2:
+            // point controls; nothing to display
+            
+            break;
     }
 
     
@@ -996,6 +942,17 @@ else
 
     draw_sprite_ext(sprTouchscreenPauseButton, 3, bsx, bsy, 1, 1, 0, c_white, alpha);
 }
+if(notice_timer &gt; 0)
+{ 
+    notice_timer--;
+    if(notice_timer mod 2)
+    {
+        draw_set_halign(fa_center);
+        draw_text_color(213, 120, notice,c_white,c_white,c_yellow,c_yellow,1);
+        draw_set_halign(fa_left);
+    }
+}
+//draw_text(0,0,'Y GYRO '+string(android_read_gyroscope_y()));
 </string>
           </argument>
         </arguments>

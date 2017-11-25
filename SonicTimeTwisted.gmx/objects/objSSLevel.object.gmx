@@ -121,7 +121,7 @@ if started == false
             <kind>1</kind>
             <string>// Pause
 /// Pausing
-if started and not instance_exists(objTransition) and input_check_pressed(cSTART) and (!objProgram.paused) {objProgram.paused = not objProgram.paused; game_pause(objProgram.paused);}
+if started and not instance_exists(objTransition) and input_check_pressed(cPAUSE) and (!objProgram.paused) {objProgram.paused = not objProgram.paused; game_pause(objProgram.paused);}
 </string>
           </argument>
         </arguments>

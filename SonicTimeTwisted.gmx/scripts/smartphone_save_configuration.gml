@@ -15,8 +15,12 @@ ini_write_real('smartphone', 'bsy', objAndroidInput.bsy);
 ini_write_real('smartphone', 'bbx', objAndroidInput.bbx);
 ini_write_real('smartphone', 'bby', objAndroidInput.bby);
 ini_write_real('smartphone', 'gyromode', objAndroidInput.gyromode);
-ini_write_real('smartphone', 'gyro_switch_on_angle', objAndroidInput.gyro_switch_on_angle);
-ini_write_real('smartphone', 'gyro_analog_start', objAndroidInput.gyro_analog_start);
-ini_write_real('smartphone', 'gyro_analog_end', objAndroidInput.gyro_analog_end);
+ini_write_real('smartphone', 'gyro_switch_on_angle_x', objAndroidInput.gyro_switch_on_angle_x);
+ini_write_real('smartphone', 'gyro_analog_start_x', objAndroidInput.gyro_analog_start_x);
+ini_write_real('smartphone', 'gyro_analog_end_x', objAndroidInput.gyro_analog_end_x);
+ini_write_real('smartphone', 'gyro_switch_on_angle_y', objAndroidInput.gyro_switch_on_angle_y);
+ini_write_real('smartphone', 'gyro_analog_start_y', objAndroidInput.gyro_analog_start_y);
+ini_write_real('smartphone', 'gyro_analog_end_y', objAndroidInput.gyro_analog_end_y);
+ini_write_real('smartphone', 'gg_mode', objAndroidInput.gg_mode);
 ini_close();
 

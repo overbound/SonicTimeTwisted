@@ -468,21 +468,36 @@ if(prev_dpad_pressed != dpad_pressed)
 
 }
 prev_dpad_pressed = dpad_pressed;
+// In Galacnik Gauntlet, this button is used to reset the Y origin position
+if(ggCurrentMode == 1)
+{
+    if(tmp_jump_pressed && (!jump_pressed))
+    {
+        gyro_origin_is_set = true;
+    }
+    if(jump_pressed && (!tmp_jump_pressed))
+    {
+        gyro_origin_is_set = false;
+    }
+}
+else
+{
+    if(tmp_jump_pressed && (!jump_pressed))
+    {
+        if(!super_pressed)
+        {
+            android_vk_press(cC);
+        }
+    }
+    if(jump_pressed && (!tmp_jump_pressed))
+    {
+        if(!super_pressed)
+        {
+            android_vk_release(cC);
+        }
+    }
+}
 
-if(tmp_jump_pressed && (!jump_pressed))
-{
-    if(!super_pressed)
-    {
-        android_vk_press(cC);
-    }
-}
-if(jump_pressed && (!tmp_jump_pressed))
-{
-    if(!super_pressed)
-    {
-        android_vk_release(cC);
-    }
-}
 jump_pressed = tmp_jump_pressed;
 
 if(tmp_super_pressed && (!super_pressed))

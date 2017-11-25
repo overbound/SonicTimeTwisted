@@ -8,6 +8,37 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
+    <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>event_inherited();
+if(objProgram.current_level == 16)
+{
+    timer_before_notice = 200;
+}
+else
+{
+    timer_before_notice = 0;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="3" enumb="2">
       <action>
         <libid>1</libid>
@@ -26,6 +57,52 @@
           <argument>
             <kind>1</kind>
             <string></string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(timer_before_notice &gt; 0)
+{
+    timer_before_notice--;
+    if(timer_before_notice == 0)
+    {
+        with(objAndroidInput)
+        {
+            if(input == 0)
+            {
+                if(gg_mode == 1)
+                {
+                    notice = 'TILT TO NAVIGATE#USE BUTTON TO RESET Y AXIS';
+                }
+                else
+                if(gg_mode == 2)
+                {
+                    notice = 'HOLD ON THE SCREEN';
+                }
+                notice_timer = 180;
+            }
+        }
+    }
+}
+
+</string>
           </argument>
         </arguments>
       </action>

@@ -208,21 +208,12 @@ if reseting
           <argument>
             <kind>1</kind>
             <string>/// Pausing
-if started and not instance_exists(objTransition) and input_check_pressed(cSTART) {
+if started and not instance_exists(objTransition) and input_check_pressed(cPAUSE) {
 
     if not objProgram.paused {
         objProgram.paused = true;
         game_pause(objProgram.paused);
     }
-    /*
-      else {
-        objProgram.paused = false;
-        game_pause(objProgram.paused);
-        with objHud {
-        pauseState = 0;
-        }
-    }
-*/
 }
 </string>
           </argument>
