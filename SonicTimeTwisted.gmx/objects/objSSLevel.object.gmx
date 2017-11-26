@@ -96,7 +96,7 @@ if started == false
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if timer_enabled {if timer timer -= 1;}
+            <string>if timer_enabled &amp;&amp; started {if timer timer -= 1;}
 </string>
           </argument>
         </arguments>

@@ -273,6 +273,8 @@ case 6:
         // final super sonic level
         if objProgram.special_future_current_level&gt;=7 &amp;&amp; objGameData.character_id[0] == 1 {
             objProgram.current_level+=1;
+            objProgram.spawn_time = 36000;
+            objProgram.temp_spawn_time = -1;
             room_goto(MM1);
         } else {
             room_goto(ending);
