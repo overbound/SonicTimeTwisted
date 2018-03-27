@@ -12,7 +12,7 @@ if(objProgram.os == os_android)
 {
     if(!dontRelease)
     {
-        with(objAndroidInput)
+        with(objProgram.inputManager)
         {   
             android_vk_release(cUP);
             android_vk_release(cLEFT);
@@ -24,7 +24,7 @@ if(objProgram.os == os_android)
             android_vk_release(cSTART);
         }
     }
-    with(objAndroidInput)
+    with(objProgram.inputManager)
     {   
         event_user(2);
     }

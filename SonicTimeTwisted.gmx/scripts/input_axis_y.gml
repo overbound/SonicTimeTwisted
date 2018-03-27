@@ -1,2 +1,2 @@
 // input_axis_y()
-return objInput.y_axis;
+return objProgram.inputManager.y_axis;

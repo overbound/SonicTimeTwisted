@@ -59,7 +59,8 @@ input_load();
 fix_bad_gamepad_axis();
 
 gamepad_update_enabled = true;
-load_gamepad_support()
+load_gamepad_support();
+
 </string>
           </argument>
         </arguments>

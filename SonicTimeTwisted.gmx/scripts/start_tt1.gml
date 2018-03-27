@@ -13,4 +13,4 @@ if objProgram.spawn_tag == 0 {
 }
 with objLevel { silence = 1; }
 
-with objInput flag_player_input = true;
+with objProgram.inputManager flag_player_input = true;

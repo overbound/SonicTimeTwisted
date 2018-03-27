@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>-1</persistent>
-  <parentName>objAbstractInput</parentName>
+  <parentName>objInput</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>vk_active = false;
+            <string>event_inherited();
+vk_active = false;
 
 alpha = 0;
 gyroscopeMode = false;
@@ -122,6 +123,17 @@ ds_map_add(keys, cSTART, false);
 
 notice = '';
 notice_timer = 0;
+
+// map allowing to track key presses
+keyboard_pressed = ds_map_create();
+keyboard_holding = ds_map_create();
+for(var i = 0; i &lt; 255; i++)
+{
+    ds_map_replace(keyboard_pressed, i, false);
+    ds_map_replace(keyboard_holding, i, false);
+}
+
+android_refresh_devices();
 </string>
           </argument>
         </arguments>
@@ -145,12 +157,161 @@ notice_timer = 0;
           <argument>
             <kind>1</kind>
             <string>ds_map_destroy(keys);
+ds_map_destroy(keyboard_pressed);
+ds_map_destroy(keyboard_holding);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>android_step_end();
+event_inherited();
 </string>
           </argument>
         </arguments>
       </action>
     </event>
     <event eventtype="3" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>605</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>Sorry for the copy-paste, it's for performances' sake</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Get device state
+var buffer, i, a;
+
+// clear states
+buffer = state;
+state = 0;
+state_press = 0;
+state_release = 0;
+
+/*
+if objScreen.image_index mod 8 == 0
+    gamepad_update();*/
+
+// keys
+for (i = 0; i &lt; key_count; i++)
+    if (android_keyboard_check(key[i])) state |= key_control[i];
+
+if(gamepad_update_enabled) {    
+    // buttons
+    for (i = 0; i &lt; button_count; i++)
+        if (android_gamepad_button_check(pad, button[i])) state |= button_control[i];
+        //if (gamepad_button_check(button_gamepad[i], button[i])) state |= button_control[i];
+        // if (gamepad_button(pad, button[i])) state |= button_control[i];
+    
+    // axes
+    for (i = 0; i &lt; axis_count; i++)
+        if (android_gamepad_axis_value(pad, axis[i]) * axis_direction[i] &gt; axis_deadzone[i]) state |= axis_control[i];
+        //if (gamepad_axis_value(axis_gamepad[i], axis[i]) * axis_direction[i] &gt; axis_deadzone[i]) state |= axis_control[i];
+        // if (gamepad_axis(pad, axis[i]) * axis_direction[i] &gt; axis_deadzone[i]) state |= axis_control[i];
+}
+
+// default "back" button - defaul event is kept because we want to target specifically the device's back button, which might match an Android gamepad buttno
+if(keyboard_check(objProgram.back_button))
+{
+    state |= cBACK;
+}
+
+// custom control schemes (e.g. touchscreen)
+with(objAbstractInput)
+{
+    event_user(0);
+}    
+
+// axes
+x_axis = 0;
+if (state &amp; cLEFT &amp;&amp; flag_player_input) || (computer_cLEFT &amp;&amp; !flag_player_input) x_axis -= 1;
+if (state &amp; cRIGHT &amp;&amp; flag_player_input) || (computer_cRIGHT &amp;&amp; !flag_player_input) x_axis += 1;
+
+y_axis = 0;
+if (state &amp; cUP &amp;&amp; flag_player_input) || (computer_cUP &amp;&amp; !flag_player_input) y_axis -= 1;
+if (state &amp; cDOWN &amp;&amp; flag_player_input) || (computer_cDOWN &amp;&amp; !flag_player_input) y_axis += 1;
+
+// pressing and releasing
+state_press = (state &amp; buffer) ^ state;
+state_release = (state &amp; buffer) ^ buffer;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Check for Pressing
+
+if pressingGamepad != -1 {
+    if !android_gamepad_button_check(pad,pressingGamepad) &amp;&amp; !android_gamepad_axis_value(pad,pressingGamepad) {
+        pressingGamepad = -1;
+    }
+}
+
+</string>
+          </argument>
+        </arguments>
+      </action>
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -215,7 +376,7 @@ if(vk_active)
     // Let's see if touchscreen needs to be disabled
     // cutscene? disable. No playable character? Disable. No player flag input? Disable too
     
-    if(!( (instance_exists(objPlayer) || instance_exists(objSSPlayer)) &amp;&amp; objInput.flag_player_input ))
+    if(!( (instance_exists(objPlayer) || instance_exists(objSSPlayer)) &amp;&amp; objProgram.inputManager.flag_player_input ))
     {
         smartphone_disable_virtual_keys();    
     }
@@ -235,7 +396,7 @@ if(!vk_active)
     GMS processes "OR" and "AND" conditions, this speeds
     things up a little bit.
     */
-    if(objInput.flag_player_input)
+    if(objProgram.inputManager.flag_player_input)
     {
         if(instance_exists(objPlayer))
         {
@@ -264,6 +425,7 @@ if(!vk_active)
         smartphone_enable_virtual_keys(false);
     }
 }
+android_step_begin();
 </string>
           </argument>
         </arguments>
@@ -512,7 +674,8 @@ vk_active = true;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(vk_active)
+            <string>event_inherited();
+if(vk_active)
 {
     var state = 0;
     var size = ds_map_size(keys) ;
@@ -525,7 +688,7 @@ vk_active = true;
         }
         key = ds_map_find_next(keys, key);
      }
-     objInput.state |= state;
+     objProgram.inputManager.state |= state;
 }
 </string>
           </argument>

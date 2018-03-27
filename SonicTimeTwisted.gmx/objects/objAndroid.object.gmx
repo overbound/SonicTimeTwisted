@@ -28,8 +28,11 @@
             <string>// The back key here is Android's "back" key, seen by GMS as backspace
 objProgram.back_button = vk_backspace;
 objProgram.back_button_label = "BACK"
-
-instance_create(0,0,objAndroidInput);
+with(objInput)
+{
+    instance_destroy();
+}
+objProgram.inputManager = instance_create(0,0,objAndroidInput);
 </string>
           </argument>
         </arguments>

@@ -194,7 +194,7 @@ if path_position &gt; .78 &amp;&amp; state == 0
             <string>if objProgram.spawn_tag != 0 { instance_destroy(); exit; }
 // fade out only
 with objTitlecard mode = 3;
-with objInput flag_player_input = false;
+with objProgram.inputManager flag_player_input = false;
 //play_music_intro(objMusic.musicIntro,0);
 //with objLevel started = true;
 </string>

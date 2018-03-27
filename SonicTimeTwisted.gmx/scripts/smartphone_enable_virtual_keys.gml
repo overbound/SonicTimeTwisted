@@ -2,10 +2,10 @@
 if(objProgram.os == os_android)
 {
     smartphone_disable_virtual_keys(true);
-    if(objAndroidInput.input == 0)
+    if(objProgram.inputManager.input == 0)
     {
-        objAndroidInput.gyroscopeMode = argument0;
-        with(objAndroidInput)
+        objProgram.inputManager.gyroscopeMode = argument0;
+        with(objProgram.inputManager)
         {
             event_user(1);
         }

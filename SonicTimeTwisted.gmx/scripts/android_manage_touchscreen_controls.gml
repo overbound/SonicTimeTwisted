@@ -8,12 +8,12 @@
 5 is idle
 */
 bar = 32;
-if(objAndroidInput.vksize == 1)
+if(objProgram.inputManager.vksize == 1)
 {
     bar = 24;
 }
 else
-if(objAndroidInput.vksize == 2)
+if(objProgram.inputManager.vksize == 2)
 {
     bar = 16;
 }
@@ -94,7 +94,7 @@ for(var device = 0; device <= 4; device++)
         if(!button_found)
         {
             // super sonic button
-            if(objAndroidInput.superIsEnabled && objAndroidInput.jumping)
+            if(objProgram.inputManager.superIsEnabled && objProgram.inputManager.jumping)
             {
                 if(point_in_rectangle(device_mouse_x_to_gui(device), device_mouse_y_to_gui(device),
                     bbx, bby, bbx + 24, bby + 24

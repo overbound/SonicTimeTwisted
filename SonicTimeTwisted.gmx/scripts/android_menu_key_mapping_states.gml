@@ -63,7 +63,7 @@ if(substate >= 2 && substate <= 9)
             {
                 continue;
             }
-            if(keyboard_check_pressed(i))
+            if(android_keyboard_check_pressed(i))
             {
                 pressed_key = i;
                 break;
@@ -102,7 +102,7 @@ if(substate >= 2 && substate <= 9)
     if(state == 9)
     {
         // remapping up on gamepad
-        if(keyboard_check_pressed(objProgram.back_button))
+        if(android_keyboard_check_pressed(objProgram.back_button))
         {
             // cancel key pressed - Abort! Abort! Abort! Return to the menu's usual operating mode
             // it's also present in this option, in case the player wants to remap the peripheral they don't have
@@ -116,14 +116,14 @@ if(substate >= 2 && substate <= 9)
         else
         {
             var mapped = false;
-            var padButton = input_any_gamepad_button()
+            var padButton = android_input_any_gamepad_button()
             if padButton { 
                 ds_map_add(temp_map, keyToMap, padButton);
                 mapped = true;
             }
             if(wait_for_release_axis)
             {
-                axis = input_any_gamepad_axis();
+                axis = android_input_any_gamepad_axis();
                 if(axis == "")
                 {
                     wait_for_release_axis = false;
@@ -133,10 +133,10 @@ if(substate >= 2 && substate <= 9)
             {
                 if(axis == "")
                 {
-                    axis = input_any_gamepad_axis();
+                    axis = android_input_any_gamepad_axis();
                 }
                 if axis != "" {
-                    if input_any_gamepad_axis() == "" {
+                    if android_input_any_gamepad_axis() == "" {
                         // axes can only be mapped to directions
                         if(keyToMap == cUP || keyToMap == cDOWN || keyToMap == cLEFT || keyToMap == cRIGHT)
                         {

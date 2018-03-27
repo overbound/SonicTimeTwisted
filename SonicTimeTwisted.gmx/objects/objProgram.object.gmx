@@ -38,7 +38,7 @@ lost_focus = false;
 check_room = 0;
 
 // controllers
-instance_create(0, 0, objInput);
+inputManager = instance_create(0, 0, objInput);
 
 // level data
 current_level = -1;
@@ -376,7 +376,11 @@ audio_set_master_gain(0, 0.75);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>delete_settings();
+            <string>// only available for windows
+if(get_os_type() == os_windows)
+{
+    delete_settings();
+}
 </string>
           </argument>
         </arguments>
@@ -385,17 +389,28 @@ audio_set_master_gain(0, 0.75);
     <event eventtype="9" enumb="113">
       <action>
         <libid>1</libid>
-        <id>331</id>
-        <kind>0</kind>
+        <id>603</id>
+        <kind>7</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_restart_game</functionname>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>// only available for windows
+if(get_os_type() == os_windows)
+{
+    game_restart();
+}
+</string>
+          </argument>
+        </arguments>
       </action>
     </event>
   </events>

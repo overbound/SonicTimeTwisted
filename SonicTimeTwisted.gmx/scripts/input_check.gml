@@ -1,35 +1,35 @@
 // input_check(control)
-if (objInput.flag_player_input)
+if (objProgram.inputManager.flag_player_input)
 {
-    return objInput.state & argument0;
+    return objProgram.inputManager.state & argument0;
 }
 else
 {
     switch(argument0)
     {
     case cUP:
-        if (objInput.computer_cUP) return true;
+        if (objProgram.inputManager.computer_cUP) return true;
         break;
     case cDOWN:
-        if (objInput.computer_cDOWN) return true;
+        if (objProgram.inputManager.computer_cDOWN) return true;
         break;
     case cLEFT:
-        if (objInput.computer_cLEFT) return true;
+        if (objProgram.inputManager.computer_cLEFT) return true;
         break;
     case cRIGHT:
-        if (objInput.computer_cRIGHT) return true;
+        if (objProgram.inputManager.computer_cRIGHT) return true;
         break;
     case cSTART:
-        if (objInput.computer_cSTART) return true;
+        if (objProgram.inputManager.computer_cSTART) return true;
         break;
     case cACTION:
-        if (objInput.computer_cA) return true;
+        if (objProgram.inputManager.computer_cA) return true;
         break;
     case cCANCEL:
-        if (objInput.computer_cB) return true;
+        if (objProgram.inputManager.computer_cB) return true;
         break;
     case cCONFIRM:
-        if (objInput.computer_cA || objInput.computer_cSTART) return true;
+        if (objProgram.inputManager.computer_cA || objProgram.inputManager.computer_cSTART) return true;
         break;
     default:
         return false;

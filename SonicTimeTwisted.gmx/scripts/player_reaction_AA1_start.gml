@@ -46,7 +46,7 @@ with instance_create(0, 0, objTitlecard)
     mode = 1;
 }
 
-with objInput flag_player_input = true;
+with objProgram.inputManager flag_player_input = true;
 // remove trigger
 with argument0 instance_destroy();
 

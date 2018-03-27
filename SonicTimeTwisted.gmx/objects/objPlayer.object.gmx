@@ -160,7 +160,7 @@ waterCountAlpha = 0;
 waterCountTime = 0;
 waterCountDigit = 0;
 
-with objInput flag_player_input = true;
+with objProgram.inputManager flag_player_input = true;
 
 </string>
           </argument>

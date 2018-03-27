@@ -5,7 +5,7 @@
   </Configs>
   <datafiles number="43" name="datafiles"/>
   <NewExtensions>
-    <extension index="0">extensions\MogaExtensionAndroid</extension>
+    <extension index="0">extensions\BtInputs</extension>
   </NewExtensions>
   <sounds name="sound">
     <sounds name="BGM">
@@ -2235,6 +2235,9 @@
         <script>scripts\android_read_gyroscope_x.gml</script>
         <script>scripts\android_read_gyroscope_y.gml</script>
         <script>scripts\android_manage_touch_controls.gml</script>
+        <script>scripts\android_input_any_gamepad_axis.gml</script>
+        <script>scripts\android_input_any_gamepad_button.gml</script>
+        <script>scripts\android_menu_key_mapping_states.gml</script>
       </scripts>
     </scripts>
   </scripts>

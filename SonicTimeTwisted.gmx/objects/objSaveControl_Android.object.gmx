@@ -37,7 +37,7 @@ hold_counter = 0;
 dir_snap = 0;
 snap_timer = 0;
 target = objSaveControl.selectCheck;
-if(objAndroidInput.input == 0)
+if(objProgram.inputManager.input == 0)
 {
     objSaveControl.stageDeleteConfirmSprite = sprDeleteConfirmTouchscreen;
 }

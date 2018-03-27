@@ -18,7 +18,7 @@ if landed
 // sound
 audio_play_sound(sndBoost, 0, 0);
 
-objInput.flag_player_input = false;
+objProgram.inputManager.flag_player_input = false;
 
 // hard collision found
 return false;

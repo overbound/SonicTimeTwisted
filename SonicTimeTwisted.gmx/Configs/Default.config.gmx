@@ -58,7 +58,7 @@
     <option_android_interpolate>0</option_android_interpolate>
     <option_android_licensing_enable>0</option_android_licensing_enable>
     <option_android_licensing_key></option_android_licensing_key>
-    <option_android_lint>-1</option_android_lint>
+    <option_android_lint>0</option_android_lint>
     <option_android_major_version>1</option_android_major_version>
     <option_android_min_sdk_version>9</option_android_min_sdk_version>
     <option_android_minor_version>0</option_android_minor_version>
@@ -81,7 +81,7 @@
     <option_android_package_company>overboundstudio</option_android_package_company>
     <option_android_package_domain>com</option_android_package_domain>
     <option_android_package_product>SonicTimeTwisted</option_android_package_product>
-    <option_android_permission_flags>0</option_android_permission_flags>
+    <option_android_permission_flags>16</option_android_permission_flags>
     <option_android_pocketchange_enable>0</option_android_pocketchange_enable>
     <option_android_pocketchange_id></option_android_pocketchange_id>
     <option_android_pocketchange_test_enable>0</option_android_pocketchange_test_enable>
@@ -415,7 +415,7 @@
     <option_noborder>false</option_noborder>
     <option_nobuttons>false</option_nobuttons>
     <option_noscreensaver>true</option_noscreensaver>
-    <option_ouya_packaging>0</option_ouya_packaging>
+    <option_ouya_packaging>-1</option_ouya_packaging>
     <option_priority>0</option_priority>
     <option_ps3_build_version>0</option_ps3_build_version>
     <option_ps3_interpolate>-1</option_ps3_interpolate>

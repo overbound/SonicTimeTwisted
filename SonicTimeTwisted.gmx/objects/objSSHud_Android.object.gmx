@@ -60,7 +60,7 @@ menu = newMenu;
           <argument>
             <kind>1</kind>
             <string>/// draw lives
-if(objAndroidInput.input == 0)
+if(objProgram.inputManager.input == 0)
 {
 /*
     var lives_x_left = view_xview[view_current] + view_wview[view_current] - 100;

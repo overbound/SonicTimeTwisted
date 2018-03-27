@@ -83,7 +83,7 @@ else
     timer_before_notice--;
     if(timer_before_notice == 0)
     {
-        with(objAndroidInput)
+        with(objProgram.inputManager)
         {
             if(input == 0)
             {

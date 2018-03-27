@@ -165,6 +165,29 @@ pressed = false;
         </arguments>
       </action>
     </event>
+    <event eventtype="7" enumb="17">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>menu_key_mapping_states();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="7" enumb="16">
       <action>
         <libid>1</libid>
@@ -505,7 +528,7 @@ if(active)
                     activated = true;
                     break;
                 case 3: // gamepad enabled/disabled
-                    with(objInput)
+                    with(objProgram.inputManager)
                     {
                         event_user(0);
                     }
@@ -670,7 +693,7 @@ if(active)
                     event_user(1);
                     break;
                 case 3: // gamepad enabled/disabled
-                    with(objInput)
+                    with(objProgram.inputManager)
                     {
                         event_user(0);
                     }
@@ -926,7 +949,7 @@ switch(state)
         }
         
         var gamepadStateLabel = "NO";
-        if(objInput.gamepad_update_enabled)
+        if(objProgram.inputManager.gamepad_update_enabled)
         {
             gamepadStateLabel = "YES";
         }
@@ -972,18 +995,18 @@ switch(state)
         var startLabel = 0;
         if(state == 8)
         {
-            for(var i=0; i &lt; objInput.key_count; i++)
+            for(var i=0; i &lt; objProgram.inputManager.key_count; i++)
             {
                 var stored_key;
-                if(ds_map_exists(temp_map, objInput.key_control[i]))
+                if(ds_map_exists(temp_map, objProgram.inputManager.key_control[i]))
                 {
-                    stored_key = ds_map_find_value(temp_map, objInput.key_control[i]);
+                    stored_key = ds_map_find_value(temp_map, objProgram.inputManager.key_control[i]);
                 }
                 else
                 {
-                    stored_key = objInput.key[i];
+                    stored_key = objProgram.inputManager.key[i];
                 }
-                switch(objInput.key_control[i])
+                switch(objProgram.inputManager.key_control[i])
                 {
                     case cUP:
                         upLabel = get_kb_label(stored_key);
@@ -1014,18 +1037,18 @@ switch(state)
         }
         else
         {
-            for(var i=0; i &lt; objInput.button_count; i++)
+            for(var i=0; i &lt; objProgram.inputManager.button_count; i++)
             {
                 var stored_key;
-                if(ds_map_exists(temp_map, objInput.button_control[i]))
+                if(ds_map_exists(temp_map, objProgram.inputManager.button_control[i]))
                 {
-                    stored_key = ds_map_find_value(temp_map, objInput.button_control[i]);
+                    stored_key = ds_map_find_value(temp_map, objProgram.inputManager.button_control[i]);
                 }
                 else
                 {
-                    stored_key = objInput.button[i];
+                    stored_key = objProgram.inputManager.button[i];
                 }
-                switch(objInput.button_control[i])
+                switch(objProgram.inputManager.button_control[i])
                 {
                     case cUP:
                         upLabel = get_gp_label(stored_key);
@@ -1053,25 +1076,25 @@ switch(state)
                         break;
                 }
             }
-            for(var i=0; i &lt; objInput.axis_count; i++)
+            for(var i=0; i &lt; objProgram.inputManager.axis_count; i++)
             {
                 var stored_key;
-                if(ds_map_exists(temp_map, objInput.axis_control[i]))
+                if(ds_map_exists(temp_map, objProgram.inputManager.axis_control[i]))
                 {
-                    stored_key = ds_map_find_value(temp_map, objInput.axis_control[i]);
+                    stored_key = ds_map_find_value(temp_map, objProgram.inputManager.axis_control[i]);
                 }
                 else
                 {                
                     var axiscode = "+";
-                    if(objInput.axis_direction[i] &lt; 0)
+                    if(objProgram.inputManager.axis_direction[i] &lt; 0)
                     {
                         axiscode = "-";
                     }
-                    axiscode += string(objInput.axis[i]);
+                    axiscode += string(objProgram.inputManager.axis[i]);
                     stored_key = axiscode;
                 }
                 
-                switch(objInput.axis_control[i])
+                switch(objProgram.inputManager.axis_control[i])
                 {
                     case cUP:
                         upLabel = get_gp_label(stored_key);
@@ -1577,7 +1600,8 @@ if(active)
             if(state == 8 || state == 9)
             {
                 // the key mapping code is getting too big: it's a script now
-                menu_key_mapping_states();
+                // on top of that it even became an event, so that it could be overloaded by platform
+                event_user(7);
             }
             else
             if(state == 11)

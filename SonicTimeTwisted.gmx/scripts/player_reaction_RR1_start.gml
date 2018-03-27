@@ -8,7 +8,7 @@ if landed {
     // animate
     image_angle = 0;
     animation_new = "idle";
-    objInput.flag_player_input = true;
+    objProgram.inputManager.flag_player_input = true;
     
     // states and flags
     state = player_state_standby;
