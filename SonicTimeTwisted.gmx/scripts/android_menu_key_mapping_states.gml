@@ -49,38 +49,30 @@ if(substate >= 2 && substate <= 9)
     }
     if(state == 8)
     {
-        // Could have used keyboard_check_pressed, but it doesn't work correctly on all platforms.
-        // So instead, we use prev_pressed_key. It's not pretty.
-        var pressed_key = -1;
-
-        for(var i = 4; i <= 255; i++)
+        if(keyboard_check_pressed(objProgram.back_button))
         {
-            if (i == vk_anykey)
-            {
-                continue;
-            }
-            if (i == vk_nokey)
-            {
-                continue;
-            }
-            if(android_keyboard_check_pressed(i))
-            {
-                pressed_key = i;
-                break;
-            }
+            // cancel key pressed - Abort! Abort! Abort! Return to the menu's usual operating mode
+            ds_map_destroy(temp_map);
+            temp_map = ds_map_create();
+            use_default_interface = true;
+            substate = 0;
         }
-        if (pressed_key != -1) {
-            
-            if (pressed_key == objProgram.back_button)
+        else
+        {
+            // Could have used keyboard_check_pressed, but it doesn't work correctly on all platforms.
+            // So instead, we use prev_pressed_key. It's not pretty.
+            var pressed_key = -1;
+    
+            for(var i = 4; i <= 255; i++)
             {
-                // cancel key pressed - Abort! Abort! Abort! Return to the menu's usual operating mode
-                ds_map_destroy(temp_map);
-                temp_map = ds_map_create();
-                use_default_interface = true;
-                substate = 0;
+                if(android_keyboard_check_pressed(i))
+                {
+                    pressed_key = i;
+                    break;
+                }
             }
-            else
-            {
+            show_debug_message('Pressed: '+string(pressed_key));
+            if (pressed_key != -1) {
                 var key = 0;
                 if(keyToMap > 0)
                 {
@@ -94,15 +86,15 @@ if(substate >= 2 && substate <= 9)
                 {
                     substate++;
                 }
+                event_user(1);
             }
-            event_user(1);
         }
     }
     else
     if(state == 9)
     {
         // remapping up on gamepad
-        if(android_keyboard_check_pressed(objProgram.back_button))
+        if(keyboard_check_pressed(objProgram.back_button))
         {
             // cancel key pressed - Abort! Abort! Abort! Return to the menu's usual operating mode
             // it's also present in this option, in case the player wants to remap the peripheral they don't have

@@ -48,9 +48,6 @@ objLevel.timer_enabled = true;
 objLevel.timer = 36000
 //objLevel.started = false;
 
-// create hud
-instance_create(0, 0, objHud);
-
 // setup titlecard
 with instance_create(0, 0, objTitlecard)
 {

@@ -2,6 +2,7 @@
 <assets>
   <Configs name="configs">
     <Config>Configs\Default</Config>
+    <Config>Configs\AndroidConsole</Config>
   </Configs>
   <datafiles number="43" name="datafiles"/>
   <NewExtensions>
@@ -2238,6 +2239,8 @@
         <script>scripts\android_input_any_gamepad_axis.gml</script>
         <script>scripts\android_input_any_gamepad_button.gml</script>
         <script>scripts\android_menu_key_mapping_states.gml</script>
+        <script>scripts\android_device_set_mode_keyboard.gml</script>
+        <script>scripts\android_device_set_mode_gamepad.gml</script>
       </scripts>
     </scripts>
   </scripts>
@@ -3073,7 +3076,6 @@
       </objects>
     </objects>
     <objects name="Ports">
-      <object>objects\objAbstractInput</object>
       <object>objects\objSSAlwaysActive</object>
       <objects name="Android">
         <object>objects\objAndroid</object>
@@ -3086,6 +3088,7 @@
           <object>objects\objSSLevel_Android</object>
           <object>objects\objMenu_Android</object>
           <object>objects\objAndroidInput</object>
+          <object>objects\objAndroidInputSmartphone</object>
         </objects>
       </objects>
     </objects>
@@ -3375,7 +3378,7 @@
       </rooms>
     </rooms>
   </rooms>
-  <constants number="74">
+  <constants number="75">
     <constant name="GAMEPAD_POV_Y">7</constant>
     <constant name="GAMEPAD_POV_X">6</constant>
     <constant name="GAMEPAD_AXIS_V">5</constant>
@@ -3450,6 +3453,7 @@
     <constant name="OPTION_TYPE_SUBMENU">4</constant>
     <constant name="OPTION_TYPE_RETURN">5</constant>
     <constant name="OPTION_ANIMATION_FLASHING">2</constant>
+    <constant name="ANDROID_CONSOLE">0</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>

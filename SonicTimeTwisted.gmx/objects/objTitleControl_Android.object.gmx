@@ -62,161 +62,163 @@ levelSelectMaxPresses = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>// when the screen is touched - display the main menu
-if(pauseState == 3)
+            <string>if(ANDROID_CONSOLE == 0)
 {
-    if(name &gt;= 12)
+    // when the screen is touched - display the main menu
+    if(pauseState == 3)
     {
-        if (start == true)
+        if(name &gt;= 12)
         {
-            if(levelSelectClicks == 6)
+            if (start == true)
             {
-                var levelSelectPresses = 0;
-                if (device_mouse_check_button(0, mb_left))
+                if(levelSelectClicks == 6)
                 {
-                    levelSelectPresses++;
-                }
-                if (device_mouse_check_button(1, mb_left))
-                {
-                    levelSelectPresses++;
-                }
-                if (device_mouse_check_button(2, mb_left))
-                {
-                    levelSelectPresses++;
-                }
-                if (device_mouse_check_button(3, mb_left))
-                {
-                    levelSelectPresses++;
-                }
-                if (device_mouse_check_button(4, mb_left))
-                {
-                    levelSelectPresses++;
-                }
-                levelSelectMaxPresses = max(levelSelectMaxPresses, levelSelectPresses);
-                if(!levelSelectTwoPressesChecked)
-                {
-                    if(levelSelectMaxPresses &gt; 0)
+                    var levelSelectPresses = 0;
+                    if (device_mouse_check_button(0, mb_left))
                     {
-                        levelSelectTwoPressesChecked = true;
+                        levelSelectPresses++;
+                    }
+                    if (device_mouse_check_button(1, mb_left))
+                    {
+                        levelSelectPresses++;
+                    }
+                    if (device_mouse_check_button(2, mb_left))
+                    {
+                        levelSelectPresses++;
+                    }
+                    if (device_mouse_check_button(3, mb_left))
+                    {
+                        levelSelectPresses++;
+                    }
+                    if (device_mouse_check_button(4, mb_left))
+                    {
+                        levelSelectPresses++;
+                    }
+                    levelSelectMaxPresses = max(levelSelectMaxPresses, levelSelectPresses);
+                    if(!levelSelectTwoPressesChecked)
+                    {
+                        if(levelSelectMaxPresses &gt; 0)
+                        {
+                            levelSelectTwoPressesChecked = true;
+                        }
+                    }
+                    else
+                    {
+                        if(levelSelectPresses == 0)
+                        {
+                            if(levelSelectMaxPresses &gt; 1)
+                            {
+                                if(!menu.active)
+                                {
+                                    menu.wait_for_release_click = true;
+                                    menu.wait_for_release = false;
+                                    menu.active = true;
+                                }
+                                pauseState = 0;
+                                with(menu)
+                                {
+                                    state = 11;
+                                    event_user(0);
+                                }
+                            }
+                            else
+                            {
+                                menu.wait_for_release_click = true;
+                                pauseState = 0;
+                            }
+                        }
                     }
                 }
                 else
                 {
-                    if(levelSelectPresses == 0)
+                    if(device_mouse_check_button_released(0, mb_left))
                     {
-                        if(levelSelectMaxPresses &gt; 1)
-                        {
-                            if(!menu.active)
-                            {
-                                menu.wait_for_release_click = true;
-                                menu.wait_for_release = false;
-                                menu.active = true;
-                            }
-                            pauseState = 0;
-                            with(menu)
-                            {
-                                state = 11;
-                                event_user(0);
-                            }
-                        }
-                        else
-                        {
-                            menu.wait_for_release_click = true;
-                            pauseState = 0;
-                        }
+                        menu.wait_for_release_click = true;
+                        pauseState = 0;
                     }
-                }
-            }
-            else
-            {
-                if(device_mouse_check_button_released(0, mb_left))
-                {
-                    menu.wait_for_release_click = true;
-                    pauseState = 0;
                 }
             }
         }
-    }
-    else
-    {
-        if(device_mouse_check_button_pressed(0, mb_left))
+        else
         {
-            if(levelSelectClicks == 0)
+            if(device_mouse_check_button_pressed(0, mb_left))
             {
-                if(name == 3)
+                if(levelSelectClicks == 0)
                 {
-                    levelSelectClicks = 1;
+                    if(name == 3)
+                    {
+                        levelSelectClicks = 1;
+                    }
+                    else
+                    {
+                        levelSelectClicks = 0;
+                    }
                 }
                 else
+                if(levelSelectClicks == 1)
                 {
-                    levelSelectClicks = 0;
-                }
-            }
-            else
-            if(levelSelectClicks == 1)
-            {
-                if(name == 4)
-                {
-                    levelSelectClicks = 2;
-                }
-                else
-                {
-                    levelSelectClicks = 0;
-                }
-            }
-            else
-            if(levelSelectClicks == 2)
-            {
-                if(name == 5)
-                {
-                    levelSelectClicks = 3;
+                    if(name == 4)
+                    {
+                        levelSelectClicks = 2;
+                    }
+                    else
+                    {
+                        levelSelectClicks = 0;
+                    }
                 }
                 else
+                if(levelSelectClicks == 2)
                 {
-                    levelSelectClicks = 0;
-                }
-            }
-            else
-            if(levelSelectClicks == 3)
-            {
-                if(name == 6)
-                {
-                    levelSelectClicks = 4;
-                }
-                else
-                {
-                    levelSelectClicks = 0;
-                }
-            }
-            else
-            if(levelSelectClicks == 4)
-            {
-                if(name == 7)
-                {
-                    levelSelectClicks = 5;
+                    if(name == 5)
+                    {
+                        levelSelectClicks = 3;
+                    }
+                    else
+                    {
+                        levelSelectClicks = 0;
+                    }
                 }
                 else
+                if(levelSelectClicks == 3)
                 {
-                    levelSelectClicks = 0;
-                }
-            }
-            else
-            if(levelSelectClicks == 5)
-            {
-                if(name == 8)
-                {
-                    audio_play_sound(sndRing,0,false);
-                    levelSelectClicks = 6;
+                    if(name == 6)
+                    {
+                        levelSelectClicks = 4;
+                    }
+                    else
+                    {
+                        levelSelectClicks = 0;
+                    }
                 }
                 else
+                if(levelSelectClicks == 4)
                 {
-                    levelSelectClicks = 0;
+                    if(name == 7)
+                    {
+                        levelSelectClicks = 5;
+                    }
+                    else
+                    {
+                        levelSelectClicks = 0;
+                    }
+                }
+                else
+                if(levelSelectClicks == 5)
+                {
+                    if(name == 8)
+                    {
+                        audio_play_sound(sndRing,0,false);
+                        levelSelectClicks = 6;
+                    }
+                    else
+                    {
+                        levelSelectClicks = 0;
+                    }
                 }
             }
         }
     }
 }
-
 event_inherited();
 </string>
           </argument>
@@ -241,8 +243,10 @@ event_inherited();
           <argument>
             <kind>1</kind>
             <string>// init menu labels
-startText = 'TOUCH TO START';
-
+if(ANDROID_CONSOLE == 0)
+{
+    startText = 'TOUCH TO START';
+}
 </string>
           </argument>
         </arguments>

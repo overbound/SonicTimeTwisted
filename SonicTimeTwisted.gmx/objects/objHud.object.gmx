@@ -284,7 +284,6 @@ draw_text(view_xview[view_current]+88, view_yview[view_current]+40-(16*objScreen
 draw_set_halign(fa_left);
 draw_text(view_xview[view_current]+56+timeOffset, view_yview[view_current]+24-(16*objScreen.split_screen), time_stamp);
 
-
 // TODO Remove FPS
 //draw_text(view_xview[view_current]+400,view_yview[view_current]+24, fps);
 
