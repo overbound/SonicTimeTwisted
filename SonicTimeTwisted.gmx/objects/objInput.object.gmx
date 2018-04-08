@@ -167,10 +167,7 @@ if(keyboard_check(objProgram.back_button))
 }
 
 // custom control schemes (e.g. touchscreen)
-with(objAbstractInput)
-{
-    event_user(0);
-}    
+event_user(3);   
 
 // axes
 x_axis = 0;

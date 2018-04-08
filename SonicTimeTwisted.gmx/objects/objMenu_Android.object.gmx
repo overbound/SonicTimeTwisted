@@ -32,15 +32,31 @@ gui_x_length = 200;
 wait_for_release_click = false;
 
 // syncing some stuff with the input object for the button reposition screen
-dpadx = objProgram.inputManager.dpadx;
-dpady = objProgram.inputManager.dpady;
-bax = objProgram.inputManager.bax;
-bay = objProgram.inputManager.bay;
-bsx = objProgram.inputManager.bsx;
-bsy = objProgram.inputManager.bsy;
-bbx = objProgram.inputManager.bbx;
-bby = objProgram.inputManager.bby;
-vksize = objProgram.inputManager.vksize;
+if(ANDROID_CONSOLE != 0)
+{
+    dpadx = 0;
+    dpady = 0;
+    bax = 0;
+    bay = 0;
+    bsx = 0;
+    bsy = 0;
+    bbx = 0;
+    bby = 0;
+    vksize = 0;
+}
+else
+{
+    dpadx = objProgram.inputManager.dpadx;
+    dpady = objProgram.inputManager.dpady;
+    bax = objProgram.inputManager.bax;
+    bay = objProgram.inputManager.bay;
+    bsx = objProgram.inputManager.bsx;
+    bsy = objProgram.inputManager.bsy;
+    bbx = objProgram.inputManager.bbx;
+    bby = objProgram.inputManager.bby;
+    vksize = objProgram.inputManager.vksize;
+}
+
 dpadgraphic = 0;
 dpadSprite = sprTouchscreenDPadTemplate;
 buttonSprite = sprTouchscreenButton;
@@ -154,174 +170,176 @@ else
           <argument>
             <kind>1</kind>
             <string>event_inherited();
-
-if(state == 1002)
+if(ANDROID_CONSOLE == 0)
 {
-    draw_sprite(dpadSprite, 0,
-        x_offset + dpadx - dpadRadius,
-        view_yview[view_current] + dpady - dpadRadius);
-    
-    draw_sprite(buttonSprite, 0,
-        x_offset + bax - dpadRadius,
-        view_yview[view_current] + bay - dpadRadius);
-    
-    draw_sprite(sprTouchscreenPauseButton, 0,
-        x_offset + bsx,
-        view_yview[view_current] + bsy);
-    
-    draw_sprite(sprTouchscreenSuperButtonYellow, 0,
-        x_offset + bbx,
-        view_yview[view_current] + bby);
-}
-else
-if(state == 1004 || state == 1005 || state == 1006)
-{        
-    var tiltscale_x = 0;
-    var tiltscale_y = 0;
-    with(objProgram.inputManager)
+    if(state == 1002)
     {
-        tiltscale_x = android_read_gyroscope_x();
-        tiltscale_y = android_read_gyroscope_y();
-    }
-    var keyToPressX, keyToPressY;
-    if(tiltscale_x &lt; 0)
-    {
-        keyToPressX = cLEFT;
-    }
-    else
-    {
-        keyToPressX = cRIGHT;
-    }
-    if(tiltscale_y &lt; 0)
-    {
-        keyToPressY = cUP;
-    }
-    else
-    {
-        keyToPressY = cDOWN;
-    }
-    var test_origin_x = x_offset + 204;
-    var test_origin_y = view_yview[view_current] + 200;
-    
-    if(objProgram.inputManager.gyromode == 0)
-    {
-        // simple mode where tilting simply presses left and right
-        if(tiltscale_x &lt; 0)
-        {
-            draw_sprite(sprGyroscopeTest, 1, test_origin_x - 16, test_origin_y);
-            draw_sprite(sprGyroscopeTest, 4, test_origin_x + 16, test_origin_y);
-        }
-        else
-        if(tiltscale_x &gt; 0)
-        {
-            draw_sprite(sprGyroscopeTest, 2, test_origin_x - 16, test_origin_y);
-            draw_sprite(sprGyroscopeTest, 3, test_origin_x + 16, test_origin_y);
-        }
-        else
-        {
-            draw_sprite(sprGyroscopeTest, 2, test_origin_x - 16, test_origin_y);
-            draw_sprite(sprGyroscopeTest, 4, test_origin_x + 16, test_origin_y);
-        }
+        draw_sprite(dpadSprite, 0,
+            x_offset + dpadx - dpadRadius,
+            view_yview[view_current] + dpady - dpadRadius);
         
-        if(tiltscale_y &lt; 0)
-        {
-            draw_sprite(sprGyroscopeTest, 5, test_origin_x, test_origin_y - 16);
-            draw_sprite(sprGyroscopeTest, 8, test_origin_x, test_origin_y + 16);
-        }
-        else
-        if(tiltscale_y &gt; 0)
-        {
-            draw_sprite(sprGyroscopeTest, 6, test_origin_x, test_origin_y - 16);
-            draw_sprite(sprGyroscopeTest, 7, test_origin_x, test_origin_y + 16);
-        }
-        else
-        {
-            draw_sprite(sprGyroscopeTest, 6, test_origin_x, test_origin_y - 16);
-            draw_sprite(sprGyroscopeTest, 8, test_origin_x, test_origin_y + 16);
-        }
-    }
-    else
-    if(objProgram.inputManager.gyromode == 1)
-    {
-        tiltscale_x = abs(tiltscale_x);
-        tiltscale_y = abs(tiltscale_y);
-        // pseudo-analog mode where depending on the tilt, left and right buttons are mashed more or less often
-        for(var i=10; i&gt;= 1; i = i - 2)
-        {
-            if(keyToPressX == cLEFT &amp;&amp; tiltscale_x &gt;= i)
-            {
-                draw_sprite(sprGyroscopeTest, 1, test_origin_x -  (4*(i+2)),test_origin_y);
-            }
-            else
-            {
-                draw_sprite(sprGyroscopeTest, 2, test_origin_x - (4*(i+2)),test_origin_y);
-            }
-            if(keyToPressX == cRIGHT &amp;&amp; tiltscale_x &gt;= i)
-            {
-                draw_sprite(sprGyroscopeTest, 3, test_origin_x + (4*(i+2)),test_origin_y);
-            }
-            else
-            {
-                draw_sprite(sprGyroscopeTest, 4, test_origin_x + (4*(i+2)),test_origin_y);
-            }
-            
-            if(keyToPressY == cUP &amp;&amp; tiltscale_y &gt;= i)
-            {
-                draw_sprite(sprGyroscopeTest, 5, test_origin_x,test_origin_y - 2 - (2*(i+2)));
-            }
-            else
-            {
-                draw_sprite(sprGyroscopeTest, 6, test_origin_x,test_origin_y - 2 - (2*(i+2)));
-            }
-            if(keyToPressY == cDOWN &amp;&amp; tiltscale_y &gt;= i)
-            {
-                draw_sprite(sprGyroscopeTest, 7, test_origin_x,test_origin_y + 2 + (2*(i+2)));
-            }
-            else
-            {
-                draw_sprite(sprGyroscopeTest, 8, test_origin_x,test_origin_y + 2 + (2*(i+2)));
-            }
-        }
-    }
-    draw_sprite(sprGyroscopeTest, 0, test_origin_x,test_origin_y);
-    
-    
-    draw_set_alpha(objProgram.inputManager.vkalpha);
-    
-    if(objProgram.inputManager.gyro_origin_is_set)
-    {
-        draw_sprite(buttonSprite, 1,
-            x_offset + bax - dpadRadius,
-            view_yview[view_current] + bay - dpadRadius);
-    }
-    else
-    {
         draw_sprite(buttonSprite, 0,
             x_offset + bax - dpadRadius,
             view_yview[view_current] + bay - dpadRadius);
+        
+        draw_sprite(sprTouchscreenPauseButton, 0,
+            x_offset + bsx,
+            view_yview[view_current] + bsy);
+        
+        draw_sprite(sprTouchscreenSuperButtonYellow, 0,
+            x_offset + bbx,
+            view_yview[view_current] + bby);
     }
-    
-    draw_set_alpha(1);
-}
-if(show_vk_alpha)
-{
-    draw_set_alpha(objProgram.inputManager.vkalpha);
-    draw_sprite(dpadSprite, 0,
-        x_offset + dpadx - dpadRadius,
-        view_yview[view_current] + dpady - dpadRadius);
-    
-    draw_sprite(buttonSprite, 0,
-        x_offset + bax - dpadRadius,
-        view_yview[view_current] + bay - dpadRadius);
-    
-    draw_sprite(sprTouchscreenPauseButton, 0,
-        x_offset + bsx,
-        view_yview[view_current] + bsy);
-    
-    draw_sprite(sprTouchscreenSuperButtonYellow, 0,
-        x_offset + bbx,
-        view_yview[view_current] + bby);
-    draw_set_alpha(1);
+    else
+    if(state == 1004 || state == 1005 || state == 1006)
+    {        
+        var tiltscale_x = 0;
+        var tiltscale_y = 0;
+        with(objProgram.inputManager)
+        {
+            tiltscale_x = android_read_gyroscope_x();
+            tiltscale_y = android_read_gyroscope_y();
+        }
+        var keyToPressX, keyToPressY;
+        if(tiltscale_x &lt; 0)
+        {
+            keyToPressX = cLEFT;
+        }
+        else
+        {
+            keyToPressX = cRIGHT;
+        }
+        if(tiltscale_y &lt; 0)
+        {
+            keyToPressY = cUP;
+        }
+        else
+        {
+            keyToPressY = cDOWN;
+        }
+        var test_origin_x = x_offset + 204;
+        var test_origin_y = view_yview[view_current] + 200;
+        
+        if(objProgram.inputManager.gyromode == 0)
+        {
+            // simple mode where tilting simply presses left and right
+            if(tiltscale_x &lt; 0)
+            {
+                draw_sprite(sprGyroscopeTest, 1, test_origin_x - 16, test_origin_y);
+                draw_sprite(sprGyroscopeTest, 4, test_origin_x + 16, test_origin_y);
+            }
+            else
+            if(tiltscale_x &gt; 0)
+            {
+                draw_sprite(sprGyroscopeTest, 2, test_origin_x - 16, test_origin_y);
+                draw_sprite(sprGyroscopeTest, 3, test_origin_x + 16, test_origin_y);
+            }
+            else
+            {
+                draw_sprite(sprGyroscopeTest, 2, test_origin_x - 16, test_origin_y);
+                draw_sprite(sprGyroscopeTest, 4, test_origin_x + 16, test_origin_y);
+            }
+            
+            if(tiltscale_y &lt; 0)
+            {
+                draw_sprite(sprGyroscopeTest, 5, test_origin_x, test_origin_y - 16);
+                draw_sprite(sprGyroscopeTest, 8, test_origin_x, test_origin_y + 16);
+            }
+            else
+            if(tiltscale_y &gt; 0)
+            {
+                draw_sprite(sprGyroscopeTest, 6, test_origin_x, test_origin_y - 16);
+                draw_sprite(sprGyroscopeTest, 7, test_origin_x, test_origin_y + 16);
+            }
+            else
+            {
+                draw_sprite(sprGyroscopeTest, 6, test_origin_x, test_origin_y - 16);
+                draw_sprite(sprGyroscopeTest, 8, test_origin_x, test_origin_y + 16);
+            }
+        }
+        else
+        if(objProgram.inputManager.gyromode == 1)
+        {
+            tiltscale_x = abs(tiltscale_x);
+            tiltscale_y = abs(tiltscale_y);
+            // pseudo-analog mode where depending on the tilt, left and right buttons are mashed more or less often
+            for(var i=10; i&gt;= 1; i = i - 2)
+            {
+                if(keyToPressX == cLEFT &amp;&amp; tiltscale_x &gt;= i)
+                {
+                    draw_sprite(sprGyroscopeTest, 1, test_origin_x -  (4*(i+2)),test_origin_y);
+                }
+                else
+                {
+                    draw_sprite(sprGyroscopeTest, 2, test_origin_x - (4*(i+2)),test_origin_y);
+                }
+                if(keyToPressX == cRIGHT &amp;&amp; tiltscale_x &gt;= i)
+                {
+                    draw_sprite(sprGyroscopeTest, 3, test_origin_x + (4*(i+2)),test_origin_y);
+                }
+                else
+                {
+                    draw_sprite(sprGyroscopeTest, 4, test_origin_x + (4*(i+2)),test_origin_y);
+                }
+                
+                if(keyToPressY == cUP &amp;&amp; tiltscale_y &gt;= i)
+                {
+                    draw_sprite(sprGyroscopeTest, 5, test_origin_x,test_origin_y - 2 - (2*(i+2)));
+                }
+                else
+                {
+                    draw_sprite(sprGyroscopeTest, 6, test_origin_x,test_origin_y - 2 - (2*(i+2)));
+                }
+                if(keyToPressY == cDOWN &amp;&amp; tiltscale_y &gt;= i)
+                {
+                    draw_sprite(sprGyroscopeTest, 7, test_origin_x,test_origin_y + 2 + (2*(i+2)));
+                }
+                else
+                {
+                    draw_sprite(sprGyroscopeTest, 8, test_origin_x,test_origin_y + 2 + (2*(i+2)));
+                }
+            }
+        }
+        draw_sprite(sprGyroscopeTest, 0, test_origin_x,test_origin_y);
+        
+        
+        draw_set_alpha(objProgram.inputManager.vkalpha);
+        
+        if(objProgram.inputManager.gyro_origin_is_set)
+        {
+            draw_sprite(buttonSprite, 1,
+                x_offset + bax - dpadRadius,
+                view_yview[view_current] + bay - dpadRadius);
+        }
+        else
+        {
+            draw_sprite(buttonSprite, 0,
+                x_offset + bax - dpadRadius,
+                view_yview[view_current] + bay - dpadRadius);
+        }
+        
+        draw_set_alpha(1);
+    }
+    if(show_vk_alpha)
+    {
+        draw_set_alpha(objProgram.inputManager.vkalpha);
+        draw_sprite(dpadSprite, 0,
+            x_offset + dpadx - dpadRadius,
+            view_yview[view_current] + dpady - dpadRadius);
+        
+        draw_sprite(buttonSprite, 0,
+            x_offset + bax - dpadRadius,
+            view_yview[view_current] + bay - dpadRadius);
+        
+        draw_sprite(sprTouchscreenPauseButton, 0,
+            x_offset + bsx,
+            view_yview[view_current] + bsy);
+        
+        draw_sprite(sprTouchscreenSuperButtonYellow, 0,
+            x_offset + bbx,
+            view_yview[view_current] + bby);
+        draw_set_alpha(1);
+    }
 }
 </string>
           </argument>
@@ -385,6 +403,7 @@ else
                             if(objProgram.inputManager.input == 0)
                             {
                                 // TOUCHSCREEN -&gt; KEYBOARD
+                                android_device_set_mode_keyboard(0);
                                 objProgram.inputManager.input = 1;
                                 if(objProgram.inputManager.gamepad_update_enabled)
                                 {
@@ -397,9 +416,11 @@ else
                             else
                             {
                                 // KEYBOARD -&gt; GAMEPAD
+                                android_device_set_mode_gamepad(0);
                                 if(!objProgram.inputManager.gamepad_update_enabled)
                                 {
                                     // GAMEPAD -&gt; KEYBOARD
+                                    android_device_set_mode_keyboard(0);
                                     with(objProgram.inputManager)
                                     {
                                         event_user(0);
@@ -424,6 +445,7 @@ else
                             if(objProgram.inputManager.input == 0)
                             {
                                 // TOUCHSCREEN -&gt; GAMEPAD
+                                android_device_set_mode_gamepad(0);
                                 objProgram.inputManager.input = 1;
                                 if(!objProgram.inputManager.gamepad_update_enabled)
                                 {
@@ -438,6 +460,7 @@ else
                                 if(objProgram.inputManager.gamepad_update_enabled)
                                 {
                                     // GAMEPAD -&gt; KEYBOARD
+                                    android_device_set_mode_keyboard(0);
                                     with(objProgram.inputManager)
                                     {
                                         event_user(0);
@@ -714,6 +737,7 @@ else
                         if(objProgram.inputManager.input == 0)
                         {
                             // TOUCHSCREEN -&gt; GAMEPAD
+                            android_device_set_mode_gamepad(0);
                             objProgram.inputManager.input = 1;
                             if(!objProgram.inputManager.gamepad_update_enabled)
                             {
@@ -728,6 +752,7 @@ else
                             if(objProgram.inputManager.gamepad_update_enabled)
                             {
                                 // GAMEPAD -&gt; KEYBOARD
+                                android_device_set_mode_keyboard(0);
                                 with(objProgram.inputManager)
                                 {
                                     event_user(0);
@@ -1081,6 +1106,7 @@ switch(state)
                 tallyLabel = "CONSTANT SPEED";
                 break;
         }
+        options = false;
         options[0, OPTION_NAME] = 'OPTIONS';
         options[0, OPTION_TYPE] = OPTION_TYPE_TITLE;
         options[0, OPTION_VALUE] = '';
@@ -1089,26 +1115,40 @@ switch(state)
         options[1, OPTION_TYPE] = OPTION_TYPE_WITH_VALUE;
         options[1, OPTION_VALUE] = tallyLabel;
         options[1, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
-        options[2, OPTION_NAME] = 'INPUT METHOD';
-        options[2, OPTION_TYPE] = OPTION_TYPE_WITH_VALUE;
-        options[2, OPTION_VALUE] = inputLabel;
-        options[2, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
-        options[3, OPTION_NAME] = 'CONFIGURE TOUCHSCREEN';
-        options[3, OPTION_TYPE] = OPTION_TYPE_SUBMENU;
-        options[3, OPTION_VALUE] = 1001;
-        options[3, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
-        options[4, OPTION_NAME] = 'MAP KEYS';
-        options[4, OPTION_TYPE] = OPTION_TYPE_SUBMENU;
-        options[4, OPTION_VALUE] = 8;
-        options[4, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
-        options[5, OPTION_NAME] = 'MAP GAMEPAD';
-        options[5, OPTION_TYPE] = OPTION_TYPE_SUBMENU;
-        options[5, OPTION_VALUE] = 9;
-        options[5, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
-        options[6, OPTION_NAME] = 'BACK';
-        options[6, OPTION_TYPE] = OPTION_TYPE_RETURN;
-        options[6, OPTION_VALUE] = 0;
-        options[6, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
+        if(ANDROID_CONSOLE != 0)
+        {
+            options[2, OPTION_NAME] = 'MAP GAMEPAD';
+            options[2, OPTION_TYPE] = OPTION_TYPE_SUBMENU;
+            options[2, OPTION_VALUE] = 9;
+            options[2, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
+            options[3, OPTION_NAME] = 'BACK';
+            options[3, OPTION_TYPE] = OPTION_TYPE_RETURN;
+            options[3, OPTION_VALUE] = 0;
+            options[3, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
+        }
+        else
+        {
+            options[2, OPTION_NAME] = 'INPUT METHOD';
+            options[2, OPTION_TYPE] = OPTION_TYPE_WITH_VALUE;
+            options[2, OPTION_VALUE] = inputLabel;
+            options[2, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
+            options[3, OPTION_NAME] = 'CONFIGURE TOUCHSCREEN';
+            options[3, OPTION_TYPE] = OPTION_TYPE_SUBMENU;
+            options[3, OPTION_VALUE] = 1001;
+            options[3, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
+            options[4, OPTION_NAME] = 'MAP KEYS';
+            options[4, OPTION_TYPE] = OPTION_TYPE_SUBMENU;
+            options[4, OPTION_VALUE] = 8;
+            options[4, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
+            options[5, OPTION_NAME] = 'MAP GAMEPAD';
+            options[5, OPTION_TYPE] = OPTION_TYPE_SUBMENU;
+            options[5, OPTION_VALUE] = 9;
+            options[5, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
+            options[6, OPTION_NAME] = 'BACK';
+            options[6, OPTION_TYPE] = OPTION_TYPE_RETURN;
+            options[6, OPTION_VALUE] = 0;
+            options[6, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
+        }
         break;
     case 1001:
     
@@ -1530,7 +1570,7 @@ if(state == 1002 || state == 1004 || state == 1005 || state == 1006)
             <string>/// step - called by parent object
 
 event_inherited();
-if(active)
+if((ANDROID_CONSOLE == 0) &amp;&amp; active)
 {   
     if(wait_for_release_click)
     {

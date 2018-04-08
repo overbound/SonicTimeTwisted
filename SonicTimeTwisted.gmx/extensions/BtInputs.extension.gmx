@@ -51,16 +51,16 @@
           <name>android_refresh_devices</name>
           <externalName>android_refresh_devices</externalName>
           <kind>11</kind>
-          <help></help>
+          <help>android_refresh_devices()</help>
           <returnType>2</returnType>
-          <argCount>-1</argCount>
+          <argCount>0</argCount>
           <args/>
         </function>
         <function>
           <name>android_step_begin</name>
           <externalName>android_step_begin</externalName>
           <kind>11</kind>
-          <help></help>
+          <help>android_step_begin()</help>
           <returnType>2</returnType>
           <argCount>0</argCount>
           <args/>
@@ -69,25 +69,25 @@
           <name>android_step_end</name>
           <externalName>android_step_end</externalName>
           <kind>11</kind>
-          <help></help>
+          <help>android_step_end()</help>
           <returnType>2</returnType>
-          <argCount>0</argCount>
+          <argCount>-1</argCount>
           <args/>
         </function>
         <function>
           <name>android_dump_state</name>
           <externalName>android_dump_state</externalName>
           <kind>11</kind>
-          <help></help>
+          <help>android_dump_state()</help>
           <returnType>1</returnType>
-          <argCount>0</argCount>
+          <argCount>-1</argCount>
           <args/>
         </function>
         <function>
           <name>android_keyboard_check</name>
           <externalName>android_keyboard_check</externalName>
           <kind>11</kind>
-          <help></help>
+          <help>android_keyboard_check(keyCode)</help>
           <returnType>2</returnType>
           <argCount>1</argCount>
           <args>
@@ -98,7 +98,7 @@
           <name>android_keyboard_check_pressed</name>
           <externalName>android_keyboard_check_pressed</externalName>
           <kind>11</kind>
-          <help></help>
+          <help>android_keyboard_check_pressed(keyCode)</help>
           <returnType>2</returnType>
           <argCount>1</argCount>
           <args>
@@ -109,7 +109,7 @@
           <name>android_keyboard_check_released</name>
           <externalName>android_keyboard_check_released</externalName>
           <kind>11</kind>
-          <help></help>
+          <help>android_keyboard_check_released(keyCode)</help>
           <returnType>2</returnType>
           <argCount>1</argCount>
           <args>
@@ -120,7 +120,7 @@
           <name>android_is_gamepad</name>
           <externalName>android_is_gamepad</externalName>
           <kind>11</kind>
-          <help></help>
+          <help>android_is_gamepad(num)</help>
           <returnType>2</returnType>
           <argCount>1</argCount>
           <args>
@@ -131,7 +131,7 @@
           <name>android_gamepad_get_description</name>
           <externalName>android_gamepad_get_description</externalName>
           <kind>11</kind>
-          <help></help>
+          <help>android_gamepad_get_description(num)</help>
           <returnType>1</returnType>
           <argCount>1</argCount>
           <args>
@@ -142,7 +142,7 @@
           <name>android_gamepad_axis_count</name>
           <externalName>android_gamepad_axis_count</externalName>
           <kind>11</kind>
-          <help></help>
+          <help>android_gamepad_axis_count(num)</help>
           <returnType>2</returnType>
           <argCount>1</argCount>
           <args>
@@ -153,7 +153,7 @@
           <name>android_gamepad_axis_value</name>
           <externalName>android_gamepad_axis_value</externalName>
           <kind>11</kind>
-          <help></help>
+          <help>android_gamepad_axis_value(num, axis)</help>
           <returnType>2</returnType>
           <argCount>2</argCount>
           <args>
@@ -165,7 +165,7 @@
           <name>android_gamepad_button_check</name>
           <externalName>android_gamepad_button_check</externalName>
           <kind>11</kind>
-          <help></help>
+          <help>android_gamepad_button_check(num, keyCode)</help>
           <returnType>2</returnType>
           <argCount>2</argCount>
           <args>
@@ -177,7 +177,7 @@
           <name>android_gamepad_button_check_pressed</name>
           <externalName>android_gamepad_button_check_pressed</externalName>
           <kind>11</kind>
-          <help></help>
+          <help>android_gamepad_button_check_pressed(num, keyCode)</help>
           <returnType>2</returnType>
           <argCount>2</argCount>
           <args>
@@ -189,7 +189,7 @@
           <name>android_gamepad_button_check_released</name>
           <externalName>android_gamepad_button_check_released</externalName>
           <kind>11</kind>
-          <help></help>
+          <help>android_gamepad_button_check_released(num, axis)</help>
           <returnType>2</returnType>
           <argCount>2</argCount>
           <args>
@@ -198,32 +198,19 @@
           </args>
         </function>
         <function>
-          <name>android_set_gamepad_mode_standard</name>
-          <externalName>android_set_gamepad_mode_standard</externalName>
+          <name>android_get_last_pressed_key</name>
+          <externalName>android_get_last_pressed_key</externalName>
           <kind>11</kind>
-          <help></help>
+          <help>android_get_last_pressed_key()</help>
           <returnType>2</returnType>
-          <argCount>1</argCount>
-          <args>
-            <arg>2</arg>
-          </args>
-        </function>
-        <function>
-          <name>android_set_gamepad_mode_icade</name>
-          <externalName>android_set_gamepad_mode_icade</externalName>
-          <kind>11</kind>
-          <help></help>
-          <returnType>2</returnType>
-          <argCount>1</argCount>
-          <args>
-            <arg>2</arg>
-          </args>
+          <argCount>-1</argCount>
+          <args/>
         </function>
         <function>
           <name>android_gamepad_set_mode</name>
           <externalName>android_gamepad_set_mode</externalName>
           <kind>11</kind>
-          <help></help>
+          <help>android_gamepad_set_mode(num, mode)</help>
           <returnType>2</returnType>
           <argCount>2</argCount>
           <args>
@@ -235,7 +222,7 @@
           <name>android_gamepad_get_mode</name>
           <externalName>android_gamepad_get_mode</externalName>
           <kind>11</kind>
-          <help></help>
+          <help>android_gamepad_get_mode(num)</help>
           <returnType>2</returnType>
           <argCount>1</argCount>
           <args>
@@ -246,28 +233,17 @@
           <name>android_gamepad_get_mode_max_value</name>
           <externalName>android_gamepad_get_mode_max_value</externalName>
           <kind>11</kind>
-          <help></help>
+          <help>android_gamepad_get_mode_max_value()</help>
           <returnType>2</returnType>
-          <argCount>-1</argCount>
+          <argCount>0</argCount>
           <args/>
         </function>
         <function>
           <name>android_gamepad_get_mode_description</name>
           <externalName>android_gamepad_get_mode_description</externalName>
           <kind>11</kind>
-          <help></help>
+          <help>android_gamepad_get_mode_description()</help>
           <returnType>1</returnType>
-          <argCount>1</argCount>
-          <args>
-            <arg>2</arg>
-          </args>
-        </function>
-        <function>
-          <name>android_get_last_pressed_key</name>
-          <externalName>android_get_last_pressed_key</externalName>
-          <kind>11</kind>
-          <help></help>
-          <returnType>2</returnType>
           <argCount>1</argCount>
           <args>
             <arg>2</arg>

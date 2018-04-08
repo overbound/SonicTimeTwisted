@@ -52,20 +52,20 @@ if(fChar == "-" || fChar == "+")
 }
 else
 {
-    var code = round(real(argument0));
+    var code = round(real(argument0));   
     switch(code)
     {             
         case gp_face1:
-             return "1-A";
+             return "A";
              break;
         case gp_face2:
-             return "2-B";
+             return "B";
              break;
         case gp_face3:
-             return "3-X";
+             return "X";
              break;
         case gp_face4:
-             return "4-Y";
+             return "Y";
              break;
         case gp_shoulderl:
              return "LEFT SHLD BT";

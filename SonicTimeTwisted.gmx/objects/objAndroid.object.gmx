@@ -32,7 +32,14 @@ with(objInput)
 {
     instance_destroy();
 }
-objProgram.inputManager = instance_create(0,0,objAndroidInput);
+if(ANDROID_CONSOLE != 0)
+{
+    objProgram.inputManager = instance_create(0,0,objAndroidInput);
+}
+else
+{
+    objProgram.inputManager = instance_create(0,0,objAndroidInputSmartphone);
+}
 </string>
           </argument>
         </arguments>

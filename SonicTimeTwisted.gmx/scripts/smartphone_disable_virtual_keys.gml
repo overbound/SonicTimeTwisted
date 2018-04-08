@@ -10,22 +10,25 @@ if(argument_count >= 1)
 
 if(objProgram.os == os_android)
 {
-    if(!dontRelease)
+    if(ANDROID_CONSOLE == 0)
     {
+        if(!dontRelease)
+        {
+            with(objProgram.inputManager)
+            {   
+                android_vk_release(cUP);
+                android_vk_release(cLEFT);
+                android_vk_release(cRIGHT);
+                android_vk_release(cDOWN);
+                android_vk_release(cA);
+                android_vk_release(cB);
+                android_vk_release(cC);
+                android_vk_release(cSTART);
+            }
+        }
         with(objProgram.inputManager)
         {   
-            android_vk_release(cUP);
-            android_vk_release(cLEFT);
-            android_vk_release(cRIGHT);
-            android_vk_release(cDOWN);
-            android_vk_release(cA);
-            android_vk_release(cB);
-            android_vk_release(cC);
-            android_vk_release(cSTART);
+            event_user(2);
         }
-    }
-    with(objProgram.inputManager)
-    {   
-        event_user(2);
     }
 }

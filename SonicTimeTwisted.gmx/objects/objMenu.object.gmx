@@ -71,72 +71,80 @@ States available by default (ports to other platforms will extend this list):
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>active = false;
-
-state = 0;
-default_state = 2;
-
-cursor = 0;
-max_cursor = 0;
-
-options = false;
-options_initialized = false;
-
-// if true, the title is displayed for a couple of seconds before the menu proper
-// example: special stages
-delay_timer = 0;
-delay_timer_default = 60;
-
-// flash timer - flashing when an option is selected before executing it
-flash_timer = 0;
-
-// slide timer - slide from one option screen to another
-slide_timer = 0;
-slide_dir = false; // false = left, true = right
-slide_to_state = 0;
-slide_to_cursor = 0;
-slide_from_state = 0;
-slide_x_shift = 0;
-
-// for options that must be constantly flashing (yes, those sometimes exist)
-// this flag is used to determine whether they should be drawn 
-flash_on = false;
-
-// the menu is supposed to be centered - calculate the Y offset needed to do so
-menu_y_offset = 0;
-
-
-// if true, add view offsets to the draw coordinates
-draw_with_view_offset = true;
-
-// 
-large = false;
-
-back_state = 0;
-back_cursor = 0;
-use_default_interface = true;
-
-allow_input = true;
-wait_for_release = false;
-
-// this variable might be useful in particular cases, such as remapping keys
-substate = 0; 
-// this will be very useful for key mappings
-temp_map = ds_map_create();
-// axis - well, looks like this is necessary for being able to detect axis mappings
-axis = "";
-wait_for_release_axis = false;
-// in case we want a confirmation screen ; these variables will store the state
-// and cursor which demanded to display it
-confirm_state = 0;
-confirm_cursor = 0;
-confirm_animation = 0;
-confirm_text = 0;
-// draw offset variables - could have been "var", but inheriting objects might want to use those
-x_offset = 0;
-y_offset = 0;
-// pressed key: used to manage left/right presses
-pressed = false;
+            <string>// if there's already a menu present: don't create this
+if(instance_number(objMenu) &gt; 1)
+{
+    instance_destroy();
+}
+else
+{
+    active = false;
+    
+    state = 0;
+    default_state = 2;
+    
+    cursor = 0;
+    max_cursor = 0;
+    
+    options = false;
+    options_initialized = false;
+    
+    // if true, the title is displayed for a couple of seconds before the menu proper
+    // example: special stages
+    delay_timer = 0;
+    delay_timer_default = 60;
+    
+    // flash timer - flashing when an option is selected before executing it
+    flash_timer = 0;
+    
+    // slide timer - slide from one option screen to another
+    slide_timer = 0;
+    slide_dir = false; // false = left, true = right
+    slide_to_state = 0;
+    slide_to_cursor = 0;
+    slide_from_state = 0;
+    slide_x_shift = 0;
+    
+    // for options that must be constantly flashing (yes, those sometimes exist)
+    // this flag is used to determine whether they should be drawn 
+    flash_on = false;
+    
+    // the menu is supposed to be centered - calculate the Y offset needed to do so
+    menu_y_offset = 0;
+    
+    
+    // if true, add view offsets to the draw coordinates
+    draw_with_view_offset = true;
+    
+    // 
+    large = false;
+    
+    back_state = 0;
+    back_cursor = 0;
+    use_default_interface = true;
+    
+    allow_input = true;
+    wait_for_release = false;
+    
+    // this variable might be useful in particular cases, such as remapping keys
+    substate = 0; 
+    // this will be very useful for key mappings
+    temp_map = ds_map_create();
+    // axis - well, looks like this is necessary for being able to detect axis mappings
+    axis = "";
+    wait_for_release_axis = false;
+    // in case we want a confirmation screen ; these variables will store the state
+    // and cursor which demanded to display it
+    confirm_state = 0;
+    confirm_cursor = 0;
+    confirm_animation = 0;
+    confirm_text = 0;
+    // draw offset variables - could have been "var", but inheriting objects might want to use those
+    x_offset = 0;
+    y_offset = 0;
+    // pressed key: used to manage left/right presses
+    pressed = false;
+}
 </string>
           </argument>
         </arguments>
