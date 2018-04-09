@@ -2,6 +2,7 @@
 <assets>
   <Configs name="configs">
     <Config>Configs\Default</Config>
+    <Config>Configs\AndroidConsole</Config>
   </Configs>
   <datafiles number="43" name="datafiles"/>
   <NewExtensions>
@@ -3465,7 +3466,7 @@
     <constant name="OPTION_TYPE_SUBMENU">4</constant>
     <constant name="OPTION_TYPE_RETURN">5</constant>
     <constant name="OPTION_ANIMATION_FLASHING">2</constant>
-    <constant name="ANDROID_CONSOLE">1</constant>
+    <constant name="ANDROID_CONSOLE">0</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>
