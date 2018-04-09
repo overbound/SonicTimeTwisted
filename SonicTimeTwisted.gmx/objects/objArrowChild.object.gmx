@@ -51,7 +51,7 @@ if objProgram.in_past == false {
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="0">
+    <event eventtype="7" enumb="25">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -69,11 +69,7 @@ if objProgram.in_past == false {
           <argument>
             <kind>1</kind>
             <string>if objProgram.in_past == false {
-
-    if visible == true
-        visible = false;
-    else visible = true;
-
+    visible = objScreen.flashing_visible;
 }
 </string>
           </argument>

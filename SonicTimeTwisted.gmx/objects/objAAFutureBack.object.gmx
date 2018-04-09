@@ -2,7 +2,7 @@
 <object>
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
-  <visible>0</visible>
+  <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
   <parentName>objSceneObject</parentName>
@@ -105,12 +105,10 @@ parallax_create(1, backAAFSunset, 0, 0, 16, 314, 0, 0, 0.85, relative_y, 0, 0, 0
 // spotlights
 with spotlight[0] {
      image_angle = cos(degtorad(objScreen.image_index*1.5))*20;
-    visible = !visible;
 }
     
 with spotlight[1] {
     image_angle = cos(degtorad(180+objScreen.image_index*1.5))*20;
-    visible = !visible;
 }
 
 // stars
@@ -119,6 +117,36 @@ with stars image_alpha = 0.35+abs(cos(degtorad(objScreen.image_index*2.4)))*0.45
 // building lights
 with lights[0] image_alpha = 0.1+abs(cos(degtorad(objScreen.image_index*5)))*0.9;
 with lights[1] image_alpha = 0.35+abs(cos(degtorad(objScreen.image_index*2.5)))*0.4;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="25">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>// spotlights
+with spotlight[0] {
+    visible = objScreen.flashing_visible;
+}
+    
+with spotlight[1] {
+    visible = objScreen.flashing_visible;
+}
 </string>
           </argument>
         </arguments>

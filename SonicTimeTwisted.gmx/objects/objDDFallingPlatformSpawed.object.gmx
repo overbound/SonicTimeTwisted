@@ -327,7 +327,7 @@ with parent alarm[0]=360;
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="0">
+    <event eventtype="7" enumb="25">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -345,12 +345,8 @@ with parent alarm[0]=360;
           <argument>
             <kind>1</kind>
             <string>if alarm[3] != -1 &amp;&amp; objScreen.image_index mod 2 == 0 {
-
-    if visible 
-        visible = false;
-        else visible = true;
-
-} else visible = 1;
+    visible = objScreen.flashing_visible;
+} else visible = true;
 </string>
           </argument>
         </arguments>

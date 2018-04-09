@@ -149,19 +149,9 @@ if objFireFly.state &lt; 12 {
     draw_sprite_ext(sprFireFlyWingRight,0,x+10,y-20,1,1,rightRotation,c_white,.5);
 }
 
-if alarm[2] mod 2
-{
-    draw_set_blend_mode_ext(10, 1);
-    draw_rectangle(bbox_left, bbox_top, bbox_right, bbox_bottom, false);
-    draw_set_blend_mode(bm_normal);
-}
+draw_boss_hit_blend(2);
 draw_self();
-if alarm[2] mod 2
-{
-    draw_set_blend_mode_ext(10, 1);
-    draw_rectangle(bbox_left, bbox_top, bbox_right, bbox_bottom, false);
-    draw_set_blend_mode(bm_normal);
-}
+draw_boss_hit_blend(2);
 
 </string>
           </argument>

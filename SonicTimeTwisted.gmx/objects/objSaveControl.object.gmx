@@ -343,6 +343,8 @@ if xSpeed == 0 {
           </argument>
         </arguments>
       </action>
+    </event>
+    <event eventtype="7" enumb="25">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -361,9 +363,8 @@ if xSpeed == 0 {
             <kind>1</kind>
             <string>/// visibility flash
 if selectState!=3 &amp;&amp; objScreen.image_index mod 4 {
-    if visible
-        visible = false;
-    else visible = true;
+//if selectState!=3 {
+    visible = objScreen.flashing_visible;
 } else visible=true;
 </string>
           </argument>

@@ -44,12 +44,22 @@ view_hview[0] = height;
 view_wport[0] = width;
 view_hport[0] = height;
 
+/**
+Load the appropriate video mode. See the set_video_mode script for details
+**/
+video_mode = 0;
+framerate = 0; // 0 - 60fps, 1 - 30fps
+load_video_settings();
+set_video_mode(video_mode);
+set_30_fps(framerate);
+
 // sync window properties
 if window_get_fullscreen() window_mode = 2; else
 if window_get_width() &gt; width or window_get_height() &gt; height { window_mode = 1; window_scale = 2 } else
 if (window_get_width() != width * window_scale) or (window_get_height() != height * window_scale) window_set_size(width * window_scale, height * window_scale);
 surface_resize(application_surface, width, height);
 
+flashing_visible = false;
 // os properties
 /*fullscreen_enabled = false;
 switch os_type
@@ -172,6 +182,34 @@ for (var i = 0; i &lt; 2; i += 1)
         </arguments>
       </action>
     </event>
+    <event eventtype="8" enumb="72">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// manage flashing (30 FPS-compatible)
+flashing_visible = !flashing_visible;
+with(all)
+{
+    event_user(15);
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
@@ -224,32 +262,7 @@ else if scanlines
             <kind>1</kind>
             <string>/// Toggle fullscreen
 ///Change Window Size
-switch window_state {
-
-    case 1:
-        window_scale = 2;
-        window_state = 2;
-    break;
-    
-    case 2:
-        window_scale = 3;
-        window_state = 3;
-    break;
-    
-    case 3:
-        window_scale = 3;
-        window_state = 4;
-        window_set_fullscreen(true);
-    break;
-    
-    case 4:
-        window_scale = 1;
-        window_state = 1;
-        window_set_fullscreen(false);
-    break;
-}
-
-window_set_size(width * window_scale, height * window_scale);
+// TODO redo
 
 // The window must wait a step to center...
 alarm[0]=1;

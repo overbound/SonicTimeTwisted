@@ -493,7 +493,7 @@ if objProgram.spawn_tag == 0 {
     <instance objName="objBlock" x="1792" y="6080" name="inst_92787E7C" locked="0" code="climbable=true;&#xA;" scaleX="16" scaleY="8" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="3072" y="4496" name="inst_B75102AF" locked="0" code="climbable = true;" scaleX="40" scaleY="46" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="2944" y="4624" name="inst_C6070DC4" locked="0" code="climbable = true;" scaleX="16.5" scaleY="14" colour="4294967295" rotation="0"/>
-    <instance objName="objCurveConcave" x="3448" y="4536" name="inst_CCB9520F" locked="0" code="" scaleX="-0.579999983310699" scaleY="-0.579999983310699" colour="4294967295" rotation="0"/>
+    <instance objName="objCurveConcave" x="3448" y="4536" name="inst_CCB9520F" locked="0" code="" scaleX="-0.5799999833107" scaleY="-0.5799999833107" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="3360" y="4256" name="inst_E010F187" locked="0" code="climbable=1;&#xA;" scaleX="4" scaleY="6" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="3392" y="4288" name="inst_6D589566" locked="0" code="climbable=1;&#xA;" scaleX="4" scaleY="6" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="3424" y="4320" name="inst_69C612D7" locked="0" code="climbable=1;&#xA;" scaleX="4" scaleY="6" colour="4294967295" rotation="0"/>

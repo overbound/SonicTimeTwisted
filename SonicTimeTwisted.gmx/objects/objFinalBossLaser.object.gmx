@@ -187,14 +187,18 @@ break;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Flash Visiblity
-if visible 
-    visible = false;
-    else visible = true;
+            <string>/// Check for player collision
+if instance_exists(objLevel.player[0]){
+    if collision_line( x, y, x2, y2, objLevel.player[0], false, false ) {
+        with objLevel.player[0] player_reaction_final_boss_laser(other);
+    }
+}
 </string>
           </argument>
         </arguments>
       </action>
+    </event>
+    <event eventtype="7" enumb="25">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -211,12 +215,7 @@ if visible
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Check for player collision
-if instance_exists(objLevel.player[0]){
-    if collision_line( x, y, x2, y2, objLevel.player[0], false, false ) {
-        with objLevel.player[0] player_reaction_final_boss_laser(other);
-    }
-}
+            <string>visible = objScreen.flashing_visible;
 </string>
           </argument>
         </arguments>

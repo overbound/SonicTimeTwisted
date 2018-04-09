@@ -1764,6 +1764,14 @@
         <script>scripts\get_gp_label.gml</script>
         <script>scripts\menu_key_mapping_states.gml</script>
       </scripts>
+      <scripts name="Video">
+        <script>scripts\set_video_mode.gml</script>
+        <script>scripts\get_video_mode.gml</script>
+        <script>scripts\save_video_settings.gml</script>
+        <script>scripts\load_video_settings.gml</script>
+        <script>scripts\set_30_fps.gml</script>
+        <script>scripts\get_30_fps.gml</script>
+      </scripts>
       <script>scripts\extend_byte.gml</script>
       <script>scripts\minlerp.gml</script>
       <script>scripts\get_os_type.gml</script>
@@ -1823,6 +1831,8 @@
             </scripts>
             <script>scripts\updateGolemObjects.gml</script>
           </scripts>
+          <script>scripts\draw_boss_hit_blend.gml</script>
+          <script>scripts\draw_boss_hit_blend_parent_alarm.gml</script>
         </scripts>
         <scripts name="Gravity">
           <script>scripts\gravity_angle.gml</script>
@@ -2846,6 +2856,7 @@
       </objects>
       <objects name="Screen">
         <object>objects\objScreen</object>
+        <object>objects\objFramerate</object>
       </objects>
       <object>objects\objGameData</object>
       <object>objects\objProgram</object>

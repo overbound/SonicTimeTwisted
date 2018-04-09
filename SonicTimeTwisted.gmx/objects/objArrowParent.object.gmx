@@ -95,17 +95,21 @@ if objProgram.in_past == false {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if objProgram.in_past == false {
+            <string>y=ystart+cos(step/8)*8;
 
-    if visible == true
-        visible = false;
-    else visible = true;
+with child {
+
+    y=ystart+sin(other.step/8)*8;
 
 }
+
+step+=1;
 </string>
           </argument>
         </arguments>
       </action>
+    </event>
+    <event eventtype="7" enumb="25">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -122,15 +126,9 @@ if objProgram.in_past == false {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>y=ystart+cos(step/8)*8;
-
-with child {
-
-    y=ystart+sin(other.step/8)*8;
-
+            <string>if objProgram.in_past == false {
+    visible = objScreen.flashing_visible;
 }
-
-step+=1;
 </string>
           </argument>
         </arguments>

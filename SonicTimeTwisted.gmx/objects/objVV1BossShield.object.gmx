@@ -96,7 +96,7 @@
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="2">
+    <event eventtype="7" enumb="25">
       <action>
         <libid>1</libid>
         <id>611</id>
@@ -117,7 +117,7 @@
           </argument>
           <argument>
             <kind>0</kind>
-            <string>!visible</string>
+            <string>objScreen.flashing_visible</string>
           </argument>
         </arguments>
       </action>

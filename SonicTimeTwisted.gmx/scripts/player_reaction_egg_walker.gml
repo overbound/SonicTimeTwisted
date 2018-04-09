@@ -25,7 +25,7 @@ with argument0 {
 }
 
 with argument0 {
-    image_speed = .5;
+    used_image_speed = .5;
     alarm[4]=60;
 }
 

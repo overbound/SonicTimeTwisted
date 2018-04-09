@@ -1794,7 +1794,7 @@ with objTitlecard
     <instance objName="objSlant" x="1096" y="1568" name="inst_104ADBF0" locked="0" code="angled=0;" scaleX="-0.75" scaleY="0.129999995231628" colour="4294967295" rotation="0"/>
     <instance objName="objSlant" x="1032" y="1568" name="inst_853A3A54" locked="0" code="angled=0;" scaleX="1.25" scaleY="0.125" colour="4294967295" rotation="0"/>
     <instance objName="objSlant" x="1168" y="1568" name="inst_5834A4A3" locked="0" code="angled=0;" scaleX="1.5" scaleY="0.129032254219055" colour="4294967295" rotation="0"/>
-    <instance objName="objCurveConvex" x="1024" y="1288" name="inst_5E4A179D" locked="0" code="through=1;&#xA;" scaleX="0.670000016689301" scaleY="0.673684239387512" colour="4294967295" rotation="0"/>
+    <instance objName="objCurveConvex" x="1024" y="1288" name="inst_5E4A179D" locked="0" code="through=1;&#xA;" scaleX="0.6700000166893" scaleY="0.673684239387512" colour="4294967295" rotation="0"/>
     <instance objName="objCurveConvex" x="1152" y="1288" name="inst_08613D54" locked="0" code="through=1;&#xA;" scaleX="-0.673684239387512" scaleY="0.673684239387512" colour="4294967295" rotation="0"/>
     <instance objName="objSpring" x="10048" y="1340" name="inst_0051ADCE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objCurveConvex" x="9984" y="1352" name="inst_26B36DD8" locked="0" code="through = 1;" scaleX="0.666666984558105" scaleY="0.666666984558105" colour="4294967295" rotation="0"/>

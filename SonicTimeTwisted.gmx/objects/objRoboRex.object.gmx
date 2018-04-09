@@ -203,7 +203,7 @@ with foot {
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="0">
+    <event eventtype="7" enumb="25">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -221,16 +221,8 @@ with foot {
           <argument>
             <kind>1</kind>
             <string>if invulnerable &amp;&amp; life &gt; 0 {
-
-    if visible==true 
-        visible = false;
-        else
-            visible = true;
-
+    visible = objScreen.flashing_visible;
 }
-
-//x=xstart+cos(objScreen.image_index/128)*16;
-
 
 </string>
           </argument>

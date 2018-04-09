@@ -8,7 +8,7 @@
   <parentName>objSceneObject</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="3" enumb="0">
+    <event eventtype="7" enumb="25">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -25,9 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if visible == 1
-    visible = 0
-    else visible = 1;
+            <string>visible = objScreen.flashing_visible;
 </string>
           </argument>
         </arguments>

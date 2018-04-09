@@ -270,6 +270,8 @@ if state &lt; 2
           </argument>
         </arguments>
       </action>
+    </event>
+    <event eventtype="7" enumb="25">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -288,9 +290,7 @@ if state &lt; 2
             <kind>1</kind>
             <string>/// Flash Visiblity
 if state &lt; 1000
-    if visible 
-        visible = false;
-        else visible = true;
+    visible = objScreen.flashing_visible;
 </string>
           </argument>
         </arguments>

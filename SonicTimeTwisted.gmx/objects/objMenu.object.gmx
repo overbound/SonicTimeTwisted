@@ -393,7 +393,16 @@ if(active)
                 
                 if(flash_timer &gt; 0)
                 {
-                    line_visible = (flash_timer mod 2) == 0;
+                    // Usually, 30 FPS mode would be managed more elegantly (by managing flashing in a draw begin event) but here, it's more difficult.
+                    // So specific code it is.
+                    if(instance_exists(objFramerate))
+                    {
+                        line_visible = (flash_timer mod 4) &lt;= 1;
+                    }
+                    else
+                    {
+                        line_visible = (flash_timer mod 2) == 0;
+                    }
                 }
             }
         }
@@ -544,6 +553,28 @@ if(active)
                     activated = true;
                     break;
             }
+            break;
+        case 20:
+            switch(cursor)
+            {
+                case 1: // screen size
+                    if(pressed == cLEFT)
+                    {
+                        set_video_mode((get_video_mode() + 5 - 1) mod 5);
+                        event_user(1);
+                    }
+                    else
+                    {
+                        set_video_mode((get_video_mode() + 1) mod 5);
+                        event_user(1);
+                    }
+                    break;
+                case 2: // framerate
+                    set_30_fps(1 - get_30_fps());
+                    event_user(1);
+                    break;
+            }
+            break;
     }
 }
 if(activated)
@@ -669,32 +700,6 @@ if(active)
             // Options menu
             switch(usedCursor)
             {
-                case 1: // screen size
-                    with objScreen {
-                        if window_state &lt; 4 {
-                            window_state += 1;
-                            window_scale = window_state
-                            if window_state == 4 {
-                                window_scale = 3;
-                            }
-                            window_set_size(width * window_scale, height * window_scale);
-                            alarm[0]=1;
-                            if window_state == 4 {
-                                window_set_fullscreen(true);        
-                            }
-                        }
-                        else
-                        {
-                            window_state = 1;
-                            window_scale = 1;
-                            
-                            window_set_fullscreen(false);
-                            window_set_size(width * window_scale, height * window_scale);
-                            alarm[0]=1;
-                        }
-                    }
-                    event_user(1);
-                    break;
                 case 2: // score tally mode
                     objProgram.score_tally_mode = (objProgram.score_tally_mode + 1) mod 3;
                     save_options();
@@ -826,6 +831,21 @@ if(active)
                 level_goto_next()
             }
             break;
+        case 20:
+            // Video options menu
+            switch(usedCursor)
+            {
+                case 1: // screen size
+                    set_video_mode((get_video_mode() + 1) mod 5);
+                    event_user(1);
+                    break;
+                case 2: // framerate
+                    set_30_fps(1 - get_30_fps());
+                    event_user(1);
+                    break;
+            }
+            
+            break;
     }
 }
 </string>
@@ -932,18 +952,6 @@ switch(state)
         break;
     case 7:
         large = true;
-        var screenStateLabel = "FULLSCREEN";
-        switch objScreen.window_state {
-            case 1:
-                screenStateLabel = "WINDOW";
-            break;
-            case 2:
-                screenStateLabel = "WINDOW 2X";
-            break;
-            case 3:
-                screenStateLabel = "WINDOW 3X";
-            break;
-        }
         
         var tallyLabel = "RANDOM DIGITS";
         switch(objProgram.score_tally_mode)
@@ -966,9 +974,9 @@ switch(state)
         options[0, OPTION_TYPE] = OPTION_TYPE_TITLE;
         options[0, OPTION_VALUE] = '';
         options[0, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
-        options[1, OPTION_NAME] = 'SCREEN SIZE';
-        options[1, OPTION_TYPE] = OPTION_TYPE_WITH_VALUE;
-        options[1, OPTION_VALUE] = screenStateLabel;
+        options[1, OPTION_NAME] = 'VIDEO OPTIONS';
+        options[1, OPTION_TYPE] = OPTION_TYPE_SUBMENU;
+        options[1, OPTION_VALUE] = 20;
         options[1, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
         options[2, OPTION_NAME] = 'SCORE TALLY MODE';
         options[2, OPTION_TYPE] = OPTION_TYPE_WITH_VALUE;
@@ -1369,6 +1377,55 @@ switch(state)
         options[3, OPTION_NAME] = 'BACK';
         options[3, OPTION_TYPE] = OPTION_TYPE_RETURN;
         options[3, OPTION_VALUE] = 12;
+        options[3, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
+        break;
+    case 20:
+        // Video options - added later, hence the ID
+        
+        large = true;
+        
+        var screenStateLabel = "FULLSCREEN";
+        switch get_video_mode() {
+            case 0:
+                screenStateLabel = "WINDOW";
+            break;
+            case 1:
+                screenStateLabel = "WINDOW 2X";
+            break;
+            case 2:
+                screenStateLabel = "WINDOW 3X";
+            break;
+            case 3:
+                screenStateLabel = "FULLSCREEN";
+            break;
+            case 4:
+                screenStateLabel = "FULL BLURRED";
+            break;
+        }
+        
+        var frameRateLabel = "60 FPS";
+        switch get_30_fps() {
+            case 1:
+                frameRateLabel = "30 FPS";
+            break;
+        }
+        
+        
+        options[0, OPTION_NAME] = 'VIDEO OPTIONS';
+        options[0, OPTION_TYPE] = OPTION_TYPE_TITLE;
+        options[0, OPTION_VALUE] = false;
+        options[0, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
+        options[1, OPTION_NAME] = 'SCREEN SIZE';
+        options[1, OPTION_TYPE] = OPTION_TYPE_WITH_VALUE;
+        options[1, OPTION_VALUE] = screenStateLabel;
+        options[1, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
+        options[2, OPTION_NAME] = 'FRAMERATE';
+        options[2, OPTION_TYPE] = OPTION_TYPE_WITH_VALUE;
+        options[2, OPTION_VALUE] = frameRateLabel;
+        options[2, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
+        options[3, OPTION_NAME] = 'BACK';
+        options[3, OPTION_TYPE] = OPTION_TYPE_RETURN;
+        options[3, OPTION_VALUE] = 7;
         options[3, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
         break;
     default:

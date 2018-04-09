@@ -105,9 +105,6 @@
 
 // search for players
 if not alarm[0] and (gravity==0) with objPlayer if x+34&gt;other.x and x-32&lt;other.x {other.remove = 0; other.gravity = 0.32; break;}
-
-// flicker if we're disappearing
-visible = 1-(alarm[0] mod 2);
 </string>
           </argument>
         </arguments>
@@ -191,6 +188,33 @@ audio_play_sound(sndSpikeLand, 4, 0);
 
 // flicker out
 alarm[0] = 80;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="25">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>// flicker if we're disappearing
+if(alarm[0] &gt; -1)
+{
+    visible = objScreen.flashing_visible;
+}
 </string>
           </argument>
         </arguments>
