@@ -478,6 +478,35 @@ else
                         activated = true;
                         break;                        
                 }
+            case 20:
+                switch(cursor)
+                {
+                    case 1: // framerate
+                        set_30_fps(1 - get_30_fps());
+                        event_user(1);
+                        break;
+                    case 2: // score tally mode
+                        if(pressed == cLEFT)
+                        {
+                            if(objProgram.score_tally_mode)
+                            {
+                                objProgram.score_tally_mode--;
+                            }
+                            else
+                            {
+                                objProgram.score_tally_mode = 2;
+                            }
+                        }
+                        else
+                        {
+                            objProgram.score_tally_mode = (objProgram.score_tally_mode + 1) mod 3;
+                        }
+                        save_options();
+                        event_user(1);
+                        activated = true;
+                        break;
+                }
+                break;
             case 1001:
                 switch(cursor)
                 {
@@ -728,11 +757,6 @@ else
                 // Options menu
                 switch(usedCursor)
                 {
-                    case 1: // score tally mode
-                        objProgram.score_tally_mode = (objProgram.score_tally_mode + 1) mod 3;
-                        save_options();
-                        event_user(1);
-                        break;
                     case 2: // input mode
                         if(objProgram.inputManager.input == 0)
                         {
@@ -769,6 +793,21 @@ else
                         break;
                 }
                 
+                break;
+            case 20:
+                // Video settings screen
+                switch(usedCursor)
+                {
+                    case 1: // framerate
+                        set_30_fps(1 - get_30_fps());
+                        event_user(1);
+                        break;
+                    case 2: // score tally mode
+                        objProgram.score_tally_mode = (objProgram.score_tally_mode + 1) mod 3;
+                        save_options();
+                        event_user(1);
+                        break;
+                }
                 break;
             case 1001:
                 // Touchscreen config screen
@@ -1111,9 +1150,9 @@ switch(state)
         options[0, OPTION_TYPE] = OPTION_TYPE_TITLE;
         options[0, OPTION_VALUE] = '';
         options[0, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
-        options[1, OPTION_NAME] = 'SCORE TALLY MODE';
-        options[1, OPTION_TYPE] = OPTION_TYPE_WITH_VALUE;
-        options[1, OPTION_VALUE] = tallyLabel;
+        options[1, OPTION_NAME] = 'VIDEO OPTIONS';
+        options[1, OPTION_TYPE] = OPTION_TYPE_SUBMENU;
+        options[1, OPTION_VALUE] = 20;
         options[1, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
         if(ANDROID_CONSOLE != 0)
         {
@@ -1149,6 +1188,46 @@ switch(state)
             options[6, OPTION_VALUE] = 0;
             options[6, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
         }
+        break;
+    case 20:
+        // Video options - added later, hence the ID
+        
+        large = true;
+        
+        var frameRateLabel = "60 FPS";
+        switch get_30_fps() {
+            case 1:
+                frameRateLabel = "30 FPS";
+            break;
+        }
+        
+        var tallyLabel = "RANDOM DIGITS";
+        switch(objProgram.score_tally_mode)
+        {
+            case 1:
+                tallyLabel = "VARIABLE SPEED";
+                break;
+            case 2:
+                tallyLabel = "CONSTANT SPEED";
+                break;
+        }
+        options = false;
+        options[0, OPTION_NAME] = 'VIDEO OPTIONS';
+        options[0, OPTION_TYPE] = OPTION_TYPE_TITLE;
+        options[0, OPTION_VALUE] = false;
+        options[0, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
+        options[1, OPTION_NAME] = 'FRAMERATE';
+        options[1, OPTION_TYPE] = OPTION_TYPE_WITH_VALUE;
+        options[1, OPTION_VALUE] = frameRateLabel;
+        options[1, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
+        options[2, OPTION_NAME] = 'SCORE TALLY MODE';
+        options[2, OPTION_TYPE] = OPTION_TYPE_WITH_VALUE;
+        options[2, OPTION_VALUE] = tallyLabel;
+        options[2, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
+        options[3, OPTION_NAME] = 'BACK';
+        options[3, OPTION_TYPE] = OPTION_TYPE_RETURN;
+        options[3, OPTION_VALUE] = 7;
+        options[3, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
         break;
     case 1001:
     

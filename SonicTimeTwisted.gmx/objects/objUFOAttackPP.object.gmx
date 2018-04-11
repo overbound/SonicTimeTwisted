@@ -107,8 +107,30 @@ color = c_white;
             <string>if reaction_script == noone {
     image_angle+=15
 }
-
-if objScreen.image_index mod 2 {
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="25">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if objScreen.flashing_visible // faster than using objScreen.frame_counter mod 2
+{
     if color == c_white
         color = c_aqua;
         else color = c_white;

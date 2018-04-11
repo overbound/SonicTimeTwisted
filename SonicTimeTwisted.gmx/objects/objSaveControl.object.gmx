@@ -362,9 +362,8 @@ if xSpeed == 0 {
           <argument>
             <kind>1</kind>
             <string>/// visibility flash
-if selectState!=3 &amp;&amp; objScreen.image_index mod 4 {
-//if selectState!=3 {
-    visible = objScreen.flashing_visible;
+if selectState!=3 &amp;&amp; objScreen.frame_counter {
+    visible = !visible;
 } else visible=true;
 </string>
           </argument>

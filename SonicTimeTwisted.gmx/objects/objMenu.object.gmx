@@ -74,6 +74,8 @@ States available by default (ports to other platforms will extend this list):
             <string>// if there's already a menu present: don't create this
 if(instance_number(objMenu) &gt; 1)
 {
+    // create this here so that the obj destroy event doesn't glitch
+    temp_map = ds_map_create();
     instance_destroy();
 }
 else
@@ -470,61 +472,36 @@ if(active)
         case 7:
             switch(cursor)
             {
-                case 1: // screen size
-                    if(pressed == cLEFT)
+                case 2: // gamepad enabled/disabled
+                    with(objProgram.inputManager)
                     {
-                        with objScreen {
-                            if window_state &gt; 1 {
-                                window_state -= 1;
-                                window_scale = window_state
-                                window_set_size(width * window_scale, height * window_scale);
-                                alarm[0]=1;
-                                if window_state == 3 {
-                                    window_set_fullscreen(false);        
-                                }
-                            }
-                            else
-                            {
-                                window_state = 4;
-                                window_scale = 3;
-                                
-                                window_set_fullscreen(true);
-                                window_set_size(width * window_scale, height * window_scale);
-                                alarm[0]=1;
-                            }
-                        }
+                        event_user(0);
                     }
-                    else
-                    {
-                        with objScreen {
-                            if window_state &lt; 4 {
-                                window_state += 1;
-                                window_scale = window_state
-                                if window_state == 4 {
-                                    window_scale = 3;
-                                }
-                                window_set_size(width * window_scale, height * window_scale);
-                                alarm[0]=1;
-                                if window_state == 4 {
-                                    window_set_fullscreen(true);        
-                                }
-                            }
-                            else
-                            {
-                                window_state = 1;
-                                window_scale = 1;
-                                
-                                window_set_fullscreen(false);
-                                window_set_size(width * window_scale, height * window_scale);
-                                alarm[0]=1;
-                            }
-                        }
-                    }
-
                     event_user(1);
                     activated = true;
                     break;
-                case 2: // score tally mode
+            }
+            break;
+        case 20:
+            switch(cursor)
+            {
+                case 1: // screen size
+                    if(pressed == cLEFT)
+                    {
+                        set_video_mode((get_video_mode() + 4 - 1) mod 4);
+                        event_user(1);
+                    }
+                    else
+                    {
+                        set_video_mode((get_video_mode() + 1) mod 4);
+                        event_user(1);
+                    }
+                    break;
+                case 2: // framerate
+                    set_30_fps(1 - get_30_fps());
+                    event_user(1);
+                    break;
+                case 3: // score tally mode
                     if(pressed == cLEFT)
                     {
                         if(objProgram.score_tally_mode)
@@ -543,35 +520,6 @@ if(active)
                     save_options();
                     event_user(1);
                     activated = true;
-                    break;
-                case 3: // gamepad enabled/disabled
-                    with(objProgram.inputManager)
-                    {
-                        event_user(0);
-                    }
-                    event_user(1);
-                    activated = true;
-                    break;
-            }
-            break;
-        case 20:
-            switch(cursor)
-            {
-                case 1: // screen size
-                    if(pressed == cLEFT)
-                    {
-                        set_video_mode((get_video_mode() + 5 - 1) mod 5);
-                        event_user(1);
-                    }
-                    else
-                    {
-                        set_video_mode((get_video_mode() + 1) mod 5);
-                        event_user(1);
-                    }
-                    break;
-                case 2: // framerate
-                    set_30_fps(1 - get_30_fps());
-                    event_user(1);
                     break;
             }
             break;
@@ -700,12 +648,7 @@ if(active)
             // Options menu
             switch(usedCursor)
             {
-                case 2: // score tally mode
-                    objProgram.score_tally_mode = (objProgram.score_tally_mode + 1) mod 3;
-                    save_options();
-                    event_user(1);
-                    break;
-                case 3: // gamepad enabled/disabled
+                case 2: // gamepad enabled/disabled
                     with(objProgram.inputManager)
                     {
                         event_user(0);
@@ -836,11 +779,16 @@ if(active)
             switch(usedCursor)
             {
                 case 1: // screen size
-                    set_video_mode((get_video_mode() + 1) mod 5);
+                    set_video_mode((get_video_mode() + 1) mod 4);
                     event_user(1);
                     break;
                 case 2: // framerate
                     set_30_fps(1 - get_30_fps());
+                    event_user(1);
+                    break;
+                case 3: // score tally mode
+                    objProgram.score_tally_mode = (objProgram.score_tally_mode + 1) mod 3;
+                    save_options();
                     event_user(1);
                     break;
             }
@@ -953,17 +901,6 @@ switch(state)
     case 7:
         large = true;
         
-        var tallyLabel = "RANDOM DIGITS";
-        switch(objProgram.score_tally_mode)
-        {
-            case 1:
-                tallyLabel = "VARIABLE SPEED";
-                break;
-            case 2:
-                tallyLabel = "CONSTANT SPEED";
-                break;
-        }
-        
         var gamepadStateLabel = "NO";
         if(objProgram.inputManager.gamepad_update_enabled)
         {
@@ -978,26 +915,22 @@ switch(state)
         options[1, OPTION_TYPE] = OPTION_TYPE_SUBMENU;
         options[1, OPTION_VALUE] = 20;
         options[1, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
-        options[2, OPTION_NAME] = 'SCORE TALLY MODE';
+        options[2, OPTION_NAME] = 'ENABLE GAMEPAD';
         options[2, OPTION_TYPE] = OPTION_TYPE_WITH_VALUE;
-        options[2, OPTION_VALUE] = tallyLabel;
+        options[2, OPTION_VALUE] = gamepadStateLabel;
         options[2, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
-        options[3, OPTION_NAME] = 'ENABLE GAMEPAD';
-        options[3, OPTION_TYPE] = OPTION_TYPE_WITH_VALUE;
-        options[3, OPTION_VALUE] = gamepadStateLabel;
+        options[3, OPTION_NAME] = 'MAP KEYS';
+        options[3, OPTION_TYPE] = OPTION_TYPE_SUBMENU;
+        options[3, OPTION_VALUE] = 8;
         options[3, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
-        options[4, OPTION_NAME] = 'MAP KEYS';
+        options[4, OPTION_NAME] = 'MAP GAMEPAD';
         options[4, OPTION_TYPE] = OPTION_TYPE_SUBMENU;
-        options[4, OPTION_VALUE] = 8;
+        options[4, OPTION_VALUE] = 9;
         options[4, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
-        options[5, OPTION_NAME] = 'MAP GAMEPAD';
-        options[5, OPTION_TYPE] = OPTION_TYPE_SUBMENU;
-        options[5, OPTION_VALUE] = 9;
+        options[5, OPTION_NAME] = 'BACK';
+        options[5, OPTION_TYPE] = OPTION_TYPE_RETURN;
+        options[5, OPTION_VALUE] = 0;
         options[5, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
-        options[6, OPTION_NAME] = 'BACK';
-        options[6, OPTION_TYPE] = OPTION_TYPE_RETURN;
-        options[6, OPTION_VALUE] = 0;
-        options[6, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
         break;
     case 8:
     case 9:
@@ -1398,9 +1331,6 @@ switch(state)
             case 3:
                 screenStateLabel = "FULLSCREEN";
             break;
-            case 4:
-                screenStateLabel = "FULL BLURRED";
-            break;
         }
         
         var frameRateLabel = "60 FPS";
@@ -1410,6 +1340,16 @@ switch(state)
             break;
         }
         
+        var tallyLabel = "RANDOM DIGITS";
+        switch(objProgram.score_tally_mode)
+        {
+            case 1:
+                tallyLabel = "VARIABLE SPEED";
+                break;
+            case 2:
+                tallyLabel = "CONSTANT SPEED";
+                break;
+        }
         
         options[0, OPTION_NAME] = 'VIDEO OPTIONS';
         options[0, OPTION_TYPE] = OPTION_TYPE_TITLE;
@@ -1423,10 +1363,14 @@ switch(state)
         options[2, OPTION_TYPE] = OPTION_TYPE_WITH_VALUE;
         options[2, OPTION_VALUE] = frameRateLabel;
         options[2, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
-        options[3, OPTION_NAME] = 'BACK';
-        options[3, OPTION_TYPE] = OPTION_TYPE_RETURN;
-        options[3, OPTION_VALUE] = 7;
+        options[3, OPTION_NAME] = 'SCORE TALLY MODE';
+        options[3, OPTION_TYPE] = OPTION_TYPE_WITH_VALUE;
+        options[3, OPTION_VALUE] = tallyLabel;
         options[3, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
+        options[4, OPTION_NAME] = 'BACK';
+        options[4, OPTION_TYPE] = OPTION_TYPE_RETURN;
+        options[4, OPTION_VALUE] = 7;
+        options[4, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
         break;
     default:
         options[0, OPTION_NAME] = 'STATE DOES NOT EXIST';

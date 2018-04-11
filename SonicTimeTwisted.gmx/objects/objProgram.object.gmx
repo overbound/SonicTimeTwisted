@@ -204,7 +204,7 @@ if(os == os_android)
 // ignore if we've paused manually
 if paused exit;
 
-
+/*
 switch os_type
 {
     case os_windows:

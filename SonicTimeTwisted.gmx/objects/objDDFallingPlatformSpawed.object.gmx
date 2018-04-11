@@ -344,7 +344,7 @@ with parent alarm[0]=360;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if alarm[3] != -1 &amp;&amp; objScreen.image_index mod 2 == 0 {
+            <string>if alarm[3] != -1 &amp;&amp; objScreen.frame_counter div 2 == 0 {
     visible = objScreen.flashing_visible;
 } else visible = true;
 </string>

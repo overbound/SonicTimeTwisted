@@ -45,6 +45,22 @@ view_wport[0] = width;
 view_hport[0] = height;
 
 /**
+These variables manage... flashing. yes, flashing.
+Essential for the 30FPS mode, they also allow to remove some
+"mod" and "!boolean" calculations here and there.
+**/
+// A simple boolean that goes from between 0 and 1 every drawn frame
+flashing_visible = false;
+
+// A lot of flashing objects rely on objScreen.image_index mod 4
+// This variable will replace the calls to that property, but
+// only when the conditioned code is purely visual
+frame_counter = 0;
+// Made this a variable so that the 30FPS mode doesn't incur
+// constant "if 30FPS enabled" checks
+frame_counter_increment = 1;
+
+/**
 Load the appropriate video mode. See the set_video_mode script for details
 **/
 video_mode = 0;
@@ -59,7 +75,6 @@ if window_get_width() &gt; width or window_get_height() &gt; height { window_mod
 if (window_get_width() != width * window_scale) or (window_get_height() != height * window_scale) window_set_size(width * window_scale, height * window_scale);
 surface_resize(application_surface, width, height);
 
-flashing_visible = false;
 // os properties
 /*fullscreen_enabled = false;
 switch os_type
@@ -201,6 +216,7 @@ for (var i = 0; i &lt; 2; i += 1)
             <kind>1</kind>
             <string>/// manage flashing (30 FPS-compatible)
 flashing_visible = !flashing_visible;
+frame_counter = (frame_counter + frame_counter_increment) mod 4;
 with(all)
 {
     event_user(15);
@@ -260,14 +276,13 @@ else if scanlines
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Toggle fullscreen
-///Change Window Size
-// TODO redo
-
-// The window must wait a step to center...
-alarm[0]=1;
-
-
+            <string>/// Scroll through screen modes
+set_video_mode((get_video_mode() + 1) mod 4);
+// In case we're in the video options menu, update the visible label
+with(objMenu)
+{
+    event_user(1);
+}
 </string>
           </argument>
         </arguments>

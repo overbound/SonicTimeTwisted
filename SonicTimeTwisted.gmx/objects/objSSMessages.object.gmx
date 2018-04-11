@@ -219,10 +219,9 @@ if !opening exit;
             <kind>1</kind>
             <string>if flash == true {
 
-    //if objScreen.image_index mod 4 == 0 {
-        visible = objScreen.flashing_visible;
-    //}
-
+    if objScreen.frame_counter == 0 {
+        visible = !visible;
+    }
 }
 </string>
           </argument>
