@@ -49,43 +49,87 @@ if(substate >= 2 && substate <= 9)
     }
     if(state == 8)
     {
-        if(keyboard_check_pressed(objProgram.back_button))
+        var pressed_key = -1;
+
+        for(var i = 4; i <= 255; i++)
         {
-            // cancel key pressed - Abort! Abort! Abort! Return to the menu's usual operating mode
-            ds_map_destroy(temp_map);
-            temp_map = ds_map_create();
-            use_default_interface = true;
-            substate = 0;
-        }
-        else
-        {
-            // Could have used keyboard_check_pressed, but it doesn't work correctly on all platforms.
-            // So instead, we use prev_pressed_key. It's not pretty.
-            var pressed_key = -1;
-    
-            for(var i = 4; i <= 255; i++)
+            if (i == vk_anykey)
             {
-                if(android_keyboard_check_pressed(i))
-                {
-                    pressed_key = i;
-                    break;
-                }
+                continue;
             }
-            show_debug_message('Pressed: '+string(pressed_key));
-            if (pressed_key != -1) {
+            if (i == vk_nokey)
+            {
+                continue;
+            }
+            if(android_keyboard_check_pressed(i))
+            {
+                pressed_key = i;
+                break;
+            }
+        }
+        if (pressed_key != -1) {
+            
+            if (pressed_key == objProgram.back_button)
+            {
+                // cancel key pressed - Abort! Abort! Abort! Return to the menu's usual operating mode
+                ds_map_destroy(temp_map);
+                temp_map = ds_map_create();
+                use_default_interface = true;
+                substate = 0;
+            }
+            else
+            {
                 var key = 0;
+                var keyWillBeMapped = true;
                 if(keyToMap > 0)
                 {
-                    ds_map_add(temp_map, keyToMap, pressed_key);
+                    // big check - we don't want the user to be able to map one key to two buttons at once
+                    if(substate == cursor)
+                    {
+                        // if remapping one button - check only those that are saved
+                        if(!is_key_mappable(pressed_key, keyToMap))
+                        {
+                            keyWillBeMapped = false;
+                        }
+                    }
+                    else
+                    {
+                        // if remapping everyting - check only already remapped
+                        var size = ds_map_size(temp_map) ;
+                        var currentlyCheckedKey = ds_map_find_first(temp_map);
+                        for (var i = 0; (i < size) && keyWillBeMapped; i++;)
+                        {
+                            if(ds_map_find_value(temp_map, currentlyCheckedKey) == pressed_key)
+                            {
+                                keyWillBeMapped = false;
+                            }
+                            currentlyCheckedKey = ds_map_find_next(temp_map, currentlyCheckedKey);
+                        }
+                    }
+                    
+                    if(keyWillBeMapped)
+                    {
+                        ds_map_add(temp_map, keyToMap, pressed_key);
+                    }
+                    else
+                    {
+                        pressed_key = -1;
+                    }
                 }
-                if(substate == cursor)
+                if(keyWillBeMapped)
                 {
-                    substate = 10;
+                    if(substate == cursor)
+                    {
+                        substate = 10;
+                    }
+                    else
+                    {
+                        substate++;
+                    }
                 }
-                else
-                {
-                    substate++;
-                }
+            }
+            if (pressed_key != -1)
+            {
                 event_user(1);
             }
         }
@@ -94,7 +138,7 @@ if(substate >= 2 && substate <= 9)
     if(state == 9)
     {
         // remapping up on gamepad
-        if(keyboard_check_pressed(objProgram.back_button))
+        if(android_keyboard_check_pressed(objProgram.back_button))
         {
             // cancel key pressed - Abort! Abort! Abort! Return to the menu's usual operating mode
             // it's also present in this option, in case the player wants to remap the peripheral they don't have
@@ -108,10 +152,41 @@ if(substate >= 2 && substate <= 9)
         else
         {
             var mapped = false;
-            var padButton = android_input_any_gamepad_button()
-            if padButton { 
-                ds_map_add(temp_map, keyToMap, padButton);
-                mapped = true;
+            var padButton = android_input_any_gamepad_button();
+            var keyWillBeMapped = true;
+            if(padButton != -1)
+            {
+                // big check - we don't want the user to be able to map one key to two buttons at once
+                if(substate == cursor)
+                {
+                    // if remapping one button - check only those that are saved
+                    if(!is_button_mappable(padButton, keyToMap))
+                    {
+                        keyWillBeMapped = false;
+                    }
+                }
+                else
+                {
+                    // if remapping everyting - check only already remapped
+                    var size = ds_map_size(temp_map) ;
+                    var currentlyCheckedKey = ds_map_find_first(temp_map);
+                    for (var i = 0; (i < size) && keyWillBeMapped; i++;)
+                    {
+                        if(ds_map_find_value(temp_map, currentlyCheckedKey) == padButton)
+                        {
+                            keyWillBeMapped = false;
+                        }
+                        currentlyCheckedKey = ds_map_find_next(temp_map, currentlyCheckedKey);
+                    }
+                }
+                
+                if(keyWillBeMapped)
+                {
+                    if padButton { 
+                        ds_map_add(temp_map, keyToMap, padButton);
+                        mapped = true;
+                    }
+                }
             }
             if(wait_for_release_axis)
             {
@@ -132,8 +207,35 @@ if(substate >= 2 && substate <= 9)
                         // axes can only be mapped to directions
                         if(keyToMap == cUP || keyToMap == cDOWN || keyToMap == cLEFT || keyToMap == cRIGHT)
                         {
-                            ds_map_add(temp_map, keyToMap, axis);
-                            mapped = true;
+                            // big check - we don't want the user to be able to map one key to two axes at once
+                            if(substate == cursor)
+                            {
+                                // if remapping one button - check only those that are saved
+                                if(!is_axis_mappable(axis, keyToMap))
+                                {
+                                    keyWillBeMapped = false;
+                                }
+                            }
+                            else
+                            {
+                                // if remapping everyting - check only already remapped
+                                var size = ds_map_size(temp_map) ;
+                                var currentlyCheckedKey = ds_map_find_first(temp_map);
+                                for (var i = 0; (i < size) && keyWillBeMapped; i++;)
+                                {
+                                    if(ds_map_find_value(temp_map, currentlyCheckedKey) == axis)
+                                    {
+                                        keyWillBeMapped = false;
+                                    }
+                                    currentlyCheckedKey = ds_map_find_next(temp_map, currentlyCheckedKey);
+                                }
+                            }
+                            
+                            if(keyWillBeMapped)
+                            {
+                                ds_map_add(temp_map, keyToMap, axis);
+                                mapped = true;
+                            }
                         }
                         wait_for_release_axis = true;
                     }
@@ -210,14 +312,28 @@ if(substate == 10)
         }
         key = ds_map_find_next(temp_map, key);
     }
-    // everything's dumped? good! Let's now apply it and go back to the menu's regular operations
+    // everything's dumped? good! Let's now apply it
     with objProgram.inputManager input_load();
     wait_for_release = false;
     ds_map_destroy(temp_map);
     temp_map = ds_map_create();
-    use_default_interface = true;
-    substate = 0;
+    wait_timer = 0;
+    substate = 11;
     event_user(1);
+}
+else
+if(substate == 11)
+{
+    // wait for a bit before going back to the usual mode
+    // this is done, so that holding A or START after mapping them doesn't trigger the key mapping once again
+    wait_timer++;
+    if(wait_timer >= 5)
+    {
+        use_default_interface = true;
+        wait_timer = 0;
+        substate = 0;
+        event_user(1);
+    }
 }
 else
 {

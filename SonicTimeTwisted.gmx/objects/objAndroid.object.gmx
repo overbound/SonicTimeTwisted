@@ -91,6 +91,10 @@ switch(room)
          {
              instance_destroy();
          }
+         with(objMenu)
+         {
+             instance_destroy();
+         }
          with(objTitleControl)
          {
              alarm[0]=-1;

@@ -72,6 +72,7 @@ States available by default (ports to other platforms will extend this list):
           <argument>
             <kind>1</kind>
             <string>// if there's already a menu present: don't create this
+/*
 if(instance_number(objMenu) &gt; 1)
 {
     // create this here so that the obj destroy event doesn't glitch
@@ -80,6 +81,7 @@ if(instance_number(objMenu) &gt; 1)
 }
 else
 {
+*/
     active = false;
     
     state = 0;
@@ -146,7 +148,7 @@ else
     y_offset = 0;
     // pressed key: used to manage left/right presses
     pressed = false;
-}
+//}
 </string>
           </argument>
         </arguments>

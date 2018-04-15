@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>event_inherited();
+            <string>input = 0;
+event_inherited();
 if(ANDROID_CONSOLE != 0)
 {
     input = 1; // 0 - touchscreen, 1 - no touchscreen
@@ -74,7 +75,10 @@ show_debug_message("Devices refreshed");
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>android_step_end();
+            <string>if(input == 1)
+{
+    android_step_end();
+}
 computer_input_reset_state();
 </string>
           </argument>
@@ -118,8 +122,10 @@ computer_input_reset_state();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>android_step_begin();
-
+            <string>if(input == 1)
+{
+    android_step_begin();
+}
 </string>
           </argument>
         </arguments>
@@ -141,41 +147,40 @@ computer_input_reset_state();
           <argument>
             <kind>1</kind>
             <string>/// Get device state
-var buffer, i, a;
-
-// clear states
-buffer = state;
-state = 0;
-state_press = 0;
-state_release = 0;
-
-/*
-if objScreen.image_index mod 8 == 0
-    gamepad_update();*/
 if(input == 1)
 {
-    // keys
-    for (i = 0; i &lt; key_count; i++)
-        if (android_keyboard_check(key[i])) state |= key_control[i];
+    var i, a;
     
+    // clear states
+    previous_state = state;
+    state = 0;
+    state_press = 0;
+    state_release = 0;
+    
+    /*
+    if objScreen.image_index mod 8 == 0
+    gamepad_update();*/
+
     if(gamepad_update_enabled) {    
         // buttons
         for (i = 0; i &lt; button_count; i++)
             if (android_gamepad_button_check(pad, button[i])) state |= button_control[i];
-            //if (gamepad_button_check(button_gamepad[i], button[i])) state |= button_control[i];
-            // if (gamepad_button(pad, button[i])) state |= button_control[i];
         
         // axes
         for (i = 0; i &lt; axis_count; i++)
             if (android_gamepad_axis_value(pad, axis[i]) * axis_direction[i] &gt; axis_deadzone[i]) state |= axis_control[i];
-            //if (gamepad_axis_value(axis_gamepad[i], axis[i]) * axis_direction[i] &gt; axis_deadzone[i]) state |= axis_control[i];
-            // if (gamepad_axis(pad, axis[i]) * axis_direction[i] &gt; axis_deadzone[i]) state |= axis_control[i];
     }
-}
-// default "back" button - defaul event is kept because we want to target specifically the device's back button, which might match an Android gamepad buttno
-if(keyboard_check(objProgram.back_button))
-{
-    state |= cBACK;
+    else
+    {        
+        // keys
+        for (i = 0; i &lt; key_count; i++)
+            if (android_keyboard_check(key[i])) state |= key_control[i];
+    }
+    // default "back" button - defaul event is kept because we want to target specifically the device's back button, which might match an Android gamepad buttno
+    if(keyboard_check(objProgram.back_button))
+    {
+        state |= cBACK;
+    }
 }
 
 // axes
@@ -188,8 +193,15 @@ if (state &amp; cUP &amp;&amp; flag_player_input) || (computer_cUP &amp;&amp; !f
 if (state &amp; cDOWN &amp;&amp; flag_player_input) || (computer_cDOWN &amp;&amp; !flag_player_input) y_axis += 1;
 
 // pressing and releasing
-state_press = (state &amp; buffer) ^ state;
-state_release = (state &amp; buffer) ^ buffer;
+state_press = (state &amp; previous_state) ^ state;
+state_release = (state &amp; previous_state) ^ previous_state;
+previous_state = state;
+// Check for Pressing
+if pressingGamepad != -1 {
+    if !android_gamepad_button_check(pad,pressingGamepad) &amp;&amp; !android_gamepad_axis_value(pad,pressingGamepad) {
+        pressingGamepad = -1;
+    }
+}
 </string>
           </argument>
         </arguments>
@@ -211,7 +223,6 @@ state_release = (state &amp; buffer) ^ buffer;
           <argument>
             <kind>1</kind>
             <string>/// Check for Pressing
-
 if pressingGamepad != -1 {
     if !android_gamepad_button_check(pad,pressingGamepad) &amp;&amp; !android_gamepad_axis_value(pad,pressingGamepad) {
         pressingGamepad = -1;

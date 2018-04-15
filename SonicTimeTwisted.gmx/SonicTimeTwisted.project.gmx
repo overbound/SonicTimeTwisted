@@ -2,7 +2,6 @@
 <assets>
   <Configs name="configs">
     <Config>Configs\Default</Config>
-    <Config>Configs\AndroidConsole</Config>
   </Configs>
   <datafiles number="43" name="datafiles"/>
   <NewExtensions>
@@ -1731,6 +1730,9 @@
         <script>scripts\computer_input_set_pressed.gml</script>
         <script>scripts\computer_input_set_released.gml</script>
         <script>scripts\computer_input_setup.gml</script>
+        <script>scripts\is_key_mappable.gml</script>
+        <script>scripts\is_button_mappable.gml</script>
+        <script>scripts\is_axis_mappable.gml</script>
       </scripts>
       <scripts name="Program">
         <script>scripts\game_pause.gml</script>

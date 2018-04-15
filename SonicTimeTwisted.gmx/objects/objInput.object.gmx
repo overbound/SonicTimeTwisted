@@ -40,6 +40,7 @@ device_id = instance_number(objInput)-1;
 
 // input state
 state = 0;
+previous_state = 0;
 state_press = 0;
 state_release = 0;
 
@@ -129,10 +130,10 @@ load_gamepad_support();
           <argument>
             <kind>1</kind>
             <string>/// Get device state
-var buffer, i, a;
+var i, a;
 
 // clear states
-buffer = state;
+previous_state = state;
 state = 0;
 state_press = 0;
 state_release = 0;
@@ -167,7 +168,7 @@ if(keyboard_check(objProgram.back_button))
 }
 
 // custom control schemes (e.g. touchscreen)
-event_user(3);   
+event_user(3);
 
 // axes
 x_axis = 0;
@@ -180,8 +181,9 @@ if (state &amp; cDOWN &amp;&amp; flag_player_input) || (computer_cDOWN &amp;&amp
 
 
 // pressing and releasing
-state_press = (state &amp; buffer) ^ state;
-state_release = (state &amp; buffer) ^ buffer;
+state_press = (state &amp; previous_state) ^ state;
+state_release = (state &amp; previous_state) ^ previous_state;
+previous_state = state;
 </string>
           </argument>
         </arguments>
@@ -210,12 +212,6 @@ if pressingGamepad != -1 {
     }
 }
 
-/*
-if pressingGamepad != -1 {
-    if !gamepad_button(0,pressingGamepad) &amp;&amp; alarm[0] == -1  {
-        pressingGamepad = -1;
-    }
-}*/
 </string>
           </argument>
         </arguments>
