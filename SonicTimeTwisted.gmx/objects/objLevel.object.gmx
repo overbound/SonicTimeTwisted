@@ -54,7 +54,7 @@ spawn_id = noone;
 ringLifeCounter = 0; 
 
 
-
+instance_create(0,0,objTileGridManager);
 </string>
           </argument>
         </arguments>

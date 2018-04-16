@@ -2861,6 +2861,10 @@
         <object>objects\objScreen</object>
         <object>objects\objFramerate</object>
       </objects>
+      <objects name="TileGrid">
+        <object>objects\objTileGridManager</object>
+        <object>objects\objTileGridRenderer</object>
+      </objects>
       <object>objects\objGameData</object>
       <object>objects\objProgram</object>
       <object>objects\objMusic</object>
