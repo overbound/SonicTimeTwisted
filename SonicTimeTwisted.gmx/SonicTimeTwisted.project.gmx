@@ -1774,6 +1774,7 @@
         <script>scripts\load_video_settings.gml</script>
         <script>scripts\set_30_fps.gml</script>
         <script>scripts\get_30_fps.gml</script>
+        <script>scripts\is_tt_shader_supported.gml</script>
       </scripts>
       <script>scripts\extend_byte.gml</script>
       <script>scripts\minlerp.gml</script>
@@ -2882,6 +2883,7 @@
         <object>objects\objTitleCloud0</object>
         <object>objects\objTitleEffects</object>
         <object>objects\objTitleLighting</object>
+        <object>objects\objTitleLightingNoShader</object>
         <object>objects\objTitleCloud1</object>
         <object>objects\objCharacterSelect</object>
         <object>objects\objLevelSelect</object>
@@ -2902,6 +2904,7 @@
         <object>objects\objTTZ2Transition</object>
         <object>objects\objGameOver</object>
         <object>objects\objTimeTravel</object>
+        <object>objects\objTimeTravelNoShader</object>
         <object>objects\objTitlecard</object>
         <object>objects\objTitlecardDisolve</object>
         <object>objects\objTitleCardSSZ</object>

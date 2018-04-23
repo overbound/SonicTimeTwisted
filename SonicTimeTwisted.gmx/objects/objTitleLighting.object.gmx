@@ -33,15 +33,17 @@ This results in a white on transparent image on the surface. When the surface is
 the white pixels will be replaced with a texture that makes it look like the SCD time travel effect.
 */
 
+tts = TimeTravelShader;
+
 // send some information to the shader; the shader has to be set for this to work
 // (I don't know if this can be screwed up by using other shaders; if so, this info might have to be sent in the draw event...)
-shader_set(TimeTravelShader);
+shader_set(tts);
 // send: the scaling of the sparkly SCD texture so it will repeat enough times to not be stretched
-shader_set_uniform_f(shader_get_uniform(TimeTravelShader, "scl"), sprite_width / background_get_width(tt_texture), sprite_height / background_get_height(tt_texture));
+shader_set_uniform_f(shader_get_uniform(tts, "scl"), sprite_width / background_get_width(tt_texture), sprite_height / background_get_height(tt_texture));
 // send: the texture index of the sparkly SCD texture
-texture_set_stage(shader_get_sampler_index(TimeTravelShader, "mask"), background_get_texture(tt_texture));
+texture_set_stage(shader_get_sampler_index(tts, "mask"), background_get_texture(tt_texture));
 // send: the texture index of the the gradient used to cycle the colours
-texture_set_stage(shader_get_sampler_index(TimeTravelShader, "grad"), background_get_texture(tt_gradient));
+texture_set_stage(shader_get_sampler_index(tts, "grad"), background_get_texture(tt_gradient));
 shader_reset();
 
 // create a surface the size of the screen to draw the effect on
@@ -60,13 +62,11 @@ shift = 0;
 time = 0;
 
 // the parameter handle to be used to send the shift amount to the shader later in the draw event
-param_shift = shader_get_uniform(TimeTravelShader, "shift");
+param_shift = shader_get_uniform(tts, "shift");
 
 image_xscale=1;
 image_yscale=1;
 spr=sprite_index;
-
-
 </string>
           </argument>
         </arguments>
@@ -99,11 +99,11 @@ var temp_Height = 0;
 var temp_Wave_1 = 0; // standard wave
 var temp_Wave_2 = 0; // spikes
 var temp_Wave_3 = 0; // larger wave
-
-surface_set_target(tt_surface);
-    draw_clear_alpha(0, 0);
     if (view_yview &lt; room_height - view_hview - 64)
     {
+surface_set_target(tt_surface);
+    draw_clear_alpha(0, 0);
+
     draw_primitive_begin(pr_trianglefan); // pr_trianglefan // pr_linestrip
     draw_vertex_colour(213, 120, c_white, 1);
         for (var j = 0; j &lt; 2; j++)
@@ -138,7 +138,6 @@ surface_set_target(tt_surface);
         temp_Wave_1 = sin(degtorad(time / 8 + (view_yview / 80) * temp_Sign) * 16 + (view_yview / 40) * temp_Sign) * (10 / (max(1, view_yview / 240) * temp_Sign));
         draw_vertex_colour(temp_Centre + ((temp_Offset / max(1, view_yview / 240)) * temp_Sign) + (temp_Wave_1 * temp_Sign) + (temp_Wave_2 * temp_Sign) + (temp_Wave_3 * temp_Sign), temp_Height, c_white, 1);
     draw_primitive_end();
-    }
     /*temp_Sign = 1;
     temp_Height = 0;
     temp_Wave_1 = 0;
@@ -155,6 +154,7 @@ surface_set_target(tt_surface);
         temp_Sign = -1;
     }*/
 surface_reset_target();
+    }
 // draw the sprite mirrored on the y axis to create the zipper shape
 //draw_sprite_ext(spr, floor(image_index), xoffset, 0, 1, 1, 0, c_white, 1);
 //draw_sprite_ext(spr, floor(image_index), 0, 1, 1, 1, 0, c_white, 1); // ORIGINAL IMAGE
@@ -220,7 +220,7 @@ if (view_yview &gt;= room_height - view_hview - 64)
 // turn on the time travel effect shader
 if (view_yview &lt; room_height - view_hview - 64)
 {
-    shader_set(TimeTravelShader);
+    shader_set(tts);
         shader_set_uniform_f(param_shift, shift); // send the shift amount (for colour cycling) to the shader
         draw_surface_ext(tt_surface, 0, view_yview, image_xscale, image_yscale, 0, c_white, 1);
     shader_reset();

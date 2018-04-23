@@ -9,5 +9,11 @@ if objProgram.in_past level = ds_list_find_value(objProgram.past_list, objProgra
 level = ds_list_find_value(objProgram.future_list, objProgram.current_level);
 
 // start level
-
-with instance_create(0, 0, objTimeTravel) next_room = level;
+if(is_tt_shader_supported())
+{
+    with instance_create(0, 0, objTimeTravel) next_room = level;
+}
+else
+{
+    with instance_create(0, 0, objTimeTravelNoShader) next_room = level;
+}
