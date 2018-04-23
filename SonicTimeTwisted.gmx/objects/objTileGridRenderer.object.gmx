@@ -140,16 +140,18 @@ else
             {
                 var cur_x_in_grid = x_in_grid + i;
                 var cur_y_in_grid = y_in_grid + j;
-                if(cur_x_in_grid &gt;= 0 &amp;&amp; cur_x_in_grid &lt; ds_grid_width(owner.grid))
+                if(cur_x_in_grid &gt;= 0 &amp;&amp; cur_x_in_grid &lt; owner.x_in_grid_max)
                 {
-                    if(cur_y_in_grid &gt;= 0 &amp;&amp; cur_y_in_grid &lt; ds_grid_height(owner.grid))
+                    if(cur_y_in_grid &gt;= 0 &amp;&amp; cur_y_in_grid &lt; owner.y_in_grid_max)
                     {
-                        var list = ds_grid_get(owner.grid, cur_x_in_grid, cur_y_in_grid);
-                        for(var current_tile = 0; current_tile &lt; ds_list_size(list); current_tile++)
+                        var key = string(cur_x_in_grid)+'|'+string(cur_y_in_grid)+'|'+string(use_depth);
+                        if(ds_map_exists(owner.tiles, key))
                         {
-                            var tile_id = ds_list_find_value(list, current_tile);
-                            if(use_depth == tile_get_depth(tile_id))
+                            var tile_array = ds_map_find_value(owner.tiles, key);
+                            var tile_array_size = array_length_1d(tile_array);
+                            for(var k = 0; k &lt; tile_array_size; k++)
                             {
+                                var tile_id = tile_array[k];
                                 var x_on_surface = tile_get_x(tile_id) - x;
                                 var y_on_surface = tile_get_y(tile_id) - y;
                                 draw_background_part_ext(
@@ -164,6 +166,7 @@ else
                                     tile_get_blend(tile_id),
                                     tile_get_alpha(tile_id)
                                 );
+                                
                             }
                         }
                     }
