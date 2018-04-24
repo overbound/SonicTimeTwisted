@@ -232,96 +232,100 @@ if(input == 0)
     state = 0;
     state_press = 0;
     state_release = 0;
+    
+    var vk_should_be_active = false;
+    if(!objScreen.paused)
+    {
+        if(instance_exists(objLevel))
+        {
+            if(objLevel.player[0] != noone)
+            {
+                vk_should_be_active =
+                    (objLevel.player[0].state != player_state_complete
+                    &amp;&amp; objLevel.player[0].state != player_state_standby
+                    &amp;&amp; objLevel.player[0].state != player_state_fall_automatically)
+                    &amp;&amp; objProgram.inputManager.flag_player_input;
+            }
+        }
+        else
+        if(instance_exists(objSSPlayer))
+        {
+            vk_should_be_active = objSSPlayer.started;
+        }
+    }
+    
     if(vk_active)
     {
-        if(alpha &lt; vkalpha)
-        {
-            alpha += 0.05;
-            if(alpha &gt; vkalpha)
-            {
-                alpha = vkalpha;
-            }
-        }
-        
-        // in Galacnik Gauntlet, check whether touchscreen controls are enabled
-        if(objProgram.current_level == 16)
-        {
-            ggCurrentMode = gg_mode;
-        }
-        else
-        {
-            ggCurrentMode = 0;
-        }
-        android_manage_touchscreen_controls();
-        if(gyroscopeMode)
-        {
-            android_manage_gyroscope_controls(false);
-        }
-        else
-        {
-            switch(ggCurrentMode)
-            {
-                case 0:
-                    // nothing special here
-                    break;
-                case 1:
-                    // GG gyroscope controls
-                    android_manage_gyroscope_controls(true);
-                    break;
-                case 2:
-                    // GG point controls
-                    android_manage_touch_controls();
-                    break;
-            }
-        }
-        
         // Let's see if touchscreen needs to be disabled
-        // cutscene? disable. No playable character? Disable. No player flag input? Disable too
-        if(!( (instance_exists(objPlayer) || instance_exists(objSSPlayer)) &amp;&amp; objProgram.inputManager.flag_player_input ))
+        if(!vk_should_be_active)
         {
-            smartphone_disable_virtual_keys();    
+            smartphone_disable_virtual_keys();
         }
-        
-        // apply pressed keys
-        var size = ds_map_size(keys) ;
-        var key = ds_map_find_first(keys);
-        for (var i = 0; i &lt; size; i++;)
+        else
         {
-           if(ds_map_find_value(keys, key))
-           {
-               state |= key;
-           }
-           key = ds_map_find_next(keys, key);
+            if(alpha &lt; vkalpha)
+            {
+                alpha += 0.05;
+                if(alpha &gt; vkalpha)
+                {
+                    alpha = vkalpha;
+                }
+            }
+            
+            // in Galacnik Gauntlet, check whether touchscreen controls are enabled
+            if(objProgram.current_level == 16)
+            {
+                ggCurrentMode = gg_mode;
+            }
+            else
+            {
+                ggCurrentMode = 0;
+            }
+            android_manage_touchscreen_controls();
+            if(gyroscopeMode)
+            {
+                android_manage_gyroscope_controls(false);
+            }
+            else
+            {
+                switch(ggCurrentMode)
+                {
+                    case 0:
+                        // nothing special here
+                        break;
+                    case 1:
+                        // GG gyroscope controls
+                        android_manage_gyroscope_controls(true);
+                        break;
+                    case 2:
+                        // GG point controls
+                        android_manage_touch_controls();
+                        break;
+                }
+            }
+            
+    
+            
+            // apply pressed keys
+            var size = ds_map_size(keys) ;
+            var key = ds_map_find_first(keys);
+            for (var i = 0; i &lt; size; i++;)
+            {
+               if(ds_map_find_value(keys, key))
+               {
+                   state |= key;
+               }
+               key = ds_map_find_next(keys, key);
+            }
         }
     }
     if(!vk_active)
     {
-        if(alpha &gt; 0)
-        {
-            alpha -= 0.01;
-            if(alpha &lt; 0)
-            {
-                alpha = 0;
-            }
-        }
-        /*
-        These conditions look goofy, but that's due to how
-        GMS processes "OR" and "AND" conditions, this speeds
-        things up a little bit.
-        */
-        if(objProgram.inputManager.flag_player_input)
+        if(vk_should_be_active)
         {
             if(instance_exists(objPlayer))
             {
-                var enable = false;
-                if(instance_exists(objLevel))
-                {
-                    enable = objLevel.started &amp;&amp; (!objLevel.cleared);
-                }
-                if(enable)
-                {
-                    smartphone_enable_virtual_keys(false);
-                }
+                smartphone_enable_virtual_keys(false);
             }
             else
             if(instance_exists(objSSPlayer))
@@ -329,13 +333,16 @@ if(input == 0)
                 smartphone_enable_virtual_keys(true);
             }
         }
-        /*
-            I sruggled to figure out how the AAZ mini boss is supposed to work.
-            So let's just enable the controls when the mini-boss is present and be done with it
-        */
-        if(instance_exists(objAA1BossController))
+        else
         {
-            smartphone_enable_virtual_keys(false);
+            if(alpha &gt; 0)
+            {
+                alpha -= 0.01;
+                if(alpha &lt; 0)
+                {
+                    alpha = 0;
+                }
+            }
         }
     }
 }
@@ -567,6 +574,30 @@ switch(vksize)
     break;
 }
 vk_active = true;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="4">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>smartphone_disable_virtual_keys();
+alpha = 0;
 </string>
           </argument>
         </arguments>

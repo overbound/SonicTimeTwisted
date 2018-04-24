@@ -112,6 +112,7 @@ with(objSSEnemy)
 else
 if(!chime_played)
 {
+    stop_all_music(false, true);
     if (objProgram.in_past)
         play_jingle(sndSSTimeStone, false);
     else

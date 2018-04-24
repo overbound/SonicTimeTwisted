@@ -2,7 +2,7 @@
 
 with objLevel.player[0] {
     
-    player_is_jumping();
+    player_is_jumping_automatically();
     started=false;
     y-=16;
 }

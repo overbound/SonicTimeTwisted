@@ -2116,9 +2116,11 @@
           <script>scripts\player_state_enter.gml</script>
           <script>scripts\player_state_exit.gml</script>
           <script>scripts\player_state_fall.gml</script>
+          <script>scripts\player_state_fall_automatically.gml</script>
           <script>scripts\player_state_hurt.gml</script>
           <script>scripts\player_state_look.gml</script>
           <script>scripts\player_state_object.gml</script>
+          <script>scripts\player_state_complete.gml</script>
           <script>scripts\player_state_path.gml</script>
           <script>scripts\player_state_wall_run.gml</script>
           <script>scripts\player_state_reset.gml</script>
@@ -2168,6 +2170,7 @@
           <script>scripts\player_is_falling.gml</script>
           <script>scripts\player_is_hurt.gml</script>
           <script>scripts\player_is_jumping.gml</script>
+          <script>scripts\player_is_jumping_automatically.gml</script>
           <script>scripts\player_is_board_jumping.gml</script>
           <script>scripts\player_is_board_falling.gml</script>
           <script>scripts\player_is_looking.gml</script>

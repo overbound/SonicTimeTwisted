@@ -2,8 +2,9 @@
 
 with objLevel.player[0] {
     
-    player_is_standing();
+    player_is_jumping_automatically(true);
     started=true;
+    y-=16;
 }
 
 if objProgram.spawn_tag == 0 {

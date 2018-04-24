@@ -3,7 +3,7 @@ objProgram.temp_x = 8900;
 
 with objLevel.player[0] {
     
-    player_is_jumping();
+    player_is_jumping_automatically(true);
     started=false;
     y-=16;
 }

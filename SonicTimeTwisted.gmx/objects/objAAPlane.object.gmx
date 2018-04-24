@@ -74,11 +74,10 @@ audio = audio_emitter_create();
 
 
 with objLevel.player[0] {
-    
+    flag_player_input = false;
     switch other.state {
     
     case 0: //stand on plane
-    flag_player_input = false;
     objLevel.started = false;
     x = other.x+4;
     y = other.y-36;
@@ -86,7 +85,7 @@ with objLevel.player[0] {
     break;
     
     case 1:
-    player_is_jumping();
+    player_is_jumping_automatically();
     other.state = 2;
     started = false;
     objField.xx = x;

@@ -246,6 +246,7 @@ image_xscale = player_id.facing;
 switch player_id.state
 {
 case player_state_fall:
+case player_state_fall_automatically:
     // rotate to movement direction if spinning
     if (player_id.animation!="spin") image_angle = player_id.angle; else
     if image_xscale image_angle = point_direction(0, 0, player_id.xspeed, player_id.yspeed); else
