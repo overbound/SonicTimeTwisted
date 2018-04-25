@@ -30,6 +30,7 @@ vk_active = false;
 
 alpha = 0;
 gyroscopeMode = false;
+gyroscopeModeDraw = false; // whether to draw UP button instead of the D-Pad
 ggCurrentMode = 0; // galacnik gauntlet mode
 gyroscopeTilt = 0;
 
@@ -233,7 +234,7 @@ if(input == 0)
     state_press = 0;
     state_release = 0;
     
-    var vk_should_be_active = false;
+    var vk_should_be_active = vk_active;
     if(!objScreen.paused)
     {
         if(instance_exists(objLevel))
@@ -248,9 +249,9 @@ if(input == 0)
             }
         }
         else
-        if(instance_exists(objSSPlayer))
+        if(instance_exists(objSSLevel_Android))
         {
-            vk_should_be_active = objSSPlayer.started;
+            vk_should_be_active = objSSLevel_Android.started &amp;&amp; (!objSSLevel_Android.failed) &amp;&amp; (!objSSLevel_Android.cleared);
         }
     }
     
@@ -622,7 +623,7 @@ alpha = 0;
             <kind>1</kind>
             <string>if(alpha &gt; 0)
 {
-    if(gyroscopeMode)
+    if(gyroscopeModeDraw)
     {
         if(vksize == 0)
         {

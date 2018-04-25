@@ -5,6 +5,7 @@ if(objProgram.os == os_android)
     if(objProgram.inputManager.input == 0)
     {
         objProgram.inputManager.gyroscopeMode = argument0;
+        objProgram.inputManager.gyroscopeModeDraw = argument0;
         with(objProgram.inputManager)
         {
             event_user(1);

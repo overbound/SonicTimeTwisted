@@ -28,6 +28,8 @@
             <string>event_inherited();
 started = false;
 timer_before_notice = 120;
+failed = false;
+cleared = false;
 </string>
           </argument>
         </arguments>
@@ -77,6 +79,11 @@ else
             }
         }
     }
+    if(objSSPlayer.z &lt; -100)
+    {
+        failed = true;
+    }
+    cleared = objSSLevel.cleared;
 }
 </string>
           </argument>
