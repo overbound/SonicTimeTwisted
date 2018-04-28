@@ -92,7 +92,7 @@ bg_x = view_wview[view_current]/2 - background_get_width(bg);
 bg_y = (view_hview[view_current] - background_get_height(bg))/2;
 em_x = view_wview[view_current]/2 - 14 * (level - 1);
 em_y = 96;
-oem_x = view_wview[view_current]/2 - 8 * (level - 1);
+oem_x = view_wview[view_current]/2 - 8 * (other_level - 1);
 oem_y = 116;
 </string>
           </argument>

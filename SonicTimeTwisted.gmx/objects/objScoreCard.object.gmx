@@ -93,10 +93,8 @@ if(instance_exists(objLevel))
 line1 = string_replace("%c GOT", "%c", name_tag);
 line2 = string_replace("THROUGH ACT %a", "%a", string(act));
 
-
 // ring bonus
 rings_bonus = objGameData.rings[0]*10;
-
 
 // screen positions
 draw_set_font(objResources.fontTitleSmallest);

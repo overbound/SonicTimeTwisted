@@ -76,8 +76,6 @@ for (i=0; i&lt;4; i+=1)
     // go through each character
     for (j=0; j&lt;title_length[i]; j+=1) title_scale[i, j] = 12;
 }
-
-ss_instructions = "Jump and Hold B and A to Turn Into Super Sonic";
 </string>
           </argument>
         </arguments>
