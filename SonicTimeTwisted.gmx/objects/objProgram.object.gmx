@@ -67,6 +67,9 @@ temp_x=0;
 temp_yview_offset=0;
 temp_xview_offset=0;
 stop_sound = true;
+ss_perfect_bonus = 0;
+ss_rings_bonus = 0;
+ss_time_bonus = 0;
 
 //game_directory="%localappdata%\Sonic_Time_Twisted\"
 game_directory="\Sonic_Time_Twisted\";

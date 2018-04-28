@@ -183,11 +183,11 @@ if(input == 1)
     }
 }
 
-/*
+
 // real keys on PC - for testing purposes
 for (i = 0; i &lt; key_count; i++)
     if (keyboard_check(key[i])) state |= key_control[i];
-*/
+
 
 // axes
 x_axis = 0;

@@ -1,4 +1,4 @@
-// level_goto_next()
+// level_goback()
 
 if objProgram.in_past level = ds_list_find_value(objProgram.past_list, objProgram.current_level); else
 level = ds_list_find_value(objProgram.future_list, objProgram.current_level);

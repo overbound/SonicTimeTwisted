@@ -396,44 +396,7 @@ draw_set_font(objResources.fontHud);
     }
     
     
-if closing == 2 {
-    
-     if objProgram.in_past {
-     
-        if objProgram.special_past_current_level &gt;= 7 {
-            draw_text(213,80,"Now You Have All the Time Stones");
-        } else  
-        switch objGameData.character_id[0] {
-            case 1:
-                draw_text(213,80,"Sonic Got the "+stoneNumberString+" Time Stone");
-            break;
-            case 2:
-                draw_text(213,80,"Tails Got the "+stoneNumberString+" Time Stone");
-            break;
-            case 3:
-                draw_text(213,80,"Knuckles Got the "+stoneNumberString+" Time Stone");
-            break;
-        }
-     }
-     else {
-        if objProgram.special_future_current_level &gt;= 7 {
-            draw_text(213,80,"Now You Have All the Chaos Emeralds");
-            if objGameData.character_id[0] == 1
-                draw_text(213,94,ss_instructions);
-        } else
-        switch objGameData.character_id[0] {
-            case 1:
-                draw_text(213,80,"Sonic Got the "+stoneNumberString+" Chaos Emerald");
-            break;
-            case 2:
-                draw_text(213,80,"Tails Got the "+stoneNumberString+" Chaos Emerald");
-            break;
-            case 3:
-                draw_text(213,80,"Knuckles Got the "+stoneNumberString+" Chaos Emerald");
-            break;
-        }
-     }
-} else if closing == 1 {
+if closing == 1 {
 
     draw_text(213,80,"Metal Sonic Wins");
 

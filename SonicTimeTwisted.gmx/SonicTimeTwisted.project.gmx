@@ -264,6 +264,7 @@
       <sprite>sprites\sprFontTitleLarge</sprite>
       <sprite>sprites\sprFontTitleSmall</sprite>
       <sprite>sprites\sprFontTitleYellow</sprite>
+      <sprite>sprites\sprFontTitleSmallest</sprite>
       <sprite>sprites\sprHudFont</sprite>
     </sprites>
     <sprites name="Overlays">
@@ -1745,6 +1746,7 @@
         <script>scripts\level_goback.gml</script>
         <script>scripts\level_time_travel.gml</script>
         <script>scripts\special_level_go_to.gml</script>
+        <script>scripts\special_level_go_to_score.gml</script>
         <script>scripts\end_level_normal.gml</script>
       </scripts>
       <scripts name="Save">
@@ -2897,6 +2899,7 @@
       <objects name="Transitions">
         <object>objects\objFade</object>
         <object>objects\objSSToLevel</object>
+        <object>objects\objSSToScore</object>
         <object>objects\objLevelToSS</object>
         <object>objects\objFadeWhite</object>
         <object>objects\objFadeWhiteFromSave</object>
@@ -2950,6 +2953,7 @@
         <object>objects\objSSHud</object>
         <object>objects\objSSScoreCard</object>
         <object>objects\objSSMessages</object>
+        <object>objects\objSSScoreBackground</object>
       </objects>
       <objects name="rings">
         <object>objects\objSSRing</object>
@@ -3401,6 +3405,7 @@
         <room>rooms\SSP6</room>
         <room>rooms\SSP7</room>
       </rooms>
+      <room>rooms\ss_results_screen</room>
     </rooms>
   </rooms>
   <constants number="75">
