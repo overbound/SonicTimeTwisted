@@ -221,7 +221,6 @@ if collision_ray(offset_x, 0, 0, objSolid)
     x -= hspeed;
     wall_facing = sign(hspeed);
 }
-/*
 else
 {
     // upward slope
@@ -231,7 +230,7 @@ else
     for (var i=0; i&lt;offset_y*2; i+=1) if collision_ray(offset_x, offset_y+1+i, 0, objSolid) break;
     if (i&lt;offset_y*2) y += i; else {x -= hspeed; cliff_facing = sign(hspeed);}
 }
-*/
+
 </string>
           </argument>
         </arguments>
