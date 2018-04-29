@@ -66,22 +66,27 @@ if(objProgram.inputManager.input == 0)
     var lives_x_left = view_xview[view_current] + view_wview[view_current] - 100;
     var lives_y_top = view_yview[view_current]+16-(16*objScreen.split_screen);
 */
-
-    var lives_x_left = view_wview[view_current] - 100;
-    var lives_y_top = 16-(16*objScreen.split_screen);
-    // Smartphone mode - the HUD is drawn in the top-right corner
-    // lives setpiece
-    draw_sprite(sprLives, character_id[view_current], lives_x_left, lives_y_top - 12);
-    
-    // lives string
-    draw_set_color(c_white);
-    draw_set_alpha(image_alpha);
-    draw_set_valign(fa_top);
-    draw_set_halign(fa_right);
-    draw_set_font(objResources.fontLives);
-    draw_text(lives_x_left + 78, lives_y_top, objGameData.player_lives[view_current]);
-    
-    
+    if(objProgram.saveSlot &gt; -1) // if we are playing this in the mini-game/level select mode, lives don't appear
+    {
+        var lives_x_left = view_wview[view_current] - 100;
+        var lives_y_top = 16-(16*objScreen.split_screen);
+        // Smartphone mode - the HUD is drawn in the top-right corner
+        // lives setpiece
+        draw_sprite(sprLives, character_id[view_current], lives_x_left, lives_y_top - 12);
+        
+        // lives string
+        draw_set_color(c_white);
+        draw_set_alpha(image_alpha);
+        draw_set_valign(fa_top);
+        draw_set_halign(fa_right);
+        draw_set_font(objResources.fontLives);
+        draw_text(lives_x_left + 78, lives_y_top, objGameData.player_lives[view_current]);
+    }
+    else
+    {
+        draw_set_valign(fa_top);
+        draw_set_halign(fa_right);
+    }
 
     // Progress bar
     var pbOffsetX = 72;

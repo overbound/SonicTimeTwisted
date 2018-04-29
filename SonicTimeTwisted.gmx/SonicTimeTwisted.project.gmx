@@ -302,6 +302,7 @@
         <sprite>sprites\sprSaveControl</sprite>
         <sprite>sprites\sprSaveDelete</sprite>
         <sprite>sprites\sprSaveSlot</sprite>
+        <sprite>sprites\sprNoSaveSlot</sprite>
         <sprite>sprites\sprDeleteSlot</sprite>
         <sprite>sprites\sprSaveIconsPast</sprite>
         <sprite>sprites\sprStatic</sprite>
@@ -1568,6 +1569,7 @@
       </backgrounds>
     </backgrounds>
     <background>background\backTitleIsland</background>
+    <background>background\saveScreenBackground</background>
   </backgrounds>
   <paths name="paths">
     <paths name="Attraction Attack">
@@ -1748,6 +1750,7 @@
         <script>scripts\special_level_go_to.gml</script>
         <script>scripts\special_level_go_to_score.gml</script>
         <script>scripts\end_level_normal.gml</script>
+        <script>scripts\special_level_go_to_from_level_select.gml</script>
       </scripts>
       <scripts name="Save">
         <script>scripts\create_new_save.gml</script>
@@ -1763,6 +1766,9 @@
         <script>scripts\delete_settings.gml</script>
         <script>scripts\save_options.gml</script>
         <script>scripts\load_options.gml</script>
+        <script>scripts\shift_savefiles.gml</script>
+        <script>scripts\save_data_write.gml</script>
+        <script>scripts\save_data_read.gml</script>
       </scripts>
       <scripts name="Menu">
         <script>scripts\get_kb_label.gml</script>
@@ -2926,8 +2932,10 @@
       <object>objects\objScoreCard</object>
       <objects name="save screen">
         <object>objects\objSaveSlot</object>
+        <object>objects\objNoSaveSlot</object>
         <object>objects\objDeleteSlot</object>
         <object>objects\objSaveControl</object>
+        <object>objects\objSaveBg</object>
       </objects>
     </objects>
     <object>objects\obj3DSlant</object>
@@ -2951,8 +2959,8 @@
       </objects>
       <objects name="Interface">
         <object>objects\objSSHud</object>
-        <object>objects\objSSScoreCard</object>
         <object>objects\objSSMessages</object>
+        <object>objects\objSSScoreCard</object>
         <object>objects\objSSScoreBackground</object>
       </objects>
       <objects name="rings">

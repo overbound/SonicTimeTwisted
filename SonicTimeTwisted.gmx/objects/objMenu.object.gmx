@@ -412,21 +412,26 @@ if(active)
         }
         if(line_visible &amp;&amp; (options[i, OPTION_ANIMATION] != OPTION_ANIMATION_FLASHING || flash_on))
         {
+            var color = c_yellow;
+            if(options[i, OPTION_TYPE] == OPTION_TYPE_TITLE)
+            {
+                color = c_gray;
+            }
             if(options[i, OPTION_TYPE] == OPTION_TYPE_WITH_VALUE)
             {
                 if(large)
                 {
                     draw_set_halign(fa_left);
-                    draw_text_color(x_offset+213 - 170, y_offset+20*i, options[i, OPTION_NAME],c_white,c_white,c_yellow,c_yellow,1);
+                    draw_text_color(x_offset+213 - 170, y_offset+20*i, options[i, OPTION_NAME],c_white,c_white,color,color,1);
                     draw_set_halign(fa_right);
-                    draw_text_color(x_offset+213 + 170, y_offset+20*i, options[i, OPTION_VALUE],c_white,c_white,c_yellow,c_yellow,1);
+                    draw_text_color(x_offset+213 + 170, y_offset+20*i, options[i, OPTION_VALUE],c_white,c_white,color,color,1);
                 }
                 else
                 {
                     draw_set_halign(fa_left);
-                    draw_text_color(x_offset+213 - 100, y_offset+20*i, options[i, OPTION_NAME],c_white,c_white,c_yellow,c_yellow,1);
+                    draw_text_color(x_offset+213 - 100, y_offset+20*i, options[i, OPTION_NAME],c_white,c_white,color,color,1);
                     draw_set_halign(fa_right);
-                    draw_text_color(x_offset+213 + 100, y_offset+20*i, options[i, OPTION_VALUE],c_white,c_white,c_yellow,c_yellow,1);
+                    draw_text_color(x_offset+213 + 100, y_offset+20*i, options[i, OPTION_VALUE],c_white,c_white,color,color,1);
                 }
             }
             else
@@ -614,18 +619,39 @@ if(active)
         case 5:
         case 6:
             // Special stage failure menu
-            switch(usedCursor)
+            if(objProgram.saveSlot == -1) // if we are playing this in the mini-game/level select mode, this menu behaves differently
             {
-                case 1: // Return to act if no lives left; restart if lives left
-                    if(objGameData.player_lives[0] &gt; 1)
-                    {
-                        objGameData.player_lives[0] -= 1;
-                        save_lives(objGameData.player_lives[0]);
+                switch(usedCursor)
+                {
+                    case 1: // restart
                         room_restart();
                         with objSSLevel loopMusic = true;
-                    }
-                    else
-                    {
+                }
+            }
+            else
+            {
+                switch(usedCursor)
+                {
+                    case 1: // Return to act if no lives left; restart if lives left
+                        if(objGameData.player_lives[0] &gt; 1)
+                        {
+                            objGameData.player_lives[0] -= 1;
+                            save_lives(objGameData.player_lives[0]);
+                            room_restart();
+                            with objSSLevel loopMusic = true;
+                        }
+                        else
+                        {
+                            with(objSSHud)
+                            {
+                                closeMenu = true;
+                            }
+                            active = false;
+                            stop_all_music(false);
+                            level_goback();
+                        }
+                    break;
+                    case 2: // Return to act
                         with(objSSHud)
                         {
                             closeMenu = true;
@@ -633,17 +659,8 @@ if(active)
                         active = false;
                         stop_all_music(false);
                         level_goback();
-                    }
-                break;
-                case 2: // Return to act
-                    with(objSSHud)
-                    {
-                        closeMenu = true;
-                    }
-                    active = false;
-                    stop_all_music(false);
-                    level_goback();
-                break;
+                    break;
+                }
             }
             break;
         case 7:
@@ -730,6 +747,7 @@ if(active)
             break;
         case 12:
             // Zone select - only two zones are directly selectable here
+            objProgram.saveSlot = 0;
             switch(usedCursor)
             {
                 case 7: // Sunken saucer
@@ -742,6 +760,15 @@ if(active)
                     objProgram.in_past = false;
                     level_goto_next();
                     break;
+                case 10: // Special stages - need to force substate
+                    audio_play_sound(sndBeep,10,false);
+                    slide_dir = true;
+                    slide_timer = 30;
+                    slide_to_state = 21;
+                    slide_to_cursor = 1;
+                    slide_from_state = state;
+                    substate = 0;
+                    break;
             }
             break;
         case 13:
@@ -751,6 +778,7 @@ if(active)
         case 17:
         case 18:
             // regular stages
+            objProgram.saveSlot = 0;
             objProgram.in_past = usedCursor mod 2 == 0;
             var curLevel = (usedState - 13) * 2;
             if(usedCursor &gt; 2)
@@ -764,6 +792,7 @@ if(active)
             level_goto_next();
             break;
         case 19:
+            objProgram.saveSlot = 0;
             objProgram.in_past = false;
             if(usedCursor == 1)
             {
@@ -795,6 +824,34 @@ if(active)
                     break;
             }
             
+            break;
+        case 22:
+        case 23:
+            // level select - special stages
+            special_level_go_to_from_level_select(state == 22, usedCursor);           
+            break;
+        case 24:
+        case 25:
+            // special stages in level select mode
+            switch(usedCursor)
+            {
+                case 1: // select another - could be a simple submenu, but substate has to be managed too
+                    audio_play_sound(sndBeep,10,false);
+                    slide_dir = true;
+                    slide_timer = 30;
+                    slide_to_state = 21;
+                    slide_to_cursor = 1;
+                    slide_from_state = state;
+                    substate = 1;
+                    if(state == 25)
+                    {
+                        substate = 2;
+                    }
+                    break;
+                case 2: // restart game
+                    game_restart();
+                    
+            }
             break;
     }
 }
@@ -881,23 +938,37 @@ switch(state)
         options[0, OPTION_TYPE] = OPTION_TYPE_TITLE;
         options[0, OPTION_VALUE] = false;
         options[0, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
-        if(objGameData.player_lives[0] &gt; 1)
+        if(objProgram.saveSlot == -1) // if we are playing this in the mini-game/level select mode, this menu behaves differently
         {
-            options[1, OPTION_NAME] = 'TRY AGAIN z1 LIFE';
-            options[1, OPTION_TYPE] = OPTION_TYPE_SIMPLE;
-            options[1, OPTION_VALUE] = false;
-            options[1, OPTION_ANIMATION] = OPTION_ANIMATION_LONGPRESS;
-            options[2, OPTION_NAME] = 'RETURN TO ACT';
-            options[2, OPTION_TYPE] = OPTION_TYPE_SIMPLE;
-            options[2, OPTION_VALUE] = false;
-            options[2, OPTION_ANIMATION] = OPTION_ANIMATION_LONGPRESS;
+                options[1, OPTION_NAME] = 'TRY AGAIN';
+                options[1, OPTION_TYPE] = OPTION_TYPE_SIMPLE;
+                options[1, OPTION_VALUE] = false;
+                options[1, OPTION_ANIMATION] = OPTION_ANIMATION_LONGPRESS;
+                options[2, OPTION_NAME] = 'FORFEIT';
+                options[2, OPTION_TYPE] = OPTION_TYPE_SUBMENU;
+                options[2, OPTION_VALUE] = 24;
+                options[2, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
         }
         else
         {
-            options[1, OPTION_NAME] = 'RETURN TO ACT';
-            options[1, OPTION_TYPE] = OPTION_TYPE_SIMPLE;
-            options[1, OPTION_VALUE] = false;
-            options[1, OPTION_ANIMATION] = OPTION_ANIMATION_LONGPRESS;
+            if(objGameData.player_lives[0] &gt; 1)
+            {
+                options[1, OPTION_NAME] = 'TRY AGAIN z1 LIFE';
+                options[1, OPTION_TYPE] = OPTION_TYPE_SIMPLE;
+                options[1, OPTION_VALUE] = false;
+                options[1, OPTION_ANIMATION] = OPTION_ANIMATION_LONGPRESS;
+                options[2, OPTION_NAME] = 'RETURN TO ACT';
+                options[2, OPTION_TYPE] = OPTION_TYPE_SIMPLE;
+                options[2, OPTION_VALUE] = false;
+                options[2, OPTION_ANIMATION] = OPTION_ANIMATION_LONGPRESS;
+            }
+            else
+            {
+                options[1, OPTION_NAME] = 'RETURN TO ACT';
+                options[1, OPTION_TYPE] = OPTION_TYPE_SIMPLE;
+                options[1, OPTION_VALUE] = false;
+                options[1, OPTION_ANIMATION] = OPTION_ANIMATION_LONGPRESS;
+            }
         }
         break;
     case 7:
@@ -1237,10 +1308,14 @@ switch(state)
         options[9, OPTION_TYPE] = OPTION_TYPE_SIMPLE;
         options[9, OPTION_VALUE] = false;
         options[9, OPTION_ANIMATION] = OPTION_ANIMATION_LONGPRESS;
-        options[10, OPTION_NAME] = 'BACK';
-        options[10, OPTION_TYPE] = OPTION_TYPE_RETURN;
-        options[10, OPTION_VALUE] = 11;
+        options[10, OPTION_NAME] = 'SPECIAL STAGES';
+        options[10, OPTION_TYPE] = OPTION_TYPE_SIMPLE;
+        options[10, OPTION_VALUE] = false;
         options[10, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
+        options[11, OPTION_NAME] = 'BACK';
+        options[11, OPTION_TYPE] = OPTION_TYPE_RETURN;
+        options[11, OPTION_VALUE] = 11;
+        options[11, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
         break;
     case 13:
     case 14:
@@ -1373,6 +1448,90 @@ switch(state)
         options[4, OPTION_TYPE] = OPTION_TYPE_RETURN;
         options[4, OPTION_VALUE] = 7;
         options[4, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
+        break;
+    case 21:
+        // stage select - special stages
+        options[0, OPTION_NAME] = 'SPECIAL STAGES';
+        options[0, OPTION_TYPE] = OPTION_TYPE_TITLE;
+        options[0, OPTION_VALUE] = false;
+        options[0, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
+        options[1, OPTION_NAME] = 'PAST';
+        options[1, OPTION_TYPE] = OPTION_TYPE_SUBMENU;
+        options[1, OPTION_VALUE] = 22;
+        options[1, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
+        options[2, OPTION_NAME] = 'FUTURE';
+        options[2, OPTION_TYPE] = OPTION_TYPE_SUBMENU;
+        options[2, OPTION_VALUE] = 23;
+        options[2, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
+        options[3, OPTION_NAME] = 'BACK';
+        options[3, OPTION_TYPE] = OPTION_TYPE_RETURN;
+        switch(substate)
+        {
+            case 1:
+                options[3, OPTION_VALUE] = 24;
+                options[0, OPTION_NAME] = 'TRY ANOTHER SPECIAL STAGE';
+                break;
+            case 2:
+                options[3, OPTION_VALUE] = 25;
+                options[0, OPTION_NAME] = 'TRY ANOTHER SPECIAL STAGE';
+                break;
+            default:
+                options[3, OPTION_VALUE] = 12;
+                break;
+        }
+        options[3, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
+        break;
+    case 22:
+        // selecting a special stage in the past
+    case 23:
+        // selecting a special stage in the future
+        var periodLabel = 'PAST';
+        if(state == 23)
+        {
+            periodLabel = 'FUTURE';
+        }
+        
+        options[0, OPTION_NAME] = periodLabel+ ' '+'SPECIAL STAGES';
+        options[0, OPTION_TYPE] = OPTION_TYPE_TITLE;
+        options[0, OPTION_VALUE] = false;
+        options[0, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
+        for(var i = 1; i &lt;= 7; i++)
+        {
+            options[i, OPTION_NAME] = 'SPECIAL STAGE '+string(i);
+            options[i, OPTION_TYPE] = OPTION_TYPE_SIMPLE;
+            options[i, OPTION_VALUE] = false;
+            options[i, OPTION_ANIMATION] = OPTION_ANIMATION_LONGPRESS;
+        }
+        options[8, OPTION_NAME] = 'BACK';
+        options[8, OPTION_TYPE] = OPTION_TYPE_RETURN;
+        options[8, OPTION_VALUE] = 21;
+        options[8, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
+        break;
+    case 24:
+        // failing the special stage in minigame mode
+    case 25:
+        // completing the special stage in minigame mode
+        var titleLabel = 'SPECIAL STAGE FORFEITED';
+        if(state == 25)
+        {
+            titleLabel = 'SPECIAL STAGE COMPLETED';
+        }
+        
+        options[0, OPTION_NAME] = titleLabel;
+        options[0, OPTION_TYPE] = OPTION_TYPE_TITLE;
+        options[0, OPTION_VALUE] = false;
+        options[0, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
+
+        options[1, OPTION_NAME] = 'SELECT ANOTHER';
+        options[1, OPTION_TYPE] = OPTION_TYPE_SIMPLE;
+        options[1, OPTION_VALUE] = false;
+        options[1, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
+        
+        options[2, OPTION_NAME] = 'RESTART GAME';
+        options[2, OPTION_TYPE] = OPTION_TYPE_CONFIRM;
+        options[2, OPTION_VALUE] = "LEVEL SELECT CODE WILL BE INACTIVE";
+        options[2, OPTION_ANIMATION] = OPTION_ANIMATION_LONGPRESS;
+        
         break;
     default:
         options[0, OPTION_NAME] = 'STATE DOES NOT EXIST';

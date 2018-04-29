@@ -275,7 +275,7 @@ if(pauseState == 0)
         // allow the menu object to handle everything
         if(!menu.active)
         {
-            menu.wait_for_release = false;
+            menu.wait_for_release = true;
             menu.active = true;
         }
         
@@ -286,11 +286,13 @@ else
 if(pauseState == 3)
 {
     if start == true
+    {   
         if input_check_pressed(cSTART) {
             pauseState=0;
             with objTitlescreenPlane { hsp = 0; image_speed = 0 }
             with objTitleSonic image_speed = 0;
         }
+    }
 }
 // fade in black for menu backer    
 if pauseState != 3 {
@@ -375,7 +377,7 @@ case 6:
             // allow the menu object to handle everything
             if(!menu.active)
             {
-                menu.wait_for_release = false;
+                menu.wait_for_release = true;
                 menu.active = true;
             }
             

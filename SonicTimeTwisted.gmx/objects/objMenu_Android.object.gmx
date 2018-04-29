@@ -732,7 +732,7 @@ else
           <argument>
             <kind>1</kind>
             <string>/// Execute actions when option is selected - called by this object
-if(state != 7 &amp;&amp; state != 20 &amp;&amp; state &lt; 1000)
+if(state != 7 &amp;&amp; state != 20 &amp;&amp; state != 21 &amp;&amp; state != 22 &amp;&amp; state != 23 &amp;&amp; state != 24 &amp;&amp; state != 25 &amp;&amp; state &lt; 1000)
 {
     event_inherited();
 }

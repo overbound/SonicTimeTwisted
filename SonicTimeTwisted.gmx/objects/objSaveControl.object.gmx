@@ -25,15 +25,22 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Create Objects and Variables
-slots[0]=instance_create(64,120,objSaveSlot);
+            <string>/// Initialize objects for the screen and read saved data
+
+// For backwards compatibility, all existing save files are shifted one slot to the right
+// if a save exists in slot 0.
+shift_savefiles();
+
+/// Create Objects and Variables
+slots[0]=instance_create(64,120,objNoSaveSlot);
 slots[1]=instance_create(192,120,objSaveSlot);
 slots[2]=instance_create(320,120,objSaveSlot);
 slots[3]=instance_create(448,120,objSaveSlot);
 slots[4]=instance_create(576,120,objSaveSlot);
 slots[5]=instance_create(704,120,objSaveSlot);
 slots[6]=instance_create(832,120,objSaveSlot);
-slots[7]=instance_create(960,120,objDeleteSlot);
+slots[7]=instance_create(960,120,objSaveSlot);
+slots[8]=instance_create(1088,120,objDeleteSlot);
 
 slots[0].slotNumber = 0;
 slots[1].slotNumber = 1;
@@ -43,12 +50,13 @@ slots[4].slotNumber = 4;
 slots[5].slotNumber = 5;
 slots[6].slotNumber = 6;
 slots[7].slotNumber = 7;
+slots[8].slotNumber = 8;
 
 xSpeed=0;
-selectCheck=0;
-x=slots[0].x;
-y=slots[0].y;
-selectState =0;
+selectCheck = 1;
+x=slots[1].x;
+y=slots[1].y;
+selectState = 0;
 // left = 0 right = 1
 stageLeftRight = 1;
 stageDeleteConfirmSprite = sprDeleteConfirm;
@@ -86,7 +94,7 @@ if selectState == 0 {
         }
     }
     
-    if selectCheck &lt; 7 {
+    if selectCheck &lt; 8 {
         if input_check_pressed(cRIGHT) {
             xSpeed=1;
             selectCheck +=1;
@@ -190,7 +198,7 @@ if xSpeed == 0 {
     if selectState == 0 {
         if input_check_pressed(cA) || input_check_pressed(cSTART) {
 
-        if selectCheck != 7 {
+        if selectCheck != 8 {
         
         if sprite_index == sprSaveDelete {
             selectState=3;
@@ -261,9 +269,8 @@ if xSpeed == 0 {
     
                     objGameData.character_id[0] = characterSelect;
                     objProgram.saveSlot=other.selectCheck;
-                    var file = save_file_name(slotNumber);
-                    load_emeralds(file);
-                    load_lives(file);
+                    load_emeralds();
+                    load_lives();
                     if iconIndex &gt; 0 {
                         level_goto_from_save(iconIndex + 1)
                     }
@@ -327,14 +334,26 @@ if xSpeed == 0 {
 
         }
         
-            if (input_check_pressed(cA) || input_check_pressed(cSTART)) &amp;&amp; slots[selectCheck].allowLevelStart == true {
+        if (input_check_pressed(cA) || input_check_pressed(cSTART)) &amp;&amp; slots[selectCheck].allowLevelStart == true {
 
-            
             create_new_save(slots[selectCheck].characterSelect, other.selectCheck);
             slots[selectCheck].futureLevels[0]=true;
             slots[selectCheck].allowLevelStart =false;
             slots[selectCheck].visibleFuture=1;
-            selectState = 1;
+            if(selectCheck &gt; 0)
+            {
+                selectState = 1;
+            }
+            else
+            {
+                // if it's a no save slot, the game immediately starts
+                objProgram.saveSlot=other.selectCheck;
+                objProgram.in_past = false;
+                objGameData.character_id[0] = slots[selectCheck].characterSelect;
+                load_emeralds();
+                load_lives();
+                level_goto_from_save(0);
+            }
         }
     }
     
@@ -424,7 +443,14 @@ if slots[selectCheck].iconIndex &gt; 11
 }
 
 if selectState ==2 {
-    draw_sprite_ext(sprCharSelect,0,x,y+32,1,1,0,c_white,1);
+    if(selectCheck == 0)
+    {
+        draw_sprite_ext(sprCharSelect,0,x,y+24,1,1,0,c_white,1);
+    }
+    else
+    {
+        draw_sprite_ext(sprCharSelect,0,x,y+32,1,1,0,c_white,1);
+    }
 }
 
 if selectState==3 {

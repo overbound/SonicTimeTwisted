@@ -85,6 +85,7 @@ ring_past_list = noone;
 life_future_list = noone;
 ring_future_list = noone;
 
+// -1 - subgame ; 0 - no save; &gt; 1 - saved game
 saveSlot=0;
 
 special_past_current_level=0;
@@ -100,6 +101,9 @@ back_button_label = 'ESCAPE';
 score_tally_mode = 0;
 load_options();
 
+// this map is used if playing in the no-save mode
+no_save_data = ds_map_create();
+
 // depending on the OS, create a specific object containing the OS-specific logic
 os = get_os_type();
 if(os == os_android)
@@ -107,6 +111,29 @@ if(os == os_android)
     instance_create(0,0,objAndroid);
 }
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="1" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>ds_map_destroy(no_save_data);
 </string>
           </argument>
         </arguments>

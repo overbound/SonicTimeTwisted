@@ -110,10 +110,11 @@ switch(room)
          instance_create(0,0,objSaveControl_Android);
          break;
     case ss_results_screen:
-         with(objSSScoreCard)
+         with(objSSScoreBackground)
          {
              if(objProgram.inputManager.input == 0)
              {
+                 ss_instructions_override = true;
                  ss_instructions1 = string_replace("JUMP AND PRESS THE S BUTTON", "%c", name_tag);
                  ss_instructions2 = string_replace("TO TURN INTO SUPER %c", "%c", name_tag);
              }

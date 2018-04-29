@@ -94,6 +94,85 @@ em_x = view_wview[view_current]/2 - 14 * (level - 1);
 em_y = 96;
 oem_x = view_wview[view_current]/2 - 8 * (other_level - 1);
 oem_y = 116;
+alarm[0] = 10;
+
+menu = instance_create(x, y, objMenu);
+// this one is useful for ports
+ss_instructions_override = false;
+ss_instructions1 = "";
+ss_instructions2 = "";
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(objProgram.saveSlot &gt; -1) // if we are playing this in the mini-game/level select mode, lives don't appear
+{
+    var score_card = instance_create(64, 0, objSSScoreCard);
+    if(ss_instructions_override)
+    {
+        score_card.ss_instructions1 = ss_instructions1;
+        score_card.ss_instructions2 = ss_instructions2;
+    }
+}
+else
+{
+    var menuStatus = 25;
+    menu.wait_for_release = false;
+    menu.active = true;
+    menu.state = menuStatus;
+    with(menu)
+    {
+        delay_timer = delay_timer_default;
+        event_user(1);
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(menu.active)
+{
+    if((menu.state &gt;= 4 &amp;&amp; menu.state &lt;= 6) || menu.state == 10 || (menu.state &gt;= 21 &amp;&amp; menu.state &lt;= 25))
+    {
+        with(menu) event_user(0);
+    }
+}
 </string>
           </argument>
         </arguments>
@@ -117,13 +196,23 @@ oem_y = 116;
           <argument>
             <kind>1</kind>
             <string>draw_background_ext(bg, bg_x, bg_y, 2, 1, 0, c_white, 0.2);
-for(var i = 0; i &lt; level; i++)
+if(objProgram.saveSlot &gt; -1) // emeralds only appear in regular gameplay mode
 {
-    draw_sprite_ext(em_sprite, i, em_x + i*28, em_y, 0.6, 0.6, 0, c_white, 1);
+    for(var i = 0; i &lt; level; i++)
+    {
+        draw_sprite_ext(em_sprite, i, em_x + i*28, em_y, 0.6, 0.6, 0, c_white, 1);
+    }
+    for(var i = 0; i &lt; other_level; i++)
+    {
+        draw_sprite_ext(other_em_sprite, i, oem_x + i*16, oem_y, 0.35, 0.35, 0, c_white, 1);
+    }
 }
-for(var i = 0; i &lt; other_level; i++)
+if(menu.active)
 {
-    draw_sprite_ext(other_em_sprite, i, oem_x + i*16, oem_y, 0.35, 0.35, 0, c_white, 1);
+    if((menu.state &gt;= 4 &amp;&amp; menu.state &lt;= 6) || menu.state == 10 || (menu.state &gt;= 21 &amp;&amp; menu.state &lt;= 25))
+    {
+        with(menu) event_user(4);
+    }
 }
 </string>
           </argument>

@@ -287,7 +287,7 @@ if closeMenu == false {
             }
             if(menu.active)
             {
-                if(menu.state == 4 || menu.state == 5 || menu.state == 6)
+                if((menu.state &gt;= 4 &amp;&amp; menu.state &lt;= 6) || (menu.state == 10 &amp;&amp; (menu.confirm_state &gt;= 21 &amp;&amp; menu.confirm_state &lt;= 25)) || (menu.state &gt;= 21 &amp;&amp; menu.state &lt;= 25))
                 {
                     // so weird this is managed in the draw event,
                     // but it doesn't seem to work otherwise
