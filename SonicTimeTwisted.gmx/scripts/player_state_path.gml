@@ -6,8 +6,10 @@ spinning=true;
 var ringHandle = place_meeting(x,y,objRing);
 if ringHandle player_get_rings(1);
 
-
 player_update_water();
+
+// rumble
+rumble(RUMBLE_EVENT_CONTROLLED_BY_OBJECT);
 
 if underwater
     underwater_count = 1800;

@@ -1,0 +1,1 @@
+return rumble_noevent;

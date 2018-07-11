@@ -1713,6 +1713,31 @@
         <script>scripts\play_previous.gml</script>
       </scripts>
       <scripts name="Input">
+        <scripts name="rumble">
+          <scripts name="effects">
+            <script>scripts\rumble_short_weak.gml</script>
+            <script>scripts\rumble_short_weakest.gml</script>
+            <script>scripts\rumble_short_mid.gml</script>
+            <script>scripts\rumble_short_strong.gml</script>
+            <script>scripts\rumble_short_strong_double.gml</script>
+            <script>scripts\rumble_short_mid_double.gml</script>
+            <script>scripts\rumble_short_strong_and_mid.gml</script>
+            <script>scripts\rumble_short_strongest.gml</script>
+            <script>scripts\rumble_ss_item_get.gml</script>
+            <script>scripts\rumble_hurt_robot.gml</script>
+            <script>scripts\rumble_act1_spin_signpost.gml</script>
+            <script>scripts\rumble_act2_break_capsule.gml</script>
+            <script>scripts\rumble_ground_shake.gml</script>
+            <script>scripts\rumble_signpost.gml</script>
+            <script>scripts\rumble_long_decreasing.gml</script>
+            <script>scripts\rumble_verylong_strong.gml</script>
+          </scripts>
+          <script>scripts\rumble_enqueue.gml</script>
+          <script>scripts\rumble_perform.gml</script>
+          <script>scripts\rumble_configuration_active.gml</script>
+          <script>scripts\rumble_configuration_inactive.gml</script>
+          <script>scripts\rumble_none.gml</script>
+        </scripts>
         <script>scripts\save_control_map_keyboard.gml</script>
         <script>scripts\save_control_map_gamepad.gml</script>
         <script>scripts\save_gamepad_number.gml</script>
@@ -1736,6 +1761,7 @@
         <script>scripts\is_key_mappable.gml</script>
         <script>scripts\is_button_mappable.gml</script>
         <script>scripts\is_axis_mappable.gml</script>
+        <script>scripts\rumble.gml</script>
       </scripts>
       <scripts name="Program">
         <script>scripts\game_pause.gml</script>
@@ -1751,6 +1777,11 @@
         <script>scripts\special_level_go_to_score.gml</script>
         <script>scripts\end_level_normal.gml</script>
         <script>scripts\special_level_go_to_from_level_select.gml</script>
+        <script>scripts\initialize_level_object_activation.gml</script>
+        <script>scripts\refresh_level_object_activation_start.gml</script>
+        <script>scripts\refresh_level_object_activation_end.gml</script>
+        <script>scripts\reactivate_level_objects_start.gml</script>
+        <script>scripts\reactivate_level_objects_end.gml</script>
       </scripts>
       <scripts name="Save">
         <script>scripts\create_new_save.gml</script>
@@ -2252,6 +2283,9 @@
       <script>scripts\smartphone_confirm.gml</script>
       <script>scripts\smartphone_save_configuration.gml</script>
       <scripts name="Android">
+        <scripts name="rumble">
+          <script>scripts\android_rumble.gml</script>
+        </scripts>
         <script>scripts\android_vk_press.gml</script>
         <script>scripts\android_vk_release.gml</script>
         <script>scripts\android_vk_is_pressed.gml</script>
@@ -2877,9 +2911,9 @@
         <object>objects\objTileGridManager</object>
         <object>objects\objTileGridRenderer</object>
       </objects>
-      <object>objects\objGameData</object>
       <object>objects\objProgram</object>
       <object>objects\objMusic</object>
+      <object>objects\objGameData</object>
       <object>objects\objResources</object>
       <object>objects\objMenu</object>
     </objects>
@@ -3024,6 +3058,11 @@
         <object>objects\objNonSolid</object>
         <object>objects\objSceneObject</object>
         <object>objects\objSolid</object>
+        <objects name="AlwaysActive">
+          <object>objects\objNonSolidAlwaysActive</object>
+          <object>objects\objSolidAlwaysActive</object>
+          <object>objects\objSceneObjectAlwaysActive</object>
+        </objects>
       </objects>
       <objects name="Player">
         <objects name="Effects">
@@ -3416,7 +3455,7 @@
       <room>rooms\ss_results_screen</room>
     </rooms>
   </rooms>
-  <constants number="75">
+  <constants number="104">
     <constant name="GAMEPAD_POV_Y">7</constant>
     <constant name="GAMEPAD_POV_X">6</constant>
     <constant name="GAMEPAD_AXIS_V">5</constant>
@@ -3491,7 +3530,36 @@
     <constant name="OPTION_TYPE_SUBMENU">4</constant>
     <constant name="OPTION_TYPE_RETURN">5</constant>
     <constant name="OPTION_ANIMATION_FLASHING">2</constant>
+    <constant name="RUMBLE_EVENT_PRESS_BUTTON">0</constant>
+    <constant name="RUMBLE_EVENT_RING_GET">1</constant>
+    <constant name="RUMBLE_EVENT_GIANT_RING">2</constant>
+    <constant name="RUMBLE_EVENT_BREAK_MONITOR">3</constant>
+    <constant name="RUMBLE_EVENT_BREAK_ROBOT">4</constant>
+    <constant name="RUMBLE_EVENT_SS_ITEM_GET">5</constant>
+    <constant name="RUMBLE_EVENT_HURT_ROBOT">6</constant>
+    <constant name="RUMBLE_EVENT_ACT1_SPIN_SIGNPOST">7</constant>
+    <constant name="RUMBLE_EVENT_ACT2_BREAK_CAPSULE">8</constant>
+    <constant name="RUMBLE_EVENT_GROUND_SHAKE">9</constant>
+    <constant name="RUMBLE_EVENT_SPINDASH">10</constant>
+    <constant name="RUMBLE_EVENT_SIGNPOST">11</constant>
+    <constant name="RUMBLE_EVENT_SPRING">12</constant>
+    <constant name="RUMBLE_EVENT_BUMPER">13</constant>
+    <constant name="RUMBLE_EVENT_CONTROLLED_BY_OBJECT">14</constant>
+    <constant name="RUMBLE_EVENT_BREAKABLE_BLOCK">15</constant>
+    <constant name="RUMBLE_START_TIME">0</constant>
+    <constant name="RUMBLE_END_TIME">1</constant>
+    <constant name="RUMBLE_LEFT">2</constant>
+    <constant name="RUMBLE_RIGHT">3</constant>
+    <constant name="RUMBLE_FORCE_OVERRIDE">4</constant>
     <constant name="ANDROID_CONSOLE">0</constant>
+    <constant name="RUMBLE_EVENT_HURT_SHIELDS">16</constant>
+    <constant name="RUMBLE_EVENT_HURT_RINGS">17</constant>
+    <constant name="RUMBLE_EVENT_DIE">18</constant>
+    <constant name="RUMBLE_EVENT_TAILS_FLY">19</constant>
+    <constant name="RUMBLE_EVENT_KNUCKLES_CLIMB">20</constant>
+    <constant name="RUMBLE_EVENT_KNUCKLES_FALL">21</constant>
+    <constant name="RUMBLE_EVENT_SONIC_SHIELD">22</constant>
+    <constant name="RUMBLE_EVENT_EMERALD_GET">23</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>

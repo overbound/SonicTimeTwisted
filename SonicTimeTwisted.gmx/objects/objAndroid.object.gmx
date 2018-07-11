@@ -114,10 +114,24 @@ switch(room)
          {
              if(objProgram.inputManager.input == 0)
              {
+                // name tag
+                var name_tag;
+                switch objGameData.character_id[0]
+                {
+                    case 2: name_tag = "TAILS"; break;
+                    case 3: name_tag = "KNUCKLES"; break;
+                    default: name_tag = "SONIC";
+                }
+                
                  ss_instructions_override = true;
                  ss_instructions1 = string_replace("JUMP AND PRESS THE S BUTTON", "%c", name_tag);
                  ss_instructions2 = string_replace("TO TURN INTO SUPER %c", "%c", name_tag);
              }
+             with(menu)
+             {
+                 instance_destroy();
+             }
+             menu = instance_create(x, y, objMenu_Android);
          }
          break;
     default:

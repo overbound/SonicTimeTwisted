@@ -29,3 +29,4 @@ with instance_create(x, y, objDashSmoke)
 if audio_is_playing(reserved_sound) audio_stop_sound(reserved_sound);
 reserved_sound = audio_play_sound(sndSpinRev, 0, 0);
 spindash_pitch = 0;
+

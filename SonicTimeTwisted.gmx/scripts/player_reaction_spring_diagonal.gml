@@ -49,5 +49,8 @@ if state == player_state_shield_fly {
     player_is_falling();
 }
 
+// rumble
+rumble(RUMBLE_EVENT_SPRING);
+
 // hard collision found
 return true;

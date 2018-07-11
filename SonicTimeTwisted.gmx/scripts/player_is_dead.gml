@@ -36,3 +36,4 @@ depth = -511;
 alarm[0] = 102;
 if (path_index>-1) path_end();
 stop_all_music(false, false);
+rumble(RUMBLE_EVENT_DIE);

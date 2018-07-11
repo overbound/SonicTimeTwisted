@@ -34,3 +34,6 @@ bounce_direction = a;
 move_speed = 4;
 if !audio_is_playing(sndBumper)
     audio_play_sound(sndBumper,0,0);
+    
+// rumble
+rumble(RUMBLE_EVENT_BUMPER);

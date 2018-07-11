@@ -17,3 +17,4 @@ player_in_air();
 // character values
 alarm[0] = 480;
 flight_force = 0.03125;
+

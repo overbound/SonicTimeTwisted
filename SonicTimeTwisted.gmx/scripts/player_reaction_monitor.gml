@@ -57,6 +57,9 @@ else
 
     // sound
     audio_play_sound(sndPop, 1, 0);
+    
+    // rumble
+    rumble(RUMBLE_EVENT_BREAK_MONITOR);
 }
 
 // hard collision found

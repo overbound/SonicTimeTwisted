@@ -12,6 +12,9 @@ player_get_rings(1);
 // ring sparkle
 part_particles_create(objLevel.particles, argument0.x, argument0.y, objResources.sparkle, 1);
 
+// rumble
+rumble(RUMBLE_EVENT_RING_GET);
+
 // destroy ring
 with argument0 instance_destroy();
 

@@ -17,6 +17,9 @@ if not argument0.alarm[0] && state != player_state_dead && state != player_state
 
     // sound
     audio_play_sound(sndAADropBumper, 2, 0);
+    
+    // rumble
+    rumble(RUMBLE_EVENT_BUMPER);
 }
 
 // not a hard collision

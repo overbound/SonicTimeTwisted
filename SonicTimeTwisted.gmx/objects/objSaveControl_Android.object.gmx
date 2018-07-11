@@ -113,12 +113,12 @@ if(device_mouse_check_button_pressed(0, mb_left))
 
 // if a key is pressed: switch to using them instead
 if input_check_pressed(cLEFT) {
-    target = min (7, max(0, target - 1));
+    target = min (8, max(0, target - 1));
     
 }
 
 if input_check_pressed(cRIGHT) {
-    target = min (7, max(0, target + 1));
+    target = min (8, max(0, target + 1));
 }
 
 if(objSaveControl.selectState == 0)
@@ -158,7 +158,7 @@ if(objSaveControl.selectState == 0)
             {
                 if(drag_x &lt; press_x - 100)
                 {
-                    target = min(target + 1, 7);
+                    target = min(target + 1, 8);
                     press_x = press_x - 100;
                     
                 }
@@ -207,13 +207,13 @@ if(objSaveControl.selectState == 0)
                     sslot = instance_position(device_mouse_x(0),device_mouse_y(0), objDeleteSlot );
                     if(sslot != noone)
                     {
-                        if(objSaveControl.selectCheck == 7)
+                        if(objSaveControl.selectCheck == 8)
                         {
                             doClick = true;
                         }
                         else
                         {
-                            target = 7;
+                            target = 8;
                         }
                     }
                 }
@@ -222,7 +222,7 @@ if(objSaveControl.selectState == 0)
             {
                 with(objSaveControl)
                 {
-                    if(selectCheck != 7)
+                    if(selectCheck != 8)
                     {
                         if sprite_index == sprSaveDelete {
                             selectState=3;
@@ -371,9 +371,9 @@ if(objSaveControl.selectState == 1)
                     if(sslot != noone)
                     {
                         doClick = true;
-                        if(objSaveControl.selectCheck != 7)
+                        if(objSaveControl.selectCheck != 8)
                         {
-                            clickedOnSlot = 7;
+                            clickedOnSlot = 8;
                         }
                         relativeClickX = device_mouse_x(0) - sslot.bbox_left;
                         relativeClickY = device_mouse_y(0) - sslot.bbox_top;
@@ -460,9 +460,9 @@ if(objSaveControl.selectState == 1)
                     
                                     objGameData.character_id[0] = characterSelect;
                                     objProgram.saveSlot=other.selectCheck;
-                                    var file = save_file_name(slotNumber);
-                                    load_emeralds(file);
-                                    load_lives(file);
+                                    save_file_name(slotNumber);
+                                    load_emeralds();
+                                    load_lives();
                                     if iconIndex &gt; 0 {
                                         level_goto_from_save(iconIndex + 1)
                                     }
@@ -567,16 +567,17 @@ if(objSaveControl.selectState == 2)
                     if(sslot != noone)
                     {
                         doClick = true;
-                        if(objSaveControl.selectCheck != 7)
+                        if(objSaveControl.selectCheck != 8)
                         {
-                            clickedOnSlot = 7;
+                            clickedOnSlot = 8;
                         }
                     }
                 }
             }
             if(doClick)
             {
-                // clicked on the same slot - start playing
+                // clicked on the same slot - create a save file
+                // if we're on a no save slot, start playing
                 // clicked on a different slot - cancel
                 if(objSaveControl.selectCheck == clickedOnSlot)
                 {
@@ -586,7 +587,19 @@ if(objSaveControl.selectState == 2)
                         slots[selectCheck].futureLevels[0]=true;
                         slots[selectCheck].allowLevelStart =false;
                         slots[selectCheck].visibleFuture=1;
-                        selectState = 1;
+                        if(selectCheck &gt; 0)
+                        {
+                            selectState = 1;
+                        }
+                        else
+                        {
+                            objProgram.saveSlot=other.selectCheck;
+                            objProgram.in_past = false;
+                            objGameData.character_id[0] = slots[selectCheck].characterSelect;
+                            load_emeralds();
+                            load_lives();
+                            level_goto_from_save(0);
+                        }
                     }
                 }
                 else
@@ -640,9 +653,9 @@ if(objSaveControl.selectState == 3)
                     if(sslot != noone)
                     {
                         doClick = true;
-                        if(objSaveControl.selectCheck != 7)
+                        if(objSaveControl.selectCheck != 8)
                         {
-                            clickedOnSlot = 7;
+                            clickedOnSlot = 8;
                         }
                     }
                 }

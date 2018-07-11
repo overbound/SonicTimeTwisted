@@ -62,6 +62,8 @@ acceleration = 0.1;
 deceleration = 3/29;
 range_x = 75;
 range_y = 30;
+range_x_or_idle = 210;
+range_y_or_idle = 120;
 
 //animation
 timeline_index = animSealbotIdle;
@@ -297,67 +299,87 @@ else
             <kind>1</kind>
             <string>/// Enemy behavoir
 
-// reverse at walls and cliffs
-if facing==wall_facing or facing==cliff_facing
+// check if player is within range that activates most of this enemy's state machine
+var player_within_activation_range = abs(objPlayer.x - x) &lt; range_x_or_idle &amp;&amp; abs(objPlayer.y - y) &lt; range_y_or_idle;
+if(state &lt; 5)
 {
-    hspeed = 0;
-    facing = -facing;
-    
-    // set to neutral state
-    state = 0;
-    image_index = 0;
-    alarm[0] = 60;
-}
-
-// chase players
-if (state!=4) and instance_exists(objPlayer)
-{
-    // must be within range and directly in front
-    if point_distance(objPlayer.x, 0, x, 0)&lt;range_x and point_distance(objPlayer.y, 0, y, 0)&lt;range_y and (facing xor (objPlayer.x&lt;x))
+    if(!player_within_activation_range)
     {
-        // charge if we're not already charging
-        if state!=3 {state = 3; if abs(hspeed)&lt;4 {timeline_position = 0; timeline_index = animSealbotCharge; hspeed = 0; alarm[0] = 30;}}
+        state = 5;
     }
-    else if state==3 and alarm[0]&lt;=0
+    else
     {
-        // stop charging
+        // reverse at walls and cliffs
+        if facing==wall_facing or facing==cliff_facing
+        {
+            hspeed = 0;
+            facing = -facing;
+            
+            // set to neutral state
+            state = 0;
+            image_index = 0;
+            alarm[0] = 60;
+        }
+        
+        // chase players
+        if (state &lt; 4) and instance_exists(objPlayer)
+        {
+            // must be within range and directly in front
+            if point_distance(objPlayer.x, 0, x, 0)&lt;range_x and point_distance(objPlayer.y, 0, y, 0)&lt;range_y and (facing xor (objPlayer.x&lt;x))
+            {
+                // charge if we're not already charging
+                if state!=3 {state = 3; if abs(hspeed)&lt;4 {timeline_position = 0; timeline_index = animSealbotCharge; hspeed = 0; alarm[0] = 30;}}
+            }
+            else if state==3 and alarm[0]&lt;=0
+            {
+                // stop charging
+                state = 0;
+                image_index = 0;
+                hspeed = 5*facing;
+                alarm[0] = 40;
+            }
+        }
+        
+        // state machine
+        switch state
+        {
+            case 0: // normal
+                // brake after a short period
+                if not alarm[0] {state = 1; /*timeline_position = 0; timeline_index = animSealbotIdle;*/ break;}
+            
+                // accelerate
+                if abs(hspeed)&lt;speed_cap hspeed = max(abs(hspeed)+acceleration, speed_cap)*facing;
+                break;
+            
+            case 1: // braking
+                // turn around on complete stop
+                if hspeed==0 {state = 2; facing = -facing; timeline_position = 0; timeline_index = animSealbotCharge; alarm[0] = 10; break;}
+            
+                // decelerate
+                if abs(hspeed)&gt;0 hspeed -= min(abs(hspeed), deceleration)*sign(hspeed);
+                break;
+            
+            case 2: // turning
+                if not alarm[0] {state = 0; timeline_position = 0; timeline_index = animSealbotIdle; alarm[0] = 60;}
+                break;
+            
+            case 3: // charging
+                if not alarm[0] hspeed = 4*facing; 
+                break;
+            
+            case 4: // jumping
+                if not alarm[0] and collision_box(offset_x, offset_y+1, 0, objSolid) {state = 0; vspeed = 0; gravity = 0;}
+                break;
+        }
+    }
+}
+else
+{
+    // idling - added because of slowdown this enemy was making even while offscreen
+    if(player_within_activation_range)
+    {
         state = 0;
-        image_index = 0;
-        hspeed = 5*facing;
-        alarm[0] = 40;
     }
-}
-
-// state machine
-switch state
-{
-case 0: // normal
-    // brake after a short period
-    if not alarm[0] {state = 1; /*timeline_position = 0; timeline_index = animSealbotIdle;*/ break;}
-
-    // accelerate
-    if abs(hspeed)&lt;speed_cap hspeed = max(abs(hspeed)+acceleration, speed_cap)*facing;
-    break;
-
-case 1: // braking
-    // turn around on complete stop
-    if hspeed==0 {state = 2; facing = -facing; timeline_position = 0; timeline_index = animSealbotCharge; alarm[0] = 10; break;}
-
-    // decelerate
-    if abs(hspeed)&gt;0 hspeed -= min(abs(hspeed), deceleration)*sign(hspeed);
-    break;
-
-case 2: // turning
-    if not alarm[0] {state = 0; timeline_position = 0; timeline_index = animSealbotIdle; alarm[0] = 60;}
-    break;
-
-case 3: // charging
-    if not alarm[0] hspeed = 4*facing; 
-    break;
-
-case 4: // jumping
-    if not alarm[0] and collision_box(offset_x, offset_y+1, 0, objSolid) {state = 0; vspeed = 0; gravity = 0;}
-    break;
 }
 </string>
           </argument>

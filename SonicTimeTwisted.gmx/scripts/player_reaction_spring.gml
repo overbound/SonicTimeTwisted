@@ -68,5 +68,8 @@ if state == player_state_shield_fly {
     player_is_falling();
 }
 
+// rumble
+rumble(RUMBLE_EVENT_SPRING);
+
 // state changed
 return true;

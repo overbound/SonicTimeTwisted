@@ -66,7 +66,9 @@ if objProgram.in_past {
         
      }
 
-     // audio
-     audio_play_sound(sndEnterSpecialStage,1,false);
+ // audio
+ audio_play_sound(sndEnterSpecialStage,1,false);
+// rumble
+rumble(RUMBLE_EVENT_GIANT_RING);
 // not a hard collision
 return false;

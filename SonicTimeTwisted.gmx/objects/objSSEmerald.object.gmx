@@ -127,6 +127,7 @@ if(!chime_played)
         play_jingle(sndSSChaosEmerald, false);
     alarm_set(0, 150);
     chime_played = true;
+    rumble(RUMBLE_EVENT_EMERALD_GET);
 }
 </string>
           </argument>

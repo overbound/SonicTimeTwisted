@@ -13,6 +13,9 @@ if shield
 
     // audio
     audio_play_sound(argument1, 0,0);
+    
+    // rumble
+    rumble(RUMBLE_EVENT_HURT_SHIELDS);
 }
 else
 
@@ -24,6 +27,9 @@ if objGameData.rings[0]>0
 
     // audio
     audio_play_sound(sndRingLoss,0,0);
+    
+    // rumble
+    rumble(RUMBLE_EVENT_HURT_RINGS);
 }
 else
 {

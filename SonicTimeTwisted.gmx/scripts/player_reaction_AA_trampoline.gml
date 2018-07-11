@@ -34,6 +34,10 @@ yspeed = 4;
 // set air state
 player_in_air();
 
+
+// rumble
+rumble(RUMBLE_EVENT_BUMPER);
+
 // character values
 if character_id==3 glide_falling = false;
 

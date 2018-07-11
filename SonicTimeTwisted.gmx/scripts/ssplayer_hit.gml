@@ -18,7 +18,10 @@ else{  // lose rings
             direction = degree;
         }}
 
-    }
-
     audio_play_sound(sndRingLoss,0,0);
-    rings=0;
+}
+
+rings=0;
+
+// rumble
+rumble(RUMBLE_EVENT_HURT_RINGS);

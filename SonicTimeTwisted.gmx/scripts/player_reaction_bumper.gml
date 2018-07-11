@@ -35,6 +35,8 @@ if argument0.counter[player_id]<10
     argument0.counter[player_id] += 1;
     instance_create(argument0.x, argument0.y, objScorePopup);
 }
+// rumble
+rumble(RUMBLE_EVENT_BUMPER);
 
 // sound
 audio_play_sound(sndBumper, 1, 0);
