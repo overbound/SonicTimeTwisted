@@ -1,5 +1,5 @@
 // player_reaction_mega_trooper_boss_start(local_id)
-
+instance_activate_object(objMegaTrooperController);
 
 
     camera.left = objMegaTrooperController.x-512;

@@ -115,12 +115,21 @@ default_score_offset2 = score_offset2;
 default_score_offset3 = score_offset3;
 default_score_offset4 = score_offset4;
 
+
+// lowercase name tag
+switch objGameData.character_id[0]
+{
+case 2: name_tag_lc = "Tails"; break;
+case 3: name_tag_lc = "Knuckles"; break;
+default: name_tag_lc = "Sonic";
+}
+
 super_title_line1 = string_replace("%c CAN NOW BECOME", "%c", name_tag);
 super_title_line2 = string_replace("SUPER %c", "%c", name_tag);
 super_title_line1_player_overlay = name_tag;
 super_title_line2_player_overlay = string_replace("SUPER %c", "%c", name_tag);
-ss_instructions1 = string_replace("JUMP AND HOLD A AND B", "%c", name_tag);
-ss_instructions2 = string_replace("TO TURN INTO SUPER %c", "%c", name_tag);
+ss_instructions1 = string_replace("Jump and hold A and B", "%c", name_tag_lc);
+ss_instructions2 = string_replace("to turn into Super %c", "%c", name_tag_lc);
 next_message = false;
 score_ox1 = score_ox;
 score_ox2 = score_ox;

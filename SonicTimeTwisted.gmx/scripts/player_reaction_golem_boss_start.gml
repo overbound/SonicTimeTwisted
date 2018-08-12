@@ -1,5 +1,8 @@
 // player_reaction_egg_walker_boss_start(local_id)
 
+instance_activate_object(objGolemOrb);
+instance_activate_object(objGolemHand);
+
 // force camera bounds
 camera.left = argument0.left;
 camera.top = argument0.top;

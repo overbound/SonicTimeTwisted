@@ -52,14 +52,14 @@
         draw_set_halign(fa_center);
 switch state {
     case 1:
-        draw_text(view_xview[view_current]+213, view_yview[view_current]+107, "TRY AGAIN");
-        draw_text(view_xview[view_current]+213, view_yview[view_current]+123, "COLLECT ALL THE CHAOS EMERALDS AND TIME STONES");
+        draw_text(view_xview[view_current]+213, view_yview[view_current]+107, "Try again!");
+        draw_text(view_xview[view_current]+213, view_yview[view_current]+123, "Collect all the Chaos Emeralds and Time Stones");
     break;
     case 2:
-        draw_text(view_xview[view_current]+213, view_yview[view_current]+26, "SONIC TAILS AND KNUCKLES CONTINUED THE FIGHT");
-        draw_text(view_xview[view_current]+213, view_yview[view_current]+38, "TO LIBERATE MOBIUS FROM ROBOTNIK'S CREATIONS");
-        draw_text(view_xview[view_current]+213, view_yview[view_current]+54, "UNTIL NO MORE ROBOTS REMAINED");
-        draw_text(view_xview[view_current]+213, view_yview[view_current]+78, "THANK YOU FOR PLAYING");
+        draw_text(view_xview[view_current]+213, view_yview[view_current]+26, "Sonic, Tails, and Knuckles continued the fight");
+        draw_text(view_xview[view_current]+213, view_yview[view_current]+38, "to liberate Mobius from Robotnik's creations");
+        draw_text(view_xview[view_current]+213, view_yview[view_current]+54, "until no more robots remained.");
+        draw_text(view_xview[view_current]+213, view_yview[view_current]+78, "Thank you for playing!");
     break;
 }
 </string>

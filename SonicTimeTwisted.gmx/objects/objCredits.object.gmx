@@ -198,6 +198,7 @@ case 12:
     draw_text_color(view_xview+160, view_yview+42, 'STEPHEN DIDURO "STRIFE"',c_white,c_white,c_yellow,c_yellow,image_alpha);
     draw_text_color(view_xview+160, view_yview+56, '"STEVINGESUS"',c_white,c_white,c_yellow,c_yellow,image_alpha);
     draw_text_color(view_xview+160, view_yview+70, '"VEXER"',c_white,c_white,c_yellow,c_yellow,image_alpha);
+    draw_text_color(view_xview+160,view_yview+84,'ALEX KHAYRULLIN',c_white,c_white,c_yellow,c_yellow,image_alpha);
 break;
 
 case 13:

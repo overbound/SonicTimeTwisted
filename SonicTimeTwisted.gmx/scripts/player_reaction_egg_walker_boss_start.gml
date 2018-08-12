@@ -1,4 +1,6 @@
 // player_reaction_egg_walker_boss_start(local_id)
+instance_activate_object(objEggWalkerBossController);
+instance_activate_object(objMoleEggWalker);
 
 with objEggWalkerBossController {
 
