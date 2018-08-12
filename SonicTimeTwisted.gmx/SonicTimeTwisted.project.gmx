@@ -292,6 +292,7 @@
       <sprite>sprites\sprAct</sprite>
       <sprite>sprites\sprGameOver</sprite>
       <sprite>sprites\sprHud</sprite>
+      <sprite>sprites\sprHudOld</sprite>
       <sprite>sprites\sprLives</sprite>
       <sprite>sprites\sprScore</sprite>
       <sprites name="time travel">
@@ -1829,6 +1830,7 @@
       </scripts>
       <scripts name="Hud">
         <script>scripts\randomize_number.gml</script>
+        <script>scripts\draw_top_hud.gml</script>
       </scripts>
     </scripts>
     <scripts name="Scene Objects">

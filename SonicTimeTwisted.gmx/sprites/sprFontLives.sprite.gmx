@@ -3,22 +3,22 @@
   <type>0</type>
   <xorig>0</xorig>
   <yorigin>0</yorigin>
-  <colkind>1</colkind>
+  <colkind>0</colkind>
   <coltolerance>0</coltolerance>
-  <sepmasks>0</sepmasks>
+  <sepmasks>-1</sepmasks>
   <bboxmode>0</bboxmode>
   <bbox_left>0</bbox_left>
-  <bbox_right>6</bbox_right>
+  <bbox_right>8</bbox_right>
   <bbox_top>0</bbox_top>
-  <bbox_bottom>6</bbox_bottom>
+  <bbox_bottom>7</bbox_bottom>
   <HTile>0</HTile>
   <VTile>0</VTile>
   <TextureGroups>
     <TextureGroup0>0</TextureGroup0>
   </TextureGroups>
   <For3D>0</For3D>
-  <width>7</width>
-  <height>7</height>
+  <width>9</width>
+  <height>9</height>
   <frames>
     <frame index="0">images\sprFontLives_0.png</frame>
     <frame index="1">images\sprFontLives_1.png</frame>

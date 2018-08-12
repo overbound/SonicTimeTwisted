@@ -43,6 +43,9 @@ inputFlash = 0;
 white = 0;
 timeOffset = 0;
 
+timer = 0;
+rings = 0;
+
 menu = instance_create(0,0,objMenu);
 </string>
           </argument>
@@ -90,7 +93,7 @@ if instance_exists(objLevel) {
     milliseconds = string(milliseconds);
     
     // update time stamp
-    time_stamp = minutes+" "+seconds+" "+milliseconds;
+    time_stamp = minutes+"'"+seconds+'"'+milliseconds;
 }
 
 </string>
@@ -243,7 +246,7 @@ draw_set_alpha(image_alpha);
 draw_set_valign(fa_top);
 draw_set_halign(fa_right);
 draw_set_font(objResources.fontLives);
-draw_text(view_xview[view_current]+94, view_yview[view_current]+view_hview[view_current]-12, objGameData.player_lives[view_current]);
+draw_text(view_xview[view_current]+94, view_yview[view_current]+view_hview[view_current]-11, objGameData.player_lives[view_current]);
 </string>
           </argument>
         </arguments>
@@ -268,21 +271,7 @@ draw_text(view_xview[view_current]+94, view_yview[view_current]+view_hview[view_
             <kind>1</kind>
             <string>/// Render HUD
 
-
-// Hud Graphic
-if not objScreen.split_screen draw_sprite(sprHud, 0, view_xview[view_current]+14, view_yview[view_current]+9);
-draw_sprite(sprHud, 1+(image_index mod 2)*(objLevel.timer&lt;3600), view_xview[view_current]+14, view_yview[view_current]+25-(16*objScreen.split_screen));
-draw_sprite(sprHud, 3+(image_index mod 2)*(not objGameData.rings[view_current]), view_xview[view_current]+14, view_yview[view_current]+41-(16*objScreen.split_screen));
-
-// Drawing lives - exported into a different event
-event_user(0);
-
-// score / time / rings string
-draw_set_font(objResources.fontHud);
-if not objScreen.split_screen draw_text(view_xview[view_current]+112, view_yview[view_current]+8, objGameData.player_score[view_current]);
-draw_text(view_xview[view_current]+88, view_yview[view_current]+40-(16*objScreen.split_screen), objGameData.rings[view_current]);
-draw_set_halign(fa_left);
-draw_text(view_xview[view_current]+56+timeOffset, view_yview[view_current]+24-(16*objScreen.split_screen), time_stamp);
+draw_top_hud(objLevel.timer, objGameData.rings[view_current], view_xview[view_current], view_yview[view_current]);
 
 // TODO Remove FPS
 //draw_text(view_xview[view_current]+400,view_yview[view_current]+24, fps);

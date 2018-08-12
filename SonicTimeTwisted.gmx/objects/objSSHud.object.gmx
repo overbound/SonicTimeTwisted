@@ -41,6 +41,9 @@ inputFlash = 0;
 white = 0;
 timeOffset = 0;
 
+timer = 0;
+rings = 0;
+
 menu = instance_create(x,y,objMenu);
 menu.default_state = 3;
 menu.draw_with_view_offset = false;
@@ -113,7 +116,7 @@ if (milliseconds&lt;10) milliseconds = "0"+string(milliseconds); else
 milliseconds = string(milliseconds);
 
 // update time stamp
-time_stamp = minutes+" "+seconds+" "+milliseconds;;
+time_stamp = minutes+"'"+seconds+'"'+milliseconds;
 </string>
           </argument>
         </arguments>
@@ -254,7 +257,7 @@ if(objProgram.saveSlot &gt; -1) // if we are playing this in the mini-game/level
     draw_set_valign(fa_top);
     draw_set_halign(fa_right);
     draw_set_font(objResources.fontLives);
-    draw_text(0+94, 0+view_hview[view_current]-12, objGameData.player_lives[view_current]);
+    draw_text(0+94, 0+view_hview[view_current]-11, objGameData.player_lives[view_current]);
 }
 else
 {
@@ -343,21 +346,7 @@ draw_set_font(objResources.fontHud);
 
 if !objProgram.paused {
 
-// Hud Graphic
-if not objScreen.split_screen draw_sprite(sprHud, 0, 0+16, 0+9);
-draw_sprite(sprHud, 1+(image_index mod 2)*(objSSLevel.timer &lt; 3600), 16, 25-(16*objScreen.split_screen));
-draw_sprite(sprHud, 3+(image_index mod 2)*(not objSSPlayer.rings), 16, 41-(16*objScreen.split_screen));
-
-// level icons and progress bar moves to a separate overrideable event
-event_user(0);
-draw_set_font(objResources.fontHud);
-
-// score / time / rings string
-draw_set_font(objResources.fontHud);
-if not objScreen.split_screen draw_text(112, 8, objGameData.player_score[view_current]);
-draw_text(88, 40-(16*objScreen.split_screen), objSSPlayer.rings);
-draw_set_halign(fa_left);
-draw_text(56+timeOffset, 24-(16*objScreen.split_screen), time_stamp);
+draw_top_hud(objSSLevel.timer, objSSPlayer.rings, 0, 0);
 
 } else {
     draw_set_color(c_black);

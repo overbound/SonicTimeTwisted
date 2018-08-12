@@ -914,7 +914,7 @@ switch(state)
         options[1, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
         options[2, OPTION_NAME] = 'RESTART GAME';
         options[2, OPTION_TYPE] = OPTION_TYPE_CONFIRM;
-        options[2, OPTION_VALUE] = "ALL UNSAVED PROGRESS WILL BE LOST";
+        options[2, OPTION_VALUE] = "All unsaved progress will be lost";
         options[2, OPTION_ANIMATION] = OPTION_ANIMATION_LONGPRESS;
         break;
     case 4:
@@ -953,7 +953,7 @@ switch(state)
         {
             if(objGameData.player_lives[0] &gt; 1)
             {
-                options[1, OPTION_NAME] = 'TRY AGAIN z1 LIFE';
+                options[1, OPTION_NAME] = 'TRY AGAIN -1 LIFE';
                 options[1, OPTION_TYPE] = OPTION_TYPE_SIMPLE;
                 options[1, OPTION_VALUE] = false;
                 options[1, OPTION_ANIMATION] = OPTION_ANIMATION_LONGPRESS;
@@ -974,33 +974,33 @@ switch(state)
     case 7:
         large = true;
         
-        var gamepadStateLabel = "NO";
+        var gamepadStateLabel = "No";
         if(objProgram.inputManager.gamepad_update_enabled)
         {
-            gamepadStateLabel = "YES";
+            gamepadStateLabel = "Yes";
         }
     
         options[0, OPTION_NAME] = 'OPTIONS';
         options[0, OPTION_TYPE] = OPTION_TYPE_TITLE;
         options[0, OPTION_VALUE] = '';
         options[0, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
-        options[1, OPTION_NAME] = 'VIDEO OPTIONS';
+        options[1, OPTION_NAME] = 'Video options';
         options[1, OPTION_TYPE] = OPTION_TYPE_SUBMENU;
         options[1, OPTION_VALUE] = 20;
         options[1, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
-        options[2, OPTION_NAME] = 'ENABLE GAMEPAD';
+        options[2, OPTION_NAME] = 'Enable gamepad';
         options[2, OPTION_TYPE] = OPTION_TYPE_WITH_VALUE;
         options[2, OPTION_VALUE] = gamepadStateLabel;
         options[2, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
-        options[3, OPTION_NAME] = 'MAP KEYS';
+        options[3, OPTION_NAME] = 'Map keys';
         options[3, OPTION_TYPE] = OPTION_TYPE_SUBMENU;
         options[3, OPTION_VALUE] = 8;
         options[3, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
-        options[4, OPTION_NAME] = 'MAP GAMEPAD';
+        options[4, OPTION_NAME] = 'Map gamepad';
         options[4, OPTION_TYPE] = OPTION_TYPE_SUBMENU;
         options[4, OPTION_VALUE] = 9;
         options[4, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
-        options[5, OPTION_NAME] = 'BACK';
+        options[5, OPTION_NAME] = 'Back';
         options[5, OPTION_TYPE] = OPTION_TYPE_RETURN;
         options[5, OPTION_VALUE] = 0;
         options[5, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
@@ -1158,27 +1158,27 @@ switch(state)
             options[0, OPTION_NAME] = 'MAP GAMEPAD';
         }
         
-        options[1, OPTION_NAME] = 'REMAP ALL';
+        options[1, OPTION_NAME] = 'Remap all';
         options[1, OPTION_TYPE] = OPTION_TYPE_SIMPLE;
         options[1, OPTION_VALUE] = false;
         options[1, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
         
-        options[2, OPTION_NAME] = 'UP';
+        options[2, OPTION_NAME] = 'Up';
         options[2, OPTION_TYPE] = OPTION_TYPE_WITH_VALUE;
         options[2, OPTION_VALUE] = upLabel;
         options[2, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
         
-        options[3, OPTION_NAME] = 'DOWN';
+        options[3, OPTION_NAME] = 'Down';
         options[3, OPTION_TYPE] = OPTION_TYPE_WITH_VALUE;
         options[3, OPTION_VALUE] = downLabel;
         options[3, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
         
-        options[4, OPTION_NAME] = 'LEFT';
+        options[4, OPTION_NAME] = 'Left';
         options[4, OPTION_TYPE] = OPTION_TYPE_WITH_VALUE;
         options[4, OPTION_VALUE] = leftLabel;
         options[4, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
         
-        options[5, OPTION_NAME] = 'RIGHT';
+        options[5, OPTION_NAME] = 'Right';
         options[5, OPTION_TYPE] = OPTION_TYPE_WITH_VALUE;
         options[5, OPTION_VALUE] = rightLabel;
         options[5, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
@@ -1198,7 +1198,7 @@ switch(state)
         options[8, OPTION_VALUE] = cLabel;
         options[8, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
         
-        options[9, OPTION_NAME] = 'START';
+        options[9, OPTION_NAME] = 'Start';
         options[9, OPTION_TYPE] = OPTION_TYPE_WITH_VALUE;
         options[9, OPTION_VALUE] = startLabel;
         options[9, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
@@ -1213,7 +1213,7 @@ switch(state)
             }
         }
         
-        options[10, OPTION_NAME] = 'BACK';
+        options[10, OPTION_NAME] = 'Back';
         options[10, OPTION_TYPE] = OPTION_TYPE_RETURN;
         options[10, OPTION_VALUE] = 7;
         options[10, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
@@ -1225,12 +1225,12 @@ switch(state)
         options[0, OPTION_VALUE] = false;
         options[0, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
         
-        options[1, OPTION_NAME] = 'CONFIRM';
+        options[1, OPTION_NAME] = 'Confirm';
         options[1, OPTION_TYPE] = OPTION_TYPE_SIMPLE;
         options[1, OPTION_VALUE] = false;
         options[1, OPTION_ANIMATION] = confirm_animation;
         
-        options[2, OPTION_NAME] = 'CANCEL';
+        options[2, OPTION_NAME] = 'Cancel';
         options[2, OPTION_TYPE] = OPTION_TYPE_RETURN;
         options[2, OPTION_VALUE] = confirm_state;
         options[2, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
@@ -1272,47 +1272,47 @@ switch(state)
         options[0, OPTION_TYPE] = OPTION_TYPE_TITLE;
         options[0, OPTION_VALUE] = false;
         options[0, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
-        options[1, OPTION_NAME] = 'ATTRACTION ATTACK ZONE';
+        options[1, OPTION_NAME] = 'Attraction Attack Zone';
         options[1, OPTION_TYPE] = OPTION_TYPE_SUBMENU;
         options[1, OPTION_VALUE] = 13;
         options[1, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
-        options[2, OPTION_NAME] = 'RAGING RUINS ZONE';
+        options[2, OPTION_NAME] = 'Raging Ruins Zone';
         options[2, OPTION_TYPE] = OPTION_TYPE_SUBMENU;
         options[2, OPTION_VALUE] = 14;
         options[2, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
-        options[3, OPTION_NAME] = 'FRIGID FORTRESS ZONE';
+        options[3, OPTION_NAME] = 'Frigid Fortress Zone';
         options[3, OPTION_TYPE] = OPTION_TYPE_SUBMENU;
         options[3, OPTION_VALUE] = 15;
         options[3, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
-        options[4, OPTION_NAME] = 'VIRIDIAN VALLEY ZONE';
+        options[4, OPTION_NAME] = 'Viridian Valley Zone';
         options[4, OPTION_TYPE] = OPTION_TYPE_SUBMENU;
         options[4, OPTION_VALUE] = 16;
         options[4, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
-        options[5, OPTION_NAME] = 'DRIFTING DYNAMO ZONE';
+        options[5, OPTION_NAME] = 'Drifting Dynamo Zone';
         options[5, OPTION_TYPE] = OPTION_TYPE_SUBMENU;
         options[5, OPTION_VALUE] = 17;
         options[5, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
-        options[6, OPTION_NAME] = 'TIDAL TUBES ZONE';
+        options[6, OPTION_NAME] = 'Tidal Tubes Zone';
         options[6, OPTION_TYPE] = OPTION_TYPE_SUBMENU;
         options[6, OPTION_VALUE] = 18;
         options[6, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
-        options[7, OPTION_NAME] = 'SUNKEN SAUCER ZONE';
+        options[7, OPTION_NAME] = 'Sunken Saucer Zone';
         options[7, OPTION_TYPE] = OPTION_TYPE_SIMPLE;
         options[7, OPTION_VALUE] = false;
         options[7, OPTION_ANIMATION] = OPTION_ANIMATION_LONGPRESS;
-        options[8, OPTION_NAME] = 'PLANETARY PANIC ZONE';
+        options[8, OPTION_NAME] = 'Planetary Panic Zone';
         options[8, OPTION_TYPE] = OPTION_TYPE_SUBMENU;
         options[8, OPTION_VALUE] = 19;
         options[8, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
-        options[9, OPTION_NAME] = 'GALACNIK GAUNTLET ZONE';
+        options[9, OPTION_NAME] = 'Galacnik Gauntlet Zone';
         options[9, OPTION_TYPE] = OPTION_TYPE_SIMPLE;
         options[9, OPTION_VALUE] = false;
         options[9, OPTION_ANIMATION] = OPTION_ANIMATION_LONGPRESS;
-        options[10, OPTION_NAME] = 'SPECIAL STAGES';
+        options[10, OPTION_NAME] = 'Special Stages';
         options[10, OPTION_TYPE] = OPTION_TYPE_SIMPLE;
         options[10, OPTION_VALUE] = false;
         options[10, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
-        options[11, OPTION_NAME] = 'BACK';
+        options[11, OPTION_NAME] = 'Back';
         options[11, OPTION_TYPE] = OPTION_TYPE_RETURN;
         options[11, OPTION_VALUE] = 11;
         options[11, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
@@ -1349,23 +1349,23 @@ switch(state)
         options[0, OPTION_TYPE] = OPTION_TYPE_TITLE;
         options[0, OPTION_VALUE] = false;
         options[0, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
-        options[1, OPTION_NAME] = 'ACT 1 FUTURE';
+        options[1, OPTION_NAME] = 'Act 1 - Future';
         options[1, OPTION_TYPE] = OPTION_TYPE_SIMPLE;
         options[1, OPTION_VALUE] = false;
         options[1, OPTION_ANIMATION] = OPTION_ANIMATION_LONGPRESS;
-        options[2, OPTION_NAME] = 'ACT 1 PAST';
+        options[2, OPTION_NAME] = 'Act 1 - Past';
         options[2, OPTION_TYPE] = OPTION_TYPE_SIMPLE;
         options[2, OPTION_VALUE] = false;
         options[2, OPTION_ANIMATION] = OPTION_ANIMATION_LONGPRESS;
-        options[3, OPTION_NAME] = 'ACT 2 FUTURE';
+        options[3, OPTION_NAME] = 'Act 2 - Future';
         options[3, OPTION_TYPE] = OPTION_TYPE_SIMPLE;
         options[3, OPTION_VALUE] = false;
         options[3, OPTION_ANIMATION] = OPTION_ANIMATION_LONGPRESS;
-        options[4, OPTION_NAME] = 'ACT 2 PAST';
+        options[4, OPTION_NAME] = 'Act 2 - Past';
         options[4, OPTION_TYPE] = OPTION_TYPE_SIMPLE;
         options[4, OPTION_VALUE] = false;
         options[4, OPTION_ANIMATION] = OPTION_ANIMATION_LONGPRESS;
-        options[5, OPTION_NAME] = 'BACK';
+        options[5, OPTION_NAME] = 'Back';
         options[5, OPTION_TYPE] = OPTION_TYPE_RETURN;
         options[5, OPTION_VALUE] = 12;
         options[5, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
@@ -1376,15 +1376,15 @@ switch(state)
         options[0, OPTION_TYPE] = OPTION_TYPE_TITLE;
         options[0, OPTION_VALUE] = false;
         options[0, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
-        options[1, OPTION_NAME] = 'ACT 1';
+        options[1, OPTION_NAME] = 'Act 1';
         options[1, OPTION_TYPE] = OPTION_TYPE_SIMPLE;
         options[1, OPTION_VALUE] = false;
         options[1, OPTION_ANIMATION] = OPTION_ANIMATION_LONGPRESS;
-        options[2, OPTION_NAME] = 'ACT 2';
+        options[2, OPTION_NAME] = 'Act 2';
         options[2, OPTION_TYPE] = OPTION_TYPE_SIMPLE;
         options[2, OPTION_VALUE] = false;
         options[2, OPTION_ANIMATION] = OPTION_ANIMATION_LONGPRESS;
-        options[3, OPTION_NAME] = 'BACK';
+        options[3, OPTION_NAME] = 'Back';
         options[3, OPTION_TYPE] = OPTION_TYPE_RETURN;
         options[3, OPTION_VALUE] = 12;
         options[3, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
@@ -1394,19 +1394,19 @@ switch(state)
         
         large = true;
         
-        var screenStateLabel = "FULLSCREEN";
+        var screenStateLabel = "Full screen";
         switch get_video_mode() {
             case 0:
-                screenStateLabel = "WINDOW";
+                screenStateLabel = "Window";
             break;
             case 1:
-                screenStateLabel = "WINDOW 2X";
+                screenStateLabel = "Window 2x";
             break;
             case 2:
-                screenStateLabel = "WINDOW 3X";
+                screenStateLabel = "Window 3x";
             break;
             case 3:
-                screenStateLabel = "FULLSCREEN";
+                screenStateLabel = "Full screen";
             break;
         }
         
@@ -1417,14 +1417,14 @@ switch(state)
             break;
         }
         
-        var tallyLabel = "RANDOM DIGITS";
+        var tallyLabel = "Random digits";
         switch(objProgram.score_tally_mode)
         {
             case 1:
-                tallyLabel = "VARIABLE SPEED";
+                tallyLabel = "Variable speed";
                 break;
             case 2:
-                tallyLabel = "CONSTANT SPEED";
+                tallyLabel = "Constant speed";
                 break;
         }
         
@@ -1432,19 +1432,19 @@ switch(state)
         options[0, OPTION_TYPE] = OPTION_TYPE_TITLE;
         options[0, OPTION_VALUE] = false;
         options[0, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
-        options[1, OPTION_NAME] = 'SCREEN SIZE';
+        options[1, OPTION_NAME] = 'Screen size';
         options[1, OPTION_TYPE] = OPTION_TYPE_WITH_VALUE;
         options[1, OPTION_VALUE] = screenStateLabel;
         options[1, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
-        options[2, OPTION_NAME] = 'FRAMERATE';
+        options[2, OPTION_NAME] = 'Framerate';
         options[2, OPTION_TYPE] = OPTION_TYPE_WITH_VALUE;
         options[2, OPTION_VALUE] = frameRateLabel;
         options[2, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
-        options[3, OPTION_NAME] = 'SCORE TALLY MODE';
+        options[3, OPTION_NAME] = 'Score tally mode';
         options[3, OPTION_TYPE] = OPTION_TYPE_WITH_VALUE;
         options[3, OPTION_VALUE] = tallyLabel;
         options[3, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
-        options[4, OPTION_NAME] = 'BACK';
+        options[4, OPTION_NAME] = 'Back';
         options[4, OPTION_TYPE] = OPTION_TYPE_RETURN;
         options[4, OPTION_VALUE] = 7;
         options[4, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
@@ -1455,15 +1455,15 @@ switch(state)
         options[0, OPTION_TYPE] = OPTION_TYPE_TITLE;
         options[0, OPTION_VALUE] = false;
         options[0, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
-        options[1, OPTION_NAME] = 'PAST';
+        options[1, OPTION_NAME] = 'Past';
         options[1, OPTION_TYPE] = OPTION_TYPE_SUBMENU;
         options[1, OPTION_VALUE] = 22;
         options[1, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
-        options[2, OPTION_NAME] = 'FUTURE';
+        options[2, OPTION_NAME] = 'Future';
         options[2, OPTION_TYPE] = OPTION_TYPE_SUBMENU;
         options[2, OPTION_VALUE] = 23;
         options[2, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
-        options[3, OPTION_NAME] = 'BACK';
+        options[3, OPTION_NAME] = 'Back';
         options[3, OPTION_TYPE] = OPTION_TYPE_RETURN;
         switch(substate)
         {
@@ -1497,12 +1497,12 @@ switch(state)
         options[0, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
         for(var i = 1; i &lt;= 7; i++)
         {
-            options[i, OPTION_NAME] = 'SPECIAL STAGE '+string(i);
+            options[i, OPTION_NAME] = 'Special Stage '+string(i);
             options[i, OPTION_TYPE] = OPTION_TYPE_SIMPLE;
             options[i, OPTION_VALUE] = false;
             options[i, OPTION_ANIMATION] = OPTION_ANIMATION_LONGPRESS;
         }
-        options[8, OPTION_NAME] = 'BACK';
+        options[8, OPTION_NAME] = 'Back';
         options[8, OPTION_TYPE] = OPTION_TYPE_RETURN;
         options[8, OPTION_VALUE] = 21;
         options[8, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
@@ -1522,19 +1522,19 @@ switch(state)
         options[0, OPTION_VALUE] = false;
         options[0, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
 
-        options[1, OPTION_NAME] = 'SELECT ANOTHER';
+        options[1, OPTION_NAME] = 'Select another';
         options[1, OPTION_TYPE] = OPTION_TYPE_SIMPLE;
         options[1, OPTION_VALUE] = false;
         options[1, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
         
-        options[2, OPTION_NAME] = 'RESTART GAME';
+        options[2, OPTION_NAME] = 'Restart game';
         options[2, OPTION_TYPE] = OPTION_TYPE_CONFIRM;
-        options[2, OPTION_VALUE] = "LEVEL SELECT CODE WILL BE INACTIVE";
+        options[2, OPTION_VALUE] = "Level select code will be inactive";
         options[2, OPTION_ANIMATION] = OPTION_ANIMATION_LONGPRESS;
         
         break;
     default:
-        options[0, OPTION_NAME] = 'STATE DOES NOT EXIST';
+        options[0, OPTION_NAME] = 'State does not exist';
         options[0, OPTION_TYPE] = OPTION_TYPE_RETURN;
         options[0, OPTION_VALUE] = false;
         options[0, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;

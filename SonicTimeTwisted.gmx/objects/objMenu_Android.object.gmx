@@ -1123,67 +1123,58 @@ switch(state)
     case 7:
         // redefine the options menu
         large = true;
-        var inputLabel = "TOUCHSCREEN";
+        var inputLabel = "Touchscreen";
         if(objProgram.inputManager.input == 1)
         {
             if(objProgram.inputManager.gamepad_update_enabled)
             {
-                inputLabel = "GAMEPAD";
+                inputLabel = "Gamepad";
             }
             else
             {
-                inputLabel = "KEYBOARD";
+                inputLabel = "Keyboard";
             }
         }
-        var tallyLabel = "RANDOM DIGITS";
-        switch(objProgram.score_tally_mode)
-        {
-            case 1:
-                tallyLabel = "VARIABLE SPEED";
-                break;
-            case 2:
-                tallyLabel = "CONSTANT SPEED";
-                break;
-        }
+
         options = false;
         options[0, OPTION_NAME] = 'OPTIONS';
         options[0, OPTION_TYPE] = OPTION_TYPE_TITLE;
         options[0, OPTION_VALUE] = '';
         options[0, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
-        options[1, OPTION_NAME] = 'VIDEO OPTIONS';
+        options[1, OPTION_NAME] = 'Video options';
         options[1, OPTION_TYPE] = OPTION_TYPE_SUBMENU;
         options[1, OPTION_VALUE] = 20;
         options[1, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
         if(ANDROID_CONSOLE != 0)
         {
-            options[2, OPTION_NAME] = 'MAP GAMEPAD';
+            options[2, OPTION_NAME] = 'Map gamepad';
             options[2, OPTION_TYPE] = OPTION_TYPE_SUBMENU;
             options[2, OPTION_VALUE] = 9;
             options[2, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
-            options[3, OPTION_NAME] = 'BACK';
+            options[3, OPTION_NAME] = 'Back';
             options[3, OPTION_TYPE] = OPTION_TYPE_RETURN;
             options[3, OPTION_VALUE] = 0;
             options[3, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
         }
         else
         {
-            options[2, OPTION_NAME] = 'INPUT METHOD';
+            options[2, OPTION_NAME] = 'Input method';
             options[2, OPTION_TYPE] = OPTION_TYPE_WITH_VALUE;
             options[2, OPTION_VALUE] = inputLabel;
             options[2, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
-            options[3, OPTION_NAME] = 'CONFIGURE TOUCHSCREEN';
+            options[3, OPTION_NAME] = 'Configure touchscreen';
             options[3, OPTION_TYPE] = OPTION_TYPE_SUBMENU;
             options[3, OPTION_VALUE] = 1001;
             options[3, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
-            options[4, OPTION_NAME] = 'MAP KEYS';
+            options[4, OPTION_NAME] = 'Map keys';
             options[4, OPTION_TYPE] = OPTION_TYPE_SUBMENU;
             options[4, OPTION_VALUE] = 8;
             options[4, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
-            options[5, OPTION_NAME] = 'MAP GAMEPAD';
+            options[5, OPTION_NAME] = 'Map gamepad';
             options[5, OPTION_TYPE] = OPTION_TYPE_SUBMENU;
             options[5, OPTION_VALUE] = 9;
             options[5, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
-            options[6, OPTION_NAME] = 'BACK';
+            options[6, OPTION_NAME] = 'Back';
             options[6, OPTION_TYPE] = OPTION_TYPE_RETURN;
             options[6, OPTION_VALUE] = 0;
             options[6, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
@@ -1201,14 +1192,14 @@ switch(state)
             break;
         }
         
-        var tallyLabel = "RANDOM DIGITS";
+        var tallyLabel = "Random digits";
         switch(objProgram.score_tally_mode)
         {
             case 1:
-                tallyLabel = "VARIABLE SPEED";
+                tallyLabel = "Varible speed";
                 break;
             case 2:
-                tallyLabel = "CONSTANT SPEED";
+                tallyLabel = "Constant speed";
                 break;
         }
         options = false;
@@ -1216,53 +1207,53 @@ switch(state)
         options[0, OPTION_TYPE] = OPTION_TYPE_TITLE;
         options[0, OPTION_VALUE] = false;
         options[0, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
-        options[1, OPTION_NAME] = 'FRAMERATE';
+        options[1, OPTION_NAME] = 'Framerate';
         options[1, OPTION_TYPE] = OPTION_TYPE_WITH_VALUE;
         options[1, OPTION_VALUE] = frameRateLabel;
         options[1, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
-        options[2, OPTION_NAME] = 'SCORE TALLY MODE';
+        options[2, OPTION_NAME] = 'Score tally mode';
         options[2, OPTION_TYPE] = OPTION_TYPE_WITH_VALUE;
         options[2, OPTION_VALUE] = tallyLabel;
         options[2, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
-        options[3, OPTION_NAME] = 'BACK';
+        options[3, OPTION_NAME] = 'Back';
         options[3, OPTION_TYPE] = OPTION_TYPE_RETURN;
         options[3, OPTION_VALUE] = 7;
         options[3, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
         break;
     case 1001:
     
-        var gyroLabel = 'D-PAD';
+        var gyroLabel = 'D-Pad';
         if(objProgram.inputManager.gyroinss)
         {
-            gyroLabel = 'GYROSCOPE';
+            gyroLabel = 'Gyroscope';
         }
-        var gyroGGLabel = 'D-PAD';
+        var gyroGGLabel = 'D-Pad';
         if(objProgram.inputManager.gg_mode == 1)
         {
-            gyroGGLabel = 'GYROSCOPE';
+            gyroGGLabel = 'Gyroscope';
         }
         else
         if(objProgram.inputManager.gg_mode == 2)
         {
-            gyroGGLabel = 'POINT ON SCREEN';
+            gyroGGLabel = 'Point on screen';
         }
         
     
-        var dpadModeLabel = 'STATIC';
+        var dpadModeLabel = 'Static';
         if(objProgram.inputManager.dpadMode)
         {
-            dpadModeLabel = 'DYNAMIC';
+            dpadModeLabel = 'Dynamic';
         }
         
-        var dpadSizeLabel = 'LARGE';
+        var dpadSizeLabel = 'Large';
         if(objProgram.inputManager.vksize == 1)
         {
-            dpadSizeLabel = 'MEDIUM';
+            dpadSizeLabel = 'Medium';
         }
         else
         if(objProgram.inputManager.vksize == 2)
         {
-            dpadSizeLabel = 'SMALL';
+            dpadSizeLabel = 'Small';
         }
         var vkAlpha = string(round(objProgram.inputManager.vkalpha*100));
         
@@ -1271,35 +1262,35 @@ switch(state)
         options[0, OPTION_TYPE] = OPTION_TYPE_TITLE;
         options[0, OPTION_VALUE] = '';
         options[0, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
-        options[1, OPTION_NAME] = 'REPOSITION BUTTONS';
+        options[1, OPTION_NAME] = 'Reposition buttons';
         options[1, OPTION_TYPE] = OPTION_TYPE_SUBMENU;
         options[1, OPTION_VALUE] = 1002;
         options[1, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
-        options[2, OPTION_NAME] = 'BUTTON SIZE';
+        options[2, OPTION_NAME] = 'Button size';
         options[2, OPTION_TYPE] = OPTION_TYPE_WITH_VALUE;
         options[2, OPTION_VALUE] = dpadSizeLabel;
         options[2, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
-        options[3, OPTION_NAME] = 'D PAD MODE';
+        options[3, OPTION_NAME] = 'D-Pad mode';
         options[3, OPTION_TYPE] = OPTION_TYPE_WITH_VALUE;
         options[3, OPTION_VALUE] = dpadModeLabel;
         options[3, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
-        options[4, OPTION_NAME] = 'OPACITY';
+        options[4, OPTION_NAME] = 'Opacity';
         options[4, OPTION_TYPE] = OPTION_TYPE_WITH_VALUE;
         options[4, OPTION_VALUE] = vkAlpha;
         options[4, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
-        options[5, OPTION_NAME] = 'SPECIAL STAGE CONTROLS';
+        options[5, OPTION_NAME] = 'Special Stage controls';
         options[5, OPTION_TYPE] = OPTION_TYPE_WITH_VALUE;
         options[5, OPTION_VALUE] = gyroLabel;
         options[5, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
-        options[6, OPTION_NAME] = 'FINAL ZONE CONTROLS';
+        options[6, OPTION_NAME] = 'Final zone controls';
         options[6, OPTION_TYPE] = OPTION_TYPE_WITH_VALUE;
         options[6, OPTION_VALUE] = gyroGGLabel;
         options[6, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
-        options[7, OPTION_NAME] = 'CONFIGURE GYROSCOPE';
+        options[7, OPTION_NAME] = 'Configure gyroscope';
         options[7, OPTION_TYPE] = OPTION_TYPE_SUBMENU;
         options[7, OPTION_VALUE] = 1004;
         options[7, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
-        options[8, OPTION_NAME] = 'BACK';
+        options[8, OPTION_NAME] = 'Back';
         options[8, OPTION_TYPE] = OPTION_TYPE_RETURN;
         options[8, OPTION_VALUE] = 7;
         options[8, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
@@ -1319,15 +1310,15 @@ switch(state)
         options[0, OPTION_TYPE] = OPTION_TYPE_TITLE;
         options[0, OPTION_VALUE] = '';
         options[0, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
-        options[1, OPTION_NAME] = 'SAVE CHANGES';
+        options[1, OPTION_NAME] = 'Save changes';
         options[1, OPTION_TYPE] = OPTION_TYPE_SIMPLE;
         options[1, OPTION_VALUE] = '';
         options[1, OPTION_ANIMATION] = OPTION_ANIMATION_LONGPRESS;
-        options[2, OPTION_NAME] = 'DISCARD CHANGES';
+        options[2, OPTION_NAME] = 'Discard changes';
         options[2, OPTION_TYPE] = OPTION_TYPE_SIMPLE;
         options[2, OPTION_VALUE] = '';
         options[2, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
-        options[3, OPTION_NAME] = 'RESTORE DEFAULT POSITIONS';
+        options[3, OPTION_NAME] = 'Restore default positions';
         options[3, OPTION_TYPE] = OPTION_TYPE_SIMPLE;
         options[3, OPTION_VALUE] = '';
         options[3, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
@@ -1340,47 +1331,47 @@ switch(state)
         options[0, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
         if(!objProgram.inputManager.gyromode)
         {
-            options[1, OPTION_NAME] = 'MODE';
+            options[1, OPTION_NAME] = 'Mode';
             options[1, OPTION_TYPE] = OPTION_TYPE_WITH_VALUE;
             options[1, OPTION_VALUE] = 'SIMULATE BUTTON';
             options[1, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
             
             var angle = round(objProgram.inputManager.gyro_switch_on_angle_x * 90);
             
-            options[2, OPTION_NAME] = 'BUTTON PRESS ANGLE X';
+            options[2, OPTION_NAME] = 'Button press angle X';
             options[2, OPTION_TYPE] = OPTION_TYPE_WITH_VALUE;
             options[2, OPTION_VALUE] = string(angle);
             options[2, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
             
             var angle = round(objProgram.inputManager.gyro_switch_on_angle_y * 90);
             
-            options[3, OPTION_NAME] = 'BUTTON PRESS ANGLE Y';
+            options[3, OPTION_NAME] = 'Button press angle Y';
             options[3, OPTION_TYPE] = OPTION_TYPE_WITH_VALUE;
             options[3, OPTION_VALUE] = string(angle);
             options[3, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
             
-            options[4, OPTION_NAME] = 'BACK';
+            options[4, OPTION_NAME] = 'Back';
             options[4, OPTION_TYPE] = OPTION_TYPE_RETURN;
             options[4, OPTION_VALUE] = 1001;
             options[4, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
         }
         else
         {
-            options[1, OPTION_NAME] = 'MODE';
+            options[1, OPTION_NAME] = 'Mode';
             options[1, OPTION_TYPE] = OPTION_TYPE_WITH_VALUE;
             options[1, OPTION_VALUE] = 'PSEUDO ANALOG';
             options[1, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
             
             var angle = round(objProgram.inputManager.gyro_analog_start_x * 90);
             
-            options[2, OPTION_NAME] = 'MINIMUM ANGLE X';
+            options[2, OPTION_NAME] = 'Minimum angle X';
             options[2, OPTION_TYPE] = OPTION_TYPE_WITH_VALUE;
             options[2, OPTION_VALUE] = string(angle);
             options[2, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
             
             var angle = round(objProgram.inputManager.gyro_analog_end_x * 90);
             
-            options[3, OPTION_NAME] = 'MAXIMUM ANGLE X';
+            options[3, OPTION_NAME] = 'Maximum angle X';
             options[3, OPTION_TYPE] = OPTION_TYPE_WITH_VALUE;
             options[3, OPTION_VALUE] = string(angle);
             options[3, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
@@ -1388,19 +1379,19 @@ switch(state)
             
             var angle = round(objProgram.inputManager.gyro_analog_start_y * 90);
             
-            options[4, OPTION_NAME] = 'MINIMUM ANGLE Y';
+            options[4, OPTION_NAME] = 'Minimum angle Y';
             options[4, OPTION_TYPE] = OPTION_TYPE_WITH_VALUE;
             options[4, OPTION_VALUE] = string(angle);
             options[4, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
             
             var angle = round(objProgram.inputManager.gyro_analog_end_y * 90);
             
-            options[5, OPTION_NAME] = 'MAXIMUM ANGLE Y';
+            options[5, OPTION_NAME] = 'Maximum angle Y';
             options[5, OPTION_TYPE] = OPTION_TYPE_WITH_VALUE;
             options[5, OPTION_VALUE] = string(angle);
             options[5, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
             
-            options[6, OPTION_NAME] = 'BACK';
+            options[6, OPTION_NAME] = 'Back';
             options[6, OPTION_TYPE] = OPTION_TYPE_RETURN;
             options[6, OPTION_VALUE] = 1001;
             options[6, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
@@ -1427,17 +1418,17 @@ switch(state)
             options[0, OPTION_VALUE] = '';
             options[0, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
         
-            options[1, OPTION_NAME] = 'DECREASE VALUE';
+            options[1, OPTION_NAME] = 'Decrease value';
             options[1, OPTION_TYPE] = OPTION_TYPE_SIMPLE;
             options[1, OPTION_VALUE] = ' ANALOG';
             options[1, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
         
-            options[2, OPTION_NAME] = 'INCREASE VALUE';
+            options[2, OPTION_NAME] = 'Increase value';
             options[2, OPTION_TYPE] = OPTION_TYPE_SIMPLE;
             options[2, OPTION_VALUE] = ' ANALOG';
             options[2, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
             
-            options[3, OPTION_NAME] = 'BACK';
+            options[3, OPTION_NAME] = 'Back';
             options[3, OPTION_TYPE] = OPTION_TYPE_RETURN;
             options[3, OPTION_VALUE] = 1004;
             options[3, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
@@ -1466,27 +1457,27 @@ switch(state)
             options[0, OPTION_VALUE] = '';
             options[0, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
         
-            options[1, OPTION_NAME] = 'DECREASE MINIMUM ANGLE';
+            options[1, OPTION_NAME] = 'Decrease minimum angle';
             options[1, OPTION_TYPE] = OPTION_TYPE_SIMPLE;
             options[1, OPTION_VALUE] = ' ANALOG';
             options[1, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
         
-            options[2, OPTION_NAME] = 'INCREASE MINIMUM ANGLE';
+            options[2, OPTION_NAME] = 'Increase minimum angle';
             options[2, OPTION_TYPE] = OPTION_TYPE_SIMPLE;
             options[2, OPTION_VALUE] = ' ANALOG';
             options[2, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
         
-            options[3, OPTION_NAME] = 'DECREASE MAXIMUM ANGLE';
+            options[3, OPTION_NAME] = 'Decrease maximum angle';
             options[3, OPTION_TYPE] = OPTION_TYPE_SIMPLE;
             options[3, OPTION_VALUE] = ' ANALOG';
             options[3, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
         
-            options[4, OPTION_NAME] = 'INCREASE MAXIMUM ANGLE';
+            options[4, OPTION_NAME] = 'Increase maximum angle';
             options[4, OPTION_TYPE] = OPTION_TYPE_SIMPLE;
             options[4, OPTION_VALUE] = ' ANALOG';
             options[4, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
             
-            options[5, OPTION_NAME] = 'BACK';
+            options[5, OPTION_NAME] = 'Back';
             options[5, OPTION_TYPE] = OPTION_TYPE_SIMPLE;
             options[5, OPTION_VALUE] = '';
             options[5, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
@@ -1501,15 +1492,15 @@ switch(state)
         options[0, OPTION_TYPE] = OPTION_TYPE_TITLE;
         options[0, OPTION_VALUE] = '';
         options[0, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
-        options[1, OPTION_NAME] = 'DECREASE OPACITY';
+        options[1, OPTION_NAME] = 'Decrease opacity';
         options[1, OPTION_TYPE] = OPTION_TYPE_SIMPLE;
         options[1, OPTION_VALUE] = '';
         options[1, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
-        options[2, OPTION_NAME] = 'INCREASE OPACITY';
+        options[2, OPTION_NAME] = 'Increase opacity';
         options[2, OPTION_TYPE] = OPTION_TYPE_SIMPLE;
         options[2, OPTION_VALUE] = '';
         options[2, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
-        options[3, OPTION_NAME] = 'BACK';
+        options[3, OPTION_NAME] = 'Back';
         options[3, OPTION_TYPE] = OPTION_TYPE_SIMPLE;
         options[3, OPTION_VALUE] = 7;
         options[3, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
