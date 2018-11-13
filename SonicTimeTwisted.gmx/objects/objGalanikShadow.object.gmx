@@ -68,10 +68,8 @@ draw=false;
           <argument>
             <kind>1</kind>
             <string>if draw {
-
     draw_sprite_ext(sprite_index,0,view_xview[view_current]+xoffset,view_yview[view_current]+yoffset,1,1,0,c_white,0.85);
     xoffset -= 5;
-
     if xoffset &lt; -view_wport[view_current] {
         
         xoffset = view_wport[view_current];
@@ -79,7 +77,6 @@ draw=false;
         draw = false;
     
     }
-
 }
 </string>
           </argument>

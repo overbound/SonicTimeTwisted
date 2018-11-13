@@ -737,7 +737,6 @@
           <argument>
             <kind>1</kind>
             <string>with objSSMetalCut{
-
     state =1;
 }
 </string>

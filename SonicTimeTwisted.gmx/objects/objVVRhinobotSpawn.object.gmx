@@ -143,10 +143,8 @@ for (var i=0; i&lt;16; i+=1)
           <argument>
             <kind>1</kind>
             <string>/// Spawn Rhinobot
-
 // ignore if not close enough
 if distance_to_object(objPlayer)&gt;128 exit;
-
 // create enemy
 with instance_create(x, y, objRhinobot)
 {
@@ -157,10 +155,8 @@ with instance_create(x, y, objRhinobot)
     state = 4;
     facing = -1;
 }
-
 // sound
 audio_play_sound(sndCollapse, 4, 0);
-
 // destroy this
 instance_destroy();
 </string>

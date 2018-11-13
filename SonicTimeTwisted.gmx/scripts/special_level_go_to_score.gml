@@ -1,5 +1,4 @@
 // special_level_go_to_score()
-
 // save score in global object
 if(object_exists(objSSLevel) && object_exists(objSSPlayer))
 {
@@ -24,4 +23,3 @@ if(object_exists(objSSLevel) && object_exists(objSSPlayer))
 }
 // transition
 transition_to(objSSToScore, ss_results_screen, 20);
-

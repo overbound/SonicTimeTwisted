@@ -44,7 +44,6 @@ blasty = y-128;
 blastImageIndex=0;
 state=0;
 image_speed=0;
-
 messageVisibility=1;
 instance_create(x,y+17,objSSRobotnik);
 </string>
@@ -70,7 +69,6 @@ instance_create(x,y+17,objSSRobotnik);
           <argument>
             <kind>1</kind>
             <string>switch state {
-
 case 1:
     
     blast = true;
@@ -80,9 +78,7 @@ case 1:
         blasty +=2;
         
         } else state = 2;
-
 break;
-
 case 2:
     
     if y &gt; ystart -112 {
@@ -91,11 +87,8 @@ case 2:
         image_index=1;
     
     } else state = 3;
-
 break;
-
 case 3:
-
     with objSSRobotnik visible=true;
     y += cos(objScreen.image_index/16)*.25;
     image_index=2;
@@ -110,18 +103,14 @@ case 3:
     }
     
 break;
-
 }
-
 // visibility firebolt and messagebox
 if image_alpha == .5 {
-
     image_alpha = 0;
     messageVisibility=1;
     
     }
     else { image_alpha = .5; messageVisibility=0; }
-
 blastImageIndex +=.5;
     
     if blastImageIndex &gt; 1 {
@@ -154,7 +143,6 @@ if !audio_is_playing(sndSSWave) &amp;&amp; state &gt; 0 audio_play_sound(sndSSWa
           <argument>
             <kind>1</kind>
             <string>if blast == true {
-
     draw_set_blend_mode(bm_normal);
     draw_sprite_ext(sprBlastBolt,floor(blastImageIndex),x,blasty,1,1,0,c_white,image_alpha);
     draw_sprite_ext(sprite_index,image_index,x,y,1,1,0,c_white,1);
@@ -165,11 +153,8 @@ if !audio_is_playing(sndSSWave) &amp;&amp; state &gt; 0 audio_play_sound(sndSSWa
     
     
 } else draw_sprite_ext(sprite_index,image_index,x,y,1,1,0,c_white,1);
-
 if image_index == 2 {
-
     draw_sprite_ext(sprMetalCreatorVoice,0,x+12,y-16,1,1,0,c_white,messageVisibility);
-
 }
 </string>
           </argument>

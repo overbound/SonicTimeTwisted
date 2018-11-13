@@ -166,19 +166,14 @@ draw=false;
 var fx = x+floor(view_xview[view_current]*relative_x)+absolute_x;
 // get draw coordinateslute_x;
 var fy = y+floor(view_yview[view_current]*relative_y)+absolute_y;
-
 draw_sprite_ext(sprEarth,0,fx,fy,1,1,0,c_white,1);
-
 draw_set_blend_mode(bm_add);
 draw_sprite_ext(sprHalo,0,fx,fy+4,1,1,0,c_white,1);
 draw_set_blend_mode(bm_normal);
-
 // Draw Galanik Shadow
 if draw {
-
     draw_sprite_ext(sprGalanikShadow,0,view_xview[view_current]+xoffset,view_yview[view_current]+yoffset,1,1,0,c_white,0.85);
     xoffset -= 2;
-
     if xoffset &lt; -view_wport[view_current] {
     
         xoffset = view_wport[view_current];
@@ -186,7 +181,6 @@ if draw {
         draw=false;
     
     }
-
 }
 </string>
           </argument>

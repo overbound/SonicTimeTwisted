@@ -42,14 +42,12 @@
             <string>///setup turning collision variable
 player_id = noone;
 active = false;
-
 reaction_script = player_reaction_path_split_stall;
 path[0] = noone;
 path[1] = noone;
 path[2] = noone;
 path[3] = noone;
 path[4] = noone;
-
 path_force = 8;
 path_finish = 0;
 path_absolute = true;
@@ -78,7 +76,6 @@ path_absolute = true;
             <string>/// Handle state
 if not active
 {
-
     player_id = 0;
        
 }
@@ -90,9 +87,7 @@ else
     {
         
         if path_index&gt;-1 exit;
-
     // set path based on input
-
 if input_check_pressed(cLEFT) 
         {   
             path_start(other.path[0], other.path_force, other.path_finish, other.path_absolute);
@@ -120,14 +115,12 @@ if input_check_pressed(cLEFT)
         animation_new = "spin";
         timeline_speed = 1;
         image_angle = 0;
-
         // states and flags
         state = player_state_path;
         rolling_jump = false;
     }
         
         }
-
     }
 </string>
           </argument>

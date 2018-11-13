@@ -65,9 +65,7 @@ vspeed =-2;
           <argument>
             <kind>1</kind>
             <string>if parentId.bbox_top &gt; y {
-
     instance_destroy();
-
 }
 </string>
           </argument>

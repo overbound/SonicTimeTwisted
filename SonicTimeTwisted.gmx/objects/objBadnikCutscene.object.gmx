@@ -52,7 +52,6 @@ scale=1
           <argument>
             <kind>1</kind>
             <string>if sprite_index==sprCutExplosion {
-
     image_xscale+=.025;
     image_yscale+=.025;
     
@@ -65,10 +64,8 @@ scale=1
     }
     
 } else {
-
     y = ystart+cos(offset)*multiplier;
     offset += 0.25;
-
 }
 </string>
           </argument>
@@ -94,7 +91,6 @@ scale=1
             <kind>1</kind>
             <string>if sprite_index == sprCutExplosion
 exit;
-
 if image_xscale == .5 {
     sprite_index=sprCutExplosion;
     image_xscale = .125;
@@ -129,7 +125,6 @@ if image_xscale == .5 {
             <kind>1</kind>
             <string>if sprite_index == sprCutExplosion
 exit;
-
 if image_xscale == .25  &amp;&amp; abs(y-other.y) &lt; 15 {
     sprite_index=sprCutExplosion;
     image_xscale = .125;
@@ -164,7 +159,6 @@ if image_xscale == .25  &amp;&amp; abs(y-other.y) &lt; 15 {
             <kind>1</kind>
             <string>if sprite_index == sprCutExplosion
 exit;
-
 if image_xscale == 1 {
     x+=62;
     y+=45;

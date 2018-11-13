@@ -1,5 +1,4 @@
 //player_reaction_break_glass(local_id)
-
 if argument0.image_index == 0 {
     with argument0 {  
             audio_play_sound(sndBreakGlass,1,0);

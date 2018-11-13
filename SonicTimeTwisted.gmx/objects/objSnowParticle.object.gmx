@@ -26,7 +26,6 @@
           <argument>
             <kind>1</kind>
             <string>/// Lifetime and default values
-
 lifetime = 240
 original_lifetime = 240
 image_index = irandom(3) - 1
@@ -57,16 +56,12 @@ remove=2
           <argument>
             <kind>1</kind>
             <string>/// Reposition based on speed, reduce lifetime, and destroy if necessary
-
 lifetime -= 1
 x += xspeed
 y += yspeed
-
 yspeed += 0.1
-
 image_angle += 0.5
 image_alpha = lifetime / original_lifetime
-
 if (lifetime == 0)
 {
   instance_destroy()

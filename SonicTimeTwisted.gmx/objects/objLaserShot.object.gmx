@@ -44,7 +44,6 @@ alarm[0]=120;
 alarm[1]=60;
 laser_height=108;
 gun_id=0;
-
 </string>
           </argument>
         </arguments>
@@ -115,7 +114,6 @@ audio_play_sound(sndLaserShot,4,0);
           <argument>
             <kind>1</kind>
             <string>switch state {
-
     case 0: // null
         
         visible = false;

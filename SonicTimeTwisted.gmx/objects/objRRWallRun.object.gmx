@@ -41,13 +41,11 @@
             <kind>1</kind>
             <string>/// Initialize
 reaction_script = player_reaction_rr_wall_run;
-
 width = 160;//180
 height = 360;
 minimum_speed = 5;
 cycles = 2.25;
 cycle_height = height / cycles;
-
 player_id[0] = noone;
 player_id[1] = noone;
 position[0] = 0;
@@ -79,7 +77,6 @@ for (var n = 0; n &lt; 2; ++n) {
     if (player_id[n] != noone) {
         with (player_id[n]) {
             var horizontal_sign = input_axis_x();
-
             if (horizontal_sign == 0) {
                 xspeed -= min(abs(xspeed), ground_friction) * sign(xspeed);
             }
@@ -96,14 +93,10 @@ for (var n = 0; n &lt; 2; ++n) {
             }
             
             other.position[n] = clamp(other.position[n] + (xspeed / 2), 0, other.height - (offset_y + 1));
-
             var w = (other.width - (offset_x * 2)) * 0.5;
-
             var r = ((other.position[n] / other.cycle_height) * 360);
-
             x = other.bbox_left + dsin(r) * w;
             y = other.bbox_bottom - (offset_y + 1) - other.position[n];
-
             if (other.position[n] == other.height - (offset_y + 1)) {
                 player_is_running();
                 other.player_id[n] = noone;

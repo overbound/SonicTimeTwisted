@@ -1,9 +1,7 @@
 /// player_reaction_AA1Start(local_id)
-
 // ignore if we skipped the cutscene already
 if objProgram.spawn_tag!=0 return false;
 x=192;
-
 if landed {
     // animate
     image_angle = 0;
@@ -17,7 +15,6 @@ if landed {
     // start timer
     objLevel.timer_enabled = true;
     objLevel.started = false;
-
     with objHud visible=1;
     
     // setup titlecard

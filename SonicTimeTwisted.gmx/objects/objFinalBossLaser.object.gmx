@@ -41,32 +41,25 @@
             <kind>1</kind>
             <string>x2=x;
 y2=y;
-
 xOffset1Left=-3;
 xOffset1Right=3;
 xOffset2Left=-3;
 xOffset2Right=3;
-
 yOffset1Left=-3;
 yOffset1Right=3;
 yOffset2Left=-3;
 yOffset2Right=3;
-
 xOffset2LeftMax=0;
 xOffset2RightMax=0;
-
 yoffset =10;
 platformId=noone;
 createFlame=true;
 laser=0;
-
 xOriginOffset=0;
 yOriginOffset=10;
 state =0;
-
 remove=0;
 dir = 180;
-
 if instance_exists(objLevel.player[0]) {
     dir = point_direction(x,y,objLevel.player[0].x,objLevel.player[0].y);
     
@@ -75,10 +68,8 @@ if instance_exists(objLevel.player[0]) {
         dir = 180;
     }
 }
-
 xspeed = dcos(dir)*4;
 yspeed = -dsin(dir)*4;
-
 </string>
           </argument>
         </arguments>
@@ -102,9 +93,7 @@ yspeed = -dsin(dir)*4;
           <argument>
             <kind>1</kind>
             <string>with objFinalBoss {
-
     state =5;
-
 }
 </string>
           </argument>
@@ -129,11 +118,8 @@ yspeed = -dsin(dir)*4;
           <argument>
             <kind>1</kind>
             <string>/// State
-
 switch state {
-
 case 0: // Start Firing
-
     if instance_exists(objFinalBossFace) {
         x=objFinalBossFace.x+xOriginOffset;
         y=objFinalBossFace.y+yOriginOffset;
@@ -148,9 +134,7 @@ case 0: // Start Firing
        yspeed = -dsin(dir)*3;
        
     }
-
 break;
-
 case 1: // End Firing
     with objFinalBoss eyeTell = false;
     x+=xspeed;

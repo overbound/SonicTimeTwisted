@@ -61,7 +61,6 @@ case 0:
         state = 1;
         audio_play_sound(sndGalanikLaugh,1,false);
     }
-
 break;
 case 1:
      //introFade -=.05;
@@ -69,9 +68,7 @@ case 1:
         state = 2;
      }
 break;
-
 }
-
 if flash flash = false; else flash = true;
 </string>
           </argument>
@@ -102,7 +99,6 @@ if flash flash = false; else flash = true;
     draw_sprite_ext(sprite_index,0,x,y,image_xscale,image_yscale,0,c_white,introFade);
     draw_sprite_ext(sprGalanikHandsBadEnding,0,x,y,image_xscale,image_yscale,0,c_white,introFade);
 //}
-
 </string>
           </argument>
         </arguments>

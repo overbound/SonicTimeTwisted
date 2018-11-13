@@ -32,7 +32,6 @@ press_y = 0;
 hold_pressed = false;
 hold_threshold = 30;
 hold_counter = 0;
-
 // direction where the cursor should move, 0 - left, 1 - right
 dir_snap = 0;
 snap_timer = 0;
@@ -110,17 +109,14 @@ if(device_mouse_check_button_pressed(0, mb_left))
     press_x = device_mouse_x_to_gui(0);
     press_y = device_mouse_y_to_gui(0);
 }
-
 // if a key is pressed: switch to using them instead
 if input_check_pressed(cLEFT) {
     target = min (8, max(0, target - 1));
     
 }
-
 if input_check_pressed(cRIGHT) {
     target = min (8, max(0, target + 1));
 }
-
 if(objSaveControl.selectState == 0)
 {
     // in this state, all movements are used to select a save slot
@@ -264,7 +260,6 @@ if(objSaveControl.selectState == 1)
     // sliding horizontally or clicking on the icon allows to select a time period
     // cliking a second time on the selected time period or elsewhere on the save slot starts the game
     // clicking outside of the save slot cancels the selection
-
     // allow dragging to select levels
     if(hold_pressed)
     {
@@ -489,7 +484,6 @@ if(objSaveControl.selectState == 2)
     // in this state, sliding vertically allows to select a character
     // clicking outside of the save slot cancels the selection
 
-
     // allow dragging to select characters
     if(hold_pressed)
     {
@@ -616,7 +610,6 @@ if(objSaveControl.selectState == 3)
 {
     // in this state, clicking on a save slot deletes it
     // clicking outside of the save slot cancels the selection
-
     if(device_mouse_check_button_released(0, mb_left))
     {
         // if the button is released before the drag threshold has passed - act as a click

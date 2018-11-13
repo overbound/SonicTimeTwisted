@@ -1,7 +1,5 @@
 // player_reaction_DD_breakable_rock(local_id)
-
 if spinning || character_id == 3 {
-
     // bounce if top collision
     if not landed and (argument1==2)
     {
@@ -23,9 +21,9 @@ if spinning || character_id == 3 {
             rock3.direction = 60;
             
             audio_play_sound(sndRockSmash,1,0);
+            rumble(RUMBLE_EVENT_BREAK_BLOCK);
             instance_destroy();
         }   
-
     
     
 return true;

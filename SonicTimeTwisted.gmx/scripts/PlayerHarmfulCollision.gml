@@ -1,10 +1,7 @@
 /*
-
 void PlayerHarmfulCollision()
-
 */
 if (!onGround) || invincible > 0 || started == false || z < zground return false;
-
 var a;
   
   a = point_direction(argument0.x, argument0.y, x, y);

@@ -27,7 +27,6 @@
             <kind>1</kind>
             <string>/// Initialize input device
 image_speed = 0;
-
 // input state
 state = 0;
 state_press = 0;
@@ -56,21 +55,17 @@ state_release = 0;
             <kind>1</kind>
             <string>/// Get device state
 var buffer, i;
-
 // clear states
 buffer = state;
 state = 0;
 state_press = 0;
 state_release = 0;
-
 // get input
 i = instance_find(objInput, 0);
 state = ds_list_find_value(i.stream, ds_list_size(i.stream)-40);
-
 // negate opposite inputs
 if state&amp;cUP and state&amp;cDOWN state ^= (cUP|cDOWN);
 if state&amp;cLEFT and state&amp;cRIGHT state ^= (cLEFT|cRIGHT);
-
 // pressing and releasing
 state_press = (state&amp;buffer)^state;
 state_release = (state&amp;buffer)^buffer;

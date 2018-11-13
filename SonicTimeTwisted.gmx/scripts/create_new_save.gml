@@ -1,5 +1,4 @@
 //create_new_save(character, saveslot)
-
 // normally, save_data_write would have been used en masse, but for peformance's sake, we don't do it in case of a saved slot
 var character = argument0;
 var saveSlot = argument1;

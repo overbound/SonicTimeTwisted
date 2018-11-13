@@ -154,7 +154,6 @@ if frozen == false {
             <kind>1</kind>
             <string>if speed !=  0 exit;
 player =instance_nearest(x,y,objPlayer);
-
 with player {
     if other.x &gt; x  other.image_xscale = -1;
         else other.image_xscale = 1;
@@ -191,7 +190,6 @@ with player {
             <string>/// Freeze enemy
 alarm[2] = 180;
 frozen = true;
-
 // destroy icicle
 with other instance_destroy();
 </string>
@@ -259,10 +257,8 @@ with other instance_destroy();
           <argument>
             <kind>1</kind>
             <string>/// Render ice block
-
 // get offset from time
 var offset = (-1+(((90-alarm[2]) div 4) mod 2)*2)*(alarm[2]&lt;45);
-
 // draw ice block
 draw_sprite(sprShieldIceBlock, 0, x+offset, y);
 </string>

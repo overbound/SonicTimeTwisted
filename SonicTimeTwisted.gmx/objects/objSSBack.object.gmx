@@ -42,17 +42,13 @@
             <string>// Initialize background
 image_speed = 0;
 var relative_y;
-
 // defaults
 surface = -1;
 relative_y = 1;
 skyBlue= make_colour_rgb(24, 138, 255);
 darkBlue= make_colour_rgb(7,11,32);
-
 shake = false;
-
 with objParallax {depth =999;}
-
 top[0] = instance_create(0,0,objSSZBGParallax);
 with top[0] {
     absolute_y=1;
@@ -74,7 +70,6 @@ with top[2] {
     tiled=1;
     relative_x =0.9;
     }
-
 top[3] = instance_create(0,0,objSSZBGParallax4);
 with top[3] { 
     absolute_y=85;
@@ -98,7 +93,6 @@ with bottom[1] {
     tiled=1;
     relative_x =0.9;
     }
-
 bottom[2] = instance_create(0,0,objSSZBGParallax3);
 with bottom[2] { 
     absolute_y=168;
@@ -123,17 +117,14 @@ with backWall {
     sprite_index=sprSSZBGWindow;
     image_speed = 0;
 }
-
 cloud[0]=parallax_create_sprite(1, sprSSZCloud, 0,0, 1,0.92,relative_y,200,60,300,160);
 with cloud[0] { image_index=1; visible = false; }
 cloud[1]=parallax_create_sprite(1, sprSSZCloud, 0, 0, 3,0.90,relative_y,0,408,90,150);
 with cloud[1] { image_index=1; visible = false; }
-
 cloud[2]=parallax_create_sprite(1, sprSSZCloud, 0, 0, 3,0.85,relative_y,0,20,200,180);
 with cloud[2] { image_index=1; visible = false; }
 cloud[3]=parallax_create_sprite(1, sprSSZCloud, 0, 0,2,0.90,relative_y,0,30,180,220);
 with cloud[3] { image_index=1; visible = false; }
-
 littlePlanet=parallax_create_sprite(1, sprSSZLittlePlanet, 0, 0, 0, 1,0.98,290,274,512,60);
 </string>
           </argument>
@@ -189,7 +180,6 @@ if surface_exists(surface) surface_free(surface);
             alarm[0]=90;
     }
     
-
 </string>
           </argument>
         </arguments>
@@ -213,11 +203,9 @@ if surface_exists(surface) surface_free(surface);
           <argument>
             <kind>1</kind>
             <string>if shake == true {
-
     screen_shake();
     
     if !audio_is_playing(sndScreenShake) { audio_play_sound(sndScreenShake, 0,0); }
-
 }
 </string>
           </argument>
@@ -242,32 +230,24 @@ if surface_exists(surface) surface_free(surface);
           <argument>
             <kind>1</kind>
             <string>/// Render background to surface
-
 draw_set_color(skyBlue);
 //draw_rectangle(view_xview,view_yview+80,view_xview+view_wport,view_yview+view_hport-80,false);
 draw_set_color(c_white);
-
 // refresh surface
 if not surface_exists(surface) surface = surface_create(512,256);
 surface_set_target(surface);
-
 // draw background
 draw_clear_alpha(background_color, 0);
-
 with objParallax event_perform(ev_draw, 0);
 //with objSSZBGParallax event_perform(ev_draw, 0);
 
-
-
 surface_reset_target()
-
 shader_set(DeflateShader);
 texture_set_interpolation(true);
 // draw complete surface
 draw_surface_ext(surface, view_xview[view_current]-43, view_yview[view_current], 1, 1, 0, c_white, 1);
 texture_set_interpolation(false);
 shader_reset();
-
 
 // covers for bottom and top of surface
 draw_sprite(sprSSZBGCover,0,view_xview,view_yview);

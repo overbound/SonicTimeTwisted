@@ -67,15 +67,12 @@ shot=0;
           <argument>
             <kind>1</kind>
             <string>with instance_create(x,y,objSSMoleMissile) {
-
     direction=other.direction;
-
 }
 if shot &lt; 2 {
     shot+=1;
     alarm[0]=30;
 } else {
-
     shot = 0;
     alarm[0]=300;
 }
@@ -105,7 +102,6 @@ audio_play_sound(sndBombLaunch,1,false);
             <string>spr_direction = -direction;
 change_sprite_direction_int_frames(8);
 
-
 </string>
           </argument>
         </arguments>
@@ -128,7 +124,6 @@ change_sprite_direction_int_frames(8);
             <kind>1</kind>
             <string>/// set depth
 depth = min(2000,distance_to_object(objSSCamera)/20);
-
 
 </string>
           </argument>
@@ -154,7 +149,6 @@ depth = min(2000,distance_to_object(objSSCamera)/20);
             <kind>1</kind>
             <string>draw_shadow(16);
 draw_billboard(sprite_width*.5, sprite_height*.5);
-
 </string>
           </argument>
         </arguments>

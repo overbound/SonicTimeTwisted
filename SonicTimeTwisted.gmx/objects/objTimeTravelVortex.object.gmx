@@ -26,11 +26,9 @@
           <argument>
             <kind>1</kind>
             <string>/// Setup Shader
-
 // this object will itself act as both a shader-enabled version and a no-shader version
 // making two separate objects was too difficult without breaking the cutscene
 shader_enabled = is_tt_shader_supported();
-
 // the amount to shift the gradient to cycle the colours; starts at 0
 // it's also used to slide the texture horizontally to give it some motion, but you could use a 2nd value
 // if the speeds need to be tweaked
@@ -57,7 +55,6 @@ if(shader_enabled)
     
     // create a surface the size of the screen to draw the effect on
     tt_surface = surface_create(426, 240);
-
     // the parameter handle to be used to send the shift amount to the shader later in the draw event
     param_shift = shader_get_uniform(TimeTravelShader, "shift");
 }
@@ -71,16 +68,13 @@ type = false;
 // the image index of the animated sprite that will be drawn to the texture
 image_index = 0;
 image_speed = 0;
-
 image_xscale=0;
 image_yscale=0;
 spr=sprite_index;
 xoffset=0;
 truex=x;
 truey=y;
-
 audio_play_sound(sndMetalAttack,10,false);
-
 
 </string>
           </argument>
@@ -105,7 +99,6 @@ audio_play_sound(sndMetalAttack,10,false);
           <argument>
             <kind>1</kind>
             <string>/// Render Background Elements
-
 draw_sprite(sprTitleFog,0,304,1960);
 </string>
           </argument>
@@ -165,17 +158,14 @@ else
 }
 // increase the shift amount; this will cycle the colours
 shift += 0.01;
-
 if image_xscale &lt; 1 {
     image_xscale+=0.0208;
     image_yscale+=0.0208;
    truex-=2.5;
    // truey-=5;
 }
-
 y=truey;
 x=truex;
-
 
 </string>
           </argument>

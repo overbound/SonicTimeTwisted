@@ -42,11 +42,9 @@
             <string>/// Initialize
 reaction_script = player_reaction_AA_target;
 remove = 0;
-
 // swing values
 angle = 0;
 turn_direction = 0;
-
 // swing platform
 target_id = instance_create(x, y, objSolid);
 target_id.sprite_index = sprAASwing;
@@ -133,16 +131,13 @@ case 1: // right
     if angle&lt;180 angle += 2; else
     if not alarm[0] alarm[0] = 120;
     break;
-
 case -1: // left
     angle = angle_wrap(angle-2);
     if (angle&lt;345) turn_direction = 0;
     break;
-
 default: // reset
     if (angle!=0) angle = angle_wrap(angle+2*sign(angle_distance(angle, 0)));
 }
-
 // apply angle
 x = xstart+floor(sine[angle]*72);
 y = ystart+floor(cosine[angle]*72);

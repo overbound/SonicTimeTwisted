@@ -32,14 +32,11 @@ y_in_grid = -1;
 view_id = 0;
 x_in_grid_max = ceil(room_width/grid_width);
 y_in_grid_max = ceil(room_height/grid_height);
-
 // list of renderers
 tile_grid_renderers = ds_map_create();
-
 // could have managed this as a 3D array of sorts... at this point, using a map with strings containing the three indexes as strings is easier
 // all tiles will be grouped by: X of the grid cell x Y of the grid cell x depth
 tiles = ds_map_create();
-
 // Divide all tiles into groups and fit them into the grid, then hide them from view
 var tiles_count = tile_get_count();
 for(var i = 0; i &lt; tiles_count; i++)
@@ -92,7 +89,6 @@ for(var i = 0; i &lt; tiles_count; i++)
     }
     tile_set_visible(tile_id, false);
 }
-
 </string>
           </argument>
         </arguments>

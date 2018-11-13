@@ -7,7 +7,6 @@ if(argument_count >= 1)
         dontRelease = true;
     }
 }
-
 if(objProgram.os == os_android)
 {
     if(ANDROID_CONSOLE == 0)

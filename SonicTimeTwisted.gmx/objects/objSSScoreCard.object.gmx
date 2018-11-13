@@ -63,16 +63,12 @@ if objProgram.in_past {
         line2 = "CHAOS EMERALD";
     }
 }
-
 title_ox1 = (objScreen.width * 0.5) - (string_width(line1) * 0.5);
 title_ox2 = (objScreen.width * 0.5) - (string_width(line2) * 0.5);
-
 perfect_bonus = objProgram.ss_perfect_bonus;
 rings_bonus = objProgram.ss_rings_bonus;
 time_bonus = objProgram.ss_time_bonus;
-
 is_act_scorecard = false;
-
 /* the speed of the countdown depends on the score tally mode
 if the score tally mode is "random digits" or "variable speed",
 which are basically the same outside of what's displayed,
@@ -106,7 +102,6 @@ else
     digits_perfect_bonus = 0;
 }
 digits_total_bonus = string_length(string(expected_total_bonus));
-
 // save initial offsets
 default_title_offset1 = title_offset1;
 default_title_offset2 = title_offset2;
@@ -115,7 +110,6 @@ default_score_offset2 = score_offset2;
 default_score_offset3 = score_offset3;
 default_score_offset4 = score_offset4;
 
-
 // lowercase name tag
 switch objGameData.character_id[0]
 {
@@ -123,7 +117,6 @@ case 2: name_tag_lc = "Tails"; break;
 case 3: name_tag_lc = "Knuckles"; break;
 default: name_tag_lc = "Sonic";
 }
-
 super_title_line1 = string_replace("%c CAN NOW BECOME", "%c", name_tag);
 super_title_line2 = string_replace("SUPER %c", "%c", name_tag);
 super_title_line1_player_overlay = name_tag;
@@ -144,7 +137,6 @@ if(
 {
     next_message = true;
 }
-
 </string>
           </argument>
         </arguments>
@@ -198,7 +190,6 @@ score_offset1 = default_score_offset1;
 score_offset2 = default_score_offset2;
 score_offset3 = default_score_offset3;
 score_offset4 = default_score_offset4;
-
 // screen positions
 draw_set_font(objResources.fontTitleSmallest);
 title_ox1 = (objScreen.width * 0.5) - (string_width(super_title_line1) * 0.5);
@@ -208,7 +199,6 @@ score_ox1 = (objScreen.width * 0.5) - (string_width(ss_instructions1) * 0.5);
 score_ox2 = (objScreen.width * 0.5) - (string_width(ss_instructions2) * 0.5);
 score_offset1 = score_ox1 + objScreen.width;//(ceil((objScreen.width - score_ox1) * 0.0625) * 16) + 48;
 score_offset2 = score_ox2 + objScreen.width;//(ceil((objScreen.width - score_ox2) * 0.0625) * 16) + 48;
-
 alarm[6] = 300;
 state = 6;
 </string>

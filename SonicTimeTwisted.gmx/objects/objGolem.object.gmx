@@ -49,7 +49,6 @@
   speedZ = 0;
   
   _gravity = 0;
-
   frame = 0;
   rootY = posY;
   timer = 64;
@@ -89,7 +88,6 @@ else
   __SwingSpeed = 4;
   __RandomDirection = true;
 }
-
   if __RandomDirection
     spinDirection = choose(-1,1);
     else spinDirection = 1;
@@ -102,10 +100,8 @@ else
     {
       BossOrbNew(posX, 400, z, side);
     }
-
     hand[side] = BossHandNew(posX, 400, 0, side);
   }
-
   floor_level = 1478;
   AreaWidth = 640;
   AreaHeight = 320;
@@ -115,8 +111,6 @@ else
   
   xOffsetFoot=44;
   yOffsetFoot=80;
-
-
 
 </string>
           </argument>
@@ -409,7 +403,6 @@ objMusic.bossLoop = bgmBossLoop;
           <argument>
             <kind>1</kind>
             <string>jetImage+=1;
-
 if jetImage == 2
     jetImage =0;
     
@@ -437,7 +430,6 @@ alarm[0]=2;
           <argument>
             <kind>1</kind>
             <string>///check if inview set remove to 0
-
 if in_view(view_current,0) {
     
     remove = 0;
@@ -483,7 +475,6 @@ if (timer) {
                 posZ = -view_wview + 3;
                 break;
             }
-
             if (causeQuake and rootY &lt; floor_level) {
                 causeQuake = false;
                 screen_shake();
@@ -501,7 +492,6 @@ if (timer) {
             break;
         case "spin":
             with(objGolemHand) {
-
                     if (other.sideDown == -1 &amp;&amp; instance_exists(objLevel.player[0])) {
                         if (objLevel.player[0].terrain_id == id) {
                             other.sideDown = sideOn;
@@ -509,7 +499,6 @@ if (timer) {
                             causeQuake = true;
                         }
                     }
-
                     if image_xscale &lt; .84 {
                         layer = 4;
                         reaction_script2 = noone;
@@ -519,14 +508,11 @@ if (timer) {
                         reaction_script2 = player_reaction_golem_hand;
                     }
 
-
                     if (other.sideDown == sideOn) {
-
                         _speed = toward(_speed, 0, other.spinSpeed / 2);
                         targetX = other.posX + offsetX;
                         targetY = other.floor_level - 16;
                         targetZ = 0;
-
                         factor = toward(factor, 1, 0.1);
                         if (factor == 1) {
                             if (causeQuake) {
@@ -535,7 +521,6 @@ if (timer) {
                                 audio_play_sound(sndGolumnLand, 4,0);
                                 
                             }
-
                             if (plat_speed != 0)
                                 if ((other.frame &amp; 3) == 0) {
                                     var sgn;
@@ -546,16 +531,13 @@ if (timer) {
                     } else {
                         _speed = toward(_speed, other.spinDirection * other.spinSpeed, other.spinSpeed / 5);
                     }
-
                     angle = wrap(angle + _speed, 360);
-
                     //BossHandUpdate();
                 }
                 // one hand hits other
             if abs(hand[0].angle - hand[1].angle) &lt; 15 &amp;&amp; abs(hand[0].y - hand[1].y) &lt; 44 {
                 state = "hit";
                 BossBreakArm(sideDown, -spinDirection);
-
                 with objGolemHand {
                     reaction_script = noone;
                     layer = 4;
@@ -563,13 +545,11 @@ if (timer) {
                     alarm[0] = -1;
                     reaction_script2 = noone;
                 }
-
                 with objLevel.player[0] {
                     if landed &amp;&amp; (terrain_id == other.hand[0] || terrain_id == other.hand[1]) {
                         player_is_falling();
                     }
                 }
-
             }
             break;
         case "hit":
@@ -579,14 +559,11 @@ if (timer) {
                 angle = wrap(angle + _speed, 360);
                 span = toward(span, 0, other.__SwingSpeed);
                 offsetY = toward(offsetY, -260, other.__SwingSpeed);
-
                 image_angle = lerp_wrap(image_angle, 0, 0.1, 1, 360);
-
                 if (span &lt; 100)
                     if (instance_number(objGolemTarget) == 0) {
                         TargetNew(other.__TargetTime);
                     }
-
                 if (span == 0)
                     if (offsetY == -260) {
                         targetX = other.posX + offsetX;
@@ -600,12 +577,10 @@ if (timer) {
                         other.state = "target";
                         reaction_script2 = player_reaction_golem_hand_target;
                     }
-
                 //BossHandUpdate();
             }
             break;
         case "target":
-
             with(hand[!sideDown]) {
                 image_angle = toward_wrap(image_angle, 90 * other.spinDirection, 9, 360);
                 image_index=2;
@@ -625,7 +600,6 @@ if (timer) {
                             screen_shake();
                         }
                 }
-
                 //BossHandUpdate();
             }
             break;
@@ -633,7 +607,6 @@ if (timer) {
             if (hand[!sideDown].hit != 0) {
                 BossBreakArm(!sideDown, hand[!sideDown].hit);
                 hand[!sideDown].hit = 0;
-
                 state = "recover";
                 wait = __RecoverTime;
                 
@@ -646,29 +619,23 @@ if (timer) {
                     alarm[5] = 130;
                     alarm[6] = 160;
                 }
-
                 if __RandomDirection
                 spinDirection = choose(-1, 1);
                 else spinDirection = -spinDirection;
-
                 if (spinSpeed &lt; __MaxSpinSpeed) spinSpeed += __SpinSpeedInc;
-
                 with(objGolemHand) {
                     if sideOn == 0
                     angle = 180;
                     else angle = 0;
-
                     _speed = 0;
                     span = 428;
                     factor = 0;
                     //BossHandUpdate();
                 }
-
                 sideDown = -1;
                 timer = 120;
                 break;
             }
-
             if (wait) {
                 wait -= 1;
                 if (wait == __GroundedTime - 15) hand[!sideDown].dangerous = false;
@@ -695,7 +662,6 @@ if (timer) {
                 }
                 break;
             }
-
             with(objGolemHand) {
                 posX = Lerp(posX, other.posX + offsetX, 0.1, 1);
                 posY = Lerp(posY, other.posY + offsetY, 0.1, 1);
@@ -704,7 +670,6 @@ if (timer) {
                 image_angle = lerp_wrap(image_angle, 0, 0.1, 1, 360);
                 //BossHandUpdate();
             }
-
             with(objGolemOrb) {
                 h = other.hand[sideOn]
                 posX = Lerp(posX, other.posX + h.offsetX * distance, 0.1, 1);
@@ -712,7 +677,6 @@ if (timer) {
                 posZ = Lerp(posZ, other.posZ, 0.1, 4);
                 image_angle = lerp_wrap(image_angle, 0, 0.1, 1, 360);
             }
-
             if (wait) {
                 if (wait == __RecoverTime) audio_play_sound(sndGolemRecover,4,0);
                 wait -= 1;
@@ -724,13 +688,10 @@ if (timer) {
                     reaction_script = player_reaction_golem_hand;
                     layer = 3;
                 }
-
                 state = "spin";
-
                 with(objGolemHand) {
                     broken = false;
                 }
-
                 with(objGolemOrb) broken = false;
             }
             break;
@@ -746,7 +707,6 @@ if (timer) {
             break;
     }
 }
-
 </string>
           </argument>
         </arguments>
@@ -771,23 +731,18 @@ if (timer) {
 if (float) {
     floatAngle += 2;
 }
-
 if (flash) {
     if (flash &amp; 4) image_blend = c_red;
     else image_blend = c_white;
     flash -= 1;
-
 }
-
 posY = floor(rootY + sin(degtorad(floatAngle)) * 8);
-
 with(objGolemHand) {
     if (!broken) {
         posX = Lerp(other.posX + offsetX, targetX, factor, 1);
         posY = Lerp(other.posY + offsetY, targetY, factor, 1);
         posZ = Lerp(other.posZ + offsetZ, targetZ, factor, 1);
     }
-
     if (other.showCollision) {
         if (dangerous) image_blend = c_red;
         else image_blend = c_white;
@@ -795,7 +750,6 @@ with(objGolemHand) {
         else image_alpha = 0.5;
     }
 }
-
 with(objGolemOrb) {
     if (!broken) {
         var h;
@@ -813,7 +767,6 @@ with(objGolemOrb) {
         }
     }
 }
-
 with(objGolemHand) {
     if (_gravity != 0) {
         image_angle += 16;
@@ -824,12 +777,10 @@ with(objGolemHand) {
         }
     }
 }
-
 updateGolemObjects(self);
 updateGolemObjects(objGolemHand);
 updateGolemObjects(objGolemArm);
 updateGolemObjects(objGolemOrb);
-
 frame += 1;
 </string>
           </argument>
@@ -852,7 +803,6 @@ frame += 1;
           <argument>
             <kind>1</kind>
             <string>/// smoke if exploded
-
 if life &lt;= 0 {
     if floor(objScreen.image_index) mod 8 == 0 {
         instance_create(x-16,y+16,objSmokePuff);
@@ -885,14 +835,11 @@ if life &lt;= 0 {
     xOffsetFoot=22;
     yOffsetFoot=40;
 }
-
 draw_sprite_ext(sprGolemJet,jetImage,x-28,y-20,image_xscale,image_yscale,0,c_white,1);
 draw_sprite_ext(sprGolemJet,jetImage,x+28,y-20,image_xscale,image_yscale,0,c_white,1);
 draw_self();
 draw_sprite_ext(sprGolemFoot,0,x-xOffsetFoot,y+yOffsetFoot,image_xscale,image_yscale,0,c_white,1);
 draw_sprite_ext(sprGolemFoot,0,x+xOffsetFoot,y+yOffsetFoot,-image_xscale,image_yscale,0,c_white,1);
-
-
 
 </string>
           </argument>

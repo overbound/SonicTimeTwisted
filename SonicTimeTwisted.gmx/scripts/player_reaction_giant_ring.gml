@@ -1,7 +1,5 @@
 // player_reaction_giant_ring(local_id)
-
 if objProgram.in_past {
-
     ds_list_add(objProgram.ring_past_list,argument0.tag)
     // do we have all the emeralds?
         if objProgram.special_past_current_level < 7
@@ -24,7 +22,6 @@ if objProgram.in_past {
         {
             player_get_rings(50);
         }
-
     } else {
     
         ds_list_add(objProgram.ring_future_list,argument0.tag)
@@ -55,7 +52,6 @@ if objProgram.in_past {
            
         }
     }
-
 // destroy ring
      with argument0 {
      
@@ -65,7 +61,6 @@ if objProgram.in_past {
         image_speed=1.5;
         
      }
-
  // audio
  audio_play_sound(sndEnterSpecialStage,1,false);
 // rumble

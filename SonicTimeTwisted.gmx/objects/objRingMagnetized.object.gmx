@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>1</depth>
   <persistent>0</persistent>
-  <parentName>objNonSolid</parentName>
+  <parentName>objNonSolidAlwaysActive</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -175,7 +175,6 @@ if instance_exists(parent_id) {
     
 image_index = objScreen.image_index/4;
 var sx, sy;
-
 // handle magnetic pull
 sx = sign(parent_id.x-x);
 sy = sign(parent_id.y-y);

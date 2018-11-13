@@ -68,7 +68,6 @@ audio_play_sound(sndGalacnikAttack,2,false);
           <argument>
             <kind>1</kind>
             <string>if fire {
-
     if instance_exists(platformId) {
         
         move_towards_point(platformId.x+platformId.sprite_width*0.5,platformId.y, 2);
@@ -145,7 +144,6 @@ audio_play_sound(sndGalacnikAttack,2,false);
         }
         
     }
-
 }
 </string>
           </argument>
@@ -168,7 +166,6 @@ audio_play_sound(sndGalacnikAttack,2,false);
           <argument>
             <kind>1</kind>
             <string>/// animation index
-
 if lightingIndex &gt; 3.9 {
     lightingIndex = 0;
 }
@@ -212,7 +209,6 @@ lightingIndex+=.25;
           <argument>
             <kind>1</kind>
             <string>/// Render Fireball
-
 draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,0,c_white,image_alpha);
 draw_set_blend_mode(bm_add);
 draw_sprite_ext(sprGalanikFireBallAdd,image_index,x,y,image_xscale*1.2,image_yscale*1.2,0,c_white,image_alpha*0.5);

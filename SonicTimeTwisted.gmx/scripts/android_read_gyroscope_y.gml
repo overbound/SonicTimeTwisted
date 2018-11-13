@@ -1,6 +1,5 @@
 // no mistake here :)
 var tilt_y = device_get_tilt_z() * -1;
-
 if(gyromode == 0)
 {
     // simple mode where tilting simply presses up and down

@@ -47,7 +47,6 @@ invulnerable=false;
 moleImageIndex=0;
 active=false;
 alarm[1] = 10;
-
 </string>
           </argument>
         </arguments>
@@ -160,7 +159,6 @@ audio_play_sound(sndFanSwitch,10,false);
             <string>invulnerable=false;
 visible = 1;
 
-
 </string>
           </argument>
         </arguments>
@@ -184,7 +182,6 @@ visible = 1;
           <argument>
             <kind>1</kind>
             <string>switch active {
-
     case true:
     
         image_speed=.5;
@@ -214,7 +211,6 @@ visible = 1;
         }
         
     break;
-
 }
 </string>
           </argument>
@@ -239,7 +235,6 @@ visible = 1;
           <argument>
             <kind>1</kind>
             <string>/// Draw Fan and MOle
-
 draw_set_color(c_white);
 draw_boss_hit_blend();
 draw_self();

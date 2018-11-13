@@ -55,7 +55,6 @@ timey=0.01525;
 distancey=112;
 index=0;
 
-
 harmSensor[0] = noone;
 harmSensor[1] = noone;
 </string>
@@ -131,40 +130,25 @@ harmSensor[1] = instance_create(x,y-harmfulOffset,objMetallixPlatformHarmful);
             <kind>1</kind>
             <string>///state
 switch state {
-
 case 1:
-
     x=floor(xstart+sin(objScreen.image_index*timex)*distancex);
-
 break;
-
 case 2:
-
     x=floor(xstart+cos(objScreen.image_index*timex)*distancex);
-
 break;
-
 case 3:
-
     x=floor(xstart-cos(objScreen.image_index*timex)*distancex);
     
 break;
-
 case 4:
-
     x=floor(xstart-sin(objScreen.image_index*timex)*distancex);
-
 break;
-
 case 5:
-
     x=floor(xstart+cos(yoffset*timex)*distancex);
     y=floor(objMetallixController.y+cos(yoffset*timey)*distancey);
     yoffset+=1;
-
 break;
 }
-
 index++
 </string>
           </argument>

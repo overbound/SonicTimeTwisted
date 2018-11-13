@@ -139,14 +139,11 @@
             <kind>1</kind>
             <string>/// Generate pieces
 var width, height, j, i;
-
 // sound
 audio_play_sound_at(sndCollapse, x+sprite_width*0.5, y+sprite_height*0.5, 0, 100, 300, 1, false, 0);
-
 // get bounds
 width = sprite_width div 16;
 height = sprite_height div 16;
-
 // go through rows
 for (j=0; j&lt;height; j+=1)
 {

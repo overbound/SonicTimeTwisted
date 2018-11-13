@@ -3,4 +3,3 @@ if(do_reactivate)
 {
     reactivate_level_objects_start();
 }
-

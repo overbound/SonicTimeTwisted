@@ -93,7 +93,6 @@ room_goto(next_room);
 switch mode
 {
 case 0:
-
 //wait
     
 break;
@@ -103,16 +102,13 @@ case 1:
     }
     image_alpha -= .0125;
     break;
-
 case 2:
-
     with objLevel { 
         started = true; 
         timer_enabled = true;
     }
     instance_destroy();
     break;
-
 }
 </string>
           </argument>

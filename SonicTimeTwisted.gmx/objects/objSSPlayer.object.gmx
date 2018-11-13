@@ -55,7 +55,6 @@ shadow=noone;
 //with shadow { parent = other; scale = .15;}
 invincible=0;
 
-
 </string>
           </argument>
         </arguments>
@@ -101,9 +100,7 @@ invincible=0;
           <argument>
             <kind>1</kind>
             <string>/// run character animations
-
 switch objGameData.character_id[0] {
-
     case 1:
         SonicSpecialAnimation();
     break;
@@ -115,11 +112,8 @@ switch objGameData.character_id[0] {
     case 3:
         KnucklesSpecialAnimation();
     break;
-
 }
-
 // invincible
-
 if invincible &gt; 0 {
 invincible -=1
 }
@@ -228,22 +222,15 @@ instance_activate_region(x-1408,y-1408,2816,2816,true);
           <argument>
             <kind>1</kind>
             <string>/// Controls
-
 if !hit {
-
 if input_check_pressed(cACTION) and onGround {
-
       jumping = true;
       zspeed = jump_force;
       onGround = false;
       audio_play_sound(sndJump,0,0);    
-
 }
-
 if jumping == true &amp;&amp; jump_release == false{
-
         jump_force +=.25;
-
     if input_check_released(cACTION) {
     
         jump_release = true;
@@ -256,18 +243,14 @@ if jumping == true &amp;&amp; jump_release == false{
     }
     
     zspeed = jump_force;
-
 }
-
 
 if (input_check(cLEFT)) xaxis = -1;
 else if (input_check(cRIGHT)) xaxis = 1;
 else xaxis = 0;
-
 if (input_check(cUP)) yaxis = -1;
 else if (input_check(cDOWN)) yaxis = 4;
 else yaxis = 0;
-
 }
 </string>
           </argument>
@@ -290,14 +273,11 @@ else yaxis = 0;
           <argument>
             <kind>1</kind>
             <string>///Movement
-
 var xmove, ymove, f;
-
 if (bump_radius &lt; max_radius)
 {
   bump_radius = bump_radius + (max_radius - bump_radius) * 0.25;
 }
-
 if (!instance_position(x, y, objTrack))
 {
   onGround = false;
@@ -307,9 +287,7 @@ else
 {
   noTrack = false;
 }
-
 move_direction += xaxis * -1.5;
-
 if (bounce_timer)
 {
   bounce_timer -= 1;
@@ -327,7 +305,6 @@ else
   xmove = cos(degtorad(move_direction)) * move_speed;
   ymove = -sin(degtorad(move_direction)) * move_speed;
 }
-
 if (bounce_timer)
 {
   f = 0.1;
@@ -346,28 +323,20 @@ else
 {
   f = 0;
 }
-
 if (move_speed &gt; f) move_speed -= f;
 else if (move_speed &lt; -f) move_speed += f;
 else move_speed = 0;
-
 x += xmove;
 y += ymove;
 
-
-
 var b;
-
 b = PlayerCollision();
-
 if (b)
 {
   move_speed *= 0.95;
 }
-
 view_xview = x - view_wview / 2;
 view_yview = y - view_hview / 2;
-
 image_angle = move_direction;
 view_angle = 90 - move_direction;
 </string>
@@ -392,7 +361,6 @@ view_angle = 90 - move_direction;
             <kind>1</kind>
             <string>/// set depth
 depth = min(2000,distance_to_object(objSSCamera)/20);
-
 depth1= depth;
 </string>
           </argument>
@@ -415,7 +383,6 @@ depth1= depth;
           <argument>
             <kind>1</kind>
             <string>///shadow
-
 with shadow { x = other.x; y = other.y; }
 </string>
           </argument>
@@ -478,7 +445,6 @@ if (!onGround)
 {
     zspeed-=gravity_force;
     z += zspeed
-
   if (z &lt;= radius)
   {
     if (z &gt;= 8 and !noTrack)
@@ -526,7 +492,6 @@ if (!onGround)
     }
     }
   }
-
   zspeed -= 0.2;
   zspeed = max(zspeed, -8);
 }
@@ -580,7 +545,6 @@ case 6:
 move_direction = 270;
 break;
 }
-
 move_speed=12;
     
     
@@ -933,14 +897,11 @@ with other instance_destroy();
           <argument>
             <kind>1</kind>
             <string>audio_play_sound(sndBombExplosion,1,false);
-
 with other {
     instance_create(x,y,obj3DExplosion);
     instance_destroy();
 }
  
-
-
 
 </string>
           </argument>
@@ -1047,9 +1008,7 @@ with other {
           <argument>
             <kind>1</kind>
             <string>if (onGround) {
-
     with other instance_destroy();
-
 }
 </string>
           </argument>
@@ -1119,7 +1078,6 @@ if z &gt;= 24 {
         
     
     with other instance_destroy();
-
 }
 </string>
           </argument>
@@ -1144,11 +1102,9 @@ if z &gt;= 24 {
           <argument>
             <kind>1</kind>
             <string>if invincible &gt; 0 {
-
 if visible == 1 
     visible = false;
 else visible = 1;
-
 }
 else visible = true;
 </string>
@@ -1184,14 +1140,11 @@ d3d_draw_ellipsoid(
   z + radius,
   -1, 1, 1, 16
 );*/
-
 /*draw_set_alpha(1);*/
-
 //d3d_set_projection_ortho(0, 0, view_wport, view_hport, 0);
 //draw_sprite_ext(sprite_index,image_index,213,200,image_xscale,image_yscale,0,c_white,1);
 if (!noTrack) draw_shadow(16);
 draw_billboard(sprite_width*.45 , sprite_height*.45 );
-
 </string>
           </argument>
         </arguments>

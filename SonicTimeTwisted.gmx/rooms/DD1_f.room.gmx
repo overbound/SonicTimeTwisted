@@ -12,20 +12,16 @@
   <showcolour>-1</showcolour>
   <code>// initialize level settings
 objProgram.in_past = false;
-
 with objLevel {
-
     bg = instance_create(x,y,objDDFutureBack);
     act = 1;
     flower = sprFlowerDD;
-
     if objProgram.spawn_tag==0 {
         objProgram.cutscene = true;
         started=true;
     
     }
 }
-
 // setup titlecard
 with objTitlecard
 {
@@ -378,7 +374,7 @@ with objTitlecard
     <instance objName="objBlock" x="10464" y="680" name="inst_3757A2AB" locked="0" code="" scaleX="4" scaleY="4" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="3328" y="704" name="inst_0ABEF2DD" locked="0" code="climbable=1;&#xA;" scaleX="32" scaleY="16" colour="4294967295" rotation="0"/>
     <instance objName="objLampPost" x="5760" y="1744" name="inst_4D6B2A47" locked="0" code="tag=20;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objLayerSet" x="9424" y="700" name="inst_8C0B0EFA" locked="0" code="layer=1;&#xA;" scaleX="33.5" scaleY="0.670000016689301" colour="4294901760" rotation="0"/>
+    <instance objName="objLayerSet" x="9424" y="700" name="inst_8C0B0EFA" locked="0" code="layer=1;&#xA;" scaleX="33.5" scaleY="0.6700000166893" colour="4294901760" rotation="0"/>
     <instance objName="objLayerSet" x="9568" y="332" name="inst_7E162C54" locked="0" code="layer=2;&#xA;" scaleX="7.25" scaleY="2.41666674613953" colour="4278223103" rotation="0"/>
     <instance objName="objSlant" x="10432" y="936" name="inst_17FB68FB" locked="0" code="layer=2;&#xA;" scaleX="-1" scaleY="1" colour="4278223103" rotation="0"/>
     <instance objName="objSlant" x="10464" y="968" name="inst_DE5EB846" locked="0" code="layer=2;&#xA;" scaleX="-1" scaleY="1" colour="4278223103" rotation="0"/>
@@ -772,8 +768,8 @@ with objTitlecard
     <instance objName="objBlock" x="5344" y="1584" name="inst_4059EB67" locked="0" code="" scaleX="26" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="5312" y="1584" name="inst_03AA09EF" locked="0" code="" scaleX="4" scaleY="10" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="5472" y="1600" name="inst_7E11DEA9" locked="0" code="" scaleX="36" scaleY="8" colour="4294967295" rotation="0"/>
-    <instance objName="objCurveConcave" x="5408" y="1664" name="inst_6889F232" locked="0" code="" scaleX="-0.670000016689301" scaleY="-0.670000016689301" colour="4294967295" rotation="0"/>
-    <instance objName="objCurveConcave" x="5408" y="1664" name="inst_5C986421" locked="0" code="" scaleX="0.670000016689301" scaleY="-0.670000016689301" colour="4294967295" rotation="0"/>
+    <instance objName="objCurveConcave" x="5408" y="1664" name="inst_6889F232" locked="0" code="" scaleX="-0.6700000166893" scaleY="-0.6700000166893" colour="4294967295" rotation="0"/>
+    <instance objName="objCurveConcave" x="5408" y="1664" name="inst_5C986421" locked="0" code="" scaleX="0.6700000166893" scaleY="-0.6700000166893" colour="4294967295" rotation="0"/>
     <instance objName="objRing" x="4548" y="1708" name="inst_F468A41C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRing" x="4568" y="1708" name="inst_3887C5EA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRing" x="4528" y="1708" name="inst_C00487A7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -791,7 +787,7 @@ with objTitlecard
     <instance objName="objRing" x="5420" y="1608" name="inst_31D8C3EC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRing" x="5364" y="1620" name="inst_406F4259" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRing" x="5436" y="1620" name="inst_9AD1CD31" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objCurveConcave" x="5408" y="1664" name="inst_9BBA7727" locked="0" code="" scaleX="0.670000016689301" scaleY="-0.670000016689301" colour="4294967295" rotation="0"/>
+    <instance objName="objCurveConcave" x="5408" y="1664" name="inst_9BBA7727" locked="0" code="" scaleX="0.6700000166893" scaleY="-0.6700000166893" colour="4294967295" rotation="0"/>
     <instance objName="objExampleMovingPlatformVert" x="6272" y="1576" name="inst_4C7DF0BE" locked="0" code="depth=1;&#xA;mode=2;&#xA;sprite_index=sprDDFMovingPlatform;&#xA;image_index =0;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="6144" y="592" name="inst_28C94D18" locked="0" code="climbable=true;" scaleX="42" scaleY="14" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="5632" y="1104" name="inst_61C3F8DA" locked="0" code="climbable=true;&#xA;" scaleX="24" scaleY="6" colour="4294967295" rotation="0"/>

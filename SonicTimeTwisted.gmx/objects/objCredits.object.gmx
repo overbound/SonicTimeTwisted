@@ -110,38 +110,32 @@ draw_set_color(c_white);
 draw_set_valign(fa_top);
 draw_set_halign(fa_center);
 draw_set_font(objResources.fontHud);
-
 switch name {
 case 1:
     draw_text_color(view_xview+160,view_yview+6,'GAME BY',c_white,c_white,c_yellow,c_yellow,image_alpha);
     draw_text_color(view_xview+160,view_yview+28,'BRYCE STOCK "OVERBOUND"',c_white,c_white,c_yellow,c_yellow,image_alpha);
 break;
-
 case 2:
     draw_text_color(view_xview+160,view_yview+6,'PROGRAMMED BY',c_white,c_white,c_yellow,c_yellow,image_alpha);
     draw_text_color(view_xview+160,view_yview+28,'BRYCE STOCK "OVERBOUND"',c_white,c_white,c_yellow,c_yellow,image_alpha);
     draw_text_color(view_xview+160,view_yview+42,'DEVIN REEVES "MERCURY"',c_white,c_white,c_yellow,c_yellow,image_alpha);
     draw_text_color(view_xview+160,view_yview+56,'JOEVAN SALMON-JOHNSON "VECTORSATYR"',c_white,c_white,c_yellow,c_yellow,image_alpha);
 break;
-
 case 3:
     draw_text_color(view_xview+160,view_yview+6,'GAME ART BY',c_white,c_white,c_yellow,c_yellow,image_alpha);
     draw_text_color(view_xview+160,view_yview+28,'BRYCE STOCK "OVERBOUND"',c_white,c_white,c_yellow,c_yellow,image_alpha);
     draw_text_color(view_xview+160,view_yview+42,'MARC "DER ZOCKER"',c_white,c_white,c_yellow,c_yellow,image_alpha);
 break;
-
 case 4:
     draw_text_color(view_xview+160,view_yview+6,'MUSIC BY',c_white,c_white,c_yellow,c_yellow,image_alpha);
     draw_text_color(view_xview+160, view_yview+28, 'HINCHY',c_white,c_white,c_yellow,c_yellow,image_alpha);
 break;
-
 case 5:
     draw_text_color(view_xview+160,view_yview+6,'LEVEL DESIGN',c_white,c_white,c_yellow,c_yellow,image_alpha);
     draw_text_color(view_xview+160,view_yview+28,'BRYCE STOCK "OVERBOUND"',c_white,c_white,c_yellow,c_yellow,image_alpha);
     draw_text_color(view_xview+160,view_yview+42,'SHANE "SPARKS"',c_white,c_white,c_yellow,c_yellow,image_alpha);
     
 break;
-
 case 6:
     draw_text_color(view_xview+160,view_yview+6,'CONCEPTS FROM',c_white,c_white,c_yellow,c_yellow,image_alpha);
     draw_text_color(view_xview+160,view_yview+28,'BRYCE STOCK "OVERBOUND"',c_white,c_white,c_yellow,c_yellow,image_alpha);
@@ -150,14 +144,12 @@ case 6:
     draw_text_color(view_xview+160, view_yview+70, 'HINCHY',c_white,c_white,c_yellow,c_yellow,image_alpha);
     draw_text_color(view_xview+160,view_yview+84,'JOEVAN SALMON-JOHNSON "VECTORSATYR"',c_white,c_white,c_yellow,c_yellow,image_alpha);
 break;
-
 case 7:
     draw_text_color(view_xview+160,view_yview+6,'CONCEPTS FROM',c_white,c_white,c_yellow,c_yellow,image_alpha);
     draw_text_color(view_xview+160,view_yview+28,'JONATHAN ROSE "DIMENSION WARPED"',c_white,c_white,c_yellow,c_yellow,image_alpha);
     draw_text_color(view_xview+160,view_yview+42,'SHANE "SPARKS"',c_white,c_white,c_yellow,c_yellow,image_alpha);
     draw_text_color(view_xview+160, view_yview+56, '"TOMMY C"',c_white,c_white,c_yellow,c_yellow,image_alpha);
 break;
-
 case 8:
     draw_text_color(view_xview+160,view_yview+6,'ADDITIONAL PROGRAMMING',c_white,c_white,c_yellow,c_yellow,image_alpha);
     draw_text_color(view_xview+160,view_yview+28,'JONATHAN ROSE "DIMENSION WARPED"',c_white,c_white,c_yellow,c_yellow,image_alpha);
@@ -165,7 +157,6 @@ case 8:
     draw_text_color(view_xview+160,view_yview+56,'WILL "POLAR EXELION"',c_white,c_white,c_yellow,c_yellow,image_alpha);
     draw_text_color(view_xview+160,view_yview+70,'ALEX KHAYRULLIN',c_white,c_white,c_yellow,c_yellow,image_alpha);
 break;
-
 case 9:
     draw_text_color(view_xview+160,view_yview+6,'ADDITIONAL MUSIC BY',c_white,c_white,c_yellow,c_yellow,image_alpha);
     draw_text_color(view_xview+160, view_yview+28, 'ANDY TUNSTALL',c_white,c_white,c_yellow,c_yellow,image_alpha);
@@ -173,7 +164,6 @@ case 9:
     draw_text_color(view_xview+160, view_yview+56, 'JAMESON SUTTON',c_white,c_white,c_yellow,c_yellow,image_alpha);
     draw_text_color(view_xview+160, view_yview+70, 'JOSHUA KRUSZYNA "EXSHAD"',c_white,c_white,c_yellow,c_yellow,image_alpha);
 break;
-
 case 10:
     draw_text_color(view_xview+160,view_yview+6,'ADDITIONAL ART BY',c_white,c_white,c_yellow,c_yellow,image_alpha);
     draw_text_color(view_xview+160, view_yview+28, '"ANDREW75"',c_white,c_white,c_yellow,c_yellow,image_alpha);
@@ -182,7 +172,6 @@ case 10:
     draw_text_color(view_xview+160, view_yview+70, '"BLAZEFIRELP"',c_white,c_white,c_yellow,c_yellow,image_alpha);
     draw_text_color(view_xview+160, view_yview+84, 'DEVIN REEVES "MERCURY"',c_white,c_white,c_yellow,c_yellow,image_alpha);
 break;
-
 case 11:
     draw_text_color(view_xview+160,view_yview+6,'ADDITIONAL ART BY',c_white,c_white,c_yellow,c_yellow,image_alpha);
     draw_text_color(view_xview+160, view_yview+28, '"GAMENERD ADVANCE"',c_white,c_white,c_yellow,c_yellow,image_alpha);
@@ -191,7 +180,6 @@ case 11:
     draw_text_color(view_xview+160, view_yview+70, 'PEPIJN RYNGAERT "GARDOW"',c_white,c_white,c_yellow,c_yellow,image_alpha);
     draw_text_color(view_xview+160,view_yview+84,'SHANE "SPARKS"',c_white,c_white,c_yellow,c_yellow,image_alpha);
 break;
-
 case 12:
     draw_text_color(view_xview+160,view_yview+6,'ADDITIONAL ART BY',c_white,c_white,c_yellow,c_yellow,image_alpha);
     draw_text_color(view_xview+160, view_yview+28, '"SONICGENESIS89"',c_white,c_white,c_yellow,c_yellow,image_alpha);
@@ -200,7 +188,6 @@ case 12:
     draw_text_color(view_xview+160, view_yview+70, '"VEXER"',c_white,c_white,c_yellow,c_yellow,image_alpha);
     draw_text_color(view_xview+160,view_yview+84,'ALEX KHAYRULLIN',c_white,c_white,c_yellow,c_yellow,image_alpha);
 break;
-
 case 13:
     draw_text_color(view_xview+160,view_yview+6,'RESOURCES FROM',c_white,c_white,c_yellow,c_yellow,image_alpha);
     draw_text_color(view_xview+160, view_yview+28, 'SONIC FAN GAMES HQ',c_white,c_white,c_yellow,c_yellow,image_alpha);
@@ -209,7 +196,6 @@ case 13:
     draw_text_color(view_xview+160, view_yview+70, 'THE MYSTICAL FOREST ZONE',c_white,c_white,c_yellow,c_yellow,image_alpha);
     draw_text_color(view_xview+160, view_yview+84, 'TOEI ANIMATION',c_white,c_white,c_yellow,c_yellow,image_alpha);
 break;
-
 case 14:
     draw_text_color(view_xview+160,view_yview+6,'SPECIAL THANKS',c_white,c_white,c_yellow,c_yellow,image_alpha);
     draw_text_color(view_xview+160, view_yview+28, 'DAMIZEAN, RICARDO ELSO, RAEL',c_white,c_white,c_yellow,c_yellow,image_alpha);
@@ -219,7 +205,6 @@ case 14:
     draw_text_color(view_xview+160, view_yview+84, 'DEBRA ANN, JOE PIERCE, NOAH COPELAND',c_white,c_white,c_yellow,c_yellow,image_alpha); 
 break;
 }
-
 </string>
           </argument>
         </arguments>

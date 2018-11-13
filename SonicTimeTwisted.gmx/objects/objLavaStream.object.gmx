@@ -47,7 +47,6 @@ offset = 0;
 fall_speed = 4;
 length = 192;
 max_distance = 192;
-
 // animation
 image = 0;
 ends_image = 0;
@@ -124,14 +123,11 @@ ends_image = 0;
           <argument>
             <kind>1</kind>
             <string>/// Update position
-
 // fall
 offset += fall_speed;
-
 // drag tail to length
 if (offset&gt;length) y = ystart+(offset-length);
 if (y&gt;=ystart+max_distance) instance_destroy();
-
 // stretch to length
 image_yscale = ystart+min(offset, length)-y;
 </string>
@@ -157,26 +153,20 @@ image_yscale = ystart+min(offset, length)-y;
           <argument>
             <kind>1</kind>
             <string>/// Draw lava stream
-
 // adjust image
 var e = max(0, offset-length);
-
 // loop through pieces
 for (var i=ystart+offset; i&gt;ystart+e; i-=32)
 {
     // skip if too far down
     if (i&gt;=ystart+max_distance) continue;
-
     // stream foot
     if (i-36&lt;ystart+offset-length) draw_sprite_part(sprAALavaStreamFoot, ends_image+floor(image)*2, 0, 36-clamp(i-ystart, 0, 36), 64, clamp(i-ystart, 0, ystart+max_distance-i), x, max(i-32, ystart)); else
-
     // stream head
     if (i==ystart+offset) draw_sprite_part(sprAALavaStreamHead, ends_image+floor(image)*2, 0, 32-clamp(i-ystart, 0, 32), 64, clamp(i-ystart, 0, ystart+max_distance-i), x, max(i-32, ystart)); else
-
     // stream body
     draw_sprite_part(sprAALavaStream, image, 0, 32-clamp(i-ystart, 0, 32), 64, clamp(i-ystart, 0, ystart+max_distance-i), x, max(i-32, ystart));
 }
-
 // debugging
 if debug_mode draw_rectangle(x, y, x+sprite_width, y+image_yscale, false);
 </string>

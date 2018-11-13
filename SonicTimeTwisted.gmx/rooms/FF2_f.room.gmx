@@ -13,12 +13,9 @@
   <code>// initialize level settings
 objLevel.act = 2;
 objLevel.flower = sprFlowerFF;
-
 objLevel.musicIntro = bgmFFFutureLoop;
 objLevel.musicLoop = bgmFFFutureLoop;
-
 objProgram.in_past=false;
-
 // setup titlecard
 with objTitlecard
 {
@@ -1059,8 +1056,8 @@ with objTitlecard
     <instance objName="objBoard" x="5392" y="2720" name="inst_77E9EA3E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="3584" y="2768" name="inst_F0F877EF" locked="0" code="climbable=true;&#xA;" scaleX="16.125" scaleY="76.25" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="3196" y="2764" name="inst_CA2B1C7A" locked="0" code="climbable=true;&#xA;" scaleX="48.5" scaleY="60.5" colour="4294967295" rotation="0"/>
-    <instance objName="objCurveConcave" x="3280" y="3328" name="inst_D5A6EC58" locked="0" code="" scaleX="-0.829999983310699" scaleY="-0.829999983310699" colour="4294967295" rotation="0"/>
-    <instance objName="objCurveConcave" x="3504" y="3328" name="inst_97740C4A" locked="0" code="" scaleX="0.833333313465118" scaleY="-0.829999983310699" colour="4294967295" rotation="0"/>
+    <instance objName="objCurveConcave" x="3280" y="3328" name="inst_D5A6EC58" locked="0" code="" scaleX="-0.8299999833107" scaleY="-0.8299999833107" colour="4294967295" rotation="0"/>
+    <instance objName="objCurveConcave" x="3504" y="3328" name="inst_97740C4A" locked="0" code="" scaleX="0.833333313465118" scaleY="-0.8299999833107" colour="4294967295" rotation="0"/>
     <instance objName="objRing" x="3336" y="3252" name="inst_59A99643" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRing" x="3356" y="3252" name="inst_13FC6F63" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRing" x="3376" y="3252" name="inst_27F0D3AB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

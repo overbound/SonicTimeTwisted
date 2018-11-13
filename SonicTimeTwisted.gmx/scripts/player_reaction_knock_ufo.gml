@@ -1,6 +1,5 @@
 // player_reaction_knock_ufo(local_id)
 var bonus_score;
-
 if !(abs(xspeed)>=6 && character_id==3){
 // if not spinning or invincible
     if not (spinning or instashield or spindashing or invincibility or superform or state==player_state_glide)
@@ -15,14 +14,12 @@ if !(abs(xspeed)>=6 && character_id==3){
         return true;
     }
 }
-
 // rebound in air
 if not landed
 {
     jump_action = true;
     // if bottom collision or moving upward, weigh down velocity
     if collision_ray(offset_x, -offset_y, mask_rotation, argument0) or yspeed<0 yspeed -= sign(yspeed); else
-
     //  if top collision and moving downward, bounce
     if collision_ray(offset_x, offset_y, mask_rotation, argument0) and yspeed>0
     {
@@ -30,7 +27,6 @@ if not landed
         if input_check(cACTION) yspeed = -yspeed; else yspeed = max(-jump_release, -yspeed);
     }
 }
-
 // destroy enemy
 with argument0 {
     if other.y > y {
@@ -45,9 +41,7 @@ with argument0 {
     speed = 6;
     reaction_script = noone;
 }
-
 // sound
 audio_play_sound(sndUFOHit, 0, 0);
-
 // hard collision found
 return true;

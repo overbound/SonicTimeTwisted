@@ -1,6 +1,5 @@
 // Must be called from within an objInput.
 var rumble_data = script_execute(argument0);
-
 if(rumble_data[0, RUMBLE_FORCE_OVERRIDE])
 {
     while(!ds_queue_empty(rumble_queue))
@@ -8,7 +7,6 @@ if(rumble_data[0, RUMBLE_FORCE_OVERRIDE])
         ds_queue_dequeue(rumble_queue);
     }
 }
-
 var rumble_length = ds_queue_size(rumble_queue);
 // calculate target effect length
 var target_rumble_length = rumble_data[array_height_2d(rumble_data) - 1, RUMBLE_END_TIME];
@@ -38,4 +36,3 @@ if(target_rumble_length > rumble_length)
         }
     }
 }
-

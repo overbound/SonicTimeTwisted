@@ -1,8 +1,6 @@
 flash = 96;
 sideCurrent = argument0;
-
 //sound_play(BreakSound);
-
 with (objGolemOrb)
 {
   if (sideOn == argument0)
@@ -13,19 +11,15 @@ with (objGolemOrb)
     broken = true;
   }
 }
-
 if life <= 0 {
     if floor(objScreen.image_index) mod 4 == 0 {
         instance_create(x-16,y+16,objSmokePuff);
         instance_create(x+16,y-24,objSmokePuff);
     }
 }
-
 //TODO Need to find replacement for Side down so that we can figure out which side was the Target hand
-
 with (hand[argument0])
 {
-
   if (sideOn == argument0)
   {
     speedX = irandom(4) * argument1;
@@ -56,5 +50,4 @@ with (hand[argument0])
   //sideDown = -1;
   //with (Player) PlayerQuakeCamera(2, 0.1, 90);
 }
-
 

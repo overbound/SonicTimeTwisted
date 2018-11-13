@@ -35,7 +35,6 @@ visibleFuture=1;
 visiblePast=0;
 allowLevelStart=false;
 characterSelect=1;
-
 currentStone = 0;
 currentEmerald = 0;
 </string>
@@ -61,7 +60,6 @@ currentEmerald = 0;
           <argument>
             <kind>1</kind>
             <string>/// Choose Icon
-
 ini_open(save_file_name(slotNumber));
 futureLevels[0]=real(base64_decode(ini_read_string(LEVELS, aAA1_f, false)));
 futureLevels[1]=real(base64_decode(ini_read_string(LEVELS, aAA2_f, false)));
@@ -79,7 +77,6 @@ futureLevels[12]=real(base64_decode(ini_read_string(LEVELS, aSS1, false)));
 futureLevels[13]=real(base64_decode(ini_read_string(LEVELS, aPP1, false)));
 futureLevels[14]=real(base64_decode(ini_read_string(LEVELS, aPP2, false)));
 futureLevels[15]=real(base64_decode(ini_read_string(LEVELS, aMM1, false)));
-
 pastLevels[0]=real(base64_decode(ini_read_string(LEVELS, aAA1_p, false)));
 pastLevels[1]=real(base64_decode(ini_read_string(LEVELS, aAA2_p, false)));
 pastLevels[2]=real(base64_decode(ini_read_string(LEVELS, aRR1_p, false)));
@@ -100,9 +97,7 @@ characterSelect=real(base64_decode(ini_read_string(STATS, CHARACTER, base64_enco
 currentStone = real(base64_decode(ini_read_string(EMERALDS, PAST,0)));
 currentEmerald = real(base64_decode(ini_read_string(EMERALDS, FUTURE,0)));
 ini_close();
-
 for(i=0; i &lt; 16; i++) {
-
     if pastLevels[i] == true {
         
         lastPastLevel=i;
@@ -114,17 +109,13 @@ for(i=0; i &lt; 16; i++) {
         lastFutureLevel=i;
     
     } 
-
 }
 show_debug_message("Last FUTURE" + string(lastFutureLevel));
-
 if lastPastLevel &gt; lastFutureLevel {
     iconIndex = lastPastLevel;
 }
 else iconIndex = lastFutureLevel;
-
 lastIndex = iconIndex;
-
 if pastLevels[iconIndex] == true {
      visiblePast=1;
  }

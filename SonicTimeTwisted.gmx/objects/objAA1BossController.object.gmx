@@ -54,15 +54,12 @@
           <argument>
             <kind>1</kind>
             <string>/// Start level
-
 // replace background
 with background instance_destroy();
 with objParallax instance_destroy();
-
 if objProgram.in_past
     instance_create(0, 0, objAAPastBack);
 else instance_create(0, 0, objAAFutureBack);
-
 audio_stop_sound(bgmMetalSonicIntro);
 audio_stop_sound(bgmMetalSonicLoop);
 remove=0;
@@ -100,7 +97,6 @@ case 0: // lock in place
         state = -1;
     }
     break;
-
 case 1: // move player camera over
     with objCamera
     {
@@ -288,27 +284,21 @@ case 1: // move player camera over
           <argument>
             <kind>1</kind>
             <string>/// Initialize
-
 // states and flags
 state = 0;
-
 // boss object
 boss = instance_create(426, 230, objAA1Boss);
-
 // moving platforms
-
 plat[0] = instance_create(256, 192, objAA1BossFloor);
 plat[0].hspeed = -4.5;
 plat[0].image_xscale = -1;
 plat[1] = instance_create(512, 320, objAA1BossFloor);
 plat[1].hspeed = -4.5;
 plat[1].image_xscale = -1;
-
 // boss theme
 objMusic.bossLoop = bgmMetalSonicLoop;
 objMusic.bossIntro = bgmMetalSonicIntro;
 play_boss_intro(objMusic.bossIntro,0);
-
 // replace background
 with objAAFutureBack instance_destroy();
 with objParallax instance_destroy();
@@ -317,7 +307,6 @@ if objProgram.in_past
     else background=instance_create(0, 0, objAA1BossFutureBack);
     
 for (var i=0; i&lt;4; i+=1) instance_create(i*256, 192+(i*128), objAA1BossFloorBack);
-
 with objLevel started = true;
 with objProgram cutscene = true;
 </string>
@@ -341,10 +330,8 @@ with objProgram cutscene = true;
           <argument>
             <kind>1</kind>
             <string>/// Setup boss fight
-
 // fade out only
 with objTitlecard mode = 3;
-
 // limit player boundaries
 with objPlayer
 {

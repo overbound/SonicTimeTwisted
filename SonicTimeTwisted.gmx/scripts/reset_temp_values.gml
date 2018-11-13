@@ -1,6 +1,5 @@
 // reset_temp_values
 with objProgram {
-
     temp_xspeed = 0;
     temp_yspeed = 0;
     temp_state = player_state_standby;
@@ -13,5 +12,4 @@ with objProgram {
     temp_yview_offset=0;
     temp_xview_offset=0;
     temp_superform = false;
-
 }

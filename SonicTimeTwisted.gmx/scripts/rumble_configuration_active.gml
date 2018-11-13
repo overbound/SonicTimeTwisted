@@ -9,6 +9,7 @@ switch(argument0)
         script = rumble_short_mid;
         break;
     case RUMBLE_EVENT_BREAK_ROBOT:
+    case RUMBLE_EVENT_BREAK_BLOCK:
     case RUMBLE_EVENT_BREAK_MONITOR:
     case RUMBLE_EVENT_BUMPER:
         script = rumble_short_strong;
@@ -28,7 +29,7 @@ switch(argument0)
     case RUMBLE_EVENT_GROUND_SHAKE:
         script = rumble_ground_shake;
         break;
-    case RUMBLE_EVENT_SIGNPOST:
+    case RUMBLE_EVENT_LAMPPOST:
         script = rumble_short_mid_double;
         break;
     case RUMBLE_EVENT_SPRING:
@@ -53,6 +54,9 @@ switch(argument0)
         break;
     case RUMBLE_EVENT_KNUCKLES_FALL:
         script = rumble_short_strong;
+        break;
+    case RUMBLE_EVENT_SHAKE_ONCE:
+        script = rumble_instant_strong;
         break;
 }
 return script;

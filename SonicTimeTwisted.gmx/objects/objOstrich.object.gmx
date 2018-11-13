@@ -31,7 +31,6 @@ alarm[0]=30;
 fire_debris =0;
 frozen=false;
 
-
 </string>
           </argument>
         </arguments>
@@ -97,11 +96,9 @@ frozen=false;
           <argument>
             <kind>1</kind>
             <string>/// Release flower spark
-
 // explosion
 instance_create(x+44, y-28, objExplosionSpecial);
 //part_particles_create(objLevel.particles, x, y, objResources.explosion1, 1);
-
 // flower spark
 instance_create(x, y, objFlowerSpark);
 </string>
@@ -275,7 +272,6 @@ handle.ostrichHandle = id;
             <kind>1</kind>
             <string>/// activate start drilling
 state=1;
-
 </string>
           </argument>
         </arguments>
@@ -365,17 +361,12 @@ state=1;
           <argument>
             <kind>1</kind>
             <string>switch state {
-
 // Do nothing
 case 0:
 
-
-
 break;
-
 // Start Drilling
 case 1:
-
     image_speed = .5;
     
     if image_index &gt;= 3 {
@@ -385,9 +376,7 @@ case 1:
         image_speed=.05;
     }
     
-
 break;
-
 // Drill
 case 2:
     
@@ -402,7 +391,6 @@ case 2:
         speed = 2;
         gravity= .15;
         remove=2;
-
     }
     
     with instance_create(x+16,y+6,objOstrichDibris) {
@@ -414,7 +402,6 @@ case 2:
         speed = 2;
         gravity= .15;
         remove=2;
-
     }
     }
     
@@ -424,7 +411,6 @@ case 2:
         fire_debris =0;
     
         }
-
         if image_index &gt;= 8 {
             
             fire_debris =1;
@@ -435,9 +421,7 @@ case 2:
         }
     
 break;
-
 case 3:
-
     image_speed = -.325;
     
     if image_index &lt; 1 {
@@ -448,7 +432,6 @@ case 3:
         state = 0;
     
     }
-
 break;
 }
 </string>
@@ -476,7 +459,6 @@ break;
             <string>/// Freeze enemy
 alarm[2] = 180;
 frozen = true;
-
 // destroy icicle
 with other instance_destroy();
 </string>
@@ -544,10 +526,8 @@ with other instance_destroy();
           <argument>
             <kind>1</kind>
             <string>/// Render ice block
-
 // get offset from time
 var offset = (-1+(((90-alarm[2]) div 4) mod 2)*2)*(alarm[2]&lt;45);
-
 // draw ice block
 draw_sprite(sprShieldIceBlock, 0, x+offset+32, y-10);
 </string>

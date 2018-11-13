@@ -192,7 +192,6 @@
             <kind>1</kind>
             <string>draw_shadow(16);
 draw_billboard(16, 16);
-
 </string>
           </argument>
         </arguments>

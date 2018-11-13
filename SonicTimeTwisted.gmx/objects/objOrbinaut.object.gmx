@@ -43,15 +43,12 @@
 var i;
 image_speed = 0;
 offscreen_enabled = true;
-
 // states and flags
 state = 0;
-
 // physics
 max_speed = -0.5;
 angle = 0;
 shift = 0;
-
 // orbs
 for (i=0; i&lt;3; i+=1) orbs[i] = instance_create(x, y, objOrbinautOrb);
 </string>
@@ -75,9 +72,7 @@ for (i=0; i&lt;3; i+=1) orbs[i] = instance_create(x, y, objOrbinautOrb);
           <argument>
             <kind>1</kind>
             <string>if objProgram.in_past == true {
-
     sprite_index=sprLegonaut;
-
 }
 </string>
           </argument>
@@ -294,32 +289,25 @@ with instance_create(x+12, y+8, objShieldIceBlockDebris) {depth = other.depth-1;
           <argument>
             <kind>1</kind>
             <string>/// Enemy behavior
-
 // ignore if turned around
 if not alarm[0]
 {
     // direction
     with instance_nearest(x, y, objPlayer) other.max_speed = sign(x-(other.x-16))*0.5; //{if x&lt;other.x-16 other.max_speed = -0.5; else if x&gt;other.x+16 other.max_speed = 0.5;}
-
     // speed
     if hspeed&lt;max_speed hspeed = min(hspeed+0.025, max_speed); else
     if hspeed&gt;max_speed hspeed = max(hspeed-0.025, max_speed);
 }
-
 // facing
 if hspeed&gt;0 image_xscale = 1;
 if hspeed&lt;0 image_xscale = -1;
-
 // orb rotation
 angle += pi/30*hspeed;
-
 // adjust angles as the complete circles
 if (angle&gt;pi*2) angle -= pi*2; else
 if (angle&lt;pi*2) angle += pi*2;
-
 // orb z-rotation
 shift = 16*sin(angle);
-
 // update orb position
 for (var i=0; i&lt;3; i+=1)
 {
@@ -347,7 +335,6 @@ for (var i=0; i&lt;3; i+=1)
           <argument>
             <kind>1</kind>
             <string>/// control orb freezing
-
 for (i=0; i&lt;3; i+=1) {
     with orbs[i] {
         if other.frozen 
@@ -382,7 +369,6 @@ for (i=0; i&lt;3; i+=1) {
 alarm[1] = 180;
 hspeed = 0;
 frozen = true;
-
 // destroy icicle
 with other instance_destroy();
 </string>
@@ -522,10 +508,8 @@ while place_meeting(x, y, other.id) {x -= cosine[direction]; y += sine[direction
           <argument>
             <kind>1</kind>
             <string>/// Render ice block
-
 // get offset from time
 var offset = (-1+(((90-alarm[1]) div 4) mod 2)*2)*(alarm[1]&lt;45);
-
 // draw ice block
 draw_sprite(sprShieldIceBlock, 0, x+offset, y);
 </string>

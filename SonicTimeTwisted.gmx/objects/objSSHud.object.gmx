@@ -28,7 +28,6 @@
             <string>// character id(s)
 character_id[0] = max(objGameData.character_id[0]-1, 0);
 character_id[1] = max(objGameData.character_id[1]-1, 0);
-
 image_speed =0;
 // time stamp
 time_stamp = "";
@@ -40,10 +39,8 @@ axis = "";
 inputFlash = 0;
 white = 0;
 timeOffset = 0;
-
 timer = 0;
 rings = 0;
-
 menu = instance_create(x,y,objMenu);
 menu.default_state = 3;
 menu.draw_with_view_offset = false;
@@ -95,7 +92,6 @@ menu.draw_with_view_offset = false;
             <kind>1</kind>
             <string>/// Update timer string
 var total_time, minutes, seconds, milliseconds;
-
     // total time
     total_time = min(36000-objSSLevel.timer, 36000);
     if total_time &gt;= 36000 {
@@ -104,17 +100,14 @@ var total_time, minutes, seconds, milliseconds;
     
     // minutes
     minutes = string(total_time div 3600);
-
 // seconds
 seconds = (total_time div 60) mod 60;
 if (seconds&lt;10) seconds = "0"+string(seconds); else
 seconds = string(seconds);
-
 // milliseconds
 milliseconds = ceil((total_time mod 60)/0.60);
 if (milliseconds&lt;10) milliseconds = "0"+string(milliseconds); else
 milliseconds = string(milliseconds);
-
 // update time stamp
 time_stamp = minutes+"'"+seconds+'"'+milliseconds;
 </string>
@@ -164,7 +157,6 @@ if inputFlash &lt; 1
           <argument>
             <kind>1</kind>
             <string>/// fade white for pause
-
 if objProgram.paused {
     if white &lt; 0.5
         white+=.125;
@@ -193,7 +185,6 @@ if objProgram.paused {
           <argument>
             <kind>1</kind>
             <string>/// Pause Menu
-
 if objProgram.paused {
     // if there's already a menu being displayed (failure screen) - don't pause
     // otherwise it locks the game
@@ -217,7 +208,6 @@ if objProgram.paused {
         
     }
 }
-
 if objProgram.inputManager.pressingGamepad == -1 {
     allowInput = true;
 }
@@ -270,7 +260,6 @@ draw_set_alpha(0.25);
 draw_set_color(c_white);
 draw_line_width(pbOffsetX, 224, pbOffsetX + 282, 224, 4);
 draw_set_alpha(1);
-
 var xmetalprog = pbOffsetX + objSSMetalSonic.progress * 280;
 if metalProgDisplay &gt; xmetalprog +2{
     metalProgDisplay-=2;
@@ -278,7 +267,6 @@ if metalProgDisplay &gt; xmetalprog +2{
 else if metalProgDisplay &lt; xmetalprog -2 {
     metalProgDisplay+=2;
 }
-
 var xplayerprog = pbOffsetX + objSSPlayer.progress * 280;
 if playerProgDisplay &gt; xplayerprog +2{
     playerProgDisplay-=2;
@@ -338,16 +326,11 @@ playerProgDisplay=128 + objSSPlayer.progress * 280;
             <kind>1</kind>
             <string>/// Draw Hud
 //if objScreen.paused exit;
-
 d3d_set_projection_ortho(0, 0, view_wport, view_hport, 0);
-
 // score / time / rings string
 draw_set_font(objResources.fontHud);
-
 if !objProgram.paused {
-
 draw_top_hud(objSSLevel.timer, objSSPlayer.rings, 0, 0);
-
 } else {
     draw_set_color(c_black);
     draw_rectangle(0,0,426,240,false);

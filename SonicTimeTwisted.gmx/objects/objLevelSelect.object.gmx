@@ -65,7 +65,6 @@ else if input_check_pressed(cDOWN) and move == 0 and select &lt; 27 {
     y_next +=15;
     audio_play_sound(sndBeep,0,false);
 }
-
 if move == 1 and y &lt; y_next
     y +=15;
 else if move == -1 and y &gt; y_next
@@ -74,7 +73,6 @@ else {
         move = 0;
         y_next = y;
     }
-
 //if objGameData.character_id[0]!=select{
 //check for select
 if input_check_pressed(cACTION) or input_check_pressed(cSTART){
@@ -249,7 +247,6 @@ if input_check_pressed(cACTION) or input_check_pressed(cSTART){
 }}
     
 
-
 </string>
           </argument>
         </arguments>
@@ -273,14 +270,12 @@ if input_check_pressed(cACTION) or input_check_pressed(cSTART){
           <argument>
             <kind>1</kind>
             <string>/// Render Names
-
 // setup
 draw_set_color(c_white);
 draw_set_alpha(image_alpha);
 draw_set_valign(fa_top);
 draw_set_halign(fa_center);
 draw_set_font(objResources.fontHud);
-
 draw_text_color(213,0,'ATTRACTION ATTACK ACT 1 FUTURE',c_white,c_white,c_yellow,c_yellow,1);
 draw_text_color(213,15,'ATTRACTION ATTACK ACT 1 PAST',c_white,c_white,c_yellow,c_yellow,1);
 draw_text_color(213,30,'ATTRACTION ATTACK ACT 2 FUTURE',c_white,c_white,c_yellow,c_yellow,1);
@@ -310,8 +305,6 @@ draw_text_color(213,375,'PLANETARY PANIC ACT 1',c_white,c_white,c_yellow,c_yello
 draw_text_color(213,390,'PLANETARY PANIC ACT 2',c_white,c_white,c_yellow,c_yellow,1);
 draw_text_color(213,405,'GALACNIK GAUNTLET',c_white,c_white,c_yellow,c_yellow,1);
 draw_self();
-
-
 
 </string>
           </argument>

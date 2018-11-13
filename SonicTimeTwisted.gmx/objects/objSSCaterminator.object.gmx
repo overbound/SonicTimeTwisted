@@ -382,7 +382,6 @@ if waiting {waiting -= 1; if not waiting image_speed = 0;}
           <argument>
             <kind>1</kind>
             <string>/// Enemy behavior
-
 // move towards closest player
 if not (moving or waiting)
 {
@@ -412,7 +411,6 @@ else if moving
         for(i=0; i&lt;5; i++) with instance_create(x, y, objSSCaterminatorOrb) {/*depth=depth+other.i;*/ parent_id = other.id; timer = other.delay_offset; /*audio_play_sound(sndCaterminatorExtend,1,false);*/}
     }
 }
-
 // facing
 if hspeed&lt;0 image_xscale = -1;
 if hspeed&gt;0 image_xscale = 1;
@@ -438,7 +436,6 @@ if hspeed&gt;0 image_xscale = 1;
             <kind>1</kind>
             <string>/// set depth
 depth = min(2000,distance_to_object(objSSCamera)/20);
-
 depth1= depth;
 </string>
           </argument>
@@ -464,7 +461,6 @@ depth1= depth;
             <kind>1</kind>
             <string>draw_shadow(16);
 draw_billboard(16, 16);
-
 
 </string>
           </argument>

@@ -159,7 +159,6 @@ for (i=0; i&lt;10; i+=1) {spark[i] = instance_create(x, y-36, objCapsuleSpark); 
           <argument>
             <kind>1</kind>
             <string>///state control for capsule
-
 active=false;
 player_id = noone;
 camera_pass = false;

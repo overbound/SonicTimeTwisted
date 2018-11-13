@@ -1,9 +1,6 @@
 /*
-
 GMInstance BossNew(double x, double y)
-
 */
-
   posX = 17044;
   posY = 1600;
   posZ = 0;
@@ -13,7 +10,6 @@ GMInstance BossNew(double x, double y)
   speedZ = 0;
   
   _gravity = 0;
-
   frame = 0;
   
   rootY = posY;
@@ -51,7 +47,6 @@ else
   __SwingSpeed = 4;
   __RandomDirection = true;
 }
-
   if __RandomDirection
     spinDirection = choose(-1,1);
     else spinDirection = 1;
@@ -64,7 +59,6 @@ else
     {
       BossOrbNew(posX, 400, z, side);
     }
-
     hand[side] = BossHandNew(posX, 400, 0, side);
   }
   
@@ -74,6 +68,4 @@ else
   causeQuake = true;
   
   showCollision = true;
-
-
 

@@ -66,7 +66,6 @@ remove = 0;
           <argument>
             <kind>1</kind>
             <string>if instance_exists(parentId) {
-
     if laser == 0 {
     
         x=parentId.x+xoffset-7; 
@@ -79,7 +78,6 @@ remove = 0;
     
     
     }
-
 } else instance_destroy();
 </string>
           </argument>

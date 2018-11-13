@@ -66,7 +66,6 @@
 {
   image_speed = 1/2;
 }
-
 if (timer &gt; 0)
 {
   timer -= 1;
@@ -74,7 +73,6 @@ if (timer &gt; 0)
         x = floor(objLevel.player[0].x);
   y = objGolem.floor_level - 16;
 }
-
 </string>
           </argument>
         </arguments>

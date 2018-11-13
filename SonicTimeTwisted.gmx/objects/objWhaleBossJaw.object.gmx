@@ -90,9 +90,7 @@ destroyed=false;
           <argument>
             <kind>1</kind>
             <string>if destroyed {
-
 image_angle+=4;
-
 }
 </string>
           </argument>

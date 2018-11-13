@@ -1,7 +1,6 @@
 var is_pressed = false;
 var pressed_x = 0;
 var pressed_y = 0;
-
 for(var device = 0; device <= 4; device++)
 {
     if(device_mouse_check_button(device, mb_left))

@@ -27,9 +27,7 @@
             <kind>1</kind>
             <string>state=0;
 lights = false;
-
 image_speed = 0;
-
 if objGameData.character_id[0] == 1 {
     image_index = 0;
 } else if objGameData.character_id[0] == 2 {
@@ -123,7 +121,6 @@ if objGameData.character_id[0] == 1 {
             alarm[0]=20;
             }
     break;
-
     case 1://rotation frames
     
         visible = false;
@@ -154,8 +151,6 @@ if objGameData.character_id[0] == 1 {
     break;
            
 }
-
-
 
 //make lights flash
 if lights == true

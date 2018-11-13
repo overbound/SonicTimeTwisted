@@ -27,32 +27,23 @@
             <kind>1</kind>
             <string>/// Initialize level
 image_speed = 0;
-
 // timing
 timer = 0;
 timer_enabled = false;
 reseting = 0;
-
 // state
 started = false;
 cleared = false;
-
 // players
 player[0] = noone;
 player[1] = noone;
-
 // other
 total_rings = instance_number(objRing);
-
 // custom data
 act = 1;
-
 flower = sprExampleFlower;
-
 spawn_id = noone;
-
 ringLifeCounter = 0; 
-
 initialize_level_object_activation();
 //instance_create(0,0,objTileGridManager);
 </string>
@@ -108,7 +99,6 @@ initialize_level_object_activation();
 var yran =random(97)-48;
 instance_create(x+xran+40,y+yran,objExplosionCluster);
 alarm[4]=4;
-
 </string>
           </argument>
         </arguments>
@@ -133,17 +123,12 @@ alarm[4]=4;
             <kind>1</kind>
             <string>/// Scene culling
 if objProgram.paused or objProgram.lost_focus exit;
-
 // Cull instances
 with objSceneObject if (remove==1) instance_deactivate_object(self);
-
 // Activate instances onscreen
-
 with objCamera instance_activate_region(view_xview-48, view_yview-48, view_wview+96, view_hview+96, true);
-
 // Activate surrounding instances offscreen
 with objPlayer {if offscreen_enabled and instance_exists(camera) and not in_view(camera.view_id, 48) instance_activate_region(x-(offset_y*2)-abs(xspeed), y-(offset_y*2)-abs(yspeed), (offset_y*4)+abs(xspeed*2), (offset_y*4)+abs(yspeed*2), true);}
-
 </string>
           </argument>
         </arguments>
@@ -212,10 +197,8 @@ refresh_level_object_activation_start();
             <kind>1</kind>
             <string>/// Run timers
 if objProgram.paused or objProgram.lost_focus exit;
-
 // stage timer
 if objGameData.timeout and timer_enabled and started and !cleared and !objProgram.cutscene {if timer timer -= 1;}
-
 // reset timer
 if reseting
 {
@@ -253,13 +236,11 @@ if reseting
             <kind>1</kind>
             <string>/// Pausing
 if started and not instance_exists(objTransition) and input_check_pressed(cPAUSE) {
-
     if not objProgram.paused {
         objProgram.paused = true;
         game_pause(objProgram.paused);
     }
 }
-
 </string>
           </argument>
         </arguments>
@@ -306,10 +287,8 @@ audio_stop_all();
           <argument>
             <kind>1</kind>
             <string>/// End level
-
 // free particle system
 part_system_destroy(particles);
-
 // reset global data
 if cleared
 {
@@ -362,13 +341,11 @@ if cleared
             <string>/// Start level
 var local_id;
 spawn_id = noone;
-
 // go through spawn points
 for (var i=0; i&lt;instance_number(objStart); i+=1)
 {
     // get spawn position
     local_id = instance_find(objStart, i);
-
     // set as spawn point if matching tag
     if objProgram.temp_spawn_tag&gt;-1 {
     
@@ -383,14 +360,12 @@ for (var i=0; i&lt;instance_number(objStart); i+=1)
         break;
     }
 }
-
 // setup spawn
 if spawn_id&gt;-1
 {
     // reset time
     if objProgram.temp_spawn_tag&gt;-1 timer = objProgram.temp_spawn_time; else
     timer = objProgram.spawn_time;
-
     // handle time travel
     if objProgram.time_traveling!=0
     {
@@ -431,15 +406,12 @@ if spawn_id&gt;-1
         script_execute(spawn_id.start_script);
     
 }
-
 // reset temporary data
 objProgram.time_traveling = 0;
 alarm[1]=1;
 objProgram.level = room;
 // create particle system
 particles = part_system_create();
-
-
 
 </string>
           </argument>
@@ -462,9 +434,7 @@ particles = part_system_create();
           <argument>
             <kind>1</kind>
             <string>/// set up watchers for lives and big rings
-
 if objProgram.in_past &amp;&amp; !ds_exists(objProgram.ring_past_list, ds_type_list){
-
     objProgram.life_past_list = ds_list_create();
     objProgram.ring_past_list = ds_list_create();
     
@@ -474,9 +444,7 @@ if objProgram.in_past &amp;&amp; !ds_exists(objProgram.ring_past_list, ds_type_l
         objProgram.ring_future_list = ds_list_create();
      
 }
-
 if objProgram.in_past {
-
     /* big ring past */
     /*for (var i=0; i&lt;instance_number(objRingGiant); i+=1){
         local_id = instance_find(objRingGiant, i);
@@ -498,7 +466,6 @@ if objProgram.in_past {
         } 
     }*/
 } else {
-
     /* big ring future */
   /*for (var i=0; i&lt;instance_number(objRingGiant); i+=1){
         local_id = instance_find(objRingGiant, i);
@@ -519,9 +486,7 @@ if objProgram.in_past {
         
         } 
     }*/
-
 }
-
 </string>
           </argument>
         </arguments>
@@ -543,7 +508,6 @@ if objProgram.in_past {
           <argument>
             <kind>1</kind>
             <string>///set animations for level start
-
 with player[0] {
     if other.spawn_id.tag == 0
         switch room {
@@ -747,7 +711,6 @@ with player[0] {
             <kind>1</kind>
             <string>/// save level and play music
 save_level();
-
     // if cutscene, let cutscene take over
     if objProgram.cutscene
     {
@@ -756,10 +719,8 @@ save_level();
     } else {
         play_music_intro(objMusic.musicIntro,0);
     }
-
 // create hud
 instance_create(0, 0, objHud);
-
 // set alarm to reset temp values
 alarm[1]=1;
 </string>

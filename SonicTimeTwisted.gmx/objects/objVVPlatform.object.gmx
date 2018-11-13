@@ -112,7 +112,6 @@
           <argument>
             <kind>1</kind>
             <string>if objProgram.in_past image_index = 1;
-
 length = 64;
 time = 0.03125;
 </string>

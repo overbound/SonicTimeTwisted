@@ -133,23 +133,17 @@
           <argument>
             <kind>1</kind>
             <string>switch state {
-
 case 0:
-
 break;
-
 case 1://falling
         gravity_direction = 270;
         gravity = 0.125;
         
         view_yview[0] += speed*.88
-
 break;
-
 case 2://landing
  y = objTitleRing.y       
 break;
-
 
 }
 </string>
@@ -183,7 +177,6 @@ speed=0;
 state=2;
 with objTitleRing movement = 1;
 }
-
 
 </string>
           </argument>

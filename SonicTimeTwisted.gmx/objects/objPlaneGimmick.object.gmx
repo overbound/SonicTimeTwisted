@@ -251,25 +251,18 @@ remove = 0;
           <argument>
             <kind>1</kind>
             <string>/// Plane Motion
-
  with objPlayer {
-
 if other.x -4 &gt; x
     other.x += xspeed;
-
 if other.x +14 &lt; x
     other.x += xspeed;    
-
-
 
 if landed == false
 if other.y &lt; y
 other.y +=1;
 }
-
 //Rebound  
 /*if rebound {
-
     y+=yspeed;
     yspeed -=.1;
     if yspeed &lt;= 0 {
@@ -278,9 +271,7 @@ other.y +=1;
     }
 }*/
 
-
 y = floor(y);
-
 
 </string>
           </argument>
@@ -323,7 +314,6 @@ if instance_exists(objLevel.player[0]) {
         y = ystart;
     }
 }
-
 if in_view(view_current,128) { 
 if not audio_is_playing(sndPropeller)
     audio_play_sound(sndPropeller, 4, 0);
@@ -426,13 +416,9 @@ with objPlayer {
           <argument>
             <kind>1</kind>
             <string>/// check allowCollision
-
 if !place_meeting(x,y,objPlaneStop) {
-
     allowCollision = true;
-
 }
-
 </string>
           </argument>
         </arguments>
@@ -470,18 +456,12 @@ if !place_meeting(x,y,objPlaneStop) {
           <argument>
             <kind>1</kind>
             <string>if allowCollision == true {
-
     active = false;
     allowCollision = false;
-
 }
-
 if !in_view(view_current,150) &amp;&amp; active == false {
-
     y = other.y+other.sprite_height*.75;
-
 }
-
 </string>
           </argument>
         </arguments>

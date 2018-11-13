@@ -120,7 +120,6 @@ case 1: // fade out
     if (screenOffset&gt;=-64) {if next_room&gt;-1 room_goto(next_room); mode = -1; break;}
     screenOffset +=8;
     break;
-
 case -1: // fade in
     if screenOffset&gt;=532 {instance_destroy(); break;}
     screenOffset +=8;
@@ -149,7 +148,6 @@ case -1: // fade in
           <argument>
             <kind>1</kind>
             <string>/// Draw Clouds
-
 draw_background(backCloudTransition,view_xview[view_current],view_yview[view_current]+screenOffset);
 </string>
           </argument>

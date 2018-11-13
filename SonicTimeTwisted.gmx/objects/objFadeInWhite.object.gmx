@@ -26,9 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>image_alpha-=.025;
-
 if image_alpha &lt;= 0 {
-
     instance_destroy();
     
 }

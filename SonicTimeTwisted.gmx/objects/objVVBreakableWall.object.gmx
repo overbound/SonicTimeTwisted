@@ -117,11 +117,9 @@ oy = 5;
             <kind>1</kind>
             <string>/// generate debris
 // go through rows
-
 // get bounds
 var width = sprite_width div 16;
 var height = sprite_height div 16;
-
 
 for (var j=0; j&lt;height; j+=1)
 {
@@ -149,7 +147,6 @@ for (var j=0; j&lt;height; j+=1)
         }
     }
 }
-
 
 //with instance_create(x,y+16, objExampleBreakableDebris) {hspeed = -2; vspeed = -2; sprite_index = other.debris;}
 </string>

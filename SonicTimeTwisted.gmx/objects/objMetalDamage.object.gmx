@@ -82,7 +82,6 @@ destroy=false;
             <kind>1</kind>
             <string>draw += 1;
 alarm[0] = 80;
-
 if draw &gt; 0 and draw &lt; 4
     audio_play_sound(sndMetalSpeak,1,false);
 </string>
@@ -108,20 +107,15 @@ if draw &gt; 0 and draw &lt; 4
           <argument>
             <kind>1</kind>
             <string>// Destroyed
-
 if destroy {
-
     image_angle +=10;
     if alarm[1] == -1 {
     
         alarm[1]= 120;
     
     }
-
 } else {
-
      y = ystart+cos(objScreen.image_index/16)*2;
-
 
 }
 </string>
@@ -147,25 +141,18 @@ if destroy {
           <argument>
             <kind>1</kind>
             <string>draw_self();
-
 switch draw {
-
 case 0:
-
 break;
-
 case 1:
     draw_sprite_ext(sprMetalStopVoice,0,x+12,ystart-16,1,1,0,c_white,1);
 break;
-
 case 2:
     draw_sprite_ext(sprMetalNoHarmVoice,0,x+12,ystart-16,1,1,0,c_white,1);
 break;
-
 case 3:
     draw_sprite_ext(sprMetalTheCreatorVoice,0,x+12,ystart-16,1,1,0,c_white,1);
 break;
-
 }
 </string>
           </argument>

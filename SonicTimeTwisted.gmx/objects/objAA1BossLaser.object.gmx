@@ -44,10 +44,8 @@ image_blend = c_red;
 direction = 206;
 remove = 2;
 reaction_script = player_reaction_harmful;
-
 // states and flags
 state = 0;
-
 // movement
 ox = x;
 oy = y;
@@ -55,7 +53,6 @@ distance = 0;
 pattern = 0;
 firing_speed = 4;
 sweeping_speed = 2;
-
 // other
 parent_id = noone;
 </string>
@@ -127,19 +124,15 @@ parent_id = noone;
           <argument>
             <kind>1</kind>
             <string>/// State machine
-
 // lock to parent position (if we're not disappearing)
 if state&gt;-1 {x = parent_id.x; y = parent_id.y;}
-
 // increase distance (also necessary to re-find target)
 distance += firing_speed;
-
 // set offset
 var sx = lengthdir_x(distance, direction);
 var sy = lengthdir_y(distance, direction);
 ox = x+sx;
 oy = y+sy;
-
 // if we find our target
 if (state!=0) and collision_line(x, y, ox, oy, objAA1BossFloor, 1, 1)
 {
@@ -147,18 +140,15 @@ if (state!=0) and collision_line(x, y, ox, oy, objAA1BossFloor, 1, 1)
     while (abs(sx)&gt;=1) or (abs(sy)&gt;=1) {sx *= 0.5; sy *= 0.5; if collision_line(x, y, ox, oy, objAA1BossFloor, 1, 1) {ox -= sx; oy -= sy;} else {ox += sx; oy += sy;}}
     distance = point_distance(x, y, ox, oy);
 }
-
 // handle state
 switch state
 {
 case -1: // scale down until we disappear
     if distance&lt;1 or x&lt;29 or y&gt;499 or collision_circle(x, y, 3, objAA1BossFloor, 1, 1) instance_destroy();
     break;
-
 case 0: // continue if we reach the floor
     if collision_line(x, y, ox, oy, objAA1BossFloor, 1, 1) or ox&lt;29 or oy&gt;499 state = 1;
     break;
-
 case 1: // execute attack pattern
     // determine pattern
     switch pattern
@@ -176,12 +166,10 @@ case 1: // execute attack pattern
         speed = firing_speed;
         state = -1;
     }
-
     // tell metal to stop firing
     if (state==-1) {parent_id.firing = false; parent_id.alarm[1] = 30;}
     break;
 }
-
 // animate
 image_angle = direction+90;
 image_yscale = distance/33;

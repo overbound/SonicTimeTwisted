@@ -89,21 +89,17 @@ stars.image_alpha = 0.35+abs(cos(degtorad(objScreen.image_index*2.4)))*0.45;
             <kind>1</kind>
             <string>/// Initialize background
 surface = -1;
-
 // towers
 tower1 = parallax_create(1, backAAFTowers, 0, 0, 40, 222, -3.48, 0, 0, 0, 0, 326, 68, 0);
 tower1.visible = false;
 tower2 = parallax_create(1, backAAFTowers, 0, 0, 40, 222, -3.48, 0, 0, 0, 68, 256, 68, 0);
 tower2.visible = false;
-
 // red buildings
 building = parallax_create(1, backAAFBuildings1, 0, 0, 114, 223, -4.2, 0, 0, 0, 0, 225, 0, 0);
 building.visible = false;
-
 // starlight
 stars = parallax_create(1, backAAFStars, 0, 0, 336, 156, -5.1, 0, 0, 0, 0, 0, 120, 0);
 stars.visible = false;
-
 // clouds
 clouds1 = parallax_create(1, backAAFClouds, 0, 0, 460, 160, -2.55, 0, 0, 0, 0, 0, 0, 0);
 clouds1.image_alpha = 0.5;
@@ -111,7 +107,6 @@ clouds1.visible = false;
 clouds2 = parallax_create(1, backAAFClouds, 0, 160, 460, 167, -0.96, 0, 0, 0, 0, 160, 0, 0);
 clouds2.image_alpha = 0.5;
 clouds2.visible = false;
-
 // sunset
 sky = parallax_create(1, backAAFSunset, 0, 0, 16, 314, -5.1, 0, 0, 0, 0, 0, 0, 0);
 sky.visible = false;
@@ -138,11 +133,9 @@ sky.visible = false;
           <argument>
             <kind>1</kind>
             <string>/// Render background to surface
-
 // refresh surface
 if not surface_exists(surface) surface = surface_create(1024, 1024);
 surface_set_target(surface);
-
 // draw background
 with sky event_perform(ev_draw, 0);
 with stars event_perform(ev_draw, 0);
@@ -152,9 +145,7 @@ with tower2 event_perform(ev_draw, 0);
 with tower1 event_perform(ev_draw, 0);
 with building event_perform(ev_draw, 0);
 
-
 surface_reset_target();
-
 // draw complete surface 
 draw_surface_ext(surface, view_xview[view_current]+80 /*+66*/, view_yview[view_current]-216/*-184*/, 1, 1, 333, c_white, 1);
 </string>

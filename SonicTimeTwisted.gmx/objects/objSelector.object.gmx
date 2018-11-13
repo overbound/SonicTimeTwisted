@@ -73,7 +73,6 @@ objProgram.stop_sound = false;
     select = 1;
     if !audio_is_playing(sndBeep) audio_play_sound(sndBeep,0,false);
     }
-
 if input_check_pressed(cRIGHT) and select == 1 {
     select = 3;
     dir = 1;
@@ -83,19 +82,15 @@ if input_check_pressed(cRIGHT) and select == 1 {
     select = 1;
     if !audio_is_playing(sndBeep) audio_play_sound(sndBeep,0,false);
     }
-
 if select == 2 and x &gt; 96 and dir == -1 {
     x-=8;
 }
-
 if select == 3 and x &lt; 336 and dir == 1 {
     x+=8;
 }
-
 if select == 1 and x &gt; 216 and dir == -1 {
     x-=8;
 }
-
 if select == 1 and x &lt; 215 and dir == 1 {
     x+=8;
 }

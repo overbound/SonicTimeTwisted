@@ -42,11 +42,9 @@
             <string>move=false;
 visible=true;
 remove=0;
-
 ycord=y;
 pattern=0;
 count=0;
-
 yspeed = .5;
 </string>
           </argument>
@@ -78,7 +76,6 @@ with (instance_create(x, y-5, objBubble))
     offset = choose(0, 180);
     vspeed= -1;
 }
-
 // continue spawning
 count -= 1;
 if count alarm[3] = 16;
@@ -111,7 +108,6 @@ with instance_create(x, y-5, objBubble)
     offset = choose(0, 180);
     vspeed= -1;
 }
-
 // continue spawning
 count -= 1;
 if count alarm[2] = 16;
@@ -144,7 +140,6 @@ with instance_create(x, y-5, objBubble)
     offset = choose(0, 180);
     vspeed= -1;
 }
-
 // continue spawning
 count -= 1;
 if count alarm[1] = 16;
@@ -195,9 +190,7 @@ with instance_create(x, y-5, objBubble) {size = 5; offset = choose(0, 180); vspe
           <argument>
             <kind>1</kind>
             <string>/// Move
-
 if move == true {
-
     if ystart &lt; y +1472 {
     
         ycord -= yspeed;
@@ -232,25 +225,20 @@ if move == true {
             <kind>1</kind>
             <string>/// Spawn bubbles
 var type;
-
 // abort if not in water
 if not place_meeting(x, y, objWater) {
 visble = false;
 exit;
 }
-
 // abort if too soon
 if objScreen.image_index mod 240 exit;
-
 // get a pattern different from the last
 do type = irandom(3); until (type!=pattern);
 pattern = type;
-
 // set bubble amount based on pattern
 if (pattern==1) count = 3; else
 if (pattern==2) count = choose(5, 6);
 if (pattern==3) count = 2;
-
 // start pattern
 alarm[pattern] = 10;
 </string>

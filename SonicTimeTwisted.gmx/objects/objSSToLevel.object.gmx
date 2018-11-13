@@ -102,9 +102,7 @@ case 1:
     }
     image_alpha -= .0125;
     break;
-
 case 2: // fade in
-
     with objLevel { 
         started = true; 
         timer_enabled = true;
@@ -112,7 +110,6 @@ case 2: // fade in
     objProgram.temp_spawn_tag = -1;
     instance_destroy();
     break;
-
 }
 </string>
           </argument>

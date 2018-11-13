@@ -43,15 +43,12 @@
 var i;
 image_speed = 0;
 offscreen_enabled = true;
-
 // states and flags
 state = 0;
-
 // physics
 max_speed = -0.5;
 angle = 0;
 shift = 0;
-
 // orbs
 for (i=0; i&lt;3; i+=1) orbs[i] = instance_create(x, y, objSSOrbinautOrb);
 </string>
@@ -215,7 +212,6 @@ for (var i=0; i&lt;3; i+=1) with orbs[i] {gravity = 0.21875; reaction_script = -
           <argument>
             <kind>1</kind>
             <string>/// Enemy behavior
-
 // ignore if turned around
 if not alarm[0]
 {
@@ -223,7 +219,6 @@ if not alarm[0]
         vspeed=0;
         // direction
         with instance_nearest(x, y, objSSPlayer) other.max_speed = sign(x-(other.x-16))*0.5; //{if x&lt;other.x-16 other.max_speed = -0.5; else if x&gt;other.x+16 other.max_speed = 0.5;}
-
         // speed
         if hspeed&lt;max_speed hspeed = min(hspeed+0.025, max_speed); else
         if hspeed&gt;max_speed hspeed = max(hspeed-0.025, max_speed);
@@ -242,18 +237,14 @@ if not alarm[0]
             
             // orb rotation
             angle += pi/30*vspeed;
-
         }
 }
-
 
 // adjust angles as the complete circles
 if (angle&gt;pi*2) angle -= pi*2; else
 if (angle&lt;pi*2) angle += pi*2;
-
 // orb z-rotation
 shift = 16*sin(angle);
-
 // update orb position
 for (var i=0; i&lt;3; i+=1)
 {
@@ -282,7 +273,6 @@ for (var i=0; i&lt;3; i+=1)
             <kind>1</kind>
             <string>/// set depth
 depth = min(2000,distance_to_object(objSSCamera)/20);
-
 depth1= depth;
 </string>
           </argument>
@@ -380,7 +370,6 @@ while place_meeting(x, y, other.id) {x -= cosine[direction]; y += sine[direction
             <kind>1</kind>
             <string>draw_shadow(16);
 draw_billboard(16, 16);
-
 </string>
           </argument>
         </arguments>

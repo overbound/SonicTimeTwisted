@@ -1,11 +1,8 @@
 // input_load()
-
 key_count = 0;
 button_count = 0;
 axis_count = 0;
-
 var file = 'settings.ini';
-
 if (file_exists(file)) {
     ini_open(file);
     pad = round(ini_read_real('gamepad_controls','padnumber', 0));
@@ -49,11 +46,9 @@ if (file_exists(file)) {
     } else {
         input_bind_button(pad, round(real(ini_read_string('gamepad_controls','right',7))), cRIGHT);
     }
-
     ini_close();
     
 } else {
-
     input_bind_key(vk_up, cUP);
     input_bind_key(vk_down, cDOWN);
     input_bind_key(vk_left, cLEFT);

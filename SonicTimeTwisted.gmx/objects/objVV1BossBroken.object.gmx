@@ -212,22 +212,16 @@ instance_create(view_xview[view_current]+430,view_yview[view_current]+10+random(
             <kind>1</kind>
             <string>/// state machine
 switch state {
-
 case 0: // Do Nothing
-
 if image_index &gt;= 2 {
     image_speed = 0;
     image_index+=.25;
 }
-
 if image_index == 2.5 {
-
     image_index=0;
-
 }
     
 break;
-
 case 1: // move up
     alarm[0]=-1;
     sprite_index=sprMetalStandup;
@@ -249,21 +243,15 @@ case 1: // move up
         }
         
     } else y-=2;
-
 break;
-
 case 2: // Turn
-
     sprite_index= sprMetalIdle;;
     image_speed = .5;
     image_index=0;
     state = 3;
 
-
 break;
-
 case 3: // Init Laugh
-
     if image_index == 2 {
     
         image_speed = 0;
@@ -273,7 +261,6 @@ case 3: // Init Laugh
     }
     
 break;
-
 case 4: //  Laughing
     y += cos(offset)*0.5;
     offset += 0.25;
@@ -283,9 +270,7 @@ case 4: //  Laughing
     }
     
 break;
-
 case 5: // flash intro
-
     y += cos(offset)*0.5;
     offset += 0.25;
     
@@ -296,9 +281,7 @@ case 5: // flash intro
         level_goto_next();
         state=6;
     }
-
 break;
-
 }
 </string>
           </argument>
@@ -349,12 +332,9 @@ if !audio_is_playing(sndQuake) &amp;&amp; state &gt; 0 {
             <string>/// draw sphere and self
 // Draw Sphere
 draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,c_white,1);
-
 draw_set_alpha(image_alpha)
     draw_circle(x,y,flashOffset,false);
 draw_set_alpha(1);
-
-
 
 </string>
           </argument>

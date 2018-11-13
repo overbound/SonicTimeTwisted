@@ -1,11 +1,7 @@
 /*
-
 void Adjust(int sign)
-
 */
-
 if (!threeDee) exit;
-
 if (keyboard_check(ord("Z")))
 {
   zf += argument0;

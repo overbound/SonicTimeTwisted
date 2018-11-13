@@ -43,7 +43,6 @@ view_wview[0] = width;
 view_hview[0] = height;
 view_wport[0] = width;
 view_hport[0] = height;
-
 /**
 These variables manage... flashing. yes, flashing.
 Essential for the 30FPS mode, they also allow to remove some
@@ -51,7 +50,6 @@ Essential for the 30FPS mode, they also allow to remove some
 **/
 // A simple boolean that goes from between 0 and 1 every drawn frame
 flashing_visible = false;
-
 // A lot of flashing objects rely on objScreen.image_index mod 4
 // This variable will replace the calls to that property, but
 // only when the conditioned code is purely visual
@@ -59,7 +57,6 @@ frame_counter = 0;
 // Made this a variable so that the 30FPS mode doesn't incur
 // constant "if 30FPS enabled" checks
 frame_counter_increment = 1;
-
 /**
 Load the appropriate video mode. See the set_video_mode script for details
 **/
@@ -68,13 +65,11 @@ framerate = 0; // 0 - 60fps, 1 - 30fps
 load_video_settings();
 set_video_mode(video_mode);
 set_30_fps(framerate);
-
 // sync window properties
 if window_get_fullscreen() window_mode = 2; else
 if window_get_width() &gt; width or window_get_height() &gt; height { window_mode = 1; window_scale = 2 } else
 if (window_get_width() != width * window_scale) or (window_get_height() != height * window_scale) window_set_size(width * window_scale, height * window_scale);
 surface_resize(application_surface, width, height);
-
 // os properties
 /*fullscreen_enabled = false;
 switch os_type

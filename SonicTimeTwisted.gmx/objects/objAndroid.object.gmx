@@ -64,7 +64,6 @@ else
             <kind>1</kind>
             <string>display_set_gui_maximise();
 display_set_gui_size(426, 240); 
-
 // Replace room-specific objects
 // I could have used the function that changes the instance type, but Android seems to disagree with it
 switch(room)

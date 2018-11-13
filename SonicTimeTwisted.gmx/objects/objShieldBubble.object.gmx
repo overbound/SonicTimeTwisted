@@ -99,7 +99,6 @@
             <kind>1</kind>
             <string>/// Reset timer and create debris
 if player_id.underwater player_id.underwater_count = 1800;
-
 // Generate bubbles
 // ...
 </string>
@@ -125,7 +124,6 @@ if player_id.underwater player_id.underwater_count = 1800;
           <argument>
             <kind>1</kind>
             <string>/// Render shield
-
 // base
 if sprite_index==sprShieldBubble and (objScreen.flashing_visible) // this one is simply faster than frame_counter mod 2 :)
 {

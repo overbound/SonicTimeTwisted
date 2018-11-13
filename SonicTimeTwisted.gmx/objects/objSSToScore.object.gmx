@@ -102,16 +102,13 @@ case 1:
     }
     image_alpha -= .0125;
     break;
-
 case 2: // fade in
-
     with objLevel { 
         started = true; 
         timer_enabled = true;
         }
     instance_destroy();
     break;
-
 }
 </string>
           </argument>

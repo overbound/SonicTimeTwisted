@@ -1,7 +1,6 @@
 ///play_effect(song, resume)
 var song = argument0;
 var resume = argument1;
-
 with objMusic {
     if state == 5 {
         statePrevious = state;
@@ -12,7 +11,6 @@ with objMusic {
     } else {
         stop_all_music(resume);
     }
-
     musicEffect = song;
     state = 6;
     currentMusic = audio_play_sound(musicEffect,20,false);

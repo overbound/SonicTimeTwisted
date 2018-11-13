@@ -1,9 +1,6 @@
 /*
-
 GMInstance MegaTrooperOrbNew(int index, GMInstance hand, GMInstance shoulder, GMInstance previous)
-
 */
-
 with (instance_create(0, 0, objMegaTrooperOrb))
 {
   index = argument0;

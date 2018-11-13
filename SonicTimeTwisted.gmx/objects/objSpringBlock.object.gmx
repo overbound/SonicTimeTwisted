@@ -67,7 +67,6 @@
             <kind>1</kind>
             <string>// check collision code
 with objLevel.player[0]{
-
     if abs(x - other.x) &lt; 128
     {
        if other.y &lt; other.ystart +32
@@ -84,7 +83,6 @@ with objLevel.player[0]{
     
     
 }
-
 </string>
           </argument>
         </arguments>

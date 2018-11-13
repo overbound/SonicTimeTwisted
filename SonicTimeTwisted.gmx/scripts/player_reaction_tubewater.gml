@@ -6,11 +6,9 @@ if argument0.visible == false exit;
     jumping = false;
     rolling_jump = false;
     jump_action = true;
-
     // movement and collision
     yspeed = min(-4,yspeed);
     yspeed -= .2;
-
     argument0.active = true;
     
     // set air state

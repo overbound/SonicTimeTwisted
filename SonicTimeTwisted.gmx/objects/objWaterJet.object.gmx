@@ -46,7 +46,6 @@ offset =100;
 vspeed = -2; 
 image_speed = .125;
 
-
 </string>
           </argument>
         </arguments>
@@ -118,11 +117,9 @@ image_speed = .125;
             <kind>1</kind>
             <string>if y &lt; ystart - offset
 image_alpha -= .0325;
-
 if image_alpha &lt;= 0
     instance_destroy();
     
-
 </string>
           </argument>
         </arguments>

@@ -122,7 +122,6 @@ case 1: // fadeout
         break;
     }
     break;
-
 case 0: // start level
     objLevel.started = true;
     objLevel.timer_enabled = true;
@@ -130,7 +129,6 @@ case 0: // start level
     mode = -1;
     alpha = 64;
     break;
-
 case -1: // fadein
     alpha--;
     if(alpha &lt;= 0)

@@ -44,7 +44,6 @@ layer=3;
 flash = false;
 remove=1;
 top = false;
-
 </string>
           </argument>
         </arguments>
@@ -68,30 +67,19 @@ top = false;
           <argument>
             <kind>1</kind>
             <string>/// Movement
-
 if objLevel.player[0] != noone {
-
     if xstart-128 &lt; x &amp;&amp; xstart+128 &gt; objLevel.player[0].x &amp;&amp; objLevel.player[0].x &gt; xstart - 128 &amp;&amp; objLevel.player[0].x &lt; xstart+128 {
-
         x = objLevel.player[0].x;
-
     }
 }
-
 // Extropolate on left and right
 /*
 if xstart-128 &lt; x &amp;&amp; x &gt; objLevel.player[0].x {
-
     x -=1;
-
 }
-
 if xstart+128 &gt; x &amp;&amp; x &lt; objLevel.player[0].x {
-
     x +=1;
-
 }
-
 */
 </string>
           </argument>

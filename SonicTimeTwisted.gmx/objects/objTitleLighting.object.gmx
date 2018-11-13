@@ -32,9 +32,7 @@ This effect is achieved by drawing an animation (in this case, a scaled sprite) 
 This results in a white on transparent image on the surface. When the surface is drawn with the TimeTravelShader applied,
 the white pixels will be replaced with a texture that makes it look like the SCD time travel effect.
 */
-
 tts = TimeTravelShader;
-
 // send some information to the shader; the shader has to be set for this to work
 // (I don't know if this can be screwed up by using other shaders; if so, this info might have to be sent in the draw event...)
 shader_set(tts);
@@ -45,25 +43,20 @@ texture_set_stage(shader_get_sampler_index(tts, "mask"), background_get_texture(
 // send: the texture index of the the gradient used to cycle the colours
 texture_set_stage(shader_get_sampler_index(tts, "grad"), background_get_texture(tt_gradient));
 shader_reset();
-
 // create a surface the size of the screen to draw the effect on
 tt_surface = surface_create(426, 240);
-
 // I've included two types of "zipper animation" - see step event
 type = false;
 // the image index of the animated sprite that will be drawn to the texture
 image_index = 0;
 image_speed = .25;
-
 // the amount to shift the gradient to cycle the colours; starts at 0
 // it's also used to slide the texture horizontally to give it some motion, but you could use a 2nd value
 // if the speeds need to be tweaked
 shift = 0;
 time = 0;
-
 // the parameter handle to be used to send the shift amount to the shader later in the draw event
 param_shift = shader_get_uniform(tts, "shift");
-
 image_xscale=1;
 image_yscale=1;
 spr=sprite_index;
@@ -90,7 +83,6 @@ spr=sprite_index;
           <argument>
             <kind>1</kind>
             <string>// set the drawing target to the surface
-
 var temp_Detail = 30;
 var temp_Centre = 213;
 var temp_Offset = 25;
@@ -103,7 +95,6 @@ var temp_Wave_3 = 0; // larger wave
     {
 surface_set_target(tt_surface);
     draw_clear_alpha(0, 0);
-
     draw_primitive_begin(pr_trianglefan); // pr_trianglefan // pr_linestrip
     draw_vertex_colour(213, 120, c_white, 1);
         for (var j = 0; j &lt; 2; j++)
@@ -159,7 +150,6 @@ surface_reset_target();
 //draw_sprite_ext(spr, floor(image_index), xoffset, 0, 1, 1, 0, c_white, 1);
 //draw_sprite_ext(spr, floor(image_index), 0, 1, 1, 1, 0, c_white, 1); // ORIGINAL IMAGE
 // reset the drawing target to the screen
-
 // increase the shift amount; this will cycle the colours
 shift += 0.01;
 time++;
@@ -188,7 +178,6 @@ if (!surface_exists(tt_surface) &amp;&amp; view_yview &lt; room_height - view_hv
 {
     tt_surface = surface_create(426, 240);
 }
-
 if (view_yview &gt;= room_height - view_hview - 64)
 {
     surface_free(tt_surface);

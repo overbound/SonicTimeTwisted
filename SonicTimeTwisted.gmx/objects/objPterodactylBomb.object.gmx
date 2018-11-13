@@ -121,7 +121,6 @@ if gravity != 0
     image_yscale = image_xscale;
     remove=2;
     reaction_script=player_reaction_harmful;
-
     // flash
     image_blend = make_color_rgb(255, 72+(183*(objScreen.image_index mod 2)), 255*(objScreen.image_index mod 2));
 }
@@ -262,7 +261,6 @@ if gravity != 0
           <argument>
             <kind>1</kind>
             <string>speed=0;
-
 </string>
           </argument>
         </arguments>

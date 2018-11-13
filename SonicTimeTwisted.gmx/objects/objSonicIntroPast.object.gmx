@@ -27,7 +27,6 @@
             <kind>1</kind>
             <string>image_speed =0;
 loopCount =0;
-
 scale[0]=0;
 scale[1]=0;
 scale[2]=0;
@@ -54,21 +53,16 @@ scale[2]=0;
           <argument>
             <kind>1</kind>
             <string>if loopCount == 4 &amp;&amp; image_index == 0 {
-
     image_speed = 0;
     
     loopCount = 5;
-
 }
-
 if image_speed &lt;&gt; 0 {
-
     if (!audio_is_playing(sndShakeHead)) {
     
         audio_play_sound(sndShakeHead,10,false);
     
     }
-
 }
 </string>
           </argument>
@@ -116,9 +110,7 @@ if image_speed &lt;&gt; 0 {
           <argument>
             <kind>1</kind>
             <string> draw_self();
-
 if loopCount &gt;= 4 {
-
     if scale[0] &lt; 1 {
         scale[0]+=.025;
     } 
@@ -132,7 +124,6 @@ if loopCount &gt;= 4 {
     draw_sprite_ext(sprThoguhBubbleTail,0,x+60,y-80,scale[0],scale[0],0,c_white,1);
     draw_sprite_ext(sprThoguhBubbleTail,1,x+80,y-100,scale[1],scale[1],0,c_white,1);
     draw_sprite_ext(sprThoguhBubbleTail,2,x+100,y-125,scale[2],scale[2],0,c_white,1);
-
 }
 </string>
           </argument>

@@ -1,12 +1,8 @@
 //end_VV1
 with objVV1BossBroken {
-
     state = 1;
-
 }
-
 with objLevel.player[0] {
-
     // states and flags
     state = player_state_stand;
     spinning = false;
@@ -19,5 +15,4 @@ with objLevel.player[0] {
     if character_id == 3 {
         instance_create(x-8,y-16,objFallHat)
     }
-
 }

@@ -13,9 +13,7 @@
   <code>// initialize level settings
 objLevel.act = 1;
 objLevel.flower = sprFlowerVV;
-
 objProgram.in_past=false;
-
 // setup titlecard
 with objTitlecard
 {
@@ -1382,7 +1380,7 @@ with objTitlecard
     <instance objName="objRing" x="3028" y="132" name="inst_709A53D2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRing" x="3048" y="132" name="inst_C6338C70" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRing" x="3068" y="132" name="inst_9664C41B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objField" x="17840" y="-32" name="inst_B0B621E7" locked="0" code="right = 18016;&#xA;left = right - objScreen.width;&#xA;top = 0;&#xA;bottom = room_height;&#xA;" scaleX="1" scaleY="130" colour="4294967295" rotation="0"/>
+    <instance objName="objField" x="17840" y="-32" name="inst_B0B621E7" locked="0" code="right = 18016;&#xA;left = right - objScreen.width;&#xA;top = 0;&#xA;bottom = room_height;" scaleX="1" scaleY="130" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="8740" y="548" name="inst_95CCF933" locked="0" code="climbable=true;" scaleX="3.5" scaleY="37.5" colour="4294967295" rotation="0"/>
     <instance objName="objVVMask01" x="4608" y="1472" name="inst_CEEB3FF7" locked="0" code="layer = 1;&#xA;" scaleX="1" scaleY="1" colour="4278223103" rotation="0"/>
     <instance objName="objVVMask01" x="4608" y="1472" name="inst_3BE79EC2" locked="0" code="layer = 2;&#xA;" scaleX="-1" scaleY="1" colour="4294901760" rotation="0"/>

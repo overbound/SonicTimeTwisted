@@ -9,7 +9,6 @@ with argument0
     visible = 0;
     alarm[0]=40;
     }
-
 // animate
 animation_new = "boarding";
 timeline_speed = 1;

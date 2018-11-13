@@ -1,7 +1,6 @@
 // player_state_fall_automatically()
 // Used for jumping off the plane in the intro, controls are disabled here. Also distinct for purposes of not activating the
 // virtual controls on certain platforms 
-
 // update position
 if not player_movement_air()
 {
@@ -18,13 +17,10 @@ if not player_movement_air()
     }
     return false;
 }
-
 // air friction
 if yspeed<0 and yspeed>-jump_release xspeed *= air_friction;
-
 // gravity
 yspeed += gravity_force;
-
 // landing
 if landed
 {
@@ -35,11 +31,9 @@ if landed
         // destroy instashield
         with instashield instance_destroy();
         instashield = noone;
-
         // bubble shield bounce
         if shield {if shield.timeline_index==animShieldBubbleAction return player_is_bouncing();}
         break;
-
     case 3: // Knuckles
         if glide_falling
         {
@@ -48,14 +42,11 @@ if landed
         }
         break;
     }
-
     // maintain spindash
     if spindashing return player_is_spindashing();
-
     // land normally
     if xspeed!=0 return player_is_running(); else return player_is_standing();
 }
-
 // animate
 if (animation=="rise") and (yspeed>=0) {animation_new = "walk"; timeline_speed = 0.125;}
 if not spinning and (image_angle!=angle) image_angle = angle_wrap(image_angle+2.8125*sign(angle_distance(image_angle, angle)));

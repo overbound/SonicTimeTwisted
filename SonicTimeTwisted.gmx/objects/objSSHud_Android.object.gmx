@@ -36,7 +36,6 @@ with(menu)
     instance_destroy();
 }
 menu = newMenu;
-
 </string>
           </argument>
         </arguments>
@@ -87,7 +86,6 @@ if(objProgram.inputManager.input == 0)
         draw_set_valign(fa_top);
         draw_set_halign(fa_right);
     }
-
     // Progress bar
     var pbOffsetX = 72;
     var pbOffsetY = 80;
@@ -122,7 +120,6 @@ else
     // Not using the touchscreen - the HUD is drawn in the bottom-left corner, as per usual
     event_inherited();
 }
-
 </string>
           </argument>
         </arguments>

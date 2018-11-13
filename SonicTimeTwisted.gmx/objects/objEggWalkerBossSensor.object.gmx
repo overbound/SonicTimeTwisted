@@ -287,20 +287,16 @@ image_speed=0;
             <kind>1</kind>
             <string>audio_play_sound(sndBombExplosion, 1, false);
 with objEggWalkerGun {
-
     instance_destroy();
     
     }
     
 with objEggWalkerGunCover {
-
     instance_create(x,y,objExplosionGroup)
     instance_destroy();
     
 }
-
 with objEggWalkerLaser {
-
     instance_destroy();
     
     }
@@ -351,15 +347,11 @@ instance_create(x,y+10,objEggWalkerMoleDeath);
           <argument>
             <kind>1</kind>
             <string>/// Set Eggwalker Destroyed
-
 with objEggWalker {
-
     destroyed=true;
     alarm[0] = 0;
     
-
 }
-
 with objEggWalkerBossController { state = 3; }
 </string>
           </argument>

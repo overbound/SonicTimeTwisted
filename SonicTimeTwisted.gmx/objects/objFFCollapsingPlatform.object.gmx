@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>objSolid</parentName>
+  <parentName>objSolidAlwaysActive</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -195,33 +195,22 @@ if objProgram.in_past == true {
             <kind>1</kind>
             <string>/// Generate pieces
 var i;
-
 // sound
 audio_play_sound_at(sndCollapse, x+sprite_width*0.5, y+sprite_height*0.5, 0, 100, 300, 1, false, 0);
-
 // get bounds
 var width = sprite_width div 16;
 var height = sprite_height div 16;
-
 // choose sprite parts
 if image_index == 0 {
      
     sprite_parts=sprFFCollapsingPartsLeft;
-
 } else if image_index == 1 {
-
     sprite_parts=sprFFCollapsingPartsRight; 
-
 } else if image_index == 2 {
-
     sprite_parts=sprFFFCollapsingPartsLeft;
-
 } else if image_index == 3 {
-
     sprite_parts=sprFFFCollapsingPartsRight;
-
 }
-
 show_debug_message(sprite_get_name(sprite_parts));
 // go through rows
 for (var j=0; j&lt;height; j+=1)
@@ -235,7 +224,6 @@ for (var j=0; j&lt;height; j+=1)
             // setup sprite
             sprite_index = other.sprite_parts;
             image_index = j*width+i;
-
             // set delay on drop
             if image_xscale&gt;0 alarm[0] = ((width-i)*other.ox)+(((height-j)-1)*other.oy); else
             if image_xscale&lt;0 alarm[0] = (i*other.ox)+(((height-j)-1)*other.oy);
@@ -308,7 +296,6 @@ for (var j=0; j&lt;height; j+=1)
             <kind>1</kind>
             <string>/// Reverse direction
 x -= 128;
-
 image_xscale = 1;
 if objProgram.in_past == true {
     sprite_parts = sprFFCollapsingPartsRight;

@@ -43,7 +43,6 @@
 instance_create(x+500,y+340,objWhaleBoss);
 playerId = noone;
 ground = 1009;
-
 </string>
           </argument>
         </arguments>
@@ -67,11 +66,8 @@ ground = 1009;
           <argument>
             <kind>1</kind>
             <string>
-
 switch state {
-
 case 0:
-
     if objLevel.player[0].camera.bottom &lt; view_yview[view_current] + view_hview[view_current] {
     
         view_yview[view_current] -=2;
@@ -82,16 +78,11 @@ case 0:
         objMusic.bossLoop = bgmBossLoop;
         play_boss_intro(bgmBossIntro,0);
     }
-
 break;
-
 case 1:
-
     
 break;
-
 case 2:
-
     with playerId {
         player_is_falling();
     }
@@ -99,12 +90,9 @@ case 2:
     state = 3;
     
 break;
-
 case 3:
-
 break;
 }
-
 
 </string>
           </argument>

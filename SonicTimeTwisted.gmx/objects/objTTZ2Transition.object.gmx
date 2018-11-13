@@ -143,7 +143,6 @@ case 1: // fade out
     if (screenOffset&gt;=-64) {if next_room&gt;-1 room_goto(next_room); mode = -1; break;}
     screenOffset +=4;
     break;
-
 case -1: // fade in
     if screenOffset&gt;=532 {
     // setup titlecard
@@ -165,11 +164,9 @@ case -1: // fade in
     break;
 }
 
-
 if !audio_is_playing(sndQuake) {
     audio_play_sound(sndQuake,10,false);
 }
-
 with objCamera {
     top=0;
     bottom=room_height;
@@ -200,7 +197,6 @@ with objCamera {
           <argument>
             <kind>1</kind>
             <string>/// Draw Clouds
-
 draw_background(texture,view_xview[view_current],view_yview[view_current]+screenOffset);
 </string>
           </argument>

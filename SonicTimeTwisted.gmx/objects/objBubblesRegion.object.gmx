@@ -46,9 +46,7 @@ allow_collision=true;
 angle = 0;
 orbit_speed = 2;
 radius=0;
-
 image_speed =0;
-
 var os = 0;
 for( var i=0; i &lt; 24; i+=1 ) {
     
@@ -60,8 +58,6 @@ for( var i=0; i &lt; 24; i+=1 ) {
     bubbley[i] = lengthdir_y(bubble_length[i],bubble_angle[i]) + y;
     
 }   
-
-
 
 </string>
           </argument>
@@ -90,7 +86,6 @@ allow_collision = false;
 alarm[0]=10; 
 with player_id      player_is_falling();
 player_id = noone;
-
 </string>
           </argument>
         </arguments>
@@ -143,10 +138,8 @@ if not active
 }
 else
 {    
-
 angle = point_direction(x,y,player_id.x,player_id.y);
 angle_new = (angle + orbit_speed + 360)mod(360);
-
 player_id.x = lengthdir_x(radius,angle_new) + x;
 player_id.y = lengthdir_y(radius,angle_new) + y;
             
@@ -154,7 +147,6 @@ player_id.y = lengthdir_y(radius,angle_new) + y;
     
         // update underwater state
         player_update_water();
-
         // non-solid object collision
         player_collision_object();
         
@@ -184,7 +176,6 @@ player_id.y = lengthdir_y(radius,angle_new) + y;
             player_is_falling();
        
         }
-
         
     }      
 }
@@ -210,13 +201,11 @@ player_id.y = lengthdir_y(radius,angle_new) + y;
             <kind>1</kind>
             <string>// Bubbles
 for( var i=0; i &lt; 24; i+=1 ) {
-
     bubble_angle[i] += 2;    
     bubblex[i] = lengthdir_x(bubble_length[i],bubble_angle[i]) + x;
     bubbley[i] = lengthdir_y(96,bubble_angle[i]) + y;
     
 }
-
 if visible == false {
         
         reaction_script = noone;
@@ -229,7 +218,6 @@ if visible == false {
     
     }
     
-
 </string>
           </argument>
         </arguments>
@@ -258,9 +246,7 @@ if visible == false {
 for( var i=0; i &lt; 24; i+=1 ) {
     
     draw_sprite(sprBubble,bubble_index[i],bubblex[i],bubbley[i]);
-
     }
-
 </string>
           </argument>
         </arguments>

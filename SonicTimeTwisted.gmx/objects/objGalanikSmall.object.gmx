@@ -70,7 +70,6 @@ y2StepsBack = y;
           <argument>
             <kind>1</kind>
             <string>/// Reset Firing
-
 state = 1;
 </string>
           </argument>
@@ -95,9 +94,7 @@ state = 1;
           <argument>
             <kind>1</kind>
             <string>switch state {
-
 case 0: // Move On Screen
-
     if instance_exists(objLevel.player[0]) {
         x=objPPBossController.x;
         if image_xscale &gt; .25 {
@@ -117,7 +114,6 @@ case 0: // Move On Screen
     }
     
 break;
-
 case 1: // Fire
     
     /*if firingCount &gt; 5 {
@@ -129,7 +125,6 @@ case 1: // Fire
     firingCount +=1;
     fireball = instance_create(x,y,objGalanikFireball);
     image_speed = .25;
-
     with objLevel.player[0] {
     
         if terrain_id == noone {
@@ -140,11 +135,8 @@ case 1: // Fire
     
     y=view_yview + view_hview*0.5 ;
     state = 2;
-
 break;
-
 case 2: // Firing 
-
     if image_index == 4 {
     
         fireball.fire = true;
@@ -162,9 +154,7 @@ case 2: // Firing
     }
     y=view_yview + view_hview*0.5 ;
 break;
-
 case 3: // Move Off Screen
-
     if instance_exists(objLevel.player[0]) {
         if image_xscale &lt; 1 {
             image_xscale +=0.002;
@@ -190,16 +180,11 @@ case 3: // Move Off Screen
         
         }
     }
-
 break;
-
 case 4: // Rest Reset
-
     image_xscale = 1;
     image_yscale = 1;
-
 break;
-
 }
 </string>
           </argument>
@@ -224,10 +209,8 @@ break;
           <argument>
             <kind>1</kind>
             <string>if xprevious &lt;&gt; x || yprevious &lt;&gt; y {
-
     var xdir = sign(x-xprevious);
     var ydir = sign(y-yprevious);
-
     if x3StepsBack &lt;&gt; x2StepsBack || y3StepsBack &lt;&gt; y2StepsBack {
         d3d_set_fog(1,c_green,0,0);
             draw_sprite_ext(sprite_index,image_index,x3StepsBack+xdir*3,y3StepsBack-ydir*3,image_xscale,image_yscale,0,c_white,.5);
@@ -246,23 +229,17 @@ break;
 }
 
 
-
-
 draw_self();
-
 
 x3StepsBack = x2StepsBack
 y3StepsBack = y2StepsBack
 x2StepsBack = xprevious;
 y2StepsBack = yprevious;
-
 /*
 var xdir = sign(x-xprevious);
 var ydir = sign(y-yprevious);
 var color = c_red;
-
 for(i=0; i &lt; 64; i+=4;) {
-
     d3d_set_fog(1,color,0,0);
         draw_sprite_ext(sprite_index,image_index,x+i*xdir,y-i*ydir,image_xscale,image_yscale,0,c_white,.5);
         
@@ -270,7 +247,6 @@ for(i=0; i &lt; 64; i+=4;) {
         show_debug_message(y*+i*ydir);
         
     d3d_set_fog(0,c_white,0,0);
-
     if color == c_white {
     
         color = c_red;

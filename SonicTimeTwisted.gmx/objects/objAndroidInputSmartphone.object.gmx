@@ -27,17 +27,13 @@
             <kind>1</kind>
             <string>event_inherited();
 vk_active = false;
-
 alpha = 0;
 gyroscopeMode = false;
 gyroscopeModeDraw = false; // whether to draw UP button instead of the D-Pad
 ggCurrentMode = 0; // galacnik gauntlet mode
 gyroscopeTilt = 0;
-
 // load android-specific settings
-
 var file = 'settings.ini';
-
 input = 1; // 0 - touchscreen, 1 - no touchscreen
 dpadMode = 0; // 0 - static, 1 - dynamic
 vkalpha = 0.8;
@@ -62,7 +58,6 @@ bsx = 200;
 bsy = 16;
 bbx = 324;
 bby = 88;
-
 
 if (file_exists(file)) {
     ini_open(file);
@@ -89,9 +84,7 @@ if (file_exists(file)) {
     gg_mode = ini_read_real('smartphone','gg_mode',1);
 }
 
-
 vKeyJoy_surface = surface_create(64, 64);
-
 dpad_sectors = false; // initialize triangles matching directions on touchscreen here
 prev_dpad_pressed = 5; // previously pressed direction
 dpad_pressed = 5; // currently pressed direction
@@ -100,18 +93,15 @@ super_pressed = false;
 start_pressed = false;
 up_pressed = false;
 superIsEnabled = false;
-
 /*
 in "pseudo-analog" mode, this timer will be used to know when to simulate a tap on a button
 */
 gyro_analog_timer = 0;
-
 // variables used for dynamic gamepad : the D-pad appears wherever you put your finger
 dynamic_state = 0;
 dynamic_device = 0;
 dynamic_startx = 0;
 dynamic_starty = 0;
-
 keys = ds_map_create();
 ds_map_add(keys, cUP, false);
 ds_map_add(keys, cDOWN, false);
@@ -121,10 +111,8 @@ ds_map_add(keys, cA, false);
 ds_map_add(keys, cB, false);
 ds_map_add(keys, cC, false);
 ds_map_add(keys, cSTART, false);
-
 notice = '';
 notice_timer = 0;
-
 // map allowing to track key presses
 keyboard_pressed = ds_map_create();
 keyboard_holding = ds_map_create();
@@ -348,7 +336,6 @@ if(input == 0)
     }
 }
 event_inherited();
-
 </string>
           </argument>
         </arguments>
@@ -439,7 +426,6 @@ gyroscopeMode = false
             <string>/// Initialize virtual controls.
 // Must be called on every room, but also on other special occasions
 // Because of this, it is now a user event
-
 // 0 and 5 aren't technically buttons, but they're still there so that the array can function
 dpad_sectors[0,0] = 0;
 switch(vksize)
@@ -964,7 +950,6 @@ alpha = 0;
             
             break;
     }
-
     
     var playerId = 0;
     if(objGameData.character_id[playerId] == 1)
@@ -1011,7 +996,6 @@ alpha = 0;
             }
         }
     }
-
     draw_sprite_ext(sprTouchscreenPauseButton, 3, bsx, bsy, 1, 1, 0, c_white, alpha);
 }
 if(notice_timer &gt; 0)

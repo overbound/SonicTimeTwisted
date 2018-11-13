@@ -69,7 +69,6 @@ player_id = noone;
             <string>/// Control player
 with player_id
 {
-
     // ground motion
     xspeed = 0.5*other.image_xscale;
     
@@ -86,7 +85,6 @@ with player_id
     }
     // release control if not on flipper
     if (terrain_id!=other.id) {other.player_id = noone; return player_is_rolling();}
-
     // fling upward
     if input_check_pressed(cACTION)
     {
@@ -95,14 +93,11 @@ with player_id
         spinning = false;
         rolling_jump = false;
         jump_action = true;
-
         // movement and collision
         xspeed = (x-other.x)*0.15;
         yspeed = -14;
-
         // set air state
         player_in_air();
-
         // release control and animate
         other.timeline_running = true;
         other.timeline_position = 0;

@@ -45,16 +45,11 @@ laserAngle=0;
 remove=0;
 angleCanon =0;
 laser=instance_create(x-32,y,objEggWalkerLaser);
-
 with laser {
-
     gunId=other.id;
     depth = other.depth-1;
-
 }
-
 coverId=instance_create(x,y,objEggWalkerGunCover);
-
 </string>
           </argument>
         </arguments>
@@ -100,16 +95,13 @@ coverId=instance_create(x,y,objEggWalkerGunCover);
           <argument>
             <kind>1</kind>
             <string>/// Gun Cover &amp; Laser Update
-
 with coverId {
-
     image_angle=other.image_angle;
     image_xscale=other.image_xscale;
     x=other.x;
     y=other.y;
     depth=other.depth -3;
 }
-
 with laser {
    depth = other.depth-1;
    }
@@ -139,7 +131,6 @@ with laser {
  
     with objPlayer { other.angleCanon = point_direction(other.walkerId.x, other.walkerId.y-64, x, y); }
  
-
          if (angleCanon &gt; 310 || angleCanon &lt; 50) &amp;&amp; walkerId.image_xscale == -1 {
     
             image_angle = angleCanon;
@@ -151,7 +142,6 @@ with laser {
         
         }
     
-
 </string>
           </argument>
         </arguments>

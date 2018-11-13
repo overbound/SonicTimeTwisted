@@ -17,7 +17,6 @@ if(objProgram.inputManager.vksize == 2)
 {
     bar = 16;
 }
-
 var dpad_is_pressed = false;
 var tmp_jump_pressed = false;
 var tmp_super_pressed = false;
@@ -465,7 +464,6 @@ if(prev_dpad_pressed != dpad_pressed)
             }
             break;
     }
-
 }
 prev_dpad_pressed = dpad_pressed;
 // In Galacnik Gauntlet, this button is used to reset the Y origin position
@@ -497,9 +495,7 @@ else
         }
     }
 }
-
 jump_pressed = tmp_jump_pressed;
-
 if(tmp_super_pressed && (!super_pressed))
 {
     android_vk_press(cA);
@@ -511,7 +507,6 @@ if(super_pressed && (!tmp_super_pressed))
     android_vk_release(cB);
 }
 super_pressed = tmp_super_pressed;
-
 if(tmp_start_pressed && (!start_pressed))
 {
     android_vk_press(cSTART);
@@ -521,7 +516,6 @@ if(start_pressed && (!tmp_start_pressed))
     android_vk_release(cSTART);
 }
 start_pressed = tmp_start_pressed;
-
 if(tmp_up_pressed && (!up_pressed))
 {
     android_vk_press(cUP);

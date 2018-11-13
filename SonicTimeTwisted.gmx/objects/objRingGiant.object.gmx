@@ -139,10 +139,8 @@
             <kind>1</kind>
             <string>/// Check for Destroy
 if sprite_index == sprGiantRingDisapear {
-
     visible = false;
     reaction_script=noone;
-
 }
 </string>
           </argument>
@@ -167,7 +165,6 @@ if sprite_index == sprGiantRingDisapear {
           <argument>
             <kind>1</kind>
             <string>completedRing=load_big_ring(tag);
-
 if completedRing &amp;&amp; (objProgram.special_future_current_level &lt; 7 || objProgram.special_past_current_level &lt; 7) {
     visible = false;
     reaction_script=noone;
@@ -178,7 +175,6 @@ if completedRing &amp;&amp; (objProgram.special_future_current_level &lt; 7 || o
     visible = true; 
     reaction_script=player_reaction_giant_ring
 }
-
 if objProgram.in_past {
     sprite_index = sprRingGiantPast;
 }

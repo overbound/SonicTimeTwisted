@@ -115,10 +115,8 @@ right=room_width;
           <argument>
             <kind>1</kind>
             <string>if objScreen.image_index &lt; 2 &amp;&amp; objProgram.time_traveling == 0 {
-
     draw_sprite(objProgram.temp_sprite,objProgram.temp_image_index,objProgram.temp_x,y-objProgram.temp_y+5);
 } else visible = 0;
-
 </string>
           </argument>
         </arguments>

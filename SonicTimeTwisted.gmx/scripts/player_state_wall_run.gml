@@ -1,7 +1,5 @@
 // player_state_wall_run()
-
 // get soft collisions
-
 // animate
 animation_new = "wallrun";
 timeline_speed = 1;
@@ -16,10 +14,8 @@ if x > wallRunCenter && x < xprev {
 } else if x > wallRunCenter && x > xprev {
      path_speed -=.15;
 }
-
 //path_speed=8+sin(objScreen.image_index/4)*1.5;
 // loop 11,12,13,14,3,4,5,6,7,8,9,10     
-
 if path_position < .01 {
 image_index = 0;
 } else if path_position < .02 {
@@ -41,7 +37,6 @@ image_index = 8;
 } else if path_position < .175 {
 image_index = 9;
 }
-
 // second bend finish .20
 else if path_position < .20 {
 image_index = 10;
@@ -57,7 +52,6 @@ image_index = 14;
 image_index = 3;
 } else if path_position < .37 {
 image_index = 4;
-
 // third bend finish .38
 } else if path_position < .38 {
 image_index = 5;
@@ -115,14 +109,12 @@ image_index = 1;
 } else if path_position < .98 {
 image_index = 0;
 }
-
 if input_check_pressed(cACTION) {
         
             other.active = false;
             other.player_id = noone;
             
             var ground_speed;
-
             // animate
             animation_new = "spin";
             timeline_speed = 1/max(5-abs(xspeed), 1);
@@ -141,7 +133,6 @@ if input_check_pressed(cACTION) {
             var v_cosine = dcos(relative_angle);
             xspeed = (v_cosine * ground_speed) - (v_sine * jump_constant)*.75;
             yspeed = -(v_sine * ground_speed) - (v_cosine * jump_constant)*.75;
-
             path_end();
             // set air state
             player_in_air();
@@ -157,7 +148,6 @@ if !input_check_pressed(cRIGHT) && alarm[0] == -1 {
     timeline_speed = 1/max(5-abs(xspeed), 1);
     image_angle = 0;
 }
-
 xprev=x;
 //player_update_water();
 /* AUTHOR NOTE: Check the end of path event for more ... */

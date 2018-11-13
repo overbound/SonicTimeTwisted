@@ -69,7 +69,6 @@ remove=0;
           <argument>
             <kind>1</kind>
             <string>switch state {
-
     case 0: // null
         
         image_angle=gunId.laserAngle;
@@ -83,7 +82,6 @@ remove=0;
         
         reaction_script = player_reaction_harmful;
         visible = true;
-
         image_xscale +=24;        
         
         if image_xscale &gt; laser_height {
@@ -95,7 +93,6 @@ remove=0;
     break;
     
     case 2: // stop fire
-
         speed = 24;
         direction = image_angle;
         

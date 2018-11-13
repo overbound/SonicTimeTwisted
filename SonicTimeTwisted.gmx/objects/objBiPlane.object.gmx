@@ -27,13 +27,11 @@
             <kind>1</kind>
             <string>image_speed=0.215;
 hsp=0;
-
 if objGameData.character_id[0] == 1 {
     headIndex = 0;
     } else {
         headIndex = 1;
     }
-
 
 if objGameData.character_id[0] == 3 {
     thirdCharacter = sprTailsFlyingEnding;
@@ -69,7 +67,6 @@ if objGameData.character_id[0] == 3 {
     y=other.y-64;
   }
 }
-
 x+=hsp;
 </string>
           </argument>
@@ -94,11 +91,9 @@ x+=hsp;
           <argument>
             <kind>1</kind>
             <string>if objCredits.name &lt; 15 { 
-
     x += 852;
     view_xview += 852;
     objCharacterFall.x  += 852;
-
 }
 </string>
           </argument>

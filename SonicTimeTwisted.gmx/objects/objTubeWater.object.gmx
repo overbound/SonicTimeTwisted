@@ -43,7 +43,6 @@
 yoffset = 0;
 image_speed=.285;
 reaction_script = player_reaction_fan;
-
 </string>
           </argument>
         </arguments>
@@ -104,7 +103,6 @@ reaction_script = player_reaction_fan;
             <kind>1</kind>
             <string>///Active if Player Close
 var xoffset;
-
 if instance_exists(objPlayer) {
     xoffset = x - objPlayer.x;
     

@@ -1,5 +1,4 @@
 // player_state_roll()
-
 // ground motion
 if not sliding && angle3D == 0
 {
@@ -7,10 +6,8 @@ if not sliding && angle3D == 0
     if input_check(cLEFT) and xspeed>0 {xspeed -= roll_deceleration; if xspeed<0 xspeed = 0;} 
     if input_check(cRIGHT) and xspeed<0 {xspeed += roll_deceleration; if xspeed>0 xspeed = 0;} 
 }
-
 // friction
 xspeed -= min(abs(xspeed), roll_friction)*sign(xspeed);
-
 // gimmicks
 if (gimmick_id != noone)
 {
@@ -53,13 +50,10 @@ else
 {
     angle3D = 0;
 }
-
 // update position
 if not player_movement_ground() return false;
-
 // falling
 if not landed return player_is_falling();
-
 // slide if moving too slow
 if abs(xspeed)<slide_threshold and relative_angle>=45 and relative_angle<=315
 {
@@ -67,23 +61,18 @@ if abs(xspeed)<slide_threshold and relative_angle>=45 and relative_angle<=315
     if relative_angle>=90 and relative_angle<=270 return player_is_falling(); else
     if not sliding sliding = 32;
 }
-
 // slope factor
 if sign(sine[relative_angle])==sign(xspeed) xspeed -= player_slope_factor(slope_friction_up, roll_friction); else
 xspeed -= player_slope_factor(slope_friction_down, roll_friction);
-
 // jumping
 if input_check_pressed(cACTION) and not player_collision_ceiling(offset_y+5)
 {
     rolling_jump = true;
     return player_is_jumping();
 }
-
 // uncurl
 if abs(xspeed)<unroll_threshold return player_is_running();
-
 // animate
 timeline_speed = 1/max(5-abs(xspeed), 1);
-
 // set facing
 facing = sign(xspeed);

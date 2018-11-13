@@ -14,7 +14,6 @@ else
     special_level = ds_list_find_value(objProgram.special_future_list, argument1 - 1);
     objProgram.special_future_current_level = argument1 - 1;
 }
-
 stop_all_music(false);
 stop_all_music(false, true);
 transition_to(objLevelToSS, special_level, 20);

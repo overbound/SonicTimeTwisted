@@ -1,5 +1,4 @@
 //smartphone_save_configuration()
-
 ini_open("settings.ini");
 ini_write_real('smartphone', 'dpadmode', objProgram.inputManager.dpadMode);
 ini_write_real('smartphone', 'input', objProgram.inputManager.input);
@@ -23,4 +22,3 @@ ini_write_real('smartphone', 'gyro_analog_start_y', objProgram.inputManager.gyro
 ini_write_real('smartphone', 'gyro_analog_end_y', objProgram.inputManager.gyro_analog_end_y);
 ini_write_real('smartphone', 'gg_mode', objProgram.inputManager.gg_mode);
 ini_close();
-

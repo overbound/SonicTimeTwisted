@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>-1</depth>
   <persistent>0</persistent>
-  <parentName>objNonSolid</parentName>
+  <parentName>objNonSolidAlwaysActive</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -167,7 +167,6 @@ if image_speed&gt;0
     // pulsate
     image_xscale = 1+sin(objScreen.image_index*0.333)*0.2;
     image_yscale = image_xscale;
-
     // flash
     image_blend = make_color_rgb(255, 72+(183*(objScreen.image_index mod 2)), 255*(objScreen.image_index mod 2));
 }
@@ -222,16 +221,12 @@ if image_speed&gt;0
           <argument>
             <kind>1</kind>
             <string>/// Bounce
-
 // move outside collision
 if place_meeting(x, y, other.id) y -= 1;
-
 // reverse direction
 direction = 90;
-
 // stop moving if too slow
 if abs(speed)&lt;1 {speed = 0; gravity = 0; image_speed = 0.25;}
-
 // sound
 audio_stop_sound(sndSlam);
 audio_play_sound(sndSlam, 4,0);

@@ -1,5 +1,4 @@
 /// get button label to display on the configuration screen
-
 var code = round(real(argument0));
 switch(code)
 {

@@ -73,7 +73,6 @@ xspeed = .5*image_xscale*-1;
           <argument>
             <kind>1</kind>
             <string>backRightLeg[1].stop = false;
-
 </string>
           </argument>
         </arguments>

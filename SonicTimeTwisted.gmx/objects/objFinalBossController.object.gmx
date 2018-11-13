@@ -31,7 +31,6 @@ timeline_index=timeFinalBossObstacleGenerator;
 timeline_running=true;
 timeline_loop=true;
 state=0;
-
 instance_create(x,y,objFinalBossPathControl);
 </string>
           </argument>
@@ -56,12 +55,8 @@ instance_create(x,y,objFinalBossPathControl);
           <argument>
             <kind>1</kind>
             <string>switch state {
-
 case 0:
-
 break;
-
-
 
 
 }

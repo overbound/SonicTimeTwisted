@@ -36,10 +36,8 @@ musicJingle = noone;
 musicEffect = noone;
 previousPosition = 0;
 currentMusic = noone;
-
 // default fall back (only musicIntro(1) or bossIntro(3))
 priorityMusicState = 1;
-
 </string>
           </argument>
         </arguments>
@@ -64,7 +62,6 @@ priorityMusicState = 1;
             <kind>1</kind>
             <string>/// Music State
 switch state {
-
 case 0: // silence
     break;
 case 1: // Play Music Intro

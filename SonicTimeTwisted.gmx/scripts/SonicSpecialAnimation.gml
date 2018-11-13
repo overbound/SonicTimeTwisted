@@ -1,7 +1,5 @@
 /*
-
 void SonicSpecialAnimation()
-
 */
 if (z < -50)
 {
@@ -53,21 +51,14 @@ else if closing == false
     image_xscale = xaxis;
   }
 }
-
 if started == false && closing == false {
     sprite_index = sprSonicSSStand; // stand
 }
-
 if hit {
-
     sprite_index = sprSonicSSHit;    
-
 } else if kill == true {
-
     sprite_index = sprSonicSSHit;    
-
 }
-
 if closing == true {
         
     if image_index > 7 {
@@ -76,5 +67,4 @@ if closing == true {
         image_index = 7;
     
     }
-
  }

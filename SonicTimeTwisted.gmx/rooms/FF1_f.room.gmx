@@ -13,7 +13,6 @@
   <code>// initialize level settings
 objLevel.act = 1;
 objLevel.flower = sprFlowerFF;
-
 objProgram.in_past=false;
 // setup titlecard
 with objTitlecard
@@ -924,7 +923,7 @@ with objTitlecard
     <instance objName="objSlant" x="1868" y="2496" name="inst_C04BBCFA" locked="0" code="" scaleX="1.25" scaleY="0.125" colour="4294967295" rotation="0"/>
     <instance objName="objSlant" x="1856" y="2496" name="inst_63B85822" locked="0" code="climbable=true;" scaleX="-2" scaleY="0.125" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="1968" y="2512" name="inst_304B1588" locked="0" code="climbable=true;" scaleX="2" scaleY="16" colour="4294967295" rotation="0"/>
-    <instance objName="objCurveConcave" x="2084" y="2300" name="inst_BE52BCD6" locked="0" code="" scaleX="-0.916666686534882" scaleY="-0.920000016689301" colour="4294967295" rotation="0"/>
+    <instance objName="objCurveConcave" x="2084" y="2300" name="inst_BE52BCD6" locked="0" code="" scaleX="-0.916666686534882" scaleY="-0.9200000166893" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="1992" y="2196" name="inst_A8F7931F" locked="0" code="" scaleX="27.5" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="2212" y="2196" name="inst_8F89C5AD" locked="0" code="climbable=true;" scaleX="1.5" scaleY="13.5" colour="4294967295" rotation="0"/>
     <instance objName="objSlant" x="5710" y="3312" name="inst_8C11E0E6" locked="0" code="layer=2;&#xA;" scaleX="-1.5" scaleY="0.75" colour="4294967295" rotation="0"/>

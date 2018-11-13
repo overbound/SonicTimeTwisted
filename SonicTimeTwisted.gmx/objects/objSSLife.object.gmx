@@ -43,7 +43,6 @@
 z = 20;
 image_speed = 0;
 
-
 </string>
           </argument>
         </arguments>
@@ -91,7 +90,6 @@ image_speed = 0;
         image_index = 13;
     }
 }
-
 tex = sprite_get_texture(sprite_index, image_index);
 </string>
           </argument>
@@ -117,7 +115,6 @@ tex = sprite_get_texture(sprite_index, image_index);
             <kind>1</kind>
             <string>draw_shadow(8);
 draw_billboard(16, 16);
-
 </string>
           </argument>
         </arguments>

@@ -6,7 +6,6 @@ with (argument0)
   posZ += speedZ;
   
   speedY += _gravity;
-
   var ratio, midX, midY;
   midX = view_xview + 213;
   midY = view_yview;
@@ -25,7 +24,5 @@ with (argument0)
       plat_speed = x - xprevious;
     }
   }
-
   depth = 128 - posZ;
 }
-

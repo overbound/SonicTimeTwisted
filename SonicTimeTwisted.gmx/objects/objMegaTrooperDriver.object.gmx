@@ -449,10 +449,8 @@ audio_play_sound(sndQuake,0,false);
           <argument>
             <kind>1</kind>
             <string>with objMegaTrooper {
-
     state=7;
     alarm[0] = 45;
-
 }
 instance_create(x,y,objMegaTrooperMoleDeath);
 visible = false;

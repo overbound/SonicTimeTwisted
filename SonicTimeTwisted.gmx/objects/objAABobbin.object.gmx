@@ -42,7 +42,6 @@
             <string>image_speed = 0;
 reaction_script = player_reaction_AA_bobbin;
 type = 0;
-
 </string>
           </argument>
         </arguments>
@@ -201,17 +200,14 @@ switch type
 case 1: x = xstart+cos(objScreen.image_index/16)*16; break;
 case 2: y = ystart+cos(objScreen.image_index/16)*16; break;
 }
-
 // 3D effect
 if type&gt;0
 {
     // expand and contract
     image_xscale = 1+sin(objScreen.image_index/16)*0.25;
     image_yscale = image_xscale;
-
     // adjust depth to "distance"
     if image_xscale&gt;1 depth = -1; else depth = 1;
-
     // negate collision if too far back
     layer = 3*(image_xscale&gt;0.85 and image_xscale&lt;1.15);
 }

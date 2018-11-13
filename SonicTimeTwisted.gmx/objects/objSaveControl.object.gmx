@@ -26,11 +26,9 @@
           <argument>
             <kind>1</kind>
             <string>/// Initialize objects for the screen and read saved data
-
 // For backwards compatibility, all existing save files are shifted one slot to the right
 // if a save exists in slot 0.
 shift_savefiles();
-
 /// Create Objects and Variables
 slots[0]=instance_create(64,120,objNoSaveSlot);
 slots[1]=instance_create(192,120,objSaveSlot);
@@ -41,7 +39,6 @@ slots[5]=instance_create(704,120,objSaveSlot);
 slots[6]=instance_create(832,120,objSaveSlot);
 slots[7]=instance_create(960,120,objSaveSlot);
 slots[8]=instance_create(1088,120,objDeleteSlot);
-
 slots[0].slotNumber = 0;
 slots[1].slotNumber = 1;
 slots[2].slotNumber = 2;
@@ -51,7 +48,6 @@ slots[5].slotNumber = 5;
 slots[6].slotNumber = 6;
 slots[7].slotNumber = 7;
 slots[8].slotNumber = 8;
-
 xSpeed=0;
 selectCheck = 1;
 x=slots[1].x;
@@ -60,7 +56,6 @@ selectState = 0;
 // left = 0 right = 1
 stageLeftRight = 1;
 stageDeleteConfirmSprite = sprDeleteConfirm;
-
 
 </string>
           </argument>
@@ -103,7 +98,6 @@ if selectState == 0 {
     }
 }
 else if selectState == 1 {
-
     if input_check_pressed(cLEFT) &amp;&amp; slots[selectCheck].visiblePast==1 {
         stageLeftRight=0;
     }
@@ -112,7 +106,6 @@ else if selectState == 1 {
     }
 }
 else if selectState == 3 {
-
     var filename = save_file_name(selectCheck);
     
     if input_check_pressed(cLEFT) {
@@ -134,7 +127,6 @@ else if selectState == 3 {
     
     }   
 }
-
 </string>
           </argument>
         </arguments>
@@ -158,20 +150,14 @@ else if selectState == 3 {
             <string>/// Selector Movement
     
 if x &lt;&gt; slots[selectCheck].x {    
-
     if(xSpeed == 1)
         x += 16;
     if(xSpeed == -1)
         x -= 16;
-
 } else {
-
     xSpeed=0;
-
 }
-
     
-
 </string>
           </argument>
         </arguments>
@@ -194,10 +180,8 @@ if x &lt;&gt; slots[selectCheck].x {
             <kind>1</kind>
             <string>/// Vertical Controls and Actions
 if xSpeed == 0 {
-
     if selectState == 0 {
         if input_check_pressed(cA) || input_check_pressed(cSTART) {
-
         if selectCheck != 8 {
         
         if sprite_index == sprSaveDelete {
@@ -228,34 +212,24 @@ if xSpeed == 0 {
             }
         }
     }
-
     if selectState == 1 {
-
         with slots[selectCheck] {
-
             if input_check_pressed(cUP) {
                 if lastFutureLevel &gt; iconIndex || lastPastLevel &gt; iconIndex
                     iconIndex += 1;
             }
-
             if input_check_pressed(cDOWN) {
                 if iconIndex &gt; 0
                     iconIndex -= 1;
             }
-
             if input_check_pressed(cB) {
                 other.selectState = 0;
                 allowLevelStart = false;
             }
-
             if input_check_released(cA) || input_check_pressed(cSTART) {
-
                 allowLevelStart = true;
-
             }
-
             if (input_check_pressed(cA) || input_check_pressed(cSTART)) &amp;&amp; allowLevelStart == true {
-
                 if input_check_pressed(cLEFT) &amp;&amp; slots[selectCheck].visiblePast==1 {
                         stageLeftRight=0;
                     }
@@ -279,21 +253,17 @@ if xSpeed == 0 {
                     }
                 }
             }
-
             if iconIndex &lt; 0 {
                 iconIndex = lastIndex;
             } else if iconIndex &gt; lastIndex {
                 iconIndex = 0;
             }
-
             if input_check_pressed(cUP) || input_check_pressed(cDOWN) {
-
                 if pastLevels[iconIndex] == true {
                     visiblePast = 1;
                 }
                 else
                     visiblePast = 0;
-
                 if futureLevels[iconIndex] == true {
                     visibleFuture = 1;
                 }
@@ -301,41 +271,28 @@ if xSpeed == 0 {
             }
         }
     }
-
     if selectState == 2 {
-
         with slots[selectCheck] {
             if input_check_pressed(cUP) {
                 characterSelect += 1;
             }
-
             if input_check_pressed(cDOWN) {
                 characterSelect -= 1;
             }
-
             if characterSelect &gt; 3 {
-
                 characterSelect = 1;
-
             } else if characterSelect &lt; 1 {
-
                 characterSelect = 3;
             }
-
             if input_check_released(cA) || input_check_pressed(cSTART) {
-
                 allowLevelStart = true;
-
             }
-
             if input_check_pressed(cB) {
                 other.selectState = 0;
             }
-
         }
         
         if (input_check_pressed(cA) || input_check_pressed(cSTART)) &amp;&amp; slots[selectCheck].allowLevelStart == true {
-
             create_new_save(slots[selectCheck].characterSelect, other.selectCheck);
             slots[selectCheck].futureLevels[0]=true;
             slots[selectCheck].allowLevelStart =false;
@@ -430,18 +387,13 @@ if selectState!=3 &amp;&amp; objScreen.frame_counter {
           <argument>
             <kind>1</kind>
             <string>if selectState==0 {
-
     draw_sprite_ext(sprite_index,0,x,y,image_xscale,image_yscale,0,c_white,1);
-
 }
 else if selectState==1{
-
 if slots[selectCheck].iconIndex &gt; 11
     draw_sprite_ext(sprSelectStage,2,x,y-44,image_xscale,image_yscale,0,c_white,1);
     else draw_sprite_ext(sprSelectStage,stageLeftRight,x,y-44,image_xscale,image_yscale,0,c_white,1);
-
 }
-
 if selectState ==2 {
     if(selectCheck == 0)
     {
@@ -452,11 +404,8 @@ if selectState ==2 {
         draw_sprite_ext(sprCharSelect,0,x,y+32,1,1,0,c_white,1);
     }
 }
-
 if selectState==3 {
-
     draw_sprite_ext(stageDeleteConfirmSprite,0,x,y,image_xscale,image_yscale,0,c_white,1);
-
 }
 </string>
           </argument>

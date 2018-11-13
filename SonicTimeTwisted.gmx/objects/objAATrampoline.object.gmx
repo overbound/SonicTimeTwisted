@@ -79,11 +79,9 @@ if not active
     {
         // slowly return to neutral
         height = max(height-0.4, 0);
-
         // wind down
         angle = (angle+45) mod 360;
         oy = bbox_top+cosine[angle]*height;
-
         // reset collision point
         if height==0 ox = bbox_left;
     }
@@ -97,18 +95,14 @@ else
         if (floor(x)-offset_x&lt;other.bbox_left) xspeed = (other.bbox_left-(floor(x)-offset_x))*0.2; else
         if (floor(x)+offset_x&gt;other.bbox_right) xspeed = (other.bbox_right-(floor(x)+offset_x))*0.2; else
         xspeed = 0;
-
         // slow descent
         yspeed *= 0.8;
-
         // apply movement
         x += xspeed;
         y += yspeed;
-
         // update offsets
         other.ox = x;
         other.oy = floor(y)+offset_y;
-
         // launch from trampoline
         if (yspeed&lt;0.1)
         {
@@ -117,17 +111,13 @@ else
             other.height = 16;
             other.angle = 0;
             other.player_id = noone;
-
             // animate
             timeline_speed = 1;
-
             // states and flags
             state = player_state_fall;
-
             // movement and collision
             xspeed = other.force_x;
             yspeed = other.force_y; 
-
             // sound
             audio_play_sound(sndAATrampoline, 1, 0);
         }
@@ -157,12 +147,10 @@ else
             <kind>1</kind>
             <string>/// Render trampoline
 var w1, w2, h, t, d, j, k;
-
 // setup
 w1 = ox-bbox_left;
 w2 = ox-bbox_right;
 h = oy-bbox_top;
-
 // trampoline line
 draw_set_color(c_yellow);
 for (t=0; t&lt;1; t+=0.2)
@@ -173,7 +161,6 @@ for (t=0; t&lt;1; t+=0.2)
     draw_line_width(bbox_left+w1*j, bbox_top+h*t, bbox_left+w1*k, bbox_top+h*d, 2);
     draw_line_width(bbox_right+w2*j, bbox_top+h*t, bbox_right+w2*k, bbox_top+h*d, 2);
 }
-
 // trampoline stands
 draw_sprite(sprAATrampoline, 0, bbox_left, y);
 draw_sprite(sprAATrampoline, 0, bbox_right, y);

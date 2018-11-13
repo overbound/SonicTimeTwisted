@@ -1,6 +1,5 @@
 // argument0 - button to map (GMS code)
 // argument1 - button to map (STT code)
-
 with(objProgram.inputManager)
 {
     for (i = 0; i < button_count; i++)

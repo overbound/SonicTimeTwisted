@@ -267,7 +267,6 @@ case 0: // falling
     height += 16;
     if height&gt;=max_height {height = max_height; state = -1; alarm[0] = 30; audio_play_sound(sndSmash, 1, 0);}
     break;
-
 case 1: // rising
     height -= 2;
     if height&lt;=0 {height = 0; state = -1; alarm[1] = 100;}
@@ -348,11 +347,9 @@ case 1: // rising
           <argument>
             <kind>1</kind>
             <string>/// Draw smasher
-
 // get sprite height
 var w = sprite_get_width(sprAASmasher);
 var h = sprite_get_height(sprAASmasher);
-
 // render smasher scaled to height
 for (var py=y; py&lt;y+height; py+=h) draw_sprite_part(sprAASmasher, 0, 0, 0, w, min(y+height-py, h), xstart, py);
 </string>

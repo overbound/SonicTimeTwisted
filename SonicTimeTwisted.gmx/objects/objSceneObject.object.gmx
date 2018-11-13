@@ -104,10 +104,8 @@
           <argument>
             <kind>1</kind>
             <string>/// Destroy outside view
-
 // check views
 for (var i=0; i&lt;7; i+=1) if view_visible[i] and in_view(i, 32) exit;
-
 // destroy
 was_removed = true;
 instance_destroy();

@@ -43,7 +43,6 @@
 image_speed = 0.34;
 remove = 0;
 reaction_script = -1;
-
 // movement
 length = 192;
 max_distance = 192;
@@ -253,7 +252,6 @@ with lavaId
           <argument>
             <kind>1</kind>
             <string>with objPlayer {
-
     if x+320 &gt; other.x &amp;&amp; x -320 &lt; other.x &amp;&amp; other.active == false{
     
         other.active = true;

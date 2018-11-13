@@ -41,7 +41,6 @@
             <kind>1</kind>
             <string>reaction_script=player_reaction_robo_rex;
 life=3;
-
 invulnerable=false;
 image_speed=0;image_index=0;
 image_speed=0;
@@ -53,7 +52,6 @@ with head {
     xoffset=-30;
     yoffset=-60;
 }
-
 foot=instance_create(x-28,y+28,objRoboRexFoot);
 with foot {
     parentId=other.id
@@ -113,7 +111,6 @@ remove=2;
 direction=80;
 speed=4;
 image_index=1;
-
 with head {
     gravity_direction=270;
     gravity=.25;
@@ -162,7 +159,6 @@ with instance_create(x,y,objRoboRexFrontFoot) {
             <string>invulnerable=false;
 visible = 1;
 
-
 </string>
           </argument>
         </arguments>
@@ -186,18 +182,14 @@ visible = 1;
           <argument>
             <kind>1</kind>
             <string>if reaction_script == noone exit;
-
 with head {
-
     x = other.x+xoffset;
     y = other.y+yoffset;
 }
 with foot {
-
     x = other.x+xoffset;
     y = other.y+yoffset;
 }
-
 </string>
           </argument>
         </arguments>
@@ -223,7 +215,6 @@ with foot {
             <string>if invulnerable &amp;&amp; life &gt; 0 {
     visible = objScreen.flashing_visible;
 }
-
 </string>
           </argument>
         </arguments>

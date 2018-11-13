@@ -80,13 +80,10 @@
           <argument>
             <kind>1</kind>
             <string>/// Animate
-
 // increase index infinitely
 //index += 0.25; - moved to event 15
-
 // rotate
 image_angle = angle_wrap(image_angle+4*(abs(cosine[image_angle])+0.1));
-
 // flicker
 //image_alpha = !image_alpha; - moved to event 15
 </string>
@@ -112,10 +109,8 @@ image_angle = angle_wrap(image_angle+4*(abs(cosine[image_angle])+0.1));
           <argument>
             <kind>1</kind>
             <string>/// Animate
-
 // increase index infinitely
 index += 0.25;
-
 // flicker
 image_alpha = !image_alpha;
 </string>
@@ -141,13 +136,10 @@ image_alpha = !image_alpha;
           <argument>
             <kind>1</kind>
             <string>/// Render shield
-
 // back wind
 draw_sprite_ext(sprite_index, 10 + (index mod 7), x, y, image_xscale, image_yscale, image_angle+45, image_blend, image_alpha);
-
 // surrounding wind
 draw_sprite_ext(sprite_index, index mod 3, x, y, image_xscale, image_yscale, 0, image_blend, 1-image_alpha);
-
 // front wind
 draw_sprite_ext(sprite_index, 3 + (index mod 7), x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
 </string>

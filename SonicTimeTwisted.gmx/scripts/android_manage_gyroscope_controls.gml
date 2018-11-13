@@ -1,7 +1,5 @@
 // argument0 - manage both directions
-
 var tiltscale_x = android_read_gyroscope_x();
-
 var keyToPress;
 if(tiltscale_x < 0)
 {
@@ -12,7 +10,6 @@ else
     keyToPress = cRIGHT;
 }
 tiltscale_x = abs(tiltscale_x);
-
 gyro_analog_timer = (gyro_analog_timer + 1) mod 10;
 var pressed = 0;
 // the tilt scale is divided in ten segments; depending on how much the phone is tilted, the button to press
@@ -56,10 +53,8 @@ if(pressed)
 {
     android_vk_press(keyToPress);
 }
-
 if(argument0)
 {
-
     var tiltscale_y = android_read_gyroscope_y();
     
     var keyToPress;

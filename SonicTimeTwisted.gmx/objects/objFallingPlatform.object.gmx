@@ -404,7 +404,6 @@
           <argument>
             <kind>1</kind>
             <string>//appear!
-
 if appear &gt; 0 &amp;&amp; appear &lt; 40 {
     appear +=1;
 }else {
@@ -433,7 +432,6 @@ if appear &gt; 0 &amp;&amp; appear &lt; 40 {
           <argument>
             <kind>1</kind>
             <string>//appear!
-
 if appear &gt; 0 &amp;&amp; appear &lt; 40 {
     visible = objScreen.flashing_visible;
 }else {

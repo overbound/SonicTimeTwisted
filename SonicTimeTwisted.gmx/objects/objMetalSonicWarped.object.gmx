@@ -31,7 +31,6 @@ image_xscale=0.125;
 image_yscale=0.125;
 offset=0;
 image_speed=0;
-
 alarm[0] = 220;
 </string>
           </argument>
@@ -59,8 +58,6 @@ alarm[0] = 220;
     level_goto_next_transitoin(objLevelToSS);
     instance_destroy();
 }
-
-
 
 </string>
           </argument>
@@ -130,10 +127,8 @@ alarm[1]=50;
     }
 }
 else if sprite_index == sprMetalSonicWarpedBig &amp;&amp; image_xscale &lt; .68 {
-
     image_xscale+=.0042;
     image_yscale+=.0042;
-
 }
 </string>
           </argument>

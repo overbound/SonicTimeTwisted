@@ -26,7 +26,6 @@
           <argument>
             <kind>1</kind>
             <string>/// Initialize
-
 // state
 mode = 0;
 screenshot = background_create_from_surface(application_surface, 0, 0, objScreen.width, objScreen.height, 0, 0);
@@ -36,7 +35,6 @@ planet_ox = 600; //608;
 planet_oy = -600; //-416;
 banner_ox = objScreen.width + 240;
 banner_speed = 16;
-
 // title strings
 title_word = 0;
 for (var i=0; i&lt;4; i+=1)
@@ -117,10 +115,8 @@ d3d_end();
           <argument>
             <kind>1</kind>
             <string>with objLevel {
-
     timer_enabled = true;
     started = true;
-
 }
 with objHud visible = true;
 </string>
@@ -152,7 +148,6 @@ case 0: // fade out
     if (fade_alpha&gt;=1) {if next_room&gt;-1 room_goto(next_room); mode = 1; break;}
     fade_alpha += .25;
     break;
-
 case 1: // animate
     // skip on START
     if fade_alpha==0 and planet_ox==-10 and planet_oy==10 and input_check_pressed(cSTART) { 
@@ -161,11 +156,9 @@ case 1: // animate
         mode = 2;
         break;
     }
-
     // move ufo
     planet_ox = max(planet_ox-8, -10);
     planet_oy = min(planet_oy+8, 10);
-
     // scale title
     if title_word&lt;4
     {
@@ -175,7 +168,6 @@ case 1: // animate
             title_word += 1;
             if title_word==4 alarm[0] = 50 //120;
         }
-
         // ignore if past string length
         else if title_pos[title_word]&lt;title_length[title_word]
         {
@@ -193,21 +185,17 @@ case 1: // animate
     // fade in
     if fade_alpha&gt;0 fade_alpha -= .0125;
 break;
-
 case 2: // exit
     planet_ox -= 16;
-
     // fade away
     image_alpha -= 0.02;
     if image_alpha&lt;=0 instance_destroy();
     break;
-
 case 3: // fade out only
     if fade_alpha&lt;=0 {instance_destroy(); break;}
     fade_alpha -= image_speed;
     break;
 }
-
 // move banner
 banner_ox -= floor(banner_speed);
 if (banner_speed &gt; 3) {
@@ -239,7 +227,6 @@ if (banner_ox &lt; 0) banner_ox += 208;
             <kind>1</kind>
             <string>/// Setup title
 var i, j;
-
 // setup lengths and offsets
 draw_set_halign(fa_left);
 for (i=0; i&lt;4; i+=1)
@@ -247,7 +234,6 @@ for (i=0; i&lt;4; i+=1)
     // get length in characters
     title_length[i] = string_length(title_string[i]);
     if title_length[i]&lt;1 continue;
-
     // set font
     switch i
     {
@@ -255,10 +241,8 @@ for (i=0; i&lt;4; i+=1)
     case 3: draw_set_font(objResources.fontTitleYellow); break;
     default: draw_set_font(objResources.fontTitleLarge);
     }
-
     // set offset
     title_ox[i] = 298-string_width(title_string[i]);
-
     // go through each character
     for (j=0; j&lt;title_length[i]; j+=1) title_scale[i, j] = 12;
 }
@@ -286,7 +270,6 @@ for (i=0; i&lt;4; i+=1)
             <kind>1</kind>
             <string>/// Render title
 var i;
-
 // fill screen with black
 /*
 draw_set_color(c_black);
@@ -294,45 +277,36 @@ draw_set_alpha(fade_alpha);
 draw_rectangle(view_xview[view_current], view_yview[view_current], view_xview[view_current]+view_wview[view_current], view_yview[view_current]+view_hview[view_current], false);
 draw_set_color(c_white);
 draw_set_alpha(1);*/
-
 if screenshot &gt; -1 
 {
     draw_background_stretched_ext(screenshot, view_xview[view_current], view_yview[view_current], objScreen.width, objScreen.height, c_white, fade_alpha);
 }
-
 // ignore if not rendering card
 if mode&lt;1 or mode&gt;2 exit;
-
 // planet back
 draw_set_color(image_blend);
 draw_set_alpha(image_alpha);
 draw_sprite(sprTitlePlanet, 0, view_xview[view_current]+planet_ox, view_yview[view_current]+planet_oy);
-
 // banner
 var boxm = floor(banner_ox)-208;
 draw_sprite(sprTitleBannerLeft, 0, view_xview+boxm, view_yview+186);
 for (i=0; i&lt;3; i+=1) {
     draw_sprite(sprTitleBanner, 0, view_xview+boxm+(i*208), view_yview+186);
 }
-
 // planet front
 draw_sprite(sprTitlePlanet, 1, view_xview[view_current]+planet_ox, view_yview[view_current]+planet_oy);
-
 // title first word
 draw_set_halign(fa_left);
 draw_set_font(objResources.fontTitleLarge);
 for (i=0; i&lt;title_pos[0]+1; i+=1) draw_text_transformed(view_xview[view_current]+title_ox[0]+string_width(string_copy(title_string[0], 0, i)), view_yview[view_current]+64, string_char_at(title_string[0], i+1), title_scale[0, i], title_scale[0, i], 0);
-
 // title second word
 if title_word&gt;0 for (i=0; i&lt;title_pos[1]+1; i+=1) draw_text_transformed(view_xview[view_current]+title_ox[1]+string_width(string_copy(title_string[1], 0, i)), view_yview[view_current]+98, string_char_at(title_string[1], i+1), title_scale[1, i], title_scale[1, i], 0);
-
 // title "Zone"
 if title_word&gt;1
 {
     draw_set_font(objResources.fontTitleSmall);
     for (i=0; i&lt;title_pos[2]+1; i+=1) draw_text_transformed(view_xview[view_current]+title_ox[2]+string_width(string_copy(title_string[2], 0, i)), view_yview[view_current]+132, string_char_at(title_string[2], i+1), title_scale[2, i], title_scale[2, i], 0);
 }
-
 // title "Act"
 if title_word&gt;2
 {

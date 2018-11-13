@@ -181,7 +181,6 @@ with instance_create(boss.x, boss.y, objAA1BossLaser) parent_id = other.boss;
           <argument>
             <kind>1</kind>
             <string>/// Fire laser
-
 with instance_create(boss.x, boss.y, objAA1BossLaser) {parent_id = other.boss; pattern = 1;}
 </string>
           </argument>
@@ -235,7 +234,6 @@ with instance_create(boss.x, boss.y, objAA1BossLaser) {parent_id = other.boss; p
           <argument>
             <kind>1</kind>
             <string>/// Fire laser
-
 with instance_create(boss.x, boss.y, objAA1BossLaser) {parent_id = other.boss; pattern = -1; direction = 175;}
 </string>
           </argument>

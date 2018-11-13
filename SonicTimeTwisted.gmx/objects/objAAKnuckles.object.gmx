@@ -64,10 +64,8 @@ remove=0;
           <argument>
             <kind>1</kind>
             <string>with objAAPlane {
-
     other.x = x-60;
     other.y = y-60;
-
 
 }
 </string>

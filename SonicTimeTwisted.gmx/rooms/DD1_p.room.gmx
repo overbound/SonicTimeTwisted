@@ -13,11 +13,8 @@
   <code>// initialize level settings
 objLevel.act = 1;
 objLevel.flower = sprFlowerDD;
-
 with objLevel bg = instance_create(x,y,objDDPastBack);
-
 objProgram.in_past = true;
-
 
 // setup titlecard
 with objTitlecard

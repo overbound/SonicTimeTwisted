@@ -1,5 +1,4 @@
 // player_state_clamber()
-
 // adjust position
 switch timeline_position
 {

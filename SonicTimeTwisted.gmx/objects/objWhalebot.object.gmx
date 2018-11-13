@@ -44,11 +44,9 @@ hspeed = -4;
 image_speed = 0;
 image_xscale = -1;
 reaction_script = player_reaction_enemy;
-
 // physics
 max_speed = 4;
 turning = 0;
-
 </string>
           </argument>
         </arguments>
@@ -239,10 +237,8 @@ with instance_create(x+12, y+8, objShieldIceBlockDebris) {depth = other.depth-1;
             <kind>1</kind>
             <string>/// Enemy behavior
 var offset = 0;
-
 // check x distance fromm player
 with instance_nearest(x, y, objPlayer) offset = x - other.x;
-
 // turn around if too far
 if abs(offset) &gt; 96 and (image_xscale != sign(offset)) and (turning == 0)
 {
@@ -251,14 +247,12 @@ if abs(offset) &gt; 96 and (image_xscale != sign(offset)) and (turning == 0)
     timeline_running = false;
     alarm[0] = 6;
 }
-
 // reverse speed on turning
 if (turning != 0)
 {
     hspeed += 0.25 * turning;
     if (abs(hspeed) &gt;= max_speed) and (sign(hspeed) == turning) {hspeed = max_speed * turning; turning = 0;}
 }
-
 if sprite_index == sprWhalebotPast &amp;&amp; objLevel.started == true{
     
     if !audio_is_playing(sndPropeller)
@@ -292,7 +286,6 @@ if sprite_index == sprWhalebotPast &amp;&amp; objLevel.started == true{
 alarm[1] = 180;
 hspeed = 0;
 frozen = true;
-
 // destroy icicle
 with other instance_destroy();
 </string>
@@ -318,9 +311,7 @@ with other instance_destroy();
           <argument>
             <kind>1</kind>
             <string>if objProgram.in_past {
-
     sprite_index=sprWhalebotPast;
-
 }
 </string>
           </argument>
@@ -387,11 +378,9 @@ with other instance_destroy();
           <argument>
             <kind>1</kind>
             <string>/// Render ice block
-
 // get offset from time
 var offset = (-1+(((90-alarm[1]) div 4) mod 2)*2)*(alarm[1]&lt;45);
 var yoffset = 0;
-
 // draw ice block
 draw_sprite(sprShieldIceBlock, 0, x+offset, y+yoffset);
 </string>

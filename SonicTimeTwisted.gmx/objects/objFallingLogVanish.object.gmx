@@ -250,15 +250,12 @@ alarm[1] = 20;
           <argument>
             <kind>1</kind>
             <string>///
-
 if active &lt; 2 &amp;&amp; active != 0{
-
 
     y+=random(2)-1;
     x+=random(2)-1;
     
     active +=.125;
-
         }
     else if active == 2 {
         y +=vsp*1.2;
@@ -286,7 +283,6 @@ if active &lt; 2 &amp;&amp; active != 0{
           <argument>
             <kind>1</kind>
             <string>///
-
 if active == 2 {        
     if flash == true{
         visible = objScreen.flashing_visible;

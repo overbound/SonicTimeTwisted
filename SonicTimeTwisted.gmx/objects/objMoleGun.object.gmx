@@ -42,19 +42,16 @@
             <string>/// Initialize
 image_speed = 0;
 offscreen_enabled = true;
-
 // state machine
 state = 0;
 timer = 0;
 frozen=false
-
 // physics
 facing = 1;
 wall_facing = 0;
 cliff_facing = 0;
 offset_x = (bbox_right - bbox_left) * 0.5;
 offset_y = (bbox_bottom - y);
-
 // other
 speed_cap = 1.5;
 acceleration = 0.02;
@@ -187,11 +184,9 @@ with instance_create(x+12, y+8, objShieldIceBlockDebris) {depth = other.depth-1;
           <argument>
             <kind>1</kind>
             <string>/// Movement and collision
-
 // reset collision data
 wall_facing = 0;
 cliff_facing = 0;
-
 // wall collision
 if collision_ray(offset_x, 0, 0, objSolid)
 {
@@ -202,7 +197,6 @@ else
 {
     // upward slope
     while collision_ray(offset_x, offset_y, 0, objSolid) y -= 1;
-
     // downward slope
     for (var i = 0; i &lt; offset_y * 2; i += 1) {if collision_ray(offset_x, offset_y + 1, 0, objSolid) break; y += 1;}
     if (i == offset_y*2)
@@ -354,10 +348,8 @@ image_index = ((x - x_origin) / 12) mod 4;
           <argument>
             <kind>1</kind>
             <string>/// Enemy behavior
-
 // we've stopped this frame
 if stopped {stopped = false; speed = 0; x_origin = x;}
-
 // state machine
 switch (state)
 {
@@ -368,7 +360,6 @@ case 0: // patrolling
         speed += acceleration;
         if speed &gt; speed_cap speed = speed_cap;
     }
-
     // turn around on hitting walls
     if (wall_facing != 0)
     {
@@ -378,7 +369,6 @@ case 0: // patrolling
         stopped = true;
         break;
     }
-
     // turn around at cliff-side
     if timer &gt; 15 and (cliff_facing != 0)
     {
@@ -388,12 +378,10 @@ case 0: // patrolling
         stopped = true;
         break;
     }
-
     gun_angle = degtorad(270);
     arm_timer += pi / 45;
     arm_angle = pi / 6 * cos(arm_timer);
     if (arm_timer &gt;= (2 * pi)) arm_timer -= 2 * pi;
-
     // wait a second before locking on
     if (timer &gt;= 60)
     {
@@ -415,7 +403,6 @@ case 0: // patrolling
         }
     }
     break;
-
 case 1: // turning
     hspeed = store_speed;
     facing = store_facing;
@@ -423,7 +410,6 @@ case 1: // turning
     state = 0;
     gun_angle = degtorad(270);
     break;
-
 case 2: // aiming
     if instance_exists(target)
     {
@@ -440,7 +426,6 @@ case 2: // aiming
     }
     gun_angle = arm_angle;
     break;
-
 case 3: // firing
     if not audio_is_playing(sndFireBlow) audio_play_sound(sndFireBlow, 3,0);
     if (timer == 120)
@@ -454,12 +439,10 @@ case 3: // firing
     arm_angle = arm_sweep_origin + (pi * 0.125) * sin(timer * 0.1);
     gun_angle = arm_angle;
 }
-
 hand_point_x = x - facing * 10 + facing * 24 * cos(arm_angle);
 hand_point_y = y - 1 + 24 * sin(arm_angle);
 damage_point_x = hand_point_x + facing * (13 * cos(gun_angle) - 2);
 damage_point_y = hand_point_y + 13 * sin(gun_angle);
-
 if (state == 3) and ((timer mod 6) == 0)
 {
     var fire_x = hand_point_x + facing * (24 * cos(gun_angle) - 2);
@@ -495,7 +478,6 @@ if (state == 3) and ((timer mod 6) == 0)
 alarm[1] = 180;
 hspeed = 0;
 frozen = true;
-
 // destroy icicle
 with other instance_destroy();
 </string>
@@ -552,17 +534,13 @@ with other instance_destroy();
           <argument>
             <kind>1</kind>
             <string>/// Render Mole
-
 // mole body
 if sprite_index &gt; -1 draw_sprite_ext(sprite_index, image_index, floor(x), floor(y)+1, image_xscale * facing, image_yscale, gravity_angle(), image_blend, image_alpha);
-
 // arm links
 draw_sprite(sprMoleArmLink, 0, x - (facing * 10) + (facing * (8) * cos(arm_angle)), y  + (8) * sin(arm_angle));
 draw_sprite(sprMoleArmLink, 0, x - (facing * 10) + (facing * (16) * cos(arm_angle)), y  + (16) * sin(arm_angle));
-
 // gun
 draw_sprite_ext(sprMoleGun, 0, hand_point_x, hand_point_y, facing, 1, radtodeg(facing * -gun_angle), c_white, 1);
-
 // debug only
 if debug_mode draw_circle_color(damage_point_x, damage_point_y, 7, c_red, c_fuchsia, true);
 </string>
@@ -614,10 +592,8 @@ if debug_mode draw_circle_color(damage_point_x, damage_point_y, 7, c_red, c_fuch
           <argument>
             <kind>1</kind>
             <string>/// Render ice block
-
 // get offset from time
 var offset = (-1+(((90-alarm[1]) div 4) mod 2)*2)*(alarm[1]&lt;45);
-
 // draw ice block
 draw_sprite(sprShieldIceBlock, 0, x+offset, y);
 </string>

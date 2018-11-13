@@ -26,7 +26,6 @@
           <argument>
             <kind>1</kind>
             <string>// list to hold all instances of objMetalThrow
-
 listMetalThrow = ds_list_create();
 </string>
           </argument>
@@ -51,7 +50,6 @@ listMetalThrow = ds_list_create();
           <argument>
             <kind>1</kind>
             <string>size = ds_list_size(objMetalThrowController.listMetalThrow)
-
 //draw_text(view_xview[view_current]+40,view_yview[view_current]+40,size);
 </string>
           </argument>

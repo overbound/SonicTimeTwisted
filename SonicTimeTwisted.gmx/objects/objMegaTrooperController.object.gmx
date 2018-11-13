@@ -89,7 +89,6 @@ remove=0;
             <kind>1</kind>
             <string>/// create mega trooper
 with objLevel.player[0] {
-
     if x &gt; other.x -256 &amp;&amp; !instance_exists(objMegaTrooper){
     
         other.trooperId=instance_create(other.x,other.y,objMegaTrooper);
@@ -103,9 +102,7 @@ with objLevel.player[0] {
     
     }
 
-
 }    
-
 </string>
           </argument>
         </arguments>

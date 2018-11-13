@@ -45,7 +45,6 @@ explodeOffset = 0;
 state = 0;
 alarm[0]=20;
 image_alpha = 0;
-
 x = view_xview+view_wview*0.5;
 y = view_yview+view_hview*0.5;
     
@@ -76,7 +75,6 @@ y-=10;
 timeline_index=animExplosionCluster;
 timeline_position=0;
 timeline_running=true;
-
 state = 1;
 </string>
           </argument>
@@ -107,7 +105,6 @@ timeline_index=animExplosionCluster;
 timeline_position=0;
 timeline_running=true;
 
-
 </string>
           </argument>
         </arguments>
@@ -137,7 +134,6 @@ timeline_index=animExplosionCluster;
 timeline_position=0;
 timeline_running=true;
 
-
 </string>
           </argument>
         </arguments>
@@ -166,7 +162,6 @@ alarm[2]=32;
 timeline_index=animExplosionCluster;
 timeline_position=0;
 timeline_running=true;
-
 </string>
           </argument>
         </arguments>
@@ -195,7 +190,6 @@ x-=32;
 timeline_index=animExplosionCluster;
 timeline_position=0;
 timeline_running=true;
-
 </string>
           </argument>
         </arguments>

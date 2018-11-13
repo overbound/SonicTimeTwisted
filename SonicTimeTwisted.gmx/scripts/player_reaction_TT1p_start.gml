@@ -1,5 +1,4 @@
 /// player_reaction_AA1Start(local_id)
-
 // ignore if we skipped the cutscene already
 if objProgram.spawn_tag!=0 return false;
     
@@ -39,7 +38,6 @@ if objProgram.spawn_tag!=0 return false;
     
     // hard collision found
     return true;
-
 
 // hard collision found
 return false;

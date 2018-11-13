@@ -43,7 +43,6 @@
 image_speed=1;
 direction=90;
 spr_direction=-direction;
-
 </string>
           </argument>
         </arguments>
@@ -68,7 +67,6 @@ spr_direction=-direction;
             <kind>1</kind>
             <string>/// set depth
 depth = min(2000,distance_to_object(objSSCamera)/20);
-
 
 </string>
           </argument>

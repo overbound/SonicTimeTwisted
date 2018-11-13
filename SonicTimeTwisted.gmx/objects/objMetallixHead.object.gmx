@@ -44,7 +44,6 @@ reaction_script=player_reaction_boss
 remove=0;
 life=8;
 invulnerable=false;
-
 </string>
           </argument>
         </arguments>
@@ -145,7 +144,6 @@ invulnerable=false;
     reaction_script=noone;
     image_angle +=12;
 }
-
 
 </string>
           </argument>

@@ -1,11 +1,8 @@
 ///stop_all_music(resume, stopEffects)
-
 if (argument_count <= 0) return false;
 var resume = argument[0];
-
 var stopEffects = true;
 if (argument_count > 1) stopEffects = argument[1];
-
 with objMusic {
     if resume {
         statePrevious = state;

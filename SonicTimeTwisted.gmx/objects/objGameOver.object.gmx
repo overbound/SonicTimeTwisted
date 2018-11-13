@@ -281,7 +281,6 @@ switch mode
 case 1: // fade out
     if not alarm[0] and alarm[1] and input_check_pressed(cSTART) mode = -1;
     break;
-
 case -1: // fade in
     if image_alpha&gt;=1 {
         save_lives(3);
@@ -316,7 +315,6 @@ case -1: // fade in
             <string>/// Draw "GAME OVER"
 draw_sprite(sprGameOver, 0, view_xview[view_current]+(view_wview[view_current]/2)-40-max(alarm[0]*16, 0), view_yview[view_current]+view_hview[view_current]/2)
 draw_sprite(sprGameOver, 1, view_xview[view_current]+(view_wview[view_current]/2)+40+max(alarm[0]*16, 0), view_yview[view_current]+view_hview[view_current]/2)
-
 // fill screen with black
 draw_set_color(c_black);
 draw_set_alpha(image_alpha);

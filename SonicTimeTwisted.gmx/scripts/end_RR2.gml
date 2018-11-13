@@ -1,7 +1,5 @@
 //end_AA1
-
 with objLevel.player[0] {
-
     // states and flags
     state = player_state_stand;
     spinning = false;
@@ -15,7 +13,5 @@ with objLevel.player[0] {
         instance_create(x-8,y-16,objFallHat)
     }
 
-
 }
-
 with objLevel { silence = 1; }

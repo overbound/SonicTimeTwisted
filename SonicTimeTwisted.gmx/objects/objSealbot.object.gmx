@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>objEnemy</parentName>
+  <parentName>objEnemyAlwaysActive</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -43,11 +43,9 @@
 image_speed = 0;
 remove = 0;
 offscreen_enabled = true;
-
 // state machine
 state = 0;
 frozen = false;
-
 // physics
 hspeed = 2;
 facing = 1;
@@ -55,7 +53,6 @@ wall_facing = 0;
 cliff_facing = 0;
 offset_x = (bbox_right-bbox_left)*0.5;
 offset_y = (bbox_bottom-y);
-
 // other
 speed_cap = 3;
 acceleration = 0.1;
@@ -64,7 +61,6 @@ range_x = 75;
 range_y = 30;
 range_x_or_idle = 210;
 range_y_or_idle = 120;
-
 //animation
 timeline_index = animSealbotIdle;
 timeline_loop = false;
@@ -212,11 +208,9 @@ with instance_create(x+12, y+8, objShieldIceBlockDebris) {depth = other.depth-1;
           <argument>
             <kind>1</kind>
             <string>/// Movement and collision
-
 // reset collision data
 wall_facing = 0;
 cliff_facing = 0;
-
 // wall collision
 if collision_ray(offset_x, 0, 0, objSolid)
 {
@@ -227,12 +221,10 @@ else
 {
     // upward slope
     while collision_box(offset_x, offset_y, 0, objSolid) y -= 1;
-
     // downward slope
     for (var i=0; i&lt;offset_y*2; i+=1) if collision_ray(offset_x, offset_y+1+i, 0, objSolid) break;
     if (i&lt;offset_y*2) y += i; else {x -= hspeed; cliff_facing = sign(hspeed);}
 }
-
 </string>
           </argument>
         </arguments>
@@ -298,7 +290,6 @@ else
           <argument>
             <kind>1</kind>
             <string>/// Enemy behavoir
-
 // check if player is within range that activates most of this enemy's state machine
 var player_within_activation_range = abs(objPlayer.x - x) &lt; range_x_or_idle &amp;&amp; abs(objPlayer.y - y) &lt; range_y_or_idle;
 if(state &lt; 5)
@@ -407,7 +398,6 @@ else
 alarm[1] = 180;
 hspeed = 0;
 frozen = true;
-
 // destroy icicle
 with other instance_destroy();
 </string>
@@ -514,13 +504,11 @@ if sprite_index&gt;-1 draw_sprite_ext(sprite_index, image_index, floor(x), floor
           <argument>
             <kind>1</kind>
             <string>/// Draw collision mask
-
 // bounding box
 draw_set_color(c_lime);
 draw_set_alpha(image_alpha);
 if gravity_angle() mod 180 draw_rectangle(floor(x)-offset_y, floor(y)-offset_x, floor(x)+offset_y, floor(y)+offset_x, true); else
 draw_rectangle(floor(x)-offset_x, floor(y)-offset_y, floor(x)+offset_x, floor(y)+offset_y, true);
-
 // wall sensor
 draw_set_color(c_white);
 if gravity_angle() mod 180 draw_line(floor(x), floor(y)-offset_x, floor(x), floor(y)+offset_x); else
@@ -575,10 +563,8 @@ draw_set_alpha(1);
           <argument>
             <kind>1</kind>
             <string>/// Render ice block
-
 // get offset from time
 var offset = (-1+(((90-alarm[1]) div 4) mod 2)*2)*(alarm[1]&lt;45);
-
 // draw ice block
 draw_sprite(sprShieldIceBlock, 0, x+offset, y);
 </string>

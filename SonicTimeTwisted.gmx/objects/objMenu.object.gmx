@@ -28,7 +28,6 @@
             <string>/// States reference
 /*
 States available by default (ports to other platforms will extend this list):
-
 0 - default state - see below
 1 - main title screen
 2 - level pause menu
@@ -49,7 +48,6 @@ States available by default (ports to other platforms will extend this list):
 17 - level select - drifting dynamo
 18 - level select - tidal tubes
 19 - level select - planetary panic
-
 */
 </string>
           </argument>
@@ -368,7 +366,6 @@ if(active)
         x_offset += view_xview[view_current];
         y_offset += view_yview[view_current];
     }
-
     
     draw_set_color(c_yellow);
     
@@ -439,7 +436,6 @@ if(active)
                 draw_set_halign(fa_center);
                 draw_text_color(x_offset+213, y_offset+20*i, options[i, OPTION_NAME],c_white,c_white,c_yellow,c_yellow,1);
             }
-
         }
     }
     if(state == 11)
@@ -559,7 +555,6 @@ if(activated)
           <argument>
             <kind>1</kind>
             <string>/// Execute actions when option is selected - called by this object
-
 var usedState = state;
 var usedCursor = cursor;
 // if we're currently confirming a selection: use the action asociated with the
@@ -570,7 +565,6 @@ if(state == 10 &amp;&amp; cursor == 1)
     usedState = confirm_state;
     usedCursor = confirm_cursor;
 }
-
 if(active)
 {
     switch(usedState)
@@ -878,7 +872,6 @@ if(active)
           <argument>
             <kind>1</kind>
             <string>/// Init available options for every state - called by this object
-
 options = false;
 //use_default_interface = true;
 large = false;
@@ -1521,7 +1514,6 @@ switch(state)
         options[0, OPTION_TYPE] = OPTION_TYPE_TITLE;
         options[0, OPTION_VALUE] = false;
         options[0, OPTION_ANIMATION] = OPTION_ANIMATION_NONE;
-
         options[1, OPTION_NAME] = 'Select another';
         options[1, OPTION_TYPE] = OPTION_TYPE_SIMPLE;
         options[1, OPTION_VALUE] = false;
@@ -1544,9 +1536,7 @@ switch(state)
 // calculating the Y offset
 max_cursor = array_height_2d(options) - 1;
 menu_y_offset = floor((view_hview[view_current] - 20 * array_height_2d(options))/2);
-
 options_initialized = true;
-
 
 </string>
           </argument>
@@ -1571,7 +1561,6 @@ options_initialized = true;
           <argument>
             <kind>1</kind>
             <string>/// step - called by parent object
-
 if(active)
 {
     // there is no such thing as default state - a default state must be a context-specific one
@@ -1727,7 +1716,6 @@ if(active)
         }
         else
         {
-
             if(slide_timer &gt; 0)
             {
                 // this is the animation that plays when sliding between option screens

@@ -64,13 +64,10 @@ image_alpha=0;
           <argument>
             <kind>1</kind>
             <string>if visible == true {
-
 if image_alpha &lt; 1 {
     
     image_alpha += .025;
-
     }
-
     if color == c_red {
     
         color = c_white;

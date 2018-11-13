@@ -106,11 +106,9 @@ shocker[1].image_angle = 90;
             <kind>1</kind>
             <string>/// Move shockers
 var i;
-
 // stick to platform sides
 shocker[0].x = bbox_right+1;
 shocker[1].x = bbox_left;
-
 // adjust to platform position
 for (i=0; i&lt;2; i+=1)
 {

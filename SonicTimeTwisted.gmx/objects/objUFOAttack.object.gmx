@@ -41,7 +41,6 @@
             <kind>1</kind>
             <string>reaction_script=player_reaction_knock_ufo;
 remove=0;
-
 test =floor(random(2));
 if !objProgram.in_past {
     if test == 1 {
@@ -66,11 +65,8 @@ if !objProgram.in_past {
 }
 
 
-
-
 alarm[0]=2000;
 audio_play_sound(sndUFOFly,2,0);
-
 </string>
           </argument>
         </arguments>

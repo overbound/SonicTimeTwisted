@@ -72,7 +72,6 @@ y-=10;
 timeline_index=animExplosionCluster;
 timeline_position=0;
 timeline_running=true;
-
 state = 3;
 </string>
           </argument>
@@ -103,7 +102,6 @@ timeline_index=animExplosionCluster;
 timeline_position=0;
 timeline_running=true;
 
-
 </string>
           </argument>
         </arguments>
@@ -133,7 +131,6 @@ timeline_index=animExplosionCluster;
 timeline_position=0;
 timeline_running=true;
 
-
 </string>
           </argument>
         </arguments>
@@ -162,7 +159,6 @@ alarm[2]=32;
 timeline_index=animExplosionCluster;
 timeline_position=0;
 timeline_running=true;
-
 </string>
           </argument>
         </arguments>
@@ -189,7 +185,6 @@ timeline_running=true;
 timeline_index=animExplosionCluster;
 timeline_position=0;
 timeline_running=true;
-
 </string>
           </argument>
         </arguments>
@@ -213,7 +208,6 @@ timeline_running=true;
           <argument>
             <kind>1</kind>
             <string>switch state{
-
     case 1:
     
     if view_yview+240 &gt; objLevel.player[0].camera.bottom {
@@ -221,7 +215,6 @@ timeline_running=true;
         view_yview -=1;
     
     }
-
     
     break;
     
@@ -231,12 +224,10 @@ timeline_running=true;
     
         
             //screen_shake();
-
             
             if !audio_is_playing(sndScreenShake) { audio_play_sound(sndScreenShake, 0,0); }
         }
         
-
     break;
     
     case 3:
@@ -316,7 +307,6 @@ timeline_running=true;
     
 }
 
-
 </string>
           </argument>
         </arguments>
@@ -341,7 +331,6 @@ timeline_running=true;
             <kind>1</kind>
             <string>
 if state &gt;= 3 {
-
     draw_set_alpha(flashAlpha);
     draw_rectangle(view_xview,view_yview,view_xview+view_wport,view_yview+view_hport,false);
     

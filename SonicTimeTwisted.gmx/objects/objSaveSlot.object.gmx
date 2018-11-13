@@ -36,7 +36,6 @@ visiblePast=0;
 staticIndex=0;
 allowLevelStart=false;
 characterSelect=1;
-
 currentStone = 0;
 currentEmerald = 0;
 </string>
@@ -62,7 +61,6 @@ currentEmerald = 0;
           <argument>
             <kind>1</kind>
             <string>/// Choose Icon
-
 ini_open(save_file_name(slotNumber));
 futureLevels[0]=real(base64_decode(ini_read_string(LEVELS, aAA1_f, false)));
 futureLevels[1]=real(base64_decode(ini_read_string(LEVELS, aAA2_f, false)));
@@ -80,7 +78,6 @@ futureLevels[12]=real(base64_decode(ini_read_string(LEVELS, aSS1, false)));
 futureLevels[13]=real(base64_decode(ini_read_string(LEVELS, aPP1, false)));
 futureLevels[14]=real(base64_decode(ini_read_string(LEVELS, aPP2, false)));
 futureLevels[15]=real(base64_decode(ini_read_string(LEVELS, aMM1, false)));
-
 pastLevels[0]=real(base64_decode(ini_read_string(LEVELS, aAA1_p, false)));
 pastLevels[1]=real(base64_decode(ini_read_string(LEVELS, aAA2_p, false)));
 pastLevels[2]=real(base64_decode(ini_read_string(LEVELS, aRR1_p, false)));
@@ -101,9 +98,7 @@ characterSelect=real(base64_decode(ini_read_string(STATS, CHARACTER, base64_enco
 currentStone = real(base64_decode(ini_read_string(EMERALDS, PAST,0)));
 currentEmerald = real(base64_decode(ini_read_string(EMERALDS, FUTURE,0)));
 ini_close();
-
 for(i=0; i &lt; 16; i++) {
-
     if pastLevels[i] == true {
         
         lastPastLevel=i;
@@ -115,17 +110,13 @@ for(i=0; i &lt; 16; i++) {
         lastFutureLevel=i;
     
     } 
-
 }
 show_debug_message("Last FUTURE" + string(lastFutureLevel));
-
 if lastPastLevel &gt; lastFutureLevel {
     iconIndex = lastPastLevel;
 }
 else iconIndex = lastFutureLevel;
-
 lastIndex = iconIndex;
-
 if pastLevels[iconIndex] == true {
      visiblePast=1;
  }
@@ -163,15 +154,10 @@ draw_sprite_ext(sprite_index,0,x,y,image_xscale,image_yscale,0,c_white,1);
 draw_sprite_ext(sprStatic,floor(staticIndex),x,y-57,1,1,0,c_white,1);
 draw_sprite_ext(sprSaveIconsFuture,iconIndex,x,y-57,image_xscale,image_yscale,0,c_white,visibleFuture);
 draw_sprite_ext(sprSaveIconsPast,iconIndex,x,y-57,image_xscale,image_yscale,0,c_white,visiblePast);
-
 staticIndex+=.5;
-
 if staticIndex &gt;= 5 {
-
     staticIndex=0;
-
 }
-
 if characterSelect == 3 {
     draw_sprite_ext(sprKnucklesLevelEnd,8,x,y+46,1,1,0,c_white,1);
 } else if characterSelect == 2 {
@@ -179,7 +165,6 @@ if characterSelect == 3 {
 } else {
     draw_sprite_ext(sprSonicLevelEnd,1,x,y+44,1,1,0,c_white,1);
 }
-
 if currentStone &gt; 0 {
     draw_sprite_ext(sprSSStone,0,x-7,y+7,.35,.35,0,c_white,1);
 } else draw_sprite_ext(sprSSStone,0,x-7,y+7,.35,.35,0,c_black,.5);
@@ -201,7 +186,6 @@ if currentStone &gt; 5 {
 if currentStone &gt; 6 {
     draw_sprite_ext(sprSSStone,6,x-7,y+70,.35,.35,0,c_white,1);
 } else draw_sprite_ext(sprSSStone,6,x-7,y+70,.35,.35,0,c_black,.5);
-
 if currentEmerald &gt; 0 {
     draw_sprite_ext(sprSSEmerald,0,x+7,y+8,.3,.3,0,c_white,1);
 } else draw_sprite_ext(sprSSEmerald,0,x+7,y+8,.3,.3,0,c_black,.5);

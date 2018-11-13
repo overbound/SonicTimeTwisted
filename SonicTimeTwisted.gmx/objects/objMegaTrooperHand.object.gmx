@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>objNonSolid</parentName>
+  <parentName>objNonSolidAlwaysActive</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -68,7 +68,6 @@ yspeed = -2;
 ycollision = 3448;
 yorigin=3330;
     
-
 
 </string>
           </argument>
@@ -217,7 +216,6 @@ yorigin=3330;
           <argument>
             <kind>1</kind>
             <string>if objMegaTrooper.state &gt;= 7 exit;
-
 if ydirection == 1 {
             
     yspeed+=.25;
@@ -227,7 +225,6 @@ if ydirection == 1 {
 else if ydirection == -1 {
     
 if y &gt; yorigin {
-
         yspeed-=.05;
         yoffset += yspeed;
         
@@ -240,12 +237,9 @@ if y &gt; yorigin {
     }
             
 }
-
 // check for collision
 //ycollision +=cos(objScreen.image_index/16)*.25;
-
 if y &gt;= ycollision {
-
     if ydirection != 0 {
     
         alarm[0]=5;
@@ -258,7 +252,6 @@ if y &gt;= ycollision {
     screen_shake();
     
 }
-
 </string>
           </argument>
         </arguments>

@@ -197,7 +197,6 @@ oy[7] = 16;
           <argument>
             <kind>1</kind>
             <string>///state control for sign
-
 active=false;
 player_id = noone;
 </string>

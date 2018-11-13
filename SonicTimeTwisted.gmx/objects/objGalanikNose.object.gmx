@@ -90,9 +90,7 @@ moveOff = false;
             <string>x = parentId.x;
 y = parentId.y;
 
-
 if life &lt;= 0 {
-
     with objGalanik {
         state = 6;
         eye_index = 0;
@@ -103,7 +101,6 @@ if life &lt;= 0 {
     instance_destroy();
    
 }
-
 image_xscale=1+cos(objScreen.image_index/8)*0.0675;
 image_yscale=image_xscale;
 </string>
@@ -132,8 +129,6 @@ image_yscale=image_xscale;
 draw_boss_hit_blend();
 draw_self();
 draw_boss_hit_blend();
-
-
 
 </string>
           </argument>

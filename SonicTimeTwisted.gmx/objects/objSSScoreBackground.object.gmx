@@ -95,7 +95,6 @@ em_y = 96;
 oem_x = view_wview[view_current]/2 - 8 * (other_level - 1);
 oem_y = 116;
 alarm[0] = 10;
-
 menu = instance_create(x, y, objMenu);
 // this one is useful for ports
 ss_instructions_override = false;

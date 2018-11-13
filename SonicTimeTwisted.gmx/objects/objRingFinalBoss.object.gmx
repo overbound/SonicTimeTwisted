@@ -41,11 +41,8 @@
             <kind>1</kind>
             <string>hspeed=-5;
 remove=0;
-
 if in_view(view_current,32) &amp;&amp; x &lt; 2432 {
-
     instance_destroy();
-
 }
 </string>
           </argument>

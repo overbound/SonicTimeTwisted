@@ -30,16 +30,13 @@ image_speed = 0;
 level = "";
 /* AUTHOR NOTE: This object controls all global game operations, such as the
 level order. */
-
 // state
 game_mode = 1;
 paused = false;
 lost_focus = false;
 check_room = 0;
-
 // controllers
 inputManager = instance_create(0, 0, objInput);
-
 // level data
 current_level = -1;
 cutscene = 0;
@@ -70,47 +67,37 @@ stop_sound = true;
 ss_perfect_bonus = 0;
 ss_rings_bonus = 0;
 ss_time_bonus = 0;
-
 //game_directory="%localappdata%\Sonic_Time_Twisted\"
 game_directory="\Sonic_Time_Twisted\";
-
 // music
 jingle = -1;
 music = -1;
 music_queue = ds_priority_create();
-
 // set up rings and lives watchers
 life_past_list = noone;
 ring_past_list = noone;
 life_future_list = noone;
 ring_future_list = noone;
-
 // -1 - subgame ; 0 - no save; &gt; 1 - saved game
 saveSlot=0;
-
 special_past_current_level=0;
 special_future_current_level=0;
 temp_superform = false;
-
 // this might vary between platforms - button allowing cancelling some operations
 back_button = vk_escape;
 // and this is the label for the button in question - is shown in some messages
 back_button_label = 'ESCAPE';
-
 // load other options from the INI file
 score_tally_mode = 0;
 load_options();
-
 // this map is used if playing in the no-save mode
 no_save_data = ds_map_create();
-
 // depending on the OS, create a specific object containing the OS-specific logic
 os = get_os_type();
 if(os == os_android)
 {
     instance_create(0,0,objAndroid);
 }
-
 </string>
           </argument>
         </arguments>
@@ -230,10 +217,8 @@ if(os == os_android)
           <argument>
             <kind>1</kind>
             <string>/// Window focus
-
 // ignore if we've paused manually
 if paused exit;
-
 /*
 switch os_type
 {
@@ -320,23 +305,18 @@ d3d_end();
           <argument>
             <kind>1</kind>
             <string>/// Start the game
-
 // randomize seed
 randomize();
-
 // create geometric tables
 globalvar sine, cosine;
 for (var i=0; i&lt;360; i+=1) {sine[i] = sin(degtorad(i)); cosine[i] = cos(degtorad(i));}
-
 // start critical processes
 instance_create(0, 0, objScreen);
 instance_create(0, 0, objResources);
 instance_create(0, 0, objGameData);
 instance_create(0, 0, objMusic);
-
 // add levels to list
 //PLEASE NOTE THE TRUE LEVEL ORDER IS AAZ, FFZ, VVZ, DDZ, TTZ, SSZ, RRZ, PPZ
-
 level_add(AA1_f, AA1_p);
 level_add(intro1,introPast1);
 level_add(AA2_f, AA2_p);
@@ -355,7 +335,6 @@ level_add(PP1,PP1);
 level_add(PP2,PP2);
 level_add(MM1,MM1);
 level_add(ending,ending);
-
 // add special stages
 special_level_add(SSF1, SSP1);
 special_level_add(SSF2, SSP2);
@@ -364,9 +343,7 @@ special_level_add(SSF4, SSP4);
 special_level_add(SSF5, SSP5);
 special_level_add(SSF6, SSP6);
 special_level_add(SSF7, SSP7);
-
 /*
-
 special_level_add(SSF1, SSP7);
 special_level_add(SSF2, SSP1);
 special_level_add(SSF3, SSP3);
@@ -375,14 +352,12 @@ special_level_add(SSF5, SSP5);
 special_level_add(SSF7, SSP2);
 special_level_add(SSF4, SSP6);
 */
-
 /* AUTHOR NOTE: May want to setup a title screen or menu here. For now, we'll
 start the game immediately. */
 //room_goto(ending);
 room_goto(titlescreen);
 // start gameplay
 //level_goto_next();
-
 audio_set_master_gain(0, 0.75);
 </string>
           </argument>

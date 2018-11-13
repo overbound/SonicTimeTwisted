@@ -30,7 +30,6 @@ gui_y_offset = 108;
 gui_x_offset = 113;
 gui_x_length = 200;
 wait_for_release_click = false;
-
 // syncing some stuff with the input object for the button reposition screen
 if(ANDROID_CONSOLE != 0)
 {
@@ -56,12 +55,10 @@ else
     bby = objProgram.inputManager.bby;
     vksize = objProgram.inputManager.vksize;
 }
-
 dpadgraphic = 0;
 dpadSprite = sprTouchscreenDPadTemplate;
 buttonSprite = sprTouchscreenButton;
 dpadRadius = 0;
-
 // drag and drop variables
 device_dragging[0] = 0;
 device_dragging[1] = 0;
@@ -78,7 +75,6 @@ device_yoffset[1] = 0;
 device_yoffset[2] = 0;
 device_yoffset[3] = 0;
 device_yoffset[4] = 0;
-
 show_vk_alpha = false;
 </string>
           </argument>
@@ -131,13 +127,10 @@ if(objProgram.inputManager.input == 0)
     if(state == 11)
     {
         // draw selected state for every character if the touchscreen is used
-
         draw_sprite(sprCharacterSelect, 1, x_offset+96, view_yview[view_current] + 112);
         draw_sprite(sprSelector, 1, x_offset+96, view_yview[view_current] + 112);
-
         draw_sprite(sprCharacterSelect, 0, x_offset+216, view_yview[view_current] + 112);
         draw_sprite(sprSelector, 0, x_offset+216, view_yview[view_current] + 112);
-
         draw_sprite(sprCharacterSelect, 2, x_offset+336, view_yview[view_current] + 112);
         draw_sprite(sprSelector, 2, x_offset+336, view_yview[view_current] + 112);
     }
@@ -146,7 +139,6 @@ else
 {
     event_inherited();
 }
-
 </string>
           </argument>
         </arguments>
@@ -1135,7 +1127,6 @@ switch(state)
                 inputLabel = "Keyboard";
             }
         }
-
         options = false;
         options[0, OPTION_NAME] = 'OPTIONS';
         options[0, OPTION_TYPE] = OPTION_TYPE_TITLE;
@@ -1509,7 +1500,6 @@ switch(state)
         
         break;
 }
-
 // recalculating the Y offset
 max_cursor = array_height_2d(options) - 1;
 if(simulate_options_count_for_y_offset)
@@ -1521,7 +1511,6 @@ else
     menu_y_offset = floor((view_hview[view_current] - 20 * array_height_2d(options))/2);
 }
 gui_y_offset = menu_y_offset - 4;
-
 // depending on whether the menu uses large or small length options,
 // the touch zone is different as well
 if(large)
@@ -1534,7 +1523,6 @@ else
     gui_x_offset = 113;
     gui_x_length = 200;
 }
-
 if(state == 1002 || state == 1004 || state == 1005 || state == 1006)
 {    
     // make use of this code to initialize some stuff we don't want to reinit for each frame draw
@@ -1638,7 +1626,6 @@ if(state == 1002 || state == 1004 || state == 1005 || state == 1006)
           <argument>
             <kind>1</kind>
             <string>/// step - called by parent object
-
 event_inherited();
 if((ANDROID_CONSOLE == 0) &amp;&amp; active)
 {   

@@ -42,11 +42,9 @@
             <string>state=0;
 allow_collision = false;
 remove=0;
-
 // Setup audio
 audio = audio_emitter_create();
 //audio_emitter_falloff(audio_emitter, objScreen.width*0.125, objScreen.width*0.25, 1);
-
 
 </string>
           </argument>
@@ -72,7 +70,6 @@ audio = audio_emitter_create();
             <kind>1</kind>
             <string>/// Handle state
 
-
 with objLevel.player[0] {
     flag_player_input = false;
     switch other.state {
@@ -92,23 +89,16 @@ with objLevel.player[0] {
     started = false;
     objField.xx = x;
     break;
-
     }
-
     //switch sprite if tails
     if character_id == 2 or character_id == 3 {
         other.sprite_index = sprSonicPlane;
     }
-
 }
-
-
 
 if path_position &gt; .78 &amp;&amp; state == 0
     state = 1;
     
-
-
 
 </string>
           </argument>

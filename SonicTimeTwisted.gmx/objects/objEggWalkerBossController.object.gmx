@@ -41,7 +41,6 @@
             <kind>1</kind>
             <string>state=-1;
 remove=0;
-
 </string>
           </argument>
         </arguments>
@@ -88,9 +87,7 @@ remove=0;
           <argument>
             <kind>1</kind>
             <string>with instance_create(x,y,objEggWalker) {
-
     image_index=-1;
-
 }
 </string>
           </argument>
@@ -115,21 +112,16 @@ remove=0;
           <argument>
             <kind>1</kind>
             <string>switch state {
-
 case 0:
-
 //if(view_yview[0]+view_hview[0] &gt; objLevel.player[0].camera.bottom)
     //view_yview[view_current]-=2;
     
     //objLevel.player[0].camera = noone;
 break;
-
 // Shift Camera Right
 case 1:
 // 
-
 //play_boss_music();
-
 
 if(view_yview[0]+view_hview[0] &gt; objLevel.player[0].camera.bottom){
     view_yview[view_current]-=2;
@@ -137,7 +129,6 @@ if(view_yview[0]+view_hview[0] &gt; objLevel.player[0].camera.bottom){
     
 if view_xview[view_current] &lt; objEggWalker.x-360{   //10888
     
-
   with objLevel.player[0] {
     camera.left +=2;
     camera.right +=3;
@@ -152,29 +143,20 @@ if view_xview[view_current] &lt; objEggWalker.x-360{   //10888
         alarm[1] = 80;
         
     }
-
     
 break;
-
 case 2:
-
 with objLevel.player[0] {
     
  /*   if camera.left &gt; objEggWalkerBossController.x-392 {
-
         camera.left -=2;
-
     }*/
 }
-
 break;
-
 case 3: 
 stop_all_music(false);
-
 with objLevel.player[0].camera { right = other.x + 586}
 state = 4;
-
 
 break;
 }

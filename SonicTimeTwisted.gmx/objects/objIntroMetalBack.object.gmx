@@ -181,7 +181,6 @@ image_speed = 0;
           <argument>
             <kind>1</kind>
             <string>if state &lt; 2 draw_self();
-
 else if state &lt; 3 {
         draw_sprite(sprMetalStreak,image_index,112,0);
         draw_set_blend_mode(bm_add);

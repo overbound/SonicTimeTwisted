@@ -134,10 +134,8 @@ for (var i=0; i&lt;3; i+=1)
           <argument>
             <kind>1</kind>
             <string>/// Swing platforms
-
 // calculate angle
 angle = angle_wrap(angle+1);
-
 // apply angle
 for (var i=0; i&lt;3; i+=1)
 {
@@ -169,7 +167,6 @@ for (var i=0; i&lt;3; i+=1)
             <string>/// Render chain links
 var i, j;
 for (i=0; i&lt;5; i+=1) for (j=0; j&lt;3; j+=1) draw_sprite(sprChainLink, 0, xstart+sine[angle_wrap(angle+(j*120))]*(i*16), ystart+cosine[angle_wrap(angle+(j*120))]*(i*16));
-
 </string>
           </argument>
         </arguments>

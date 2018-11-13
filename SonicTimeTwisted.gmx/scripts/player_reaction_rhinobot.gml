@@ -1,5 +1,4 @@
 /// player_reaction_rhinobot()
-
 // create enemy
 with instance_create(x, y, objRhinobot)
 {
@@ -10,9 +9,7 @@ with instance_create(x, y, objRhinobot)
     facing = -1;
     layer = 2;
 }
-
 // sound
 audio_play_sound(sndCollapse, 2, false);
-
 // destroy this
 instance_destroy();

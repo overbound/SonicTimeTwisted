@@ -209,7 +209,6 @@
             <kind>1</kind>
             <string>/// set depth
 depth = min(2000,distance_to_object(objSSCamera)/20);
-
 depth1= depth;
 </string>
           </argument>
@@ -472,7 +471,6 @@ if timer {timer -= 1; if not timer instance_destroy();}
             <kind>1</kind>
             <string>/// set depth
 depth = min(2000,distance_to_object(objSSCamera)/20);
-
 depth1= depth;
 </string>
           </argument>
@@ -574,7 +572,6 @@ reaction_script = noone;
             <kind>1</kind>
             <string>draw_shadow(16);
 draw_billboard(16, 16);
-
 </string>
           </argument>
         </arguments>

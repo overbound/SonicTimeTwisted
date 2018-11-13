@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>-2048</depth>
   <persistent>0</persistent>
-  <parentName>objSceneObject</parentName>
+  <parentName>objSceneObjectAlwaysActive</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -49,7 +49,6 @@ shieldVisible=false;
 flashOffset=0;
 explosionAlpha=0;
 stateLoop=0;
-
 audio = audio_emitter_create();
 </string>
           </argument>
@@ -75,16 +74,11 @@ audio = audio_emitter_create();
             <kind>1</kind>
             <string>/// State Machine
 
-
 switch state {
 
-
 case 0:
-
 break;
-
 case 1:
-
     with objLevel.player[0] {
         camera.bottom = 1740;
         if objProgram.in_past {
@@ -100,9 +94,7 @@ case 1:
             player_is_standing();
         }
     }
-
 break;
-
 
 case 2:
     if in_view(view_current,0) {
@@ -141,9 +133,7 @@ case 2:
         state=3;
     }
 break;
-
 case 3:
-
     //screen_shake();
     for (i = 0; i &lt; array_length_1d(ufos); i ++) {
         ufos[i].dir+=15;
@@ -164,7 +154,6 @@ case 3:
         
     }
 break;
-
 case 4:
     flashOffset+=6;
     explosionAlpha +=.025;
@@ -175,7 +164,6 @@ case 4:
         state=5;
     }
 break;
-
 }
 </string>
           </argument>
@@ -200,9 +188,7 @@ break;
             <string>/// Hover + Sound
 var time=0.1125;
 var distance=4;
-
 y = ystart+cos(objScreen.image_index*time)*distance;
-
 if !audio_is_playing(sndQuake) &amp;&amp; in_view(view_current,0){
     audio_play_sound(sndQuake,4,0);
 }
@@ -259,11 +245,9 @@ if shieldVisible == true {
     draw_sprite_ext(sprMetaForwardShieldAdd,0,x,y,1,1,0,c_white,.5);
     draw_set_blend_mode(bm_normal);
 }
-
 draw_set_alpha(explosionAlpha)
     draw_circle(x,y,flashOffset,false);
 draw_set_alpha(1);
-
 
 </string>
           </argument>

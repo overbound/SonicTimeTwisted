@@ -27,11 +27,9 @@
             <kind>1</kind>
             <string>/// Initialize HUD
 image_speed = 0;
-
 // character id(s)
 character_id[0] = max(objGameData.character_id[0]-1, 0);
 character_id[1] = max(objGameData.character_id[1]-1, 0);
-
 // time stamp
 time_stamp = "";
 pauseOffset = 0;
@@ -42,10 +40,8 @@ axis = -1;
 inputFlash = 0;
 white = 0;
 timeOffset = 0;
-
 timer = 0;
 rings = 0;
-
 menu = instance_create(0,0,objMenu);
 </string>
           </argument>
@@ -71,7 +67,6 @@ menu = instance_create(0,0,objMenu);
             <kind>1</kind>
             <string>/// Update timer string
 var total_time, minutes, seconds, milliseconds;
-
 if instance_exists(objLevel) {
     // total time
     total_time = min(36000-objLevel.timer, 36000);
@@ -95,7 +90,6 @@ if instance_exists(objLevel) {
     // update time stamp
     time_stamp = minutes+"'"+seconds+'"'+milliseconds;
 }
-
 </string>
           </argument>
         </arguments>
@@ -143,7 +137,6 @@ if instance_exists(objLevel) {
           <argument>
             <kind>1</kind>
             <string>/// Pause Menu
-
 if objProgram.paused {
     if allowInput {
         // allow the menu object to handle everything
@@ -158,7 +151,6 @@ if objProgram.paused {
 if objProgram.inputManager.pressingGamepad == -1 {
     allowInput = true;
 }
-
 </string>
           </argument>
         </arguments>
@@ -204,7 +196,6 @@ if inputFlash &lt; 1
           <argument>
             <kind>1</kind>
             <string>/// fade black for pause
-
 // it used to be white, hence the variable name
 if objProgram.paused {
     if white &lt; 0.5
@@ -236,10 +227,8 @@ if objProgram.paused {
           <argument>
             <kind>1</kind>
             <string>/// draw lives - can be overriden by platform-specific code
-
 // lives setpiece
 draw_sprite(sprLives, character_id[view_current], view_xview[view_current]+16, view_yview[view_current]+view_hview-24);
-
 // lives string
 draw_set_color(c_white);
 draw_set_alpha(image_alpha);
@@ -270,12 +259,9 @@ draw_text(view_xview[view_current]+94, view_yview[view_current]+view_hview[view_
           <argument>
             <kind>1</kind>
             <string>/// Render HUD
-
 draw_top_hud(objLevel.timer, objGameData.rings[view_current], view_xview[view_current], view_yview[view_current]);
-
 // TODO Remove FPS
 //draw_text(view_xview[view_current]+400,view_yview[view_current]+24, fps);
-
 //black bg for pause
 draw_set_alpha(white)
 draw_set_color(c_black);
@@ -283,7 +269,6 @@ draw_set_color(c_black);
 draw_set_color(c_white);
 draw_set_alpha(image_alpha);
 with(menu) event_user(4);
-
 </string>
           </argument>
         </arguments>

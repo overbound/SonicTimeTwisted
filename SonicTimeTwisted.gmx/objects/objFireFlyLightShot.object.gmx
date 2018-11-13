@@ -48,7 +48,6 @@ laser_height=100;
 gun_id=0;
 ybottom=960;
 remove=0;
-
 </string>
           </argument>
         </arguments>
@@ -73,8 +72,6 @@ remove=0;
             <kind>1</kind>
             <string>state=1;
 
-
-
 </string>
           </argument>
         </arguments>
@@ -98,7 +95,6 @@ remove=0;
           <argument>
             <kind>1</kind>
             <string>/// set laser height
-
 laser_height=ybottom-y;
 </string>
           </argument>
@@ -121,7 +117,6 @@ laser_height=ybottom-y;
           <argument>
             <kind>1</kind>
             <string>switch state {
-
     case 0: // null
         
         //with objFireFly.light visible = false;

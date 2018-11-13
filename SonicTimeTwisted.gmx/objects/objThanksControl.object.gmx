@@ -82,14 +82,12 @@ with objTitlecard mode = -1;
           <argument>
             <kind>1</kind>
             <string>/// Render Names
-
 // setup
 draw_set_color(c_white);
 draw_set_alpha(image_alpha);
 draw_set_valign(fa_top);
 draw_set_halign(fa_center);
 draw_set_font(objResources.fontHud);
-
 
 draw_text_color(view_xview[0]+213,view_yview[0]+120,'THANKS FOR PLAYING',c_white,c_white,c_yellow,c_yellow,1);
 draw_text_color(view_xview[0]+213,view_yview[0]+144,'STAY TUNED FOR THE FULL GAME RELEASE',c_white,c_white,c_yellow,c_yellow,1);

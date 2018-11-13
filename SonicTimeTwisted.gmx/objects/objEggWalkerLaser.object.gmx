@@ -123,7 +123,6 @@ alarm[11]=60;
           <argument>
             <kind>1</kind>
             <string>switch state {
-
     case 0: // null
         
         image_angle=gunId.laserAngle;
@@ -136,9 +135,7 @@ alarm[11]=60;
     case 1: // fire
         
         reaction_script = player_reaction_lighting;
-
         visible = true;
-
         image_xscale +=24;        
         
         if image_xscale &gt; laser_height {
@@ -150,7 +147,6 @@ alarm[11]=60;
     break;
     
     case 2: // stop fire
-
         speed = 24;
         direction = image_angle;
         

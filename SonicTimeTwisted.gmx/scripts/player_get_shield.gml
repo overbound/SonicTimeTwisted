@@ -1,8 +1,6 @@
 // player_get_shield(kind)
-
 // remove previous shield
 if shield_type!=argument0 with shield instance_destroy();
-
 // create new shield
 switch argument0
 {
@@ -10,14 +8,12 @@ case 1:
     if shield_type!=argument0 shield = instance_create(floor(x), floor(y), objShieldBubble);
         if objLevel.started && objProgram.cutscene == false
             audio_play_sound(sndShieldBubble, 2,0);
-
     // clear underwater timer
     underwater_count = -1;
     // reset music
     if audio_is_playing(bgmDrowning) {
         play_previous(objMusic.priorityMusicState, objMusic.previousPosition);
     }
-
     break;
 case 2:
         if shield_type!=argument0 shield = instance_create(floor(x), floor(y), objShieldLightning);
@@ -44,7 +40,6 @@ case 0:
         if objLevel.started && objProgram.cutscene == false
             audio_play_sound_on(audio, sndRockSmash, false, 0);
 }
-
 // modify shield properties
 if shield_type!=argument0
 {

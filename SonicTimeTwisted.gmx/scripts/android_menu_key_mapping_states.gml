@@ -1,7 +1,6 @@
 /*
 currently remapping keys on the keyboard (state 8)
 or buttons/axes on a gamepad (state 9)
-
 substate is basically:
 2 - remapping up
 3 - remapping down
@@ -12,7 +11,6 @@ substate is basically:
 8 - remapping C
 9 - remapping START
 10 - dumping everything we've remapped so far to the configuration file
-
 if cursor is equal to substate, we are only remapping one button
 if cursor is 1, we're remapping everything
 pressing ESC (or a similar key on a different platform) cancels everything
@@ -50,7 +48,6 @@ if(substate >= 2 && substate <= 9)
     if(state == 8)
     {
         var pressed_key = -1;
-
         for(var i = 4; i <= 255; i++)
         {
             if (i == vk_anykey)

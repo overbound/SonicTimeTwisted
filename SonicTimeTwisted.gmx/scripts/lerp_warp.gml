@@ -4,5 +4,4 @@ var to = argument1;
 var amount = argument2;
 var minimum = argument3;
 var w = argument4;
-
 return wrap(Lerp(from, shorter(from, to, w), amount, minimum), w);

@@ -100,7 +100,6 @@ alarm[1]=220;
           <argument>
             <kind>1</kind>
             <string>if zoom == true {
-
     //zoomFactor-=0.25;
     view_wview[0] -= zoomFactor;
     view_hview[0] -= zoomFactor;
@@ -167,7 +166,6 @@ alarm[1]=220;
           <argument>
             <kind>1</kind>
             <string>draw_sprite(sprIntroWaterPast,floor(iindex),x,187)
-
 iindex+=.1;
 if iindex&gt;=4 iindex =0;
 </string>

@@ -41,24 +41,17 @@
             <kind>1</kind>
             <string>reaction_script=player_reaction_knock_ufo;
 remove=0;
-
 test =floor(random(2));
 if test == 1 {
-
     x=view_xview+454;
     hspeed = -4;
-
 } else { 
     x=view_xview-454;
     hspeed = 4;
 }
-
 y=view_yview-256+random(512);
-
 alarm[0]=2000;
-
 color = c_white;
-
 </string>
           </argument>
         </arguments>

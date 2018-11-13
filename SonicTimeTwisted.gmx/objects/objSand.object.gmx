@@ -46,10 +46,8 @@ image_speed = .5;
 size=256;
 yo=0
 reaction_script=player_reaction_sand;
-
 // state machine
 enabled = false;
-
 // physics
 x_force = 0.2;
 y_force = 0.0;
@@ -60,13 +58,10 @@ y_range = 0;
 angle_offset = 270;
 angle_range = 18;
 velocity = 7;
-
 image_alpha=.5;
-
 // timing
 ticks = 1;
 interval = 7;
-
 
 </string>
           </argument>
@@ -134,7 +129,6 @@ interval = 7;
    draw_sprite(sprite_index,image_index,x+208,y+i);
    draw_sprite(sprite_index,image_index,x+224,y+i);
    draw_sprite(sprite_index,image_index,x+240,y+i);
-
 }
 </string>
           </argument>

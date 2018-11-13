@@ -45,26 +45,20 @@ name=0;
 alarm[0]=80;
 levelSelect = 0;
 start = false;
-
 instance_create(x,y,objTitleEffects);
-
 pauseOffset = 0;
 pauseState = 3;
 controlState = 0;
 axis = "";
 inputFlash = 0;
 screenAlpha = 0;
-
 allowInput = true;
 gamepadSupport = true;
-
 logoAlpha = 4;
-
 startText = 'PRESS START';
 option1Text = 'MAP KEYS OR GAMEPAD';
 option2Text = 'SCREEN SIZE';
 option3Text = 'ENABLE GAMEPAD F1';
-
 menu = instance_create(x,y,objMenu);
 menu.default_state = 1;
 </string>
@@ -300,12 +294,10 @@ if pauseState != 3 {
         screenAlpha+=.025;
     }
 }
-
 if objProgram.inputManager.pressingGamepad == -1 {
     allowInput = true;
 }
     
-
 </string>
           </argument>
         </arguments>
@@ -327,7 +319,6 @@ if objProgram.inputManager.pressingGamepad == -1 {
           <argument>
             <kind>1</kind>
             <string>/// Level Select Code
-
 switch(levelSelect) {
 case 0:
     if input_check_pressed(cLEFT) {
@@ -467,7 +458,6 @@ audio_stop_all();
           <argument>
             <kind>1</kind>
             <string>/// Render Names
-
 // fade for menu
 draw_set_alpha(screenAlpha);
 draw_set_color(c_black);
@@ -479,7 +469,6 @@ draw_set_alpha(image_alpha);
 draw_set_valign(fa_top);
 draw_set_halign(fa_center);
 draw_set_font(objResources.fontHud);
-
 // score / time / rings string
 switch name {
 case 0: case 1: case 2:
@@ -498,7 +487,6 @@ case 7: draw_text_color(view_xview[0]+213, view_yview[0]+120, 'DEVIN REEVES "MER
 case 8: draw_text_color(view_xview[0]+213, view_yview[0]+120, 'SHANE "SPARKS"',c_white,c_white,c_yellow,c_yellow,1) break;
 case 12: if pauseState == 3 draw_text_color(view_xview[0]+213, view_yview[0]+228, startText,c_white,c_white,c_yellow,c_yellow,1); start=true; break;
 }
-
 draw_set_halign(fa_center);
 draw_set_color(c_yellow);
 /*
@@ -511,7 +499,6 @@ if pauseState == 0 {
     
     draw_sprite_ext(sprLevelSelect,image_index,view_xview[view_current]+213, view_yview[view_current]+81+pauseOffset,1,1,0,c_white,1);
 }
-
 if pauseState == 1 &amp;&amp; inputFlash &lt;= .5 { // set controls
     switch controlState {
         case 0:
@@ -540,11 +527,8 @@ if pauseState == 1 &amp;&amp; inputFlash &lt;= .5 { // set controls
         break;
     }
     
-
 }
-
 if pauseState == 2 &amp;&amp; inputFlash &lt;= .5 {
-
     switch objScreen.window_state {
     case 1:
         draw_text_color(view_xview[view_current]+213, view_yview[view_current]+107, "WINDOW",c_white,c_white,c_yellow,c_yellow,1);
@@ -561,9 +545,7 @@ if pauseState == 2 &amp;&amp; inputFlash &lt;= .5 {
     
     }
 }
-
 if pauseState == 4 &amp;&amp; inputFlash &lt;= .5 {
-
     switch gamepadSupport {
     case false:
         draw_text_color(view_xview[view_current]+213, view_yview[view_current]+123, "GAMEPAD DISABLED",c_white,c_white,c_yellow,c_yellow,1);
@@ -574,9 +556,7 @@ if pauseState == 4 &amp;&amp; inputFlash &lt;= .5 {
     }
 }
 */
-
 with(menu) event_user(4);
-
 draw_set_color(c_white);
 </string>
           </argument>

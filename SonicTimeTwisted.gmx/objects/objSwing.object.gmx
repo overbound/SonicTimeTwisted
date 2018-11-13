@@ -48,9 +48,7 @@ oscillation = 0;
 total_nodes = 12;
 largest_absolute_direction = 135;
 node_distance = 8;
-
 reaction_script=player_reaction_grab_swing;
-
 active = false;
 </string>
           </argument>
@@ -75,7 +73,6 @@ active = false;
           <argument>
             <kind>1</kind>
             <string>reaction_script=player_reaction_grab_swing;
-
 </string>
           </argument>
         </arguments>
@@ -100,16 +97,13 @@ active = false;
             <kind>1</kind>
             <string>/// Movement and animation
 metronome = (metronome + metronome_speed) mod 360;
-
 // calculate oscillation and move nodes
 var v_sine = dsin(metronome);
-
 for (var node = 1; node &lt; total_nodes + 1; node++) {
     oscillation = v_sine * node * degrees_per_node;
     node_x[ node ] = node_x[ node - 1 ] + dsin(oscillation) * node_distance;
     node_y[ node ] = node_y[ node - 1 ] + dcos(oscillation) * node_distance;
 }
-
 x = node_x[ total_nodes ];
 y = node_y[ total_nodes ];
 </string>
@@ -133,7 +127,6 @@ y = node_y[ total_nodes ];
           <argument>
             <kind>1</kind>
             <string>/// control player
-
 if active
     with player_id {
     
@@ -146,7 +139,6 @@ if active
             other.player_id = noone;
             
             var ground_speed;
-
             // animate
             animation_new = "spin";
             timeline_speed = 1/max(5-abs(xspeed), 1);
@@ -161,11 +153,9 @@ if active
             xspeed = (-dcos(other.oscillation)*other.metronome_speed)*sign(other.oscillation);
             yspeed = -5;
             sprite_y_offset = 0;
-
             
             // set air state
             player_in_air();
-
             other.reaction_script=noone;
             other.alarm[0] = 60;
         
@@ -195,15 +185,12 @@ if active
             <kind>1</kind>
             <string>/// Initial setup
 degrees_per_node = largest_absolute_direction / total_nodes;
-
 node_x[ 0 ] = xstart;
 node_y[ 0 ] = ystart;
-
 for (var node = 1; node &lt; total_nodes + 1; node++) {
     node_x[ node ] = xstart;
     node_y[ node ] = ystart + (node * node_distance);
 }
-
 x = node_x[ total_nodes ];
 y = node_y[ total_nodes ];
 </string>
@@ -229,25 +216,21 @@ y = node_y[ total_nodes ];
           <argument>
             <kind>1</kind>
             <string>/// Render
-
 var draw_color = draw_get_color();
 draw_set_color(c_lime);
 for (var node = 0; node &lt; total_nodes; node++) {
     draw_line(node_x[ node ], node_y[ node ], node_x[ node + 1 ], node_y[ node + 1 ]);
 }
 draw_set_color(draw_color);
-
 /*
 var this_degree, this_distance, next_degree,  next_distance;
 var draw_color = draw_get_color();
 draw_set_color(c_lime);
-
 for (var i = 0; i &lt; total_nodes; i++) {
     this_degree = sine * i * degrees_per_node;
     this_distance = i * node_distance;
     next_degree = sine * (i + 1) * degrees_per_node;
     next_distance = (i + 1) * node_distance;
-
     draw_line(  xstart + dsin(this_degree) * this_distance,
                 ystart + dcos(this_degree) * this_distance,
                 xstart + dsin(next_degree) * next_distance,
@@ -255,7 +238,6 @@ for (var i = 0; i &lt; total_nodes; i++) {
 }
 draw_set_color(draw_color);
 */
-
 /*
 for (var i = 0; i &lt; total_nodes; i++) {
     draw_sprite_ext(sprite_index, 0,
@@ -295,7 +277,6 @@ var y1 = ystart;
 var x2 = x1 + dsin(sine * degrees_per_node) * node_distance;
 var y2 = y1 + dcos(sine * degrees_per_node) * node_distance;
 draw_line(x1, y1, x2, y2);
-
 for (var i = 1; i &lt; total_nodes; i++) {
     x1 = x2;
     y1 = y2;
@@ -305,18 +286,15 @@ for (var i = 1; i &lt; total_nodes; i++) {
 }
 draw_set_color(draw_color);
 */
-
 /*
 var this_degree, this_distance, next_degree,  next_distance;
 var draw_color = draw_get_color();
 draw_set_color(c_lime);
-
 for (var i = 0; i &lt; total_nodes; i++) {
     this_degree = sine * i * degrees_per_node;
     this_distance = i * node_distance;
     next_degree = sine * (i + 1) * degrees_per_node;
     next_distance = (i + 1) * node_distance;
-
     draw_line(  xstart + dsin(this_degree) * this_distance,
                 ystart + dcos(this_degree) * this_distance,
                 xstart + dsin(next_degree) * next_distance,
@@ -324,7 +302,6 @@ for (var i = 0; i &lt; total_nodes; i++) {
 }
 draw_set_color(draw_color);
 */
-
 /*
 for (var i = 0; i &lt; total_nodes; i++) {
     draw_sprite_ext(sprite_index, 0,

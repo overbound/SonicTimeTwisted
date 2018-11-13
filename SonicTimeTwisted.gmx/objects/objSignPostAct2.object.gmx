@@ -41,7 +41,6 @@
             <kind>1</kind>
             <string>//state control for sign
 switch objGameData.character_id[0] {
-
     case 1:
         image_index=3;
     break;
@@ -55,7 +54,6 @@ switch objGameData.character_id[0] {
     break;   
     
 }
-
 image_speed=0;
 </string>
           </argument>

@@ -138,9 +138,7 @@
           <argument>
             <kind>1</kind>
             <string>///play sound
-
 //if hide == true &amp;&amp; !audio_is_playing(sndSpikeMove)
-
 //audio_play_sound(sndSpikeMove,0,false);
 </string>
           </argument>
@@ -247,7 +245,6 @@
             <string>/// Handle moving
 if (objScreen.image_index div 64) mod 2 {if offset&lt;sprite_height offset += (sprite_height*0.25);} else
 if offset&gt;0 offset -= (sprite_height*0.25);
-
 // apply offset
 x = xstart-sine[image_angle]*offset;
 y = ystart-cosine[image_angle]*offset;

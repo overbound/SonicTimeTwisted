@@ -1,5 +1,4 @@
 //player_reaction_paddle
-
 if (bbox_bottom < argument0.y && argument0.top == false) || (bbox_top > argument0.y && argument0.top == true) {
     gravity_force = 0;
     jump_action = false;

@@ -69,7 +69,6 @@
           <argument>
             <kind>1</kind>
             <string>audio_play_sound(sndMetalWoosh,0,0);
-
 </string>
           </argument>
         </arguments>

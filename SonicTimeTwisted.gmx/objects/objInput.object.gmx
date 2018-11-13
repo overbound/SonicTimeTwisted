@@ -28,22 +28,18 @@
             <string>/// Initialize input device
 image_speed = 0;
 var i;
-
 // input flags
 flag_player_input = true;
 pressingGamepad = -1;
 // computer controls
 computer_input_setup();
-
 // input id
 device_id = instance_number(objInput)-1;
-
 // input state
 state = 0;
 previous_state = 0;
 state_press = 0;
 state_release = 0;
-
 // axes
 x_axis = 0;
 y_axis = 0;
@@ -51,17 +47,13 @@ badAxis = 0;
 pad = -1;
 button_count = 0;
 axis_count = 0;
-
 // input stream
 stream = -1;
 stream_size = $FF;
-
 input_load();
 fix_bad_gamepad_axis();
-
 gamepad_update_enabled = true;
 load_gamepad_support();
-
 rumble_queue = ds_queue_create();
 rumble_configuration_script = rumble_configuration_active;
 </string>
@@ -156,22 +148,18 @@ rumble_configuration_script = rumble_configuration_active;
             <kind>1</kind>
             <string>/// Get device state
 var i, a;
-
 // clear states
 previous_state = state;
 state = 0;
 state_press = 0;
 state_release = 0;
-
 /*
 if objScreen.image_index mod 8 == 0
     gamepad_update();*/
 
-
 // keys
 for (i = 0; i &lt; key_count; i++)
     if (keyboard_check(key[i])) state |= key_control[i];
-
 if(gamepad_update_enabled) {    
     // buttons
     for (i = 0; i &lt; button_count; i++)
@@ -185,25 +173,20 @@ if(gamepad_update_enabled) {
         //if (gamepad_axis_value(axis_gamepad[i], axis[i]) * axis_direction[i] &gt; axis_deadzone[i]) state |= axis_control[i];
         // if (gamepad_axis(pad, axis[i]) * axis_direction[i] &gt; axis_deadzone[i]) state |= axis_control[i];
 }
-
 // default "back" button
 if(keyboard_check(objProgram.back_button))
 {
     state |= cBACK;
 }
-
 // custom control schemes (e.g. touchscreen)
 event_user(3);
-
 // axes
 x_axis = 0;
 if (state &amp; cLEFT &amp;&amp; flag_player_input) || (computer_cLEFT &amp;&amp; !flag_player_input) x_axis -= 1;
 if (state &amp; cRIGHT &amp;&amp; flag_player_input) || (computer_cRIGHT &amp;&amp; !flag_player_input) x_axis += 1;
-
 y_axis = 0;
 if (state &amp; cUP &amp;&amp; flag_player_input) || (computer_cUP &amp;&amp; !flag_player_input) y_axis -= 1;
 if (state &amp; cDOWN &amp;&amp; flag_player_input) || (computer_cDOWN &amp;&amp; !flag_player_input) y_axis += 1;
-
 
 // pressing and releasing
 state_press = (state &amp; previous_state) ^ state;
@@ -230,13 +213,11 @@ previous_state = state;
           <argument>
             <kind>1</kind>
             <string>/// Check for Pressing
-
 if pressingGamepad != -1 {
     if !gamepad_button_check(pad,pressingGamepad) &amp;&amp; !gamepad_axis_value(pad,pressingGamepad) {
         pressingGamepad = -1;
     }
 }
-
 </string>
           </argument>
         </arguments>
@@ -290,7 +271,6 @@ case "gamepad discovered":
         pad = index;
     }
     break;
-
 case "gamepad lost":
     var index = async_load[?"pad_index"];
     if (pad == index) {
@@ -373,7 +353,6 @@ computer_input_reset_state();
             <kind>1</kind>
             <string>/// Create input stream
 stream = ds_list_create();
-
 </string>
           </argument>
         </arguments>

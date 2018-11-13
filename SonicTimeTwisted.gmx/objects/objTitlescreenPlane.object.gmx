@@ -30,7 +30,6 @@ image_xscale = 0.26;
 image_yscale = 0.26;
 hsp = .5;
 xreal=x;
-
 </string>
           </argument>
         </arguments>
@@ -57,14 +56,11 @@ xreal=x;
     hsp = .5;
     image_xscale *= -1;
 }
-
 if x &gt; room_width + 64 {
     hsp = -.5;
     image_xscale *= -1;
 }
-
 xreal+=hsp;
-
 x= floor(xreal)
 </string>
           </argument>

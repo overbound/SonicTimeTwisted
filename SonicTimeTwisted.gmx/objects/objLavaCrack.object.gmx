@@ -41,20 +41,14 @@
             <kind>1</kind>
             <string>image_speed=.1;
 top = instance_create(x+64,y-16,objLavaTop);
-
 with top {
    image_xscale = 8;
 }
-
 seep[0]=instance_create(x+64,y,objLavaSeep);
-
 with seep[0] {
-
     image_xscale=2;
     image_yscale=2;
-
 }
-
 </string>
           </argument>
         </arguments>
@@ -78,13 +72,10 @@ with seep[0] {
           <argument>
             <kind>1</kind>
             <string>if image_index &gt;= 12 {
-
     image_speed =0;
     
 }
-
 else if image_index == 11 {
-
    // for(var i = 0; i &lt; 4; i++) {
     
         with seep[0] {
@@ -99,7 +90,6 @@ else if image_index == 11 {
         
       }
     
-
 </string>
           </argument>
         </arguments>

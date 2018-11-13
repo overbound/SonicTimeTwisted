@@ -27,7 +27,6 @@
             <kind>1</kind>
             <string>/// Draw flash
 draw_set_color(c_white);
-
 if parentId.alarm[0] &lt; 45 {
     draw_boss_hit_blend_parent_alarm();
     draw_self();

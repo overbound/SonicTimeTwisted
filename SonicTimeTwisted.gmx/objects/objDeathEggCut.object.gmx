@@ -51,7 +51,6 @@ radiusSpeed=2
           <argument>
             <kind>1</kind>
             <string>if sprite_index==sprCutExplosion {
-
     image_xscale+=.025;
     image_yscale+=.025;
     
@@ -91,7 +90,6 @@ radiusSpeed=2
           <argument>
             <kind>1</kind>
             <string>if sprite_index == sprCutExplosion {
-
     draw_set_alpha(circleAlpha)
     draw_circle(x,y,radius,false);
     draw_set_alpha(1);

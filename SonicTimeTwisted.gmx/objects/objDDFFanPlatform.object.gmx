@@ -184,7 +184,6 @@
           <argument>
             <kind>1</kind>
             <string>/// spwan kill zone
-
 killHandle=instance_create(x,y+8, objSpinFanHarmful);
 </string>
           </argument>
@@ -300,13 +299,9 @@ killHandle=instance_create(x,y+8, objSpinFanHarmful);
             <kind>1</kind>
             <string>///animation direction
 
-
 if y &gt; yprevious {
-
     image_speed = .25;
-
 } else image_speed = -.25;
-
 
 </string>
           </argument>
@@ -329,7 +324,6 @@ if y &gt; yprevious {
           <argument>
             <kind>1</kind>
             <string>/// kill follow
-
 killHandle.x = x;
 killHandle.y = y + 9;
 </string>

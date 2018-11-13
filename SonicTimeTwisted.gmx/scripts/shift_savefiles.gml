@@ -1,7 +1,6 @@
 // if a save 0 exists, it means that the game has been previously played using a 
 // version that didn't have the "No Save" slot yet.
 // In this case, shift all save files to the right.
-
 var zeroFilename = save_file_name(0);
 if(file_exists(zeroFilename))
 {

@@ -1,21 +1,16 @@
 // player_state_floating()
-
 if objLevel.started == false exit;
-
 if player_collision_object() return false;
-
     if input_check(cUP) && view_yview < y {
         if yspeed > -4 {
             yspeed-=acceleration;
         }
     } 
-
     if input_check(cDOWN) && view_yview + view_hview > y {
         if yspeed < 4 {
             yspeed+=acceleration;
         }
     } 
-
     if !input_check(cUP) && !input_check(cDOWN) {
         if yspeed < 0 {
             yspeed += deceleration;
@@ -25,7 +20,6 @@ if player_collision_object() return false;
         if abs(yspeed) < 1 {
             yspeed=0;
         }
-
     }
     
     if alarm[0] == -1 {
@@ -61,7 +55,6 @@ if player_collision_object() return false;
             image_angle = angle_wrap(image_angle+12)
         } else image_angle = 0;
     }
-
     if alarm[0] > 0 {
     
         if view_xview < x {
@@ -102,13 +95,11 @@ if player_collision_object() return false;
     
     x=clamp(x+xspeed,8,room_width-8);
     y=clamp(y+yspeed,8,room_height-8);
-
     
    // reset local terrain list
     player_get_terrain_list();
     
  
-
         if !superform {
         
             player_is_falling();

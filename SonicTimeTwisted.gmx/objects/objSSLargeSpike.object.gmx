@@ -45,7 +45,6 @@ radius = 8;
 image_xscale=1;
 image_yscale=1;
 
-
 </string>
           </argument>
         </arguments>
@@ -69,7 +68,6 @@ image_yscale=1;
           <argument>
             <kind>1</kind>
             <string>angle = angle_wrap(angle + 1);
-
 x = xstart + floor(sine[angle_wrap(angle + ( 120))] * 128)-32;
 y = ystart + floor(cosine[angle_wrap(angle + (120))] * 128);
 </string>
@@ -96,7 +94,6 @@ y = ystart + floor(cosine[angle_wrap(angle + (120))] * 128);
             <kind>1</kind>
             <string>draw_shadow(16);
 draw_billboard(sprite_width*0.5,sprite_height*0.5);
-
 </string>
           </argument>
         </arguments>

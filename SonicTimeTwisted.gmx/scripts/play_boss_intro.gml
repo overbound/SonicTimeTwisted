@@ -1,9 +1,7 @@
 ///play_boss_intro(song, position)
 var song = argument0;
 var position = argument1;
-
 stop_all_music(false);
-
 with objMusic {
     bossIntro = song;
     currentMusic = audio_play_sound(bossIntro,20,false);

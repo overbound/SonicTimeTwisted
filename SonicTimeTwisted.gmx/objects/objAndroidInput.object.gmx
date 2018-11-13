@@ -160,7 +160,6 @@ if(input == 1)
     /*
     if objScreen.image_index mod 8 == 0
     gamepad_update();*/
-
     if(gamepad_update_enabled) {    
         // buttons
         for (i = 0; i &lt; button_count; i++)
@@ -183,21 +182,17 @@ if(input == 1)
     }
 }
 
-
 // real keys on PC - for testing purposes
 for (i = 0; i &lt; key_count; i++)
     if (keyboard_check(key[i])) state |= key_control[i];
-
 
 // axes
 x_axis = 0;
 if (state &amp; cLEFT &amp;&amp; flag_player_input) || (computer_cLEFT &amp;&amp; !flag_player_input) x_axis -= 1;
 if (state &amp; cRIGHT &amp;&amp; flag_player_input) || (computer_cRIGHT &amp;&amp; !flag_player_input) x_axis += 1;
-
 y_axis = 0;
 if (state &amp; cUP &amp;&amp; flag_player_input) || (computer_cUP &amp;&amp; !flag_player_input) y_axis -= 1;
 if (state &amp; cDOWN &amp;&amp; flag_player_input) || (computer_cDOWN &amp;&amp; !flag_player_input) y_axis += 1;
-
 // pressing and releasing
 state_press = (state &amp; previous_state) ^ state;
 state_release = (state &amp; previous_state) ^ previous_state;
@@ -234,7 +229,6 @@ if pressingGamepad != -1 {
         pressingGamepad = -1;
     }
 }
-
 </string>
           </argument>
         </arguments>

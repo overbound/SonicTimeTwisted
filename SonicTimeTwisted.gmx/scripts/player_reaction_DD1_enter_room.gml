@@ -1,5 +1,4 @@
 //player_reaction_start_dd1
-
 if objProgram.temp_xview_offset!=0 {
     xspeed=objProgram.temp_xspeed;
     yspeed=objProgram.temp_yspeed;
@@ -14,4 +13,3 @@ if objProgram.temp_xview_offset!=0 {
 with objLevel started = true;
 with objTitlecard mode = 3;
 with argument0 instance_destroy();
-

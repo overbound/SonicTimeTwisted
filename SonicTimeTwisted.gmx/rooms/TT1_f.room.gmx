@@ -15,9 +15,7 @@ with objLevel {
     act = 1;
     flower = sprFlowerTT;
 }
-
 objProgram.in_past=false;
-
 // setup titlecard
 with objTitlecard
 {

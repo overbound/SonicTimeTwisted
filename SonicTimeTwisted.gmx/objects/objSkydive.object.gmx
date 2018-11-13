@@ -43,10 +43,8 @@
 image_speed = 0;
 remove = 1;
 reaction_script = player_reaction_skydive;
-
 // state machine
 enabled = false;
-
 // physics
 x_force = 0.25;
 y_force = -0.25;
@@ -57,11 +55,9 @@ y_range = 0;
 angle_offset = 270;
 angle_range = 18;
 velocity = 7;
-
 // timing
 ticks = 1;
 interval = 25;
-
 audio = audio_emitter_create();
 </string>
           </argument>
@@ -87,19 +83,15 @@ audio = audio_emitter_create();
             <kind>1</kind>
             <string>ticks = (ticks + 1) mod interval;
 if (ticks &gt; 0) exit;
-
 if not audio_is_playing(sndFireBlow)
 {
     audio_sound_gain(sndFireBlow, objGameData.volume_sound, 0);
     audio_play_sound(sndFireBlow, 4,0);
 }
-
 var x_origin = x + x_offset + random(x_range) - (1 / 2) * x_range;
 var y_origin = y + y_offset + random(y_range) - (1 / 2) * y_range;
 var angle = angle_offset + random(angle_range) - (1 / 2) * angle_range;
-
 instance_create(x_origin, y_origin, objDDLeaf);
-
 </string>
           </argument>
         </arguments>

@@ -142,7 +142,6 @@ audio_play_sound(bgmIntro,3,0);
           <argument>
             <kind>1</kind>
             <string> switch state {
-
     case 0: // PAN SCREEN
         
         //check if we've panned all the way right
@@ -160,7 +159,6 @@ audio_play_sound(bgmIntro,3,0);
         else//pan right
             view_xview[view_current] +=1;
     break;    
-
     case 1:// The Little Planet Appears
         with(objIntroLittlePlanet) {
             

@@ -1,6 +1,5 @@
 /// get button label to display on the configuration screen
 
-
 show_debug_message("argument0: "+string(argument0));
 var fChar = string_char_at(string(argument0), 1);
 if(fChar == "-" || fChar == "+")

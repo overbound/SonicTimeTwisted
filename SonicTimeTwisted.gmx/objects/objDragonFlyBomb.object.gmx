@@ -131,13 +131,11 @@
             <kind>1</kind>
             <string>///Bomb check and movement
 
-
 with objLevel.player[0] {
     other.offset = other.x - x;
 }
 // turn around if too far
 if abs(offset) &lt;= 4 {
-
     if alarm[0] == -1
         alarm = 160;
     
@@ -145,7 +143,6 @@ if abs(offset) &lt;= 4 {
     gravity=.15;
     
     }
-
 
     
          
@@ -283,9 +280,7 @@ if abs(offset) &lt;= 4 {
           <argument>
             <kind>1</kind>
             <string>if sprite_index == sprDragonFlyExplosion {
-
     instance_destroy();
-
 }
 </string>
           </argument>

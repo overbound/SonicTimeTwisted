@@ -40,25 +40,20 @@
           <argument>
             <kind>1</kind>
             <string>ds_list_add(objMetalThrowController.listMetalThrow, id);
-
 image_xscale=-1;
-
 image_speed=0;
 image_index = 0;
 remove=1;
 boundry_check =false;
 allowStart = false;
-
 // states and flags
 state = 0;
-
 // other
 view_id =0;
 ox = +170;
 oy = 96;
 offset = 2;
 time = 16;
-
 active = false;
 </string>
           </argument>
@@ -83,9 +78,7 @@ active = false;
           <argument>
             <kind>1</kind>
             <string>if active == false {
-
     with objMetalThrowController active = false;
-
 }
 </string>
           </argument>
@@ -163,7 +156,6 @@ image_index=0;
 alarm[2]=30;
 audio_play_sound(sndMetalUFOAttack,10,false);
 audio_play_sound(sndMetalBolt,11,false);
-
 audio_stop_sound(sndUFOFly);
 </string>
           </argument>
@@ -221,22 +213,18 @@ if view_id &gt; -1
     var cy = view_yview[view_current]+(view_hview[view_current]*0.5);
     
 }
-
 var camera = instance_nearest(x, y, objCamera);
 // handle current state
 switch state
 {
 case 0: // lock to nearest camera
-
     if instance_number(objMetalThrow) &gt; 2 instance_destroy();
     if in_view(view_current, 32) {
      state = 1;
      audio_play_sound(sndUFOFly,10,true);
     }
     break;
-
 case 1: // approach the camera
-
     if x&lt;=cx+ox and y&lt;=cy+oy-80 and x&gt;=cx+ox-6 and y&gt;=cy-oy {
     
         ox = x-cx;
@@ -271,18 +259,15 @@ case 1: // approach the camera
     }
     
 break;
-
 case 2: // stick to camera and attack
     x = cx+ox;
     y = cy+oy+cos(objScreen.image_index/time)*offset;
     break;
-
 case 3: // move out
     x -= 4;
     y += cos(objScreen.image_index/time)*offset;
     break;
 }
-
 // recoil after fire
 if image_speed != 0 &amp;&amp; image_index&gt;1{
         
@@ -292,7 +277,6 @@ if image_speed != 0 &amp;&amp; image_index&gt;1{
     }
     
 //y=floor(ystart+sin(objScreen.image_index/32)*8);
-
 
 </string>
           </argument>
@@ -344,7 +328,6 @@ if sprite_index == sprMetalIdle &amp;&amp; image_index = 2{
             <string>
 if sprite_index=sprMetalVanish 
     instance_destroy();
-
 image_speed =0;
 image_index = 0;
 </string>

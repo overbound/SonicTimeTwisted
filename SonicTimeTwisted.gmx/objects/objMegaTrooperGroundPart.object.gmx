@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>objNonSolid</parentName>
+  <parentName>objNonSolidAlwaysActive</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -41,7 +41,6 @@
             <kind>1</kind>
             <string>remove=2;
 image_speed=0;
-
 gravity_direction=270;
 gavity=.25;
 speed=6;

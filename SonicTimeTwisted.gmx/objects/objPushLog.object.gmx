@@ -114,10 +114,8 @@ if not (gravity or place_meeting(x, y+1, objSolid)) gravity = 0.21875;
           <argument>
             <kind>1</kind>
             <string>/// Handle landing
-
 // vertical limit only
 while place_meeting(x, y, other) y -= 1;
-
 // stop falling
 if place_meeting(x, y+1, other) {vspeed = 0; gravity = 0;}
 </string>

@@ -144,10 +144,8 @@ for (i=0; i&lt;2; i+=1)
     z_pos[i] = 0;
     z_depth[i] = 0;
 }
-
 image_xscale=.275;
 image_yscale=.275;
-
 </string>
           </argument>
         </arguments>
@@ -219,38 +217,30 @@ for (var i = 0; i &lt; 2; i += 1)
 {
     // ignore if not attached
     if player_id[i] &lt; 0 continue;
-
     // orbit around orb
     z_pos[i] = (z_pos[i] + rotation_speed) mod 360;
     z_depth[i] = -sine[(z_pos[i] + 90) mod 360];
-
     // set position
     player_id[i].x = x + offset * (cosine[angle[i]] * sine[z_pos[i]]);
     player_id[i].y = y - offset * (sine[angle[i]] * sine[z_pos[i]]);
-
     // jumping
     if input_check_pressed(cACTION)
     {
         // prevent player from re-attaching
         alarm[i] = 32;
-
         // movement and collision
         player_id[i].xspeed = -force * (cosine[angle[i]] * z_depth[i]);
         player_id[i].yspeed = force * (sine[angle[i]] * z_depth[i]);
-
         // states and flags
         player_id[i].state = player_state_fall;
         player_id[i].state_reset = true;
-
         // other
         player_id[i].depth = 0;
         audio_stop_sound(player_id[i].reserved_sound);
-
         // done
         player_id[i] = noone;
         continue;
     }
-
     // adjust direction
     var keySpd = 2;
     if object_index = objFFOrbLarge
@@ -258,10 +248,8 @@ for (var i = 0; i &lt; 2; i += 1)
         
     if input_check(cLEFT) {angle[i] = (angle[i] + keySpd) mod 360;}
     if input_check(cRIGHT) {angle[i] = angle_wrap(angle[i] - keySpd);}
-
     // set depth
     player_id[i].depth = -sign(z_depth[i]);
-
     // sound
     if not audio_is_playing(player_id[i].reserved_sound) player_id[i].reserved_sound = audio_play_sound(sndOrbs, 4, 0);
 }
@@ -293,7 +281,6 @@ draw_set_blend_mode(bm_add);
 draw_sprite_ext(sprFFOrbsLargeAdd,image_index,x,y, image_xscale,image_yscale,0,c_white,.325);
 draw_sprite_ext(sprFFOrbLargeEletric,image_index,x,y,image_xscale,image_yscale,0,c_white,1);
 draw_set_blend_mode(bm_normal);
-
 </string>
           </argument>
         </arguments>
