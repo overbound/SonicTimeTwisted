@@ -2,15 +2,15 @@
 <sprite>
   <type>0</type>
   <xorig>27</xorig>
-  <yorigin>30</yorigin>
+  <yorigin>24</yorigin>
   <colkind>1</colkind>
   <coltolerance>0</coltolerance>
   <sepmasks>0</sepmasks>
   <bboxmode>0</bboxmode>
   <bbox_left>0</bbox_left>
   <bbox_right>53</bbox_right>
-  <bbox_top>6</bbox_top>
-  <bbox_bottom>60</bbox_bottom>
+  <bbox_top>0</bbox_top>
+  <bbox_bottom>54</bbox_bottom>
   <HTile>0</HTile>
   <VTile>0</VTile>
   <TextureGroups>
@@ -18,7 +18,7 @@
   </TextureGroups>
   <For3D>0</For3D>
   <width>54</width>
-  <height>64</height>
+  <height>55</height>
   <frames>
     <frame index="0">images\sprKnucklesSnowboard_0.png</frame>
     <frame index="1">images\sprKnucklesSnowboard_1.png</frame>

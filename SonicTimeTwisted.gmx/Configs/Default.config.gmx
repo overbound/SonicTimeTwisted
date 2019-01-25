@@ -497,7 +497,7 @@
     <option_screenkey>True</option_screenkey>
     <option_screenshotkey>true</option_screenshotkey>
     <option_shortcircuit>True</option_shortcircuit>
-    <option_showcursor>True</option_showcursor>
+    <option_showcursor>False</option_showcursor>
     <option_showprogress>1</option_showprogress>
     <option_sizeable>False</option_sizeable>
     <option_stayontop>false</option_stayontop>
@@ -714,7 +714,7 @@
     <option_use_new_audio>True</option_use_new_audio>
     <option_variableerrors>False</option_variableerrors>
     <option_version>100</option_version>
-    <option_version_build>0</option_version_build>
+    <option_version_build>1</option_version_build>
     <option_version_company>Overbound Game Studio</option_version_company>
     <option_version_copyright></option_version_copyright>
     <option_version_description></option_version_description>

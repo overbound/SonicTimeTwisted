@@ -17,7 +17,7 @@
     <TextureGroup0>0</TextureGroup0>
   </TextureGroups>
   <For3D>0</For3D>
-  <width>33</width>
+  <width>32</width>
   <height>38</height>
   <frames>
     <frame index="0">images\sprSuperSonic3DTurn_0.png</frame>

@@ -2,15 +2,15 @@
 <sprite>
   <type>0</type>
   <xorig>0</xorig>
-  <yorigin>0</yorigin>
+  <yorigin>-8</yorigin>
   <colkind>1</colkind>
   <coltolerance>0</coltolerance>
   <sepmasks>0</sepmasks>
   <bboxmode>0</bboxmode>
   <bbox_left>0</bbox_left>
   <bbox_right>171</bbox_right>
-  <bbox_top>8</bbox_top>
-  <bbox_bottom>143</bbox_bottom>
+  <bbox_top>0</bbox_top>
+  <bbox_bottom>135</bbox_bottom>
   <HTile>0</HTile>
   <VTile>0</VTile>
   <TextureGroups>
@@ -18,7 +18,7 @@
   </TextureGroups>
   <For3D>0</For3D>
   <width>172</width>
-  <height>144</height>
+  <height>136</height>
   <frames>
     <frame index="0">images\sprGalanikShadow_0.png</frame>
   </frames>

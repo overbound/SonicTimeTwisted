@@ -3,10 +3,10 @@
   <type>0</type>
   <xorig>80</xorig>
   <yorigin>80</yorigin>
-  <colkind>2</colkind>
+  <colkind>1</colkind>
   <coltolerance>0</coltolerance>
   <sepmasks>0</sepmasks>
-  <bboxmode>2</bboxmode>
+  <bboxmode>0</bboxmode>
   <bbox_left>0</bbox_left>
   <bbox_right>159</bbox_right>
   <bbox_top>0</bbox_top>

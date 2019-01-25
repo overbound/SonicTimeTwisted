@@ -18,7 +18,7 @@
   </TextureGroups>
   <For3D>0</For3D>
   <width>32</width>
-  <height>32</height>
+  <height>8</height>
   <frames>
     <frame index="0">images\sprSnailTrail_0.png</frame>
     <frame index="1">images\sprSnailTrail_1.png</frame>

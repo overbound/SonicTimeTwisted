@@ -17,8 +17,8 @@
     <TextureGroup0>0</TextureGroup0>
   </TextureGroups>
   <For3D>0</For3D>
-  <width>55</width>
-  <height>17</height>
+  <width>54</width>
+  <height>11</height>
   <frames>
     <frame index="0">images\sprBoard_0.png</frame>
     <frame index="1">images\sprBoard_1.png</frame>

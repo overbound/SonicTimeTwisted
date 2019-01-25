@@ -18,7 +18,7 @@
   </TextureGroups>
   <For3D>0</For3D>
   <width>38</width>
-  <height>33</height>
+  <height>32</height>
   <frames>
     <frame index="0">images\sprFlameEmmiter_0.png</frame>
     <frame index="1">images\sprFlameEmmiter_1.png</frame>

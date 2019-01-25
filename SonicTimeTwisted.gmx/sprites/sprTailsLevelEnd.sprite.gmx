@@ -17,7 +17,7 @@
     <TextureGroup0>0</TextureGroup0>
   </TextureGroups>
   <For3D>0</For3D>
-  <width>38</width>
+  <width>36</width>
   <height>35</height>
   <frames>
     <frame index="0">images\sprTailsLevelEnd_0.png</frame>
