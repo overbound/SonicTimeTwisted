@@ -2,23 +2,23 @@
 <sprite>
   <type>0</type>
   <xorig>28</xorig>
-  <yorigin>29</yorigin>
+  <yorigin>28</yorigin>
   <colkind>1</colkind>
   <coltolerance>0</coltolerance>
   <sepmasks>0</sepmasks>
   <bboxmode>0</bboxmode>
   <bbox_left>0</bbox_left>
   <bbox_right>53</bbox_right>
-  <bbox_top>1</bbox_top>
-  <bbox_bottom>60</bbox_bottom>
+  <bbox_top>0</bbox_top>
+  <bbox_bottom>59</bbox_bottom>
   <HTile>0</HTile>
   <VTile>0</VTile>
   <TextureGroups>
     <TextureGroup0>0</TextureGroup0>
   </TextureGroups>
   <For3D>0</For3D>
-  <width>56</width>
-  <height>64</height>
+  <width>54</width>
+  <height>60</height>
   <frames>
     <frame index="0">images\sprSonicSnowboard_0.png</frame>
     <frame index="1">images\sprSonicSnowboard_1.png</frame>

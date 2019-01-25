@@ -18,7 +18,7 @@
   </TextureGroups>
   <For3D>0</For3D>
   <width>50</width>
-  <height>64</height>
+  <height>54</height>
   <frames>
     <frame index="0">images\sprGalanikNose_0.png</frame>
   </frames>

@@ -17,7 +17,7 @@
     <TextureGroup0>0</TextureGroup0>
   </TextureGroups>
   <For3D>0</For3D>
-  <width>32</width>
+  <width>30</width>
   <height>15</height>
   <frames>
     <frame index="0">images\sprBackTTPWaves_0.png</frame>

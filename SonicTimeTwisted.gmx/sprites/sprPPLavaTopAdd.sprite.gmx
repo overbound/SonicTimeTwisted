@@ -2,15 +2,15 @@
 <sprite>
   <type>0</type>
   <xorig>0</xorig>
-  <yorigin>0</yorigin>
+  <yorigin>-11</yorigin>
   <colkind>1</colkind>
   <coltolerance>0</coltolerance>
   <sepmasks>0</sepmasks>
   <bboxmode>0</bboxmode>
   <bbox_left>0</bbox_left>
   <bbox_right>15</bbox_right>
-  <bbox_top>11</bbox_top>
-  <bbox_bottom>15</bbox_bottom>
+  <bbox_top>0</bbox_top>
+  <bbox_bottom>4</bbox_bottom>
   <HTile>0</HTile>
   <VTile>0</VTile>
   <TextureGroups>
@@ -18,7 +18,7 @@
   </TextureGroups>
   <For3D>0</For3D>
   <width>16</width>
-  <height>16</height>
+  <height>5</height>
   <frames>
     <frame index="0">images\sprPPLavaTopAdd_0.png</frame>
   </frames>

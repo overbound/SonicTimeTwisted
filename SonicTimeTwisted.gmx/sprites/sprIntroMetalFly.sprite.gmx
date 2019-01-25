@@ -18,7 +18,7 @@
   </TextureGroups>
   <For3D>0</For3D>
   <width>53</width>
-  <height>134</height>
+  <height>133</height>
   <frames>
     <frame index="0">images\sprIntroMetalFly_0.png</frame>
     <frame index="1">images\sprIntroMetalFly_1.png</frame>

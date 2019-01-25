@@ -2,15 +2,15 @@
 <sprite>
   <type>0</type>
   <xorig>160</xorig>
-  <yorigin>96</yorigin>
+  <yorigin>92</yorigin>
   <colkind>1</colkind>
   <coltolerance>0</coltolerance>
   <sepmasks>0</sepmasks>
   <bboxmode>0</bboxmode>
   <bbox_left>0</bbox_left>
   <bbox_right>319</bbox_right>
-  <bbox_top>4</bbox_top>
-  <bbox_bottom>183</bbox_bottom>
+  <bbox_top>0</bbox_top>
+  <bbox_bottom>179</bbox_bottom>
   <HTile>0</HTile>
   <VTile>0</VTile>
   <TextureGroups>
@@ -18,7 +18,7 @@
   </TextureGroups>
   <For3D>0</For3D>
   <width>320</width>
-  <height>193</height>
+  <height>180</height>
   <frames>
     <frame index="0">images\sprOverboundLogo_0.png</frame>
   </frames>

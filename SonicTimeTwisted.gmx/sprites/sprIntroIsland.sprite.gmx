@@ -2,15 +2,15 @@
 <sprite>
   <type>0</type>
   <xorig>0</xorig>
-  <yorigin>0</yorigin>
+  <yorigin>-116</yorigin>
   <colkind>1</colkind>
   <coltolerance>0</coltolerance>
   <sepmasks>0</sepmasks>
   <bboxmode>0</bboxmode>
   <bbox_left>0</bbox_left>
   <bbox_right>537</bbox_right>
-  <bbox_top>116</bbox_top>
-  <bbox_bottom>186</bbox_bottom>
+  <bbox_top>0</bbox_top>
+  <bbox_bottom>70</bbox_bottom>
   <HTile>0</HTile>
   <VTile>0</VTile>
   <TextureGroups>
@@ -18,7 +18,7 @@
   </TextureGroups>
   <For3D>0</For3D>
   <width>538</width>
-  <height>187</height>
+  <height>71</height>
   <frames>
     <frame index="0">images\sprIntroIsland_0.png</frame>
   </frames>

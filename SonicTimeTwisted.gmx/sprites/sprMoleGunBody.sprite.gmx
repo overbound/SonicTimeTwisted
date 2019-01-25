@@ -2,23 +2,23 @@
 <sprite>
   <type>0</type>
   <xorig>16</xorig>
-  <yorigin>16</yorigin>
+  <yorigin>15</yorigin>
   <colkind>3</colkind>
   <coltolerance>103</coltolerance>
-  <sepmasks>-1</sepmasks>
+  <sepmasks>0</sepmasks>
   <bboxmode>0</bboxmode>
   <bbox_left>0</bbox_left>
   <bbox_right>30</bbox_right>
-  <bbox_top>1</bbox_top>
-  <bbox_bottom>41</bbox_bottom>
+  <bbox_top>0</bbox_top>
+  <bbox_bottom>40</bbox_bottom>
   <HTile>0</HTile>
   <VTile>0</VTile>
   <TextureGroups>
     <TextureGroup0>0</TextureGroup0>
   </TextureGroups>
   <For3D>0</For3D>
-  <width>32</width>
-  <height>42</height>
+  <width>31</width>
+  <height>41</height>
   <frames>
     <frame index="0">images\sprMoleGunBody_0.png</frame>
     <frame index="1">images\sprMoleGunBody_1.png</frame>
