@@ -1801,12 +1801,11 @@
           <path>paths\AAZPath11</path>
           <path>paths\AAZPath12</path>
         </paths>
-        <path>paths\AAZPath16</path>
-        <path>paths\AAZPath17</path>
-        <path>paths\AAZPath18</path>
-        <path>paths\AAZPath19</path>
-        <path>paths\AAZPathPlane</path>
-        <path>paths\AAZPathKnuckles</path>
+        <paths name="Other">
+          <path>paths\AAZPath18</path>
+          <path>paths\AAZPath19</path>
+          <path>paths\AAZPathPlane</path>
+        </paths>
       </paths>
       <paths name="Past">
         <paths name="Group 1">
@@ -1819,74 +1818,13 @@
     <paths name="Bosses">
       <path>paths\pathVV1BossToCenter</path>
       <path>paths\pathVV1BossToNeutral</path>
-      <path>paths\pathVV2Boss</path>
     </paths>
-    <paths name="Viridian Valley">
-      <path>paths\VVZF_Path0</path>
-      <path>paths\VVZF_Path1</path>
-    </paths>
-    <paths name="Tidal Tubes">
-      <path>paths\TTFpath0</path>
-      <path>paths\TTFpath1</path>
-      <path>paths\TTFpath2</path>
-      <path>paths\TTFpath3</path>
-      <path>paths\TTFpath4</path>
-      <path>paths\TTFpath5</path>
-      <path>paths\TTFpath6</path>
-      <path>paths\TTFpath7</path>
-      <path>paths\TTFpath8</path>
-      <path>paths\TTFpath9</path>
-      <path>paths\TTFpath10</path>
-      <path>paths\TTFpath11</path>
-      <path>paths\TTFpath12</path>
-      <path>paths\TTFpath13</path>
-      <path>paths\TTFSpikeRollerPath1</path>
-      <path>paths\TTFSpikeRollerPath2</path>
-      <path>paths\TTFSpikeRollerPath3</path>
-      <path>paths\TTFSpikeRollerPath4</path>
-      <path>paths\TTFSpikeRollerPath5</path>
-      <path>paths\TTFSpikeRollerPath6</path>
-      <path>paths\TTFSpikeRollerPath7</path>
-      <path>paths\TTPSpikeRollerPath1</path>
-      <path>paths\TTPSpikeRollerPath2</path>
-      <path>paths\TTPSpikeRollerPath3</path>
-      <path>paths\TTPSpikeRollerPath4</path>
-      <path>paths\TTPSpikeRollerPath5</path>
-      <path>paths\TTPSpikeRollerPath6</path>
-      <path>paths\TTPSpikeRollerPath7</path>
-      <path>paths\TTPSpikeRollerPath8</path>
-      <path>paths\TTPSpikeRollerPath9</path>
-      <path>paths\TTPSpikeRollerPath10</path>
-      <path>paths\TTPSpikeRollerPath11</path>
-      <path>paths\TTPSpikeRollerPath12</path>
-      <path>paths\TTSpikeRollerPath2</path>
-      <path>paths\TTFpath14</path>
-      <path>paths\TTFpath15</path>
-      <path>paths\TTFpath16</path>
-      <path>paths\TTFpath17</path>
-      <path>paths\TTFSpikeRollerPath8</path>
-      <path>paths\TTFSpikeRollerPath13</path>
-      <path>paths\TTFSpikeRollerPath9</path>
-      <path>paths\TTFSpikeRollerPath10</path>
-      <path>paths\TTFSpikeRollerPath14</path>
-      <path>paths\TTFSpikeRollerPath15</path>
-      <path>paths\TTFSpikeRollerPath17</path>
-      <path>paths\TTFSpikeRollerPath16</path>
-      <path>paths\TTFSpikeRollerPath11</path>
-      <path>paths\TTFSpikeRollerPath12</path>
-    </paths>
-    <paths name="cutscene">
-      <paths name="intro">
-        <path>paths\pthIntroMetalZoom</path>
-      </paths>
+    <paths name="Cutscenes">
+      <path>paths\pthIntroMetalZoom</path>
     </paths>
     <paths name="Drifting Dynamo">
       <path>paths\DDPRockPath1</path>
       <path>paths\DDPRockPath2</path>
-    </paths>
-    <paths name="Raging Ruins">
-      <path>paths\pthWallRun1</path>
-      <path>paths\pathRRWallRun</path>
     </paths>
     <paths name="Special Stages">
       <paths name="Future">
@@ -1907,6 +1845,30 @@
         <path>paths\pthSSMetalSonicP6</path>
         <path>paths\pthSSMetalSonicP7</path>
       </paths>
+    </paths>
+    <paths name="Tidal Tubes">
+      <path>paths\TTFpath0</path>
+      <path>paths\TTFpath1</path>
+      <path>paths\TTFpath10</path>
+      <path>paths\TTFpath11</path>
+      <path>paths\TTFpath12</path>
+      <path>paths\TTFpath13</path>
+      <path>paths\TTFpath14</path>
+      <path>paths\TTFpath15</path>
+      <path>paths\TTFpath16</path>
+      <path>paths\TTFpath17</path>
+      <path>paths\TTFpath2</path>
+      <path>paths\TTFpath3</path>
+      <path>paths\TTFpath4</path>
+      <path>paths\TTFpath5</path>
+      <path>paths\TTFpath6</path>
+      <path>paths\TTFpath7</path>
+      <path>paths\TTFpath8</path>
+      <path>paths\TTFpath9</path>
+    </paths>
+    <paths name="Viridian Valley">
+      <path>paths\VVZF_Path0</path>
+      <path>paths\VVZF_Path1</path>
     </paths>
   </paths>
   <scripts name="scripts">
