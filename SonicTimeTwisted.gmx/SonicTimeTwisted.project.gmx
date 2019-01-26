@@ -154,8 +154,6 @@
           <sound>sound\sndSpringHigh</sound>
           <sound>sound\sndSpringLow</sound>
           <sound>sound\sndSSSpeedBoost</sound>
-          <sound>sound\sndSSChaosEmerald</sound>
-          <sound>sound\sndSSTimeStone</sound>
         </sounds>
         <sounds name="Player">
           <sounds name="Effect">
@@ -377,22 +375,17 @@
       <sprite>sprites\sprFontTitleLarge</sprite>
       <sprite>sprites\sprFontTitleSmall</sprite>
       <sprite>sprites\sprFontTitleYellow</sprite>
-      <sprite>sprites\sprFontTitleSmallest</sprite>
-      <sprite>sprites\sprHudFont</sprite>
     </sprites>
     <sprites name="Overlays">
       <sprites name="HUD">
         <sprite>sprites\sprGameOver</sprite>
         <sprite>sprites\sprHud</sprite>
-        <sprite>sprites\sprHudOld</sprite>
         <sprite>sprites\sprLives</sprite>
       </sprites>
-      <sprites name="SaveScreen">
+      <sprites name="Save Screen">
         <sprite>sprites\sprCharSelect</sprite>
         <sprite>sprites\sprDeleteConfirm</sprite>
-        <sprite>sprites\sprDeleteConfirmTouchscreen</sprite>
         <sprite>sprites\sprDeleteSlot</sprite>
-        <sprite>sprites\sprNoSaveSlot</sprite>
         <sprite>sprites\sprSaveControl</sprite>
         <sprite>sprites\sprSaveDelete</sprite>
         <sprite>sprites\sprSaveIconsFuture</sprite>
@@ -421,27 +414,6 @@
         <sprite>sprites\sprTitleBanner</sprite>
         <sprite>sprites\sprTitleBannerLeft</sprite>
         <sprite>sprites\sprTitlePlanet</sprite>
-      </sprites>
-      <sprites name="Touchscreen">
-        <sprite>sprites\sprGyroscopeTest</sprite>
-        <sprite>sprites\sprTouchscreenButton</sprite>
-        <sprite>sprites\sprTouchscreenButtonMed</sprite>
-        <sprite>sprites\sprTouchscreenButtonSmall</sprite>
-        <sprite>sprites\sprTouchscreenDPadBase</sprite>
-        <sprite>sprites\sprTouchscreenDPadBaseMed</sprite>
-        <sprite>sprites\sprTouchscreenDPadBaseSmall</sprite>
-        <sprite>sprites\sprTouchscreenDPadJoy</sprite>
-        <sprite>sprites\sprTouchscreenDPadJoyMed</sprite>
-        <sprite>sprites\sprTouchscreenDPadJoySmall</sprite>
-        <sprite>sprites\sprTouchscreenDPadTemplate</sprite>
-        <sprite>sprites\sprTouchscreenDPadTemplateMed</sprite>
-        <sprite>sprites\sprTouchscreenDPadTemplateSmall</sprite>
-        <sprite>sprites\sprTouchscreenPauseButton</sprite>
-        <sprite>sprites\sprTouchscreenRunButton</sprite>
-        <sprite>sprites\sprTouchscreenRunButtonMed</sprite>
-        <sprite>sprites\sprTouchscreenRunButtonSmall</sprite>
-        <sprite>sprites\sprTouchscreenSuperButtonBlue</sprite>
-        <sprite>sprites\sprTouchscreenSuperButtonYellow</sprite>
       </sprites>
     </sprites>
     <sprites name="Particles">
@@ -478,24 +450,24 @@
             <sprite>sprites\sprFlowerSprout</sprite>
           </sprites>
           <sprites name="Specific">
+            <sprite>sprites\sprFlowerAA</sprite>
+            <sprite>sprites\sprFlowerDD</sprite>
+            <sprite>sprites\sprFlowerFF</sprite>
+            <sprite>sprites\sprFlowerPP</sprite>
+            <sprite>sprites\sprFlowerRR</sprite>
+            <sprite>sprites\sprFlowerTT</sprite>
+            <sprite>sprites\sprFlowerVV</sprite>
           </sprites>
-          <sprite>sprites\sprFlowerAA</sprite>
-          <sprite>sprites\sprFlowerDD</sprite>
-          <sprite>sprites\sprFlowerFF</sprite>
-          <sprite>sprites\sprFlowerPP</sprite>
-          <sprite>sprites\sprFlowerRR</sprite>
-          <sprite>sprites\sprFlowerTT</sprite>
-          <sprite>sprites\sprFlowerVV</sprite>
         </sprites>
         <sprites name="Hazards">
           <sprite>sprites\sprSpike</sprite>
           <sprite>sprites\sprSpikeBall</sprite>
         </sprites>
         <sprites name="Lava">
+          <sprite>sprites\sprLavaBubbles</sprite>
           <sprite>sprites\sprPPLava</sprite>
           <sprite>sprites\sprPPLavaSeep</sprite>
           <sprite>sprites\sprPPLavaTopAdd</sprite>
-          <sprite>sprites\sprLavaBubbles</sprite>
         </sprites>
         <sprites name="Monitors">
           <sprite>sprites\sprIcon</sprite>
@@ -792,7 +764,7 @@
             <sprite>sprites\sprMoleDeath</sprite>
             <sprite>sprites\sprMoleIdleJump</sprite>
           </sprites>
-          <sprites name="EggWalker">
+          <sprites name="Egg Walker">
             <sprite>sprites\sprBackLeftLeg</sprite>
             <sprite>sprites\sprBackRightLeg</sprite>
             <sprite>sprites\sprEggWalker</sprite>
@@ -822,7 +794,7 @@
             <sprite>sprites\sprFireFlyWingLeft</sprite>
             <sprite>sprites\sprFireFlyWingRight</sprite>
           </sprites>
-          <sprites name="Galanik">
+          <sprites name="Galacnik">
             <sprite>sprites\sprGaanikFireBallLightingAdd</sprite>
             <sprite>sprites\sprGalanikDizzyEyes</sprite>
             <sprite>sprites\sprGalanikEyeTell</sprite>
@@ -844,7 +816,7 @@
             <sprite>sprites\sprGolemJet</sprite>
             <sprite>sprites\TargetSpr</sprite>
           </sprites>
-          <sprites name="MegaTrooper">
+          <sprites name="Mega Trooper">
             <sprite>sprites\MegaTrooperBodySpr</sprite>
             <sprite>sprites\MegaTrooperEyeSpr</sprite>
             <sprite>sprites\MegaTrooperHandSpr</sprite>
@@ -914,7 +886,7 @@
               <sprite>sprites\sprPterodactyl</sprite>
               <sprite>sprites\sprPterodactylBomb</sprite>
             </sprites>
-            <sprites name="vuturebot">
+            <sprites name="Vuture Bot">
               <sprite>sprites\sprVultureBot</sprite>
               <sprite>sprites\sprVultureBotBomb</sprite>
             </sprites>
@@ -946,9 +918,9 @@
           <sprites name="Eagle Bot">
             <sprite>sprites\sprEagleBot</sprite>
           </sprites>
-          <sprites name="FlowerShot">
-            <sprite>sprites\sprFireball</sprite>
+          <sprites name="Flower Shot">
             <sprite>sprites\sprFlowerShot</sprite>
+            <sprite>sprites\sprFireball</sprite>
           </sprites>
           <sprites name="Gunners">
             <sprites name="Sauceroid">
@@ -1455,90 +1427,9 @@
     </sprites>
   </sprites>
   <backgrounds name="background">
-    <backgrounds name="Viridian Valley">
-      <backgrounds name="Future">
-        <backgrounds name="Act1">
-          <background>background\VVZFAct1_OverlayLoop</background>
-          <background>background\VVZFAct1_Overlay1</background>
-          <background>background\VVZFAct1_OverlayLog</background>
-          <background>background\BGVVF1_1</background>
-          <background>background\BGVVF1_2</background>
-        </backgrounds>
-        <backgrounds name="Background">
-          <background>background\backVVFBush1</background>
-          <background>background\backVVFBush2</background>
-          <background>background\backVVFBush3</background>
-          <background>background\backVVFHills1</background>
-          <background>background\backVVFHills2</background>
-          <background>background\backVVFSky</background>
-          <background>background\backVVFTower</background>
-          <background>background\backLeavesTransition</background>
-        </backgrounds>
-        <backgrounds name="Act2">
-          <background>background\vvf2_1</background>
-          <background>background\vvf2_2</background>
-        </backgrounds>
-      </backgrounds>
-      <backgrounds name="Past">
-        <backgrounds name="Act1">
-          <background>background\VVZPAct1_Walll</background>
-          <background>background\VVZPAct1_OverlayLoop</background>
-          <background>background\tileVV1_P_1</background>
-          <background>background\tileVV1_P_2</background>
-        </backgrounds>
-        <backgrounds name="Background">
-          <background>background\backVVPLeaves1</background>
-          <background>background\backVVPLeaves1Bottom</background>
-          <background>background\backVVPLeaves2</background>
-          <background>background\backVVPLeaves2Bottom</background>
-          <background>background\backVVPLeaves3</background>
-          <background>background\backVVPLeaves3Bottom</background>
-          <background>background\backVVPShimmer</background>
-          <background>background\backVVPSky</background>
-          <background>background\backVVPWater</background>
-          <background>background\backVVPHut</background>
-          <background>background\backVVPHutTop</background>
-        </backgrounds>
-        <backgrounds name="Act2">
-          <background>background\vvp2_1</background>
-          <background>background\vvp2_2</background>
-        </backgrounds>
-      </backgrounds>
-    </backgrounds>
     <backgrounds name="Attraction Attack">
-      <backgrounds name="Past">
-        <backgrounds name="Act1">
-          <background>background\AAZPAct1_Buildingt</background>
-          <background>background\AAZPAct1_Overlay1</background>
-          <background>background\AAZPAct1_Overlay2</background>
-          <background>background\AAZPAct1_Overlay3</background>
-          <background>background\AAZPAct1_Overlay4</background>
-          <background>background\AAZPastAct1_Tubes1</background>
-          <background>background\AAZPastAct1_Tubes2</background>
-          <background>background\backAAPOverlay5</background>
-          <background>background\VVFBrokenPipe</background>
-          <background>background\background317</background>
-          <background>background\background175</background>
-          <background>background\backAA2PBallPit</background>
-          <background>background\tileAA1_P_1</background>
-          <background>background\tileAA1_P_2</background>
-        </backgrounds>
-        <backgrounds name="Background">
-          <background>background\backAAPGrass1</background>
-          <background>background\backAAPGrass2</background>
-          <background>background\backAAPHills</background>
-          <background>background\backAAPSky</background>
-          <background>background\backAAPTiles</background>
-          <background>background\backAAPWater</background>
-        </backgrounds>
-        <backgrounds name="Act2">
-          <background>background\Attraction_Attack_Past_Act2_2</background>
-          <background>background\Attraction_Attack_Past_Act2</background>
-        </backgrounds>
-      </backgrounds>
-      <background>background\backAA1BossFloor</background>
-      <backgrounds name="Future">
-        <backgrounds name="Background">
+      <backgrounds name="Backgrounds">
+        <backgrounds name="Future">
           <background>background\backAAFBuildings1</background>
           <background>background\backAAFBuildings2</background>
           <background>background\backAAFClouds</background>
@@ -1549,175 +1440,199 @@
           <background>background\backAAFSunset</background>
           <background>background\backAAFTowers</background>
         </backgrounds>
-        <backgrounds name="Act2">
-          <background>background\tileAA2_F_2</background>
-          <background>background\tileAA2_F_1</background>
-        </backgrounds>
-        <background>background\background444</background>
-        <backgrounds name="Act1">
-          <background>background\tileAA1_F_2</background>
-          <background>background\tileAA1_F1</background>
-        </backgrounds>
-        <background>background\background188</background>
-      </backgrounds>
-    </backgrounds>
-    <backgrounds name="Frigid Fortress">
-      <backgrounds name="Act1_f">
-        <background>background\tileFF1_F_1</background>
-        <background>background\tileFF1_F_2</background>
-      </backgrounds>
-      <backgrounds name="Act1_p">
-        <background>background\tileFF1_P_1</background>
-        <background>background\tileFF1_P_2</background>
-      </backgrounds>
-      <backgrounds name="Act2_p">
-        <background>background\tileFF2_P_1</background>
-        <background>background\tileFF2_P_2</background>
-      </backgrounds>
-      <backgrounds name="Act2_f">
-        <background>background\tileFF2_F_1</background>
-        <background>background\tileFF2_F_2</background>
-      </backgrounds>
-      <backgrounds name="future BG">
-        <background>background\backFFFCave</background>
-        <background>background\backFFFClouds</background>
-        <background>background\backFFFRocksTop</background>
-        <background>background\backFFFRocks</background>
-        <background>background\backFFFIsland1</background>
-        <background>background\backFFFMachines</background>
-        <background>background\backFFFIsland2</background>
-        <background>background\backFFFLights</background>
-        <background>background\backFFFSky</background>
-        <background>background\backFFFWater</background>
-      </backgrounds>
-      <backgrounds name="Past BG">
-        <background>background\backFFPArchesBack</background>
-        <background>background\backFFPArchesFront</background>
-        <background>background\backFFPCeilingBack</background>
-        <background>background\backFFPCeilingFront</background>
-        <background>background\backFFPIceCastle</background>
-        <background>background\backFFPIceFloats</background>
-        <background>background\backFFPStars</background>
-        <background>background\backFFPTrees</background>
-        <background>background\backFFPWall</background>
-      </backgrounds>
-    </backgrounds>
-    <backgrounds name="Tidal Tubes">
-      <background>background\backTTPWater</background>
-      <background>background\backTTPSky</background>
-      <background>background\backTTPShipSmall</background>
-      <background>background\backTTPShipMedium</background>
-      <background>background\backTTFStars2</background>
-      <background>background\backTTFStars1</background>
-      <background>background\backTTFSky</background>
-      <background>background\backTPFSea</background>
-      <background>background\backTTFRocks</background>
-      <background>background\backTTFWater</background>
-      <background>background\backTTFMountain</background>
-      <backgrounds name="Act1">
         <backgrounds name="Past">
-          <background>background\tileTT1_P_1</background>
-          <background>background\tileTT1_P_2</background>
+          <background>background\backAAPGrass1</background>
+          <background>background\backAAPGrass2</background>
+          <background>background\backAAPHills</background>
+          <background>background\backAAPSky</background>
+          <background>background\backAAPWater</background>
         </backgrounds>
-        <background>background\tileTT1_F_1</background>
-        <background>background\tileTT1_F_2</background>
       </backgrounds>
-      <backgrounds name="Act2">
-        <background>background\tt2f1</background>
-        <background>background\tt2p1</background>
-      </backgrounds>
-      <background>background\backTTTransitionP</background>
-      <background>background\backTTTransitionF</background>
+      <backgrounds name="Tiles">
+        <backgrounds name="Act 1">
+          <backgrounds name="Past">
+            <background>background\backAA2PBallPit</background>
+            <background>background\backAAPOverlay5</background>
+            <background>background\background175</background>
+            <background>background\background317</background>
+            <background>background\tileAA1_P_1</background>
+            <background>background\tileAA1_P_2</background>
+            <background>background\VVFBrokenPipe</background>
+          </backgrounds>
+          <backgrounds name="Future">
+            <background>background\tileAA1_F_2</background>
+            <background>background\tileAA1_F1</background>
+          </backgrounds>
+        </backgrounds>
+        <backgrounds name="Act 2">
+          <backgrounds name="Past">
+            <background>background\Attraction_Attack_Past_Act2</background>
+            <background>background\Attraction_Attack_Past_Act2_2</background>
+          </backgrounds>
+          <backgrounds name="Future">
+            <background>background\tileAA2_F_1</background>
+            <background>background\tileAA2_F_2</background>
+          </backgrounds>
+        </backgrounds>
+        <backgrounds name="General">
+          <background>background\background188</background>
+          <background>background\backAA1BossFloor</background>
+        </backgrounds>
     </backgrounds>
-    <backgrounds name="cutscene">
-      <backgrounds name="intro Future">
+    <backgrounds name="Cutscenes">
+      <backgrounds name="Intro (Future)">
         <background>background\bgNeverlake</background>
       </backgrounds>
-      <backgrounds name="intro Past">
+      <backgrounds name="Intro (Past)">
         <background>background\introCutBack1</background>
       </backgrounds>
-      <backgrounds name="outro">
-        <background>background\backEndingLoop</background>
-        <background>background\backEndingTransition</background>
+      <backgrounds name="Outro">
         <background>background\backEndingLanding</background>
+        <background>background\backEndingLoop</background>
         <background>background\backEndingNeverLake</background>
+        <background>background\backEndingTransition</background>
       </backgrounds>
     </backgrounds>
     <backgrounds name="Drifting Dynamo">
-      <background>background\DDZCaveBG</background>
-      <backgrounds name="Future Inside Back">
-        <background>background\backDDFBeam</background>
-        <background>background\backDDFCross</background>
-        <background>background\backDDFSmallCross</background>
-        <background>background\backDDFSmallBeam</background>
-        <background>background\backDDFTubes</background>
-        <background>background\backDDFWall</background>
-        <background>background\backDDFFloor</background>
-        <background>background\backDDFSmallFloor</background>
-      </backgrounds>
-      <background>background\DDZXpattern</background>
-      <backgrounds name="Future Outside Back">
-        <background>background\backDDFSmallHills</background>
-        <background>background\backDDFSand</background>
-        <background>background\backDDFSky</background>
-      </backgrounds>
-      <backgrounds name="Past Background">
-        <background>background\backDDPSky</background>
-        <background>background\backDDPWater</background>
-        <background>background\backDDPRockTop</background>
-        <background>background\backDDPRock</background>
-      </backgrounds>
-      <backgrounds name="Act 2">
-        <backgrounds name="Future">
-          <background>background\ddf2_1</background>
-          <background>background\ddf2_2</background>
-        </backgrounds>
+      <backgrounds name="Backgrounds">
         <backgrounds name="Past">
-          <background>background\dd2_p_1</background>
+          <background>background\backDDPRock</background>
+          <background>background\backDDPRockTop</background>
+          <background>background\backDDPSky</background>
+          <background>background\backDDPWater</background>
+        </backgrounds>
+        <backgrounds name="Future">
+          <backgrounds name="Inside">
+            <background>background\backDDFBeam</background>
+            <background>background\backDDFCross</background>
+            <background>background\backDDFFloor</background>
+            <background>background\backDDFSmallBeam</background>
+            <background>background\backDDFSmallCross</background>
+            <background>background\backDDFSmallFloor</background>
+            <background>background\backDDFWall</background>
+          </backgrounds>
+          <backgrounds name="Outside">
+            <background>background\backDDFSand</background>
+            <background>background\backDDFSky</background>
+            <background>background\backDDFSmallHills</background>
+          </backgrounds>
         </backgrounds>
       </backgrounds>
-      <backgrounds name="Act1">
-        <backgrounds name="Future">
-          <background>background\dd1_f_1</background>
-          <background>background\dd1_f_2</background>
+      <backgrounds name="Tiles">
+        <backgrounds name="Act 1">
+          <backgrounds name="Future">
+            <background>background\dd1_f_1</background>
+            <background>background\dd1_f_2</background>
+          </backgrounds>
+          <backgrounds name="Past">
+            <background>background\dd1_p_1</background>
+            <background>background\dd1_p_2</background>
+          </backgrounds>
         </backgrounds>
-        <backgrounds name="Past">
-          <background>background\dd1_p_2</background>
-          <background>background\dd1_p_1</background>
+        <backgrounds name="Act 2">
+          <backgrounds name="Future">
+            <background>background\ddf2_1</background>
+            <background>background\ddf2_2</background>
+          </backgrounds>
+          <backgrounds name="Past">
+            <background>background\dd2_p_1</background>
+          </backgrounds>
+        </backgrounds>
+        <backgrounds name="General">
+          <background>background\DDZCaveBG</background>
         </backgrounds>
       </backgrounds>
     </backgrounds>
-    <backgrounds name="tranistions">
-      <background>background\backCloudTransition</background>
-      <background>background\tt_gradient</background>
-      <background>background\tt_texture</background>
+    <backgrounds name="Frigid Fortress">
+      <backgrounds name="Tiles">
+        <backgrounds name="Act 1">
+          <backgrounds name="Past">
+            <background>background\tileFF1_P_1</background>
+            <background>background\tileFF1_P_2</background>
+          </backgrounds>
+          <backgrounds name="Future">
+            <background>background\tileFF1_F_1</background>
+            <background>background\tileFF1_F_2</background>
+          </backgrounds>
+        </backgrounds>
+        <backgrounds name="Act 2">
+          <backgrounds name="Past">
+            <background>background\tileFF2_P_1</background>
+            <background>background\tileFF2_P_2</background>
+          </backgrounds>
+          <backgrounds name="Future">
+            <background>background\tileFF2_F_1</background>
+            <background>background\tileFF2_F_2</background>
+          </backgrounds>
+        </backgrounds>
+      </backgrounds>
+      <backgrounds name="Backgrounds">
+        <backgrounds name="Future">
+          <background>background\backFFFCave</background>
+          <background>background\backFFFClouds</background>
+          <background>background\backFFFIsland1</background>
+          <background>background\backFFFIsland2</background>
+          <background>background\backFFFLights</background>
+          <background>background\backFFFMachines</background>
+          <background>background\backFFFRocks</background>
+          <background>background\backFFFRocksTop</background>
+          <background>background\backFFFSky</background>
+          <background>background\backFFFWater</background>
+        </backgrounds>
+        <backgrounds name="Past">
+          <background>background\backFFPArchesBack</background>
+          <background>background\backFFPArchesFront</background>
+          <background>background\backFFPCeilingBack</background>
+          <background>background\backFFPCeilingFront</background>
+          <background>background\backFFPIceCastle</background>
+          <background>background\backFFPIceFloats</background>
+          <background>background\backFFPStars</background>
+          <background>background\backFFPTrees</background>
+          <background>background\backFFPWall</background>
+        </backgrounds>
+      </backgrounds>
     </backgrounds>
     <backgrounds name="Planetary Panic">
-      <background>background\backPPZMountain</background>
-      <background>background\backPPZHills</background>
-      <background>background\backPPZPlanet</background>
-      <background>background\backPPZLava</background>
-      <background>background\backPPZPipe</background>
-      <backgrounds name="act1">
+      <backgrounds name="Backgrounds">
+        <background>background\backPPZHills</background>
+        <background>background\backPPZLava</background>
+        <background>background\backPPZMountain</background>
+        <background>background\backPPZPipe</background>
+        <background>background\backPPZPlanet</background>
+        <background>background\NebulaBkg</background>
+      </backgrounds>
+      <backgrounds name="Tiles">
         <background>background\PP1_1</background>
       </backgrounds>
-      <background>background\NebulaBkg</background>
     </backgrounds>
-    <backgrounds name="Sunken Saucer">
-      <background>background\ssz_1</background>
-      <background>background\backSSZWall</background>
+    <backgrounds name="Raging Ruins">
+      <backgrounds name="Backgrounds">
+        <backgrounds name="Future">
+          <background>background\backRRFCity</background>
+          <background>background\backRRFCloudBack</background>
+          <background>background\backRRFClouds</background>
+          <background>background\backRRFSky</background>
+        </backgrounds>
+        <backgrounds name="Past">
+          <background>background\backRRPBigClouds</background>
+          <background>background\backRRPCloud</background>
+          <background>background\backRRPGround</background>
+          <background>background\backRRPSky</background>
+        </backgrounds>
+      </backgrounds>
+      <backgrounds name="Tiles">
+        <backgrounds name="Future">
+          <background>background\RR1_f1</background>
+        </backgrounds>
+        <backgrounds name="Past">
+          <background>background\RR1_p1</background>
+        </backgrounds>
+    </backgrounds>
+    <backgrounds name="Save Screen">
+    <background>background\saveScreenBackground</background>
     </backgrounds>
     <backgrounds name="Special Stages">
-      <backgrounds name="past">
-        <background>background\backSSPast1</background>
-        <background>background\backSSPast2</background>
-        <background>background\backSSPast3</background>
-        <background>background\backSSPast4</background>
-        <background>background\backSSPast5</background>
-        <background>background\backSSPast6</background>
-        <background>background\backSSPast7</background>
-      </backgrounds>
-      <backgrounds name="future">
+      <backgrounds name="Future">
         <background>background\backSSFuture1</background>
         <background>background\backSSFuture2</background>
         <background>background\backSSFuture3</background>
@@ -1726,26 +1641,125 @@
         <background>background\backSSFuture6</background>
         <background>background\backSSFuture7</background>
       </backgrounds>
-    </backgrounds>
-    <backgrounds name="Raging Ruins">
-      <background>background\RR1_p1</background>
       <backgrounds name="Past">
-        <background>background\backRRPSky</background>
-        <background>background\backRRPCloud</background>
-        <background>background\backRRPGround</background>
-        <background>background\backRRPBigClouds</background>
-      </backgrounds>
-      <background>background\RR1_f1</background>
-      <backgrounds name="Future">
-        <background>background\backRRFClouds</background>
-        <background>background\backRRFCloudBack</background>
-        <background>background\backRRFCity</background>
-        <background>background\backRRFFarCloud</background>
-        <background>background\backRRFSky</background>
+        <background>background\backSSPast1</background>
+        <background>background\backSSPast2</background>
+        <background>background\backSSPast3</background>
+        <background>background\backSSPast4</background>
+        <background>background\backSSPast5</background>
+        <background>background\backSSPast6</background>
+        <background>background\backSSPast7</background>
       </backgrounds>
     </backgrounds>
-    <background>background\backTitleIsland</background>
-    <background>background\saveScreenBackground</background>
+    <backgrounds name="Sunken Saucer">
+      <background>background\ssz_1</background>
+    </backgrounds>
+    <backgrounds name="Tidal Tubes">
+      <backgrounds name="Background">
+        <backgrounds name="Future">
+          <background>background\backTTFMountain</background>
+          <background>background\backTTFRocks</background>
+          <background>background\backTTFSky</background>
+          <background>background\backTTFStars1</background>
+          <background>background\backTTFStars2</background>
+          <background>background\backTTFWater</background>
+          <background>background\backTTTransitionF</background>
+        </backgrounds>
+        <backgrounds name="Past">
+          <background>background\backTPFSea</background>
+          <background>background\backTTPShipMedium</background>
+          <background>background\backTTPShipSmall</background>
+          <background>background\backTTPSky</background>
+          <background>background\backTTPWater</background>
+          <background>background\backTTTransitionP</background>
+        </backgrounds>
+      </backgrounds>
+      <backgrounds name="Tiles">
+        <backgrounds name="Act1">
+          <backgrounds name="Future">
+            <background>background\tileTT1_F_1</background>
+            <background>background\tileTT1_F_2</background>
+          </backgrounds>
+          <backgrounds name="Past">
+            <background>background\tileTT1_P_1</background>
+            <background>background\tileTT1_P_2</background>
+          </backgrounds>
+        </backgrounds>
+        <backgrounds name="Act2">
+          <backgrounds name="Future">
+            <background>background\tt2f1</background>
+          </backgrounds>
+          <backgrounds name="Past">
+            <background>background\tt2p1</background>
+          </backgrounds>
+        </backgrounds>
+      </backgrounds>
+    </backgrounds>
+    <backgrounds name="Title Screen">
+      <background>background\backTitleIsland</background>
+    </backgrounds>
+    <backgrounds name="Tranistions">
+      <backgrounds name="Other">
+        <background>background\backCloudTransition</background>
+      </backgrounds>
+      <backgrounds name="Time Travel">
+        <background>background\tt_gradient</background>
+        <background>background\tt_texture</background>
+      </backgrounds>
+    </backgrounds>
+    <backgrounds name="Viridian Valley">
+      <backgrounds name="Backgrounds">
+        <backgrounds name="Future">
+          <background>background\backLeavesTransition</background>
+          <background>background\backVVFBush1</background>
+          <background>background\backVVFBush2</background>
+          <background>background\backVVFBush3</background>
+          <background>background\backVVFHills1</background>
+          <background>background\backVVFHills2</background>
+          <background>background\backVVFSky</background>
+          <background>background\backVVFTower</background>
+        </backgrounds>
+        <backgrounds name="Past">
+          <background>background\backVVPHut</background>
+          <background>background\backVVPHutTop</background>
+          <background>background\backVVPLeaves1</background>
+          <background>background\backVVPLeaves1Bottom</background>
+          <background>background\backVVPLeaves2</background>
+          <background>background\backVVPLeaves2Bottom</background>
+          <background>background\backVVPLeaves3</background>
+          <background>background\backVVPLeaves3Bottom</background>
+          <background>background\backVVPShimmer</background>
+          <background>background\backVVPSky</background>
+          <background>background\backVVPWater</background>
+        </backgrounds>
+      </backgrounds>
+      <backgrounds name="Tiles">
+        <backgrounds name="Act 1">
+          <backgrounds name="Future">
+            <background>background\BGVVF1_1</background>
+            <background>background\BGVVF1_2</background>
+            <background>background\VVZFAct1_Overlay1</background>
+            <background>background\VVZFAct1_OverlayLog</background>
+            <background>background\VVZFAct1_OverlayLoop</background>
+          </backgrounds>
+          <backgrounds name="Past">
+            <background>background\tileVV1_P_1</background>
+            <background>background\tileVV1_P_2</background>
+            <background>background\VVZPAct1_OverlayLoop</background>
+            <background>background\VVZPAct1_Walll</background>
+          </backgrounds>
+        </backgrounds>
+        <backgrounds name="Act 2">
+          <backgrounds name="Future">
+            <background>background\vvf2_1</background>
+            <background>background\vvf2_2</background>
+          </backgrounds>
+          <backgrounds name="Past">
+            <background>background\vvp2_1</background>
+            <background>background\vvp2_2</background>
+          </backgrounds>
+        </backgrounds>
+    </backgrounds>
   </backgrounds>
   <paths name="paths">
     <paths name="Attraction Attack">
@@ -1889,32 +1903,6 @@
         <script>scripts\play_previous.gml</script>
       </scripts>
       <scripts name="Input">
-        <scripts name="rumble">
-          <scripts name="effects">
-            <script>scripts\rumble_short_weak.gml</script>
-            <script>scripts\rumble_short_weakest.gml</script>
-            <script>scripts\rumble_short_mid.gml</script>
-            <script>scripts\rumble_short_strong.gml</script>
-            <script>scripts\rumble_instant_strong.gml</script>
-            <script>scripts\rumble_short_strong_double.gml</script>
-            <script>scripts\rumble_short_mid_double.gml</script>
-            <script>scripts\rumble_short_strong_and_mid.gml</script>
-            <script>scripts\rumble_short_strongest.gml</script>
-            <script>scripts\rumble_ss_item_get.gml</script>
-            <script>scripts\rumble_hurt_robot.gml</script>
-            <script>scripts\rumble_act1_spin_signpost.gml</script>
-            <script>scripts\rumble_act2_break_capsule.gml</script>
-            <script>scripts\rumble_ground_shake.gml</script>
-            <script>scripts\rumble_signpost.gml</script>
-            <script>scripts\rumble_long_decreasing.gml</script>
-            <script>scripts\rumble_verylong_strong.gml</script>
-          </scripts>
-          <script>scripts\rumble_enqueue.gml</script>
-          <script>scripts\rumble_perform.gml</script>
-          <script>scripts\rumble_configuration_active.gml</script>
-          <script>scripts\rumble_configuration_inactive.gml</script>
-          <script>scripts\rumble_none.gml</script>
-        </scripts>
         <script>scripts\save_control_map_keyboard.gml</script>
         <script>scripts\save_control_map_gamepad.gml</script>
         <script>scripts\save_gamepad_number.gml</script>
@@ -1935,10 +1923,6 @@
         <script>scripts\computer_input_set_pressed.gml</script>
         <script>scripts\computer_input_set_released.gml</script>
         <script>scripts\computer_input_setup.gml</script>
-        <script>scripts\is_key_mappable.gml</script>
-        <script>scripts\is_button_mappable.gml</script>
-        <script>scripts\is_axis_mappable.gml</script>
-        <script>scripts\rumble.gml</script>
       </scripts>
       <scripts name="Program">
         <script>scripts\game_pause.gml</script>
@@ -1951,14 +1935,7 @@
         <script>scripts\level_goback.gml</script>
         <script>scripts\level_time_travel.gml</script>
         <script>scripts\special_level_go_to.gml</script>
-        <script>scripts\special_level_go_to_score.gml</script>
         <script>scripts\end_level_normal.gml</script>
-        <script>scripts\special_level_go_to_from_level_select.gml</script>
-        <script>scripts\initialize_level_object_activation.gml</script>
-        <script>scripts\refresh_level_object_activation_start.gml</script>
-        <script>scripts\refresh_level_object_activation_end.gml</script>
-        <script>scripts\reactivate_level_objects_start.gml</script>
-        <script>scripts\reactivate_level_objects_end.gml</script>
       </scripts>
       <scripts name="Save">
         <script>scripts\create_new_save.gml</script>
@@ -1972,29 +1949,9 @@
         <script>scripts\load_big_ring.gml</script>
         <script>scripts\load_lives.gml</script>
         <script>scripts\delete_settings.gml</script>
-        <script>scripts\save_options.gml</script>
-        <script>scripts\load_options.gml</script>
-        <script>scripts\shift_savefiles.gml</script>
-        <script>scripts\save_data_write.gml</script>
-        <script>scripts\save_data_read.gml</script>
-      </scripts>
-      <scripts name="Menu">
-        <script>scripts\get_kb_label.gml</script>
-        <script>scripts\get_gp_label.gml</script>
-        <script>scripts\menu_key_mapping_states.gml</script>
-      </scripts>
-      <scripts name="Video">
-        <script>scripts\set_video_mode.gml</script>
-        <script>scripts\get_video_mode.gml</script>
-        <script>scripts\save_video_settings.gml</script>
-        <script>scripts\load_video_settings.gml</script>
-        <script>scripts\set_30_fps.gml</script>
-        <script>scripts\get_30_fps.gml</script>
-        <script>scripts\is_tt_shader_supported.gml</script>
       </scripts>
       <script>scripts\extend_byte.gml</script>
       <script>scripts\minlerp.gml</script>
-      <script>scripts\get_os_type.gml</script>
     </scripts>
     <scripts name="Overlays">
       <scripts name="Parallax">
@@ -2003,10 +1960,6 @@
       </scripts>
       <scripts name="Transitions">
         <script>scripts\transition_to.gml</script>
-      </scripts>
-      <scripts name="Hud">
-        <script>scripts\randomize_number.gml</script>
-        <script>scripts\draw_top_hud.gml</script>
       </scripts>
     </scripts>
     <scripts name="Scene Objects">
@@ -2052,8 +2005,6 @@
             </scripts>
             <script>scripts\updateGolemObjects.gml</script>
           </scripts>
-          <script>scripts\draw_boss_hit_blend.gml</script>
-          <script>scripts\draw_boss_hit_blend_parent_alarm.gml</script>
         </scripts>
         <scripts name="Gravity">
           <script>scripts\gravity_angle.gml</script>
@@ -2333,11 +2284,9 @@
           <script>scripts\player_state_enter.gml</script>
           <script>scripts\player_state_exit.gml</script>
           <script>scripts\player_state_fall.gml</script>
-          <script>scripts\player_state_fall_automatically.gml</script>
           <script>scripts\player_state_hurt.gml</script>
           <script>scripts\player_state_look.gml</script>
           <script>scripts\player_state_object.gml</script>
-          <script>scripts\player_state_complete.gml</script>
           <script>scripts\player_state_path.gml</script>
           <script>scripts\player_state_wall_run.gml</script>
           <script>scripts\player_state_reset.gml</script>
@@ -2387,7 +2336,6 @@
           <script>scripts\player_is_falling.gml</script>
           <script>scripts\player_is_hurt.gml</script>
           <script>scripts\player_is_jumping.gml</script>
-          <script>scripts\player_is_jumping_automatically.gml</script>
           <script>scripts\player_is_board_jumping.gml</script>
           <script>scripts\player_is_board_falling.gml</script>
           <script>scripts\player_is_looking.gml</script>
@@ -2453,30 +2401,6 @@
           <script>scripts\getProg.gml</script>
         </scripts>
         <script>scripts\PlayerUpdateRacerProgress.gml</script>
-      </scripts>
-    </scripts>
-    <scripts name="Smartphone">
-      <script>scripts\smartphone_enable_virtual_keys.gml</script>
-      <script>scripts\smartphone_disable_virtual_keys.gml</script>
-      <script>scripts\smartphone_confirm.gml</script>
-      <script>scripts\smartphone_save_configuration.gml</script>
-      <scripts name="Android">
-        <scripts name="rumble">
-          <script>scripts\android_rumble.gml</script>
-        </scripts>
-        <script>scripts\android_vk_press.gml</script>
-        <script>scripts\android_vk_release.gml</script>
-        <script>scripts\android_vk_is_pressed.gml</script>
-        <script>scripts\android_manage_touchscreen_controls.gml</script>
-        <script>scripts\android_manage_gyroscope_controls.gml</script>
-        <script>scripts\android_read_gyroscope_x.gml</script>
-        <script>scripts\android_read_gyroscope_y.gml</script>
-        <script>scripts\android_manage_touch_controls.gml</script>
-        <script>scripts\android_input_any_gamepad_axis.gml</script>
-        <script>scripts\android_input_any_gamepad_button.gml</script>
-        <script>scripts\android_menu_key_mapping_states.gml</script>
-        <script>scripts\android_device_set_mode_keyboard.gml</script>
-        <script>scripts\android_device_set_mode_gamepad.gml</script>
       </scripts>
     </scripts>
   </scripts>
@@ -2948,7 +2872,6 @@
         <object>objects\objBoss</object>
         <object>objects\objSpikeball</object>
         <object>objects\objEnemy</object>
-        <object>objects\objEnemyAlwaysActive</object>
       </objects>
       <objects name="Monitor">
         <object>objects\objIcon</object>
@@ -3080,19 +3003,11 @@
         <object>objects\objInputDummy</object>
         <object>objects\objInput</object>
       </objects>
-      <objects name="Screen">
-        <object>objects\objScreen</object>
-        <object>objects\objFramerate</object>
-      </objects>
-      <objects name="TileGrid">
-        <object>objects\objTileGridManager</object>
-        <object>objects\objTileGridRenderer</object>
-      </objects>
+      <object>objects\objGameData</object>
       <object>objects\objProgram</object>
       <object>objects\objMusic</object>
-      <object>objects\objGameData</object>
       <object>objects\objResources</object>
-      <object>objects\objMenu</object>
+      <object>objects\objScreen</object>
     </objects>
     <objects name="Overlays">
       <objects name="Title Screen">
@@ -3105,7 +3020,6 @@
         <object>objects\objTitleCloud0</object>
         <object>objects\objTitleEffects</object>
         <object>objects\objTitleLighting</object>
-        <object>objects\objTitleLightingNoShader</object>
         <object>objects\objTitleCloud1</object>
         <object>objects\objCharacterSelect</object>
         <object>objects\objLevelSelect</object>
@@ -3116,7 +3030,6 @@
       <objects name="Transitions">
         <object>objects\objFade</object>
         <object>objects\objSSToLevel</object>
-        <object>objects\objSSToScore</object>
         <object>objects\objLevelToSS</object>
         <object>objects\objFadeWhite</object>
         <object>objects\objFadeWhiteFromSave</object>
@@ -3127,7 +3040,6 @@
         <object>objects\objTTZ2Transition</object>
         <object>objects\objGameOver</object>
         <object>objects\objTimeTravel</object>
-        <object>objects\objTimeTravelNoShader</object>
         <object>objects\objTitlecard</object>
         <object>objects\objTitlecardDisolve</object>
         <object>objects\objTitleCardSSZ</object>
@@ -3143,10 +3055,8 @@
       <object>objects\objScoreCard</object>
       <objects name="save screen">
         <object>objects\objSaveSlot</object>
-        <object>objects\objNoSaveSlot</object>
         <object>objects\objDeleteSlot</object>
         <object>objects\objSaveControl</object>
-        <object>objects\objSaveBg</object>
       </objects>
     </objects>
     <object>objects\obj3DSlant</object>
@@ -3170,9 +3080,8 @@
       </objects>
       <objects name="Interface">
         <object>objects\objSSHud</object>
-        <object>objects\objSSMessages</object>
         <object>objects\objSSScoreCard</object>
-        <object>objects\objSSScoreBackground</object>
+        <object>objects\objSSMessages</object>
       </objects>
       <objects name="rings">
         <object>objects\objSSRing</object>
@@ -3235,11 +3144,6 @@
         <object>objects\objNonSolid</object>
         <object>objects\objSceneObject</object>
         <object>objects\objSolid</object>
-        <objects name="AlwaysActive">
-          <object>objects\objNonSolidAlwaysActive</object>
-          <object>objects\objSolidAlwaysActive</object>
-          <object>objects\objSceneObjectAlwaysActive</object>
-        </objects>
       </objects>
       <objects name="Player">
         <objects name="Effects">
@@ -3325,23 +3229,6 @@
           <object>objects\objGalacnikFootPart</object>
           <object>objects\objGalacnikStatchPart</object>
           <object>objects\objGalacnikHandPart</object>
-        </objects>
-      </objects>
-    </objects>
-    <objects name="Ports">
-      <object>objects\objSSAlwaysActive</object>
-      <objects name="Android">
-        <object>objects\objAndroid</object>
-        <objects name="Object Extensions">
-          <object>objects\objLevel_Android</object>
-          <object>objects\objHud_Android</object>
-          <object>objects\objSaveControl_Android</object>
-          <object>objects\objSSHud_Android</object>
-          <object>objects\objSSLevel_Android</object>
-          <object>objects\objMenu_Android</object>
-          <object>objects\objAndroidInput</object>
-          <object>objects\objAndroidInputSmartphone</object>
-          <object>objects\objTitleControl_Android</object>
         </objects>
       </objects>
     </objects>
@@ -3629,10 +3516,9 @@
         <room>rooms\SSP6</room>
         <room>rooms\SSP7</room>
       </rooms>
-      <room>rooms\ss_results_screen</room>
     </rooms>
   </rooms>
-  <constants number="106">
+  <constants number="59">
     <constant name="GAMEPAD_POV_Y">7</constant>
     <constant name="GAMEPAD_POV_X">6</constant>
     <constant name="GAMEPAD_AXIS_V">5</constant>
@@ -3657,11 +3543,9 @@
     <constant name="cB">32</constant>
     <constant name="cC">64</constant>
     <constant name="cSTART">128</constant>
-    <constant name="cBACK">256</constant>
     <constant name="cACTION">cA | cB | cC</constant>
-    <constant name="cCANCEL">cB | cBACK</constant>
+    <constant name="cCANCEL">cB</constant>
     <constant name="cCONFIRM">cA | cSTART</constant>
-    <constant name="cPAUSE">cSTART | cBACK</constant>
     <constant name="BINDING_TYPE_NONE">0</constant>
     <constant name="BINDING_TYPE_KEY">1</constant>
     <constant name="BINDING_TYPE_BUTTON">2</constant>
@@ -3694,51 +3578,6 @@
     <constant name="aPP1">'&amp;*(kjda'</constant>
     <constant name="aPP2">'A:Lfda'</constant>
     <constant name="aMM1">'^&amp;*(jkl'</constant>
-    <constant name="OPTION_NAME">0</constant>
-    <constant name="OPTION_TYPE">1</constant>
-    <constant name="OPTION_VALUE">2</constant>
-    <constant name="OPTION_ANIMATION">3</constant>
-    <constant name="OPTION_TYPE_SIMPLE">0</constant>
-    <constant name="OPTION_TYPE_WITH_VALUE">1</constant>
-    <constant name="OPTION_TYPE_CONFIRM">2</constant>
-    <constant name="OPTION_TYPE_TITLE">3</constant>
-    <constant name="OPTION_ANIMATION_NONE">0</constant>
-    <constant name="OPTION_ANIMATION_LONGPRESS">1</constant>
-    <constant name="OPTION_TYPE_SUBMENU">4</constant>
-    <constant name="OPTION_TYPE_RETURN">5</constant>
-    <constant name="OPTION_ANIMATION_FLASHING">2</constant>
-    <constant name="RUMBLE_EVENT_PRESS_BUTTON">0</constant>
-    <constant name="RUMBLE_EVENT_RING_GET">1</constant>
-    <constant name="RUMBLE_EVENT_GIANT_RING">2</constant>
-    <constant name="RUMBLE_EVENT_BREAK_MONITOR">3</constant>
-    <constant name="RUMBLE_EVENT_BREAK_ROBOT">4</constant>
-    <constant name="RUMBLE_EVENT_SS_ITEM_GET">5</constant>
-    <constant name="RUMBLE_EVENT_HURT_ROBOT">6</constant>
-    <constant name="RUMBLE_EVENT_ACT1_SPIN_SIGNPOST">7</constant>
-    <constant name="RUMBLE_EVENT_ACT2_BREAK_CAPSULE">8</constant>
-    <constant name="RUMBLE_EVENT_GROUND_SHAKE">9</constant>
-    <constant name="RUMBLE_EVENT_SPINDASH">10</constant>
-    <constant name="RUMBLE_EVENT_LAMPPOST">11</constant>
-    <constant name="RUMBLE_EVENT_SPRING">12</constant>
-    <constant name="RUMBLE_EVENT_BUMPER">13</constant>
-    <constant name="RUMBLE_EVENT_CONTROLLED_BY_OBJECT">14</constant>
-    <constant name="RUMBLE_EVENT_BREAKABLE_BLOCK">15</constant>
-    <constant name="RUMBLE_START_TIME">0</constant>
-    <constant name="RUMBLE_END_TIME">1</constant>
-    <constant name="RUMBLE_LEFT">2</constant>
-    <constant name="RUMBLE_RIGHT">3</constant>
-    <constant name="RUMBLE_FORCE_OVERRIDE">4</constant>
-    <constant name="ANDROID_CONSOLE">0</constant>
-    <constant name="RUMBLE_EVENT_HURT_SHIELDS">16</constant>
-    <constant name="RUMBLE_EVENT_HURT_RINGS">17</constant>
-    <constant name="RUMBLE_EVENT_DIE">18</constant>
-    <constant name="RUMBLE_EVENT_TAILS_FLY">19</constant>
-    <constant name="RUMBLE_EVENT_KNUCKLES_CLIMB">20</constant>
-    <constant name="RUMBLE_EVENT_KNUCKLES_FALL">21</constant>
-    <constant name="RUMBLE_EVENT_SONIC_SHIELD">22</constant>
-    <constant name="RUMBLE_EVENT_EMERALD_GET">23</constant>
-    <constant name="RUMBLE_EVENT_BREAK_BLOCK">24</constant>
-    <constant name="RUMBLE_EVENT_SHAKE_ONCE">25</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>
