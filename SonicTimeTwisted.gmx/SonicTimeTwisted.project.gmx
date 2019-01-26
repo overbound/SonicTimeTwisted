@@ -1446,90 +1446,9 @@
     </sprites>
   </sprites>
   <backgrounds name="background">
-    <backgrounds name="Viridian Valley">
-      <backgrounds name="Future">
-        <backgrounds name="Act1">
-          <background>background\VVZFAct1_OverlayLoop</background>
-          <background>background\VVZFAct1_Overlay1</background>
-          <background>background\VVZFAct1_OverlayLog</background>
-          <background>background\BGVVF1_1</background>
-          <background>background\BGVVF1_2</background>
-        </backgrounds>
-        <backgrounds name="Background">
-          <background>background\backVVFBush1</background>
-          <background>background\backVVFBush2</background>
-          <background>background\backVVFBush3</background>
-          <background>background\backVVFHills1</background>
-          <background>background\backVVFHills2</background>
-          <background>background\backVVFSky</background>
-          <background>background\backVVFTower</background>
-          <background>background\backLeavesTransition</background>
-        </backgrounds>
-        <backgrounds name="Act2">
-          <background>background\vvf2_1</background>
-          <background>background\vvf2_2</background>
-        </backgrounds>
-      </backgrounds>
-      <backgrounds name="Past">
-        <backgrounds name="Act1">
-          <background>background\VVZPAct1_Walll</background>
-          <background>background\VVZPAct1_OverlayLoop</background>
-          <background>background\tileVV1_P_1</background>
-          <background>background\tileVV1_P_2</background>
-        </backgrounds>
-        <backgrounds name="Background">
-          <background>background\backVVPLeaves1</background>
-          <background>background\backVVPLeaves1Bottom</background>
-          <background>background\backVVPLeaves2</background>
-          <background>background\backVVPLeaves2Bottom</background>
-          <background>background\backVVPLeaves3</background>
-          <background>background\backVVPLeaves3Bottom</background>
-          <background>background\backVVPShimmer</background>
-          <background>background\backVVPSky</background>
-          <background>background\backVVPWater</background>
-          <background>background\backVVPHut</background>
-          <background>background\backVVPHutTop</background>
-        </backgrounds>
-        <backgrounds name="Act2">
-          <background>background\vvp2_1</background>
-          <background>background\vvp2_2</background>
-        </backgrounds>
-      </backgrounds>
-    </backgrounds>
     <backgrounds name="Attraction Attack">
-      <backgrounds name="Past">
-        <backgrounds name="Act1">
-          <background>background\AAZPAct1_Buildingt</background>
-          <background>background\AAZPAct1_Overlay1</background>
-          <background>background\AAZPAct1_Overlay2</background>
-          <background>background\AAZPAct1_Overlay3</background>
-          <background>background\AAZPAct1_Overlay4</background>
-          <background>background\AAZPastAct1_Tubes1</background>
-          <background>background\AAZPastAct1_Tubes2</background>
-          <background>background\backAAPOverlay5</background>
-          <background>background\VVFBrokenPipe</background>
-          <background>background\background317</background>
-          <background>background\background175</background>
-          <background>background\backAA2PBallPit</background>
-          <background>background\tileAA1_P_1</background>
-          <background>background\tileAA1_P_2</background>
-        </backgrounds>
-        <backgrounds name="Background">
-          <background>background\backAAPGrass1</background>
-          <background>background\backAAPGrass2</background>
-          <background>background\backAAPHills</background>
-          <background>background\backAAPSky</background>
-          <background>background\backAAPTiles</background>
-          <background>background\backAAPWater</background>
-        </backgrounds>
-        <backgrounds name="Act2">
-          <background>background\Attraction_Attack_Past_Act2_2</background>
-          <background>background\Attraction_Attack_Past_Act2</background>
-        </backgrounds>
-      </backgrounds>
-      <background>background\backAA1BossFloor</background>
-      <backgrounds name="Future">
-        <backgrounds name="Background">
+      <backgrounds name="Backgrounds">
+        <backgrounds name="Future">
           <background>background\backAAFBuildings1</background>
           <background>background\backAAFBuildings2</background>
           <background>background\backAAFClouds</background>
@@ -1540,175 +1459,198 @@
           <background>background\backAAFSunset</background>
           <background>background\backAAFTowers</background>
         </backgrounds>
-        <backgrounds name="Act2">
-          <background>background\tileAA2_F_2</background>
-          <background>background\tileAA2_F_1</background>
-        </backgrounds>
-        <background>background\background444</background>
-        <backgrounds name="Act1">
-          <background>background\tileAA1_F_2</background>
-          <background>background\tileAA1_F1</background>
-        </backgrounds>
-        <background>background\background188</background>
-      </backgrounds>
-    </backgrounds>
-    <backgrounds name="Frigid Fortress">
-      <backgrounds name="Act1_f">
-        <background>background\tileFF1_F_1</background>
-        <background>background\tileFF1_F_2</background>
-      </backgrounds>
-      <backgrounds name="Act1_p">
-        <background>background\tileFF1_P_1</background>
-        <background>background\tileFF1_P_2</background>
-      </backgrounds>
-      <backgrounds name="Act2_p">
-        <background>background\tileFF2_P_1</background>
-        <background>background\tileFF2_P_2</background>
-      </backgrounds>
-      <backgrounds name="Act2_f">
-        <background>background\tileFF2_F_1</background>
-        <background>background\tileFF2_F_2</background>
-      </backgrounds>
-      <backgrounds name="future BG">
-        <background>background\backFFFCave</background>
-        <background>background\backFFFClouds</background>
-        <background>background\backFFFRocksTop</background>
-        <background>background\backFFFRocks</background>
-        <background>background\backFFFIsland1</background>
-        <background>background\backFFFMachines</background>
-        <background>background\backFFFIsland2</background>
-        <background>background\backFFFLights</background>
-        <background>background\backFFFSky</background>
-        <background>background\backFFFWater</background>
-      </backgrounds>
-      <backgrounds name="Past BG">
-        <background>background\backFFPArchesBack</background>
-        <background>background\backFFPArchesFront</background>
-        <background>background\backFFPCeilingBack</background>
-        <background>background\backFFPCeilingFront</background>
-        <background>background\backFFPIceCastle</background>
-        <background>background\backFFPIceFloats</background>
-        <background>background\backFFPStars</background>
-        <background>background\backFFPTrees</background>
-        <background>background\backFFPWall</background>
-      </backgrounds>
-    </backgrounds>
-    <backgrounds name="Tidal Tubes">
-      <background>background\backTTPWater</background>
-      <background>background\backTTPSky</background>
-      <background>background\backTTPShipSmall</background>
-      <background>background\backTTPShipMedium</background>
-      <background>background\backTTFStars2</background>
-      <background>background\backTTFStars1</background>
-      <background>background\backTTFSky</background>
-      <background>background\backTPFSea</background>
-      <background>background\backTTFRocks</background>
-      <background>background\backTTFWater</background>
-      <background>background\backTTFMountain</background>
-      <backgrounds name="Act1">
         <backgrounds name="Past">
-          <background>background\tileTT1_P_1</background>
-          <background>background\tileTT1_P_2</background>
+          <background>background\backAAPGrass1</background>
+          <background>background\backAAPGrass2</background>
+          <background>background\backAAPHills</background>
+          <background>background\backAAPSky</background>
+          <background>background\backAAPWater</background>
         </backgrounds>
-        <background>background\tileTT1_F_1</background>
-        <background>background\tileTT1_F_2</background>
       </backgrounds>
-      <backgrounds name="Act2">
-        <background>background\tt2f1</background>
-        <background>background\tt2p1</background>
+      <backgrounds name="Tiles">
+        <backgrounds name="Act 1">
+          <backgrounds name="Past">
+            <background>background\backAA2PBallPit</background>
+            <background>background\backAAPOverlay5</background>
+            <background>background\background175</background>
+            <background>background\background317</background>
+            <background>background\tileAA1_P_1</background>
+            <background>background\tileAA1_P_2</background>
+            <background>background\VVFBrokenPipe</background>
+          </backgrounds>
+          <backgrounds name="Future">
+            <background>background\tileAA1_F_2</background>
+            <background>background\tileAA1_F1</background>
+          </backgrounds>
+        </backgrounds>
+        <backgrounds name="Act 2">
+          <backgrounds name="Past">
+            <background>background\Attraction_Attack_Past_Act2</background>
+            <background>background\Attraction_Attack_Past_Act2_2</background>
+          </backgrounds>
+          <backgrounds name="Future">
+            <background>background\tileAA2_F_1</background>
+            <background>background\tileAA2_F_2</background>
+          </backgrounds>
+        </backgrounds>
+        <backgrounds name="General">
+          <background>background\background188</background>
+          <background>background\backAA1BossFloor</background>
+        </backgrounds>
       </backgrounds>
-      <background>background\backTTTransitionP</background>
-      <background>background\backTTTransitionF</background>
     </backgrounds>
-    <backgrounds name="cutscene">
-      <backgrounds name="intro Future">
+    <backgrounds name="Cutscenes">
+      <backgrounds name="Intro (Future)">
         <background>background\bgNeverlake</background>
       </backgrounds>
-      <backgrounds name="intro Past">
+      <backgrounds name="Intro (Past)">
         <background>background\introCutBack1</background>
       </backgrounds>
-      <backgrounds name="outro">
-        <background>background\backEndingLoop</background>
-        <background>background\backEndingTransition</background>
+      <backgrounds name="Outro">
         <background>background\backEndingLanding</background>
+        <background>background\backEndingLoop</background>
         <background>background\backEndingNeverLake</background>
+        <background>background\backEndingTransition</background>
       </backgrounds>
     </backgrounds>
     <backgrounds name="Drifting Dynamo">
-      <background>background\DDZCaveBG</background>
-      <backgrounds name="Future Inside Back">
-        <background>background\backDDFBeam</background>
-        <background>background\backDDFCross</background>
-        <background>background\backDDFSmallCross</background>
-        <background>background\backDDFSmallBeam</background>
-        <background>background\backDDFTubes</background>
-        <background>background\backDDFWall</background>
-        <background>background\backDDFFloor</background>
-        <background>background\backDDFSmallFloor</background>
-      </backgrounds>
-      <background>background\DDZXpattern</background>
-      <backgrounds name="Future Outside Back">
-        <background>background\backDDFSmallHills</background>
-        <background>background\backDDFSand</background>
-        <background>background\backDDFSky</background>
-      </backgrounds>
-      <backgrounds name="Past Background">
-        <background>background\backDDPSky</background>
-        <background>background\backDDPWater</background>
-        <background>background\backDDPRockTop</background>
-        <background>background\backDDPRock</background>
-      </backgrounds>
-      <backgrounds name="Act 2">
-        <backgrounds name="Future">
-          <background>background\ddf2_1</background>
-          <background>background\ddf2_2</background>
-        </backgrounds>
+      <backgrounds name="Backgrounds">
         <backgrounds name="Past">
-          <background>background\dd2_p_1</background>
+          <background>background\backDDPRock</background>
+          <background>background\backDDPRockTop</background>
+          <background>background\backDDPSky</background>
+          <background>background\backDDPWater</background>
+        </backgrounds>
+        <backgrounds name="Future">
+          <backgrounds name="Inside">
+            <background>background\backDDFBeam</background>
+            <background>background\backDDFCross</background>
+            <background>background\backDDFFloor</background>
+            <background>background\backDDFSmallBeam</background>
+            <background>background\backDDFSmallCross</background>
+            <background>background\backDDFSmallFloor</background>
+            <background>background\backDDFWall</background>
+          </backgrounds>
+          <backgrounds name="Outside">
+            <background>background\backDDFSand</background>
+            <background>background\backDDFSky</background>
+            <background>background\backDDFSmallHills</background>
+          </backgrounds>
         </backgrounds>
       </backgrounds>
-      <backgrounds name="Act1">
-        <backgrounds name="Future">
-          <background>background\dd1_f_1</background>
-          <background>background\dd1_f_2</background>
+      <backgrounds name="Tiles">
+        <backgrounds name="Act 1">
+          <backgrounds name="Future">
+            <background>background\dd1_f_1</background>
+            <background>background\dd1_f_2</background>
+          </backgrounds>
+          <backgrounds name="Past">
+            <background>background\dd1_p_1</background>
+            <background>background\dd1_p_2</background>
+          </backgrounds>
         </backgrounds>
-        <backgrounds name="Past">
-          <background>background\dd1_p_2</background>
-          <background>background\dd1_p_1</background>
+        <backgrounds name="Act 2">
+          <backgrounds name="Future">
+            <background>background\ddf2_1</background>
+            <background>background\ddf2_2</background>
+          </backgrounds>
+          <backgrounds name="Past">
+            <background>background\dd2_p_1</background>
+          </backgrounds>
+        </backgrounds>
+        <backgrounds name="General">
+          <background>background\DDZCaveBG</background>
         </backgrounds>
       </backgrounds>
     </backgrounds>
-    <backgrounds name="tranistions">
-      <background>background\backCloudTransition</background>
-      <background>background\tt_gradient</background>
-      <background>background\tt_texture</background>
+    <backgrounds name="Frigid Fortress">
+      <backgrounds name="Tiles">
+        <backgrounds name="Act 1">
+          <backgrounds name="Past">
+            <background>background\tileFF1_P_1</background>
+            <background>background\tileFF1_P_2</background>
+          </backgrounds>
+          <backgrounds name="Future">
+            <background>background\tileFF1_F_1</background>
+            <background>background\tileFF1_F_2</background>
+          </backgrounds>
+        </backgrounds>
+        <backgrounds name="Act 2">
+          <backgrounds name="Past">
+            <background>background\tileFF2_P_1</background>
+            <background>background\tileFF2_P_2</background>
+          </backgrounds>
+          <backgrounds name="Future">
+            <background>background\tileFF2_F_1</background>
+            <background>background\tileFF2_F_2</background>
+          </backgrounds>
+        </backgrounds>
+      </backgrounds>
+      <backgrounds name="Backgrounds">
+        <backgrounds name="Future">
+          <background>background\backFFFCave</background>
+          <background>background\backFFFClouds</background>
+          <background>background\backFFFIsland1</background>
+          <background>background\backFFFIsland2</background>
+          <background>background\backFFFLights</background>
+          <background>background\backFFFMachines</background>
+          <background>background\backFFFRocks</background>
+          <background>background\backFFFRocksTop</background>
+          <background>background\backFFFSky</background>
+          <background>background\backFFFWater</background>
+        </backgrounds>
+        <backgrounds name="Past">
+          <background>background\backFFPArchesBack</background>
+          <background>background\backFFPArchesFront</background>
+          <background>background\backFFPCeilingBack</background>
+          <background>background\backFFPCeilingFront</background>
+          <background>background\backFFPIceCastle</background>
+          <background>background\backFFPIceFloats</background>
+          <background>background\backFFPStars</background>
+          <background>background\backFFPTrees</background>
+          <background>background\backFFPWall</background>
+        </backgrounds>
+      </backgrounds>
     </backgrounds>
     <backgrounds name="Planetary Panic">
-      <background>background\backPPZMountain</background>
-      <background>background\backPPZHills</background>
-      <background>background\backPPZPlanet</background>
-      <background>background\backPPZLava</background>
-      <background>background\backPPZPipe</background>
-      <backgrounds name="act1">
+      <backgrounds name="Backgrounds">
+        <background>background\backPPZHills</background>
+        <background>background\backPPZLava</background>
+        <background>background\backPPZMountain</background>
+        <background>background\backPPZPipe</background>
+        <background>background\backPPZPlanet</background>
+        <background>background\NebulaBkg</background>
+      </backgrounds>
+      <backgrounds name="Tiles">
         <background>background\PP1_1</background>
       </backgrounds>
-      <background>background\NebulaBkg</background>
     </backgrounds>
-    <backgrounds name="Sunken Saucer">
-      <background>background\ssz_1</background>
-      <background>background\backSSZWall</background>
+    <backgrounds name="Raging Ruins">
+      <backgrounds name="Backgrounds">
+        <backgrounds name="Future">
+          <background>background\backRRFCity</background>
+          <background>background\backRRFCloudBack</background>
+          <background>background\backRRFClouds</background>
+          <background>background\backRRFSky</background>
+        </backgrounds>
+        <backgrounds name="Past">
+          <background>background\backRRPBigClouds</background>
+          <background>background\backRRPCloud</background>
+          <background>background\backRRPGround</background>
+          <background>background\backRRPSky</background>
+        </backgrounds>
+      </backgrounds>
+      <backgrounds name="Tiles">
+        <backgrounds name="Future">
+          <background>background\RR1_f1</background>
+        </backgrounds>
+        <backgrounds name="Past">
+          <background>background\RR1_p1</background>
+        </backgrounds>
+      </backgrounds>
     </backgrounds>
     <backgrounds name="Special Stages">
-      <backgrounds name="past">
-        <background>background\backSSPast1</background>
-        <background>background\backSSPast2</background>
-        <background>background\backSSPast3</background>
-        <background>background\backSSPast4</background>
-        <background>background\backSSPast5</background>
-        <background>background\backSSPast6</background>
-        <background>background\backSSPast7</background>
-      </backgrounds>
-      <backgrounds name="future">
+      <backgrounds name="Future">
         <background>background\backSSFuture1</background>
         <background>background\backSSFuture2</background>
         <background>background\backSSFuture3</background>
@@ -1717,25 +1659,126 @@
         <background>background\backSSFuture6</background>
         <background>background\backSSFuture7</background>
       </backgrounds>
-    </backgrounds>
-    <backgrounds name="Raging Ruins">
-      <background>background\RR1_p1</background>
       <backgrounds name="Past">
-        <background>background\backRRPSky</background>
-        <background>background\backRRPCloud</background>
-        <background>background\backRRPGround</background>
-        <background>background\backRRPBigClouds</background>
-      </backgrounds>
-      <background>background\RR1_f1</background>
-      <backgrounds name="Future">
-        <background>background\backRRFClouds</background>
-        <background>background\backRRFCloudBack</background>
-        <background>background\backRRFCity</background>
-        <background>background\backRRFFarCloud</background>
-        <background>background\backRRFSky</background>
+        <background>background\backSSPast1</background>
+        <background>background\backSSPast2</background>
+        <background>background\backSSPast3</background>
+        <background>background\backSSPast4</background>
+        <background>background\backSSPast5</background>
+        <background>background\backSSPast6</background>
+        <background>background\backSSPast7</background>
       </backgrounds>
     </backgrounds>
-    <background>background\backTitleIsland</background>
+    <backgrounds name="Sunken Saucer">
+      <background>background\ssz_1</background>
+    </backgrounds>
+    <backgrounds name="Tidal Tubes">
+      <backgrounds name="Background">
+        <backgrounds name="Future">
+          <background>background\backTTFMountain</background>
+          <background>background\backTTFRocks</background>
+          <background>background\backTTFSky</background>
+          <background>background\backTTFStars1</background>
+          <background>background\backTTFStars2</background>
+          <background>background\backTTFWater</background>
+          <background>background\backTTTransitionF</background>
+        </backgrounds>
+        <backgrounds name="Past">
+          <background>background\backTPFSea</background>
+          <background>background\backTTPShipMedium</background>
+          <background>background\backTTPShipSmall</background>
+          <background>background\backTTPSky</background>
+          <background>background\backTTPWater</background>
+          <background>background\backTTTransitionP</background>
+        </backgrounds>
+      </backgrounds>
+      <backgrounds name="Tiles">
+        <backgrounds name="Act1">
+          <backgrounds name="Future">
+            <background>background\tileTT1_F_1</background>
+            <background>background\tileTT1_F_2</background>
+          </backgrounds>
+          <backgrounds name="Past">
+            <background>background\tileTT1_P_1</background>
+            <background>background\tileTT1_P_2</background>
+          </backgrounds>
+        </backgrounds>
+        <backgrounds name="Act2">
+          <backgrounds name="Future">
+            <background>background\tt2f1</background>
+          </backgrounds>
+          <backgrounds name="Past">
+            <background>background\tt2p1</background>
+          </backgrounds>
+        </backgrounds>
+      </backgrounds>
+    </backgrounds>
+    <backgrounds name="Title Screen">
+      <background>background\backTitleIsland</background>
+    </backgrounds>
+    <backgrounds name="Tranistions">
+      <backgrounds name="Other">
+        <background>background\backCloudTransition</background>
+      </backgrounds>
+      <backgrounds name="Time Travel">
+        <background>background\tt_gradient</background>
+        <background>background\tt_texture</background>
+      </backgrounds>
+    </backgrounds>
+    <backgrounds name="Viridian Valley">
+      <backgrounds name="Backgrounds">
+        <backgrounds name="Future">
+          <background>background\backLeavesTransition</background>
+          <background>background\backVVFBush1</background>
+          <background>background\backVVFBush2</background>
+          <background>background\backVVFBush3</background>
+          <background>background\backVVFHills1</background>
+          <background>background\backVVFHills2</background>
+          <background>background\backVVFSky</background>
+          <background>background\backVVFTower</background>
+        </backgrounds>
+        <backgrounds name="Past">
+          <background>background\backVVPHut</background>
+          <background>background\backVVPHutTop</background>
+          <background>background\backVVPLeaves1</background>
+          <background>background\backVVPLeaves1Bottom</background>
+          <background>background\backVVPLeaves2</background>
+          <background>background\backVVPLeaves2Bottom</background>
+          <background>background\backVVPLeaves3</background>
+          <background>background\backVVPLeaves3Bottom</background>
+          <background>background\backVVPShimmer</background>
+          <background>background\backVVPSky</background>
+          <background>background\backVVPWater</background>
+        </backgrounds>
+      </backgrounds>
+      <backgrounds name="Tiles">
+        <backgrounds name="Act 1">
+          <backgrounds name="Future">
+            <background>background\BGVVF1_1</background>
+            <background>background\BGVVF1_2</background>
+            <background>background\VVZFAct1_Overlay1</background>
+            <background>background\VVZFAct1_OverlayLog</background>
+            <background>background\VVZFAct1_OverlayLoop</background>
+          </backgrounds>
+          <backgrounds name="Past">
+            <background>background\tileVV1_P_1</background>
+            <background>background\tileVV1_P_2</background>
+            <background>background\VVZPAct1_OverlayLoop</background>
+            <background>background\VVZPAct1_Walll</background>
+          </backgrounds>
+        </backgrounds>
+        <backgrounds name="Act 2">
+          <backgrounds name="Future">
+            <background>background\vvf2_1</background>
+            <background>background\vvf2_2</background>
+          </backgrounds>
+          <backgrounds name="Past">
+            <background>background\vvp2_1</background>
+            <background>background\vvp2_2</background>
+          </backgrounds>
+        </backgrounds>
+      </backgrounds>
+    </backgrounds>
   </backgrounds>
   <paths name="paths">
     <paths name="Attraction Attack">
