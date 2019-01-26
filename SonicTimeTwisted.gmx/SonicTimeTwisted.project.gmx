@@ -28,71 +28,119 @@
   </NewExtensions>
   <sounds name="sound">
     <sounds name="BGM">
-      <sounds name="General">
-        <sound>sound\bgmClear</sound>
-        <sound>sound\bgmDrowning</sound>
-        <sound>sound\bgmGameOver</sound>
-        <sound>sound\bgmInvincibility</sound>
-        <sound>sound\bgmTitle</sound>
+      <sounds name="Attraction Attack">
+        <sound>sound\bgmAAFutureIntro</sound>
+        <sound>sound\bgmAAFutureLoop</sound>
+        <sound>sound\bgmAAPastIntro</sound>
+        <sound>sound\bgmAAPastLoop</sound>
+      </sounds>
+      <sounds name="Boss">
         <sound>sound\bgmBossIntro</sound>
         <sound>sound\bgmBossLoop</sound>
-        <sound>sound\bgmSpeedUp</sound>
       </sounds>
-      <sounds name="Specific">
-        <sound>sound\bgmAAFutureLoop</sound>
-        <sound>sound\bgmAAPastLoop</sound>
-        <sound>sound\bgmAAPastIntro</sound>
-        <sound>sound\bgmAAFutureIntro</sound>
-        <sound>sound\bgmFFPastLoop</sound>
-        <sound>sound\bgmFFFutureLoop</sound>
-        <sound>sound\bgmFFPastIntro</sound>
-        <sound>sound\bgmMetalSonicLoop</sound>
-        <sound>sound\bgmMetalSonicIntro</sound>
-        <sound>sound\bgmVVFutureLoop</sound>
-        <sound>sound\bgmVVPastLoop</sound>
-        <sound>sound\bgmVVFutureIntro</sound>
-        <sound>sound\bgmVVPastIntro</sound>
+      <sounds name="Drifting Dynamo">
         <sound>sound\bgmDDFutureIntro</sound>
         <sound>sound\bgmDDFutureLoop</sound>
-        <sound>sound\bgmDDPastLoop</sound>
         <sound>sound\bgmDDPastIntro</sound>
-        <sound>sound\bgmSS1Loop</sound>
-        <sound>sound\bgmSS1Intro</sound>
-        <sound>sound\bgmSS2Loop</sound>
-        <sound>sound\bgmSS2Intro</sound>
-        <sound>sound\bgmPP1Intro</sound>
-        <sound>sound\bgmPP1Loop</sound>
-        <sound>sound\bgmPP2Intro</sound>
-        <sound>sound\bgmPP2Loop</sound>
-        <sound>sound\bgmSpecialFutureIntro</sound>
-        <sound>sound\bgmSpecialFutureLoop</sound>
-        <sound>sound\bgmSpecialPastLoop</sound>
-        <sound>sound\bgmSpecialPastIntro</sound>
-        <sound>sound\bgmEndingGood</sound>
+        <sound>sound\bgmDDPastLoop</sound>
+      </sounds>
+      <sounds name="Ending">
         <sound>sound\bgmEndingBad</sound>
-        <sound>sound\bgmSaveScreenIntro</sound>
-        <sound>sound\bgmSaveScreenLoop</sound>
-        <sound>sound\bgmRRFutureLoop</sound>
-        <sound>sound\bgmRRFutureIntro</sound>
-        <sound>sound\bgmRRPastIntro</sound>
-        <sound>sound\bgmRRPastLoop</sound>
-        <sound>sound\bgmTTFutureLoop</sound>
-        <sound>sound\bgmTTFutureIntro</sound>
-        <sound>sound\bgmTTPastLoop</sound>
-        <sound>sound\bgmTTPastIntro</sound>
+        <sound>sound\bgmEndingGood</sound>
+      </sounds>
+      <sounds name="Frigid Fortress">
+        <sound>sound\bgmFFFutureLoop</sound>
+        <sound>sound\bgmFFPastIntro</sound>
+        <sound>sound\bgmFFPastLoop</sound>
+      </sounds>
+      <sounds name="Galacnik">
         <sound>sound\bgmGalanik1Intro</sound>
         <sound>sound\bgmGalanik1Loop</sound>
         <sound>sound\bgmGalanik2Intro</sound>
         <sound>sound\bgmGalanik2Loop</sound>
       </sounds>
-      <sound>sound\bgmIntro</sound>
-      <sound>sound\DONOTDELETETRYINGTOFIXISSUE</sound>
+      <sounds name="General">
+        <sound>sound\bgmIntro</sound>
+        <sound>sound\bgmTitle</sound>
+      </sounds>
+      <sounds name="Jingles">
+        <sound>sound\bgmClear</sound>
+        <sound>sound\bgmDrowning</sound>
+        <sound>sound\bgmGameOver</sound>
+        <sound>sound\bgmInvincibility</sound>
+        <sound>sound\bgmSpeedUp</sound>
+      </sounds>
+      <sounds name="Metal Sonic">
+        <sound>sound\bgmMetalSonicIntro</sound>
+        <sound>sound\bgmMetalSonicLoop</sound>
+      </sounds>
+      <sounds name="Planetary Panic">
+        <sound>sound\bgmPP1Intro</sound>
+        <sound>sound\bgmPP1Loop</sound>
+        <sound>sound\bgmPP2Intro</sound>
+        <sound>sound\bgmPP2Loop</sound>
+      </sounds>
+      <sounds name="Raging Ruins">
+        <sound>sound\bgmRRFutureIntro</sound>
+        <sound>sound\bgmRRFutureLoop</sound>
+        <sound>sound\bgmRRPastIntro</sound>
+        <sound>sound\bgmRRPastLoop</sound>
+      </sounds>
+      <sounds name="Save Screen">
+        <sound>sound\bgmSaveScreenIntro</sound>
+        <sound>sound\bgmSaveScreenLoop</sound>
+      </sounds>
+      <sounds name="Special Stage">
+        <sound>sound\bgmSpecialFutureIntro</sound>
+        <sound>sound\bgmSpecialFutureLoop</sound>
+        <sound>sound\bgmSpecialPastIntro</sound>
+        <sound>sound\bgmSpecialPastLoop</sound>
+      </sounds>
+      <sounds name="Sunken Saucer">
+        <sound>sound\bgmSS1Intro</sound>
+        <sound>sound\bgmSS1Loop</sound>
+        <sound>sound\bgmSS2Intro</sound>
+        <sound>sound\bgmSS2Loop</sound>
+      </sounds>
+      <sounds name="Tidal Tubes">
+        <sound>sound\bgmTTFutureIntro</sound>
+        <sound>sound\bgmTTFutureLoop</sound>
+        <sound>sound\bgmTTPastIntro</sound>
+        <sound>sound\bgmTTPastLoop</sound>
+      </sounds>
+      <sounds name="Viridian Valley">
+        <sound>sound\bgmVVFutureIntro</sound>
+        <sound>sound\bgmVVFutureLoop</sound>
+        <sound>sound\bgmVVPastIntro</sound>
+        <sound>sound\bgmVVPastLoop</sound>
+      </sounds>
     </sounds>
     <sounds name="SFX">
+      <sounds name="Cutscenes">
+        <sound>sound\sndBrokenBadnik</sound>
+        <sound>sound\sndDashOfLight</sound>
+        <sound>sound\sndDeathEggExplode</sound>
+        <sound>sound\sndDreamBubble</sound>
+        <sound>sound\sndFinalGalacnikHit</sound>
+        <sound>sound\sndGalacnikExplosion</sound>
+        <sound>sound\sndMetalAttack</sound>
+        <sound>sound\sndMetalBolt</sound>
+        <sound>sound\sndMetalLaunch</sound>
+        <sound>sound\sndMetalPowerdown</sound>
+        <sound>sound\sndMetalWoosh</sound>
+        <sound>sound\sndMetalWooshLoop</sound>
+        <sound>sound\sndRobotnikDeath</sound>
+        <sound>sound\sndShakeHead</sound>
+        <sound>sound\sndSSTwinkle</sound>
+        <sound>sound\sndTailsTalks</sound>
+        <sound>sound\sndTimeWarp</sound>
+        <sound>sound\sndTLPWarp</sound>
+      </sounds>
       <sounds name="Global">
         <sound>sound\sndBeep</sound>
         <sound>sound\sndChing</sound>
         <sound>sound\sndLife</sound>
+        <sound>sound\sndTock</sound>
       </sounds>
       <sounds name="Scene Objects">
         <sounds name="General">
@@ -106,8 +154,10 @@
           <sound>sound\sndChantFuture</sound>
           <sound>sound\sndChantPast</sound>
           <sound>sound\sndCollapse</sound>
-          <sound>sound\sndDrownWarning</sound>
           <sound>sound\sndDrownTimer</sound>
+          <sound>sound\sndDrownWarning</sound>
+          <sound>sound\sndEnterSpecialStage</sound>
+          <sound>sound\sndExplosionGeneral</sound>
           <sound>sound\sndFireBlow</sound>
           <sound>sound\sndLampPost</sound>
           <sound>sound\sndPop</sound>
@@ -122,8 +172,6 @@
           <sound>sound\sndSpring</sound>
           <sound>sound\sndSpringHigh</sound>
           <sound>sound\sndSpringLow</sound>
-          <sound>sound\sndExplosionGeneral</sound>
-          <sound>sound\sndEnterSpecialStage</sound>
           <sound>sound\sndSSSpeedBoost</sound>
         </sounds>
         <sounds name="Player">
@@ -166,110 +214,91 @@
         </sounds>
         <sounds name="Specific">
           <sounds name="Bosses">
-            <sound>sound\sndMoleJump</sound>
-            <sound>sound\sndEggWalkerFire</sound>
-            <sound>sound\sndMetalLaser</sound>
-            <sound>sound\sndMetalShock</sound>
             <sound>sound\sndEggWalkerCharge</sound>
-            <sound>sound\sndGolumnLand</sound>
-            <sound>sound\sndGolemFlying</sound>
-            <sound>sound\sndGolemSlam</sound>
-            <sound>sound\sndGolemRecover</sound>
-            <sound>sound\sndGalanikLaugh</sound>
-            <sound>sound\sndMetalLaugh</sound>
-            <sound>sound\sndMoleAltert</sound>
+            <sound>sound\sndEggWalkerFire</sound>
             <sound>sound\sndEggWalkerStomp</sound>
             <sound>sound\sndGalacnikAttack</sound>
             <sound>sound\sndGalacnikAttackLoop</sound>
-            <sound>sound\sndGalanikKnockBack</sound>
             <sound>sound\sndGalanikDeathScreech</sound>
-            <sound>sound\sndUFOHit</sound>
-            <sound>sound\sndUFOFly</sound>
             <sound>sound\sndGalanikHit</sound>
+            <sound>sound\sndGalanikKnockBack</sound>
+            <sound>sound\sndGalanikLaugh</sound>
+            <sound>sound\sndGolemFlying</sound>
+            <sound>sound\sndGolemRecover</sound>
+            <sound>sound\sndGolemSlam</sound>
+            <sound>sound\sndGolumnLand</sound>
+            <sound>sound\sndMetalLaser</sound>
+            <sound>sound\sndMetalLaugh</sound>
+            <sound>sound\sndMetalShock</sound>
             <sound>sound\sndMetalSpeak</sound>
+            <sound>sound\sndMoleAltert</sound>
+            <sound>sound\sndMoleJump</sound>
+            <sound>sound\sndUFOFly</sound>
+            <sound>sound\sndUFOHit</sound>
           </sounds>
           <sounds name="Enemies">
+            <sound>sound\sndBubblesShake</sound>
+            <sound>sound\sndCaterminatorExtend</sound>
+            <sound>sound\sndFlame</sound>
+            <sound>sound\sndLaserShot</sound>
+            <sound>sound\sndSaucerHover</sound>
+            <sound>sound\sndSaucerShoot</sound>
             <sound>sound\sndSealBombLaunch</sound>
             <sound>sound\sndYoyoCatch</sound>
             <sound>sound\sndYoyoThrow</sound>
-            <sound>sound\sndBubblesShake</sound>
-            <sound>sound\sndLaserShot</sound>
-            <sound>sound\sndSaucerShoot</sound>
-            <sound>sound\sndSaucerHover</sound>
-            <sound>sound\sndCaterminatorExtend</sound>
-            <sound>sound\sndFlame</sound>
           </sounds>
           <sounds name="Zones">
             <sounds name="Attraction Attack">
               <sound>sound\sndAADropBumper</sound>
               <sound>sound\sndAADropBumperReset</sound>
-              <sound>sound\sndAATrampoline</sound>
               <sound>sound\sndAASlotRobotnik</sound>
               <sound>sound\sndAASlotSwitch</sound>
               <sound>sound\sndAASlotWin</sound>
+              <sound>sound\sndAATrampoline</sound>
               <sound>sound\sndCDBumper</sound>
-              <sound>sound\sndPropeller</sound>
               <sound>sound\sndFlipper</sound>
-            </sounds>
-            <sounds name="Viridian Valley">
-              <sound>sound\sndVVLeaves</sound>
-              <sound>sound\sndMetalFly</sound>
-              <sound>sound\sndMetalUFOAttack</sound>
+              <sound>sound\sndPropeller</sound>
             </sounds>
             <sounds name="Frigid Fortress">
               <sound>sound\sndIceSlip</sound>
               <sound>sound\sndLiftClick</sound>
+              <sound>sound\sndOrbs</sound>
               <sound>sound\sndWarpIn</sound>
               <sound>sound\sndWarpOut</sound>
-              <sound>sound\sndOrbs</sound>
+            </sounds>
+            <sounds name="Plantary Panic">
+              <sound>sound\sndGroundSplit</sound>
+              <sound>sound\sndRockSmash</sound>
+            </sounds>
+            <sounds name="Raging Ruins">
+              <sound>sound\sndFanSwitch</sound>
+              <sound>sound\sndRexChomp</sound>
+            </sounds>
+            <sounds name="Special Stage">
+              <sound>sound\sndDingEnd</sound>
+              <sound>sound\sndDingOpen</sound>
+            </sounds>
+            <sounds name="Sunken Saucer">
+              <sound>sound\sndScreenShake</sound>
+              <sound>sound\sndSSBlast</sound>
+              <sound>sound\sndSSEndExplosion</sound>
+              <sound>sound\sndSSFan</sound>
+              <sound>sound\sndSSLaser</sound>
+              <sound>sound\sndSSLighting</sound>
+              <sound>sound\sndSSUFOMagnet</sound>
+              <sound>sound\sndSSWave</sound>
             </sounds>
             <sounds name="Tidal Tubes">
               <sound>sound\sndLogfall</sound>
               <sound>sound\sndWaterBumper</sound>
             </sounds>
-            <sounds name="Sunken Saucer">
-              <sound>sound\sndScreenShake</sound>
-              <sound>sound\sndSSLaser</sound>
-              <sound>sound\sndSSBlast</sound>
-              <sound>sound\sndSSUFOMagnet</sound>
-              <sound>sound\sndSSFan</sound>
-              <sound>sound\sndSSWave</sound>
-              <sound>sound\sndSSLighting</sound>
-              <sound>sound\sndSSEndExplosion</sound>
+            <sounds name="Viridian Valley">
+              <sound>sound\sndMetalFly</sound>
+              <sound>sound\sndMetalUFOAttack</sound>
+              <sound>sound\sndVVLeaves</sound>
             </sounds>
-            <sounds name="Plantary Panic">
-              <sound>sound\sndRockSmash</sound>
-              <sound>sound\sndGroundSplit</sound>
-            </sounds>
-            <sounds name="Special Stage">
-              <sound>sound\sndDingOpen</sound>
-              <sound>sound\sndDingEnd</sound>
-            </sounds>
-            <sound>sound\sndFanSwitch</sound>
-            <sound>sound\sndRexChomp</sound>
           </sounds>
-          <sound>sound\sndTock</sound>
         </sounds>
-      </sounds>
-      <sounds name="cutscene">
-        <sound>sound\sndMetalBolt</sound>
-        <sound>sound\sndTLPWarp</sound>
-        <sound>sound\sndMetalLaunch</sound>
-        <sound>sound\sndMetalWoosh</sound>
-        <sound>sound\sndMetalWooshLoop</sound>
-        <sound>sound\sndShakeHead</sound>
-        <sound>sound\sndTailsTalks</sound>
-        <sound>sound\sndBrokenBadnik</sound>
-        <sound>sound\sndDeathEggExplode</sound>
-        <sound>sound\sndDashOfLight</sound>
-        <sound>sound\sndDreamBubble</sound>
-        <sound>sound\sndRobotnikDeath</sound>
-        <sound>sound\sndTimeWarp</sound>
-        <sound>sound\sndMetalAttack</sound>
-        <sound>sound\sndMetalPowerdown</sound>
-        <sound>sound\sndFinalGalacnikHit</sound>
-        <sound>sound\sndSSTwinkle</sound>
-        <sound>sound\sndGalacnikExplosion</sound>
       </sounds>
     </sounds>
   </sounds>
