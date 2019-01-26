@@ -1874,49 +1874,79 @@
   <scripts name="scripts">
     <scripts name="Game">
       <scripts name="Audio">
-        <script>scripts\stop_all_music.gml</script>
-        <script>scripts\play_music_loop.gml</script>
-        <script>scripts\play_music_intro.gml</script>
         <script>scripts\play_boss_intro.gml</script>
         <script>scripts\play_boss_loop.gml</script>
-        <script>scripts\play_jingle.gml</script>
         <script>scripts\play_effect.gml</script>
+        <script>scripts\play_jingle.gml</script>
+        <script>scripts\play_music_intro.gml</script>
+        <script>scripts\play_music_loop.gml</script>
         <script>scripts\play_previous.gml</script>
+        <script>scripts\stop_all_music.gml</script>
       </scripts>
       <scripts name="Input">
-        <script>scripts\save_control_map_keyboard.gml</script>
-        <script>scripts\save_control_map_gamepad.gml</script>
-        <script>scripts\save_gamepad_number.gml</script>
-        <script>scripts\input_any_gamepad_axis.gml</script>
-        <script>scripts\fix_bad_gamepad_axis.gml</script>
-        <script>scripts\input_any_gamepad_button.gml</script>
-        <script>scripts\input_axis_x.gml</script>
-        <script>scripts\input_axis_y.gml</script>
-        <script>scripts\input_bind_axis.gml</script>
-        <script>scripts\input_bind_button.gml</script>
-        <script>scripts\input_bind_key.gml</script>
-        <script>scripts\input_check.gml</script>
-        <script>scripts\input_check_pressed.gml</script>
-        <script>scripts\input_check_released.gml</script>
-        <script>scripts\input_load.gml</script>
-        <script>scripts\load_gamepad_support.gml</script>
-        <script>scripts\computer_input_reset_state.gml</script>
-        <script>scripts\computer_input_set_pressed.gml</script>
-        <script>scripts\computer_input_set_released.gml</script>
-        <script>scripts\computer_input_setup.gml</script>
+        <scripts name="Binding">
+          <script>scripts\input_bind_axis.gml</script>
+          <script>scripts\input_bind_button.gml</script>
+          <script>scripts\input_bind_key.gml</script>
+        </scripts>
+        <scripts name="Computer Input">
+          <script>scripts\computer_input_reset_state.gml</script>
+          <script>scripts\computer_input_set_pressed.gml</script>
+          <script>scripts\computer_input_set_released.gml</script>
+          <script>scripts\computer_input_setup.gml</script>
+        </scripts>
+        <scripts name="Loading">
+          <script>scripts\input_load.gml</script>
+          <script>scripts\load_gamepad_support.gml</script>
+        </scripts>
+        <scripts name="Other">
+          <script>scripts\fix_bad_gamepad_axis.gml</script>
+        </scripts>
+        <scripts name="Saving">
+          <script>scripts\save_control_map_gamepad.gml</script>
+          <script>scripts\save_control_map_keyboard.gml</script>
+        </scripts>
+        <scripts name="State">
+          <script>scripts\input_any_gamepad_axis.gml</script>
+          <script>scripts\input_any_gamepad_button.gml</script>
+          <script>scripts\input_axis_x.gml</script>
+          <script>scripts\input_axis_y.gml</script>
+          <script>scripts\input_check.gml</script>
+          <script>scripts\input_check_pressed.gml</script>
+          <script>scripts\input_check_released.gml</script>
+        </scripts>
+      </scripts>
+      <scripts name="Math">
+        <script>scripts\Lerp.gml</script>
+        <script>scripts\lerp_wrap.gml</script>
+        <script>scripts\minlerp.gml</script>
+        <script>scripts\shorter.gml</script>
+        <script>scripts\toward.gml</script>
+        <script>scripts\toward_wrap.gml</script>
+        <script>scripts\wrap.gml</script>
       </scripts>
       <scripts name="Program">
-        <script>scripts\game_pause.gml</script>
-        <script>scripts\level_add.gml</script>
-        <script>scripts\special_level_add.gml</script>
-        <script>scripts\level_goto_next.gml</script>
-        <script>scripts\level_goto_next_transitoin.gml</script>
-        <script>scripts\level_goto.gml</script>
-        <script>scripts\level_goto_from_save.gml</script>
-        <script>scripts\level_goback.gml</script>
-        <script>scripts\level_time_travel.gml</script>
-        <script>scripts\special_level_go_to.gml</script>
-        <script>scripts\end_level_normal.gml</script>
+        <scripts name="Order">
+          <script>scripts\special_level_add.gml</script>
+          <script>scripts\level_add.gml</script>
+        </scripts>
+        <scripts name="Pausing">
+          <script>scripts\game_pause.gml</script>
+        </scripts>
+        <scripts name="Transitions">
+          <script>scripts\end_level_normal.gml</script>
+          <script>scripts\level_goback.gml</script>
+          <script>scripts\level_goto.gml</script>
+          <script>scripts\level_goto_dd1.gml</script>
+          <script>scripts\level_goto_from_save.gml</script>
+          <script>scripts\level_goto_next.gml</script>
+          <script>scripts\level_goto_next_transitoin.gml</script>
+          <script>scripts\level_goto_rr1.gml</script>
+          <script>scripts\level_goto_tt1p.gml</script>
+          <script>scripts\level_goto_vv1.gml</script>
+          <script>scripts\level_time_travel.gml</script>
+          <script>scripts\special_level_go_to.gml</script>
+        </scripts>
       </scripts>
       <scripts name="Save">
         <script>scripts\create_new_save.gml</script>
@@ -1931,8 +1961,6 @@
         <script>scripts\load_lives.gml</script>
         <script>scripts\delete_settings.gml</script>
       </scripts>
-      <script>scripts\extend_byte.gml</script>
-      <script>scripts\minlerp.gml</script>
     </scripts>
     <scripts name="Overlays">
       <scripts name="Parallax">
@@ -1955,36 +1983,24 @@
           <script>scripts\angle_wrap.gml</script>
         </scripts>
         <scripts name="Boss">
+          <scripts name="Golem">
+            <script>scripts\BossBreakArm.gml</script>
+            <script>scripts\BossHandNew.gml</script>
+            <script>scripts\BossOrbNew.gml</script>
+            <script>scripts\SparksNew.gml</script>
+            <script>scripts\TargetNew.gml</script>
+            <script>scripts\updateGolemObjects.gml</script>
+          </scripts>
           <scripts name="MegaTrooper">
             <script>scripts\MegaTrooperEyeNew.gml</script>
             <script>scripts\MegaTrooperJawNew.gml</script>
             <script>scripts\MegaTrooperHeadNew.gml</script>
             <script>scripts\MegaTrooperHandStep.gml</script>
-            <script>scripts\MegaTrooperHeadEndStep.gml</script>
             <script>scripts\MegaTrooperShoulderNew.gml</script>
             <script>scripts\MegaTrooperOrbNew.gml</script>
             <script>scripts\MegaTrooperOrbEndStep.gml</script>
             <script>scripts\MegaTrooperEyeStep.gml</script>
             <script>scripts\MegaTrooperHandNew.gml</script>
-          </scripts>
-          <scripts name="Golem">
-            <script>scripts\BossBreakArm.gml</script>
-            <script>scripts\BossHandNew.gml</script>
-            <script>scripts\BossNew.gml</script>
-            <script>scripts\BossHandUpdate.gml</script>
-            <script>scripts\BossOrbNew.gml</script>
-            <script>scripts\SparksNew.gml</script>
-            <script>scripts\TargetNew.gml</script>
-            <scripts name="helpers">
-              <script>scripts\toward_wrap.gml</script>
-              <script>scripts\shorter.gml</script>
-              <script>scripts\lerp_warp.gml</script>
-              <script>scripts\toward.gml</script>
-              <script>scripts\wrap.gml</script>
-              <script>scripts\Lerp.gml</script>
-              <script>scripts\lerp_wrap.gml</script>
-            </scripts>
-            <script>scripts\updateGolemObjects.gml</script>
           </scripts>
         </scripts>
         <scripts name="Gravity">
@@ -1993,20 +2009,21 @@
         </scripts>
         <scripts name="Other">
           <script>scripts\in_view.gml</script>
-          <script>scripts\screen_shake.gml</script>
-          <script>scripts\path_get_direction.gml</script>
           <script>scripts\move_view_to_center.gml</script>
           <script>scripts\reset_persistance.gml</script>
+          <script>scripts\screen_shake.gml</script>
         </scripts>
       </scripts>
       <scripts name="Player">
         <scripts name="General">
+          <script>scripts\drop_rings.gml</script>
+          <script>scripts\insta_shield_use_reaction.gml</script>
+          <script>scripts\player_add_score.gml</script>
           <script>scripts\player_change_character.gml</script>
           <script>scripts\player_get_invincibility.gml</script>
           <script>scripts\player_get_lives.gml</script>
           <script>scripts\player_get_rings.gml</script>
           <script>scripts\player_get_shield.gml</script>
-          <script>scripts\drop_rings.gml</script>
           <script>scripts\player_hit.gml</script>
           <script>scripts\player_reset.gml</script>
           <script>scripts\player_reset_physics.gml</script>
@@ -2014,8 +2031,19 @@
           <script>scripts\player_transform.gml</script>
           <script>scripts\player_transform_input.gml</script>
           <script>scripts\reset_temp_values.gml</script>
-          <script>scripts\insta_shield_use_reaction.gml</script>
-          <script>scripts\player_add_score.gml</script>
+        </scripts>
+        <scripts name="level end scripts">
+          <script>scripts\end_AA2.gml</script>
+          <script>scripts\end_DD1.gml</script>
+          <script>scripts\end_DD2_f.gml</script>
+          <script>scripts\end_DD2_p.gml</script>
+          <script>scripts\end_FF2.gml</script>
+          <script>scripts\end_RR2.gml</script>
+          <script>scripts\end_SSZ.gml</script>
+          <script>scripts\end_TT1.gml</script>
+          <script>scripts\end_TT2.gml</script>
+          <script>scripts\end_VV1.gml</script>
+          <script>scripts\end_VV2.gml</script>
         </scripts>
         <scripts name="Physics">
           <scripts name="Collision">
@@ -2039,7 +2067,6 @@
           </scripts>
           <scripts name="Update">
             <script>scripts\player_update_bounds.gml</script>
-            <script>scripts\player_update_bounds_final_boss.gml</script>
             <script>scripts\player_update_cliff.gml</script>
             <script>scripts\player_update_ramp.gml</script>
             <script>scripts\player_update_water.gml</script>
@@ -2053,9 +2080,6 @@
         <scripts name="Reactions">
           <scripts name="General">
             <script>scripts\player_reaction_boss.gml</script>
-            <script>scripts\player_reaction_clear_level_false.gml</script>
-            <script>scripts\player_reaction_water_run_off.gml</script>
-            <script>scripts\player_reaction_water_run_on.gml</script>
             <script>scripts\player_reaction_breakable.gml</script>
             <script>scripts\player_reaction_breakable_nobounce.gml</script>
             <script>scripts\player_reaction_bubble.gml</script>
@@ -2063,159 +2087,43 @@
             <script>scripts\player_reaction_camera_set.gml</script>
             <script>scripts\player_reaction_camera_set_fixed.gml</script>
             <script>scripts\player_reaction_capsule.gml</script>
+            <script>scripts\player_reaction_change_room_demensions.gml</script>
+            <script>scripts\player_reaction_change_room_demensions_destroy.gml</script>
+            <script>scripts\player_reaction_change_room_height.gml</script>
+            <script>scripts\player_reaction_clear_level_false.gml</script>
             <script>scripts\player_reaction_collapsing_platform.gml</script>
             <script>scripts\player_reaction_enemy.gml</script>
+            <script>scripts\player_reaction_floating_right.gml</script>
+            <script>scripts\player_reaction_floating_stop.gml</script>
             <script>scripts\player_reaction_giant_ring.gml</script>
             <script>scripts\player_reaction_harmful.gml</script>
-            <script>scripts\player_reaction_unharmful.gml</script>
             <script>scripts\player_reaction_lamp_post.gml</script>
             <script>scripts\player_reaction_layer_flip.gml</script>
             <script>scripts\player_reaction_layer_set.gml</script>
             <script>scripts\player_reaction_monitor.gml</script>
+            <script>scripts\player_reaction_path.gml</script>
             <script>scripts\player_reaction_quicksand.gml</script>
+            <script>scripts\player_reaction_reset_depth.gml</script>
             <script>scripts\player_reaction_ring.gml</script>
             <script>scripts\player_reaction_sign_post.gml</script>
             <script>scripts\player_reaction_slide.gml</script>
             <script>scripts\player_reaction_spike.gml</script>
             <script>scripts\player_reaction_spring.gml</script>
             <script>scripts\player_reaction_spring_diagonal.gml</script>
+            <script>scripts\player_reaction_stop_music.gml</script>
             <script>scripts\player_reaction_switch.gml</script>
             <script>scripts\player_reaction_time_post.gml</script>
+            <script>scripts\player_reaction_unharmful.gml</script>
             <script>scripts\player_reaction_water.gml</script>
-            <script>scripts\player_reaction_path.gml</script>
-            <script>scripts\player_reaction_change_room_height.gml</script>
-            <script>scripts\player_reaction_change_room_demensions.gml</script>
-            <script>scripts\player_reaction_change_room_demensions_destroy.gml</script>
-            <script>scripts\player_reaction_reset_depth.gml</script>
-            <script>scripts\player_reaction_floating_right.gml</script>
-            <script>scripts\player_reaction_floating_stop.gml</script>
-            <script>scripts\player_reaction_stop_music.gml</script>
+            <script>scripts\player_reaction_water_run_off.gml</script>
+            <script>scripts\player_reaction_water_run_on.gml</script>
           </scripts>
           <scripts name="Specific">
-            <scripts name="Enemies">
-              <script>scripts\player_reaction_catakiller.gml</script>
-              <script>scripts\player_reaction_bubbles_badnik.gml</script>
-              <script>scripts\player_reaction_snailtrail.gml</script>
-              <script>scripts\player_reaction_rhinobot.gml</script>
-              <script>scripts\player_reaction_wallbot.gml</script>
-              <script>scripts\player_reaction_big_bomb_badnik.gml</script>
-              <script>scripts\player_reaction_squibot.gml</script>
-              <script>scripts\player_reaction_robo_rex.gml</script>
-              <script>scripts\player_reaction_mole_fan.gml</script>
-            </scripts>
-            <scripts name="Zones">
-              <scripts name="Attraction Attack">
-                <script>scripts\player_reaction_AA_bobbin.gml</script>
-                <script>scripts\player_reaction_ballpit.gml</script>
-                <script>scripts\player_reaction_AA_bumper.gml</script>
-                <script>scripts\player_reaction_AA_start_lava_flow.gml</script>
-                <script>scripts\player_reaction_AA_boost.gml</script>
-                <script>scripts\player_reaction_AA_drop_bumper.gml</script>
-                <script>scripts\player_reaction_boost_aa2_end.gml</script>
-                <script>scripts\player_reaction_AA_flipper.gml</script>
-                <script>scripts\player_reaction_AA_shock_bumper.gml</script>
-                <script>scripts\player_reaction_AA_shocker.gml</script>
-                <script>scripts\player_reaction_AA_target.gml</script>
-                <script>scripts\player_reaction_AA_trampoline.gml</script>
-                <script>scripts\level_goto_rr1.gml</script>
-                <script>scripts\player_reaction_AA1_start.gml</script>
-                <script>scripts\player_reaction_AA2_start.gml</script>
-                <script>scripts\player_reaction_slot_machine.gml</script>
-              </scripts>
-              <scripts name="Frigid Fortress">
-                <script>scripts\player_reaction_FF_lift.gml</script>
-                <script>scripts\player_reaction_FF_orb.gml</script>
-                <script>scripts\player_reaction_FF_ice_slip.gml</script>
-                <script>scripts\player_reaction_start_boarding.gml</script>
-                <script>scripts\player_reaction_boarding.gml</script>
-                <script>scripts\level_goto_vv1.gml</script>
-                <script>scripts\player_reaction_shift_camera_right.gml</script>
-                <script>scripts\player_reaction_board_exit.gml</script>
-                <script>scripts\player_reaction_start_FFF2.gml</script>
-              </scripts>
-              <scripts name="Viridian Valley">
-                <script>scripts\player_reaction_VV_bushes.gml</script>
-                <script>scripts\player_reaction_VV_path.gml</script>
-                <script>scripts\player_reaction_VV_ship.gml</script>
-                <script>scripts\player_reaction_VV1_start.gml</script>
-                <script>scripts\player_reaction_VV_tile_hole.gml</script>
-                <script>scripts\level_goto_dd1.gml</script>
-                <script>scripts\player_reaction_VV1boss_start.gml</script>
-              </scripts>
-              <scripts name="Tidal Tubes">
-                <script>scripts\player_reaction_TT1_p_enter_room.gml</script>
-                <script>scripts\player_reaction_fallinglog.gml</script>
-                <script>scripts\player_reaction_lillypad.gml</script>
-                <script>scripts\player_reaction_tubewater.gml</script>
-                <script>scripts\player_reaction_spike_roller.gml</script>
-                <script>scripts\player_reaction_start_tt1f.gml</script>
-                <script>scripts\player_reaction_water_bumper.gml</script>
-                <script>scripts\player_reaction_tt_ground_shake.gml</script>
-                <script>scripts\player_reaction_TT1p_start.gml</script>
-                <script>scripts\player_reaction_tt_ground_shake_end.gml</script>
-                <script>scripts\player_reaction_enter_ssz.gml</script>
-              </scripts>
-              <scripts name="Drifting Dyanmo">
-                <script>scripts\player_reaction_plane.gml</script>
-                <script>scripts\player_reaction_sand_lift.gml</script>
-                <script>scripts\player_reaction_sand.gml</script>
-                <script>scripts\player_reaction_ddf_change_to_inside_bg.gml</script>
-                <script>scripts\player_reaction_ddf_change_to_outside_bg.gml</script>
-                <script>scripts\player_reaction_DD1_enter_room.gml</script>
-                <script>scripts\player_reaction_skydive.gml</script>
-                <script>scripts\player_reaction_DD_breakable_rock.gml</script>
-                <script>scripts\player_reaction_DD1_start.gml</script>
-                <script>scripts\player_reaction_DD1_boost_spin.gml</script>
-                <script>scripts\player_react_set_plane_bottom_boundry.gml</script>
-                <script>scripts\player_reaction_boost_spin.gml</script>
-                <script>scripts\level_goto_tt1p.gml</script>
-              </scripts>
-              <scripts name="Sunken Saucer">
-                <script>scripts\player_reaction_paddle.gml</script>
-                <script>scripts\player_reaction_paddle_top.gml</script>
-                <script>scripts\player_reaction_paddle_switch.gml</script>
-                <script>scripts\player_reaction_switch_button.gml</script>
-                <script>scripts\player_reaction_ss_magnet.gml</script>
-                <script>scripts\player_reaction_ssz_event.gml</script>
-                <script>scripts\player_reaction_ss_stop_sound.gml</script>
-                <script>scripts\player_reaction_cutscene.gml</script>
-              </scripts>
-              <scripts name="Planetary Panic">
-                <script>scripts\player_reaction_lava_rock.gml</script>
-                <script>scripts\player_reaction_falling_blocks.gml</script>
-                <script>scripts\player_reaction_galanik_shadow.gml</script>
-                <script>scripts\player_reaction_falling_stairs.gml</script>
-              </scripts>
-              <scripts name="Raging Ruins">
-                <script>scripts\player_reaction_canon.gml</script>
-                <script>scripts\player_reaction_end_rr2.gml</script>
-                <script>scripts\player_reaction_grab_swing.gml</script>
-                <script>scripts\player_reaction_rr_wall_run.gml</script>
-                <script>scripts\player_reaction_RR1_start.gml</script>
-                <script>scripts\player_reaction_wall_run.gml</script>
-                <script>scripts\player_reaction_break_glass.gml</script>
-              </scripts>
-            </scripts>
-            <script>scripts\player_reaction_ywarp.gml</script>
-            <script>scripts\player_reaction_boost.gml</script>
-            <script>scripts\player_reaction_xwarp.gml</script>
-            <script>scripts\player_reaction_fan.gml</script>
-            <script>scripts\player_reaction_falling_platform.gml</script>
-            <script>scripts\player_reaction_fire.gml</script>
-            <script>scripts\player_reaction_lighting.gml</script>
             <scripts name="Boss">
               <scripts name="Egg Walker">
                 <script>scripts\player_reaction_egg_walker.gml</script>
                 <script>scripts\player_reaction_egg_walker_boss_start.gml</script>
               </scripts>
-              <scripts name="Galanik">
-                <script>scripts\player_reaction_pp_boss_start.gml</script>
-                <script>scripts\player_reaction_galanik_nose.gml</script>
-              </scripts>
-              <scripts name="whale boss">
-                <script>scripts\player_reaction_tt_boss_start.gml</script>
-              </scripts>
-              <script>scripts\player_reaction_mega_trooper_boss_start.gml</script>
               <scripts name="Final Boss">
                 <script>scripts\player_reaction_final_boss_face.gml</script>
                 <script>scripts\player_reaction_final_boss.gml</script>
@@ -2223,25 +2131,148 @@
                 <script>scripts\player_reaction_final_boss_rock.gml</script>
                 <script>scripts\player_reaction_final_boss_laser.gml</script>
               </scripts>
+              <scripts name="Fire Fly">
+                <script>scripts\player_reaction_fire_fly_light.gml</script>
+              </scripts>
+              <scripts name="Galanik">
+                <script>scripts\player_reaction_pp_boss_start.gml</script>
+                <script>scripts\player_reaction_galanik_nose.gml</script>
+              </scripts>
+              <scripts name="General">
+                <script>scripts\player_reaction_knock_ufo.gml</script>
+              </scripts>
               <scripts name="Golem">
                 <script>scripts\player_reaction_golem_hand.gml</script>
                 <script>scripts\player_reaction_golem_hand_target.gml</script>
                 <script>scripts\player_reaction_golem_boss_start.gml</script>
               </scripts>
-              <script>scripts\player_reaction_vv1_boss.gml</script>
-              <script>scripts\player_reaction_knock_ufo.gml</script>
-              <script>scripts\player_reaction_fire_fly_light.gml</script>
+              <scripts name="Mega Trooper">
+                <script>scripts\player_reaction_mega_trooper_boss_start.gml</script>
+              </scripts>
+              <scripts name="Metal Sonic">
+                <script>scripts\player_reaction_vv1_boss.gml</script>
+              </scripts>
+              <scripts name="Whale Boss">
+                <script>scripts\player_reaction_tt_boss_start.gml</script>
+              </scripts>
             </scripts>
-            <script>scripts\player_reaction_path_split.gml</script>
-            <script>scripts\player_reaction_warp.gml</script>
-            <script>scripts\player_reaction_path_split_stall.gml</script>
-            <script>scripts\player_reaction_aa1_boss.gml</script>
-            <script>scripts\player_reaction_3d_layer_flip.gml</script>
-            <script>scripts\player_reaction_change_water.gml</script>
-            <script>scripts\player_reaction_platform_visible.gml</script>
-            <script>scripts\player_reaction_spring_visible.gml</script>
-            <script>scripts\player_reaction_clamp_speeds.gml</script>
+            <scripts name="Enemies">
+              <script>scripts\player_reaction_big_bomb_badnik.gml</script>
+              <script>scripts\player_reaction_bubbles_badnik.gml</script>
+              <script>scripts\player_reaction_catakiller.gml</script>
+              <script>scripts\player_reaction_mole_fan.gml</script>
+              <script>scripts\player_reaction_robo_rex.gml</script>
+              <script>scripts\player_reaction_snailtrail.gml</script>
+              <script>scripts\player_reaction_squibot.gml</script>
+              <script>scripts\player_reaction_wallbot.gml</script>
+            </scripts>
+            <scripts name="Other">
+              <script>scripts\player_reaction_3d_layer_flip.gml</script>
+              <script>scripts\player_reaction_aa1_boss.gml</script>
+              <script>scripts\player_reaction_boost.gml</script>
+              <script>scripts\player_reaction_change_water.gml</script>
+              <script>scripts\player_reaction_clamp_speeds.gml</script>
+              <script>scripts\player_reaction_falling_platform.gml</script>
+              <script>scripts\player_reaction_fan.gml</script>
+              <script>scripts\player_reaction_fire.gml</script>
+              <script>scripts\player_reaction_lighting.gml</script>
+              <script>scripts\player_reaction_path_split.gml</script>
+              <script>scripts\player_reaction_path_split_stall.gml</script>
+              <script>scripts\player_reaction_platform_visible.gml</script>
+              <script>scripts\player_reaction_spring_visible.gml</script>
+              <script>scripts\player_reaction_warp.gml</script>
+              <script>scripts\player_reaction_xwarp.gml</script>
+              <script>scripts\player_reaction_ywarp.gml</script>
+            </scripts>
+            <scripts name="Zones">
+              <scripts name="Attraction Attack">
+                <script>scripts\player_reaction_AA_bobbin.gml</script>
+                <script>scripts\player_reaction_AA_boost.gml</script>
+                <script>scripts\player_reaction_AA_bumper.gml</script>
+                <script>scripts\player_reaction_AA_drop_bumper.gml</script>
+                <script>scripts\player_reaction_AA_flipper.gml</script>
+                <script>scripts\player_reaction_AA_shock_bumper.gml</script>
+                <script>scripts\player_reaction_AA_shocker.gml</script>
+                <script>scripts\player_reaction_AA_start_lava_flow.gml</script>
+                <script>scripts\player_reaction_AA_target.gml</script>
+                <script>scripts\player_reaction_AA_trampoline.gml</script>
+                <script>scripts\player_reaction_AA1_start.gml</script>
+                <script>scripts\player_reaction_AA2_start.gml</script>
+                <script>scripts\player_reaction_ballpit.gml</script>
+                <script>scripts\player_reaction_boost_aa2_end.gml</script>
+                <script>scripts\player_reaction_slot_machine.gml</script>
+              </scripts>
+              <scripts name="Drifting Dyanmo">
+                <script>scripts\player_react_set_plane_bottom_boundry.gml</script>
+                <script>scripts\player_reaction_boost_spin.gml</script>
+                <script>scripts\player_reaction_DD_breakable_rock.gml</script>
+                <script>scripts\player_reaction_DD1_boost_spin.gml</script>
+                <script>scripts\player_reaction_DD1_enter_room.gml</script>
+                <script>scripts\player_reaction_DD1_start.gml</script>
+                <script>scripts\player_reaction_ddf_change_to_inside_bg.gml</script>
+                <script>scripts\player_reaction_ddf_change_to_outside_bg.gml</script>
+                <script>scripts\player_reaction_plane.gml</script>
+                <script>scripts\player_reaction_sand.gml</script>
+                <script>scripts\player_reaction_skydive.gml</script>
+              </scripts>
+              <scripts name="Frigid Fortress">
+                <script>scripts\player_reaction_boarding.gml</script>
+                <script>scripts\player_reaction_FF_ice_slip.gml</script>
+                <script>scripts\player_reaction_FF_lift.gml</script>
+                <script>scripts\player_reaction_FF_orb.gml</script>
+                <script>scripts\player_reaction_shift_camera_right.gml</script>
+                <script>scripts\player_reaction_start_boarding.gml</script>
+              </scripts>
+              <scripts name="Planetary Panic">
+                <script>scripts\player_reaction_falling_blocks.gml</script>
+                <script>scripts\player_reaction_falling_stairs.gml</script>
+                <script>scripts\player_reaction_galanik_shadow.gml</script>
+                <script>scripts\player_reaction_lava_rock.gml</script>
+              </scripts>
+              <scripts name="Raging Ruins">
+                <script>scripts\player_reaction_break_glass.gml</script>
+                <script>scripts\player_reaction_canon.gml</script>
+                <script>scripts\player_reaction_end_rr2.gml</script>
+                <script>scripts\player_reaction_grab_swing.gml</script>
+                <script>scripts\player_reaction_rr_wall_run.gml</script>
+                <script>scripts\player_reaction_RR1_start.gml</script>
+              </scripts>
+              <scripts name="Sunken Saucer">
+                <script>scripts\player_reaction_paddle.gml</script>
+                <script>scripts\player_reaction_paddle_switch.gml</script>
+                <script>scripts\player_reaction_paddle_top.gml</script>
+                <script>scripts\player_reaction_ss_magnet.gml</script>
+                <script>scripts\player_reaction_ss_stop_sound.gml</script>
+                <script>scripts\player_reaction_ssz_event.gml</script>
+                <script>scripts\player_reaction_switch_button.gml</script>
+              </scripts>
+              <scripts name="Tidal Tubes">
+                <script>scripts\player_reaction_enter_ssz.gml</script>
+                <script>scripts\player_reaction_fallinglog.gml</script>
+                <script>scripts\player_reaction_lillypad.gml</script>
+                <script>scripts\player_reaction_spike_roller.gml</script>
+                <script>scripts\player_reaction_start_tt1f.gml</script>
+                <script>scripts\player_reaction_tt_ground_shake.gml</script>
+                <script>scripts\player_reaction_tt_ground_shake_end.gml</script>
+                <script>scripts\player_reaction_TT1_p_enter_room.gml</script>
+                <script>scripts\player_reaction_water_bumper.gml</script>
+              </scripts>
+              <scripts name="Viridian Valley">
+                <script>scripts\player_reaction_VV_bushes.gml</script>
+                <script>scripts\player_reaction_VV_path.gml</script>
+                <script>scripts\player_reaction_VV_ship.gml</script>
+                <script>scripts\player_reaction_VV_tile_hole.gml</script>
+                <script>scripts\player_reaction_VV1_start.gml</script>
+                <script>scripts\player_reaction_VV1boss_start.gml</script>
+              </scripts>
+            </scripts>
           </scripts>
+        </scripts>
+        <scripts name="Start Scripts">
+          <script>scripts\start_dd1.gml</script>
+          <script>scripts\start_rr1.gml</script>
+          <script>scripts\start_tt1.gml</script>
+          <script>scripts\start_vv1.gml</script>
         </scripts>
         <scripts name="State">
           <scripts name="Character Specific">
@@ -2256,31 +2287,34 @@
               <script>scripts\player_state_peelout.gml</script>
               <script>scripts\player_state_shield_fly.gml</script>
             </scripts>
+            <scripts name="Super Sonic">
+              <script>scripts\player_state_super_flight.gml</script>
+            </scripts>
             <scripts name="Tails">
               <script>scripts\player_state_fly.gml</script>
             </scripts>
           </scripts>
-          <script>scripts\player_state_crouch.gml</script>
-          <script>scripts\player_state_dead.gml</script>
-          <script>scripts\player_state_enter.gml</script>
-          <script>scripts\player_state_exit.gml</script>
-          <script>scripts\player_state_fall.gml</script>
-          <script>scripts\player_state_hurt.gml</script>
-          <script>scripts\player_state_look.gml</script>
-          <script>scripts\player_state_object.gml</script>
-          <script>scripts\player_state_path.gml</script>
-          <script>scripts\player_state_wall_run.gml</script>
-          <script>scripts\player_state_reset.gml</script>
-          <script>scripts\player_state_roll.gml</script>
-          <script>scripts\player_state_run.gml</script>
-          <script>scripts\player_state_slide.gml</script>
-          <script>scripts\player_state_boarding.gml</script>
-          <script>scripts\player_state_spindash.gml</script>
-          <script>scripts\player_state_stand.gml</script>
-          <script>scripts\player_state_standby.gml</script>
-          <script>scripts\player_state_floating.gml</script>
-          <script>scripts\player_state_super_flight.gml</script>
-          <script>scripts\player_state_transform.gml</script>
+          <scripts name="General">
+            <script>scripts\player_state_boarding.gml</script>
+            <script>scripts\player_state_crouch.gml</script>
+            <script>scripts\player_state_dead.gml</script>
+            <script>scripts\player_state_enter.gml</script>
+            <script>scripts\player_state_exit.gml</script>
+            <script>scripts\player_state_fall.gml</script>
+            <script>scripts\player_state_floating.gml</script>
+            <script>scripts\player_state_hurt.gml</script>
+            <script>scripts\player_state_look.gml</script>
+            <script>scripts\player_state_object.gml</script>
+            <script>scripts\player_state_path.gml</script>
+            <script>scripts\player_state_reset.gml</script>
+            <script>scripts\player_state_roll.gml</script>
+            <script>scripts\player_state_run.gml</script>
+            <script>scripts\player_state_slide.gml</script>
+            <script>scripts\player_state_spindash.gml</script>
+            <script>scripts\player_state_stand.gml</script>
+            <script>scripts\player_state_standby.gml</script>
+            <script>scripts\player_state_transform.gml</script>
+          </scripts>
         </scripts>
         <scripts name="State Change">
           <scripts name="Character Specific">
@@ -2299,63 +2333,43 @@
               <script>scripts\player_is_bounding.gml</script>
               <script>scripts\player_is_dashing.gml</script>
               <script>scripts\player_is_double_jumping.gml</script>
+              <script>scripts\player_is_earth_shielding.gml</script>
               <script>scripts\player_is_ice_attacking.gml</script>
               <script>scripts\player_is_shield_flying.gml</script>
               <script>scripts\player_is_shielding.gml</script>
-              <script>scripts\player_is_earth_shielding.gml</script>
             </scripts>
             <scripts name="Tails">
               <script>scripts\player_is_flying.gml</script>
             </scripts>
+            <scripts name="Super Sonic">
+              <script>scripts\player_is_super_flying.gml</script>
+            </scripts>
           </scripts>
-          <script>scripts\player_in_air.gml</script>
-          <script>scripts\player_is_crouching.gml</script>
-          <script>scripts\player_is_dead.gml</script>
-          <script>scripts\player_is_drowning.gml</script>
-          <script>scripts\player_is_entering.gml</script>
-          <script>scripts\player_is_exiting.gml</script>
-          <script>scripts\player_is_falling.gml</script>
-          <script>scripts\player_is_hurt.gml</script>
-          <script>scripts\player_is_jumping.gml</script>
-          <script>scripts\player_is_board_jumping.gml</script>
-          <script>scripts\player_is_board_falling.gml</script>
-          <script>scripts\player_is_looking.gml</script>
-          <script>scripts\player_is_reset.gml</script>
-          <script>scripts\player_is_rolling.gml</script>
-          <script>scripts\player_is_running.gml</script>
-          <script>scripts\player_is_spindashing.gml</script>
-          <script>scripts\player_is_standing.gml</script>
-          <script>scripts\player_is_super_flying.gml</script>
-          <script>scripts\player_is_transforming.gml</script>
-        </scripts>
-        <scripts name="Start Scripts">
-          <script>scripts\start_rr1.gml</script>
-          <script>scripts\start_vv1.gml</script>
-          <script>scripts\start_dd1.gml</script>
-          <script>scripts\start_tt1.gml</script>
-        </scripts>
-        <scripts name="level end scripts">
-          <script>scripts\end_VV1.gml</script>
-          <script>scripts\end_VV2.gml</script>
-          <script>scripts\end_AA2.gml</script>
-          <script>scripts\end_RR2.gml</script>
-          <script>scripts\end_FF2.gml</script>
-          <script>scripts\end_TT2.gml</script>
-          <script>scripts\end_DD1.gml</script>
-          <script>scripts\end_DD2_p.gml</script>
-          <script>scripts\end_DD2_f.gml</script>
-          <script>scripts\end_TT1.gml</script>
-          <script>scripts\end_SSZ.gml</script>
+          <scripts name="General">
+            <script>scripts\player_in_air.gml</script>
+            <script>scripts\player_is_board_falling.gml</script>
+            <script>scripts\player_is_board_jumping.gml</script>
+            <script>scripts\player_is_crouching.gml</script>
+            <script>scripts\player_is_dead.gml</script>
+            <script>scripts\player_is_drowning.gml</script>
+            <script>scripts\player_is_entering.gml</script>
+            <script>scripts\player_is_exiting.gml</script>
+            <script>scripts\player_is_falling.gml</script>
+            <script>scripts\player_is_hurt.gml</script>
+            <script>scripts\player_is_jumping.gml</script>
+            <script>scripts\player_is_looking.gml</script>
+            <script>scripts\player_is_reset.gml</script>
+            <script>scripts\player_is_rolling.gml</script>
+            <script>scripts\player_is_running.gml</script>
+            <script>scripts\player_is_spindashing.gml</script>
+            <script>scripts\player_is_standing.gml</script>
+            <script>scripts\player_is_transforming.gml</script>
+          </scripts>
         </scripts>
       </scripts>
       <scripts name="Special Stages">
-        <script>scripts\Adjust.gml</script>
-        <script>scripts\d3d_point_direction.gml</script>
-        <script>scripts\PlayerCollision.gml</script>
-        <script>scripts\ssplayer_hit.gml</script>
-        <script>scripts\SolidNew.gml</script>
-        <scripts name="SolidGroups">
-          <script>scripts\solidsSS1Future.gml</script>
+        <scripts name="Enemies">
+          <script>scripts\change_sprite_direction_int_frames.gml</script>
         </scripts>
         <scripts name="character animation">
           <script>scripts\SonicSpecialAnimation.gml</script>
@@ -2368,20 +2382,26 @@
           <script>scripts\PlayerBadnikCollision.gml</script>
           <script>scripts\PlayerRingCollision.gml</script>
         </scripts>
-        <scripts name="badniks">
-          <script>scripts\change_sprite_direction_int_frames.gml</script>
-        </scripts>
         <scripts name="Draw">
-          <script>scripts\draw_billboard_xyz.gml</script>
           <script>scripts\draw_shadow.gml</script>
           <script>scripts\draw_billboard.gml</script>
         </scripts>
+        <scripts name="Other">
+          <script>scripts\d3d_point_direction.gml</script>
+          <script>scripts\ssplayer_hit.gml</script>
+        </scripts>
+        <scripts name="Player">
+          <script>scripts\PlayerCollision.gml</script>
+          <script>scripts\PlayerUpdateRacerProgress.gml</script>
+        </scripts>
         <scripts name="Position Maps">
           <script>scripts\futurePositionMap.gml</script>
-          <script>scripts\pastPositionMap.gml</script>
           <script>scripts\getProg.gml</script>
+          <script>scripts\pastPositionMap.gml</script>
         </scripts>
-        <script>scripts\PlayerUpdateRacerProgress.gml</script>
+        <scripts name="SolidGroups">
+          <script>scripts\solidsSS1Future.gml</script>
+        </scripts>
       </scripts>
     </scripts>
   </scripts>
@@ -3215,197 +3235,187 @@
     </objects>
   </objects>
   <timelines name="timelines">
-    <timelines name="Scene Objects">
-      <timelines name="General">
-        <timeline>timelines\animLampPost</timeline>
-        <timeline>timelines\animSignPost</timeline>
-        <timeline>timelines\animTimePost</timeline>
-      </timelines>
-      <timelines name="Player">
-        <timelines name="Characters">
-          <timelines name="Knuckles">
-            <timeline>timelines\animKnucklesBrake</timeline>
-            <timeline>timelines\animKnucklesCliff</timeline>
-            <timeline>timelines\animKnucklesCliffB</timeline>
-            <timeline>timelines\animKnucklesClimb</timeline>
-            <timeline>timelines\animKnucklesClimbEnd</timeline>
-            <timeline>timelines\animKnucklesCrouch</timeline>
-            <timeline>timelines\animKnucklesDead</timeline>
-            <timeline>timelines\animKnucklesDrown</timeline>
-            <timeline>timelines\animKnucklesFlip</timeline>
-            <timeline>timelines\animKnucklesGetAir</timeline>
-            <timeline>timelines\animKnucklesGlide</timeline>
-            <timeline>timelines\animKnucklesWallRun</timeline>
-            <timeline>timelines\animKnucklesGlideEnd</timeline>
-            <timeline>timelines\animKnucklesGlideSlide</timeline>
-            <timeline>timelines\animKnucklesGlideStand1</timeline>
-            <timeline>timelines\animKnucklesGlideStand2</timeline>
-            <timeline>timelines\animKnucklesHurt</timeline>
-            <timeline>timelines\animKnucklesIdle</timeline>
-            <timeline>timelines\animKnucklesLook</timeline>
-            <timeline>timelines\animKnucklesPush</timeline>
-            <timeline>timelines\animKnucklesRise</timeline>
-            <timeline>timelines\animKnucklesRun</timeline>
-            <timeline>timelines\animKnucklesSpin</timeline>
-            <timeline>timelines\animKnucklesWarpPost</timeline>
-            <timeline>timelines\animKnucklesSpindash</timeline>
-            <timeline>timelines\animKnucklesSwing</timeline>
-            <timeline>timelines\animKnucklesFloat</timeline>
-            <timeline>timelines\animKnucklesWalk</timeline>
-            <timeline>timelines\animKnucklesWarp</timeline>
-            <timeline>timelines\animKnucklesStandRotate</timeline>
-            <timeline>timelines\animKnuckles3DTurn</timeline>
-            <timeline>timelines\animKnucklesLevelEnd</timeline>
-            <timeline>timelines\animKnucklesBoarding</timeline>
-          </timelines>
-          <timelines name="Sonic">
-            <timeline>timelines\animSonicBrake</timeline>
-            <timeline>timelines\animSonicSwing</timeline>
-            <timeline>timelines\animSonicCliff</timeline>
-            <timeline>timelines\animSonicCliffB</timeline>
-            <timeline>timelines\animSonicCrouch</timeline>
-            <timeline>timelines\animSonicDead</timeline>
-            <timeline>timelines\animSonicDrown</timeline>
-            <timeline>timelines\animSonicElectrified</timeline>
-            <timeline>timelines\animSonicFlip</timeline>
-            <timeline>timelines\animSonicGetAir</timeline>
-            <timeline>timelines\animSonicHurt</timeline>
-            <timeline>timelines\animSonicIdle</timeline>
-            <timeline>timelines\animSonicLook</timeline>
-            <timeline>timelines\animSonicWallRun</timeline>
-            <timeline>timelines\animSonicPeelout</timeline>
-            <timeline>timelines\animSonicPeeloutEnd</timeline>
-            <timeline>timelines\animSonicPush</timeline>
-            <timeline>timelines\animSonicRise</timeline>
-            <timeline>timelines\animSonicRun</timeline>
-            <timeline>timelines\animSonicSpin</timeline>
-            <timeline>timelines\animSonicSpindash</timeline>
-            <timeline>timelines\animSonicSprint</timeline>
-            <timeline>timelines\animSonicTransform</timeline>
-            <timeline>timelines\animSonicWalk</timeline>
-            <timeline>timelines\animSonicWarp</timeline>
-            <timeline>timelines\animSonicWrapPost</timeline>
-            <timeline>timelines\animSonicStandRotate</timeline>
-            <timeline>timelines\animSonicFloat</timeline>
-            <timeline>timelines\animSonicLevelEnd</timeline>
-            <timeline>timelines\animSonicLevelStart</timeline>
-            <timeline>timelines\animKnucklesLevelStart</timeline>
-            <timeline>timelines\animSonic3DTurn</timeline>
-            <timeline>timelines\animSonicBoarding</timeline>
-          </timelines>
-          <timelines name="Super Sonic">
-            <timeline>timelines\animSuperSonicBrake</timeline>
-            <timeline>timelines\animSuperSonicCliff</timeline>
-            <timeline>timelines\animSuperSonicCrouch</timeline>
-            <timeline>timelines\animSuperSonicDead</timeline>
-            <timeline>timelines\animSuperSonicDrown</timeline>
-            <timeline>timelines\animSuperSonicWallRun</timeline>
-            <timeline>timelines\animSuperSonicElectrified</timeline>
-            <timeline>timelines\animSuperSonicGetAir</timeline>
-            <timeline>timelines\animSuperSonicHurt</timeline>
-            <timeline>timelines\animSuperSonicBoarding</timeline>
-            <timeline>timelines\animSuperSonicIdle</timeline>
-            <timeline>timelines\animSuperSonicLook</timeline>
-            <timeline>timelines\animSuperSonicPeelout</timeline>
-            <timeline>timelines\animSuperSonicPeeloutEnd</timeline>
-            <timeline>timelines\animSuperSonicFloat</timeline>
-            <timeline>timelines\animSuperSonic3DTurn</timeline>
-            <timeline>timelines\animSuperSonicPush</timeline>
-            <timeline>timelines\animSuperSonicRise</timeline>
-            <timeline>timelines\animSuperSonicRun</timeline>
-            <timeline>timelines\animeSuperSonicStandRotate</timeline>
-            <timeline>timelines\animSuperSonicSpin</timeline>
-            <timeline>timelines\animSuperSonicSpindash</timeline>
-            <timeline>timelines\animSuperSonicWalk</timeline>
-            <timeline>timelines\animSuperSonicSwing</timeline>
-            <timeline>timelines\animSuperSonicWarp</timeline>
-            <timeline>timelines\animSuperSonicWrapPost</timeline>
-          </timelines>
-          <timelines name="Tails">
-            <timeline>timelines\animTailsBrake</timeline>
-            <timeline>timelines\animTailsCliff</timeline>
-            <timeline>timelines\animTailsCrouch</timeline>
-            <timeline>timelines\animTailsDead</timeline>
-            <timeline>timelines\animTailsFlight</timeline>
-            <timeline>timelines\animTailsFlightEnd</timeline>
-            <timeline>timelines\animTailsFlip</timeline>
-            <timeline>timelines\animTailsWallRun</timeline>
-            <timeline>timelines\animTailsGetAir</timeline>
-            <timeline>timelines\animTailsHurt</timeline>
-            <timeline>timelines\animTailsIdle</timeline>
-            <timeline>timelines\animTailsLook</timeline>
-            <timeline>timelines\animTailsPush</timeline>
-            <timeline>timelines\animTailsRise</timeline>
-            <timeline>timelines\animTailsRun</timeline>
-            <timeline>timelines\animTailsSpin</timeline>
-            <timeline>timelines\animTailsFloat</timeline>
-            <timeline>timelines\animTailsSpindash</timeline>
-            <timeline>timelines\animTailsSprint</timeline>
-            <timeline>timelines\animTailsSwim</timeline>
-            <timeline>timelines\animTailsWarpPost</timeline>
-            <timeline>timelines\animTailsSwing</timeline>
-            <timeline>timelines\animTailsSwimEnd</timeline>
-            <timeline>timelines\animTailsWalk</timeline>
-            <timeline>timelines\animTailsWarp</timeline>
-            <timeline>timelines\animTailsStandRotate</timeline>
-            <timeline>timelines\animTails3DTurn</timeline>
-            <timeline>timelines\animTailsLevelStart</timeline>
-            <timeline>timelines\animTailsLevelEnd</timeline>
-            <timeline>timelines\animTailsBoarding</timeline>
-          </timelines>
+    <timelines name="Cutscene">
+      <timeline>timelines\animIntroMetalProfile</timeline>
+    </timelines>
+    <timelines name="General">
+      <timeline>timelines\animLampPost</timeline>
+      <timeline>timelines\animSignPost</timeline>
+      <timeline>timelines\animTimePost</timeline>
+    </timelines>
+    <timelines name="Player">
+      <timelines name="Characters">
+        <timelines name="Knuckles">
+          <timeline>timelines\animKnuckles3DTurn</timeline>
+          <timeline>timelines\animKnucklesBoarding</timeline>
+          <timeline>timelines\animKnucklesBrake</timeline>
+          <timeline>timelines\animKnucklesCliff</timeline>
+          <timeline>timelines\animKnucklesCliffB</timeline>
+          <timeline>timelines\animKnucklesClimb</timeline>
+          <timeline>timelines\animKnucklesClimbEnd</timeline>
+          <timeline>timelines\animKnucklesCrouch</timeline>
+          <timeline>timelines\animKnucklesDead</timeline>
+          <timeline>timelines\animKnucklesDrown</timeline>
+          <timeline>timelines\animKnucklesFlip</timeline>
+          <timeline>timelines\animKnucklesFloat</timeline>
+          <timeline>timelines\animKnucklesGetAir</timeline>
+          <timeline>timelines\animKnucklesGlide</timeline>
+          <timeline>timelines\animKnucklesGlideEnd</timeline>
+          <timeline>timelines\animKnucklesGlideSlide</timeline>
+          <timeline>timelines\animKnucklesGlideStand1</timeline>
+          <timeline>timelines\animKnucklesGlideStand2</timeline>
+          <timeline>timelines\animKnucklesHurt</timeline>
+          <timeline>timelines\animKnucklesIdle</timeline>
+          <timeline>timelines\animKnucklesLevelEnd</timeline>
+          <timeline>timelines\animKnucklesLevelStart</timeline>
+          <timeline>timelines\animKnucklesLook</timeline>
+          <timeline>timelines\animKnucklesPush</timeline>
+          <timeline>timelines\animKnucklesRise</timeline>
+          <timeline>timelines\animKnucklesRun</timeline>
+          <timeline>timelines\animKnucklesSpin</timeline>
+          <timeline>timelines\animKnucklesSpindash</timeline>
+          <timeline>timelines\animKnucklesStandRotate</timeline>
+          <timeline>timelines\animKnucklesSwing</timeline>
+          <timeline>timelines\animKnucklesWalk</timeline>
+          <timeline>timelines\animKnucklesWallRun</timeline>
+          <timeline>timelines\animKnucklesWarp</timeline>
+          <timeline>timelines\animKnucklesWarpPost</timeline>
         </timelines>
-        <timelines name="Effects">
-          <timeline>timelines\animShieldBubble</timeline>
-          <timeline>timelines\animShieldBubbleAction</timeline>
-          <timeline>timelines\animShieldBubbleActionEnd</timeline>
-          <timeline>timelines\animShieldFlame</timeline>
-          <timeline>timelines\animShieldFlameAction</timeline>
-          <timeline>timelines\animShieldIce</timeline>
-          <timeline>timelines\animShieldLightning</timeline>
+        <timelines name="Sonic">
+          <timeline>timelines\animSonic3DTurn</timeline>
+          <timeline>timelines\animSonicBoarding</timeline>
+          <timeline>timelines\animSonicBrake</timeline>
+          <timeline>timelines\animSonicCliff</timeline>
+          <timeline>timelines\animSonicCliffB</timeline>
+          <timeline>timelines\animSonicCrouch</timeline>
+          <timeline>timelines\animSonicDead</timeline>
+          <timeline>timelines\animSonicDrown</timeline>
+          <timeline>timelines\animSonicFlip</timeline>
+          <timeline>timelines\animSonicFloat</timeline>
+          <timeline>timelines\animSonicGetAir</timeline>
+          <timeline>timelines\animSonicHurt</timeline>
+          <timeline>timelines\animSonicIdle</timeline>
+          <timeline>timelines\animSonicLevelEnd</timeline>
+          <timeline>timelines\animSonicLevelStart</timeline>
+          <timeline>timelines\animSonicLook</timeline>
+          <timeline>timelines\animSonicPeelout</timeline>
+          <timeline>timelines\animSonicPeeloutEnd</timeline>
+          <timeline>timelines\animSonicPush</timeline>
+          <timeline>timelines\animSonicRise</timeline>
+          <timeline>timelines\animSonicRun</timeline>
+          <timeline>timelines\animSonicSpin</timeline>
+          <timeline>timelines\animSonicSpindash</timeline>
+          <timeline>timelines\animSonicSprint</timeline>
+          <timeline>timelines\animSonicStandRotate</timeline>
+          <timeline>timelines\animSonicSwing</timeline>
+          <timeline>timelines\animSonicTransform</timeline>
+          <timeline>timelines\animSonicWalk</timeline>
+          <timeline>timelines\animSonicWallRun</timeline>
+          <timeline>timelines\animSonicWarp</timeline>
+          <timeline>timelines\animSonicWrapPost</timeline>
+        </timelines>
+        <timelines name="Super Sonic">
+          <timeline>timelines\animeSuperSonicStandRotate</timeline>
+          <timeline>timelines\animSuperSonic3DTurn</timeline>
+          <timeline>timelines\animSuperSonicBoarding</timeline>
+          <timeline>timelines\animSuperSonicBrake</timeline>
+          <timeline>timelines\animSuperSonicCliff</timeline>
+          <timeline>timelines\animSuperSonicCrouch</timeline>
+          <timeline>timelines\animSuperSonicDead</timeline>
+          <timeline>timelines\animSuperSonicDrown</timeline>
+          <timeline>timelines\animSuperSonicFloat</timeline>
+          <timeline>timelines\animSuperSonicGetAir</timeline>
+          <timeline>timelines\animSuperSonicHurt</timeline>
+          <timeline>timelines\animSuperSonicIdle</timeline>
+          <timeline>timelines\animSuperSonicLook</timeline>
+          <timeline>timelines\animSuperSonicPeelout</timeline>
+          <timeline>timelines\animSuperSonicPeeloutEnd</timeline>
+          <timeline>timelines\animSuperSonicPush</timeline>
+          <timeline>timelines\animSuperSonicRise</timeline>
+          <timeline>timelines\animSuperSonicRun</timeline>
+          <timeline>timelines\animSuperSonicSpin</timeline>
+          <timeline>timelines\animSuperSonicSpindash</timeline>
+          <timeline>timelines\animSuperSonicSwing</timeline>
+          <timeline>timelines\animSuperSonicWalk</timeline>
+          <timeline>timelines\animSuperSonicWallRun</timeline>
+          <timeline>timelines\animSuperSonicWarp</timeline>
+          <timeline>timelines\animSuperSonicWrapPost</timeline>
+        </timelines>
+        <timelines name="Tails">
+          <timeline>timelines\animTails3DTurn</timeline>
+          <timeline>timelines\animTailsBoarding</timeline>
+          <timeline>timelines\animTailsBrake</timeline>
+          <timeline>timelines\animTailsCliff</timeline>
+          <timeline>timelines\animTailsCrouch</timeline>
+          <timeline>timelines\animTailsDead</timeline>
+          <timeline>timelines\animTailsFlight</timeline>
+          <timeline>timelines\animTailsFlightEnd</timeline>
+          <timeline>timelines\animTailsFlip</timeline>
+          <timeline>timelines\animTailsFloat</timeline>
+          <timeline>timelines\animTailsGetAir</timeline>
+          <timeline>timelines\animTailsHurt</timeline>
+          <timeline>timelines\animTailsIdle</timeline>
+          <timeline>timelines\animTailsLevelEnd</timeline>
+          <timeline>timelines\animTailsLevelStart</timeline>
+          <timeline>timelines\animTailsLook</timeline>
+          <timeline>timelines\animTailsPush</timeline>
+          <timeline>timelines\animTailsRise</timeline>
+          <timeline>timelines\animTailsRun</timeline>
+          <timeline>timelines\animTailsSpin</timeline>
+          <timeline>timelines\animTailsSpindash</timeline>
+          <timeline>timelines\animTailsSprint</timeline>
+          <timeline>timelines\animTailsStandRotate</timeline>
+          <timeline>timelines\animTailsSwim</timeline>
+          <timeline>timelines\animTailsSwimEnd</timeline>
+          <timeline>timelines\animTailsSwing</timeline>
+          <timeline>timelines\animTailsWalk</timeline>
+          <timeline>timelines\animTailsWallRun</timeline>
+          <timeline>timelines\animTailsWarp</timeline>
+          <timeline>timelines\animTailsWarpPost</timeline>
         </timelines>
       </timelines>
-      <timelines name="Specific">
-        <timelines name="Bosses">
-          <timeline>timelines\timeAA1Boss</timeline>
-          <timeline>timelines\timeEggWalkerStartWalk</timeline>
-          <timeline>timelines\animBossExplosion</timeline>
-          <timeline>timelines\timeFinalBossObstacleGenerator</timeline>
-          <timeline>timelines\timeFinalBossRingGenerator</timeline>
-          <timeline>timelines\timeFinalBossArm</timeline>
-        </timelines>
-        <timelines name="Enemies">
-          <timeline>timelines\animSaucer</timeline>
-          <timeline>timelines\animSaucerFire</timeline>
-          <timeline>timelines\animWhalebot</timeline>
-          <timeline>timelines\animSealbomb</timeline>
-          <timeline>timelines\timeExplosionClusterNoSound</timeline>
-        </timelines>
-        <timelines name="Unsorted">
-          <timeline>timelines\animExplosionBomb</timeline>
-          <timeline>timelines\animExplosionCluster</timeline>
-          <timeline>timelines\animFlipper</timeline>
-          <timeline>timelines\animFlower</timeline>
-        </timelines>
-        <timelines name="Zones">
-          <timelines name="Attraction Attack">
-            <timeline>timelines\animAAShocker</timeline>
-          </timelines>
-          <timelines name="Submerged Saucer">
-            <timeline>timelines\animFlippingPlatform</timeline>
-            <timeline>timelines\animSSScreen</timeline>
-          </timelines>
-        </timelines>
-      </timelines>
-      <timelines name="cutscene">
-        <timelines name="intro">
-          <timeline>timelines\animIntroMetalProfile</timeline>
-        </timelines>
+      <timelines name="Effects">
+        <timeline>timelines\animShieldBubble</timeline>
+        <timeline>timelines\animShieldBubbleAction</timeline>
+        <timeline>timelines\animShieldBubbleActionEnd</timeline>
+        <timeline>timelines\animShieldFlame</timeline>
+        <timeline>timelines\animShieldFlameAction</timeline>
+        <timeline>timelines\animShieldIce</timeline>
+        <timeline>timelines\animShieldLightning</timeline>
       </timelines>
     </timelines>
-    <timelines name="imported">
-      <timeline>timelines\timeline109</timeline>
-      <timeline>timelines\animSealbotIdle</timeline>
-      <timeline>timelines\animSealbotCharge</timeline>
+    <timelines name="Specific">
+      <timelines name="Bosses">
+        <timeline>timelines\animBossExplosion</timeline>
+        <timeline>timelines\timeAA1Boss</timeline>
+        <timeline>timelines\timeEggWalkerStartWalk</timeline>
+        <timeline>timelines\timeFinalBossArm</timeline>
+        <timeline>timelines\timeFinalBossObstacleGenerator</timeline>
+        <timeline>timelines\timeFinalBossRingGenerator</timeline>
+      </timelines>
+      <timelines name="Enemies">
+        <timeline>timelines\animSaucer</timeline>
+        <timeline>timelines\animSaucerFire</timeline>
+        <timeline>timelines\animSealbomb</timeline>
+        <timeline>timelines\animSealbotCharge</timeline>
+        <timeline>timelines\animSealbotIdle</timeline>
+        <timeline>timelines\animWhalebot</timeline>
+        <timeline>timelines\timeExplosionClusterNoSound</timeline>
+      </timelines>
+      <timelines name="Unsorted">
+        <timeline>timelines\animExplosionBomb</timeline>
+        <timeline>timelines\animExplosionCluster</timeline>
+        <timeline>timelines\animFlipper</timeline>
+      </timelines>
+      <timelines name="Zones">
+        <timelines name="Attraction Attack">
+          <timeline>timelines\animAAShocker</timeline>
+        </timelines>
+        <timelines name="Submerged Saucer">
+          <timeline>timelines\animFlippingPlatform</timeline>
+          <timeline>timelines\animSSScreen</timeline>
+        </timelines>
+      </timelines>
     </timelines>
   </timelines>
   <rooms name="rooms">
