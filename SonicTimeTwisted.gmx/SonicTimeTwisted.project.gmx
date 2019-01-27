@@ -2412,15 +2412,139 @@
     <shader type="GLSLES">shaders\WaveShader.shader</shader>
   </shaders>
   <objects name="objects">
+    <objects name="Attraction Attack">
+      <objects name="Objects">
+        <object>objects\objAABobbin</object>
+        <object>objects\objAABoostWheel</object>
+        <object>objects\objAABumper</object>
+        <object>objects\objAABumperV</object>
+        <object>objects\objAACloud</object>
+        <object>objects\objAACloud2</object>
+        <object>objects\objAADropBumper</object>
+        <object>objects\objAAFlipper</object>
+        <object>objects\objAAKnuckles</object>
+        <object>objects\objAALampLight</object>
+        <object>objects\objAAPlane</object>
+        <object>objects\objAAPlatform</object>
+        <object>objects\objAAShockBumper</object>
+        <object>objects\objAAShocker</object>
+        <object>objects\objAASmasherSmall</object>
+        <object>objects\objAATrampoline</object>
+        <object>objects\objBallSplash</object>
+        <object>objects\objBGSlots</object>
+        <object>objects\objInvisiblePlatform</object>
+        <object>objects\objSlotMachine</object>
+        <object>objects\objSlotMachineSolidMask</object>
+        <objects name="Swings">
+          <object>objects\objAAShockSwingH</object>
+          <object>objects\objAAShockSwingV</object>
+          <object>objects\objAASwingWheel</object>
+          <object>objects\objAATargetSwing</object>
+        </objects>
+      </objects>
+      <objects name="Tiles">
+        <objects name="Backgrounds">
+          <object>objects\objAAFutureBack</object>
+          <object>objects\objAAPastBack</object>
+        </objects>
+        <object>objects\objAAClock</object>
+        <object>objects\objAASpinner</object>
+      </objects>
+    </objects>
     <objects name="Bosses">
       <objects name="AA1">
         <object>objects\objAA1Boss</object>
-        <object>objects\objAA1BossFutureBack</object>
         <object>objects\objAA1BossController</object>
-        <object>objects\objAA1BossPastBack</object>
-        <object>objects\objAA1BossLaser</object>
         <object>objects\objAA1BossFloor</object>
         <object>objects\objAA1BossFloorBack</object>
+        <object>objects\objAA1BossFutureBack</object>
+        <object>objects\objAA1BossLaser</object>
+        <object>objects\objAA1BossPastBack</object>
+      </objects>
+      <objects name="AA2">
+        <object>objects\objEggWalker</object>
+        <object>objects\objEggWalkerBossController</object>
+        <object>objects\objEggWalkerBossSensor</object>
+        <object>objects\objEggWalkerGun</object>
+        <object>objects\objEggWalkerGunCover</object>
+        <object>objects\objEggWalkerLaser</object>
+        <object>objects\objEggWalkerLeg</object>
+        <object>objects\objEggWalkerMoleDeath</object>
+        <object>objects\objExplosionGroup</object>
+        <object>objects\objExplosionGroupNoSound</object>
+        <object>objects\objMoleEggWalker</object>
+        <object>objects\objSmokePuff</object>
+        <object>objects\objSmokeSpawn</object>
+      </objects>
+      <objects name="DD2">
+        <object>objects\objMetallix</object>
+        <object>objects\objMetallixController</object>
+        <object>objects\objMetallixHead</object>
+        <object>objects\objMetallixLaser</object>
+        <object>objects\objMetallixPlatform</object>
+        <object>objects\objMetallixPlatformHarmful</object>
+        <object>objects\objMetallixUFOBg</object>
+        <object>objects\objScoreCardFake</object>
+        <object>objects\objUFOAttackDD</object>
+      </objects>
+      <objects name="FF2">
+        <object>objects\objMegaTrooper</object>
+        <object>objects\objMegaTrooperController</object>
+        <object>objects\objMegaTrooperDriver</object>
+        <object>objects\objMegaTrooperEye</object>
+        <object>objects\objMegaTrooperGround</object>
+        <object>objects\objMegaTrooperGroundPart</object>
+        <object>objects\objMegaTrooperHand</object>
+        <object>objects\objMegaTrooperHead</object>
+        <object>objects\objMegaTrooperHeadBack</object>
+        <object>objects\objMegaTrooperJaw</object>
+        <object>objects\objMegaTrooperMoleDeath</object>
+        <object>objects\objMegaTrooperOrb</object>
+        <object>objects\objMegaTrooperShoulder</object>
+      </objects>
+      <objects name="Final Boss">
+        <object>objects\objFinalBoss</object>
+        <object>objects\objFinalBossArm</object>
+        <object>objects\objFinalBossBackArm</object>
+        <object>objects\objFinalBossBackground</object>
+        <object>objects\objFinalBossController</object>
+        <object>objects\objFinalBossFace</object>
+        <object>objects\objFinalBossFireball</object>
+        <object>objects\objFinalBossFireBallStatic</object>
+        <object>objects\objFinalBossLaser</object>
+        <object>objects\objFinalBossPathControl</object>
+        <object>objects\objLargeRockFinalBoss</object>
+        <object>objects\objRingDroppedFinalBoss</object>
+        <object>objects\objRingFinalBoss</object>
+      </objects>
+      <objects name="PP2">
+        <object>objects\objBossPlatform</object>
+        <object>objects\objGalanik</object>
+        <object>objects\objGalanikEyeShine</object>
+        <object>objects\objGalanikFireball</object>
+        <object>objects\objGalanikNose</object>
+        <object>objects\objGalanikSmall</object>
+        <object>objects\objLaserFire</object>
+        <object>objects\objMetalDamage</object>
+        <object>objects\objPPBossController</object>
+        <object>objects\objPPBossDisapearPlatform</object>
+        <object>objects\objPPBossFloor</object>
+        <object>objects\objPPGalanikLaser</object>
+      </objects>
+      <objects name="RR2">
+        <object>objects\objGolem</object>
+        <object>objects\objGolemArm</object>
+        <object>objects\objGolemHand</object>
+        <object>objects\objGolemOrb</object>
+        <object>objects\objGolemTarget</object>
+      </objects>
+      <objects name="TT2">
+        <object>objects\objHarmfulBlock</object>
+        <object>objects\objTTBossController</object>
+        <object>objects\objWhaleBoss</object>
+        <object>objects\objWhaleBossJaw</object>
+        <object>objects\objWhaleBossTowardsCam</object>
+        <object>objects\objWhaleFin</object>
       </objects>
       <objects name="VV1">
         <object>objects\objVV1Boss</object>
@@ -2430,153 +2554,77 @@
         <object>objects\objVV1BossShield</object>
         <object>objects\objVV1BossSign</object>
       </objects>
-      <objects name="AA2">
-        <object>objects\objEggWalker</object>
-        <object>objects\objEggWalkerGun</object>
-        <object>objects\objEggWalkerGunCover</object>
-        <object>objects\objEggWalkerLaser</object>
-        <object>objects\objEggWalkerLeg</object>
-        <object>objects\objMoleEggWalker</object>
-        <object>objects\objEggWalkerBossController</object>
-        <object>objects\objEggWalkerMoleDeath</object>
-        <object>objects\objEggWalkerBossSensor</object>
-        <object>objects\objExplosionGroup</object>
-        <object>objects\objExplosionGroupNoSound</object>
-        <object>objects\objSmokeSpawn</object>
-        <object>objects\objSmokePuff</object>
-      </objects>
-      <objects name="FF2">
-        <object>objects\objMegaTrooper</object>
-        <object>objects\objMegaTrooperController</object>
-        <object>objects\objMegaTrooperDriver</object>
-        <object>objects\objMegaTrooperEye</object>
-        <object>objects\objMegaTrooperHand</object>
-        <object>objects\objMegaTrooperHead</object>
-        <object>objects\objMegaTrooperJaw</object>
-        <object>objects\objMegaTrooperMoleDeath</object>
-        <object>objects\objMegaTrooperOrb</object>
-        <object>objects\objMegaTrooperShoulder</object>
-        <object>objects\objMegaTrooperGround</object>
-        <object>objects\objMegaTrooperGroundPart</object>
-        <object>objects\objMegaTrooperHeadBack</object>
-      </objects>
-      <objects name="TT2">
-        <object>objects\objWhaleBoss</object>
-        <object>objects\objTTBossController</object>
-        <object>objects\objWhaleBossJaw</object>
-        <object>objects\objWhaleFin</object>
-        <object>objects\objWhaleBossTowardsCam</object>
-        <object>objects\objHarmfulBlock</object>
-      </objects>
       <objects name="VV2">
+        <object>objects\objFireFly</object>
+        <object>objects\objFireFlyBossController</object>
+        <object>objects\objFireFlyGraphic</object>
         <object>objects\objFireFlyLight</object>
         <object>objects\objFireFlyLightShot</object>
-        <object>objects\objFireFlyBossController</object>
+        <object>objects\objMetalSonicFlyOff</object>
         <object>objects\objMetalSonicUFOs</object>
         <object>objects\objUFOAttack</object>
-        <object>objects\objMetalSonicFlyOff</object>
-        <object>objects\objFireFly</object>
-        <object>objects\objFireFlyGraphic</object>
-      </objects>
-      <objects name="DD2">
-        <object>objects\objMetallixController</object>
-        <object>objects\objUFOAttackDD</object>
-        <object>objects\objMetalClone</object>
-        <object>objects\objUFOExplosion</object>
-        <object>objects\objMetallixUFOBg</object>
-        <object>objects\objMetallix</object>
-        <object>objects\objMetallixPlatformHarmful</object>
-        <object>objects\objMetallixPlatform</object>
-        <object>objects\objScoreCardFake</object>
-        <object>objects\objMetallixHead</object>
-        <object>objects\objMetallixLaser</object>
-      </objects>
-      <objects name="PP2">
-        <object>objects\objGalanik</object>
-        <object>objects\objPPBossController</object>
-        <object>objects\objGalanikNose</object>
-        <object>objects\objBossPlatform</object>
-        <object>objects\objPPGalanikLaser</object>
-        <object>objects\objPPBossDisapearPlatform</object>
-        <object>objects\objGalanikSmall</object>
-        <object>objects\objUFOAttackPP</object>
-        <object>objects\objMetalDamage</object>
-        <object>objects\objPPBossFloor</object>
-        <object>objects\objGalanikEyeShine</object>
-        <object>objects\objLaserFire</object>
-        <object>objects\objGalanikFireball</object>
-      </objects>
-      <objects name="Final Boss">
-        <object>objects\objFinalBossFace</object>
-        <object>objects\objFinalBossArm</object>
-        <object>objects\objFinalBoss</object>
-        <object>objects\objFinalBossBackArm</object>
-        <object>objects\objFinalBossFireball</object>
-        <object>objects\objFinalBossFireBallStatic</object>
-        <object>objects\objFinalBossFireballExhaust</object>
-        <object>objects\objFinalBossBackground</object>
-        <object>objects\objFinalBossLaser</object>
-        <object>objects\objRingDroppedFinalBoss</object>
-        <object>objects\objLargeRockFinalBoss</object>
-        <object>objects\objRingFinalBoss</object>
-        <object>objects\objFinalBossController</object>
-        <object>objects\objFinalBossPathControl</object>
-      </objects>
-      <objects name="RR2">
-        <object>objects\objGolemArm</object>
-        <object>objects\objGolemHand</object>
-        <object>objects\objGolemOrb</object>
-        <object>objects\Object3D</object>
-        <object>objects\objGolemSparks</object>
-        <object>objects\objGolemTarget</object>
-        <object>objects\objGolem</object>
       </objects>
     </objects>
-    <objects name="Examples">
-      <objects name="Collapsing Platform">
-        <object>objects\objExampleCollapsingPlatform</object>
-        <object>objects\objExampleCollapsingPlatformPiece</object>
+    <objects name="Drifting Dynamo">
+      <objects name="Act1 Cut">
+        <object>objects\objMetalSonicCharge</object>
+        <object>objects\objUFOCharge</object>
       </objects>
-      <objects name="Moving Platforms">
-        <object>objects\objExampleMovingPlatformHorz</object>
-        <object>objects\objMovingHorVerPlatform</object>
-        <object>objects\objExampleMovingPlatformVert</object>
+      <objects name="tiles">
+        <object>objects\objDDFutureBack</object>
+        <object>objects\objDDFutureBackAct2</object>
+        <object>objects\objDDFutureBackSun</object>
+        <object>objects\objDDFutureIndoorBack</object>
+        <object>objects\objDDFutureIndoorBackAct2</object>
+        <object>objects\objDDPastBack</object>
+        <object>objects\objDDPSaturn</object>
       </objects>
-      <object>objects\objExampleBridge</object>
-      <object>objects\objExamplePushable</object>
-      <object>objects\objPushLog</object>
-      <object>objects\objExampleQuicksand</object>
-      <object>objects\objExampleBreakable</object>
-      <object>objects\objExampleBreakableDebris</object>
-    </objects>
-    <objects name="Springs">
-      <object>objects\objSpring</object>
-      <object>objects\objSpringGreen</object>
-      <object>objects\objSpringDiagonal</object>
-      <object>objects\objSpringRed</object>
-      <object>objects\objSpringRedDiagonal</object>
-      <object>objects\objSpringBlock</object>
-      <object>objects\objHiddenSpring</object>
-    </objects>
-    <objects name="Terrain Masks">
-      <object>objects\objBlock</object>
-      <object>objects\objCurveConcave</object>
-      <object>objects\objCurveConcaveSlim</object>
-      <object>objects\objCurveConvex</object>
-      <object>objects\objCurveConvexSlim</object>
-      <object>objects\objSlant</object>
+      <object>objects\objConveyor</object>
+      <object>objects\objDDBreakableRock</object>
+      <object>objects\objDDFallingPlatform</object>
+      <object>objects\objDDFallingPlatformSpawed</object>
+      <object>objects\objDDFFanPlatform</object>
+      <object>objects\objDDLeaf</object>
+      <object>objects\objDDRockPiece</object>
+      <object>objects\objFan</object>
+      <object>objects\objPlaneGimmick</object>
+      <object>objects\objPlaneStop</object>
+      <object>objects\objPollPlatform</object>
+      <object>objects\objPollPlatformReverse</object>
+      <object>objects\objSand</object>
+      <object>objects\objSkydive</object>
+      <object>objects\objSpinFanHarmful</object>
+      <object>objects\objSpinFlame</object>
+      <object>objects\objSpinFlamesEmmit</object>
+      <object>objects\objSpinPoll</object>
+      <object>objects\objSpinPollReverse</object>
     </objects>
     <objects name="Enemies">
+      <objects name="Bubbles">
+        <object>objects\objBubblesBadnik</object>
+        <object>objects\objBubblesRegion</object>
+      </objects>
       <objects name="Catakiller">
         <object>objects\objCaterkiller</object>
         <object>objects\objCaterkillerOrb</object>
         <object>objects\objCaterminatorOrb</object>
         <object>objects\objCaterminator</object>
       </objects>
+      <objects name="Dragonfly">
+        <object>objects\objDragonFly</object>
+        <object>objects\objDragonFlyBomb</object>
+        <object>objects\objDragonFlySegment</object>
+      </objects>
+      <objects name="FlowerShot">
+        <object>objects\objFlowerShot</object>
+        <object>objects\objFireball</object>
+      </objects>
+      <objects name="MoleFan">
+        <object>objects\objMoleFan</object>
+      </objects>
       <objects name="MoleGun">
         <object>objects\objMoleGun</object>
         <object>objects\objMoleGunFire</object>
-        <object>objects\obMoleGunGun</object>
       </objects>
       <objects name="MoleYoyo">
         <object>objects\objMoleYoyo</object>
@@ -2586,51 +2634,46 @@
         <object>objects\objOrbinaut</object>
         <object>objects\objOrbinautOrb</object>
       </objects>
+      <objects name="Ostrich">
+        <object>objects\objOstrich</object>
+        <object>objects\objOstrichDibris</object>
+        <object>objects\objOstrichHead</object>
+      </objects>
       <objects name="Other">
-        <object>objects\objPenguin</object>
-        <object>objects\objRhinobot</object>
         <object>objects\objAntnik</object>
-        <object>objects\objSealbot</object>
-        <object>objects\objSealBomb</object>
-        <object>objects\objWhalebot</object>
-        <object>objects\objVutureBot</object>
+        <object>objects\objBigBombBadnik</object>
+        <object>objects\objDinobot</object>
         <object>objects\objEagleBot</object>
         <object>objects\objEagleBotIdle</object>
-        <object>objects\objLaserGun</object>
-        <object>objects\objLaserShot</object>
-        <object>objects\objSmallBomb</object>
-        <object>objects\objWallbot</object>
-        <object>objects\objBigBombBadnik</object>
-        <object>objects\objWaspBot</object>
-        <object>objects\objDinobot</object>
+        <object>objects\objEnemyTurn</object>
         <object>objects\objFireRinobot</object>
         <object>objects\objFireTorch</object>
+        <object>objects\objLaserGun</object>
+        <object>objects\objLaserShot</object>
+        <object>objects\objRhinobot</object>
+        <object>objects\objSealBomb</object>
+        <object>objects\objSealbot</object>
+        <object>objects\objSmallBomb</object>
+        <object>objects\objWaspBot</object>
+        <object>objects\objWhalebot</object>
+      </objects>
+      <objects name="Pterodactyl">
+        <object>objects\objPterodactyl</object>
+        <object>objects\objPterodactylBomb</object>
+      </objects>
+      <objects name="RoboRex">
+        <object>objects\objRoboRex</object>
+        <object>objects\objRoboRexFoot</object>
+        <object>objects\objRoboRexFrontFoot</object>
+        <object>objects\objRoboRexHead</object>
       </objects>
       <objects name="Sauceroid">
         <object>objects\objSauceroid</object>
         <object>objects\objSauceroidFire</object>
       </objects>
-      <objects name="Bubbles">
-        <object>objects\objBubblesRegion</object>
-        <object>objects\objBubblesBadnik</object>
-      </objects>
       <objects name="Snailbot">
         <object>objects\objSnailbot</object>
         <object>objects\objSnailTrail</object>
-      </objects>
-      <objects name="Dragonfly">
-        <object>objects\objDragonFly</object>
-        <object>objects\objDragonFlyBomb</object>
-        <object>objects\objDragonFlySegment</object>
-      </objects>
-      <objects name="ostrich">
-        <object>objects\objOstrich</object>
-        <object>objects\objOstrichDibris</object>
-        <object>objects\objOstrichHead</object>
-      </objects>
-      <objects name="FlowerShot">
-        <object>objects\objFlowerShot</object>
-        <object>objects\objFireball</object>
       </objects>
       <objects name="Squibot">
         <object>objects\objSquibotGun</object>
@@ -2638,77 +2681,27 @@
         <object>objects\objSquibotGunCover</object>
         <object>objects\objSquibotLaser</object>
       </objects>
-      <objects name="RoboRex">
-        <object>objects\objRoboRex</object>
-        <object>objects\objRoboRexHead</object>
-        <object>objects\objRoboRexFoot</object>
-        <object>objects\objRoboRexFrontFoot</object>
-      </objects>
-      <objects name="Pterodactyl">
-        <object>objects\objPterodactylBomb</object>
-        <object>objects\objPterodactyl</object>
-      </objects>
-      <objects name="MoleFan">
-        <object>objects\objMoleFan</object>
-      </objects>
-      <object>objects\objEnemyTurn</object>
     </objects>
-    <objects name="Viridian Valley">
-      <objects name="Objects">
-        <objects name="Bombs">
-          <object>objects\objVVBomb</object>
-          <object>objects\objVVBombExplosion</object>
-          <object>objects\objVVBombLarge</object>
-          <object>objects\objVVBombLauncher</object>
-        </objects>
-        <objects name="Rhinobot Spawn">
-          <object>objects\objVVRhinobotSpawn</object>
-          <object>objects\objVVRhinobotSpawnDebris</object>
-        </objects>
-        <objects name="Ships">
-          <object>objects\objVVShip</object>
-          <object>objects\objVVShipLarge</object>
-          <object>objects\objVVShipMedium</object>
-          <object>objects\objVVShipMediumStationary</object>
-        </objects>
-        <objects name="Terrain Masks">
-          <object>objects\objVVMask01</object>
-        </objects>
-        <object>objects\objVVBushes</object>
-        <object>objects\objVVLeaf</object>
-        <object>objects\objVVPlatform</object>
-        <object>objects\objVVBreakableWall</object>
-        <object>objects\objVVBreakableWallDebris</object>
-        <object>objects\objVVTileHole</object>
-        <objects name="Metal Sonic Thowing">
-          <object>objects\objMetalThrow</object>
-          <object>objects\objUFOFlame</object>
-          <object>objects\objUFOLead</object>
-          <object>objects\objUFO</object>
-          <object>objects\objMetalThrowController</object>
-        </objects>
-        <object>objects\objOldManOwl</object>
+    <objects name="Examples">
+      <objects name="Breakable Wall">
+        <object>objects\objExampleBreakable</object>
+        <object>objects\objExampleBreakableDebris</object>
       </objects>
-      <objects name="Tiles">
-        <objects name="Backgrounds">
-          <object>objects\objVVFutureBack</object>
-          <object>objects\objVVFutureBackAct2</object>
-          <object>objects\objUFOBg</object>
-          <object>objects\objVVPastBack</object>
-          <object>objects\objVVPastBack2</object>
-          <object>objects\objVVPastBackSun</object>
-        </objects>
+      <objects name="Moving Platforms">
+        <object>objects\objExampleMovingPlatformHorz</object>
+        <object>objects\objMovingHorVerPlatform</object>
+        <object>objects\objExampleMovingPlatformVert</object>
       </objects>
+      <object>objects\objExampleBridge</object>
+      <object>objects\objExampleQuicksand</object>
+      <object>objects\objPushLog</object>
     </objects>
     <objects name="Frigid Fortress">
-      <objects name="Tiles">
-        <objects name="Backgrounds">
-          <object>objects\objFFFutureBack</object>
-          <object>objects\objFFFutureBackAct2</object>
-          <object>objects\objFFPastBack</object>
-          <object>objects\objFFPastBackAct2</object>
-        </objects>
-        <object>objects\objArmor</object>
+      <objects name="Backgrounds">
+        <object>objects\objFFFutureBack</object>
+        <object>objects\objFFFutureBackAct2</object>
+        <object>objects\objFFPastBack</object>
+        <object>objects\objFFPastBackAct2</object>
       </objects>
       <objects name="Objects">
         <objects name="Collapsing Platform">
@@ -2721,137 +2714,33 @@
         </objects>
         <objects name="Snow Blower">
           <object>objects\objFFSnowFan</object>
-          <object>objects\objSnowBlowerH</object>
-          <object>objects\objSnowBlowerHTop</object>
           <object>objects\objSnowBlowerV</object>
           <object>objects\objSnowBlowerVTop</object>
-          <objects name="Depreciated">
-            <object>objects\objSnowParticle</object>
-            <object>objects\object178</object>
-            <object>objects\objFFSnowEmitter</object>
-          </objects>
         </objects>
         <objects name="Swing">
           <object>objects\objFFSpikeball</object>
           <object>objects\objFFSwingWheel</object>
         </objects>
+        <objects name="Snowboard">
+          <object>objects\objBoard</object>
+          <object>objects\objBoardExit</object>
+        </objects>
         <object>objects\objFFDropSpike</object>
         <object>objects\objFFIceSlip</object>
         <object>objects\objWarp</object>
-        <object>objects\objBoard</object>
-        <object>objects\objBoardExit</object>
         <object>objects\objFFLift</object>
       </objects>
-    </objects>
-    <objects name="Attraction Attack">
-      <objects name="Objects">
-        <objects name="Swings">
-          <object>objects\objAAShockSwingH</object>
-          <object>objects\objAAShockSwingV</object>
-          <object>objects\objAASwingWheel</object>
-          <object>objects\objAATargetSwing</object>
-        </objects>
-        <object>objects\objAABobbin</object>
-        <object>objects\objBallSplash</object>
-        <object>objects\objAABoostWheel</object>
-        <object>objects\objAADropBumper</object>
-        <object>objects\objAAFlipper</object>
-        <object>objects\objAAShockBumper</object>
-        <object>objects\objAABumper</object>
-        <object>objects\objInvisiblePlatform</object>
-        <object>objects\objAABumperV</object>
-        <object>objects\objAAShocker</object>
-        <object>objects\objAASmasher</object>
-        <object>objects\objAASmasherSmall</object>
-        <object>objects\objAALampLight</object>
-        <object>objects\objAATrampoline</object>
-        <object>objects\objSlotMachine</object>
-        <object>objects\objSlotMachineSolidMask</object>
-        <object>objects\objAACloud2</object>
-        <object>objects\objAACloud</object>
-        <object>objects\objAAPlatform</object>
-        <object>objects\objAAKnuckles</object>
-        <object>objects\objAAPlane</object>
-        <object>objects\objBGSlots</object>
-      </objects>
       <objects name="Tiles">
-        <objects name="Backgrounds">
-          <object>objects\objAAFutureBack</object>
-          <object>objects\objAAPastBack</object>
-          <object>objects\object280</object>
-        </objects>
-        <object>objects\objAASpinner</object>
-        <object>objects\objAAClock</object>
+        <object>objects\objArmor</object>
       </objects>
     </objects>
-    <objects name="Tidal Tubes">
-      <object>objects\objTubeWater</object>
-      <object>objects\objTTSwingWhere</object>
-      <object>objects\objCrate</object>
-      <object>objects\objTTPWave</object>
-      <object>objects\objFallingLog</object>
-      <object>objects\objFallingLogVanish</object>
-      <object>objects\objTTFMovingFloor</object>
-      <object>objects\objTTFMovingFloorChild</object>
-      <object>objects\objSpikeRoller</object>
-      <object>objects\objWaterJet</object>
-      <object>objects\objTTFFallingPlatform</object>
-      <object>objects\objWaterJetTripple</object>
-      <object>objects\objWaterJetEmmiter</object>
-      <object>objects\objWaterJetEmmiterTripple</object>
-      <object>objects\objSpikeRollerHarmful</object>
-      <object>objects\objLillyPad</object>
-      <objects name="background">
-        <object>objects\objTTPastBackParent</object>
-        <object>objects\objTTPastBack</object>
-        <object>objects\objTTPastBack2</object>
-        <object>objects\objTTFutureBack</object>
-        <object>objects\objTTFutureBack2</object>
-        <object>objects\objTTFutureRig</object>
-        <object>objects\objTTFutureRig2</object>
-        <object>objects\objTTPastShip</object>
-        <object>objects\objTTPastShipMedium</object>
-        <object>objects\objTTPastShipSmall</object>
-      </objects>
-      <object>objects\objDynamoDeath</object>
-    </objects>
-    <objects name="Drifting Dynamo">
-      <objects name="tiles">
-        <object>objects\objDDFutureBack</object>
-        <object>objects\objDDFutureBackAct2</object>
-        <object>objects\objDDPastBack</object>
-        <object>objects\objDDFutureIndoorBack</object>
-        <object>objects\objDDFutureIndoorBackAct2</object>
-        <object>objects\objDDFutureBackSun</object>
-        <object>objects\objDDPSaturn</object>
-      </objects>
-      <object>objects\objPlaneGimmick</object>
-      <object>objects\objSpikeRing</object>
-      <object>objects\objDDLeaf</object>
-      <object>objects\objPlaneStop</object>
-      <object>objects\objSpinFlame</object>
-      <object>objects\objSpinFlamesEmmit</object>
-      <object>objects\objSpinFanHarmful</object>
-      <object>objects\objDDFFanPlatform</object>
-      <object>objects\objConveyor</object>
-      <object>objects\objSand</object>
-      <object>objects\objFan</object>
-      <object>objects\objSkydive</object>
-      <object>objects\objDDRockPiece</object>
-      <object>objects\objDDFallingPlatform</object>
-      <object>objects\objDDFallingPlatformSpawed</object>
-      <object>objects\objDDBreakableRock</object>
-      <object>objects\objSpinPoll</object>
-      <object>objects\objSpinPollReverse</object>
-      <object>objects\objPollPlatform</object>
-      <object>objects\objPollPlatformReverse</object>
-      <object>objects\objRolllingRock1</object>
-      <object>objects\objRollingRock2</object>
-      <object>objects\objRollingRockBarrior</object>
-      <objects name="Act1 Cut">
-        <object>objects\objMetalSonicCharge</object>
-        <object>objects\objUFOCharge</object>
-      </objects>
+    <objects name="Game">
+      <object>objects\objGameData</object>
+      <object>objects\objInput</object>
+      <object>objects\objMusic</object>
+      <object>objects\objProgram</object>
+      <object>objects\objResources</object>
+      <object>objects\objScreen</object>
     </objects>
     <objects name="General">
       <objects name="Capsule">
@@ -2867,11 +2756,9 @@
         <object>objects\objLayerFlip</object>
         <object>objects\objLayerSet</object>
         <object>objects\objPath</object>
-        <object>objects\objGeneralTrigger</object>
       </objects>
       <objects name="Hazards">
         <object>objects\objBoss</object>
-        <object>objects\objSpikeball</object>
         <object>objects\objEnemy</object>
       </objects>
       <objects name="Monitor">
@@ -2884,7 +2771,6 @@
         <object>objects\objFlower</object>
         <object>objects\objFlowerSpark</object>
         <object>objects\objScorePopup</object>
-        <object>objects\objSwitch</object>
       </objects>
       <objects name="Particles">
         <object>objects\objExplosionCluster</object>
@@ -2908,198 +2794,231 @@
       <object>objects\objSignPost</object>
       <object>objects\objSignPostAct2</object>
     </objects>
-    <objects name="Sunken Saucer">
-      <object>objects\objMagnet</object>
-      <objects name="SparkCannon">
-        <object>objects\objSparkCannon</object>
-        <object>objects\objSpark</object>
-      </objects>
-      <object>objects\objMagnetSparkle</object>
-      <object>objects\objConveyerAngled</object>
-      <objects name="tiles">
-        <object>objects\objSSBack</object>
-        <object>objects\objSSZBGParallax2</object>
-        <object>objects\objSSZBGParallax</object>
-        <object>objects\objSSZBGParallax3</object>
-        <object>objects\objSSZBGParallax4</object>
-      </objects>
-      <object>objects\objFlippingPlatform</object>
-      <object>objects\objShocker</object>
-      <object>objects\objShockerTop</object>
-      <object>objects\objSSPlatformVertical</object>
-      <object>objects\objShockerLaser</object>
-      <object>objects\objUFOFan</object>
-      <objects name="Pong">
-        <object>objects\objPaddle</object>
-        <object>objects\objPaddleSwitch</object>
-        <object>objects\objPaddleTop</object>
-        <object>objects\objSwitchButton</object>
-        <object>objects\objPongController</object>
-      </objects>
-      <objects name="cutscene">
-        <object>objects\objSSController</object>
-        <object>objects\objSSMetalCut</object>
-        <object>objects\objSSScreen</object>
-        <object>objects\objSSRobotnik</object>
-      </objects>
-    </objects>
-    <objects name="Raging Ruins">
-      <object>objects\objSwing</object>
-      <object>objects\objAASwing</object>
-      <object>objects\objRRBreakableColumn</object>
-      <object>objects\objArrowChild</object>
-      <object>objects\objArrowParent</object>
-      <object>objects\objArrowSpawn</object>
-      <objects name="tiles">
-        <object>objects\objRRPBack</object>
-        <object>objects\objRRFBack</object>
-        <object>objects\objLittlePlanetPast</object>
-        <object>objects\objBigLittlePlanet</object>
-      </objects>
-      <object>objects\objCanon</object>
-      <object>objects\objCanonSmoke</object>
-      <object>objects\objRRWallRun</object>
-      <object>objects\objGlassBottom</object>
-      <object>objects\objGlassBreak</object>
-      <object>objects\objGlassTop</object>
-    </objects>
-    <objects name="Planetary Panic">
-      <objects name="Tiles">
-        <objects name="Backgrounds">
-          <object>objects\objPPBackEarth</object>
-          <object>objects\objPPBackground</object>
-          <object>objects\objNebula</object>
-        </objects>
-      </objects>
-      <object>objects\objLargeRock</object>
-      <object>objects\objSSLevelChunks</object>
-      <object>objects\objSmallRock</object>
-      <object>objects\objLavaCrack</object>
-      <object>objects\objRockStairs</object>
-      <object>objects\objLavaRock</object>
-      <object>objects\objLavaSeep</object>
-      <object>objects\objCrateLong</object>
-      <object>objects\objFallingBlocks</object>
-      <object>objects\objLava</object>
-      <object>objects\objSingleFallBlock</object>
-      <object>objects\objLavaTop</object>
-      <objects name="breakable platform">
-        <object>objects\objBreakableRockBits</object>
-        <object>objects\objBreakableRocks</object>
-      </objects>
-      <object>objects\objGalanikShadow</object>
-      <object>objects\objScurge</object>
-    </objects>
+    <object>objects\obj3dLayerFlip</object>
+    <object>objects\obj3DSlant</object>
     <object>objects\objLampPost</object>
+    <object>objects\objLevel</object>
     <object>objects\objMonitor</object>
+    <object>objects\objPathSplitStall</object>
     <object>objects\objRing</object>
+    <object>objects\objRingGiant</object>
     <object>objects\objSpike</object>
     <object>objects\objSpikesNonSolid</object>
-    <object>objects\objRingGiant</object>
-    <object>objects\objTimePost</object>
-    <object>objects\obj3dLayerFlip</object>
     <object>objects\objStart</object>
-    <objects name="Game">
-      <objects name="Input">
-        <object>objects\objInputDummy</object>
-        <object>objects\objInput</object>
-      </objects>
-      <object>objects\objGameData</object>
-      <object>objects\objProgram</object>
-      <object>objects\objMusic</object>
-      <object>objects\objResources</object>
-      <object>objects\objScreen</object>
-    </objects>
+    <object>objects\objTimePost</object>
     <objects name="Overlays">
       <objects name="Title Screen">
-        <object>objects\objLogo</object>
-        <object>objects\objTitleControl</object>
-        <object>objects\objTitleRing</object>
-        <object>objects\objTitleRingOverlay</object>
-        <object>objects\objTitleDynamo</object>
-        <object>objects\objTitleSonic</object>
-        <object>objects\objTitleCloud0</object>
-        <object>objects\objTitleEffects</object>
-        <object>objects\objTitleLighting</object>
-        <object>objects\objTitleCloud1</object>
         <object>objects\objCharacterSelect</object>
         <object>objects\objLevelSelect</object>
         <object>objects\objSelector</object>
+        <object>objects\objTitleCloud0</object>
+        <object>objects\objTitleCloud1</object>
+        <object>objects\objTitleControl</object>
+        <object>objects\objTitleDynamo</object>
+        <object>objects\objTitleEffects</object>
+        <object>objects\objTitleLighting</object>
+        <object>objects\objTitleRing</object>
+        <object>objects\objTitleRingOverlay</object>
         <object>objects\objTitlescreenPlane</object>
+        <object>objects\objTitleSonic</object>
         <object>objects\objTitleWater</object>
       </objects>
       <objects name="Transitions">
-        <object>objects\objFade</object>
-        <object>objects\objSSToLevel</object>
-        <object>objects\objLevelToSS</object>
-        <object>objects\objFadeWhite</object>
-        <object>objects\objFadeWhiteFromSave</object>
-        <object>objects\objEnterUFO</object>
+        <object>objects\objCloudTransition</object>
         <object>objects\objEnterFFZ</object>
         <object>objects\objEnterTTZF</object>
-        <object>objects\objCloudTransition</object>
-        <object>objects\objTTZ2Transition</object>
+        <object>objects\objEnterUFO</object>
+        <object>objects\objFade</object>
+        <object>objects\objFadeWhite</object>
+        <object>objects\objFadeWhiteFromSave</object>
+        <object>objects\objFinalEnding</object>
         <object>objects\objGameOver</object>
+        <object>objects\objLevelToSS</object>
+        <object>objects\objSSToLevel</object>
+        <object>objects\objSSZEndTransition</object>
         <object>objects\objTimeTravel</object>
         <object>objects\objTitlecard</object>
         <object>objects\objTitlecardDisolve</object>
-        <object>objects\objTitleCardSSZ</object>
         <object>objects\objTitleCardFFZ</object>
+        <object>objects\objTitleCardSSZ</object>
         <object>objects\objTransition</object>
-        <object>objects\objSSZEndTransition</object>
-        <object>objects\objFinalEnding</object>
-        <object>objects\objEndingTransition</object>
+        <object>objects\objTTZ2Transition</object>
+      </objects>
+      <objects name="Save Screen">
+        <object>objects\objSaveSlot</object>
+        <object>objects\objDeleteSlot</object>
+        <object>objects\objSaveControl</object>
       </objects>
       <object>objects\objHud</object>
       <object>objects\objParallax</object>
       <object>objects\objThanksControl</object>
       <object>objects\objScoreCard</object>
-      <objects name="save screen">
-        <object>objects\objSaveSlot</object>
-        <object>objects\objDeleteSlot</object>
-        <object>objects\objSaveControl</object>
+    </objects>
+    <objects name="Planetary Panic">
+      <objects name="Backgrounds">
+        <object>objects\objPPBackEarth</object>
+        <object>objects\objPPBackground</object>
+      </objects>
+      <objects name="Breakable Platform">
+        <object>objects\objBreakableRockBits</object>
+        <object>objects\objBreakableRocks</object>
+      </objects>
+      <object>objects\objCrateLong</object>
+      <object>objects\objFallingBlocks</object>
+      <object>objects\objGalanikShadow</object>
+      <object>objects\objLargeRock</object>
+      <object>objects\objLava</object>
+      <object>objects\objLavaCrack</object>
+      <object>objects\objLavaRock</object>
+      <object>objects\objLavaSeep</object>
+      <object>objects\objLavaTop</object>
+      <object>objects\objRockStairs</object>
+      <object>objects\objScurge</object>
+      <object>objects\objSingleFallBlock</object>
+      <object>objects\objSmallRock</object>
+      <object>objects\objSSLevelChunks</object>
+    </objects>
+    <objects name="Raging Ruins">
+      <objects name="Backgrounds">
+        <object>objects\objRRFBack</object>
+        <object>objects\objRRPBack</object>
+      </objects>
+      <objects name="Tiles">
+        <object>objects\objLittlePlanetPast</object>
+        <object>objects\objBigLittlePlanet</object>
+      </objects>
+      <object>objects\objAASwing</object>
+      <object>objects\objArrowChild</object>
+      <object>objects\objArrowParent</object>
+      <object>objects\objArrowSpawn</object>
+      <object>objects\objCanon</object>
+      <object>objects\objCanonSmoke</object>
+      <object>objects\objGlassBottom</object>
+      <object>objects\objGlassBreak</object>
+      <object>objects\objGlassTop</object>
+      <object>objects\objRRBreakableColumn</object>
+      <object>objects\objRRWallRun</object>
+      <object>objects\objSwing</object>
+    </objects>
+    <objects name="Scene Objects">
+      <objects name="Cutscene">
+        <objects name="Intro (Future)">
+          <object>objects\objDustCloud</object>
+          <object>objects\objIntro1Control</object>
+          <object>objects\objIntroClouds</object>
+          <object>objects\objIntroIsland</object>
+          <object>objects\objIntroLittlePlanet</object>
+          <object>objects\objIntroMetalBack</object>
+          <object>objects\objIntroMetalProfile</object>
+          <object>objects\objIntroMetalZoom</object>
+          <object>objects\objMetalBackFull</object>
+          <object>objects\objPyramid</object>
+          <object>objects\objPyramidBack</object>
+          <object>objects\objPyramidJump</object>
+          <object>objects\objPyramidRotate</object>
+        </objects>
+        <objects name="Intro (Past)">
+          <object>objects\objBadnikCutscene</object>
+          <object>objects\objCutEmeralds</object>
+          <object>objects\objCutsceneController</object>
+          <object>objects\objDeathEggCut</object>
+          <object>objects\objFadeInWhite</object>
+          <object>objects\objIntroIslandPast</object>
+          <object>objects\objKnucklesIntroPast</object>
+          <object>objects\objKnucklesLight</object>
+          <object>objects\objMetalSonicWarped</object>
+          <object>objects\objRobotnikPastIntro</object>
+          <object>objects\objSmallSonic</object>
+          <object>objects\objSonicIntroPast</object>
+          <object>objects\objSonicKnuckles</object>
+          <object>objects\objSonicLight</object>
+          <object>objects\objTailsFlyCut</object>
+          <object>objects\objTailsIntroPast</object>
+          <object>objects\objTailsLight</object>
+          <object>objects\objTimeTravelVortex</object>
+        </objects>
+        <objects name="Outro">
+          <object>objects\objAmyEnding</object>
+          <object>objects\objBiPlane</object>
+          <object>objects\objCharacterFall</object>
+          <object>objects\objCredits</object>
+          <object>objects\objEndingExplode</object>
+          <object>objects\objGalacnikFootPart</object>
+          <object>objects\objGalacnikHandPart</object>
+          <object>objects\objGalacnikStatchPart</object>
+          <object>objects\objGalanikBadEnding</object>
+          <object>objects\objGalanikFloat</object>
+          <object>objects\objLittlePlanetPiece1</object>
+          <object>objects\objLittlePlanetPiece2</object>
+          <object>objects\objLittlePlanetPiece3</object>
+          <object>objects\objMetalElectric</object>
+          <object>objects\objNeverLakeEnding</object>
+          <object>objects\objPlaneRestoreFinal</object>
+          <object>objects\objTextEnding</object>
+          <object>objects\objTLPRestoreEnding</object>
+        </objects>
+      </objects>
+      <objects name="Parents">
+        <object>objects\objNonSolid</object>
+        <object>objects\objSceneObject</object>
+        <object>objects\objSolid</object>
+      </objects>
+      <objects name="Player">
+        <objects name="Effects">
+          <objects name="Shields">
+            <objects name="Earth">
+              <object>objects\objShieldEarth_Rock</object>
+              <object>objects\objShieldEarth</object>
+            </objects>
+            <objects name="Ice">
+              <object>objects\objShieldIce</object>
+              <object>objects\objShieldIceAttack</object>
+              <object>objects\objShieldIceBlockDebris</object>
+            </objects>
+            <object>objects\objShieldBubble</object>
+            <object>objects\objShieldFlame</object>
+            <object>objects\objShieldLightning</object>
+            <object>objects\objShieldWind</object>
+          </objects>
+          <object>objects\objDashSmoke</object>
+          <object>objects\objFallHat</object>
+          <object>objects\objInstaShield</object>
+          <object>objects\objInvincibility</object>
+          <object>objects\objShield</object>
+          <object>objects\objTailsEffect</object>
+        </objects>
+        <object>objects\objCamera</object>
+        <object>objects\objEffect</object>
+        <object>objects\objPlayer</object>
       </objects>
     </objects>
-    <object>objects\obj3DSlant</object>
-    <object>objects\objLevel</object>
     <objects name="Special Stage">
-      <object>objects\objSSPlayer</object>
-      <object>objects\objSSCamera</object>
-      <object>objects\Solid</object>
-      <object>objects\objSSLevel</object>
+      <objects name="Backgrounds">
+        <object>objects\objSSPastTrack1BG</object>
+      </objects>
       <objects name="Enemy">
-        <object>objects\objSSCaterminatorOrb</object>
-        <object>objects\objSSOrbinautOrb</object>
-        <object>objects\objSSOrbinaut</object>
         <object>objects\obj3DExplosion</object>
-        <object>objects\objSSCaterminator</object>
-        <object>objects\objSSEnemy</object>
-        <object>objects\objSSMoleMissile</object>
         <object>objects\objMissileFire</object>
+        <object>objects\objSSCaterminator</object>
+        <object>objects\objSSCaterminatorOrb</object>
+        <object>objects\objSSEnemy</object>
         <object>objects\objSSMole</object>
+        <object>objects\objSSMoleMissile</object>
         <object>objects\objSSWhalebot</object>
+      </objects>
+      <objects name="Hazard">
+        <object>objects\objSSBumper</object>
+        <object>objects\objSSSpikeBall</object>
       </objects>
       <objects name="Interface">
         <object>objects\objSSHud</object>
         <object>objects\objSSScoreCard</object>
         <object>objects\objSSMessages</object>
       </objects>
-      <objects name="rings">
+      <objects name="Rings">
         <object>objects\objSSRing</object>
         <object>objects\objSSRingFly</object>
       </objects>
-      <objects name="Hazard">
-        <object>objects\objSSBumper</object>
-        <object>objects\objSSSpikeBall</object>
-        <object>objects\objSSLargeSpike</object>
-      </objects>
-      <object>objects\objSSMetalSonic</object>
-      <object>objects\obj3DShadow</object>
-      <object>objects\objSSLife</object>
-      <object>objects\objTrack</object>
-      <object>objects\objSSParent</object>
-      <object>objects\objSSEnd</object>
-      <object>objects\objSSEmerald</object>
       <objects name="Tracks">
         <objects name="Future">
           <object>objects\objSSFutureTrack1_1</object>
@@ -3134,103 +3053,144 @@
           <object>objects\objSSPastTrack7_2</object>
         </objects>
       </objects>
-      <objects name="Backgrounds">
-        <object>objects\objSSPastTrack1BG</object>
-      </objects>
       <object>objects\objSSBoost</object>
+      <object>objects\objSSCamera</object>
+      <object>objects\objSSEmerald</object>
+      <object>objects\objSSEnd</object>
+      <object>objects\objSSLevel</object>
+      <object>objects\objSSLife</object>
+      <object>objects\objSSMetalSonic</object>
+      <object>objects\objSSParent</object>
+      <object>objects\objSSPlayer</object>
+      <object>objects\objTrack</object>
+      <object>objects\Solid</object>
     </objects>
-    <object>objects\objPathSplitStall</object>
-    <objects name="Scene Objects">
-      <objects name="Parents">
-        <object>objects\objNonSolid</object>
-        <object>objects\objSceneObject</object>
-        <object>objects\objSolid</object>
+    <objects name="Springs">
+      <object>objects\objHiddenSpring</object>
+      <object>objects\objSpring</object>
+      <object>objects\objSpringBlock</object>
+      <object>objects\objSpringDiagonal</object>
+      <object>objects\objSpringGreen</object>
+      <object>objects\objSpringRed</object>
+      <object>objects\objSpringRedDiagonal</object>
+    </objects>
+    <objects name="Sunken Saucer">
+      <objects name="Cutscene">
+        <object>objects\objSSController</object>
+        <object>objects\objSSMetalCut</object>
+        <object>objects\objSSRobotnik</object>
+        <object>objects\objSSScreen</object>
       </objects>
-      <objects name="Player">
-        <objects name="Effects">
-          <objects name="Shields">
-            <objects name="Ice">
-              <object>objects\objShieldIce</object>
-              <object>objects\objShieldIceAttack</object>
-              <object>objects\objShieldIceBlockDebris</object>
-            </objects>
-            <object>objects\objShieldBubble</object>
-            <object>objects\objShieldFlame</object>
-            <object>objects\objShieldLightning</object>
-            <object>objects\objShieldWind</object>
-            <object>objects\objShieldEarth</object>
-            <object>objects\objShieldEarth_Rock</object>
-          </objects>
-          <object>objects\objDashSmoke</object>
-          <object>objects\objInstaShield</object>
-          <object>objects\objInvincibility</object>
-          <object>objects\objShield</object>
-          <object>objects\objTailsEffect</object>
-          <object>objects\objFallHat</object>
-        </objects>
-        <object>objects\objCamera</object>
-        <object>objects\objEffect</object>
-        <object>objects\objPlayer</object>
+      <objects name="Pong">
+        <object>objects\objPaddle</object>
+        <object>objects\objPaddleSwitch</object>
+        <object>objects\objPaddleTop</object>
+        <object>objects\objPongController</object>
+        <object>objects\objSwitchButton</object>
       </objects>
-      <objects name="cutscene">
-        <objects name="intro Future">
-          <object>objects\objDustCloud</object>
-          <object>objects\objIntro1Control</object>
-          <object>objects\objIntroClouds</object>
-          <object>objects\objIntroIsland</object>
-          <object>objects\objIntroLittlePlanet</object>
-          <object>objects\objIntroMetalBack</object>
-          <object>objects\objIntroMetalFly</object>
-          <object>objects\objIntroMetalProfile</object>
-          <object>objects\objIntroMetalZoom</object>
-          <object>objects\objIntroSonicRunForward</object>
-          <object>objects\objPyramid</object>
-          <object>objects\objPyramidBack</object>
-          <object>objects\objPyramidRotate</object>
-          <object>objects\objMetalBackFull</object>
-          <object>objects\objPyramidJump</object>
+      <objects name="SparkCannon">
+        <object>objects\objSpark</object>
+        <object>objects\objSparkCannon</object>
+      </objects>
+      <objects name="Tiles">
+        <object>objects\objSSBack</object>
+        <object>objects\objSSZBGParallax</object>
+        <object>objects\objSSZBGParallax2</object>
+        <object>objects\objSSZBGParallax3</object>
+        <object>objects\objSSZBGParallax4</object>
+      </objects>
+      <object>objects\objConveyerAngled</object>
+      <object>objects\objFlippingPlatform</object>
+      <object>objects\objMagnet</object>
+      <object>objects\objMagnetSparkle</object>
+      <object>objects\objShocker</object>
+      <object>objects\objShockerLaser</object>
+      <object>objects\objShockerTop</object>
+      <object>objects\objSSPlatformVertical</object>
+      <object>objects\objUFOFan</object>
+    </objects>
+    <objects name="Terrain Masks">
+      <object>objects\objBlock</object>
+      <object>objects\objCurveConcave</object>
+      <object>objects\objCurveConcaveSlim</object>
+      <object>objects\objCurveConvex</object>
+      <object>objects\objCurveConvexSlim</object>
+      <object>objects\objSlant</object>
+    </objects>
+    <objects name="Tidal Tubes">
+      <objects name="Background">
+        <object>objects\objTTFutureBack</object>
+        <object>objects\objTTFutureBack2</object>
+        <object>objects\objTTFutureRig</object>
+        <object>objects\objTTFutureRig2</object>
+        <object>objects\objTTPastBack</object>
+        <object>objects\objTTPastBack2</object>
+        <object>objects\objTTPastBackParent</object>
+        <object>objects\objTTPastShip</object>
+        <object>objects\objTTPastShipMedium</object>
+        <object>objects\objTTPastShipSmall</object>
+      </objects>
+      <object>objects\objCrate</object>
+      <object>objects\objDynamoDeath</object>
+      <object>objects\objFallingLog</object>
+      <object>objects\objFallingLogVanish</object>
+      <object>objects\objLillyPad</object>
+      <object>objects\objSpikeRoller</object>
+      <object>objects\objSpikeRollerHarmful</object>
+      <object>objects\objTTFFallingPlatform</object>
+      <object>objects\objTTFMovingFloor</object>
+      <object>objects\objTTFMovingFloorChild</object>
+      <object>objects\objTTPWave</object>
+      <object>objects\objTTSwingWhere</object>
+      <object>objects\objTubeWater</object>
+      <object>objects\objWaterJet</object>
+      <object>objects\objWaterJetEmmiter</object>
+      <object>objects\objWaterJetEmmiterTripple</object>
+      <object>objects\objWaterJetTripple</object>
+    </objects>
+    <objects name="Viridian Valley">
+      <objects name="Objects">
+        <objects name="Bombs">
+          <object>objects\objVVBomb</object>
+          <object>objects\objVVBombExplosion</object>
+          <object>objects\objVVBombLarge</object>
+          <object>objects\objVVBombLauncher</object>
         </objects>
-        <objects name="intro Past">
-          <object>objects\objCutsceneController</object>
-          <object>objects\objBadnikCutscene</object>
-          <object>objects\objSonicLight</object>
-          <object>objects\objTailsLight</object>
-          <object>objects\objKnucklesLight</object>
-          <object>objects\objSonicIntroPast</object>
-          <object>objects\objKnucklesIntroPast</object>
-          <object>objects\objTailsIntroPast</object>
-          <object>objects\objIntroIslandPast</object>
-          <object>objects\objRobotnikPastIntro</object>
-          <object>objects\objDeathEggCut</object>
-          <object>objects\objSmallSonic</object>
-          <object>objects\objCutEmeralds</object>
-          <object>objects\objSonicKnuckles</object>
-          <object>objects\objTailsFlyCut</object>
-          <object>objects\objMetalSonicWarped</object>
-          <object>objects\objFadeInWhite</object>
-          <object>objects\objTimeTravelVortex</object>
+        <objects name="Metal Sonic Thowing">
+          <object>objects\objMetalThrow</object>
+          <object>objects\objMetalThrowController</object>
+          <object>objects\objUFO</object>
+          <object>objects\objUFOFlame</object>
+          <object>objects\objUFOLead</object>
         </objects>
-        <objects name="Outro">
-          <object>objects\objGalanikFloat</object>
-          <object>objects\objCharacterFall</object>
-          <object>objects\objLittlePlanetPiece1</object>
-          <object>objects\objBiPlane</object>
-          <object>objects\objCredits</object>
-          <object>objects\objEndingClouds</object>
-          <object>objects\objNeverLakeEnding</object>
-          <object>objects\objPlaneRestoreFinal</object>
-          <object>objects\objLittlePlanetPiece3</object>
-          <object>objects\objLittlePlanetPiece2</object>
-          <object>objects\objGalanikBadEnding</object>
-          <object>objects\objTextEnding</object>
-          <object>objects\objTLPRestoreEnding</object>
-          <object>objects\objMetalElectric</object>
-          <object>objects\objAmyEnding</object>
-          <object>objects\objEndingExplode</object>
-          <object>objects\objGalacnikFootPart</object>
-          <object>objects\objGalacnikStatchPart</object>
-          <object>objects\objGalacnikHandPart</object>
+        <objects name="Rhinobot Spawn">
+          <object>objects\objVVRhinobotSpawn</object>
+          <object>objects\objVVRhinobotSpawnDebris</object>
         </objects>
+        <objects name="Ships">
+          <object>objects\objVVShip</object>
+          <object>objects\objVVShipLarge</object>
+          <object>objects\objVVShipMedium</object>
+          <object>objects\objVVShipMediumStationary</object>
+        </objects>
+        <objects name="Terrain Masks">
+          <object>objects\objVVMask01</object>
+        </objects>
+        <object>objects\objOldManOwl</object>
+        <object>objects\objVVBreakableWall</object>
+        <object>objects\objVVBreakableWallDebris</object>
+        <object>objects\objVVBushes</object>
+        <object>objects\objVVLeaf</object>
+        <object>objects\objVVPlatform</object>
+        <object>objects\objVVTileHole</object>
+      </objects>
+      <objects name="Backgrounds">
+        <object>objects\objUFOBg</object>
+        <object>objects\objVVFutureBack</object>
+        <object>objects\objVVFutureBackAct2</object>
+        <object>objects\objVVPastBack</object>
+        <object>objects\objVVPastBack2</object>
+        <object>objects\objVVPastBackSun</object>
       </objects>
     </objects>
   </objects>
@@ -3471,8 +3431,7 @@
     </rooms>
     <room>rooms\titlescreen</room>
     <room>rooms\Thanks</room>
-    <room>rooms\room36</room>
-    <rooms name="cutscene">
+    <rooms name="Cutscenes">
       <rooms name="intro Future">
         <room>rooms\intro1</room>
         <room>rooms\intro2</room>
