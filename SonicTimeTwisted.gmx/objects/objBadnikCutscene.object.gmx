@@ -75,41 +75,6 @@ scale=1
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="objKnucklesLight">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if sprite_index == sprCutExplosion
-exit;
-
-if image_xscale == .5 {
-    sprite_index=sprCutExplosion;
-    image_xscale = .125;
-    image_yscale = .125;
-    image_index=0;
-    x+=31;
-    y+=24;
-    depth=1;
-    audio_play_sound(sndBrokenBadnik,10,false);
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="4" ename="objTailsLight">
       <action>
         <libid>1</libid>
@@ -173,6 +138,41 @@ if image_xscale == 1 {
     image_yscale = .125;
     image_index=0;
     depth=0;
+    audio_play_sound(sndBrokenBadnik,10,false);
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="objKnucklesLight">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if sprite_index == sprCutExplosion
+exit;
+
+if image_xscale == .5 {
+    sprite_index=sprCutExplosion;
+    image_xscale = .125;
+    image_yscale = .125;
+    image_index=0;
+    x+=31;
+    y+=24;
+    depth=1;
     audio_play_sound(sndBrokenBadnik,10,false);
 }
 </string>

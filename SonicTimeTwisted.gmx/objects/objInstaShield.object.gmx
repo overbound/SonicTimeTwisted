@@ -81,7 +81,7 @@ if script_exists(monitor.reaction_script)
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="objMoleFan">
+    <event eventtype="4" ename="objSquibot">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -127,7 +127,31 @@ if script_exists(monitor.reaction_script)
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="objSquibot">
+    <event eventtype="4" ename="objBigBombBadnik">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>insta_shield_use_reaction();
+player_add_score(500);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="objMoleFan">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -150,7 +174,7 @@ if script_exists(monitor.reaction_script)
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="objBigBombBadnik">
+    <event eventtype="4" ename="objFireFlyLight">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -168,7 +192,6 @@ if script_exists(monitor.reaction_script)
           <argument>
             <kind>1</kind>
             <string>insta_shield_use_reaction();
-player_add_score(500);
 </string>
           </argument>
         </arguments>
@@ -242,29 +265,6 @@ if alarm[0] == -1 {
         }
 }
 
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="objFireFlyLight">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>insta_shield_use_reaction();
 </string>
           </argument>
         </arguments>

@@ -133,7 +133,6 @@
         <sound>sound\sndShakeHead</sound>
         <sound>sound\sndSSTwinkle</sound>
         <sound>sound\sndTailsTalks</sound>
-        <sound>sound\sndTimeWarp</sound>
         <sound>sound\sndTLPWarp</sound>
       </sounds>
       <sounds name="Global">
@@ -167,7 +166,6 @@
           <sound>sound\sndSmash</sound>
           <sound>sound\sndSpike</sound>
           <sound>sound\sndSpikeLand</sound>
-          <sound>sound\sndSpikeMove</sound>
           <sound>sound\sndSplash</sound>
           <sound>sound\sndSpring</sound>
           <sound>sound\sndSpringHigh</sound>
@@ -179,16 +177,15 @@
             <sound>sound\sndBounce</sound>
             <sound>sound\sndDoubleJump</sound>
             <sound>sound\sndFlameDash</sound>
+            <sound>sound\sndIceShot</sound>
             <sound>sound\sndInstaShield</sound>
-            <sound>sound\sndShield</sound>
             <sound>sound\sndShieldBubble</sound>
             <sound>sound\sndShieldFlame</sound>
-            <sound>sound\sndShieldLightning</sound>
-            <sound>sound\sndWindFlight</sound>
-            <sound>sound\sndShieldWind</sound>
             <sound>sound\sndShieldIce</sound>
-            <sound>sound\sndIceShot</sound>
+            <sound>sound\sndShieldLightning</sound>
+            <sound>sound\sndShieldWind</sound>
             <sound>sound\sndTransformSuper</sound>
+            <sound>sound\sndWindFlight</sound>
           </sounds>
           <sounds name="General">
             <sound>sound\sndBrake</sound>
@@ -199,10 +196,10 @@
             <sound>sound\sndJump</sound>
             <sound>sound\sndRing</sound>
             <sound>sound\sndRingLoss</sound>
+            <sound>sound\sndSnowBoarding</sound>
             <sound>sound\sndSpin</sound>
             <sound>sound\sndSpinDash</sound>
             <sound>sound\sndSpinRev</sound>
-            <sound>sound\sndSnowBoarding</sound>
           </sounds>
           <sounds name="Tails">
             <sound>sound\sndFlight</sound>
@@ -255,7 +252,6 @@
               <sound>sound\sndAASlotSwitch</sound>
               <sound>sound\sndAASlotWin</sound>
               <sound>sound\sndAATrampoline</sound>
-              <sound>sound\sndCDBumper</sound>
               <sound>sound\sndFlipper</sound>
               <sound>sound\sndPropeller</sound>
             </sounds>
@@ -293,7 +289,6 @@
               <sound>sound\sndWaterBumper</sound>
             </sounds>
             <sounds name="Viridian Valley">
-              <sound>sound\sndMetalFly</sound>
               <sound>sound\sndMetalUFOAttack</sound>
               <sound>sound\sndVVLeaves</sound>
             </sounds>
@@ -310,10 +305,8 @@
         <sprite>sprites\sprIntroIsland</sprite>
         <sprite>sprites\sprIntroLittlePlanet</sprite>
         <sprite>sprites\sprIntroMetalBack</sprite>
-        <sprite>sprites\sprIntroMetalFly</sprite>
         <sprite>sprites\sprIntroMetalProfile</sprite>
         <sprite>sprites\sprIntroMetalZoom</sprite>
-        <sprite>sprites\sprIntroSonicRunFoward</sprite>
         <sprite>sprites\sprIntroSpotlight</sprite>
         <sprite>sprites\sprIntroWater</sprite>
         <sprite>sprites\sprKnucklesPyramidJump</sprite>
@@ -799,7 +792,6 @@
             <sprite>sprites\sprFinalBoss</sprite>
             <sprite>sprites\sprFinalBossArm</sprite>
             <sprite>sprites\sprFinalBossBackArm</sprite>
-            <sprite>sprites\sprFinalBossExhaust</sprite>
             <sprite>sprites\sprFinalBossExhaustAdd</sprite>
             <sprite>sprites\sprFinalBossFace</sprite>
           </sprites>
@@ -830,7 +822,6 @@
             <sprite>sprites\BossBodySpr</sprite>
             <sprite>sprites\BossHandSpr</sprite>
             <sprite>sprites\BossOrbSpr</sprite>
-            <sprite>sprites\SparkSpr</sprite>
             <sprite>sprites\sprGolemFoot</sprite>
             <sprite>sprites\sprGolemJet</sprite>
             <sprite>sprites\TargetSpr</sprite>
@@ -897,7 +888,6 @@
             <sprite>sprites\sprAntnikBurn</sprite>
           </sprites>
           <sprites name="Bomb Bots">
-            <sprite>sprites\sprBombBadnik</sprite>
             <sprite>sprites\sprBigBombBadnik</sprite>
           </sprites>
           <sprites name="Bombers">
@@ -986,9 +976,6 @@
             <sprite>sprites\sprOstrichHead</sprite>
             <sprite>sprites\sprOstrichDebris</sprite>
           </sprites>
-          <sprites name="Penguin Bot">
-            <sprite>sprites\sprPenguin</sprite>
-          </sprites>
           <sprites name="Rhinos">
             <sprites name="Fire Rhinobot">
               <sprite>sprites\sprFireRinobot</sprite>
@@ -1035,7 +1022,6 @@
           <sprite>sprites\sprExampleBridge</sprite>
           <sprite>sprites\sprExampleCollapsingBlock</sprite>
           <sprite>sprites\sprExampleMovingPlatform</sprite>
-          <sprite>sprites\sprExamplePushable</sprite>
           <sprite>sprites\sprExampleQuicksand</sprite>
         </sprites>
         <sprites name="Special Stages">
@@ -1125,8 +1111,6 @@
                 <sprite>sprites\sprSlotBack</sprite>
               </sprites>
               <sprites name="Smasher">
-                <sprite>sprites\sprAASmasher</sprite>
-                <sprite>sprites\sprAASmasherMask</sprite>
                 <sprite>sprites\sprAASmasherSmall</sprite>
               </sprites>
               <sprites name="Swing">
@@ -1199,8 +1183,6 @@
               </sprites>
               <sprites name="Snow Blower">
                 <sprite>sprites\sprFFSnowParticle</sprite>
-                <sprite>sprites\sprSnowBlowerH</sprite>
-                <sprite>sprites\sprSnowBlowerHTop</sprite>
                 <sprite>sprites\sprSnowBlowerV</sprite>
                 <sprite>sprites\sprSnowBlowerVTop</sprite>
               </sprites>
@@ -1228,7 +1210,6 @@
             <sprite>sprites\sprExampleFlower</sprite>
             <sprite>sprites\sprUFO</sprite>
             <sprite>sprites\sprUFODark</sprite>
-            <sprite>sprites\sprUFOGreen</sprite>
             <sprite>sprites\sprWaterfall</sprite>
           </sprites>
           <sprites name="Plane">
@@ -1821,10 +1802,6 @@
     </paths>
     <paths name="Cutscenes">
       <path>paths\pthIntroMetalZoom</path>
-    </paths>
-    <paths name="Drifting Dynamo">
-      <path>paths\DDPRockPath1</path>
-      <path>paths\DDPRockPath2</path>
     </paths>
     <paths name="Special Stages">
       <paths name="Future">
@@ -3468,66 +3445,54 @@
       </rooms>
     </rooms>
   </rooms>
-  <constants number="59">
-    <constant name="GAMEPAD_POV_Y">7</constant>
-    <constant name="GAMEPAD_POV_X">6</constant>
-    <constant name="GAMEPAD_AXIS_V">5</constant>
-    <constant name="GAMEPAD_AXIS_U">7</constant>
-    <constant name="GAMEPAD_AXIS_R">3</constant>
-    <constant name="GAMEPAD_AXIS_Z">2</constant>
-    <constant name="GAMEPAD_AXIS_Y">1</constant>
-    <constant name="GAMEPAD_AXIS_X">0</constant>
-    <constant name="EMERALDS">'k9(2h@'</constant>
-    <constant name="STATS">'LDGaS'</constant>
-    <constant name="PAST">'c20n1('</constant>
-    <constant name="FUTURE">'top204'</constant>
-    <constant name="LEVELS">'9z1kj'</constant>
-    <constant name="BIG_RINGS">'y6[4hjf'</constant>
-    <constant name="LIVES">'lk[]]'</constant>
-    <constant name="CHARACTER">'k2nlKft'</constant>
-    <constant name="cUP">1</constant>
-    <constant name="cDOWN">2</constant>
-    <constant name="cLEFT">4</constant>
-    <constant name="cRIGHT">8</constant>
-    <constant name="cA">16</constant>
-    <constant name="cB">32</constant>
-    <constant name="cC">64</constant>
-    <constant name="cSTART">128</constant>
-    <constant name="cACTION">cA | cB | cC</constant>
-    <constant name="cCANCEL">cB</constant>
-    <constant name="cCONFIRM">cA | cSTART</constant>
-    <constant name="BINDING_TYPE_NONE">0</constant>
-    <constant name="BINDING_TYPE_KEY">1</constant>
-    <constant name="BINDING_TYPE_BUTTON">2</constant>
-    <constant name="BINDING_TYPE_AXIS">3</constant>
+  <constants number="47">
     <constant name="aAA1_f">'*%sfdg'</constant>
     <constant name="aAA1_p">'sfdg7#%'</constant>
     <constant name="aAA2_f">'fda@%'</constant>
     <constant name="aAA2_p">'$@dgf'</constant>
-    <constant name="aRR1_f">'}P{L?&gt;'</constant>
-    <constant name="aRR1_p">'dsa@('</constant>
-    <constant name="aRR2_f">'fds(_&amp;_'</constant>
-    <constant name="aRR2_p">'gfdas'</constant>
-    <constant name="aFF1_f">'_)*()'</constant>
-    <constant name="aFF1_p">'@*(#kjdfa'</constant>
-    <constant name="aFF2_f">'HJ8u*'</constant>
-    <constant name="aFF2_p">'*(Uk'</constant>
-    <constant name="aVV1_f">'1*(8'</constant>
-    <constant name="aVV1_p">'}{AF13*'</constant>
-    <constant name="aVV2_f">'kla4()sk'</constant>
-    <constant name="aVV2_p">'adfs24'</constant>
     <constant name="aDD1_f">'afds24230'</constant>
     <constant name="aDD1_p">'j}{^&amp;*'</constant>
     <constant name="aDD2_f">'kjl4325'</constant>
     <constant name="aDD2_p">'kjdfas*('</constant>
+    <constant name="aFF1_f">'_)*()'</constant>
+    <constant name="aFF1_p">'@*(#kjdfa'</constant>
+    <constant name="aFF2_f">'HJ8u*'</constant>
+    <constant name="aFF2_p">'*(Uk'</constant>
+    <constant name="aMM1">'^&amp;*(jkl'</constant>
+    <constant name="aPP1">'&amp;*(kjda'</constant>
+    <constant name="aPP2">'A:Lfda'</constant>
+    <constant name="aRR1_f">'}P{L?&gt;'</constant>
+    <constant name="aRR1_p">'dsa@('</constant>
+    <constant name="aRR2_f">'fds(_&amp;_'</constant>
+    <constant name="aRR2_p">'gfdas'</constant>
+    <constant name="aSS1">'ldfa234@$'</constant>
     <constant name="aTT1_f">':K90'</constant>
     <constant name="aTT1_p">'()kjs'</constant>
     <constant name="aTT2_f">'Ldfas'</constant>
     <constant name="aTT2_p">'.lladfa'</constant>
-    <constant name="aSS1">'ldfa234@$'</constant>
-    <constant name="aPP1">'&amp;*(kjda'</constant>
-    <constant name="aPP2">'A:Lfda'</constant>
-    <constant name="aMM1">'^&amp;*(jkl'</constant>
+    <constant name="aVV1_f">'1*(8'</constant>
+    <constant name="aVV1_p">'}{AF13*'</constant>
+    <constant name="aVV2_f">'kla4()sk'</constant>
+    <constant name="aVV2_p">'adfs24'</constant>
+    <constant name="BIG_RINGS">'y6[4hjf'</constant>
+    <constant name="cA">16</constant>
+    <constant name="cACTION">cA | cB | cC</constant>
+    <constant name="cB">32</constant>
+    <constant name="cC">64</constant>
+    <constant name="cCANCEL">cB</constant>
+    <constant name="cCONFIRM">cA | cSTART</constant>
+    <constant name="cDOWN">2</constant>
+    <constant name="CHARACTER">'k2nlKft'</constant>
+    <constant name="cLEFT">4</constant>
+    <constant name="cRIGHT">8</constant>
+    <constant name="cSTART">128</constant>
+    <constant name="cUP">1</constant>
+    <constant name="EMERALDS">'k9(2h@'</constant>
+    <constant name="FUTURE">'top204'</constant>
+    <constant name="LEVELS">'9z1kj'</constant>
+    <constant name="LIVES">'lk[]]'</constant>
+    <constant name="PAST">'c20n1('</constant>
+    <constant name="STATS">'LDGaS'</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>
