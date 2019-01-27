@@ -70,6 +70,7 @@ if window_get_fullscreen() window_mode = 2; else
 if window_get_width() &gt; width or window_get_height() &gt; height { window_mode = 1; window_scale = 2 } else
 if (window_get_width() != width * window_scale) or (window_get_height() != height * window_scale) window_set_size(width * window_scale, height * window_scale);
 surface_resize(application_surface, width, height);
+
 // os properties
 /*fullscreen_enabled = false;
 switch os_type
@@ -247,7 +248,6 @@ if screenshot &gt; -1 &amp;&amp; !instance_exists(objSSHud)
 }
 else if scanlines
 {
-    //draw_background_stretched(backScanlines, 0, 0, room_width, 480);
 }
 </string>
           </argument>
