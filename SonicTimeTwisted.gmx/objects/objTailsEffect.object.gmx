@@ -216,6 +216,7 @@ case "spin":
     yoffset = 0;
     xoffset = 0;
     break;
+
 case "spindash":
     visible = true;
     sprite_index = sprTailsEffect3;
@@ -223,6 +224,7 @@ case "spindash":
     yoffset = 0;
     xoffset = 0;
     break;
+
 case "flight": case "flight_end":
     visible = true;
     sprite_index = sprTailsEffect4;
@@ -230,12 +232,16 @@ case "flight": case "flight_end":
     yoffset = 0;
     xoffset = 0;
     break;
+
 default: visible = false;
 }
+
 // abort if not visible
 if not visible exit;
+
 // set facing
 image_xscale = player_id.facing;
+
 // set angle
 switch player_id.state
 {
@@ -246,16 +252,20 @@ case player_state_fall_automatically:
     if image_xscale image_angle = point_direction(0, 0, player_id.xspeed, player_id.yspeed); else
     image_angle = point_direction(player_id.xspeed, player_id.yspeed, 0, 0);
     break;
+
 case player_state_stand:
     // match gravity angle
     image_angle = gravity_angle();
     break;
+
 default:
     // match player's angle
     image_angle = player_id.angle;
 }
+
 // flashing
 image_alpha = 1-((player_id.invulnerable div 4) mod 2);
+
 //depth
 depth = player_id.depth;
 </string>
@@ -281,11 +291,14 @@ depth = player_id.depth;
           <argument>
             <kind>1</kind>
             <string>/// Destroy enemy if flying
+
 // abort if not actually flying
 if player_id.state!=player_state_fly or player_id.underwater exit;
 if sprite_index!=sprTailsEffect4 exit;
+
 // abort if cannot damage
 if other.invulnerable exit;
+
 // scoring
 var bonus_score;
 if player_id.chain_multiplier&gt;15 bonus_score = 10000; else
@@ -299,8 +312,10 @@ with instance_create(other.x, other.y, objScorePopup)
     if other.player_id.chain_multiplier&gt;1 image_index = 2; else
     image_index = 1;
 }
+
 // destroy enemy
 with other instance_destroy();
+
 // sound
 audio_play_sound(sndPop, 0, 0);
 </string>
@@ -329,10 +344,13 @@ audio_play_sound(sndPop, 0, 0);
 if player_id.state!=player_state_fly or player_id.underwater exit;
 if sprite_index!=sprTailsEffect4 exit;
 if other.reaction_script == noone exit;
+
 // abort if cannot damage
 if other.invulnerable exit;
+
 if not audio_is_playing(sndBossHit)
     audio_play_sound(sndBossHit,1,false);
+
 with other {
 if alarm[0] == -1 {
         // hit boss
@@ -370,8 +388,10 @@ if alarm[0] == -1 {
             <string>// abort if not actually flying
 if player_id.state!=player_state_fly or player_id.underwater exit;
 if sprite_index!=sprTailsEffect4 exit;
+
 // abort if cannot damage
 if other.invulnerable exit;
+
 var pid = player_id;
 with other {
     if life&gt;0 &amp;&amp; alarm[0] == -1
@@ -425,8 +445,10 @@ with other {
 // abort if not actually flying
 if player_id.state!=player_state_fly or player_id.underwater exit;
 if sprite_index!=sprTailsEffect4 exit;
+
 // abort if cannot damage
 if other.invulnerable exit;
+
 with other {
     if life&gt;0 &amp;&amp; alarm[0] == -1 {
         life -= 1;
@@ -471,8 +493,10 @@ with other {
             <string>// abort if not actually flying
 if player_id.state!=player_state_fly or player_id.underwater exit;
 if sprite_index!=sprTailsEffect4 exit;
+
 // abort if cannot damage
 if other.invulnerable exit;
+
 with other {
     if life&gt;0 &amp;&amp; alarm[0] == -1
     {
@@ -516,8 +540,10 @@ with other {
             <string>// abort if not actually flying
 if player_id.state!=player_state_fly or player_id.underwater exit;
 if sprite_index!=sprTailsEffect4 exit;
+
 // abort if cannot damage
 if other.invulnerable exit;
+
 with other {
     if life&gt;0 &amp;&amp; alarm[0] == -1
     {
@@ -535,8 +561,10 @@ with other {
     
          }else alarm[0] = 15;
     }
+
 // sound
 audio_play_sound(sndBossHit, 2, 0);
+
 </string>
           </argument>
         </arguments>
@@ -562,6 +590,7 @@ audio_play_sound(sndBossHit, 2, 0);
             <string>// abort if not actually flying
 if player_id.state!=player_state_fly or player_id.underwater exit;
 if sprite_index!=sprTailsEffect4 exit;
+
 with other {
     if reaction_script == player_reaction_golem_hand_target  &amp;&amp; image_alpha != 1
             hit = sign(other.player_id.xspeed);
@@ -593,8 +622,10 @@ with other {
             <string>// abort if not actually flying
 if player_id.state!=player_state_fly or player_id.underwater exit;
 if sprite_index!=sprTailsEffect4 exit;
+
 // abort if cannot damage
 if other.invulnerable exit;
+
 with other {
 if alarm[0] == -1 {
         // hit boss
@@ -617,6 +648,7 @@ if alarm[0] == -1 {
             alarm[11] = 30;
         }
 }
+
 </string>
           </argument>
         </arguments>
@@ -641,8 +673,10 @@ if alarm[0] == -1 {
             <kind>1</kind>
             <string>/// player_reaction_fire_fly_light(local_id)
 var bonus_score;
+
 // ignore if already hit
 if other.alarm[0] exit;
+
 // hit boss
 other.alarm[0] = 30;
 objFireFly.graphic.alarm[2] = 30;
@@ -654,8 +688,10 @@ if other.life&gt;0
         objFireFly.graphic.image_index = 1;
     }
 }
+
 // sound
 audio_play_sound(sndBossHit, 0, 0);
+
 </string>
           </argument>
         </arguments>
