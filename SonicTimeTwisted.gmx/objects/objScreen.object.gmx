@@ -198,7 +198,6 @@ if screenshot &gt; -1 &amp;&amp; !instance_exists(objSSHud)
 }
 else if scanlines
 {
-    draw_background_stretched(backScanlines, 0, 0, room_width, 480);
 }
 </string>
           </argument>
