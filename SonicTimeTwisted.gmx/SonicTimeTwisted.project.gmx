@@ -711,6 +711,7 @@
           <sprite>sprites\sprMutekiSpark2</sprite>
           <sprite>sprites\sprMutekiSpark3</sprite>
           <sprite>sprites\sprMutekiSpark4</sprite>
+          <sprite>sprites\sprWaterWave</sprite>
         </sprites>
         <sprites name="Shields">
           <sprites name="General">
@@ -2944,6 +2945,7 @@
           <object>objects\objInvincibility</object>
           <object>objects\objShield</object>
           <object>objects\objTailsEffect</object>
+          <object>objects\objWaterWave</object>
         </objects>
         <object>objects\objCamera</object>
         <object>objects\objEffect</object>
