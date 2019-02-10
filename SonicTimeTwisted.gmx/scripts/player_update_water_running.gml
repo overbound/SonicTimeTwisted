@@ -1,4 +1,43 @@
 // player_update_water_running()
+
+landed &= ~2;
+
+if (abs(xspeed) >= waterrun_threshold) {
+    if (mask_rotation == 0 and not underwater) {
+        var total_locals = instance_number(objWater);
+        var local_id;
+        for (var n = 0; n < total_locals; ++n) {
+            local_id = instance_find(objWater, n);
+            if (local_id.can_run and y <= local_id.bbox_top and
+                collision_ray(offset_x, offset_y + 1, mask_rotation, local_id)) {
+                landed |= 2;
+                if (y != local_id.bbox_top - offset_y - 1) {
+                    y = local_id.bbox_top - offset_y - 1;
+                    angle = 0;
+                    relative_angle = 0;
+                }
+                break;
+            }
+        }
+    }
+}
+
+// wave effect
+if (landed & 2) {
+    if (not instance_exists(wave)) {
+        wave = instance_create(x, y, objWaterWave);
+        wave.player_id = id;
+        wave.image_xscale = facing;
+        wave.depth = depth + 1;
+    }
+} else {
+    if (instance_exists(wave)) {
+        instance_destroy(wave);
+        wave = noone;
+    }
+}
+
+/*
 var total_locals, i, local_id;
 
 // reset flag

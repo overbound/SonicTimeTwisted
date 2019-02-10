@@ -154,6 +154,8 @@ audio = audio_emitter_create();
 reserved_sound = -1;
 shield_type = -1;
 
+wave = noone;
+
 sprite_y_offset = 0;
 
 waterCountAlpha = 0;
