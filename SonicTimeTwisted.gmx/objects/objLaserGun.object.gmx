@@ -41,6 +41,7 @@
             <kind>1</kind>
             <string>laser_height=108;
 image_speed =0;
+laser=noone;
 </string>
           </argument>
         </arguments>
@@ -77,13 +78,14 @@ image_speed =0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>with laser instance_destroy();
+            <string>if (laser != noone &amp;&amp; instance_exists(laser))
+    with laser instance_destroy();
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="7" enumb="4">
+    <event eventtype="3" enumb="1">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -100,9 +102,12 @@ image_speed =0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>laser = instance_create(x,y,objLaserShot);
-laser.laser_height = laser_height;
-laser.gun_id = id;
+            <string>if(laser == noone)
+{
+    laser = instance_create(x,y,objLaserShot);
+    laser.laser_height = laser_height;
+    laser.gun_id = id;
+}
 </string>
           </argument>
         </arguments>

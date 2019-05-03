@@ -43,11 +43,15 @@
 image_speed = 0;
 remove = 0;
 offscreen_enabled = true;
+
+// this is critical in the case of this enemy because it is really slowing down the game!
+is_in_view = false;
+
 // state machine
 state = 0;
 frozen = false;
 // physics
-hspeed = 2;
+hspeed = 0;
 facing = 1;
 wall_facing = 0;
 cliff_facing = 0;
@@ -64,7 +68,7 @@ range_y_or_idle = 120;
 //animation
 timeline_index = animSealbotIdle;
 timeline_loop = false;
-timeline_running = true;
+timeline_running = false;
 </string>
           </argument>
         </arguments>
@@ -123,6 +127,29 @@ with instance_create(x+12, y+8, objShieldIceBlockDebris) {depth = other.depth-1;
     <event eventtype="3" enumb="2">
       <action>
         <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// abort everything if the enemy is not visible
+// if the enemy is in view...
+if(!is_in_view) exit;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
         <id>612</id>
         <kind>0</kind>
         <userelative>0</userelative>
@@ -146,48 +173,6 @@ with instance_create(x+12, y+8, objShieldIceBlockDebris) {depth = other.depth-1;
           <argument>
             <kind>4</kind>
             <string>0</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>422</id>
-        <kind>1</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>0</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>612</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>-1</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_if_variable</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>0</kind>
-            <string>state</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>4</string>
-          </argument>
-          <argument>
-            <kind>4</kind>
-            <string>1</string>
           </argument>
         </arguments>
       </action>
@@ -223,28 +208,74 @@ else
     while collision_box(offset_x, offset_y, 0, objSolid) y -= 1;
     // downward slope
     for (var i=0; i&lt;offset_y*2; i+=1) if collision_ray(offset_x, offset_y+1+i, 0, objSolid) break;
-    if (i&lt;offset_y*2) y += i; else {x -= hspeed; cliff_facing = sign(hspeed);}
+    if (i&lt;offset_y*2)
+    {
+        y += i;
+    }
+    else {
+        x -= hspeed;
+        cliff_facing = sign(hspeed);
+    }
 }
 </string>
           </argument>
         </arguments>
       </action>
+    </event>
+    <event eventtype="3" enumb="1">
       <action>
         <libid>1</libid>
-        <id>424</id>
-        <kind>2</kind>
+        <id>603</id>
+        <kind>7</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>0</exetype>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
         <functionname></functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>is_in_view = rectangle_in_rectangle(bbox_left, bbox_top, bbox_right, bbox_bottom, view_xview[0] - 80, view_yview[0] - 80, view_xview[0] + view_wview[0] + 80, view_yview[0] + view_hview[0] + 80) &gt; 0;
+timeline_running = is_in_view;
+if(!is_in_view)
+{
+    hspeed = 0;
+}
+</string>
+          </argument>
+        </arguments>
       </action>
     </event>
     <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// conditions on which to abort
+// if the enemy is in view...
+if(!is_in_view) exit;
+// if there is no player to find, exit as well
+if(!instance_exists(objPlayer)) exit;
+</string>
+          </argument>
+        </arguments>
+      </action>
       <action>
         <libid>1</libid>
         <id>612</id>
@@ -321,9 +352,13 @@ if(state &lt; 5)
                 // charge if we're not already charging
                 if state!=3 {state = 3; if abs(hspeed)&lt;4 {timeline_position = 0; timeline_index = animSealbotCharge; hspeed = 0; alarm[0] = 30;}}
             }
-            else if state==3 and alarm[0]&lt;=0
+            else if state==3 and (alarm[0]&lt;=0 or facing==cliff_facing)
             {
                 // stop charging
+                if(facing==cliff_facing)
+                {
+                    facing = -facing;
+                }
                 state = 0;
                 image_index = 0;
                 hspeed = 5*facing;
@@ -437,6 +472,29 @@ with other instance_destroy();
       </action>
     </event>
     <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// abort everything if the enemy is not visible
+// if the enemy is in view...
+if(!is_in_view) exit;
+</string>
+          </argument>
+        </arguments>
+      </action>
       <action>
         <libid>1</libid>
         <id>603</id>

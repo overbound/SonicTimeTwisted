@@ -64,6 +64,11 @@ if objLevel.player[0].x &gt; x &amp;&amp; gravity_force &lt;&gt; 0 {
   with paddle[0] alarm[0] = 4;
 }*/
 if switchCount &gt;= 4 {
+    
+    instance_activate_object(paddle[0]);
+    instance_activate_object(paddle[1]);
+    instance_activate_object(switchButton[0]);
+    instance_activate_object(switchButton[1]);
     with paddle[0] { instance_destroy(); }
     with paddle[1] { instance_destroy(); }
     with switchButton[0] { instance_destroy(); }
