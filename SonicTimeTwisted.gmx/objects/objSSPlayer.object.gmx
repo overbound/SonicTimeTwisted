@@ -538,6 +538,82 @@ if (!onGround)
         </arguments>
       </action>
     </event>
+    <event eventtype="4" ename="objSSMetalSonic">
+      <action>
+        <libid>1</libid>
+        <id>601</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_execute_script</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>9</kind>
+            <script>PlayerHarmfulCollision</script>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>other</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="objSSLife">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (!onGround) exit;
+switch other.image_index
+ {
+     case 4: audio_play_sound(sndRockSmash,1,false); objProgram.temp_shield = other.image_index-4; break;
+     case 5: audio_play_sound(sndShieldBubble,1,false);  objProgram.temp_shield = other.image_index-4; break;
+     case 6: audio_play_sound(sndShieldLightning,1,false);  objProgram.temp_shield = other.image_index-4; break;
+     case 7: audio_play_sound(sndShieldFlame,1,false);  objProgram.temp_shield = other.image_index-4; break;
+     case 8: audio_play_sound(sndShieldIce,1,false); objProgram.temp_shield = other.image_index-4; break;
+     case 9: audio_play_sound(sndShieldWind,1,false); objProgram.temp_shield = other.image_index-4; break;
+     default: player_get_lives(1);
+ }
+with other instance_destroy();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="4" ename="objSSBoost">
       <action>
         <libid>1</libid>
@@ -592,41 +668,7 @@ move_speed=12;
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="objSSLife">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if (!onGround) exit;
-switch other.image_index
- {
-     case 4: audio_play_sound(sndRockSmash,1,false); objProgram.temp_shield = other.image_index-4; break;
-     case 5: audio_play_sound(sndShieldBubble,1,false);  objProgram.temp_shield = other.image_index-4; break;
-     case 6: audio_play_sound(sndShieldLightning,1,false);  objProgram.temp_shield = other.image_index-4; break;
-     case 7: audio_play_sound(sndShieldFlame,1,false);  objProgram.temp_shield = other.image_index-4; break;
-     case 8: audio_play_sound(sndShieldIce,1,false); objProgram.temp_shield = other.image_index-4; break;
-     case 9: audio_play_sound(sndShieldWind,1,false); objProgram.temp_shield = other.image_index-4; break;
-     default: player_get_lives(1);
- }
-with other instance_destroy();
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="objSSMetalSonic">
+    <event eventtype="4" ename="objSSRingFly">
       <action>
         <libid>1</libid>
         <id>601</id>
@@ -643,7 +685,49 @@ with other instance_destroy();
         <arguments>
           <argument>
             <kind>9</kind>
-            <script>PlayerHarmfulCollision</script>
+            <script>PlayerRingCollision</script>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>other</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="objSSRing">
+      <action>
+        <libid>1</libid>
+        <id>601</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_execute_script</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>9</kind>
+            <script>PlayerRingCollision</script>
           </argument>
           <argument>
             <kind>0</kind>
@@ -748,90 +832,6 @@ with other instance_destroy();
           <argument>
             <kind>0</kind>
             <string>0</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="objSSRingFly">
-      <action>
-        <libid>1</libid>
-        <id>601</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_execute_script</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>9</kind>
-            <script>PlayerRingCollision</script>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>other</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string></string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string></string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string></string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string></string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="objSSRing">
-      <action>
-        <libid>1</libid>
-        <id>601</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_execute_script</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>9</kind>
-            <script>PlayerRingCollision</script>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>other</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string></string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string></string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string></string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string></string>
           </argument>
         </arguments>
       </action>

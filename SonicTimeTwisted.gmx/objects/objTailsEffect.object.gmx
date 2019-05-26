@@ -368,6 +368,152 @@ if alarm[0] == -1 {
         </arguments>
       </action>
     </event>
+    <event eventtype="4" ename="objSquibot">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>// abort if not actually flying
+if player_id.state!=player_state_fly or player_id.underwater exit;
+if sprite_index!=sprTailsEffect4 exit;
+
+// abort if cannot damage
+if other.invulnerable exit;
+
+with other {
+    if life&gt;0 &amp;&amp; alarm[0] == -1
+    {
+        life -= 1;
+        invulnerable=true;
+        
+        if life&lt;=0 {
+        
+           instance_create(x,y,objExplosionGroup)
+           instance_create(x+10,y+10,objExplosionGroup)
+           instance_create(x-12,y+10,objExplosionGroup)
+           alarm[11]=8;
+           reaction_script=noone;
+           player_add_score(500);
+    
+         }else alarm[0]=15;
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="objRoboRex">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>// hit boss
+// abort if not actually flying
+if player_id.state!=player_state_fly or player_id.underwater exit;
+if sprite_index!=sprTailsEffect4 exit;
+
+// abort if cannot damage
+if other.invulnerable exit;
+
+with other {
+    if life&gt;0 &amp;&amp; alarm[0] == -1 {
+        life -= 1;
+        invulnerable=true;
+        
+        if life&lt;=0 {
+        
+           instance_create(x,y,objExplosionGroup)
+           instance_create(x+10,y+10,objExplosionGroup)
+           instance_create(x-12,y+10,objExplosionGroup)
+           alarm[11]=8;
+           reaction_script=noone;
+           player_add_score(500);
+           
+           
+    
+         } else alarm[0]=15;
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="objBigBombBadnik">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>// abort if not actually flying
+if player_id.state!=player_state_fly or player_id.underwater exit;
+if sprite_index!=sprTailsEffect4 exit;
+
+// abort if cannot damage
+if other.invulnerable exit;
+
+with other {
+    if life&gt;0 &amp;&amp; alarm[0] == -1
+    {
+        life -= 1;
+        invulnerable=true;
+        
+        if life&lt;=0 
+        
+            //visible = false;
+            reaction_script = -1;
+            timeline_index = animExplosionCluster;
+            timeline_speed = 1;
+            player_add_score(500);
+            timeline_running=true;
+    
+         }else alarm[0] = 15;
+    }
+
+// sound
+audio_play_sound(sndBossHit, 2, 0);
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="4" ename="objMoleFan">
       <action>
         <libid>1</libid>
@@ -424,7 +570,7 @@ with other {
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="objRoboRex">
+    <event eventtype="4" ename="objFireFlyLight">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -441,129 +587,26 @@ with other {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>// hit boss
-// abort if not actually flying
-if player_id.state!=player_state_fly or player_id.underwater exit;
-if sprite_index!=sprTailsEffect4 exit;
+            <string>/// player_reaction_fire_fly_light(local_id)
+var bonus_score;
 
-// abort if cannot damage
-if other.invulnerable exit;
+// ignore if already hit
+if other.alarm[0] exit;
 
-with other {
-    if life&gt;0 &amp;&amp; alarm[0] == -1 {
-        life -= 1;
-        invulnerable=true;
-        
-        if life&lt;=0 {
-        
-           instance_create(x,y,objExplosionGroup)
-           instance_create(x+10,y+10,objExplosionGroup)
-           instance_create(x-12,y+10,objExplosionGroup)
-           alarm[11]=8;
-           reaction_script=noone;
-           player_add_score(500);
-           
-           
-    
-         } else alarm[0]=15;
+// hit boss
+other.alarm[0] = 30;
+objFireFly.graphic.alarm[2] = 30;
+if other.life&gt;0
+{
+    other.life -= 1;
+    if other.life&lt;=0 {
+        with other event_user(0);
+        objFireFly.graphic.image_index = 1;
     }
 }
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="objSquibot">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>// abort if not actually flying
-if player_id.state!=player_state_fly or player_id.underwater exit;
-if sprite_index!=sprTailsEffect4 exit;
-
-// abort if cannot damage
-if other.invulnerable exit;
-
-with other {
-    if life&gt;0 &amp;&amp; alarm[0] == -1
-    {
-        life -= 1;
-        invulnerable=true;
-        
-        if life&lt;=0 {
-        
-           instance_create(x,y,objExplosionGroup)
-           instance_create(x+10,y+10,objExplosionGroup)
-           instance_create(x-12,y+10,objExplosionGroup)
-           alarm[11]=8;
-           reaction_script=noone;
-           player_add_score(500);
-    
-         }else alarm[0]=15;
-    }
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="objBigBombBadnik">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>// abort if not actually flying
-if player_id.state!=player_state_fly or player_id.underwater exit;
-if sprite_index!=sprTailsEffect4 exit;
-
-// abort if cannot damage
-if other.invulnerable exit;
-
-with other {
-    if life&gt;0 &amp;&amp; alarm[0] == -1
-    {
-        life -= 1;
-        invulnerable=true;
-        
-        if life&lt;=0 
-        
-            //visible = false;
-            reaction_script = -1;
-            timeline_index = animExplosionCluster;
-            timeline_speed = 1;
-            player_add_score(500);
-            timeline_running=true;
-    
-         }else alarm[0] = 15;
-    }
 
 // sound
-audio_play_sound(sndBossHit, 2, 0);
+audio_play_sound(sndBossHit, 0, 0);
 
 </string>
           </argument>
@@ -648,49 +691,6 @@ if alarm[0] == -1 {
             alarm[11] = 30;
         }
 }
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="objFireFlyLight">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// player_reaction_fire_fly_light(local_id)
-var bonus_score;
-
-// ignore if already hit
-if other.alarm[0] exit;
-
-// hit boss
-other.alarm[0] = 30;
-objFireFly.graphic.alarm[2] = 30;
-if other.life&gt;0
-{
-    other.life -= 1;
-    if other.life&lt;=0 {
-        with other event_user(0);
-        objFireFly.graphic.image_index = 1;
-    }
-}
-
-// sound
-audio_play_sound(sndBossHit, 0, 0);
 
 </string>
           </argument>

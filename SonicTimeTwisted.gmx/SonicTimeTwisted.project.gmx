@@ -254,6 +254,8 @@
             <sounds name="Special Stage">
               <sound>sound\sndDingEnd</sound>
               <sound>sound\sndDingOpen</sound>
+              <sound>sound\sndSSChaosEmerald</sound>
+              <sound>sound\sndSSTimeStone</sound>
             </sounds>
             <sounds name="Sunken Saucer">
               <sound>sound\sndScreenShake</sound>
@@ -367,6 +369,7 @@
       <sprite>sprites\sprFontTitle</sprite>
       <sprite>sprites\sprFontTitleLarge</sprite>
       <sprite>sprites\sprFontTitleSmall</sprite>
+      <sprite>sprites\sprFontTitleSmallest</sprite>
       <sprite>sprites\sprFontTitleYellow</sprite>
     </sprites>
     <sprites name="Overlays">
@@ -379,6 +382,7 @@
         <sprite>sprites\sprCharSelect</sprite>
         <sprite>sprites\sprDeleteConfirm</sprite>
         <sprite>sprites\sprDeleteSlot</sprite>
+        <sprite>sprites\sprNoSaveSlot</sprite>
         <sprite>sprites\sprSaveControl</sprite>
         <sprite>sprites\sprSaveDelete</sprite>
         <sprite>sprites\sprSaveIconsFuture</sprite>
@@ -1407,6 +1411,28 @@
         <sprite>sprites\sprTimeTravelEffect</sprite>
       </sprites>
     </sprites>
+    <sprite>sprites\sprTouchscreenButtonSmall</sprite>
+    <sprite>sprites\sprTouchscreenDPadJoyMed</sprite>
+    <sprite>sprites\sprTouchscreenDPadBase</sprite>
+    <sprite>sprites\sprTouchscreenButtonMed</sprite>
+    <sprite>sprites\sprHudOld</sprite>
+    <sprite>sprites\sprTouchscreenButton</sprite>
+    <sprite>sprites\sprTouchscreenRunButtonMed</sprite>
+    <sprite>sprites\sprTouchscreenDPadJoySmall</sprite>
+    <sprite>sprites\sprDeleteConfirmTouchscreen</sprite>
+    <sprite>sprites\sprGyroscopeTest</sprite>
+    <sprite>sprites\sprTouchscreenDPadBaseSmall</sprite>
+    <sprite>sprites\sprTouchscreenSuperButtonBlue</sprite>
+    <sprite>sprites\sprTouchscreenDPadBaseMed</sprite>
+    <sprite>sprites\sprFontHudOld</sprite>
+    <sprite>sprites\sprTouchscreenDPadTemplateSmall</sprite>
+    <sprite>sprites\sprTouchscreenDPadTemplateMed</sprite>
+    <sprite>sprites\sprTouchscreenRunButtonSmall</sprite>
+    <sprite>sprites\sprTouchscreenDPadTemplate</sprite>
+    <sprite>sprites\sprTouchscreenRunButton</sprite>
+    <sprite>sprites\sprTouchscreenDPadJoy</sprite>
+    <sprite>sprites\sprTouchscreenSuperButtonYellow</sprite>
+    <sprite>sprites\sprTouchscreenPauseButton</sprite>
   </sprites>
   <backgrounds name="background">
     <backgrounds name="Attraction Attack">
@@ -1460,6 +1486,7 @@
           <background>background\background188</background>
           <background>background\backAA1BossFloor</background>
         </backgrounds>
+      </backgrounds>
     </backgrounds>
     <backgrounds name="Cutscenes">
       <backgrounds name="Intro (Future)">
@@ -1609,9 +1636,10 @@
         <backgrounds name="Past">
           <background>background\RR1_p1</background>
         </backgrounds>
+      </backgrounds>
     </backgrounds>
     <backgrounds name="Save Screen">
-    <background>background\saveScreenBackground</background>
+      <background>background\saveScreenBackground</background>
     </backgrounds>
     <backgrounds name="Special Stages">
       <backgrounds name="Future">
@@ -1741,6 +1769,7 @@
             <background>background\vvp2_2</background>
           </backgrounds>
         </backgrounds>
+      </backgrounds>
     </backgrounds>
   </backgrounds>
   <paths name="paths">
@@ -1861,6 +1890,35 @@
         <scripts name="Other">
           <script>scripts\fix_bad_gamepad_axis.gml</script>
         </scripts>
+        <scripts name="Rumble">
+          <scripts name="Control">
+            <script>scripts\rumble.gml</script>
+            <script>scripts\rumble_configuration_active.gml</script>
+            <script>scripts\rumble_configuration_inactive.gml</script>
+            <script>scripts\rumble_enqueue.gml</script>
+            <script>scripts\rumble_none.gml</script>
+            <script>scripts\rumble_perform.gml</script>
+          </scripts>
+          <scripts name="Effects">
+            <script>scripts\rumble_short_weak.gml</script>
+            <script>scripts\rumble_short_weakest.gml</script>
+            <script>scripts\rumble_short_mid.gml</script>
+            <script>scripts\rumble_short_strong.gml</script>
+            <script>scripts\rumble_instant_strong.gml</script>
+            <script>scripts\rumble_short_strong_double.gml</script>
+            <script>scripts\rumble_short_mid_double.gml</script>
+            <script>scripts\rumble_short_strong_and_mid.gml</script>
+            <script>scripts\rumble_short_strongest.gml</script>
+            <script>scripts\rumble_ss_item_get.gml</script>
+            <script>scripts\rumble_hurt_robot.gml</script>
+            <script>scripts\rumble_act1_spin_signpost.gml</script>
+            <script>scripts\rumble_act2_break_capsule.gml</script>
+            <script>scripts\rumble_ground_shake.gml</script>
+            <script>scripts\rumble_signpost.gml</script>
+            <script>scripts\rumble_long_decreasing.gml</script>
+            <script>scripts\rumble_verylong_strong.gml</script>
+          </scripts>
+        </scripts>
         <scripts name="Saving">
           <script>scripts\save_control_map_gamepad.gml</script>
           <script>scripts\save_control_map_keyboard.gml</script>
@@ -1915,13 +1973,28 @@
         <script>scripts\save_lives.gml</script>
         <script>scripts\save_emeralds.gml</script>
         <script>scripts\save_big_ring.gml</script>
+        <script>scripts\save_data_read.gml</script>
+        <script>scripts\save_data_write.gml</script>
+        <script>scripts\shift_savefiles.gml</script>
         <script>scripts\load_emeralds.gml</script>
         <script>scripts\load_big_ring.gml</script>
         <script>scripts\load_lives.gml</script>
+        <script>scripts\load_options.gml</script>
         <script>scripts\delete_settings.gml</script>
+      </scripts>
+      <scripts name="Video">
+        <script>scripts\get_video_mode.gml</script>
+        <script>scripts\load_video_settings.gml</script>
+        <script>scripts\save_video_settings.gml</script>
+        <script>scripts\set_30_fps.gml</script>
+        <script>scripts\set_video_mode.gml</script>
       </scripts>
     </scripts>
     <scripts name="Overlays">
+      <scripts name="Hud">
+        <script>scripts\draw_top_hud.gml</script>
+        <script>scripts\randomize_number.gml</script>
+      </scripts>
       <scripts name="Parallax">
         <script>scripts\parallax_create.gml</script>
         <script>scripts\parallax_create_sprite.gml</script>
@@ -1942,6 +2015,10 @@
           <script>scripts\angle_wrap.gml</script>
         </scripts>
         <scripts name="Boss">
+          <scripts name="General">
+            <script>scripts\draw_boss_hit_blend.gml</script>
+            <script>scripts\draw_boss_hit_blend_parent_alarm.gml</script>
+          </scripts>
           <scripts name="Golem">
             <script>scripts\BossBreakArm.gml</script>
             <script>scripts\BossHandNew.gml</script>
@@ -2260,6 +2337,7 @@
             <script>scripts\player_state_enter.gml</script>
             <script>scripts\player_state_exit.gml</script>
             <script>scripts\player_state_fall.gml</script>
+            <script>scripts\player_state_fall_automatically.gml</script>
             <script>scripts\player_state_floating.gml</script>
             <script>scripts\player_state_hurt.gml</script>
             <script>scripts\player_state_look.gml</script>
@@ -2316,6 +2394,7 @@
             <script>scripts\player_is_falling.gml</script>
             <script>scripts\player_is_hurt.gml</script>
             <script>scripts\player_is_jumping.gml</script>
+            <script>scripts\player_is_jumping_automatically.gml</script>
             <script>scripts\player_is_looking.gml</script>
             <script>scripts\player_is_reset.gml</script>
             <script>scripts\player_is_rolling.gml</script>
@@ -2347,6 +2426,7 @@
         </scripts>
         <scripts name="Other">
           <script>scripts\d3d_point_direction.gml</script>
+          <script>scripts\special_level_go_to_score.gml</script>
           <script>scripts\ssplayer_hit.gml</script>
         </scripts>
         <scripts name="Player">
@@ -2363,6 +2443,42 @@
         </scripts>
       </scripts>
     </scripts>
+    <scripts name="Performance">
+      <script>scripts\initialize_level_object_activation.gml</script>
+      <script>scripts\refresh_level_object_activation_start.gml</script>
+      <script>scripts\refresh_level_object_activation_end.gml</script>
+      <script>scripts\reactivate_level_objects_start.gml</script>
+      <script>scripts\reactivate_level_objects_end.gml</script>
+    </scripts>
+    <scripts name="Ports">
+      <script>scripts\get_os_type.gml</script>
+      <script>scripts\is_tt_shader_supported.gml</script>
+    </scripts>
+    <script>scripts\smartphone_disable_virtual_keys.gml</script>
+    <script>scripts\android_vk_is_pressed.gml</script>
+    <script>scripts\android_device_set_mode_gamepad.gml</script>
+    <script>scripts\android_device_set_mode_keyboard.gml</script>
+    <script>scripts\get_kb_label.gml</script>
+    <script>scripts\get_30_fps.gml</script>
+    <script>scripts\menu_key_mapping_states.gml</script>
+    <script>scripts\save_options.gml</script>
+    <script>scripts\android_read_gyroscope_x.gml</script>
+    <script>scripts\android_read_gyroscope_y.gml</script>
+    <script>scripts\android_menu_key_mapping_states.gml</script>
+    <script>scripts\smartphone_enable_virtual_keys.gml</script>
+    <script>scripts\android_vk_release.gml</script>
+    <script>scripts\is_key_mappable.gml</script>
+    <script>scripts\android_manage_touchscreen_controls.gml</script>
+    <script>scripts\get_gp_label.gml</script>
+    <script>scripts\special_level_go_to_from_level_select.gml</script>
+    <script>scripts\is_button_mappable.gml</script>
+    <script>scripts\android_input_any_gamepad_button.gml</script>
+    <script>scripts\android_vk_press.gml</script>
+    <script>scripts\android_manage_gyroscope_controls.gml</script>
+    <script>scripts\smartphone_save_configuration.gml</script>
+    <script>scripts\is_axis_mappable.gml</script>
+    <script>scripts\android_input_any_gamepad_axis.gml</script>
+    <script>scripts\android_manage_touch_controls.gml</script>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\DeflateShader.shader</shader>
@@ -3153,6 +3269,33 @@
         <object>objects\objVVPastBackSun</object>
       </objects>
     </objects>
+    <object>objects\objTileGridRenderer</object>
+    <object>objects\objSSAlwaysActive</object>
+    <object>objects\objLevel_Android</object>
+    <object>objects\objSSHud_Android</object>
+    <object>objects\objFramerate</object>
+    <object>objects\objSceneObjectAlwaysActive</object>
+    <object>objects\objAndroidInputSmartphone</object>
+    <object>objects\objHud_Android</object>
+    <object>objects\objTitleLightingNoShader</object>
+    <object>objects\objSSLevel_Android</object>
+    <object>objects\objTimeTravelVortexNoShader</object>
+    <object>objects\objAndroidInput</object>
+    <object>objects\objNonSolidAlwaysActive</object>
+    <object>objects\objTimeTravelNoShader</object>
+    <object>objects\objSolidAlwaysActive</object>
+    <object>objects\objTitleControl_Android</object>
+    <object>objects\objNoSaveSlot</object>
+    <object>objects\objSSToScore</object>
+    <object>objects\objMenu</object>
+    <object>objects\objMenu_Android</object>
+    <object>objects\objTileGridManager</object>
+    <object>objects\objAndroid</object>
+    <object>objects\objAbstractInput</object>
+    <object>objects\objEnemyAlwaysActive</object>
+    <object>objects\objSSScoreBackground</object>
+    <object>objects\objSaveBg</object>
+    <object>objects\objSaveControl_Android</object>
   </objects>
   <timelines name="timelines">
     <timelines name="Cutscene">
@@ -3426,56 +3569,118 @@
         <room>rooms\SSP6</room>
         <room>rooms\SSP7</room>
       </rooms>
+      <rooms name="Results screen">
+        <room>rooms\ss_results_screen</room>
+      </rooms>
     </rooms>
   </rooms>
-  <constants number="47">
+  <constants number="106">
+    <constant name="GAMEPAD_POV_Y">7</constant>
+    <constant name="GAMEPAD_POV_X">6</constant>
+    <constant name="GAMEPAD_AXIS_V">5</constant>
+    <constant name="GAMEPAD_AXIS_U">7</constant>
+    <constant name="GAMEPAD_AXIS_R">3</constant>
+    <constant name="GAMEPAD_AXIS_Z">2</constant>
+    <constant name="GAMEPAD_AXIS_Y">1</constant>
+    <constant name="GAMEPAD_AXIS_X">0</constant>
+    <constant name="EMERALDS">'k9(2h@'</constant>
+    <constant name="STATS">'LDGaS'</constant>
+    <constant name="PAST">'c20n1('</constant>
+    <constant name="FUTURE">'top204'</constant>
+    <constant name="LEVELS">'9z1kj'</constant>
+    <constant name="BIG_RINGS">'y6[4hjf'</constant>
+    <constant name="LIVES">'lk[]]'</constant>
+    <constant name="CHARACTER">'k2nlKft'</constant>
+    <constant name="cUP">1</constant>
+    <constant name="cDOWN">2</constant>
+    <constant name="cLEFT">4</constant>
+    <constant name="cRIGHT">8</constant>
+    <constant name="cA">16</constant>
+    <constant name="cB">32</constant>
+    <constant name="cC">64</constant>
+    <constant name="cSTART">128</constant>
+    <constant name="cBACK">256</constant>
+    <constant name="cACTION">cA | cB | cC</constant>
+    <constant name="cCANCEL">cB | cBACK</constant>
+    <constant name="cCONFIRM">cA | cSTART</constant>
+    <constant name="cPAUSE">cSTART | cBACK</constant>
+    <constant name="BINDING_TYPE_NONE">0</constant>
+    <constant name="BINDING_TYPE_KEY">1</constant>
+    <constant name="BINDING_TYPE_BUTTON">2</constant>
+    <constant name="BINDING_TYPE_AXIS">3</constant>
     <constant name="aAA1_f">'*%sfdg'</constant>
     <constant name="aAA1_p">'sfdg7#%'</constant>
     <constant name="aAA2_f">'fda@%'</constant>
     <constant name="aAA2_p">'$@dgf'</constant>
-    <constant name="aDD1_f">'afds24230'</constant>
-    <constant name="aDD1_p">'j}{^&amp;*'</constant>
-    <constant name="aDD2_f">'kjl4325'</constant>
-    <constant name="aDD2_p">'kjdfas*('</constant>
-    <constant name="aFF1_f">'_)*()'</constant>
-    <constant name="aFF1_p">'@*(#kjdfa'</constant>
-    <constant name="aFF2_f">'HJ8u*'</constant>
-    <constant name="aFF2_p">'*(Uk'</constant>
-    <constant name="aMM1">'^&amp;*(jkl'</constant>
-    <constant name="aPP1">'&amp;*(kjda'</constant>
-    <constant name="aPP2">'A:Lfda'</constant>
     <constant name="aRR1_f">'}P{L?&gt;'</constant>
     <constant name="aRR1_p">'dsa@('</constant>
     <constant name="aRR2_f">'fds(_&amp;_'</constant>
     <constant name="aRR2_p">'gfdas'</constant>
-    <constant name="aSS1">'ldfa234@$'</constant>
-    <constant name="aTT1_f">':K90'</constant>
-    <constant name="aTT1_p">'()kjs'</constant>
-    <constant name="aTT2_f">'Ldfas'</constant>
-    <constant name="aTT2_p">'.lladfa'</constant>
+    <constant name="aFF1_f">'_)*()'</constant>
+    <constant name="aFF1_p">'@*(#kjdfa'</constant>
+    <constant name="aFF2_f">'HJ8u*'</constant>
+    <constant name="aFF2_p">'*(Uk'</constant>
     <constant name="aVV1_f">'1*(8'</constant>
     <constant name="aVV1_p">'}{AF13*'</constant>
     <constant name="aVV2_f">'kla4()sk'</constant>
     <constant name="aVV2_p">'adfs24'</constant>
-    <constant name="BIG_RINGS">'y6[4hjf'</constant>
-    <constant name="cA">16</constant>
-    <constant name="cACTION">cA | cB | cC</constant>
-    <constant name="cB">32</constant>
-    <constant name="cC">64</constant>
-    <constant name="cCANCEL">cB</constant>
-    <constant name="cCONFIRM">cA | cSTART</constant>
-    <constant name="cDOWN">2</constant>
-    <constant name="CHARACTER">'k2nlKft'</constant>
-    <constant name="cLEFT">4</constant>
-    <constant name="cRIGHT">8</constant>
-    <constant name="cSTART">128</constant>
-    <constant name="cUP">1</constant>
-    <constant name="EMERALDS">'k9(2h@'</constant>
-    <constant name="FUTURE">'top204'</constant>
-    <constant name="LEVELS">'9z1kj'</constant>
-    <constant name="LIVES">'lk[]]'</constant>
-    <constant name="PAST">'c20n1('</constant>
-    <constant name="STATS">'LDGaS'</constant>
+    <constant name="aDD1_f">'afds24230'</constant>
+    <constant name="aDD1_p">'j}{^&amp;*'</constant>
+    <constant name="aDD2_f">'kjl4325'</constant>
+    <constant name="aDD2_p">'kjdfas*('</constant>
+    <constant name="aTT1_f">':K90'</constant>
+    <constant name="aTT1_p">'()kjs'</constant>
+    <constant name="aTT2_f">'Ldfas'</constant>
+    <constant name="aTT2_p">'.lladfa'</constant>
+    <constant name="aSS1">'ldfa234@$'</constant>
+    <constant name="aPP1">'&amp;*(kjda'</constant>
+    <constant name="aPP2">'A:Lfda'</constant>
+    <constant name="aMM1">'^&amp;*(jkl'</constant>
+    <constant name="OPTION_NAME">0</constant>
+    <constant name="OPTION_TYPE">1</constant>
+    <constant name="OPTION_VALUE">2</constant>
+    <constant name="OPTION_ANIMATION">3</constant>
+    <constant name="OPTION_TYPE_SIMPLE">0</constant>
+    <constant name="OPTION_TYPE_WITH_VALUE">1</constant>
+    <constant name="OPTION_TYPE_CONFIRM">2</constant>
+    <constant name="OPTION_TYPE_TITLE">3</constant>
+    <constant name="OPTION_ANIMATION_NONE">0</constant>
+    <constant name="OPTION_ANIMATION_LONGPRESS">1</constant>
+    <constant name="OPTION_TYPE_SUBMENU">4</constant>
+    <constant name="OPTION_TYPE_RETURN">5</constant>
+    <constant name="OPTION_ANIMATION_FLASHING">2</constant>
+    <constant name="RUMBLE_EVENT_PRESS_BUTTON">0</constant>
+    <constant name="RUMBLE_EVENT_RING_GET">1</constant>
+    <constant name="RUMBLE_EVENT_GIANT_RING">2</constant>
+    <constant name="RUMBLE_EVENT_BREAK_MONITOR">3</constant>
+    <constant name="RUMBLE_EVENT_BREAK_ROBOT">4</constant>
+    <constant name="RUMBLE_EVENT_SS_ITEM_GET">5</constant>
+    <constant name="RUMBLE_EVENT_HURT_ROBOT">6</constant>
+    <constant name="RUMBLE_EVENT_ACT1_SPIN_SIGNPOST">7</constant>
+    <constant name="RUMBLE_EVENT_ACT2_BREAK_CAPSULE">8</constant>
+    <constant name="RUMBLE_EVENT_GROUND_SHAKE">9</constant>
+    <constant name="RUMBLE_EVENT_SPINDASH">10</constant>
+    <constant name="RUMBLE_EVENT_LAMPPOST">11</constant>
+    <constant name="RUMBLE_EVENT_SPRING">12</constant>
+    <constant name="RUMBLE_EVENT_BUMPER">13</constant>
+    <constant name="RUMBLE_EVENT_CONTROLLED_BY_OBJECT">14</constant>
+    <constant name="RUMBLE_EVENT_BREAKABLE_BLOCK">15</constant>
+    <constant name="RUMBLE_START_TIME">0</constant>
+    <constant name="RUMBLE_END_TIME">1</constant>
+    <constant name="RUMBLE_LEFT">2</constant>
+    <constant name="RUMBLE_RIGHT">3</constant>
+    <constant name="RUMBLE_FORCE_OVERRIDE">4</constant>
+    <constant name="ANDROID_CONSOLE">0</constant>
+    <constant name="RUMBLE_EVENT_HURT_SHIELDS">16</constant>
+    <constant name="RUMBLE_EVENT_HURT_RINGS">17</constant>
+    <constant name="RUMBLE_EVENT_DIE">18</constant>
+    <constant name="RUMBLE_EVENT_TAILS_FLY">19</constant>
+    <constant name="RUMBLE_EVENT_KNUCKLES_CLIMB">20</constant>
+    <constant name="RUMBLE_EVENT_KNUCKLES_FALL">21</constant>
+    <constant name="RUMBLE_EVENT_SONIC_SHIELD">22</constant>
+    <constant name="RUMBLE_EVENT_EMERALD_GET">23</constant>
+    <constant name="RUMBLE_EVENT_BREAK_BLOCK">24</constant>
+    <constant name="RUMBLE_EVENT_SHAKE_ONCE">25</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>
