@@ -1,3 +1,5 @@
+/// Leave the special stage and proceed to level select
+// Used if level select had been used to access the special stage in the first place
 // argument0 - past
 // argument1 - level
 objProgram.saveSlot = -1;

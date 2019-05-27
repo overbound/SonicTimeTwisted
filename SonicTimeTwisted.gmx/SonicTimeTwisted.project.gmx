@@ -381,6 +381,7 @@
       <sprites name="Save Screen">
         <sprite>sprites\sprCharSelect</sprite>
         <sprite>sprites\sprDeleteConfirm</sprite>
+        <sprite>sprites\sprDeleteConfirmTouchscreen</sprite>
         <sprite>sprites\sprDeleteSlot</sprite>
         <sprite>sprites\sprNoSaveSlot</sprite>
         <sprite>sprites\sprSaveControl</sprite>
@@ -406,6 +407,27 @@
         <sprite>sprites\sprTitleSonic</sprite>
         <sprite>sprites\sprTitleSonicFall</sprite>
         <sprite>sprites\sprTitleWater</sprite>
+      </sprites>
+      <sprites name="Touchscreen">
+        <sprite>sprites\sprGyroscopeTest</sprite>
+        <sprite>sprites\sprTouchscreenButton</sprite>
+        <sprite>sprites\sprTouchscreenButtonSmall</sprite>
+        <sprite>sprites\sprTouchscreenButtonMed</sprite>
+        <sprite>sprites\sprTouchscreenDPadBase</sprite>
+        <sprite>sprites\sprTouchscreenDPadBaseMed</sprite>
+        <sprite>sprites\sprTouchscreenDPadBaseSmall</sprite>
+        <sprite>sprites\sprTouchscreenDPadJoy</sprite>
+        <sprite>sprites\sprTouchscreenDPadJoyMed</sprite>
+        <sprite>sprites\sprTouchscreenDPadJoySmall</sprite>
+        <sprite>sprites\sprTouchscreenDPadTemplate</sprite>
+        <sprite>sprites\sprTouchscreenDPadTemplateMed</sprite>
+        <sprite>sprites\sprTouchscreenDPadTemplateSmall</sprite>
+        <sprite>sprites\sprTouchscreenPauseButton</sprite>
+        <sprite>sprites\sprTouchscreenRunButton</sprite>
+        <sprite>sprites\sprTouchscreenRunButtonMed</sprite>
+        <sprite>sprites\sprTouchscreenRunButtonSmall</sprite>
+        <sprite>sprites\sprTouchscreenSuperButtonBlue</sprite>
+        <sprite>sprites\sprTouchscreenSuperButtonYellow</sprite>
       </sprites>
       <sprites name="Zone Title">
         <sprite>sprites\sprTitleBanner</sprite>
@@ -1411,28 +1433,6 @@
         <sprite>sprites\sprTimeTravelEffect</sprite>
       </sprites>
     </sprites>
-    <sprite>sprites\sprTouchscreenButtonSmall</sprite>
-    <sprite>sprites\sprTouchscreenDPadJoyMed</sprite>
-    <sprite>sprites\sprTouchscreenDPadBase</sprite>
-    <sprite>sprites\sprTouchscreenButtonMed</sprite>
-    <sprite>sprites\sprHudOld</sprite>
-    <sprite>sprites\sprTouchscreenButton</sprite>
-    <sprite>sprites\sprTouchscreenRunButtonMed</sprite>
-    <sprite>sprites\sprTouchscreenDPadJoySmall</sprite>
-    <sprite>sprites\sprDeleteConfirmTouchscreen</sprite>
-    <sprite>sprites\sprGyroscopeTest</sprite>
-    <sprite>sprites\sprTouchscreenDPadBaseSmall</sprite>
-    <sprite>sprites\sprTouchscreenSuperButtonBlue</sprite>
-    <sprite>sprites\sprTouchscreenDPadBaseMed</sprite>
-    <sprite>sprites\sprFontHudOld</sprite>
-    <sprite>sprites\sprTouchscreenDPadTemplateSmall</sprite>
-    <sprite>sprites\sprTouchscreenDPadTemplateMed</sprite>
-    <sprite>sprites\sprTouchscreenRunButtonSmall</sprite>
-    <sprite>sprites\sprTouchscreenDPadTemplate</sprite>
-    <sprite>sprites\sprTouchscreenRunButton</sprite>
-    <sprite>sprites\sprTouchscreenDPadJoy</sprite>
-    <sprite>sprites\sprTouchscreenSuperButtonYellow</sprite>
-    <sprite>sprites\sprTouchscreenPauseButton</sprite>
   </sprites>
   <backgrounds name="background">
     <backgrounds name="Attraction Attack">
@@ -1995,6 +1995,16 @@
         <script>scripts\draw_top_hud.gml</script>
         <script>scripts\randomize_number.gml</script>
       </scripts>
+      <scripts name="Menu">
+        <script>scripts\get_gp_label.gml</script>
+        <script>scripts\get_kb_label.gml</script>
+        <script>scripts\get_30_fps.gml</script>
+        <script>scripts\is_axis_mappable.gml</script>
+        <script>scripts\is_button_mappable.gml</script>
+        <script>scripts\is_key_mappable.gml</script>
+        <script>scripts\menu_key_mapping_states.gml</script>
+        <script>scripts\save_options.gml</script>
+      </scripts>
       <scripts name="Parallax">
         <script>scripts\parallax_create.gml</script>
         <script>scripts\parallax_create_sprite.gml</script>
@@ -2332,6 +2342,7 @@
           </scripts>
           <scripts name="General">
             <script>scripts\player_state_boarding.gml</script>
+            <script>scripts\player_state_complete.gml</script>
             <script>scripts\player_state_crouch.gml</script>
             <script>scripts\player_state_dead.gml</script>
             <script>scripts\player_state_enter.gml</script>
@@ -2409,7 +2420,7 @@
         <scripts name="Enemies">
           <script>scripts\change_sprite_direction_int_frames.gml</script>
         </scripts>
-        <scripts name="character animation">
+        <scripts name="Character Animation">
           <script>scripts\SonicSpecialAnimation.gml</script>
           <script>scripts\TailsSpecialAnimation.gml</script>
           <script>scripts\KnucklesSpecialAnimation.gml</script>
@@ -2426,6 +2437,7 @@
         </scripts>
         <scripts name="Other">
           <script>scripts\d3d_point_direction.gml</script>
+          <script>scripts\special_level_go_to_from_level_select.gml</script>
           <script>scripts\special_level_go_to_score.gml</script>
           <script>scripts\ssplayer_hit.gml</script>
         </scripts>
@@ -2451,34 +2463,29 @@
       <script>scripts\reactivate_level_objects_end.gml</script>
     </scripts>
     <scripts name="Ports">
+      <scripts name="Smartphone">
+        <scripts name="Android">
+          <script>scripts\android_input_any_gamepad_axis.gml</script>
+          <script>scripts\android_input_any_gamepad_button.gml</script>
+          <script>scripts\android_vk_is_pressed.gml</script>
+          <script>scripts\android_vk_press.gml</script>
+          <script>scripts\android_vk_release.gml</script>
+          <script>scripts\android_device_set_mode_gamepad.gml</script>
+          <script>scripts\android_device_set_mode_keyboard.gml</script>
+          <script>scripts\android_manage_gyroscope_controls.gml</script>
+          <script>scripts\android_manage_touch_controls.gml</script>
+          <script>scripts\android_manage_touchscreen_controls.gml</script>
+          <script>scripts\android_menu_key_mapping_states.gml</script>
+          <script>scripts\android_read_gyroscope_x.gml</script>
+          <script>scripts\android_read_gyroscope_y.gml</script>
+        </scripts>
+        <script>scripts\smartphone_disable_virtual_keys.gml</script>
+        <script>scripts\smartphone_enable_virtual_keys.gml</script>
+        <script>scripts\smartphone_save_configuration.gml</script>
+      </scripts>
       <script>scripts\get_os_type.gml</script>
       <script>scripts\is_tt_shader_supported.gml</script>
     </scripts>
-    <script>scripts\smartphone_disable_virtual_keys.gml</script>
-    <script>scripts\android_vk_is_pressed.gml</script>
-    <script>scripts\android_device_set_mode_gamepad.gml</script>
-    <script>scripts\android_device_set_mode_keyboard.gml</script>
-    <script>scripts\get_kb_label.gml</script>
-    <script>scripts\get_30_fps.gml</script>
-    <script>scripts\menu_key_mapping_states.gml</script>
-    <script>scripts\save_options.gml</script>
-    <script>scripts\android_read_gyroscope_x.gml</script>
-    <script>scripts\android_read_gyroscope_y.gml</script>
-    <script>scripts\android_menu_key_mapping_states.gml</script>
-    <script>scripts\smartphone_enable_virtual_keys.gml</script>
-    <script>scripts\android_vk_release.gml</script>
-    <script>scripts\is_key_mappable.gml</script>
-    <script>scripts\android_manage_touchscreen_controls.gml</script>
-    <script>scripts\get_gp_label.gml</script>
-    <script>scripts\special_level_go_to_from_level_select.gml</script>
-    <script>scripts\is_button_mappable.gml</script>
-    <script>scripts\android_input_any_gamepad_button.gml</script>
-    <script>scripts\android_vk_press.gml</script>
-    <script>scripts\android_manage_gyroscope_controls.gml</script>
-    <script>scripts\smartphone_save_configuration.gml</script>
-    <script>scripts\is_axis_mappable.gml</script>
-    <script>scripts\android_input_any_gamepad_axis.gml</script>
-    <script>scripts\android_manage_touch_controls.gml</script>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\DeflateShader.shader</shader>
@@ -2811,6 +2818,7 @@
     </objects>
     <objects name="Game">
       <object>objects\objGameData</object>
+      <object>objects\objFramerate</object>
       <object>objects\objInput</object>
       <object>objects\objMusic</object>
       <object>objects\objProgram</object>
@@ -2835,6 +2843,7 @@
       <objects name="Hazards">
         <object>objects\objBoss</object>
         <object>objects\objEnemy</object>
+        <object>objects\objEnemyAlwaysActive</object>
       </objects>
       <objects name="Monitor">
         <object>objects\objIcon</object>
@@ -2920,11 +2929,14 @@
         <object>objects\objTTZ2Transition</object>
       </objects>
       <objects name="Save Screen">
+        <object>objects\objSaveBg</object>
         <object>objects\objSaveSlot</object>
         <object>objects\objDeleteSlot</object>
+        <object>objects\objNoSaveSlot</object>
         <object>objects\objSaveControl</object>
       </objects>
       <object>objects\objHud</object>
+      <object>objects\objMenu</object>
       <object>objects\objParallax</object>
       <object>objects\objThanksControl</object>
       <object>objects\objScoreCard</object>
@@ -3034,6 +3046,11 @@
         </objects>
       </objects>
       <objects name="Parents">
+        <objects name="Always Active">
+          <object>objects\objNonSolidAlwaysActive</object>
+          <object>objects\objSceneObjectAlwaysActive</object>
+          <object>objects\objSolidAlwaysActive</object>
+        </objects>
         <object>objects\objNonSolid</object>
         <object>objects\objSceneObject</object>
         <object>objects\objSolid</object>
@@ -3090,6 +3107,8 @@
         <object>objects\objSSHud</object>
         <object>objects\objSSScoreCard</object>
         <object>objects\objSSMessages</object>
+        <object>objects\objSSScoreBackground</object>
+        <object>objects\objSSToScore</object>
       </objects>
       <objects name="Rings">
         <object>objects\objSSRing</object>
@@ -3129,6 +3148,7 @@
           <object>objects\objSSPastTrack7_2</object>
         </objects>
       </objects>
+      <object>objects\objSSAlwaysActive</object>
       <object>objects\objSSBoost</object>
       <object>objects\objSSCamera</object>
       <object>objects\objSSEmerald</object>
@@ -3269,33 +3289,23 @@
         <object>objects\objVVPastBackSun</object>
       </objects>
     </objects>
-    <object>objects\objTileGridRenderer</object>
-    <object>objects\objSSAlwaysActive</object>
-    <object>objects\objLevel_Android</object>
-    <object>objects\objSSHud_Android</object>
-    <object>objects\objFramerate</object>
-    <object>objects\objSceneObjectAlwaysActive</object>
-    <object>objects\objAndroidInputSmartphone</object>
-    <object>objects\objHud_Android</object>
-    <object>objects\objTitleLightingNoShader</object>
-    <object>objects\objSSLevel_Android</object>
-    <object>objects\objTimeTravelVortexNoShader</object>
-    <object>objects\objAndroidInput</object>
-    <object>objects\objNonSolidAlwaysActive</object>
-    <object>objects\objTimeTravelNoShader</object>
-    <object>objects\objSolidAlwaysActive</object>
-    <object>objects\objTitleControl_Android</object>
-    <object>objects\objNoSaveSlot</object>
-    <object>objects\objSSToScore</object>
-    <object>objects\objMenu</object>
-    <object>objects\objMenu_Android</object>
-    <object>objects\objTileGridManager</object>
-    <object>objects\objAndroid</object>
-    <object>objects\objAbstractInput</object>
-    <object>objects\objEnemyAlwaysActive</object>
-    <object>objects\objSSScoreBackground</object>
-    <object>objects\objSaveBg</object>
-    <object>objects\objSaveControl_Android</object>
+    <objects name="Ports">
+      <objects name="Android">
+        <object>objects\objAndroid</object>
+        <object>objects\objTitleControl_Android</object>
+        <object>objects\objSSHud_Android</object>
+        <object>objects\objSSLevel_Android</object>
+        <object>objects\objAndroidInput</object>
+        <object>objects\objHud_Android</object>
+        <object>objects\objAndroidInputSmartphone</object>
+        <object>objects\objLevel_Android</object>
+        <object>objects\objMenu_Android</object>
+        <object>objects\objSaveControl_Android</object>
+      </objects>
+      <object>objects\objTimeTravelVortexNoShader</object>
+      <object>objects\objTimeTravelNoShader</object>
+      <object>objects\objTitleLightingNoShader</object>
+    </objects>
   </objects>
   <timelines name="timelines">
     <timelines name="Cutscene">

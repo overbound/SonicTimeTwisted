@@ -45,7 +45,6 @@ flower = sprExampleFlower;
 spawn_id = noone;
 ringLifeCounter = 0; 
 initialize_level_object_activation();
-//instance_create(0,0,objTileGridManager);
 </string>
           </argument>
         </arguments>

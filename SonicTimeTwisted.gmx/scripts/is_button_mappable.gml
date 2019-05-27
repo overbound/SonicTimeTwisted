@@ -1,3 +1,5 @@
+/// returns TRUE if gamepad button is already mapped to a different command, FALSE otherwise
+// Used to prevent mapping the same gamepad button twice
 // argument0 - button to map (GMS code)
 // argument1 - button to map (STT code)
 with(objProgram.inputManager)

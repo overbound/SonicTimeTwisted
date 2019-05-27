@@ -1,3 +1,5 @@
+/// returns TRUE if axis is already mapped to a different command, FALSE otherwise
+// Used to prevent mapping the same axis + direction twice
 // argument0 - axis to map (GMS code)
 // argument1 - axis to map (STT code)
 var a0 = argument0;

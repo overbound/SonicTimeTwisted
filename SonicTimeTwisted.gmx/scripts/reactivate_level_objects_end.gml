@@ -1,6 +1,5 @@
 instance_deactivate_object(objSceneObject);
 instance_activate_object(objNonSolidAlwaysActive);
-instance_activate_object(objSolidAlwaysActive);
 instance_activate_object(objSceneObjectAlwaysActive);
 instance_activate_object(objEnemyAlwaysActive);
 instance_activate_region(

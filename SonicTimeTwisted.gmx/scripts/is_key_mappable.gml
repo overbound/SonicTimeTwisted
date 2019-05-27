@@ -1,3 +1,5 @@
+/// returns TRUE if key is already mapped to a different command, FALSE otherwise
+// Used to prevent mapping the same keyboard key twice
 // argument0 - key to map (GMS code)
 // argument1 - key to map (STT code)
 with(objProgram.inputManager)

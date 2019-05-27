@@ -1,3 +1,4 @@
+/// Save only smartphone-specific configuration
 //smartphone_save_configuration()
 ini_open("settings.ini");
 ini_write_real('smartphone', 'dpadmode', objProgram.inputManager.dpadMode);
