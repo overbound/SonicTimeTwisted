@@ -1,1 +1,1 @@
-return rumble_noevent;
+return rumble_none;

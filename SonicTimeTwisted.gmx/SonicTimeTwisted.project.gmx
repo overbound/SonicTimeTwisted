@@ -1896,7 +1896,6 @@
             <script>scripts\rumble_configuration_active.gml</script>
             <script>scripts\rumble_configuration_inactive.gml</script>
             <script>scripts\rumble_enqueue.gml</script>
-            <script>scripts\rumble_none.gml</script>
             <script>scripts\rumble_perform.gml</script>
           </scripts>
           <scripts name="Effects">
@@ -1914,9 +1913,9 @@
             <script>scripts\rumble_act1_spin_signpost.gml</script>
             <script>scripts\rumble_act2_break_capsule.gml</script>
             <script>scripts\rumble_ground_shake.gml</script>
-            <script>scripts\rumble_signpost.gml</script>
             <script>scripts\rumble_long_decreasing.gml</script>
             <script>scripts\rumble_verylong_strong.gml</script>
+            <script>scripts\rumble_none.gml</script>
           </scripts>
         </scripts>
         <scripts name="Saving">
