@@ -126,14 +126,6 @@ else
             <string>with(objHud)
 {
     instance_change(objHud_Android, false);
-    var newMenu = instance_create(0,0,objMenu_Android);
-    newMenu.default_state = menu.default_state;
-    newMenu.draw_with_view_offset = menu.draw_with_view_offset;
-    with(menu)
-    {
-        instance_destroy();
-    }
-    menu = newMenu;
 }
 </string>
           </argument>

@@ -41,15 +41,39 @@ white = 0;
 timeOffset = 0;
 timer = 0;
 rings = 0;
-menu = instance_create(x,y,objMenu);
-menu.default_state = 3;
-menu.draw_with_view_offset = false;
+menu = instance_create(0,0,objMenu);
 </string>
           </argument>
         </arguments>
       </action>
     </event>
     <event eventtype="3" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// pause menu end step
+if objProgram.paused || menu.menu_type == 2 {
+    if allowInput &amp;&amp; menu.state != 0 {
+        with(menu) event_user(2);
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
       <action>
         <libid>1</libid>
         <id>611</id>
@@ -110,6 +134,34 @@ if (milliseconds&lt;10) milliseconds = "0"+string(milliseconds); else
 milliseconds = string(milliseconds);
 // update time stamp
 time_stamp = minutes+"'"+seconds+'"'+milliseconds;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// pause menu begin step
+if objProgram.paused || menu.menu_type == 2 {
+    if allowInput &amp;&amp; menu.state != 0 {
+        with(menu) event_user(1);
+    }
+}
 </string>
           </argument>
         </arguments>
@@ -188,26 +240,25 @@ if objProgram.paused {
 if objProgram.paused {
     // if there's already a menu being displayed (failure screen) - don't pause
     // otherwise it locks the game
-    if(menu.active &amp;&amp; ((menu.state &gt;= 4 &amp;&amp; menu.state &lt;= 6) || (menu.state == 10 &amp;&amp; (menu.confirm_state &gt;= 21 &amp;&amp; menu.confirm_state &lt;= 25)) || (menu.state &gt;= 21 &amp;&amp; menu.state &lt;= 25)))
+    if(menu.state != 0 &amp;&amp; menu.action_script == menu_part_sstage_loss_actions)
     {
         objProgram.paused = false;
         game_pause(objProgram.paused);
     }
     if allowInput {
         // allow the menu object to handle everything
-        if(!menu.active)
+        if(menu.state == 0)
         {
-            menu.wait_for_release = true;
-            menu.active = true;
-            menu.state = menu.default_state;
+            with(menu) menu_fn_open_menu(menu_part_zone_items, true);
         }
-        if(!((menu.state &gt;= 4 &amp;&amp; menu.state &lt;= 6) || (menu.state == 10 &amp;&amp; (menu.confirm_state &gt;= 21 &amp;&amp; menu.confirm_state &lt;= 25)) || (menu.state &gt;= 21 &amp;&amp; menu.state &lt;= 25)))
-        {
-            with(menu) event_user(0);
-        }
-        
     }
+    
 }
+if(menu.state != 0)
+{
+    with(menu) event_user(0);
+}
+
 if objProgram.inputManager.pressingGamepad == -1 {
     allowInput = true;
 }
@@ -335,8 +386,12 @@ draw_top_hud(objSSLevel.timer, objSSPlayer.rings, 0, 0);
     draw_set_color(c_black);
     draw_rectangle(0,0,426,240,false);
     draw_set_color(c_white);
+}
+if(menu.state != 0)
+{
     with(menu) event_user(4);
 }
+
 </string>
           </argument>
         </arguments>

@@ -8,39 +8,6 @@
   <parentName>objHud</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="0" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>event_inherited();
-// Could have used the built-in function to replace the instance, but
-// Android doesn't always agree with it
-var newMenu = instance_create(0,0,objMenu_Android);
-newMenu.default_state = menu.default_state;
-newMenu.draw_with_view_offset = menu.draw_with_view_offset;
-with(menu)
-{
-    instance_destroy();
-}
-menu = newMenu;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="7" enumb="10">
       <action>
         <libid>1</libid>

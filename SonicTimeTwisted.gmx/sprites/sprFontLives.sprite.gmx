@@ -15,10 +15,17 @@
   <VTile>0</VTile>
   <TextureGroups>
     <TextureGroup0>0</TextureGroup0>
+    <TextureGroup1>0</TextureGroup1>
+    <TextureGroup2>0</TextureGroup2>
+    <TextureGroup3>0</TextureGroup3>
+    <TextureGroup4>0</TextureGroup4>
+    <TextureGroup5>0</TextureGroup5>
+    <TextureGroup6>0</TextureGroup6>
+    <TextureGroup7>0</TextureGroup7>
   </TextureGroups>
   <For3D>0</For3D>
   <width>9</width>
-  <height>9</height>
+  <height>8</height>
   <frames>
     <frame index="0">images\sprFontLives_0.png</frame>
     <frame index="1">images\sprFontLives_1.png</frame>
@@ -30,5 +37,84 @@
     <frame index="7">images\sprFontLives_7.png</frame>
     <frame index="8">images\sprFontLives_8.png</frame>
     <frame index="9">images\sprFontLives_9.png</frame>
+    <frame index="10">images\sprFontLives_10.png</frame>
+    <frame index="11">images\sprFontLives_11.png</frame>
+    <frame index="12">images\sprFontLives_12.png</frame>
+    <frame index="13">images\sprFontLives_13.png</frame>
+    <frame index="14">images\sprFontLives_14.png</frame>
+    <frame index="15">images\sprFontLives_15.png</frame>
+    <frame index="16">images\sprFontLives_16.png</frame>
+    <frame index="17">images\sprFontLives_17.png</frame>
+    <frame index="18">images\sprFontLives_18.png</frame>
+    <frame index="19">images\sprFontLives_19.png</frame>
+    <frame index="20">images\sprFontLives_20.png</frame>
+    <frame index="21">images\sprFontLives_21.png</frame>
+    <frame index="22">images\sprFontLives_22.png</frame>
+    <frame index="23">images\sprFontLives_23.png</frame>
+    <frame index="24">images\sprFontLives_24.png</frame>
+    <frame index="25">images\sprFontLives_25.png</frame>
+    <frame index="26">images\sprFontLives_26.png</frame>
+    <frame index="27">images\sprFontLives_27.png</frame>
+    <frame index="28">images\sprFontLives_28.png</frame>
+    <frame index="29">images\sprFontLives_29.png</frame>
+    <frame index="30">images\sprFontLives_30.png</frame>
+    <frame index="31">images\sprFontLives_31.png</frame>
+    <frame index="32">images\sprFontLives_32.png</frame>
+    <frame index="33">images\sprFontLives_33.png</frame>
+    <frame index="34">images\sprFontLives_34.png</frame>
+    <frame index="35">images\sprFontLives_35.png</frame>
+    <frame index="36">images\sprFontLives_36.png</frame>
+    <frame index="37">images\sprFontLives_37.png</frame>
+    <frame index="38">images\sprFontLives_38.png</frame>
+    <frame index="39">images\sprFontLives_39.png</frame>
+    <frame index="40">images\sprFontLives_40.png</frame>
+    <frame index="41">images\sprFontLives_41.png</frame>
+    <frame index="42">images\sprFontLives_42.png</frame>
+    <frame index="43">images\sprFontLives_43.png</frame>
+    <frame index="44">images\sprFontLives_44.png</frame>
+    <frame index="45">images\sprFontLives_45.png</frame>
+    <frame index="46">images\sprFontLives_46.png</frame>
+    <frame index="47">images\sprFontLives_47.png</frame>
+    <frame index="48">images\sprFontLives_48.png</frame>
+    <frame index="49">images\sprFontLives_49.png</frame>
+    <frame index="50">images\sprFontLives_50.png</frame>
+    <frame index="51">images\sprFontLives_51.png</frame>
+    <frame index="52">images\sprFontLives_52.png</frame>
+    <frame index="53">images\sprFontLives_53.png</frame>
+    <frame index="54">images\sprFontLives_54.png</frame>
+    <frame index="55">images\sprFontLives_55.png</frame>
+    <frame index="56">images\sprFontLives_56.png</frame>
+    <frame index="57">images\sprFontLives_57.png</frame>
+    <frame index="58">images\sprFontLives_58.png</frame>
+    <frame index="59">images\sprFontLives_59.png</frame>
+    <frame index="60">images\sprFontLives_60.png</frame>
+    <frame index="61">images\sprFontLives_61.png</frame>
+    <frame index="62">images\sprFontLives_62.png</frame>
+    <frame index="63">images\sprFontLives_63.png</frame>
+    <frame index="64">images\sprFontLives_64.png</frame>
+    <frame index="65">images\sprFontLives_65.png</frame>
+    <frame index="66">images\sprFontLives_66.png</frame>
+    <frame index="67">images\sprFontLives_67.png</frame>
+    <frame index="68">images\sprFontLives_68.png</frame>
+    <frame index="69">images\sprFontLives_69.png</frame>
+    <frame index="70">images\sprFontLives_70.png</frame>
+    <frame index="71">images\sprFontLives_71.png</frame>
+    <frame index="72">images\sprFontLives_72.png</frame>
+    <frame index="73">images\sprFontLives_73.png</frame>
+    <frame index="74">images\sprFontLives_74.png</frame>
+    <frame index="75">images\sprFontLives_75.png</frame>
+    <frame index="76">images\sprFontLives_76.png</frame>
+    <frame index="77">images\sprFontLives_77.png</frame>
+    <frame index="78">images\sprFontLives_78.png</frame>
+    <frame index="79">images\sprFontLives_79.png</frame>
+    <frame index="80">images\sprFontLives_80.png</frame>
+    <frame index="81">images\sprFontLives_81.png</frame>
+    <frame index="82">images\sprFontLives_82.png</frame>
+    <frame index="83">images\sprFontLives_83.png</frame>
+    <frame index="84">images\sprFontLives_84.png</frame>
+    <frame index="85">images\sprFontLives_85.png</frame>
+    <frame index="86">images\sprFontLives_86.png</frame>
+    <frame index="87">images\sprFontLives_87.png</frame>
+    <frame index="88">images\sprFontLives_88.png</frame>
   </frames>
 </sprite>

@@ -122,14 +122,14 @@ with objTitlecard
     <instance objName="objBlock" x="128" y="800" name="inst_15942DBB" locked="0" code="through=1;&#xA;" scaleX="24" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="objCurveConcave" x="384" y="896" name="inst_56B0FDF3" locked="0" code="" scaleX="0.666666686534882" scaleY="0.666666686534882" colour="4294967295" rotation="0"/>
     <instance objName="objCurveConcave" x="384" y="896" name="inst_CD093021" locked="0" code="" scaleX="0.666666686534882" scaleY="0.666666686534882" colour="4294967295" rotation="0"/>
-    <instance objName="objCurveConcave" x="240" y="1312" name="inst_836CA07A" locked="0" code="" scaleX="0.833333313465118" scaleY="-0.8299999833107" colour="4294967295" rotation="0"/>
-    <instance objName="objCurveConcave" x="208" y="1312" name="inst_1F74A00A" locked="0" code="" scaleX="-0.8299999833107" scaleY="-0.8299999833107" colour="4294967295" rotation="0"/>
-    <instance objName="objCurveConvex" x="448" y="1472" name="inst_D08C569A" locked="0" code="" scaleX="-0.6700000166893" scaleY="-0.6700000166893" colour="4294967295" rotation="0"/>
-    <instance objName="objCurveConvex" x="320" y="1472" name="inst_C3B732B3" locked="0" code="" scaleX="0.6700000166893" scaleY="-0.6700000166893" colour="4294967295" rotation="0"/>
-    <instance objName="objCurveConvex" x="640" y="1216" name="inst_86D94D05" locked="0" code="" scaleX="0.6700000166893" scaleY="-0.6700000166893" colour="4294967295" rotation="0"/>
-    <instance objName="objCurveConcave" x="528" y="1120" name="inst_0ADC4BAD" locked="0" code="" scaleX="-0.8299999833107" scaleY="-0.8299999833107" colour="4294967295" rotation="0"/>
-    <instance objName="objCurveConcave" x="560" y="1120" name="inst_8FF13293" locked="0" code="" scaleX="0.833333313465118" scaleY="-0.8299999833107" colour="4294967295" rotation="0"/>
-    <instance objName="objCurveConvex" x="640" y="1792" name="inst_64AB64AB" locked="0" code="" scaleX="-0.6700000166893" scaleY="-0.6700000166893" colour="4294967295" rotation="0"/>
+    <instance objName="objCurveConcave" x="240" y="1312" name="inst_836CA07A" locked="0" code="" scaleX="0.833333313465118" scaleY="-0.829999983310699" colour="4294967295" rotation="0"/>
+    <instance objName="objCurveConcave" x="208" y="1312" name="inst_1F74A00A" locked="0" code="" scaleX="-0.829999983310699" scaleY="-0.829999983310699" colour="4294967295" rotation="0"/>
+    <instance objName="objCurveConvex" x="448" y="1472" name="inst_D08C569A" locked="0" code="" scaleX="-0.670000016689301" scaleY="-0.670000016689301" colour="4294967295" rotation="0"/>
+    <instance objName="objCurveConvex" x="320" y="1472" name="inst_C3B732B3" locked="0" code="" scaleX="0.670000016689301" scaleY="-0.670000016689301" colour="4294967295" rotation="0"/>
+    <instance objName="objCurveConvex" x="640" y="1216" name="inst_86D94D05" locked="0" code="" scaleX="0.670000016689301" scaleY="-0.670000016689301" colour="4294967295" rotation="0"/>
+    <instance objName="objCurveConcave" x="528" y="1120" name="inst_0ADC4BAD" locked="0" code="" scaleX="-0.829999983310699" scaleY="-0.829999983310699" colour="4294967295" rotation="0"/>
+    <instance objName="objCurveConcave" x="560" y="1120" name="inst_8FF13293" locked="0" code="" scaleX="0.833333313465118" scaleY="-0.829999983310699" colour="4294967295" rotation="0"/>
+    <instance objName="objCurveConvex" x="640" y="1792" name="inst_64AB64AB" locked="0" code="" scaleX="-0.670000016689301" scaleY="-0.670000016689301" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="0" y="2752" name="inst_8AC3A938" locked="0" code="climbable=true;&#xA;" scaleX="48" scaleY="40.5" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="1792" y="2848" name="inst_5A812F35" locked="0" code="" scaleX="186" scaleY="28.5" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="2560" y="2784" name="inst_0943184D" locked="0" code="climbable=true;" scaleX="32" scaleY="8" colour="4294967295" rotation="0"/>
@@ -190,9 +190,9 @@ with objTitlecard
     <instance objName="objSlant" x="6008" y="160" name="inst_D72E8644" locked="0" code="" scaleX="-0.629999995231628" scaleY="0.125" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="1052" y="1920" name="inst_9A5C6156" locked="0" code="" scaleX="41" scaleY="4" colour="4294967295" rotation="0"/>
     <instance objName="objCurveConcaveSlim" x="1448" y="680" name="inst_C93BFF38" locked="0" code="layer=2;" scaleX="0.583333313465118" scaleY="0.583333313465118" colour="4278223103" rotation="0"/>
-    <instance objName="objCurveConcaveSlim" x="1432" y="664" name="inst_42A2E54D" locked="0" code="" scaleX="-0.5799999833107" scaleY="-0.5799999833107" colour="4294967295" rotation="0"/>
-    <instance objName="objCurveConcaveSlim" x="1448" y="664" name="inst_8B861FB5" locked="0" code="" scaleX="0.583333313465118" scaleY="-0.5799999833107" colour="4294967295" rotation="0"/>
-    <instance objName="objCurveConcaveSlim" x="1432" y="680" name="inst_BD5743AC" locked="0" code="layer=1;" scaleX="-0.5799999833107" scaleY="0.5799999833107" colour="4294901760" rotation="0"/>
+    <instance objName="objCurveConcaveSlim" x="1432" y="664" name="inst_42A2E54D" locked="0" code="" scaleX="-0.579999983310699" scaleY="-0.579999983310699" colour="4294967295" rotation="0"/>
+    <instance objName="objCurveConcaveSlim" x="1448" y="664" name="inst_8B861FB5" locked="0" code="" scaleX="0.583333313465118" scaleY="-0.579999983310699" colour="4294967295" rotation="0"/>
+    <instance objName="objCurveConcaveSlim" x="1432" y="680" name="inst_BD5743AC" locked="0" code="layer=1;" scaleX="-0.579999983310699" scaleY="0.579999983310699" colour="4294901760" rotation="0"/>
     <instance objName="objBlock" x="1352" y="608" name="inst_937ADB02" locked="0" code="" scaleX="3" scaleY="9.5" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="2448" y="308" name="inst_01D9F0B9" locked="0" code="" scaleX="4" scaleY="1.5" colour="4294967295" rotation="0"/>
     <instance objName="objSlant" x="4996" y="1132" name="inst_AB3FD0C3" locked="0" code="" scaleX="2.375" scaleY="0.375" colour="4294967295" rotation="0"/>
@@ -208,7 +208,7 @@ with objTitlecard
     <instance objName="objBlock" x="5952" y="992" name="inst_41E1A7FA" locked="0" code="" scaleX="4" scaleY="28" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="6176" y="1024" name="inst_C49C5B61" locked="0" code="" scaleX="4" scaleY="32" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="6080" y="1380" name="inst_69A4C05E" locked="0" code="climbable=true;&#xA;" scaleX="8" scaleY="19.4285717010498" colour="4294967295" rotation="0"/>
-    <instance objName="objCurveConcave" x="6208" y="1472" name="inst_E37A5160" locked="0" code="" scaleX="-0.6700000166893" scaleY="0.631578922271729" colour="4294967295" rotation="0"/>
+    <instance objName="objCurveConcave" x="6208" y="1472" name="inst_E37A5160" locked="0" code="" scaleX="-0.670000016689301" scaleY="0.631578922271729" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="6144" y="2496" name="inst_64BF2DAF" locked="0" code="" scaleX="24" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="6400" y="576" name="inst_B7E4290E" locked="0" code="climbable=1;&#xA;harmful=1;&#xA;" scaleX="14" scaleY="40" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="6372" y="512" name="inst_24F74B7A" locked="0" code="" scaleX="17.5" scaleY="4" colour="4294967295" rotation="0"/>
@@ -224,7 +224,7 @@ with objTitlecard
     <instance objName="objLayerSet" x="1532" y="680" name="inst_A2F61625" locked="0" code="layer=1;" scaleX="1" scaleY="1.16666662693024" colour="4294901760" rotation="0"/>
     <instance objName="objLayerFlip" x="2472" y="320" name="inst_645EC1DA" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objLayerSet" x="8180" y="1128" name="inst_209E7FF8" locked="0" code="layer=2;" scaleX="1" scaleY="1.16666662693024" colour="4278223103" rotation="0"/>
-    <instance objName="objCurveConcaveSlim" x="8280" y="1128" name="inst_00E437F7" locked="0" code="layer=1;&#xA;" scaleX="-0.5799999833107" scaleY="0.5799999833107" colour="4294901760" rotation="0"/>
+    <instance objName="objCurveConcaveSlim" x="8280" y="1128" name="inst_00E437F7" locked="0" code="layer=1;&#xA;" scaleX="-0.579999983310699" scaleY="0.579999983310699" colour="4294901760" rotation="0"/>
     <instance objName="objCurveConcaveSlim" x="8296" y="1128" name="inst_5B4099C8" locked="0" code="layer=2;" scaleX="0.583333313465118" scaleY="0.583333313465118" colour="4278223103" rotation="0"/>
     <instance objName="objLayerSet" x="8380" y="1128" name="inst_2F1DBA99" locked="0" code="layer=1;&#xA;" scaleX="1" scaleY="1.16666662693024" colour="4294901760" rotation="0"/>
     <instance objName="objBlock" x="8352" y="1056" name="inst_2FF26776" locked="0" code="" scaleX="3" scaleY="9.5" colour="4294967295" rotation="0"/>
@@ -232,19 +232,19 @@ with objTitlecard
     <instance objName="objBlock" x="8200" y="1056" name="inst_2EBE494F" locked="0" code="" scaleX="3" scaleY="9.5" colour="4294967295" rotation="0"/>
     <instance objName="objLayerSet" x="1588" y="680" name="inst_D307F923" locked="0" code="layer=2;&#xA;" scaleX="1" scaleY="1.16666662693024" colour="4278223103" rotation="0"/>
     <instance objName="objBlock" x="1608" y="608" name="inst_02DE9512" locked="0" code="" scaleX="3" scaleY="9.5" colour="4294967295" rotation="0"/>
-    <instance objName="objCurveConcaveSlim" x="1688" y="680" name="inst_A823CFF8" locked="0" code="layer=1;&#xA;" scaleX="-0.5799999833107" scaleY="0.5799999833107" colour="4294901760" rotation="0"/>
+    <instance objName="objCurveConcaveSlim" x="1688" y="680" name="inst_A823CFF8" locked="0" code="layer=1;&#xA;" scaleX="-0.579999983310699" scaleY="0.579999983310699" colour="4294901760" rotation="0"/>
     <instance objName="objCurveConcaveSlim" x="1704" y="680" name="inst_B9CB23B4" locked="0" code="layer=2;&#xA;" scaleX="0.583333313465118" scaleY="0.583333313465118" colour="4278223103" rotation="0"/>
     <instance objName="objLayerSet" x="1788" y="680" name="inst_202BB0ED" locked="0" code="layer=1;" scaleX="1" scaleY="1.16666662693024" colour="4294901760" rotation="0"/>
     <instance objName="objBlock" x="1760" y="608" name="inst_50E1E043" locked="0" code="" scaleX="3" scaleY="9.5" colour="4294967295" rotation="0"/>
-    <instance objName="objCurveConcaveSlim" x="1704" y="664" name="inst_D16D567C" locked="0" code="" scaleX="0.583333313465118" scaleY="-0.5799999833107" colour="4294967295" rotation="0"/>
-    <instance objName="objCurveConcaveSlim" x="1688" y="664" name="inst_35C5E3BB" locked="0" code="" scaleX="-0.5799999833107" scaleY="-0.5799999833107" colour="4294967295" rotation="0"/>
+    <instance objName="objCurveConcaveSlim" x="1704" y="664" name="inst_D16D567C" locked="0" code="" scaleX="0.583333313465118" scaleY="-0.579999983310699" colour="4294967295" rotation="0"/>
+    <instance objName="objCurveConcaveSlim" x="1688" y="664" name="inst_35C5E3BB" locked="0" code="" scaleX="-0.579999983310699" scaleY="-0.579999983310699" colour="4294967295" rotation="0"/>
     <instance objName="objLayerSet" x="2356" y="392" name="inst_322996AD" locked="0" code="layer=2;" scaleX="1" scaleY="1.16666662693024" colour="4278223103" rotation="0"/>
-    <instance objName="objCurveConcaveSlim" x="2456" y="392" name="inst_F6F8B5B8" locked="0" code="layer=1;&#xA;" scaleX="-0.5799999833107" scaleY="0.5799999833107" colour="4294901760" rotation="0"/>
+    <instance objName="objCurveConcaveSlim" x="2456" y="392" name="inst_F6F8B5B8" locked="0" code="layer=1;&#xA;" scaleX="-0.579999983310699" scaleY="0.579999983310699" colour="4294901760" rotation="0"/>
     <instance objName="objCurveConcaveSlim" x="2472" y="392" name="inst_FA3A25D4" locked="0" code="layer=2;" scaleX="0.583333313465118" scaleY="0.583333313465118" colour="4278223103" rotation="0"/>
     <instance objName="objLayerSet" x="2556" y="392" name="inst_7F324C63" locked="0" code="layer=1;&#xA;" scaleX="1" scaleY="1.16666662693024" colour="4294901760" rotation="0"/>
     <instance objName="objBlock" x="2528" y="320" name="inst_0D5F7A5A" locked="0" code="" scaleX="3" scaleY="9.5" colour="4294967295" rotation="0"/>
-    <instance objName="objCurveConcaveSlim" x="2472" y="376" name="inst_15A4225F" locked="0" code="" scaleX="0.583333313465118" scaleY="-0.5799999833107" colour="4294967295" rotation="0"/>
-    <instance objName="objCurveConcaveSlim" x="2456" y="376" name="inst_F7F19EE0" locked="0" code="" scaleX="-0.5799999833107" scaleY="-0.5799999833107" colour="4294967295" rotation="0"/>
+    <instance objName="objCurveConcaveSlim" x="2472" y="376" name="inst_15A4225F" locked="0" code="" scaleX="0.583333313465118" scaleY="-0.579999983310699" colour="4294967295" rotation="0"/>
+    <instance objName="objCurveConcaveSlim" x="2456" y="376" name="inst_F7F19EE0" locked="0" code="" scaleX="-0.579999983310699" scaleY="-0.579999983310699" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="2376" y="320" name="inst_B8DA8A07" locked="0" code="" scaleX="3" scaleY="9.5" colour="4294967295" rotation="0"/>
     <instance objName="objSlant" x="5272" y="888" name="inst_5922FADA" locked="0" code="" scaleX="1.375" scaleY="0.25" colour="4294967295" rotation="0"/>
     <instance objName="objSlant" x="5316" y="876" name="inst_B97FEADA" locked="0" code="" scaleX="2.375" scaleY="0.375" colour="4294967295" rotation="0"/>
@@ -254,11 +254,11 @@ with objTitlecard
     <instance objName="objSlant" x="8388" y="1964" name="inst_E56FDC68" locked="0" code="" scaleX="-2.38000011444092" scaleY="0.375" colour="4294967295" rotation="0"/>
     <instance objName="objSlant" x="8316" y="1956" name="inst_7B001ADC" locked="0" code="" scaleX="-2.13000011444092" scaleY="0.25" colour="4294967295" rotation="0"/>
     <instance objName="objSlant" x="8248" y="1952" name="inst_7540A2F1" locked="0" code="" scaleX="-1.37999999523163" scaleY="0.125" colour="4294967295" rotation="0"/>
-    <instance objName="objCurveConcaveSlim" x="3096" y="968" name="inst_B8A5CBDB" locked="0" code="layer=1;&#xA;" scaleX="-0.5799999833107" scaleY="0.5799999833107" colour="4294901760" rotation="0"/>
+    <instance objName="objCurveConcaveSlim" x="3096" y="968" name="inst_B8A5CBDB" locked="0" code="layer=1;&#xA;" scaleX="-0.579999983310699" scaleY="0.579999983310699" colour="4294901760" rotation="0"/>
     <instance objName="objCurveConcaveSlim" x="3112" y="968" name="inst_52AB1BA8" locked="0" code="layer=2;" scaleX="0.583333313465118" scaleY="0.583333313465118" colour="4278223103" rotation="0"/>
     <instance objName="objBlock" x="3168" y="896" name="inst_2C6B4257" locked="0" code="" scaleX="4" scaleY="9.5" colour="4294967295" rotation="0"/>
-    <instance objName="objCurveConcaveSlim" x="3112" y="952" name="inst_608DCA0B" locked="0" code="" scaleX="0.583333313465118" scaleY="-0.5799999833107" colour="4294967295" rotation="0"/>
-    <instance objName="objCurveConcaveSlim" x="3096" y="952" name="inst_DAC037BB" locked="0" code="" scaleX="-0.5799999833107" scaleY="-0.5799999833107" colour="4294967295" rotation="0"/>
+    <instance objName="objCurveConcaveSlim" x="3112" y="952" name="inst_608DCA0B" locked="0" code="" scaleX="0.583333313465118" scaleY="-0.579999983310699" colour="4294967295" rotation="0"/>
+    <instance objName="objCurveConcaveSlim" x="3096" y="952" name="inst_DAC037BB" locked="0" code="" scaleX="-0.579999983310699" scaleY="-0.579999983310699" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="3016" y="896" name="inst_31A93D83" locked="0" code="" scaleX="3" scaleY="9.5" colour="4294967295" rotation="0"/>
     <instance objName="objLayerSet" x="3196" y="968" name="inst_6358B7C9" locked="0" code="layer=1;" scaleX="1" scaleY="1.16666662693024" colour="4294901760" rotation="0"/>
     <instance objName="objLayerSet" x="2996" y="968" name="inst_BCFA8EB7" locked="0" code="layer=2;" scaleX="1" scaleY="1.16666662693024" colour="4278223103" rotation="0"/>
@@ -281,7 +281,7 @@ with objTitlecard
     <instance objName="objCurveConcave" x="6076" y="1120" name="inst_8B56E210" locked="0" code="" scaleX="-0.959999978542328" scaleY="-0.833333313465118" colour="4294967295" rotation="0"/>
     <instance objName="objCurveConcave" x="6084" y="1120" name="inst_49F515A5" locked="0" code="" scaleX="0.958333313465118" scaleY="-0.833333313465118" colour="4294967295" rotation="0"/>
     <instance objName="objCurveConcave" x="8560" y="2252" name="inst_2C4EA9F2" locked="0" code="" scaleX="-1.16999995708466" scaleY="1.16666662693024" colour="4294967295" rotation="0"/>
-    <instance objName="objCurveConcave" x="6208" y="1472" name="inst_C12FE5D8" locked="0" code="" scaleX="0.6700000166893" scaleY="0.631578922271729" colour="4294967295" rotation="0"/>
+    <instance objName="objCurveConcave" x="6208" y="1472" name="inst_C12FE5D8" locked="0" code="" scaleX="0.670000016689301" scaleY="0.631578922271729" colour="4294967295" rotation="0"/>
     <instance objName="objCurveConvex" x="6272" y="1152" name="inst_098328E9" locked="0" code="" scaleX="0.625" scaleY="0.666666686534882" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="6272" y="1216" name="inst_26CEF56F" locked="0" code="" scaleX="7.5" scaleY="39.5" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="6464" y="896" name="inst_C57D77F3" locked="0" code="" scaleX="6" scaleY="32" colour="4294967295" rotation="0"/>
@@ -300,13 +300,13 @@ with objTitlecard
     <instance objName="objBlock" x="7424" y="832" name="inst_DFADFDC3" locked="0" code="climbable=1;&#xA;" scaleX="16" scaleY="32" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="7680" y="832" name="inst_7063477E" locked="0" code="" scaleX="4.57142877578735" scaleY="0.571428596973419" colour="4294967295" rotation="0"/>
     <instance objName="objLayerSet" x="5044" y="840" name="inst_AF5B3A89" locked="0" code="layer=2;&#xA;" scaleX="1" scaleY="1.16666662693024" colour="4278223103" rotation="0"/>
-    <instance objName="objCurveConcaveSlim" x="5144" y="840" name="inst_CC4A23B3" locked="0" code="layer=1;&#xA;" scaleX="-0.5799999833107" scaleY="0.5799999833107" colour="4294901760" rotation="0"/>
+    <instance objName="objCurveConcaveSlim" x="5144" y="840" name="inst_CC4A23B3" locked="0" code="layer=1;&#xA;" scaleX="-0.579999983310699" scaleY="0.579999983310699" colour="4294901760" rotation="0"/>
     <instance objName="objCurveConcaveSlim" x="5160" y="840" name="inst_D8A27EA0" locked="0" code="layer=2;" scaleX="0.583333313465118" scaleY="0.583333313465118" colour="4278223103" rotation="0"/>
     <instance objName="objLayerSet" x="5244" y="840" name="inst_3B2C0C4B" locked="0" code="layer=1;&#xA;" scaleX="1" scaleY="1.16666662693024" colour="4294901760" rotation="0"/>
     <instance objName="objBlock" x="5216" y="768" name="inst_6029B50A" locked="0" code="" scaleX="3" scaleY="9.5" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="5064" y="768" name="inst_3BDD1370" locked="0" code="" scaleX="3" scaleY="9.5" colour="4294967295" rotation="0"/>
-    <instance objName="objCurveConcaveSlim" x="5144" y="824" name="inst_C0B9F9DC" locked="0" code="" scaleX="-0.5799999833107" scaleY="-0.5799999833107" colour="4294967295" rotation="0"/>
-    <instance objName="objCurveConcaveSlim" x="5160" y="824" name="inst_129DAC58" locked="0" code="" scaleX="0.583333313465118" scaleY="-0.5799999833107" colour="4294967295" rotation="0"/>
+    <instance objName="objCurveConcaveSlim" x="5144" y="824" name="inst_C0B9F9DC" locked="0" code="" scaleX="-0.579999983310699" scaleY="-0.579999983310699" colour="4294967295" rotation="0"/>
+    <instance objName="objCurveConcaveSlim" x="5160" y="824" name="inst_129DAC58" locked="0" code="" scaleX="0.583333313465118" scaleY="-0.579999983310699" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="8376" y="764" name="inst_A3E2B0F2" locked="0" code="climbable=1;" scaleX="25" scaleY="40.5" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="8768" y="768" name="inst_9C1C3FF7" locked="0" code="climbable=1;&#xA;" scaleX="16" scaleY="24" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="8576" y="764" name="inst_33842B3C" locked="0" code="" scaleX="24" scaleY="10.5" colour="4294967295" rotation="0"/>
@@ -373,12 +373,12 @@ with objTitlecard
     <instance objName="objSlant" x="7472" y="2424" name="inst_3CAFF850" locked="0" code="" scaleX="-1.37999999523163" scaleY="0.25" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="7948" y="1984" name="inst_4586EEF7" locked="0" code="climbable=1;" scaleX="62.5" scaleY="8" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="8576" y="2096" name="inst_551C8413" locked="0" code="" scaleX="16" scaleY="16" colour="4294967295" rotation="0"/>
-    <instance objName="objCurveConcaveSlim" x="8280" y="1112" name="inst_F46A57C6" locked="0" code="" scaleX="-0.5799999833107" scaleY="-0.5799999833107" colour="4294967295" rotation="0"/>
-    <instance objName="objCurveConcaveSlim" x="8296" y="1112" name="inst_3A328354" locked="0" code="" scaleX="0.583333313465118" scaleY="-0.5799999833107" colour="4294967295" rotation="0"/>
+    <instance objName="objCurveConcaveSlim" x="8280" y="1112" name="inst_F46A57C6" locked="0" code="" scaleX="-0.579999983310699" scaleY="-0.579999983310699" colour="4294967295" rotation="0"/>
+    <instance objName="objCurveConcaveSlim" x="8296" y="1112" name="inst_3A328354" locked="0" code="" scaleX="0.583333313465118" scaleY="-0.579999983310699" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="8608" y="1088" name="inst_246E7D32" locked="0" code="through=1;&#xA;" scaleX="1" scaleY="5.7142858505249" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="3840" y="2048" name="inst_1F0C76E2" locked="0" code="" scaleX="13" scaleY="4" colour="4294967295" rotation="0"/>
     <instance objName="objCurveConcaveSlim" x="7104" y="1760" name="inst_F0FA0C78" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objCurveConcaveSlim" x="7104" y="1760" name="inst_8F9336E2" locked="0" code="" scaleX="0.6700000166893" scaleY="0.673684239387512" colour="4294967295" rotation="0"/>
+    <instance objName="objCurveConcaveSlim" x="7104" y="1760" name="inst_8F9336E2" locked="0" code="" scaleX="0.670000016689301" scaleY="0.673684239387512" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="4000" y="2140" name="inst_7FBB95CF" locked="0" code="layer=1;&#xA;climbable=true;&#xA;" scaleX="4" scaleY="34.2857131958008" colour="4294967295" rotation="0"/>
     <instance objName="objCurveConvexSlim" x="4032" y="2048" name="inst_7C202F6D" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objCurveConvexSlim" x="4004" y="2080" name="inst_D455300B" locked="0" code="" scaleX="-0.666666686534882" scaleY="0.666666686534882" colour="4294967295" rotation="0"/>
@@ -450,13 +450,13 @@ with objTitlecard
     <instance objName="objSlant" x="616" y="576" name="inst_B330F381" locked="0" code="" scaleX="0.625" scaleY="0.625" colour="4294967295" rotation="0"/>
     <instance objName="objSlant" x="596" y="596" name="inst_2B6F1482" locked="0" code="" scaleX="0.625" scaleY="0.625" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="640" y="1632" name="inst_D976400A" locked="0" code="" scaleX="10" scaleY="3" colour="4294967295" rotation="0"/>
-    <instance objName="objCurveConcaveSlim" x="8128" y="1120" name="inst_80C37A0F" locked="0" code="" scaleX="-0.6700000166893" scaleY="0.673684239387512" colour="4294967295" rotation="0"/>
+    <instance objName="objCurveConcaveSlim" x="8128" y="1120" name="inst_80C37A0F" locked="0" code="" scaleX="-0.670000016689301" scaleY="0.673684239387512" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="8032" y="1056" name="inst_62CDFADC" locked="0" code="" scaleX="4" scaleY="9.14285755157471" colour="4294967295" rotation="0"/>
-    <instance objName="objCurveConcaveSlim" x="8128" y="1120" name="inst_FF978E68" locked="0" code="" scaleX="-0.6700000166893" scaleY="0.673684239387512" colour="4294967295" rotation="0"/>
+    <instance objName="objCurveConcaveSlim" x="8128" y="1120" name="inst_FF978E68" locked="0" code="" scaleX="-0.670000016689301" scaleY="0.673684239387512" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="8032" y="1056" name="inst_BFECEF3A" locked="0" code="climbable=1;&#xA;" scaleX="4" scaleY="9.14285755157471" colour="4294967295" rotation="0"/>
     <instance objName="objCurveConcaveSlim" x="7040" y="1760" name="inst_39378D6F" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objCurveConcaveSlim" x="7040" y="1760" name="inst_7B15D506" locked="0" code="" scaleX="-0.6700000166893" scaleY="0.673684239387512" colour="4294967295" rotation="0"/>
-    <instance objName="objCurveConcaveSlim" x="4096" y="2400" name="inst_DE35A15C" locked="0" code="layer=1;&#xA;" scaleX="-0.6700000166893" scaleY="0.673684239387512" colour="4294967295" rotation="0"/>
+    <instance objName="objCurveConcaveSlim" x="7040" y="1760" name="inst_7B15D506" locked="0" code="" scaleX="-0.670000016689301" scaleY="0.673684239387512" colour="4294967295" rotation="0"/>
+    <instance objName="objCurveConcaveSlim" x="4096" y="2400" name="inst_DE35A15C" locked="0" code="layer=1;&#xA;" scaleX="-0.670000016689301" scaleY="0.673684239387512" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="7032" y="1824" name="inst_8E0C1DDE" locked="0" code="" scaleX="10" scaleY="4" colour="4294967295" rotation="0"/>
     <instance objName="objSlant" x="4344" y="256" name="inst_58ABAA55" locked="0" code="" scaleX="-0.629999995231628" scaleY="0.125" colour="4294967295" rotation="0"/>
     <instance objName="objSlant" x="4364" y="260" name="inst_C04FAA95" locked="0" code="" scaleX="-0.629999995231628" scaleY="0.25" colour="4294967295" rotation="0"/>
@@ -661,9 +661,9 @@ with objTitlecard
     <instance objName="objCurveConvexSlim" x="6976" y="1088" name="inst_3671BB58" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="6944" y="1180" name="inst_0A7F55DD" locked="0" code="climbable=1;&#xA;" scaleX="4" scaleY="73.5" colour="4294967295" rotation="0"/>
     <instance objName="objCurveConcaveSlim" x="7040" y="1760" name="inst_DEA74314" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objCurveConcaveSlim" x="7040" y="1760" name="inst_284671F7" locked="0" code="" scaleX="-0.6700000166893" scaleY="0.673684239387512" colour="4294967295" rotation="0"/>
+    <instance objName="objCurveConcaveSlim" x="7040" y="1760" name="inst_284671F7" locked="0" code="" scaleX="-0.670000016689301" scaleY="0.673684239387512" colour="4294967295" rotation="0"/>
     <instance objName="objCurveConcaveSlim" x="4100" y="2720" name="inst_D5B4BDA1" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objCurveConcaveSlim" x="4100" y="2720" name="inst_7222970D" locked="0" code="" scaleX="-0.6700000166893" scaleY="0.673684239387512" colour="4294967295" rotation="0"/>
+    <instance objName="objCurveConcaveSlim" x="4100" y="2720" name="inst_7222970D" locked="0" code="" scaleX="-0.670000016689301" scaleY="0.673684239387512" colour="4294967295" rotation="0"/>
     <instance objName="objLayerSet" x="3892" y="1984" name="inst_10394608" locked="0" code="layer=1;&#xA;" scaleX="1" scaleY="1.36170208454132" colour="4294901760" rotation="0"/>
     <instance objName="objLayerSet" x="3972" y="2088" name="inst_DBFCE967" locked="0" code="layer=2;&#xA;" scaleX="1.5" scaleY="8.25531959533691" colour="4278223103" rotation="0"/>
     <instance objName="objRing" x="4876" y="2504" name="inst_6A8DA2DC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

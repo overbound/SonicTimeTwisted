@@ -2,10 +2,18 @@
 <assets>
   <Configs name="configs">
     <Config>Configs\Default</Config>
+    <Config>Configs\Windows</Config>
+    <Config>Configs\AndroidSmartphone</Config>
+    <Config>Configs\AndroidConsole</Config>
+    <Config>Configs\MacOS</Config>
+    <Config>Configs\iPhone</Config>
+    <Config>Configs\AppleTV</Config>
+    <Config>Configs\Linux</Config>
   </Configs>
   <datafiles number="43" name="datafiles"/>
   <NewExtensions>
     <extension index="0">extensions\BtInputs</extension>
+    <extension index="1">extensions\SonicTimeTwistedGUI</extension>
   </NewExtensions>
   <sounds name="sound">
     <sounds name="BGM">
@@ -118,7 +126,9 @@
       </sounds>
       <sounds name="Global">
         <sound>sound\sndBeep</sound>
+        <sound>sound\sndCancel</sound>
         <sound>sound\sndChing</sound>
+        <sound>sound\sndConfirm</sound>
         <sound>sound\sndLife</sound>
         <sound>sound\sndTock</sound>
       </sounds>
@@ -366,6 +376,7 @@
     <sprites name="Fonts">
       <sprite>sprites\sprFontHud</sprite>
       <sprite>sprites\sprFontLives</sprite>
+      <sprite>sprites\sprFontHudMin</sprite>
       <sprite>sprites\sprFontTitle</sprite>
       <sprite>sprites\sprFontTitleLarge</sprite>
       <sprite>sprites\sprFontTitleSmall</sprite>
@@ -377,6 +388,7 @@
         <sprite>sprites\sprGameOver</sprite>
         <sprite>sprites\sprHud</sprite>
         <sprite>sprites\sprLives</sprite>
+        <sprite>sprites\sprLivesAlt</sprite>
       </sprites>
       <sprites name="Save Screen">
         <sprite>sprites\sprCharSelect</sprite>
@@ -428,6 +440,7 @@
         <sprite>sprites\sprTouchscreenRunButtonSmall</sprite>
         <sprite>sprites\sprTouchscreenSuperButtonBlue</sprite>
         <sprite>sprites\sprTouchscreenSuperButtonYellow</sprite>
+        <sprite>sprites\sprTouchscreenFastForward</sprite>
       </sprites>
       <sprites name="Zone Title">
         <sprite>sprites\sprTitleBanner</sprite>
@@ -1433,6 +1446,15 @@
         <sprite>sprites\sprTimeTravelEffect</sprite>
       </sprites>
     </sprites>
+    <sprites name="Extensions">
+      <sprites name="GUI">
+        <sprites name="Menu">
+          <sprite>sprites\sprMenuCursorLeft</sprite>
+          <sprite>sprites\sprMenuCursorMid</sprite>
+          <sprite>sprites\sprMenuCursorRight</sprite>
+        </sprites>
+      </sprites>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <backgrounds name="Attraction Attack">
@@ -1930,6 +1952,7 @@
           <script>scripts\input_check.gml</script>
           <script>scripts\input_check_pressed.gml</script>
           <script>scripts\input_check_released.gml</script>
+          <script>scripts\input_is_touchscreen.gml</script>
         </scripts>
       </scripts>
       <scripts name="Math">
@@ -1987,6 +2010,11 @@
         <script>scripts\save_video_settings.gml</script>
         <script>scripts\set_30_fps.gml</script>
         <script>scripts\set_video_mode.gml</script>
+        <script>scripts\get_flashing_reduced.gml</script>
+        <script>scripts\set_flashing_reduced.gml</script>
+      </scripts>
+      <scripts name="I18n">
+        <script>scripts\tr.gml</script>
       </scripts>
     </scripts>
     <scripts name="Overlays">
@@ -2482,8 +2510,118 @@
         <script>scripts\smartphone_enable_virtual_keys.gml</script>
         <script>scripts\smartphone_save_configuration.gml</script>
       </scripts>
-      <script>scripts\get_os_type.gml</script>
-      <script>scripts\is_tt_shader_supported.gml</script>
+    </scripts>
+    <scripts name="Extensions">
+      <scripts name="GUI">
+        <scripts name="menu_functions">
+          <script>scripts\menu_fn_init.gml</script>
+          <script>scripts\menu_fn_step.gml</script>
+          <script>scripts\menu_fn_step_end.gml</script>
+          <script>scripts\menu_fn_step_begin.gml</script>
+          <script>scripts\menu_fn_draw.gml</script>
+          <script>scripts\menu_fn_draw_no_surface.gml</script>
+          <script>scripts\menu_fn_longconfirmation.gml</script>
+          <script>scripts\menu_fn_draw_default.gml</script>
+          <script>scripts\menu_fn_step_default.gml</script>
+          <script>scripts\menu_fn_touchscreen_default.gml</script>
+          <script>scripts\menu_fn_keys_default.gml</script>
+          <script>scripts\menu_fn_open_menu.gml</script>
+          <script>scripts\menu_fn_set_scripts.gml</script>
+          <script>scripts\menu_fn_set_scripts_from_next.gml</script>
+          <script>scripts\menu_fn_open_confirmation_window.gml</script>
+          <script>scripts\menu_fn_open_mapping_window.gml</script>
+          <script>scripts\menu_fn_update_mapping_window.gml</script>
+          <script>scripts\menu_fn_cleanup.gml</script>
+          <script>scripts\menu_fn_goto_submenu.gml</script>
+          <script>scripts\menu_fn_exit_submenu.gml</script>
+          <script>scripts\menu_fn_refresh_displayed_value.gml</script>
+          <script>scripts\menu_fn_add_option.gml</script>
+          <script>scripts\menu_fn_add_title.gml</script>
+          <script>scripts\menu_fn_get_keymap_getkey.gml</script>
+          <script>scripts\menu_fn_open_slider_window.gml</script>
+          <script>scripts\menu_fn_sync_slider.gml</script>
+          <script>scripts\menu_fn_get_touchscreen_dpad_sprite.gml</script>
+          <script>scripts\menu_fn_get_touchscreen_bt_sprite.gml</script>
+          <script>scripts\menu_fn_get_touchscreen_bt_radius.gml</script>
+          <script>scripts\menu_fn_keys_returnonly.gml</script>
+          <script>scripts\menu_fn_close_menu.gml</script>
+          <script>scripts\menu_fn_finalize.gml</script>
+          <scripts name="actions_on_close">
+            <script>scripts\menu_fn_exitgame.gml</script>
+            <script>scripts\menu_fn_restart_game.gml</script>
+            <script>scripts\menu_fn_levelselect_goto_act.gml</script>
+            <script>scripts\menu_fn_levelselect_goto_specialstage.gml</script>
+            <script>scripts\menu_fn_resume_game.gml</script>
+            <script>scripts\menu_fn_resume_specialstage.gml</script>
+            <script>scripts\menu_fn_quit_specialstage.gml</script>
+            <script>scripts\menu_fn_restart_specialstage.gml</script>
+          </scripts>
+        </scripts>
+        <scripts name="menu_parts">
+          <scripts name="test">
+            <script>scripts\menu_part_levelselect_zones_items_test.gml</script>
+            <script>scripts\menu_part_levelselect_zones_actions_test.gml</script>
+          </scripts>
+          <script>scripts\menu_part_title_items.gml</script>
+          <script>scripts\menu_part_title_actions.gml</script>
+          <script>scripts\menu_part_zone_items.gml</script>
+          <script>scripts\menu_part_zone_actions.gml</script>
+          <scripts name="options">
+            <script>scripts\menu_part_options_items.gml</script>
+            <script>scripts\menu_part_options_actions.gml</script>
+            <script>scripts\menu_part_videooptions_items.gml</script>
+            <script>scripts\menu_part_videooptions_actions.gml</script>
+            <script>scripts\menu_part_keymap_items.gml</script>
+            <script>scripts\menu_part_keymap_actions.gml</script>
+            <script>scripts\menu_part_keymap_step.gml</script>
+            <script>scripts\menu_part_joymap_items.gml</script>
+            <script>scripts\menu_part_joymap_actions.gml</script>
+            <script>scripts\menu_part_joymap_step.gml</script>
+            <scripts name="smartphone">
+              <script>scripts\menu_part_touchscreen_items.gml</script>
+              <script>scripts\menu_part_touchscreen_actions.gml</script>
+              <script>scripts\menu_part_touchscreen_step.gml</script>
+              <script>scripts\menu_part_touchscreen_draw.gml</script>
+              <script>scripts\menu_part_buttonreposition_items.gml</script>
+              <script>scripts\menu_part_buttonreposition_actions.gml</script>
+              <script>scripts\menu_part_buttonreposition_step.gml</script>
+              <script>scripts\menu_part_buttonreposition_draw.gml</script>
+              <script>scripts\menu_part_buttonreposition_touchscreen.gml</script>
+              <script>scripts\menu_part_buttonreposition_confirm_items.gml</script>
+              <script>scripts\menu_part_buttonreposition_confirm_actions.gml</script>
+              <script>scripts\menu_part_gyroscope_items.gml</script>
+              <script>scripts\menu_part_gyroscope_actions.gml</script>
+              <script>scripts\menu_part_gyroscope_draw.gml</script>
+              <script>scripts\menu_part_gyroscope_step.gml</script>
+            </scripts>
+          </scripts>
+          <scripts name="special_stage">
+            <script>scripts\menu_part_sstage_offtrack_items.gml</script>
+            <script>scripts\menu_part_sstage_norings_items.gml</script>
+            <script>scripts\menu_part_sstage_defeat_items.gml</script>
+            <script>scripts\menu_part_sstage_loss_items.gml</script>
+            <script>scripts\menu_part_sstage_loss_actions.gml</script>
+            <script>scripts\menu_part_sstage_loss_step.gml</script>
+            <script>scripts\menu_part_sstage_loss_draw.gml</script>
+          </scripts>
+          <scripts name="level_select">
+            <script>scripts\menu_part_levelselect_char_items.gml</script>
+            <script>scripts\menu_part_levelselect_char_actions.gml</script>
+            <script>scripts\menu_part_levelselect_char_draw.gml</script>
+            <script>scripts\menu_part_levelselect_char_step.gml</script>
+            <script>scripts\menu_part_levelselect_char_keys.gml</script>
+            <script>scripts\menu_part_levelselect_char_touchscreen.gml</script>
+            <script>scripts\menu_part_levelselect_items.gml</script>
+            <script>scripts\menu_part_levelselect_actions.gml</script>
+            <script>scripts\menu_part_levelselect_4acts_items.gml</script>
+            <script>scripts\menu_part_levelselect_4acts_actions.gml</script>
+            <script>scripts\menu_part_levelselect_ppanic_items.gml</script>
+            <script>scripts\menu_part_levelselect_ppanic_actions.gml</script>
+            <script>scripts\menu_part_levelselect_sstages_items.gml</script>
+            <script>scripts\menu_part_levelselect_sstages_actions.gml</script>
+          </scripts>
+        </scripts>
+      </scripts>
     </scripts>
   </scripts>
   <shaders name="shaders">
@@ -3291,14 +3429,12 @@
     <objects name="Ports">
       <objects name="Android">
         <object>objects\objAndroid</object>
-        <object>objects\objTitleControl_Android</object>
         <object>objects\objSSHud_Android</object>
         <object>objects\objSSLevel_Android</object>
         <object>objects\objAndroidInput</object>
         <object>objects\objHud_Android</object>
         <object>objects\objAndroidInputSmartphone</object>
         <object>objects\objLevel_Android</object>
-        <object>objects\objMenu_Android</object>
         <object>objects\objSaveControl_Android</object>
       </objects>
       <object>objects\objTimeTravelVortexNoShader</object>
@@ -3583,7 +3719,8 @@
       </rooms>
     </rooms>
   </rooms>
-  <constants number="106">
+  <constants number="123">
+    <constant name="VERSION">"1.1.0-WIP"</constant>
     <constant name="GAMEPAD_POV_Y">7</constant>
     <constant name="GAMEPAD_POV_X">6</constant>
     <constant name="GAMEPAD_AXIS_V">5</constant>
@@ -3690,6 +3827,22 @@
     <constant name="RUMBLE_EVENT_EMERALD_GET">23</constant>
     <constant name="RUMBLE_EVENT_BREAK_BLOCK">24</constant>
     <constant name="RUMBLE_EVENT_SHAKE_ONCE">25</constant>
+    <constant name="DEVICE_TYPE_COMPUTER">1</constant>
+    <constant name="DEVICE_TYPE_SMARTPHONE">2</constant>
+    <constant name="DEVICE_TYPE_CONSOLE">4</constant>
+    <constant name="DEVICE_TYPE_UNKNOWN">8</constant>
+    <constant name="DEVICE_OS_WINDOWS">16</constant>
+    <constant name="DEVICE_OS_MACOS">32</constant>
+    <constant name="DEVICE_OS_LINUX">64</constant>
+    <constant name="DEVICE_OS_IOS">128</constant>
+    <constant name="DEVICE_OS_ANDROID">256</constant>
+    <constant name="DEVICE_OS_UNKNOWN">512</constant>
+    <constant name="DEVICE_INFO">DEVICE_TYPE_UNKNOWN | DEVICE_OS_UNKNOWN</constant>
+    <constant name="DEVICE_BACK_BUTTON">vk_escape</constant>
+    <constant name="DEVICE_TT_SHADER_SUPPORTED">1</constant>
+    <constant name="INPUT_KEYBOARD">0</constant>
+    <constant name="INPUT_TOUCHSCREEN">1</constant>
+    <constant name="INPUT_GAMEPAD">2</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>

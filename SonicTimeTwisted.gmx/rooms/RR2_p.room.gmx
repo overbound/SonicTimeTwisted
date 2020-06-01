@@ -114,7 +114,7 @@ with objTitlecard
     <instance objName="objCurveConcave" x="7944" y="616" name="inst_5FC8E6FC" locked="0" code="climbable=1;&#xA;" scaleX="1.25" scaleY="1.25" colour="4294967295" rotation="0"/>
     <instance objName="objCurveConcave" x="16136" y="968" name="inst_DD94B355" locked="0" code="climbable=1;&#xA;" scaleX="1.25" scaleY="1.25" colour="4294967295" rotation="0"/>
     <instance objName="objCurveConcave" x="4412" y="1856" name="inst_CA8B60D3" locked="0" code="climbable=1;&#xA;" scaleX="-1.28999996185303" scaleY="1.33333337306976" colour="4294967295" rotation="0"/>
-    <instance objName="objCurveConcave" x="3776" y="516" name="inst_02893F18" locked="0" code="climbable=1;&#xA;" scaleX="0.6700000166893" scaleY="0.631578922271729" colour="4294967295" rotation="0"/>
+    <instance objName="objCurveConcave" x="3776" y="516" name="inst_02893F18" locked="0" code="climbable=1;&#xA;" scaleX="0.670000016689301" scaleY="0.631578922271729" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="6528" y="1344" name="inst_7EE88F5F" locked="0" code="through=1;&#xA;" scaleX="48" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="8064" y="228" name="inst_9E0EC5F5" locked="0" code="climbable=1;&#xA;" scaleX="16" scaleY="63.5" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="8704" y="928" name="inst_7E0400DF" locked="0" code="climbable=1;" scaleX="16" scaleY="32" colour="4294967295" rotation="0"/>

@@ -11,6 +11,13 @@
   <VTile>-1</VTile>
   <TextureGroups>
     <TextureGroup0>12</TextureGroup0>
+    <TextureGroup1>12</TextureGroup1>
+    <TextureGroup2>12</TextureGroup2>
+    <TextureGroup3>12</TextureGroup3>
+    <TextureGroup4>12</TextureGroup4>
+    <TextureGroup5>12</TextureGroup5>
+    <TextureGroup6>12</TextureGroup6>
+    <TextureGroup7>12</TextureGroup7>
   </TextureGroups>
   <For3D>0</For3D>
   <width>2048</width>

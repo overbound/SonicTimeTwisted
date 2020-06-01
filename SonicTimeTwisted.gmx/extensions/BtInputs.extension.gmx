@@ -27,6 +27,27 @@
     <Config name="Default">
       <CopyToMask>2097160</CopyToMask>
     </Config>
+    <Config name="Windows">
+      <CopyToMask>2097160</CopyToMask>
+    </Config>
+    <Config name="AndroidSmartphone">
+      <CopyToMask>2097160</CopyToMask>
+    </Config>
+    <Config name="AndroidConsole">
+      <CopyToMask>2097160</CopyToMask>
+    </Config>
+    <Config name="MacOS">
+      <CopyToMask>2097160</CopyToMask>
+    </Config>
+    <Config name="iPhone">
+      <CopyToMask>2097160</CopyToMask>
+    </Config>
+    <Config name="AppleTV">
+      <CopyToMask>2097160</CopyToMask>
+    </Config>
+    <Config name="Linux">
+      <CopyToMask>2097160</CopyToMask>
+    </Config>
   </ConfigOptions>
   <androidPermissions>
     <Permission>android.permission.BLUETOOTH</Permission>
@@ -42,6 +63,27 @@
       <uncompress>0</uncompress>
       <ConfigOptions>
         <Config name="Default">
+          <CopyToMask>2097160</CopyToMask>
+        </Config>
+        <Config name="Windows">
+          <CopyToMask>2097160</CopyToMask>
+        </Config>
+        <Config name="AndroidSmartphone">
+          <CopyToMask>2097160</CopyToMask>
+        </Config>
+        <Config name="AndroidConsole">
+          <CopyToMask>2097160</CopyToMask>
+        </Config>
+        <Config name="MacOS">
+          <CopyToMask>2097160</CopyToMask>
+        </Config>
+        <Config name="iPhone">
+          <CopyToMask>2097160</CopyToMask>
+        </Config>
+        <Config name="AppleTV">
+          <CopyToMask>2097160</CopyToMask>
+        </Config>
+        <Config name="Linux">
           <CopyToMask>2097160</CopyToMask>
         </Config>
       </ConfigOptions>

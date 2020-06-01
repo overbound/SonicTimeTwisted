@@ -50,15 +50,23 @@ pauseOffset = 0;
 pauseState = 3;
 controlState = 0;
 axis = "";
-inputFlash = 0;
 screenAlpha = 0;
 allowInput = true;
 gamepadSupport = true;
 logoAlpha = 4;
-startText = 'PRESS START';
-option1Text = 'MAP KEYS OR GAMEPAD';
-option2Text = 'SCREEN SIZE';
-option3Text = 'ENABLE GAMEPAD F1';
+
+skipping = 0;
+// allow skipping after first launch
+allow_skipping = true;
+is_touchscreen = input_is_touchscreen();
+if(is_touchscreen)
+{
+    startText = tr('Touch to start');
+}
+else
+{
+    startText = tr('Press Start');
+}
 menu = instance_create(x,y,objMenu);
 menu.default_state = 1;
 </string>
@@ -67,134 +75,6 @@ menu.default_state = 1;
       </action>
     </event>
     <event eventtype="2" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>611</id>
-        <kind>6</kind>
-        <userelative>-1</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>-1</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>name</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>1</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>612</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>-1</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_if_variable</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>0</kind>
-            <string>name</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>12</string>
-          </argument>
-          <argument>
-            <kind>4</kind>
-            <string>1</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>301</id>
-        <kind>0</kind>
-        <userelative>-1</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_set_alarm</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>0</kind>
-            <string>65</string>
-          </argument>
-          <argument>
-            <kind>4</kind>
-            <string>0</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>612</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>-1</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_if_variable</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>0</kind>
-            <string>name</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>9</string>
-          </argument>
-          <argument>
-            <kind>4</kind>
-            <string>0</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>211</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_sound</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>6</kind>
-            <sound>bgmTitle</sound>
-          </argument>
-          <argument>
-            <kind>3</kind>
-            <string>0</string>
-          </argument>
-        </arguments>
-      </action>
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -211,7 +91,16 @@ menu.default_state = 1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if name &gt; 2 &amp;&amp; name &lt; 9 {
+            <string>name++;
+if(name &lt; 12)
+{
+    alarm_set(0, 65);
+}
+if(name == 9)
+{
+    play_effect(bgmTitle, false);
+}
+if name &gt; 2 &amp;&amp; name &lt; 9 {
     audio_play_sound(sndTock,0,0);
 }
 </string>
@@ -222,9 +111,9 @@ menu.default_state = 1;
     <event eventtype="3" enumb="2">
       <action>
         <libid>1</libid>
-        <id>611</id>
-        <kind>6</kind>
-        <userelative>-1</userelative>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
         <isquestion>0</isquestion>
         <useapplyto>-1</useapplyto>
         <exetype>2</exetype>
@@ -236,16 +125,91 @@ menu.default_state = 1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_index</string>
+            <string>if(skipping == 0)
+{
+    /// menu end step
+    if menu.state != 0 {
+        with(menu) event_user(2);
+    }
+    image_index = objScreen.image_index div 8;
+}
+</string>
           </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
           <argument>
-            <kind>0</kind>
-            <string>objScreen.image_index div 8</string>
+            <kind>1</kind>
+            <string>if(skipping == 0)
+{
+    /// menu begin step
+    if menu.state != 0 {
+        with(menu) event_user(1);
+    }
+}
+</string>
           </argument>
         </arguments>
       </action>
     </event>
     <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>612</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>-1</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_if_variable</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>0</kind>
+            <string>skipping</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>0</string>
+          </argument>
+          <argument>
+            <kind>4</kind>
+            <string>0</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>422</id>
+        <kind>1</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -267,10 +231,9 @@ if(pauseState == 0)
 {
     if allowInput {
         // allow the menu object to handle everything
-        if(!menu.active)
+        if(menu.state == 0 &amp;&amp; !instance_exists(objTransition))
         {
-            menu.wait_for_release = true;
-            menu.active = true;
+            with(menu) menu_fn_open_menu(menu_part_title_items);
         }
         
         with(menu) event_user(0);
@@ -279,9 +242,18 @@ if(pauseState == 0)
 else
 if(pauseState == 3)
 {
-    if start == true
-    {   
-        if input_check_pressed(cSTART) {
+    if(start &amp;&amp; menu.state == 0)
+    {
+        var do_start = false;
+        if(is_touchscreen)
+        {
+            do_start = device_mouse_check_button_pressed(0, mb_left);
+        }
+        else
+        {
+            do_start = input_check_pressed(cSTART);
+        }
+        if do_start {
             pauseState=0;
             with objTitlescreenPlane { hsp = 0; image_speed = 0 }
             with objTitleSonic image_speed = 0;
@@ -318,70 +290,190 @@ if objProgram.inputManager.pressingGamepad == -1 {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Level Select Code
-switch(levelSelect) {
-case 0:
-    if input_check_pressed(cLEFT) {
-        levelSelect +=1;
-    }
-break;
-case 1:
-    if input_check_pressed(cLEFT) {
-        levelSelect +=1;
-    } else if input_check_pressed(cRIGHT) || input_check_pressed(cUP) || input_check_pressed(cDOWN) {
-        levelSelect = 0;
-    }
-break;
-case 2:
-    if input_check_pressed(cRIGHT) {
-        levelSelect +=1;
-    } else if input_check_pressed(cLEFT) || input_check_pressed(cUP) || input_check_pressed(cDOWN) {
-        levelSelect = 0;
-    }
-break;
-case 3:
-    if input_check_pressed(cRIGHT) {
-        levelSelect +=1;
-    } else if input_check_pressed(cLEFT) || input_check_pressed(cUP) || input_check_pressed(cDOWN) {
-        levelSelect = 0;
-    }
-break;
-case 4:
-    if input_check_pressed(cUP) {
-        levelSelect +=1;
-    } else if input_check_pressed(cRIGHT) || input_check_pressed(cLEFT) || input_check_pressed(cDOWN) {
-        levelSelect = 0;
-    }
-break;
-case 5:
-    if input_check_pressed(cDOWN) &amp;&amp; pauseState == 3 {
-        levelSelect +=1;
-        audio_play_sound(sndRing,0,false);
-    } else if input_check_pressed(cRIGHT) || input_check_pressed(cUP) || input_check_pressed(cLEFT) {
-        levelSelect = 0;
-    }
-break;
-case 6:
-    if input_check(cA) &amp;&amp; input_check(cSTART) {
-        //transition_to(objFadeWhite, charselect, 10);
-        if allowInput {
-            // allow the menu object to handle everything
-            if(!menu.active)
+            <string>/// Skipping to title and Level Select Code
+if(menu.state == 0)
+{
+    if(is_touchscreen)
+    {
+        // touchscreen version - tap on every displayed name, then touch the title screen with two fingers
+        if(device_mouse_check_button_pressed(0, mb_left))
+        {
+            // the skip button does not count
+            var skip_pressed = false;
+            if(allow_skipping &amp;&amp; name &lt; 9)
             {
-                menu.wait_for_release = true;
-                menu.active = true;
+                skip_pressed =  point_in_rectangle(device_mouse_x(0), device_mouse_y(0), 
+                    view_xview[0] + view_wview[0] - 36, view_yview[0] + 12,
+                    view_xview[0] + view_wview[0] - 12, view_yview[0] + 36);       
             }
-            
-            with(menu)
+            if(skip_pressed)
             {
-                state = 11;
-                event_user(0);
+                // skip to title screen
+                if(skipping == 0)
+                {
+                    skipping = 1;
+                }
+            }
+            else
+            {
+                if(name &lt; 12 &amp;&amp; (!skip_pressed))
+                {
+                    if(levelSelect == 0 &amp;&amp; name == 3)
+                    {
+                        levelSelect = 1;
+                    }
+                    else
+                    {
+                        if(levelSelect == 1 &amp;&amp; name == 4)
+                        {
+                            levelSelect = 2;
+                        }
+                        else
+                        {
+                            if(levelSelect == 2 &amp;&amp; name == 5)
+                            {
+                                levelSelect = 3;
+                            }
+                            else
+                            {
+                                if(levelSelect == 3 &amp;&amp; name == 6)
+                                {
+                                    levelSelect = 4;
+                                }
+                                else
+                                {
+                                    if(levelSelect == 4 &amp;&amp; name == 7)
+                                    {
+                                        levelSelect = 5;
+                                    }
+                                    else
+                                    {
+                                        if(levelSelect == 5 &amp;&amp; name == 8)
+                                        {
+                                            audio_play_sound(sndRing,0,false);
+                                            levelSelect = 6;
+                                        }
+                                    }                    
+                                }
+                            }            
+                        }
+                    }
+                }
+                else
+                {
+                    if(levelSelect == 6)
+                    {
+                        var levelSelectPresses = 0;
+                        if (device_mouse_check_button(0, mb_left))
+                        {
+                            levelSelectPresses++;
+                        }
+                        if (device_mouse_check_button(1, mb_left))
+                        {
+                            levelSelectPresses++;
+                        }
+                        if (device_mouse_check_button(2, mb_left))
+                        {
+                            levelSelectPresses++;
+                        }
+                        if (device_mouse_check_button(3, mb_left))
+                        {
+                            levelSelectPresses++;
+                        }
+                        if (device_mouse_check_button(4, mb_left))
+                        {
+                            levelSelectPresses++;
+                        }
+                        if(levelSelectPresses &gt;= 2)
+                        {
+                            if(!instance_exists(objTransition))
+                            {
+                                pauseState = 0;
+                                with(menu) menu_fn_open_menu(menu_part_levelselect_char_items);
+                            }
+                        }
+                    }
+                }
             }
         }
-    } else if input_check_pressed(cRIGHT) || input_check_pressed(cUP) || input_check_pressed(cDOWN) || input_check_pressed(cB) || input_check_pressed(cC){
-        levelSelect = 0;
+        
     }
-break;
+    else
+    {
+        // button version - left, left, right, right, up, down, a+start
+        switch(levelSelect) {
+        case 0:
+            if input_check_pressed(cLEFT) {
+                levelSelect +=1;
+            }
+        break;
+        case 1:
+            if input_check_pressed(cLEFT) {
+                levelSelect +=1;
+            } else if input_check_pressed(cRIGHT) || input_check_pressed(cUP) || input_check_pressed(cDOWN) {
+                levelSelect = 0;
+            }
+        break;
+        case 2:
+            if input_check_pressed(cRIGHT) {
+                levelSelect +=1;
+            } else if input_check_pressed(cLEFT) || input_check_pressed(cUP) || input_check_pressed(cDOWN) {
+                levelSelect = 0;
+            }
+        break;
+        case 3:
+            if input_check_pressed(cRIGHT) {
+                levelSelect +=1;
+            } else if input_check_pressed(cLEFT) || input_check_pressed(cUP) || input_check_pressed(cDOWN) {
+                levelSelect = 0;
+            }
+        break;
+        case 4:
+            if input_check_pressed(cUP) {
+                levelSelect +=1;
+            } else if input_check_pressed(cRIGHT) || input_check_pressed(cLEFT) || input_check_pressed(cDOWN) {
+                levelSelect = 0;
+            }
+        break;
+        case 5:
+            if input_check_pressed(cDOWN) &amp;&amp; pauseState == 3 {
+                levelSelect +=1;
+                audio_play_sound(sndRing,0,false);
+            } else if input_check_pressed(cRIGHT) || input_check_pressed(cUP) || input_check_pressed(cLEFT) {
+                levelSelect = 0;
+            }
+        break;
+        case 6:
+            if input_check(cA) &amp;&amp; input_check(cSTART) {
+                //transition_to(objFadeWhite, charselect, 10);
+                if allowInput {
+                    // allow the menu object to handle everything
+                if(!instance_exists(objTransition))
+                {
+                    with(menu) menu_fn_open_menu(menu_part_levelselect_char_items);
+                }
+                
+                with(menu) event_user(0);
+                }
+            } else if input_check_pressed(cRIGHT) || input_check_pressed(cUP) || input_check_pressed(cDOWN) || input_check_pressed(cB) || input_check_pressed(cC){
+                levelSelect = 0;
+            }
+        break;
+        }
+        if(levelSelect == 0)
+        {
+            if(allow_skipping &amp;&amp; name &lt; 9)
+            {
+                if input_check(cSTART) {
+                    // skip to title screen
+                    if(skipping == 0)
+                    {
+                        skipping = 1;
+                    }
+                }
+            }
+        }
+    }
 }
 </string>
           </argument>
@@ -403,17 +495,106 @@ break;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// flash for key mapper and alpha control
-if inputFlash &lt; 1
-    inputFlash += .25;
-    else inputFlash = 0;
-    
+            <string>/// alpha control
 if name &lt; 3 {
     logoAlpha -=.025;
 }
 </string>
           </argument>
         </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>424</id>
+        <kind>2</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>421</id>
+        <kind>3</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>422</id>
+        <kind>1</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// manage skipping to title
+skipping++;
+if(skipping == 30)
+{
+    // the skipping itself
+    name = 12;
+    play_effect(bgmTitle, false);
+    alarm_set(0, -1);
+    with(objTitleSonic)
+    {
+        event_user(0);
+    }
+}
+if(skipping &gt;= 60)
+{
+    skipping = 0;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>424</id>
+        <kind>2</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
       </action>
     </event>
     <event eventtype="7" enumb="5">
@@ -469,7 +650,7 @@ draw_set_alpha(image_alpha);
 draw_set_valign(fa_top);
 draw_set_halign(fa_center);
 draw_set_font(objResources.fontHud);
-// score / time / rings string
+
 switch name {
 case 0: case 1: case 2:
     draw_set_color(c_black);
@@ -477,87 +658,45 @@ case 0: case 1: case 2:
     draw_rectangle(view_xview,view_yview,view_xview+view_wview,view_yview+view_hview,false);
     draw_set_alpha(1);
     draw_set_color(c_white);
-    draw_sprite_ext(sprOverboundLogo,0,view_xview[0]+213,view_yview[0]+120,1,1,0,c_white,logoAlpha);
+    draw_sprite_ext(sprOverboundLogo,0,view_xview[0]+213,view_yview[0]+90,1,1,0,c_white,logoAlpha);
+    draw_text_color(view_xview[0]+213,view_yview[0]+15,tr('A Sonic fangame by'),c_white,c_white,c_teal,c_teal,logoAlpha)
+    draw_text_color(view_xview[0]+213,view_yview[0]+150,tr('This game is freeware.'),c_white,c_white,c_teal,c_teal,logoAlpha)
+    draw_text_color(view_xview[0]+213,view_yview[0]+170,tr('Do not sell!'),c_white,c_white,c_red,c_red,logoAlpha)
 break;
-case 3: draw_text_color(view_xview[0]+213,view_yview[0]+120,'BRYCE STOCK "OVERBOUND"',c_white,c_white,c_yellow,c_yellow,1); break;
-case 4: draw_text_color(view_xview[0]+213, view_yview[0]+120, 'HINCHY',c_white,c_white,c_yellow,c_yellow,1) break;
-case 5: draw_text_color(view_xview[0]+213, view_yview[0]+120, 'JOEVAN SALMON-JOHNSON "VECTORSATYR"',c_white,c_white,c_yellow,c_yellow,1) break;
-case 6: draw_text_color(view_xview[0]+213, view_yview[0]+120, 'MARC "DERZOCKER"',c_white,c_white,c_yellow,c_yellow,1) break;
-case 7: draw_text_color(view_xview[0]+213, view_yview[0]+120, 'DEVIN REEVES "MERCURY"',c_white,c_white,c_yellow,c_yellow,1)break;
-case 8: draw_text_color(view_xview[0]+213, view_yview[0]+120, 'SHANE "SPARKS"',c_white,c_white,c_yellow,c_yellow,1) break;
+case 3: draw_text_color(view_xview[0]+213,view_yview[0]+120,'Bryce Stock "Overbound"',c_white,c_white,c_yellow,c_yellow,1); break;
+case 4: draw_text_color(view_xview[0]+213, view_yview[0]+120, 'Hinchy',c_white,c_white,c_yellow,c_yellow,1) break;
+case 5: draw_text_color(view_xview[0]+213, view_yview[0]+120, 'Joevan Salmon-Johnson "VectorSatyr"',c_white,c_white,c_yellow,c_yellow,1) break;
+case 6: draw_text_color(view_xview[0]+213, view_yview[0]+120, 'Marc "DerZocker"',c_white,c_white,c_yellow,c_yellow,1) break;
+case 7: draw_text_color(view_xview[0]+213, view_yview[0]+120, 'Devin Reeves "Mercury"',c_white,c_white,c_yellow,c_yellow,1)break;
+case 8: draw_text_color(view_xview[0]+213, view_yview[0]+120, 'Shane "Sparks"',c_white,c_white,c_yellow,c_yellow,1) break;
 case 12: if pauseState == 3 draw_text_color(view_xview[0]+213, view_yview[0]+228, startText,c_white,c_white,c_yellow,c_yellow,1); start=true; break;
 }
 draw_set_halign(fa_center);
 draw_set_color(c_yellow);
-/*
-if pauseState == 0 {
-    draw_text_color(view_xview[view_current]+213, view_yview[view_current]+75, "PLAY",c_white,c_white,c_yellow,c_yellow,1);
-    if pauseState != 1 draw_text_color(view_xview[view_current]+213, view_yview[view_current]+91, option1Text,c_white,c_white,c_yellow,c_yellow,1);
-    if pauseState != 2 draw_text_color(view_xview[view_current]+213, view_yview[view_current]+107, option2Text,c_white,c_white,c_yellow,c_yellow,1);
-    if pauseState != 4 draw_text_color(view_xview[view_current]+213, view_yview[view_current]+123, option3Text,c_white,c_white,c_yellow,c_yellow,1);
-    draw_text_color(view_xview[view_current]+213, view_yview[view_current]+139, "EXIT GAME",c_white,c_white,c_yellow,c_yellow,1);
-    
-    draw_sprite_ext(sprLevelSelect,image_index,view_xview[view_current]+213, view_yview[view_current]+81+pauseOffset,1,1,0,c_white,1);
-}
-if pauseState == 1 &amp;&amp; inputFlash &lt;= .5 { // set controls
-    switch controlState {
-        case 0:
-            draw_text_color(view_xview[view_current]+213, view_yview[view_current]+91, "UP",c_white,c_white,c_yellow,c_yellow,1);
-        break;
-        case 1:
-            draw_text_color(view_xview[view_current]+213, view_yview[view_current]+91, "DOWN",c_white,c_white,c_yellow,c_yellow,1);
-        break;
-        case 2:
-            draw_text_color(view_xview[view_current]+213, view_yview[view_current]+91, "LEFT",c_white,c_white,c_yellow,c_yellow,1);
-        break;
-        case 3:
-            draw_text_color(view_xview[view_current]+213, view_yview[view_current]+91, "RIGHT",c_white,c_white,c_yellow,c_yellow,1);
-        break;
-        case 4:
-            draw_text_color(view_xview[view_current]+213, view_yview[view_current]+91, "A",c_white,c_white,c_yellow,c_yellow,1);
-        break;
-        case 5:
-            draw_text_color(view_xview[view_current]+213, view_yview[view_current]+91, "B",c_white,c_white,c_yellow,c_yellow,1);
-        break;
-        case 6:
-            draw_text_color(view_xview[view_current]+213, view_yview[view_current]+91, "C",c_white,c_white,c_yellow,c_yellow,1);
-        break;
-        case 7:
-            draw_text_color(view_xview[view_current]+213, view_yview[view_current]+91, "START",c_white,c_white,c_yellow,c_yellow,1);
-        break;
-    }
-    
-}
-if pauseState == 2 &amp;&amp; inputFlash &lt;= .5 {
-    switch objScreen.window_state {
-    case 1:
-        draw_text_color(view_xview[view_current]+213, view_yview[view_current]+107, "WINDOW",c_white,c_white,c_yellow,c_yellow,1);
-    break;
-    case 2:
-        draw_text_color(view_xview[view_current]+213, view_yview[view_current]+107, "WINDOW 2X",c_white,c_white,c_yellow,c_yellow,1);
-    break;
-    case 3:
-        draw_text_color(view_xview[view_current]+213, view_yview[view_current]+107, "WINDOW 3X",c_white,c_white,c_yellow,c_yellow,1);
-    break;
-    case 4:
-        draw_text_color(view_xview[view_current]+213, view_yview[view_current]+107, "FULLSCREEN",c_white,c_white,c_yellow,c_yellow,1);
-    break;
-    
-    }
-}
-if pauseState == 4 &amp;&amp; inputFlash &lt;= .5 {
-    switch gamepadSupport {
-    case false:
-        draw_text_color(view_xview[view_current]+213, view_yview[view_current]+123, "GAMEPAD DISABLED",c_white,c_white,c_yellow,c_yellow,1);
-    break;
-    case true:
-        draw_text_color(view_xview[view_current]+213, view_yview[view_current]+123, "GAMEPAD ENABLED",c_white,c_white,c_yellow,c_yellow,1);
-    break;
-    }
-}
-*/
-with(menu) event_user(4);
+
 draw_set_color(c_white);
+with(menu) event_user(3);
+draw_set_color(c_white);
+if(skipping &gt; 0)
+{
+    if(skipping &lt;= 30)
+    {
+        draw_set_alpha(skipping/30);
+    }
+    else
+    {
+        draw_set_alpha((60 - skipping)/30);    
+    }
+    draw_rectangle(view_xview[0], view_yview[0], view_xview[0] + view_wview[0], view_yview[0] + view_hview[0], false);
+    draw_set_alpha(1);
+}
+if(allow_skipping)
+{
+    if(name &lt; 9 &amp;&amp; is_touchscreen)
+    {
+       draw_sprite(sprTouchscreenFastForward, 0, view_xview[0] + view_wview[0] - 36, view_yview[0] + 12);
+    }
+}
 </string>
           </argument>
         </arguments>

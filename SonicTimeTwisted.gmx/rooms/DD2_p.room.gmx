@@ -1391,8 +1391,8 @@ with objTitlecard
     <instance objName="objBlock" x="10304" y="448" name="inst_C632907B" locked="0" code="climbable=true;&#xA;" scaleX="64" scaleY="16" colour="4294967295" rotation="0"/>
     <instance objName="objSlant" x="10880" y="576" name="inst_2F4A0237" locked="0" code="angled=0;&#xA;" scaleX="-2" scaleY="-2" colour="4294967295" rotation="0"/>
     <instance objName="objSlant" x="10944" y="512" name="inst_4FE30F8E" locked="0" code="angled=0;&#xA;" scaleX="-2" scaleY="-2" colour="4294967295" rotation="0"/>
-    <instance objName="objLayerSet" x="11064" y="1212" name="inst_74E781CB" locked="0" code="layer=2;&#xA;" scaleX="17" scaleY="0.8299999833107" colour="4278223103" rotation="0"/>
-    <instance objName="objLayerSet" x="11060" y="1512" name="inst_B73050A6" locked="0" code="layer=2;" scaleX="17" scaleY="0.8299999833107" colour="4278223103" rotation="0"/>
+    <instance objName="objLayerSet" x="11064" y="1212" name="inst_74E781CB" locked="0" code="layer=2;&#xA;" scaleX="17" scaleY="0.829999983310699" colour="4278223103" rotation="0"/>
+    <instance objName="objLayerSet" x="11060" y="1512" name="inst_B73050A6" locked="0" code="layer=2;" scaleX="17" scaleY="0.829999983310699" colour="4278223103" rotation="0"/>
     <instance objName="objBlock" x="11328" y="1472" name="inst_D898383A" locked="0" code="climbable=true;" scaleX="40" scaleY="8" colour="4294967295" rotation="0"/>
     <instance objName="objLayerSet" x="11404" y="1264" name="inst_0D82DC3D" locked="0" code="layer=1;&#xA;" scaleX="4.25" scaleY="5.02127647399902" colour="4294901760" rotation="0"/>
     <instance objName="objLayerSet" x="10972" y="1260" name="inst_1066D40C" locked="0" code="layer=1;&#xA;" scaleX="4.25" scaleY="5.02127647399902" colour="4294901760" rotation="0"/>

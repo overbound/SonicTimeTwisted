@@ -244,41 +244,11 @@ if closeMenu == false {
         {
             var menu = objSSHud.menu;
             // allow the menu object to handle everything
-            if(!menu.active)
+            if(menu.state == 0)
             {
-                var menuStatus = 4;
-                switch objSSPlayer.kill {
-                    case 1:
-                        menuStatus = 4;
-                    break;
-                    
-                    case 2:
-                        menuStatus = 5;
-                    break;
-                    
-                    case 3:
-                    case 4:
-                        menuStatus = 6;
-                    break;
-                }
-                menu.wait_for_release = false;
-                menu.active = true;
-                menu.state = menuStatus;
-                with(menu)
-                {
-                    delay_timer = delay_timer_default;
-                    event_user(1);
-                }
-            }
-            if(menu.active)
-            {
-                if((menu.state &gt;= 4 &amp;&amp; menu.state &lt;= 6) || (menu.state == 10 &amp;&amp; (menu.confirm_state &gt;= 21 &amp;&amp; menu.confirm_state &lt;= 25)) || (menu.state &gt;= 21 &amp;&amp; menu.state &lt;= 25))
-                {
-                    // so weird this is managed in the draw event,
-                    // but it doesn't seem to work otherwise
-                    with(menu) event_user(0);
-                    with(menu) event_user(4);
-                }
+                show_debug_message("KILL: "+string(objSSPlayer.kill));
+                var menu_to_use = menu_part_sstage_offtrack_items;
+                with(menu) menu_fn_open_menu(menu_to_use, true);
             }
         }
     }

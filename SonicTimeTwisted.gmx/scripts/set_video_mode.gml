@@ -6,7 +6,7 @@ Video modes:
 3 - full screen
 4 - full screen blurred
 **/
-if(get_os_type() == os_windows)
+if(DEVICE_INFO & DEVICE_TYPE_COMPUTER)
 {
     with objScreen {
         video_mode = argument0;

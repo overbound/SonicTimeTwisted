@@ -65,6 +65,37 @@ menu = instance_create(0,0,objMenu);
         <arguments>
           <argument>
             <kind>1</kind>
+            <string>/// pause menu end step
+if objProgram.paused {
+    if allowInput &amp;&amp; menu.state != 0 {
+        // allow the menu object to handle everything
+        if(menu.state == 0)
+        {
+            menu_fn_open_menu(menu_part_zone_items);
+        }
+        with(menu) event_user(2);
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
             <string>/// Update timer string
 var total_time, minutes, seconds, milliseconds;
 if instance_exists(objLevel) {
@@ -119,6 +150,34 @@ if instance_exists(objLevel) {
         </arguments>
       </action>
     </event>
+    <event eventtype="3" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// pause menu begin step
+if objProgram.paused {
+    if allowInput &amp;&amp; menu.state != 0 {
+        with(menu) event_user(1);
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
@@ -140,10 +199,9 @@ if instance_exists(objLevel) {
 if objProgram.paused {
     if allowInput {
         // allow the menu object to handle everything
-        if(!menu.active)
+        if(menu.state == 0)
         {
-            menu.wait_for_release = true;
-            menu.active = true;
+            with(menu) menu_fn_open_menu(menu_part_zone_items);
         }
         with(menu) event_user(0);
     }
@@ -268,7 +326,7 @@ draw_set_color(c_black);
     draw_rectangle(view_xview,view_yview,view_xview+view_wview,view_yview+view_hview,false);
 draw_set_color(c_white);
 draw_set_alpha(image_alpha);
-with(menu) event_user(4);
+with(menu) event_user(3);
 </string>
           </argument>
         </arguments>

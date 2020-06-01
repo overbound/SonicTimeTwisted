@@ -30,7 +30,8 @@ image_speed = 0;
 /* AUTHOR NOTE: created resources (fonts, particles, libraries, etc.) go here! */
 // fonts
 fontHud = font_add_sprite(sprFontHud, ord('"'), 0,0);
-fontLives = font_add_sprite(sprFontLives, 48, 0, 0);
+fontHudMin = font_add_sprite(sprFontHudMin, ord('"'), 0,0);
+fontLives = font_add_sprite(sprFontLives, ord('"'), 0, 0);
 fontTitle = font_add_sprite(sprFontTitle, 32, 1, 0);
 fontTitleLarge = font_add_sprite(sprFontTitleLarge, 48, 1, 0);
 fontTitleSmall = font_add_sprite(sprFontTitleSmall, 65, 1, 0);

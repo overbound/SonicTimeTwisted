@@ -26,17 +26,6 @@
           <argument>
             <kind>1</kind>
             <string>event_inherited();
-// Could have used the built-in function to replace the instance, but
-// Android doesn't always agree with it
-var newMenu = instance_create(0,0,objMenu_Android);
-newMenu.large = menu.large;
-newMenu.default_state = menu.default_state;
-newMenu.draw_with_view_offset = menu.draw_with_view_offset;
-with(menu)
-{
-    instance_destroy();
-}
-menu = newMenu;
 levelSelectClicks = 0;
 levelSelectTwoPressesChecked = false;
 levelSelectMaxPresses = 0;

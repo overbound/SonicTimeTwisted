@@ -92,12 +92,6 @@ score_tally_mode = 0;
 load_options();
 // this map is used if playing in the no-save mode
 no_save_data = ds_map_create();
-// depending on the OS, create a specific object containing the OS-specific logic
-os = get_os_type();
-if(os == os_android)
-{
-    instance_create(0,0,objAndroid);
-}
 </string>
           </argument>
         </arguments>
@@ -219,21 +213,22 @@ if(os == os_android)
             <string>/// Window focus
 // ignore if we've paused manually
 if paused exit;
+
 /*
-switch os_type
+if(DEVICE_INFO &amp; DEVICE_TYPE_COMPUTER)
 {
-    case os_windows:
-    case os_macosx:
-        // toggle focus
-        if not (lost_focus xor window_has_focus()) {lost_focus = not lost_focus; game_pause(lost_focus);}
-        break;
-    case os_android:
-    case os_ios:
+    // toggle focus
+    if not (lost_focus xor window_has_focus()) {lost_focus = not lost_focus; game_pause(lost_focus);}
+}
+else
+{
+    if(DEVICE_INFO &amp; DEVICE_TYPE_SMARTPHONE)
+    {
         // toggle focus
         if not (lost_focus xor (!os_is_paused())) {lost_focus = not lost_focus; game_pause(lost_focus);}
-        break;
-    
+    }
 }
+*/
 </string>
           </argument>
         </arguments>
@@ -382,10 +377,12 @@ audio_set_master_gain(0, 0.75);
           <argument>
             <kind>1</kind>
             <string>// only available for windows
-if(get_os_type() == os_windows)
+/*
+if(DEVICE_INFO &amp; DEVICE_TYPE_COMPUTER)
 {
     delete_settings();
-}
+}*/
+game_restart();
 </string>
           </argument>
         </arguments>
@@ -409,7 +406,7 @@ if(get_os_type() == os_windows)
           <argument>
             <kind>1</kind>
             <string>// only available for windows
-if(get_os_type() == os_windows)
+if(DEVICE_INFO &amp; DEVICE_TYPE_COMPUTER)
 {
     game_restart();
 }

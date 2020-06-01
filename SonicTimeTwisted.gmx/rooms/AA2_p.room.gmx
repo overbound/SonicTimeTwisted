@@ -590,7 +590,7 @@ with objTitlecard
     <instance objName="objLayerSet" x="7808" y="1384" name="inst_1D2340A6" locked="0" code="layer = 1;" scaleX="30" scaleY="1" colour="4278223103" rotation="0"/>
     <instance objName="objStart" x="4804" y="1632" name="inst_BFFE271C" locked="0" code="tag = 4;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objAAPastBack" x="2192" y="0" name="inst_B34AE402" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objCurveConvexSlim" x="5216" y="880" name="inst_DA47E169" locked="0" code="" scaleX="0.6700000166893" scaleY="0.6700000166893" colour="4294967295" rotation="0"/>
+    <instance objName="objCurveConvexSlim" x="5216" y="880" name="inst_DA47E169" locked="0" code="" scaleX="0.670000016689301" scaleY="0.670000016689301" colour="4294967295" rotation="0"/>
     <instance objName="objCurveConcave" x="8256" y="1504" name="inst_3F6C1493" locked="0" code="through = true;&#xA;" scaleX="0.333332985639572" scaleY="0.333332985639572" colour="4278255488" rotation="0"/>
     <instance objName="objSauceroid" x="7680" y="768" name="inst_1B684852" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSauceroid" x="5184" y="272" name="inst_A2F7FA3F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

@@ -28,12 +28,12 @@
             <string>/// Setup Shader
 // this object will itself act as both a shader-enabled version and a no-shader version
 // making two separate objects was too difficult without breaking the cutscene
-shader_enabled = is_tt_shader_supported();
+
 // the amount to shift the gradient to cycle the colours; starts at 0
 // it's also used to slide the texture horizontally to give it some motion, but you could use a 2nd value
 // if the speeds need to be tweaked
 shift = 0;
-if(shader_enabled)
+if(DEVICE_TT_SHADER_SUPPORTED)
 {
     /*
     TIME TRAVEL EFFECT
@@ -120,7 +120,7 @@ draw_sprite(sprTitleFog,0,304,1960);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(shader_enabled)
+            <string>if(DEVICE_TT_SHADER_SUPPORTED)
 {
     // set the drawing target to the surface
     if not surface_exists(tt_surface) tt_surface = surface_create(426, 240);
@@ -189,7 +189,7 @@ x=truex;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(shader_enabled)
+            <string>if(DEVICE_TT_SHADER_SUPPORTED)
 {
     // draw a dummy background for the effect to cover
     //draw_background_ext(zonebkg, 0, 0, 2, 2, 0, c_white, 1);
