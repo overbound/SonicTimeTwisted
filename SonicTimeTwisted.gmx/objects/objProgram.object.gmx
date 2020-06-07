@@ -349,8 +349,8 @@ special_level_add(SSF4, SSP6);
 */
 /* AUTHOR NOTE: May want to setup a title screen or menu here. For now, we'll
 start the game immediately. */
-//room_goto(ending);
-room_goto(titlescreen);
+room_goto(ending);
+//room_goto(titlescreen);
 // start gameplay
 //level_goto_next();
 audio_set_master_gain(0, 0.75);

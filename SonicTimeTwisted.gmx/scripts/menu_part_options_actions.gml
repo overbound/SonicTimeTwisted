@@ -50,6 +50,13 @@ switch(argument0)
     case 6:
          menu_fn_goto_submenu(menu_part_touchscreen_items);
          break;
+    case 7:
+        with(objTitleControl)
+        {
+            state = 4;
+            textAlpha = 1;
+        }
+        break;
     case -1:
     case 4:
         switch(menu_type)

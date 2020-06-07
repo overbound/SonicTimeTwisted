@@ -41,11 +41,17 @@
             <kind>1</kind>
             <string>/// Initialize
 image_speed = 0;
+// 0 - first fade in
+// 1 - screen with text (disclaimer/epilepsy)
+// 2 - fade to OGS logo
+// 3 - standard title screen behavior
+// 4 - the disclaimer screen is opened from the options screen
+state = 0;
+alarm[0] = -1;
+textAlpha = 0;
 name=0;
-alarm[0]=80;
 levelSelect = 0;
 start = false;
-instance_create(x,y,objTitleEffects);
 pauseOffset = 0;
 pauseState = 3;
 controlState = 0;
@@ -69,6 +75,46 @@ else
 }
 menu = instance_create(x,y,objMenu);
 menu.default_state = 1;
+
+// Names of the original team behind the game.
+// The menu is hardcoded to only include 6 names, and should remain this way
+names = false;
+names[0] = tr('Bryce Stock "Overbound"');
+names[1] = tr('Hinchy');
+names[2] = tr('Joevan Salmon-Johnson "VectorSatyr"');
+names[3] = tr('Marc "DerZocker"');
+names[4] = tr('Devin Reeves "Mercury"');
+names[5] = tr('Shane "Sparks"');
+
+epilepsy_title = tr("_epilepsy_title");
+epilepsy = tr("_epilepsy");
+disclaimer_title = tr("_disclaimer_title");
+disclaimer = tr("_disclaimer");
+github = tr("_github");
+
+// because of localizations, we'll need to calculate the optimum placement for
+// disclaimer titles and texts
+
+
+draw_set_font(objResources.fontHud);
+var epilepsy_title_height = string_height(epilepsy_title);
+var disclaimer_title_height = string_height(disclaimer_title);
+
+var line_length = view_wview[view_current] - 8;
+draw_set_font(objResources.fontMicro);
+var epilepsy_height = epilepsy_title_height + string_height_ext(epilepsy, 12, line_length) + 4;
+var disclaimer_height = disclaimer_title_height + string_height_ext(disclaimer, 12, line_length) + 4;
+var github_height = string_height_ext(github, 12, line_length);
+
+var text_skip = floor((view_hview[view_current] - epilepsy_height - disclaimer_height - github_height)/4);
+
+epilepsy_title_y = view_yview[view_current] + text_skip;
+epilepsy_y = epilepsy_title_y + epilepsy_title_height + 4;
+disclaimer_title_y = epilepsy_title_y + epilepsy_height + text_skip;
+disclaimer_y = disclaimer_title_y + disclaimer_title_height + 4;
+github_y = disclaimer_title_y + disclaimer_height + text_skip;;
+
+draw_set_font(objResources.fontHud);
 </string>
           </argument>
         </arguments>
@@ -125,7 +171,7 @@ if name &gt; 2 &amp;&amp; name &lt; 9 {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(skipping == 0)
+            <string>if(state == 3 &amp;&amp; skipping == 0)
 {
     /// menu end step
     if menu.state != 0 {
@@ -155,7 +201,7 @@ if name &gt; 2 &amp;&amp; name &lt; 9 {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(skipping == 0)
+            <string>if(state == 3 &amp;&amp; skipping == 0)
 {
     /// menu begin step
     if menu.state != 0 {
@@ -168,6 +214,266 @@ if name &gt; 2 &amp;&amp; name &lt; 9 {
       </action>
     </event>
     <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>612</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>-1</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_if_variable</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>0</kind>
+            <string>state</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>3</string>
+          </argument>
+          <argument>
+            <kind>4</kind>
+            <string>1</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>422</id>
+        <kind>1</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>switch(state)
+{
+    case 0:
+        if(textAlpha &lt; 1)
+        {
+            textAlpha += 0.033;
+        }
+        if(textAlpha &gt;= 1)
+        {
+            textAlpha = 1;
+            state = 1;
+        }
+        break;
+    case 1:
+        if(is_touchscreen)
+        {
+            if(device_mouse_check_button_pressed(0, mb_left))
+            {
+                state = 2;
+            }
+        }
+        else
+        {
+            if(input_check_pressed(cSTART))
+            {
+                state = 2;
+            }
+        }
+        break;
+    case 2:
+        textAlpha -= 0.033;
+        if(textAlpha &lt;= 0)
+        {
+            // Launch the default logo + name crawl intro
+            event_user(0);
+        }
+        break;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>424</id>
+        <kind>2</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>421</id>
+        <kind>3</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>422</id>
+        <kind>1</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>612</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>-1</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_if_variable</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>0</kind>
+            <string>state</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>4</string>
+          </argument>
+          <argument>
+            <kind>4</kind>
+            <string>0</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>422</id>
+        <kind>1</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(is_touchscreen)
+{
+    if(device_mouse_check_button_pressed(0, mb_left))
+    {
+        state = 3;
+    }
+}
+else
+{
+    if(input_check_pressed(cSTART) || input_check_pressed(cA) || input_check_pressed(cB) || input_check_pressed(cC))
+    {
+        state = 3;
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>424</id>
+        <kind>2</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>421</id>
+        <kind>3</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>422</id>
+        <kind>1</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
       <action>
         <libid>1</libid>
         <id>612</id>
@@ -496,8 +802,11 @@ if(menu.state == 0)
           <argument>
             <kind>1</kind>
             <string>/// alpha control
-if name &lt; 3 {
-    logoAlpha -=.025;
+if(state &gt;= 3)
+{
+    if name &lt; 3 {
+        logoAlpha -=.025;
+    }
 }
 </string>
           </argument>
@@ -596,6 +905,77 @@ if(skipping &gt;= 60)
         <relative>0</relative>
         <isnot>0</isnot>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>424</id>
+        <kind>2</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>424</id>
+        <kind>2</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
+    </event>
+    <event eventtype="7" enumb="10">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Launch the default logo + name crawl intro
+textAlpha = 0;
+state = 3;
+instance_create(x,y,objTitleEffects);
+instance_create(224, -160, objTitleSonic);
+
+with (instance_create(516, 1060, objTitleCloud0))
+{
+    image_xscale = -1;
+}
+
+with(instance_create(340, 1200, objTitleCloud1))
+{
+    image_xscale = -1;
+}
+instance_create(120, 1356, objTitleCloud0);
+with(instance_create(-208, 1492, objTitleCloud1))
+{
+    image_yscale = 1.05;
+}
+alarm[0]=80;
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="7" enumb="5">
       <action>
@@ -638,64 +1018,118 @@ audio_stop_all();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Render Names
-// fade for menu
-draw_set_alpha(screenAlpha);
-draw_set_color(c_black);
-draw_rectangle(view_xview,view_yview,view_xview+view_wview,view_yview+view_hview,false);
-    
-// setup
-draw_set_color(c_white);
-draw_set_alpha(image_alpha);
-draw_set_valign(fa_top);
-draw_set_halign(fa_center);
-draw_set_font(objResources.fontHud);
-
-switch name {
-case 0: case 1: case 2:
-    draw_set_color(c_black);
-    draw_set_alpha(logoAlpha);
-    draw_rectangle(view_xview,view_yview,view_xview+view_wview,view_yview+view_hview,false);
-    draw_set_alpha(1);
-    draw_set_color(c_white);
-    draw_sprite_ext(sprOverboundLogo,0,view_xview[0]+213,view_yview[0]+90,1,1,0,c_white,logoAlpha);
-    draw_text_color(view_xview[0]+213,view_yview[0]+15,tr('A Sonic fangame by'),c_white,c_white,c_teal,c_teal,logoAlpha)
-    draw_text_color(view_xview[0]+213,view_yview[0]+150,tr('This game is freeware.'),c_white,c_white,c_teal,c_teal,logoAlpha)
-    draw_text_color(view_xview[0]+213,view_yview[0]+170,tr('Do not sell!'),c_white,c_white,c_red,c_red,logoAlpha)
-break;
-case 3: draw_text_color(view_xview[0]+213,view_yview[0]+120,'Bryce Stock "Overbound"',c_white,c_white,c_yellow,c_yellow,1); break;
-case 4: draw_text_color(view_xview[0]+213, view_yview[0]+120, 'Hinchy',c_white,c_white,c_yellow,c_yellow,1) break;
-case 5: draw_text_color(view_xview[0]+213, view_yview[0]+120, 'Joevan Salmon-Johnson "VectorSatyr"',c_white,c_white,c_yellow,c_yellow,1) break;
-case 6: draw_text_color(view_xview[0]+213, view_yview[0]+120, 'Marc "DerZocker"',c_white,c_white,c_yellow,c_yellow,1) break;
-case 7: draw_text_color(view_xview[0]+213, view_yview[0]+120, 'Devin Reeves "Mercury"',c_white,c_white,c_yellow,c_yellow,1)break;
-case 8: draw_text_color(view_xview[0]+213, view_yview[0]+120, 'Shane "Sparks"',c_white,c_white,c_yellow,c_yellow,1) break;
-case 12: if pauseState == 3 draw_text_color(view_xview[0]+213, view_yview[0]+228, startText,c_white,c_white,c_yellow,c_yellow,1); start=true; break;
-}
-draw_set_halign(fa_center);
-draw_set_color(c_yellow);
-
-draw_set_color(c_white);
-with(menu) event_user(3);
-draw_set_color(c_white);
-if(skipping &gt; 0)
+            <string>if(state &gt;= 2)
 {
-    if(skipping &lt;= 30)
+    draw_set_font(objResources.fontHud);
+    
+    /// Render Names
+    // fade for menu
+    draw_set_alpha(screenAlpha);
+    draw_set_color(c_black);
+    draw_rectangle(view_xview,view_yview,view_xview+view_wview,view_yview+view_hview,false);
+        
+    // setup
+    draw_set_color(c_white);
+    draw_set_alpha(image_alpha);
+    draw_set_valign(fa_top);
+    draw_set_halign(fa_center);
+    draw_set_font(objResources.fontHud);
+    
+    switch name {
+    case 0: case 1: case 2:
+        draw_set_color(c_black);
+        draw_set_alpha(logoAlpha);
+        draw_rectangle(view_xview,view_yview,view_xview+view_wview,view_yview+view_hview,false);
+        draw_set_alpha(1);
+        draw_set_color(c_white);
+        draw_sprite_ext(sprOverboundLogo,0,view_xview[0]+213,view_yview[0]+90,1,1,0,c_white,logoAlpha);
+        draw_text_color(view_xview[0]+213,view_yview[0]+15,tr('A Sonic fangame by'),c_white,c_white,c_teal,c_teal,logoAlpha)
+        draw_text_color(view_xview[0]+213,view_yview[0]+150,tr('This game is freeware.'),c_white,c_white,c_teal,c_teal,logoAlpha)
+        draw_text_color(view_xview[0]+213,view_yview[0]+170,tr('Do not sell!'),c_white,c_white,c_red,c_red,logoAlpha)
+    break;
+    case 3:
+    case 4:
+    case 5:
+    case 6:
+    case 7:
+    case 8:
+        var yshift = 120;
+        if(alarm[0] &gt;= 60)
+        {
+            yshift = yshift + 27 + (alarm[0] - 60) * 32;
+        }
+        else
+        if(alarm[0] &gt; 5)
+        {
+            yshift = yshift - 27 + alarm[0] - 5;
+        }
+        else
+        {
+            yshift = yshift - 27 - (5 - alarm[0]) * 32;            
+        }
+        draw_text_color(view_xview[0]+213,view_yview[0]+yshift,names[name - 3],c_white,c_white,c_yellow,c_yellow,1); break;
+    break;
+    case 12: if pauseState == 3 draw_text_color(view_xview[0]+213, view_yview[0]+228, startText,c_white,c_white,c_yellow,c_yellow,1); start=true; break;
+    }
+    draw_set_halign(fa_center);
+    draw_set_color(c_yellow);
+    
+    draw_set_color(c_white);
+    with(menu) event_user(3);
+    draw_set_color(c_white);
+    if(skipping &gt; 0)
     {
-        draw_set_alpha(skipping/30);
+        if(skipping &lt;= 30)
+        {
+            draw_set_alpha(skipping/30);
+        }
+        else
+        {
+            draw_set_alpha((60 - skipping)/30);    
+        }
+        draw_rectangle(view_xview[0], view_yview[0], view_xview[0] + view_wview[0], view_yview[0] + view_hview[0], false);
+        draw_set_alpha(1);
+    }
+    if(allow_skipping)
+    {
+        if(name &lt; 9 &amp;&amp; is_touchscreen)
+        {
+           draw_sprite(sprTouchscreenFastForward, 0, view_xview[0] + view_wview[0] - 36, view_yview[0] + 12);
+        }
+    }
+}
+if(state &lt;= 2 || state == 4)
+{
+    if(state == 0 || state == 4)
+    {
+        draw_set_alpha(1);
     }
     else
     {
-        draw_set_alpha((60 - skipping)/30);    
+        draw_set_alpha(textAlpha);
     }
-    draw_rectangle(view_xview[0], view_yview[0], view_xview[0] + view_wview[0], view_yview[0] + view_hview[0], false);
-    draw_set_alpha(1);
-}
-if(allow_skipping)
-{
-    if(name &lt; 9 &amp;&amp; is_touchscreen)
-    {
-       draw_sprite(sprTouchscreenFastForward, 0, view_xview[0] + view_wview[0] - 36, view_yview[0] + 12);
-    }
+    draw_set_color(c_black);
+    draw_rectangle(view_xview,view_yview,view_xview+view_wview,view_yview+view_hview,false);
+    draw_set_color(c_white);
+    draw_set_alpha(textAlpha);
+    
+    var text_origin = view_wview[view_current]/2;
+    var line_length = view_wview[view_current] - 8;
+    
+    draw_set_halign(fa_center);
+    
+    draw_set_font(objResources.fontHud);
+    draw_text_colour(text_origin, view_yview[view_current] + epilepsy_title_y, epilepsy_title, c_red, c_red, c_white, c_white, textAlpha);
+    draw_set_font(objResources.fontMicro);
+    draw_text_ext_colour(text_origin, view_yview[view_current] + epilepsy_y, epilepsy, 12, line_length, c_ltgray, c_ltgray, c_white, c_white, textAlpha);
+    
+    
+    draw_set_font(objResources.fontHud);
+    draw_text_colour(text_origin, view_yview[view_current] + disclaimer_title_y, disclaimer_title, c_red, c_red, c_white, c_white, textAlpha);
+    draw_set_font(objResources.fontMicro);
+    draw_text_ext_colour(text_origin, view_yview[view_current] + disclaimer_y, disclaimer, 12, line_length, c_ltgray, c_ltgray, c_white, c_white, textAlpha);
+    draw_text_ext_colour(text_origin, view_yview[view_current] + github_y, github, 12, line_length, c_blue, c_blue, c_white, c_white, textAlpha);
+    draw_set_alpha(1);   
 }
 </string>
           </argument>

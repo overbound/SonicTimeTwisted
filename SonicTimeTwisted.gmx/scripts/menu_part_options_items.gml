@@ -16,6 +16,7 @@ if(DEVICE_INFO & DEVICE_TYPE_COMPUTER || DEVICE_INFO & DEVICE_TYPE_SMARTPHONE)
     menu_fn_add_option(tr("Map keys"), 2);
 }
 menu_fn_add_option(tr("Map gamepad"), 3);
+menu_fn_add_option(tr("Warnings and disclaimers"), 7);
 menu_fn_add_option(tr("< Back"), 4);
 
 button_width = 300;

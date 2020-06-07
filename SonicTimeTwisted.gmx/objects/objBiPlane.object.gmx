@@ -90,7 +90,7 @@ x+=hsp;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if objCredits.name &lt; 15 { 
+            <string>if !objCredits.rolled { 
     x += 852;
     view_xview += 852;
     objCharacterFall.x  += 852;

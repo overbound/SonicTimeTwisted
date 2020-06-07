@@ -382,6 +382,7 @@
       <sprite>sprites\sprFontTitleSmall</sprite>
       <sprite>sprites\sprFontTitleSmallest</sprite>
       <sprite>sprites\sprFontTitleYellow</sprite>
+      <sprite>sprites\sprFontMicro</sprite>
     </sprites>
     <sprites name="Overlays">
       <sprites name="HUD">
