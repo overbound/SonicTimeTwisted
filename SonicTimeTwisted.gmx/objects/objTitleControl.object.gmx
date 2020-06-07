@@ -63,7 +63,11 @@ logoAlpha = 4;
 
 skipping = 0;
 // allow skipping after first launch
-allow_skipping = true;
+allow_skipping = !objProgram.first_run;
+if(allow_skipping)
+{
+   event_user(0);
+}
 is_touchscreen = input_is_touchscreen();
 if(is_touchscreen)
 {
