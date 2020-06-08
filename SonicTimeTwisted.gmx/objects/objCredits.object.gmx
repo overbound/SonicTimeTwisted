@@ -117,7 +117,7 @@ event_user(0);
 // calculating the speed and width of the credits
 // We're cheating a bit: we know that a letter with the standard font is 9 pixels wide
 var width = 0;
-lindes_count = array_length_1d(lines)+ 16;
+lines_count = array_length_1d(lines)+ 8;
 for(var i = 0; i &lt; array_length_1d(lines); i++)
 {
     width = max(width, 1+8*string_length(lines[i]));
@@ -126,20 +126,20 @@ center_offset = (width div 2);
 cursor = 0;
 displayed_label = false;
 displayed_label_is_title = false;
-for(var i = 0; i &lt; 16; i++)
+for(var i = 0; i &lt; 7; i++)
 {
     displayed_label[i] = '';
     displayed_label_is_title[i] = false;
 }
 
 // in the first released version, the credits lasted for 4200 seconds
-alarm_delay = round(4200/lindes_count);
+alarm_delay = round(4200/lines_count);
 // should be a multiple of 18, otherwise credits will visibly skip pixels
 alarm_delay = round(alarm_delay/18)*18;
 
 alarm[0] = alarm_delay;
 // add an empty screen
-lindes_count += array_length_1d(displayed_label);
+lines_count += array_length_1d(displayed_label);
 // the length of the credits is 4200 frames, or 70 seconds
 </string>
           </argument>
@@ -164,9 +164,9 @@ lindes_count += array_length_1d(displayed_label);
           <argument>
             <kind>1</kind>
             <string>/// updating the displayed part of the credits
-if(cursor &lt; lindes_count)
+if(cursor &lt; lines_count)
 {
-    for(var i = 0; i &lt; 15; i++)
+    for(var i = 0; i &lt; 6; i++)
     {
         displayed_label[i] = displayed_label[i+1];
         displayed_label_is_title[i] = displayed_label_is_title[i+1];
@@ -190,13 +190,13 @@ if(cursor &lt; lindes_count)
     )
     {
         new_row_value = string_copy(new_row_value, 4, string_length(new_row_value) - 6);
-        displayed_label_is_title[15] = true;
+        displayed_label_is_title[6] = true;
     }
     else
     {
-        displayed_label_is_title[15] = false;
+        displayed_label_is_title[6] = false;
     }
-    displayed_label[15] = new_row_value;
+    displayed_label[6] = new_row_value;
     cursor++;
     alarm[0] = alarm_delay;
 }
@@ -239,8 +239,10 @@ for(var i = 0; i &lt; array_height_2d(lines); i++)
     {
         flat_credits_content[index] = '';
         index++;
+        /*
         flat_credits_content[index] = '';
         index++;
+        */
     }
     else
     {
@@ -253,8 +255,10 @@ for(var i = 0; i &lt; array_height_2d(lines); i++)
         {
             flat_credits_content[index] = '***'+lines[i,j]+'***';
             index++;
+            /*
             flat_credits_content[index] = '';
             index++;
+            */
             row_is_title = false;
         }
         else
@@ -295,17 +299,22 @@ lines = flat_credits_content;
     draw_set_font(objResources.fontHud);
     
     var y_offset = view_yview[view_current] - 18 + (18 * alarm[0] / alarm_delay);
-    for(var i = 0; i &lt; 16; i++)
+    for(var i = 0; i &lt; 7; i++)
     {
+        var text_alpha = 1;
+        if(i == 6)
+        {
+            text_alpha = (alarm_delay - alarm[0]) / alarm_delay;
+        }
         if(displayed_label_is_title[i])
         {
             draw_set_font(objResources.fontHud);
-            draw_text_colour(view_xview[view_current] + center_offset, y_offset + i*18, displayed_label[i],c_white,c_white,c_yellow,c_yellow,1);
+            draw_text_colour(view_xview[view_current] + center_offset, y_offset + i*18, displayed_label[i],c_white,c_white,c_yellow,c_yellow,text_alpha);
         }
         else
         {
             draw_set_font(objResources.fontHudMin);
-            draw_text_colour(view_xview[view_current] + center_offset, y_offset + i*18, displayed_label[i],c_white,c_white,c_gray,c_gray,1);
+            draw_text_colour(view_xview[view_current] + center_offset, y_offset + i*18, displayed_label[i],c_white,c_white,c_gray,c_gray,text_alpha);
         }
     }
 }
