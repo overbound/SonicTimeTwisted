@@ -246,8 +246,16 @@ if closeMenu == false {
             // allow the menu object to handle everything
             if(menu.state == 0)
             {
-                show_debug_message("KILL: "+string(objSSPlayer.kill));
                 var menu_to_use = menu_part_sstage_offtrack_items;
+                if(objSSPlayer.kill == 1)
+                {
+                    menu_to_use = menu_part_sstage_norings_items;
+                }
+                else
+                if(objSSPlayer.kill == 4)
+                {
+                    menu_to_use = menu_part_sstage_defeat_items;
+                }
                 with(menu) menu_fn_open_menu(menu_to_use, true);
             }
         }
@@ -320,32 +328,28 @@ if title_word&gt;3 draw_sprite_ext(sprSSHudGo,0,title_ox[3]+string_width(string_
             <kind>1</kind>
             <string>///Closing
 draw_set_font(objResources.fontHud);
-    draw_set_color(c_white);
-    draw_set_halign(fa_center);
-    
-    var stoneNumber;
-    
-    if objProgram.in_past {
-        stoneNumber =objProgram.special_past_current_level;
-    } else {
-        stoneNumber =objProgram.special_future_current_level;
-    }
-    
-    var stoneNumberString;
-    switch stoneNumber {
-        case 1: stoneNumberString = "1st" break;
-        case 2: stoneNumberString = "2nd" break;
-        case 3: stoneNumberString = "3rd" break;
-        case 4: stoneNumberString = "4th" break;
-        case 5: stoneNumberString = "5th" break;
-        case 6: stoneNumberString = "6th" break;
-        case 7: stoneNumberString = "7th" break;
-    }
-    
-    
-if closing == 1 {
-    draw_text(213,80,"Metal Sonic Wins");
+draw_set_color(c_white);
+draw_set_halign(fa_center);
+
+var stoneNumber;
+
+if objProgram.in_past {
+    stoneNumber =objProgram.special_past_current_level;
+} else {
+    stoneNumber =objProgram.special_future_current_level;
 }
+
+var stoneNumberString;
+switch stoneNumber {
+    case 1: stoneNumberString = "1st" break;
+    case 2: stoneNumberString = "2nd" break;
+    case 3: stoneNumberString = "3rd" break;
+    case 4: stoneNumberString = "4th" break;
+    case 5: stoneNumberString = "5th" break;
+    case 6: stoneNumberString = "6th" break;
+    case 7: stoneNumberString = "7th" break;
+}
+
 </string>
           </argument>
         </arguments>

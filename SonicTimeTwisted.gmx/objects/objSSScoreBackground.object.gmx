@@ -165,7 +165,7 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(menu.active)
+            <string>if(menu.state != 0)// putting this condition first because of how GML works
 {
     if((menu.state &gt;= 4 &amp;&amp; menu.state &lt;= 6) || menu.state == 10 || (menu.state &gt;= 21 &amp;&amp; menu.state &lt;= 25))
     {
@@ -206,7 +206,7 @@ if(objProgram.saveSlot &gt; -1) // emeralds only appear in regular gameplay mode
         draw_sprite_ext(other_em_sprite, i, oem_x + i*16, oem_y, 0.35, 0.35, 0, c_white, 1);
     }
 }
-if(menu.active)
+if(menu.state != 0) // putting this condition first because of how GML works
 {
     if((menu.state &gt;= 4 &amp;&amp; menu.state &lt;= 6) || menu.state == 10 || (menu.state &gt;= 21 &amp;&amp; menu.state &lt;= 25))
     {
