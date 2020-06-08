@@ -2,9 +2,9 @@
 //argument1 - argument8 : arguments
 next_item_script = argument[0]; // not an items script, just reusing the variable...
 
+next_cursor = ds_list_create();
 if(argument_count > 1)
 {
-    next_cursor = ds_list_create();
     switch(argument_count)
     {
         case 2:
