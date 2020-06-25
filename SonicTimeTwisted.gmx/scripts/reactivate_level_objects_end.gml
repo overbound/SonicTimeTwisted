@@ -1,3 +1,4 @@
+/*
 instance_deactivate_object(objSceneObject);
 instance_activate_object(objNonSolidAlwaysActive);
 instance_activate_object(objSceneObjectAlwaysActive);
@@ -9,3 +10,4 @@ instance_activate_region(
      3 * view_hview[view_current],
      true
 );
+*/

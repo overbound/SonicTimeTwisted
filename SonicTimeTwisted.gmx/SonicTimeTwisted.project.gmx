@@ -2486,13 +2486,6 @@
         </scripts>
       </scripts>
     </scripts>
-    <scripts name="Performance">
-      <script>scripts\initialize_level_object_activation.gml</script>
-      <script>scripts\refresh_level_object_activation_start.gml</script>
-      <script>scripts\refresh_level_object_activation_end.gml</script>
-      <script>scripts\reactivate_level_objects_start.gml</script>
-      <script>scripts\reactivate_level_objects_end.gml</script>
-    </scripts>
     <scripts name="Ports">
       <scripts name="Smartphone">
         <scripts name="Android">
@@ -3187,11 +3180,6 @@
         </objects>
       </objects>
       <objects name="Parents">
-        <objects name="Always Active">
-          <object>objects\objNonSolidAlwaysActive</object>
-          <object>objects\objSceneObjectAlwaysActive</object>
-          <object>objects\objSolidAlwaysActive</object>
-        </objects>
         <object>objects\objNonSolid</object>
         <object>objects\objSceneObject</object>
         <object>objects\objSolid</object>
