@@ -77,6 +77,7 @@ else
 {
     startText = tr('Press Start');
 }
+level_select_max_presses = 0;
 menu = instance_create(x,y,objMenu);
 menu.default_state = 1;
 
@@ -557,7 +558,8 @@ if(pauseState == 3)
         var do_start = false;
         if(is_touchscreen)
         {
-            do_start = device_mouse_check_button_pressed(0, mb_left);
+            do_start = (levelSelect &lt; 6 &amp;&amp; device_mouse_check_button_pressed(0, mb_left))
+                || (levelSelect &gt;= 6 &amp;&amp; level_select_max_presses &lt; 2 &amp;&amp; device_mouse_check_button_released(0, mb_left));
         }
         else
         {
@@ -606,107 +608,133 @@ if(menu.state == 0)
     if(is_touchscreen)
     {
         // touchscreen version - tap on every displayed name, then touch the title screen with two fingers
-        if(device_mouse_check_button_pressed(0, mb_left))
+        if(levelSelect &lt; 6)
         {
-            // the skip button does not count
-            var skip_pressed = false;
-            if(allow_skipping &amp;&amp; name &lt; 9)
+            if(device_mouse_check_button_pressed(0, mb_left))
             {
-                skip_pressed =  point_in_rectangle(device_mouse_x(0), device_mouse_y(0), 
-                    view_xview[0] + view_wview[0] - 36, view_yview[0] + 12,
-                    view_xview[0] + view_wview[0] - 12, view_yview[0] + 36);       
-            }
-            if(skip_pressed)
-            {
-                // skip to title screen
-                if(skipping == 0)
+                // the skip button does not count
+                var skip_pressed = false;
+                if(allow_skipping &amp;&amp; name &lt; 9)
                 {
-                    skipping = 1;
+                    skip_pressed =  point_in_rectangle(device_mouse_x(0), device_mouse_y(0), 
+                        view_xview[0] + view_wview[0] - 36, view_yview[0] + 12,
+                        view_xview[0] + view_wview[0] - 12, view_yview[0] + 36);       
                 }
-            }
-            else
-            {
-                if(name &lt; 12 &amp;&amp; (!skip_pressed))
+                if(skip_pressed)
                 {
-                    if(levelSelect == 0 &amp;&amp; name == 3)
+                    // skip to title screen
+                    if(skipping == 0)
                     {
-                        levelSelect = 1;
-                    }
-                    else
-                    {
-                        if(levelSelect == 1 &amp;&amp; name == 4)
-                        {
-                            levelSelect = 2;
-                        }
-                        else
-                        {
-                            if(levelSelect == 2 &amp;&amp; name == 5)
-                            {
-                                levelSelect = 3;
-                            }
-                            else
-                            {
-                                if(levelSelect == 3 &amp;&amp; name == 6)
-                                {
-                                    levelSelect = 4;
-                                }
-                                else
-                                {
-                                    if(levelSelect == 4 &amp;&amp; name == 7)
-                                    {
-                                        levelSelect = 5;
-                                    }
-                                    else
-                                    {
-                                        if(levelSelect == 5 &amp;&amp; name == 8)
-                                        {
-                                            audio_play_sound(sndRing,0,false);
-                                            levelSelect = 6;
-                                        }
-                                    }                    
-                                }
-                            }            
-                        }
+                        skipping = 1;
                     }
                 }
                 else
                 {
-                    if(levelSelect == 6)
+                    if(name &lt; 12 &amp;&amp; (!skip_pressed))
                     {
-                        var levelSelectPresses = 0;
-                        if (device_mouse_check_button(0, mb_left))
+                        if(levelSelect == 0 &amp;&amp; name == 3)
                         {
-                            levelSelectPresses++;
+                            levelSelect = 1;
                         }
-                        if (device_mouse_check_button(1, mb_left))
+                        else
                         {
-                            levelSelectPresses++;
-                        }
-                        if (device_mouse_check_button(2, mb_left))
-                        {
-                            levelSelectPresses++;
-                        }
-                        if (device_mouse_check_button(3, mb_left))
-                        {
-                            levelSelectPresses++;
-                        }
-                        if (device_mouse_check_button(4, mb_left))
-                        {
-                            levelSelectPresses++;
-                        }
-                        if(levelSelectPresses &gt;= 2)
-                        {
-                            if(!instance_exists(objTransition))
+                            if(levelSelect == 1 &amp;&amp; name == 4)
                             {
-                                pauseState = 0;
-                                with(menu) menu_fn_open_menu(menu_part_levelselect_char_items);
+                                levelSelect = 2;
+                            }
+                            else
+                            {
+                                if(levelSelect == 2 &amp;&amp; name == 5)
+                                {
+                                    levelSelect = 3;
+                                }
+                                else
+                                {
+                                    if(levelSelect == 3 &amp;&amp; name == 6)
+                                    {
+                                        levelSelect = 4;
+                                    }
+                                    else
+                                    {
+                                        if(levelSelect == 4 &amp;&amp; name == 7)
+                                        {
+                                            levelSelect = 5;
+                                        }
+                                        else
+                                        {
+                                            if(levelSelect == 5 &amp;&amp; name == 8)
+                                            {
+                                                audio_play_sound(sndRing,0,false);
+                                                levelSelect = 6;
+                                                level_select_max_presses = 0;
+                                            }
+                                        }                    
+                                    }
+                                }            
                             }
                         }
                     }
                 }
             }
         }
-        
+        else
+        {
+            if(name == 12 &amp;&amp; levelSelect == 6)
+            {
+                var levelSelectPresses = 0;
+                if (device_mouse_check_button(0, mb_left))
+                {
+                    levelSelectPresses++;
+                }
+                if (device_mouse_check_button(1, mb_left))
+                {
+                    levelSelectPresses++;
+                }
+                if (device_mouse_check_button(2, mb_left))
+                {
+                    levelSelectPresses++;
+                }
+                if (device_mouse_check_button(3, mb_left))
+                {
+                    levelSelectPresses++;
+                }
+                if (device_mouse_check_button(4, mb_left))
+                {
+                    levelSelectPresses++;
+                }
+                level_select_max_presses = max(level_select_max_presses, levelSelectPresses);
+                // detect whether we are currently releasing the last "mouse button"
+                var levelSelectReleases = 0;
+                if (device_mouse_check_button_released(0, mb_left))
+                {
+                    levelSelectReleases++;
+                }
+                if (device_mouse_check_button_released(1, mb_left))
+                {
+                    levelSelectReleases++;
+                }
+                if (device_mouse_check_button_released(2, mb_left))
+                {
+                    levelSelectReleases++;
+                }
+                if (device_mouse_check_button_released(3, mb_left))
+                {
+                    levelSelectReleases++;
+                }
+                if (device_mouse_check_button_released(4, mb_left))
+                {
+                    levelSelectReleases++;
+                }
+                if(level_select_max_presses &gt;= 2 &amp;&amp; levelSelectPresses == 0 &amp;&amp; levelSelectReleases == 1)
+                {
+                    if(!instance_exists(objTransition))
+                    {
+                        pauseState = 0;
+                        with(menu) menu_fn_open_menu(menu_part_levelselect_char_items);
+                    }
+                }
+            }
+        }
     }
     else
     {
