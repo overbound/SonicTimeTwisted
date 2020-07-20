@@ -2,7 +2,7 @@ items = false;
 
 menu_fn_add_option(tr("Play"), 0);
 menu_fn_add_option(tr("Options"), 1);
-menu_fn_add_option(tr("Exit"), 2);
+if (!PSDBG || os_type != os_ps4) menu_fn_add_option(tr("Exit"), 2);
 
 // this means "main menu"
 menu_type = 0;

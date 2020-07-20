@@ -10,7 +10,7 @@ if(objProgram.saveSlot <= 0)
 else
 {
     var filename = save_file_name(objProgram.saveSlot);
-    ini_open(filename);
+    eas_ini_open(filename);
     ini_write_string(argument0, argument1, base64_encode(string(argument2)));
-    ini_close();
+    eas_ini_close();
 }

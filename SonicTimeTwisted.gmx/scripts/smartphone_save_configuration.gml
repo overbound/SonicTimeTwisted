@@ -1,6 +1,6 @@
 /// Save only smartphone-specific configuration
 //smartphone_save_configuration()
-ini_open("settings.ini");
+eas_ini_open("settings.ini");
 ini_write_real('smartphone', 'dpadmode', objProgram.inputManager.dpadMode);
 ini_write_real('smartphone', 'input', objProgram.inputManager.input);
 ini_write_real('smartphone', 'vkalpha', objProgram.inputManager.vkalpha);
@@ -22,4 +22,4 @@ ini_write_real('smartphone', 'gyro_switch_on_angle_y', objProgram.inputManager.g
 ini_write_real('smartphone', 'gyro_analog_start_y', objProgram.inputManager.gyro_analog_start_y);
 ini_write_real('smartphone', 'gyro_analog_end_y', objProgram.inputManager.gyro_analog_end_y);
 ini_write_real('smartphone', 'gg_mode', objProgram.inputManager.gg_mode);
-ini_close();
+eas_ini_close();

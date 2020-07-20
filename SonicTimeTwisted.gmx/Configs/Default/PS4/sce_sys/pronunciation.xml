@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<gamePackage>
+  <language id="01" modified="0">
+    <speechRecognitionWords>
+      <text display="1">sonic time twisted</text>
+      <pronunciation>s ao n ih k ___ t ay m ___ t w ih s t ax d</pronunciation>
+    </speechRecognitionWords>
+    <speechRecognitionWords>
+      <text display="1">sonic time twisted</text>
+      <pronunciation>s ao n ih k ___ t ay m ___ t w ih s t ih d</pronunciation>
+    </speechRecognitionWords>
+  </language>
+  <language id="18" modified="0">
+    <speechRecognitionWords>
+      <text display="1">sonic time twisted</text>
+      <pronunciation>s ao n ih k ___ t ay m ___ t w ih s t ih d</pronunciation>
+    </speechRecognitionWords>
+    <speechRecognitionWords>
+      <text display="1">sonic time twisted</text>
+      <pronunciation>s ao n ih k ___ t ay m ___ t w ih s t ax d</pronunciation>
+    </speechRecognitionWords>
+  </language>
+</gamePackage>

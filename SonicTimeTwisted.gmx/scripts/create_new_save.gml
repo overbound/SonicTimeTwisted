@@ -1,4 +1,4 @@
-//create_new_save(character, saveslot)
+///create_new_save(character, saveslot)
 // normally, save_data_write would have been used en masse, but for peformance's sake, we don't do it in case of a saved slot
 var character = argument0;
 var saveSlot = argument1;
@@ -43,7 +43,7 @@ if(saveSlot <= 0)
 else
 {
     var filename = "save" +string(selectCheck)+".ini";
-    ini_open(filename);
+    eas_ini_open(filename);
     ini_write_string(STATS, CHARACTER, base64_encode(string(character)));
     ini_write_string(STATS, LIVES, base64_encode(string(3)));
     ini_write_string(LEVELS, aAA1_f, base64_encode(string(1)));
@@ -77,5 +77,5 @@ else
     ini_write_string(EMERALDS, FUTURE, base64_encode(string(0)));
     ini_write_string(EMERALDS, PAST, base64_encode(string(0)));
     
-    ini_close();
+    eas_ini_close();
 }

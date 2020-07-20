@@ -1,4 +1,4 @@
-//save_gamepad_input_enabled(enabled)
-ini_open(working_directory+"\settings.ini");
+///save_gamepad_input_enabled(enabled)
+eas_ini_open("settings.ini");
 ini_write_string('gamepad_controls', 'gamepadEnabled', string(argument0));
-ini_close();
+eas_ini_close();

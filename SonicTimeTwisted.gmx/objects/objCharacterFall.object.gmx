@@ -312,10 +312,12 @@ case 9:
 break;
 case 12:
     if input_check_pressed(cACTION) || input_check_pressed(cSTART) {
+        objEasyAsyncController.do_save = false;
         game_restart();
     }
     
     if alarm[0] == -1 {
+        objEasyAsyncController.do_save = false;
         game_restart();
     }
 break;

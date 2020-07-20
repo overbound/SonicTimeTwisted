@@ -382,6 +382,7 @@ if(DEVICE_INFO &amp; DEVICE_TYPE_COMPUTER)
 {
     delete_settings();
 }*/
+objEasyAsyncController.do_save = false;
 game_restart();
 </string>
           </argument>
@@ -408,6 +409,7 @@ game_restart();
             <string>// only available for windows
 if(DEVICE_INFO &amp; DEVICE_TYPE_COMPUTER)
 {
+    objEasyAsyncController.do_save = false;
     game_restart();
 }
 </string>

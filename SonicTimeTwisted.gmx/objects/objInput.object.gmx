@@ -44,7 +44,7 @@ state_release = 0;
 x_axis = 0;
 y_axis = 0;
 badAxis = 0;
-pad = -1;
+pad = objEasyAsyncController.lastpad;
 button_count = 0;
 axis_count = 0;
 // input stream
@@ -264,18 +264,14 @@ if pressingGamepad != -1 {
           <argument>
             <kind>1</kind>
             <string>/// Detect gamepads
+var index;
 switch (async_load[?"event_type"]) {
 case "gamepad discovered":
-    var index = async_load[?"pad_index"];
-    if (pad == -1) {
-        pad = index;
-    }
+    index = async_load[?"pad_index"];
+    pad = index;
     break;
 case "gamepad lost":
-    var index = async_load[?"pad_index"];
-    if (pad == index) {
-        pad = -1;
-    }
+    index = async_load[?"pad_index"];
     break;
 }
 </string>

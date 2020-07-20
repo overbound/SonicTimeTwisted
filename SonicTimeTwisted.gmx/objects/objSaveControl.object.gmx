@@ -111,7 +111,7 @@ else if selectState == 3 {
     if input_check_pressed(cLEFT) {
         slots[selectCheck].visiblePast=0;
         slots[selectCheck].visibleFuture=0;
-        file_delete(filename);
+        eas_file_delete(filename);
         selectState = 0;
         slots[selectCheck].iconIndex = 0;
         slots[selectCheck].characterSelect=1;
@@ -189,7 +189,7 @@ if xSpeed == 0 {
         
         } else {
                 var filename = save_file_name(selectCheck);
-                if !file_exists(filename) {
+                if !eas_file_exists(filename) {
                     selectState = 2;
                     allowLevelStart = false;
                 } else {

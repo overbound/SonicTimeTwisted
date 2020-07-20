@@ -51,7 +51,31 @@ if(fChar == "-" || fChar == "+")
 }
 else
 {
-    var code = round(real(argument0));   
+    var code = round(real(argument0)); 
+    if (os_type == os_ps4 || PSDBG)
+    {
+        switch(code)
+        {             
+            case gp_face1: return "X";
+            case gp_face2: return "O";
+            case gp_face3: return "SQUARE";
+            case gp_face4: return "TRIANGLE";
+            case gp_shoulderl:  return "L1";
+            case gp_shoulderlb: return "L2";
+            case gp_shoulderr:  return "R1";
+            case gp_shoulderrb: return "R2";
+            case gp_select: return "TOUCHPAD";
+            case gp_start:  return "OPTIONS";
+            case gp_stickl: return "LEFT STICK";
+            case gp_stickr: return "RIGHT STICK";
+            case gp_padu: return "DPAD UP";
+            case gp_padd: return "DPAD DOWN";
+            case gp_padl: return "DPAD LEFT";
+            case gp_padr: return "DPAD RIGHT";
+            default: show_debug_message(string(argument0)); return "UNKNOWN";
+         }
+         return "WHAT";
+    }  
     switch(code)
     {             
         case gp_face1:

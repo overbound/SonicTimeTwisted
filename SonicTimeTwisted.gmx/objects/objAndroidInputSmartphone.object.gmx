@@ -59,8 +59,8 @@ bsy = 16;
 bbx = 324;
 bby = 88;
 
-if (file_exists(file)) {
-    ini_open(file);
+if (eas_file_exists(file)) {
+    eas_ini_open(file);
     dpadMode = ini_read_real('smartphone','dpadmode',0);
     input = ini_read_real('smartphone','input',0);
     vkalpha = ini_read_real('smartphone','vkalpha',0.8);
@@ -82,6 +82,7 @@ if (file_exists(file)) {
     gyro_analog_start_y = ini_read_real('smartphone','gyro_analog_start_y',0.1);
     gyro_analog_end_y = ini_read_real('smartphone','gyro_analog_end_y',0.6);
     gg_mode = ini_read_real('smartphone','gg_mode',1);
+    eas_ini_close();
 }
 
 vKeyJoy_surface = surface_create(64, 64);

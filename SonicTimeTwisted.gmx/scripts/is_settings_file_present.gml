@@ -1,1 +1,1 @@
-return file_exists(working_directory+"\settings.ini");
+return eas_file_exists("settings.ini");
