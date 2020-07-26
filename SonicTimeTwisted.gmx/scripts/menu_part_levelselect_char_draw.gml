@@ -31,8 +31,7 @@ else
         tr("Character select"));
     draw_set_colour(c_white);
     
-    var characters_count = 3;
-    if(cursor < characters_count || is_touchscreen)
+    if(cursor < CHARS_COUNT || is_touchscreen)
     { 
         if(!is_touchscreen)
         {
@@ -40,20 +39,20 @@ else
         }
         
         // no scrolling
-        if(prev_cursor == -1 || prev_cursor == characters_count)
+        if(prev_cursor == -1 || prev_cursor == CHARS_COUNT)
         {        
             var char_sprite_index = temporary_variable;
             draw_sprite(sprCharacterSelect, char_sprite_index, internal__draw_menu_rect_x_center, internal__draw_menu_rect_y_center);
             char_sprite_index--;
             if(char_sprite_index < 0)
             {
-                char_sprite_index = char_sprite_index + characters_count;
+                char_sprite_index = char_sprite_index + CHARS_COUNT;
             }
             draw_sprite_ext(sprCharacterSelect, char_sprite_index, internal__draw_menu_rect_x_center - 64, internal__draw_menu_rect_y_center, 0.8, 0.8, 0, c_gray, 1);
             var char_sprite_index = temporary_variable + 1;
-            if(char_sprite_index >= characters_count)
+            if(char_sprite_index >= CHARS_COUNT)
             {
-                char_sprite_index = char_sprite_index - characters_count;
+                char_sprite_index = char_sprite_index - CHARS_COUNT;
             }
             draw_sprite_ext(sprCharacterSelect, char_sprite_index, internal__draw_menu_rect_x_center + 64, internal__draw_menu_rect_y_center, 0.8, 0.8, 0, c_gray, 1);
         }
@@ -61,39 +60,39 @@ else
         {
             var scrolling_offset = 0;
             // scrolling right
-            if(temporary_variable == prev_cursor + 1 || (temporary_variable == 0 && prev_cursor == characters_count - 1))
+            if(temporary_variable == prev_cursor + 1 || (temporary_variable == 0 && prev_cursor == CHARS_COUNT - 1))
             {
                 scrolling_offset = temporary_variable - 2;
             }
             else
             {
                 // scrolling left
-                if(temporary_variable == prev_cursor - 1 || (prev_cursor == 0 && temporary_variable == characters_count - 1))
+                if(temporary_variable == prev_cursor - 1 || (prev_cursor == 0 && temporary_variable == CHARS_COUNT - 1))
                 {
                     scrolling_offset = temporary_variable - 1;
                 }
             }
             if(scrolling_offset < 0)
             {
-                scrolling_offset = scrolling_offset + characters_count;
+                scrolling_offset = scrolling_offset + CHARS_COUNT;
             }
             draw_sprite_ext(sprCharacterSelect, scrolling_offset, internal__draw_menu_rect_x_center - 96, internal__draw_menu_rect_y_center, 0.7, 0.7, 0, c_dkgray, 1);
             scrolling_offset += 1;
-            if(scrolling_offset >= characters_count)
+            if(scrolling_offset >= CHARS_COUNT)
             {
-                scrolling_offset -= characters_count;
+                scrolling_offset -= CHARS_COUNT;
             }
             draw_sprite_ext(sprCharacterSelect, scrolling_offset, internal__draw_menu_rect_x_center - 32, internal__draw_menu_rect_y_center, 0.9, 0.9, 0, c_gray, 1);
             scrolling_offset += 1;
-            if(scrolling_offset >= characters_count)
+            if(scrolling_offset >= CHARS_COUNT)
             {
-                scrolling_offset -= characters_count;
+                scrolling_offset -= CHARS_COUNT;
             }
             draw_sprite_ext(sprCharacterSelect, scrolling_offset, internal__draw_menu_rect_x_center + 32, internal__draw_menu_rect_y_center, 0.9, 0.9, 0, c_gray, 1);
             scrolling_offset += 1;
-            if(scrolling_offset >= characters_count)
+            if(scrolling_offset >= CHARS_COUNT)
             {
-                scrolling_offset -= characters_count;
+                scrolling_offset -= CHARS_COUNT;
             }
             draw_sprite_ext(sprCharacterSelect, scrolling_offset, internal__draw_menu_rect_x_center + 96, internal__draw_menu_rect_y_center, 0.7, 0.7, 0, c_dkgray, 1);
         }
@@ -106,13 +105,13 @@ else
         char_sprite_index--;
         if(char_sprite_index < 0)
         {
-            char_sprite_index = char_sprite_index + characters_count;
+            char_sprite_index = char_sprite_index + CHARS_COUNT;
         }
         draw_sprite_ext(sprCharacterSelect, char_sprite_index, internal__draw_menu_rect_x_center - 64, internal__draw_menu_rect_y_center, 0.8, 0.8, 0, c_dkgray, 1);
         var char_sprite_index = temporary_variable + 1;
-        if(char_sprite_index >= characters_count)
+        if(char_sprite_index >= CHARS_COUNT)
         {
-            char_sprite_index = char_sprite_index - characters_count;
+            char_sprite_index = char_sprite_index - CHARS_COUNT;
         }
         draw_sprite_ext(sprCharacterSelect, char_sprite_index, internal__draw_menu_rect_x_center + 64, internal__draw_menu_rect_y_center, 0.8, 0.8, 0, c_dkgray, 1);
     }
@@ -128,7 +127,7 @@ else
         text_y_offset = 0;
         text_color = c_white;
         
-        if(characters_count == cursor)
+        if(CHARS_COUNT == cursor)
         {
             if((state == 2) || (state == 3 && timer mod 2 > 0))
             {
@@ -138,7 +137,7 @@ else
     }
     else
     {
-        if(characters_count == cursor && prev_cursor == -1)
+        if(CHARS_COUNT == cursor && prev_cursor == -1)
         {
             sprite_index_to_draw = 1;
             draw_set_font(objResources.fontHud);
@@ -154,7 +153,7 @@ else
         {
             draw_set_font(objResources.fontHudMin);
             text_y_offset = 1;
-            if((prev_cursor == characters_count) || (characters_count == cursor && prev_cursor != -1))
+            if((prev_cursor == CHARS_COUNT) || (CHARS_COUNT == cursor && prev_cursor != -1))
             {
                 sprite_index_to_draw = 2;
                 text_color = c_white;      

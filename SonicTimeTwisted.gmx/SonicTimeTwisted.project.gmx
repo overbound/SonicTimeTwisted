@@ -3711,7 +3711,7 @@
       </rooms>
     </rooms>
   </rooms>
-  <constants number="109">
+  <constants number="110">
     <constant name="VERSION">"1.1.0-WIP"</constant>
     <constant name="GAMEPAD_POV_Y">7</constant>
     <constant name="GAMEPAD_POV_X">6</constant>
@@ -3721,6 +3721,7 @@
     <constant name="GAMEPAD_AXIS_Z">2</constant>
     <constant name="GAMEPAD_AXIS_Y">1</constant>
     <constant name="GAMEPAD_AXIS_X">0</constant>
+    <constant name="CHARS_COUNT">3</constant>
     <constant name="EMERALDS">'k9(2h@'</constant>
     <constant name="STATS">'LDGaS'</constant>
     <constant name="PAST">'c20n1('</constant>

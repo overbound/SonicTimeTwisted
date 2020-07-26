@@ -132,6 +132,46 @@ if pastLevels[iconIndex] == true {
         </arguments>
       </action>
     </event>
+    <event eventtype="7" enumb="10">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Start game
+
+if (other.stageLeftRight == 1 &amp;&amp; visibleFuture == 1) or (other.stageLeftRight == 0 &amp;&amp; visiblePast == 1) {
+    if other.stageLeftRight == 0
+    objProgram.in_past = true;
+    else objProgram.in_past = false;
+
+    objGameData.character_id[0] = characterSelect;
+    objProgram.saveSlot=other.selectCheck;
+    load_emeralds();
+    load_lives();
+    if iconIndex &gt; 0 {
+        level_goto_from_save(iconIndex + 1)
+    }
+    else {
+        level_goto_from_save(iconIndex)
+    }
+} 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
