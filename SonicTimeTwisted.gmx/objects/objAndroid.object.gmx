@@ -105,9 +105,6 @@ switch(room)
              event_user(0);
          }
          break;
-    case saveSelect:
-         instance_create(0,0,objSaveControl_Android);
-         break;
     case ss_results_screen:
          with(objSSScoreBackground)
          {

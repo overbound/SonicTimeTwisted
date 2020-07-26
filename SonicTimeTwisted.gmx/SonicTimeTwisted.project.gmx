@@ -3427,7 +3427,6 @@
         <object>objects\objHud_Android</object>
         <object>objects\objAndroidInputSmartphone</object>
         <object>objects\objLevel_Android</object>
-        <object>objects\objSaveControl_Android</object>
       </objects>
       <object>objects\objTimeTravelVortexNoShader</object>
       <object>objects\objTimeTravelNoShader</object>
