@@ -1955,6 +1955,28 @@
           <script>scripts\input_check_released.gml</script>
           <script>scripts\input_is_touchscreen.gml</script>
         </scripts>
+        <scripts name="Input Methods">
+          <scripts name="Smartphone">
+            <script>scripts\input_method_touchscreen.gml</script>
+            <script>scripts\input_method_draw_touchscreen.gml</script>
+            <script>scripts\input_method_ssgyro.gml</script>
+            <script>scripts\input_method_draw_ssgyro.gml</script>
+            <script>scripts\input_method_ggpoint.gml</script>
+            <script>scripts\input_method_draw_ggpoint.gml</script>
+          </scripts>
+          <script>scripts\input_method_keyboard.gml</script>
+          <script>scripts\input_method_gamepad.gml</script>
+          <script>scripts\input_method_smartphone.gml</script>
+          <script>scripts\input_method_init_physical.gml</script>
+          <script>scripts\input_method_dummy_script.gml</script>
+          <script>scripts\input_method_init_smartphone.gml</script>
+          <script>scripts\input_method_draw_smartphone.gml</script>
+          <script>scripts\input_method_haptic_smartphone.gml</script>
+        </scripts>
+        <script>scripts\set_input_method.gml</script>
+        <script>scripts\get_input_method.gml</script>
+        <script>scripts\set_input_method_detailed.gml</script>
+        <script>scripts\reinit_input_method.gml</script>
       </scripts>
       <scripts name="Math">
         <script>scripts\Lerp.gml</script>
@@ -2954,6 +2976,7 @@
       <object>objects\objGameData</object>
       <object>objects\objFramerate</object>
       <object>objects\objInput</object>
+      <object>objects\objInputMethodDependant</object>
       <object>objects\objMusic</object>
       <object>objects\objProgram</object>
       <object>objects\objResources</object>
@@ -3424,7 +3447,6 @@
         <object>objects\objSSHud_Android</object>
         <object>objects\objSSLevel_Android</object>
         <object>objects\objAndroidInput</object>
-        <object>objects\objHud_Android</object>
         <object>objects\objAndroidInputSmartphone</object>
         <object>objects\objLevel_Android</object>
       </objects>
@@ -3710,7 +3732,7 @@
       </rooms>
     </rooms>
   </rooms>
-  <constants number="110">
+  <constants number="111">
     <constant name="VERSION">"1.1.0-WIP"</constant>
     <constant name="GAMEPAD_POV_Y">7</constant>
     <constant name="GAMEPAD_POV_X">6</constant>
@@ -3821,6 +3843,7 @@
     <constant name="INPUT_KEYBOARD">0</constant>
     <constant name="INPUT_TOUCHSCREEN">1</constant>
     <constant name="INPUT_GAMEPAD">2</constant>
+    <constant name="INPUT_MAX">2</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>

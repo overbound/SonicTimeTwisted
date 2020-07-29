@@ -5,10 +5,32 @@
   <visible>-1</visible>
   <depth>-1026</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>objInputMethodDependant</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Inherit event
+event_inherited();
+</string>
+          </argument>
+        </arguments>
+      </action>
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -43,6 +65,11 @@ timeOffset = 0;
 timer = 0;
 rings = 0;
 menu = instance_create(0,0,objMenu);
+draw_lives_event = 0;
+if(is_touchscreen)
+{
+    draw_lives_event = 1;
+}
 </string>
           </argument>
         </arguments>
@@ -267,6 +294,45 @@ if objProgram.paused {
         </arguments>
       </action>
     </event>
+    <event eventtype="7" enumb="11">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// draw lives - touchscreen variant
+var lives_x_left = view_xview[view_current]+view_wview[view_current] - 100;
+var lives_y_top = view_yview[view_current]+16-(16*objScreen.split_screen);
+
+show_debug_message("lives_x_left: "+string(lives_x_left));
+show_debug_message("lives_y_top: "+string(lives_y_top));
+// Smartphone mode - the HUD is drawn in the top-right corner
+// lives setpiece
+draw_sprite(sprLives, character_id[view_current], lives_x_left, lives_y_top - 12);
+
+// lives string
+draw_set_color(c_white);
+draw_set_alpha(image_alpha);
+draw_set_valign(fa_top);
+draw_set_halign(fa_right);
+draw_set_font(objResources.fontLives);
+draw_text(lives_x_left + 78, lives_y_top, objGameData.player_lives[view_current]);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="7" enumb="10">
       <action>
         <libid>1</libid>
@@ -284,7 +350,7 @@ if objProgram.paused {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// draw lives - can be overriden by platform-specific code
+            <string>/// draw lives - classic variant
 // lives setpiece
 draw_sprite(sprLives, character_id[view_current], view_xview[view_current]+16, view_yview[view_current]+view_hview-24);
 // lives string

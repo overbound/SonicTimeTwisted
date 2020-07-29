@@ -1,1 +1,1 @@
-return DEVICE_INFO & DEVICE_TYPE_SMARTPHONE > 0;
+return objInput.is_touchscreen;

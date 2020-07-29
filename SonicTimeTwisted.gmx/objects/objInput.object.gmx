@@ -5,10 +5,32 @@
   <visible>0</visible>
   <depth>0</depth>
   <persistent>-1</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>objInputMethodDependant</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Inherit event
+event_inherited();
+</string>
+          </argument>
+        </arguments>
+      </action>
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -54,8 +76,32 @@ input_load();
 fix_bad_gamepad_axis();
 gamepad_update_enabled = true;
 load_gamepad_support();
+
+// rumble/haptics
 rumble_queue = ds_queue_create();
 rumble_configuration_script = rumble_configuration_active;
+
+// input devices
+input_manage_script = input_method_dummy_script;
+input_rumble_script = input_method_dummy_script;
+input_draw_script = input_method_dummy_script;
+input_method = 0;
+
+if(DEVICE_INFO &amp; DEVICE_TYPE_SMARTPHONE)
+{
+    set_input_method(INPUT_TOUCHSCREEN);
+}
+else
+{
+    if(DEVICE_INFO &amp; DEVICE_TYPE_CONSOLE)
+    {
+        set_input_method(INPUT_GAMEPAD);
+    }
+    else
+    {
+        set_input_method(INPUT_KEYBOARD);
+    }
+}
 </string>
           </argument>
         </arguments>
@@ -146,40 +192,21 @@ rumble_configuration_script = rumble_configuration_active;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Get device state
-var i, a;
+            <string>/// Update states
+
 // clear states
 previous_state = state;
 state = 0;
 state_press = 0;
 state_release = 0;
-/*
-if objScreen.image_index mod 8 == 0
-    gamepad_update();*/
 
-// keys
-for (i = 0; i &lt; key_count; i++)
-    if (keyboard_check(key[i])) state |= key_control[i];
-if(gamepad_update_enabled) {    
-    // buttons
-    for (i = 0; i &lt; button_count; i++)
-        if (gamepad_button_check(pad, button[i])) state |= button_control[i];
-        //if (gamepad_button_check(button_gamepad[i], button[i])) state |= button_control[i];
-        // if (gamepad_button(pad, button[i])) state |= button_control[i];
-    
-    // axes
-    for (i = 0; i &lt; axis_count; i++)
-        if (gamepad_axis_value(pad, axis[i]) * axis_direction[i] &gt; axis_deadzone[i]) state |= axis_control[i];
-        //if (gamepad_axis_value(axis_gamepad[i], axis[i]) * axis_direction[i] &gt; axis_deadzone[i]) state |= axis_control[i];
-        // if (gamepad_axis(pad, axis[i]) * axis_direction[i] &gt; axis_deadzone[i]) state |= axis_control[i];
-}
-// default "back" button
-if(keyboard_check(objProgram.back_button))
+script_execute(input_manage_script);
+
+// default "back" button - ESC on PC, Back on smartphones
+if(keyboard_check(DEVICE_BACK_BUTTON))
 {
     state |= cBACK;
 }
-// custom control schemes (e.g. touchscreen)
-event_user(3);
 // axes
 x_axis = 0;
 if (state &amp; cLEFT &amp;&amp; flag_player_input) || (computer_cLEFT &amp;&amp; !flag_player_input) x_axis -= 1;
@@ -192,32 +219,6 @@ if (state &amp; cDOWN &amp;&amp; flag_player_input) || (computer_cDOWN &amp;&amp
 state_press = (state &amp; previous_state) ^ state;
 state_release = (state &amp; previous_state) ^ previous_state;
 previous_state = state;
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Check for Pressing
-if pressingGamepad != -1 {
-    if !gamepad_button_check(pad,pressingGamepad) &amp;&amp; !gamepad_axis_value(pad,pressingGamepad) {
-        pressingGamepad = -1;
-    }
-}
 </string>
           </argument>
         </arguments>
@@ -240,7 +241,8 @@ if pressingGamepad != -1 {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>rumble_perform();
+            <string>/// Manage rumble/haptic
+script_execute(input_rumble_script);
 </string>
           </argument>
         </arguments>
@@ -352,7 +354,31 @@ computer_input_reset_state();
           <argument>
             <kind>1</kind>
             <string>/// Create input stream
+reinit_input_method();
 stream = ds_list_create();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="64">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>script_execute(input_draw_script);
 </string>
           </argument>
         </arguments>

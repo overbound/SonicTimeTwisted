@@ -6,7 +6,7 @@ argument3 - offsetY
 */
 
 // Drawing lives - exported into a different event
-event_user(0);
+event_user(draw_lives_event);
 draw_set_halign(fa_left);
 draw_set_font(objResources.fontHud);
 // Hud Graphic
