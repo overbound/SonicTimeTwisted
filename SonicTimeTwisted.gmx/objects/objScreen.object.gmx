@@ -273,11 +273,7 @@ else if scanlines
             <kind>1</kind>
             <string>/// Scroll through screen modes
 set_video_mode((get_video_mode() + 1) mod 4);
-// In case we're in the video options menu, update the visible label
-with(objMenu)
-{
-    event_user(1);
-}
+
 </string>
           </argument>
         </arguments>

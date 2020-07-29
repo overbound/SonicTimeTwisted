@@ -60,6 +60,9 @@ prev_cursor = -1;
 // - new value of a slider
 temporary_variable = -1;
 
+// used to remap keys
+temp_map = ds_map_create();
+
 confirmation_text = '';
 confirmation_yes_label = '';
 confirmation_no_label = '';

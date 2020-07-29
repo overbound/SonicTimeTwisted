@@ -11,8 +11,8 @@ switch(argument0)
         break;
     case INPUT_TOUCHSCREEN:
         set_input_method_detailed(
-            input_method_init_physical,
-            input_method_keyboard,
+            input_method_init_smartphone,
+            input_method_smartphone,
             input_method_haptic_smartphone,
             input_method_draw_smartphone
         );
@@ -33,4 +33,15 @@ with(objTitleControl)
 with(objInputMethodDependant)
 {
     is_touchscreen = argument0 == INPUT_TOUCHSCREEN;
+}
+with(objHud)
+{
+    if(is_touchscreen)
+    {
+        draw_lives_event = 1;
+    }
+    else
+    {
+        draw_lives_event = 0;
+    }
 }

@@ -1972,6 +1972,9 @@
           <script>scripts\input_method_init_smartphone.gml</script>
           <script>scripts\input_method_draw_smartphone.gml</script>
           <script>scripts\input_method_haptic_smartphone.gml</script>
+          <script>scripts\nput_method_keyboard_create_vars.gml</script>
+          <script>scripts\nput_method_gamepad_create_vars.gml</script>
+          <script>scripts\nput_method_touchscreen_create_vars.gml</script>
         </scripts>
         <script>scripts\set_input_method.gml</script>
         <script>scripts\get_input_method.gml</script>
@@ -3732,7 +3735,7 @@
       </rooms>
     </rooms>
   </rooms>
-  <constants number="111">
+  <constants number="112">
     <constant name="VERSION">"1.1.0-WIP"</constant>
     <constant name="GAMEPAD_POV_Y">7</constant>
     <constant name="GAMEPAD_POV_X">6</constant>
@@ -3844,6 +3847,7 @@
     <constant name="INPUT_TOUCHSCREEN">1</constant>
     <constant name="INPUT_GAMEPAD">2</constant>
     <constant name="INPUT_MAX">2</constant>
+    <constant name="DEVICE_HAS_TOUCHSCREEN">0</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>
