@@ -1953,6 +1953,7 @@
       <scripts name="General">
         <scripts name="Collision">
           <script>scripts\collision_box.gml</script>
+          <script>scripts\collision_box_lower.gml</script>
           <script>scripts\collision_ray.gml</script>
           <script>scripts\collision_ray_vertical.gml</script>
         </scripts>
