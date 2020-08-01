@@ -195,7 +195,7 @@ for (var j=y; j&lt;y+sprite_height; j+=64)
 shader_reset();
 
         for (var i=0; i &lt; sprite_width i+=64) {
-        draw_sprite_part(sprLavaBubbles, floor(bubbleIndex)+i/64, 0, 0, min(abs(sprite_width-i), 64), 32, x+i, y-32);
+        draw_sprite_part(sprLavaBubbles, floor(bubbleIndex)+i/64, 0, 0, min(abs(sprite_width-i), 64), 32, x+i, y-24);
     }
       
 draw_set_blend_mode(bm_add);
