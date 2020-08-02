@@ -50,7 +50,7 @@ audio_play_sound(sndGalacnikAttack,2,false);
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="0">
+    <event eventtype="7" enumb="10">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -67,7 +67,9 @@ audio_play_sound(sndGalacnikAttack,2,false);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if fire {
+            <string>/// Step - triggered by obj Galacnik Small
+
+if fire {
 
     if instance_exists(platformId) {
         
