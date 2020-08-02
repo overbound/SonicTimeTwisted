@@ -3327,6 +3327,9 @@
     <timelines name="Specific">
       <timelines name="Bosses">
         <timeline>timelines\animBossExplosion</timeline>
+        <timeline>timelines\animGalanikFireballFade</timeline>
+        <timeline>timelines\animGalanikFireballGrow</timeline>
+        <timeline>timelines\animGalanikSmallFire</timeline>
         <timeline>timelines\timeAA1Boss</timeline>
         <timeline>timelines\timeEggWalkerStartWalk</timeline>
         <timeline>timelines\timeFinalBossArm</timeline>
