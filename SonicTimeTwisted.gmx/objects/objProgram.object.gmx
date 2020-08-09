@@ -37,6 +37,10 @@ lost_focus = false;
 check_room = 0;
 // controllers
 inputManager = instance_create(0, 0, objInput);
+with(inputManager)
+{
+    init_input_method();
+}
 // level data
 current_level = -1;
 cutscene = 0;
@@ -83,10 +87,6 @@ saveSlot=0;
 special_past_current_level=0;
 special_future_current_level=0;
 temp_superform = false;
-// this might vary between platforms - button allowing cancelling some operations
-back_button = vk_escape;
-// and this is the label for the button in question - is shown in some messages
-back_button_label = 'ESCAPE';
 score_tally_mode = 0;
 first_run = !is_settings_file_present();
 load_options();

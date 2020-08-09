@@ -1,12 +1,41 @@
+/// Smartphone controls can be of three types depending on the context
+/*
+Don't overwrite input_init_script here, please!
+Different rooms can have different behaviors requiring different input methods.
+*/
 is_touchscreen = true;
 visible = true;
 
 if(instance_exists(objLevel))
 {
-    // if the level is Galacnik Gauntlet, 
-    show_message("enable touchscreen controls here");
+    // if the level is Galacnik Gauntlet, controls will be different
+   if(objProgram.current_level == 16 &&
+        objProgram.inputManager.gg_mode == 1)
+    {
+        input_method_init_ggpoint();
+        input_manage_script = input_method_ggpoint;
+        input_rumble_script = input_method_haptics_ggpoint;
+        input_draw_script = input_method_draw_ggpoint;
+    }
+    else
+    {
+        // this one init's all the others
+        input_method_init_touchscreen();
+    }
 }
+else
 if(instance_exists(objSSLevel))
 {
-    show_message("enable SS touchscreen controls here");
+    if(objProgram.inputManager.gyroinss)
+    {
+        input_method_init_ssgyro();
+        input_manage_script = input_method_ssgyro;
+        input_rumble_script = input_method_haptics_ssgyro;
+        input_draw_script = input_method_draw_ssgyro;
+    }
+    else
+    {
+        // this one init's all the others
+        input_method_init_touchscreen();
+    }
 }

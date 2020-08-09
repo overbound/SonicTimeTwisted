@@ -50,7 +50,7 @@ event_inherited();
             <string>/// Initialize input device
 image_speed = 0;
 var i;
-// input flags
+// input flags - outside of this object, use set_input_enabled to change this flag
 flag_player_input = true;
 pressingGamepad = -1;
 // computer controls
@@ -81,26 +81,23 @@ load_gamepad_support();
 rumble_queue = ds_queue_create();
 rumble_configuration_script = rumble_configuration_active;
 
-// input devices
+// input devices management
+input_init_script = input_method_dummy_script;
 input_manage_script = input_method_dummy_script;
 input_rumble_script = input_method_dummy_script;
 input_draw_script = input_method_dummy_script;
+input_init_script_fallback = input_method_dummy_script;
+input_manage_script_fallback = input_method_dummy_script;
+input_rumble_script_fallback = input_method_dummy_script;
+input_draw_script_fallback = input_method_dummy_script;
 input_method = 0;
+input_method_fallback = 0;
+use_fallback = false;
 
+// touchscreen if applies
 if(DEVICE_INFO &amp; DEVICE_TYPE_SMARTPHONE)
 {
-    set_input_method(INPUT_TOUCHSCREEN);
-}
-else
-{
-    if(DEVICE_INFO &amp; DEVICE_TYPE_CONSOLE)
-    {
-        set_input_method(INPUT_GAMEPAD);
-    }
-    else
-    {
-        set_input_method(INPUT_KEYBOARD);
-    }
+    init_touchscreen_vars();
 }
 </string>
           </argument>
@@ -200,11 +197,15 @@ state = 0;
 state_press = 0;
 state_release = 0;
 
-//script_execute(input_manage_script);
-script_execute(input_method_keyboard);
-script_execute(input_method_gamepad);
+script_execute(input_manage_script);
+if(use_fallback)
+{
+    // only in menus
+    script_execute(input_manage_script_fallback);
+}
 
 // default "back" button - ESC on PC, Back on smartphones
+// calls the menu, guaranteed to be available on every platform
 if(keyboard_check(DEVICE_BACK_BUTTON))
 {
     state |= cBACK;
@@ -358,6 +359,50 @@ computer_input_reset_state();
             <string>/// Create input stream
 reinit_input_method();
 stream = ds_list_create();
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Rerun input init script: necessary for smartphone, transparent for PC
+script_execute(input_init_script);
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Disable smartphone controls until they are explicitly enabled
+set_smartphone_controls_enabled(false);
 </string>
           </argument>
         </arguments>

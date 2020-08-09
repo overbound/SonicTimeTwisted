@@ -112,9 +112,58 @@ for (i=0; i&lt;4; i+=1)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>flash = false;
+            <string>/// Hide the opening card "Race metal Sonic"
+flash = false;
 opening=false;
 visible=true;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// If objInputHelp is present, display the hint it contains
+with(objInputHelp)
+{
+    visible = true;
+    active = true;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Enable smartphone controls if disabled
+set_smartphone_controls_enabled(false);
 </string>
           </argument>
         </arguments>

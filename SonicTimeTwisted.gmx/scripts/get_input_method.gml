@@ -1,1 +1,1 @@
-return objInput.input_method;
+return objProgram.inputManager.input_method;

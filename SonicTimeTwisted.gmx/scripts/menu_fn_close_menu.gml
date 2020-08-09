@@ -65,3 +65,8 @@ if(argument_count > 1)
 
 timer = 0;
 state = 4;
+
+with(objProgram.inputManager)
+{
+    use_fallback = false;
+}

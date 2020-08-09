@@ -1,1 +1,1 @@
-return objInput.is_touchscreen;
+return objProgram.inputManager.is_touchscreen;

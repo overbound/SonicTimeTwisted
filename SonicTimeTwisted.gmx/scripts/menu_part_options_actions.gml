@@ -4,9 +4,16 @@ switch(argument0)
         menu_fn_goto_submenu(menu_part_videooptions_items);
         break;
     case 1:
-        with(objProgram.inputManager)
+        switch(get_input_method())
         {
-            event_user(0);
+            case INPUT_KEYBOARD:
+                // KEYBOARD -> GAMEPAD
+                set_input_method(INPUT_GAMEPAD, false);
+                break;
+            case INPUT_GAMEPAD:
+                // GAMEPAD -> KEYBOARD
+                set_input_method(INPUT_KEYBOARD, false);
+                break;
         }
         break;
     case 2:
@@ -16,35 +23,20 @@ switch(argument0)
         menu_fn_goto_submenu(menu_part_joymap_items);
         break;
     case 5:
-        if(objProgram.inputManager.input == 0)
+        switch(get_input_method())
         {
-            // TOUCHSCREEN -> GAMEPAD
-            android_device_set_mode_gamepad(0);
-            objProgram.inputManager.input = 1;
-            if(!objProgram.inputManager.gamepad_update_enabled)
-            {
-                with(objProgram.inputManager)
-                {
-                    event_user(0);
-                }
-            }
-        }
-        else
-        {
-            if(objProgram.inputManager.gamepad_update_enabled)
-            {
+            case INPUT_TOUCHSCREEN:
+                // TOUCHSCREEN -> GAMEPAD
+                set_input_method(INPUT_GAMEPAD, false);
+                break;
+            case INPUT_GAMEPAD:
                 // GAMEPAD -> KEYBOARD
-                android_device_set_mode_keyboard(0);
-                with(objProgram.inputManager)
-                {
-                    event_user(0);
-                }
-            }
-            else
-            {
+                set_input_method(INPUT_KEYBOARD, false);
+                break;
+            case INPUT_KEYBOARD:
                 // KEYBOARD -> TOUCHSCREEN
-                objProgram.inputManager.input = 0;
-            }
+                set_input_method(INPUT_TOUCHSCREEN, false);
+                break;
         }
         break;
     case 6:
@@ -76,50 +68,33 @@ switch(argument0)
         switch(items[cursor, 1])
         {
             case 1:
-                with(objProgram.inputManager)
+                switch(get_input_method())
                 {
-                    event_user(0);
+                    case INPUT_KEYBOARD:
+                        // KEYBOARD -> GAMEPAD
+                        set_input_method(INPUT_GAMEPAD, false);
+                        break;
+                    case INPUT_GAMEPAD:
+                        // GAMEPAD -> KEYBOARD
+                        set_input_method(INPUT_KEYBOARD, false);
+                        break;
                 }
                 break;
             case 5:
-                if(objProgram.inputManager.input == 0)
+                switch(get_input_method())
                 {
-                    // TOUCHSCREEN -> KEYBOARD
-                    android_device_set_mode_keyboard(0);
-                    objProgram.inputManager.input = 1;
-                    if(objProgram.inputManager.gamepad_update_enabled)
-                    {
-                        with(objProgram.inputManager)
-                        {
-                            event_user(0);
-                        }
-                    }
-                }
-                else
-                {
-                    // KEYBOARD -> GAMEPAD
-                    android_device_set_mode_gamepad(0);
-                    if(!objProgram.inputManager.gamepad_update_enabled)
-                    {
-                        // GAMEPAD -> KEYBOARD
-                        android_device_set_mode_keyboard(0);
-                        with(objProgram.inputManager)
-                        {
-                            event_user(0);
-                        }
-                    }
-                    else
-                    {
+                    case INPUT_GAMEPAD:
                         // GAMEPAD -> TOUCHSCREEN
-                        objProgram.inputManager.input = 0;
-                        if(objProgram.inputManager.gamepad_update_enabled)
-                        {
-                            with(objProgram.inputManager)
-                            {
-                                event_user(0);
-                            }
-                        }
-                    }
+                        set_input_method(INPUT_TOUCHSCREEN, false);
+                        break;
+                    case INPUT_KEYBOARD:
+                        // KEYBOARD -> GAMEPAD
+                        set_input_method(INPUT_GAMEPAD, false);
+                        break;
+                    case INPUT_TOUCHSCREEN:
+                        // TOUCHSCREEN -> KEYBOARD
+                        set_input_method(INPUT_KEYBOARD, false);
+                        break;
                 }
                 break;
         }
@@ -129,41 +104,33 @@ switch(argument0)
         switch(items[cursor, 1])
         {
             case 1:
-                with(objProgram.inputManager)
+                switch(get_input_method())
                 {
-                    event_user(0);
+                    case INPUT_KEYBOARD:
+                        // KEYBOARD -> GAMEPAD
+                        set_input_method(INPUT_GAMEPAD, false);
+                        break;
+                    case INPUT_GAMEPAD:
+                        // GAMEPAD -> KEYBOARD
+                        set_input_method(INPUT_KEYBOARD, false);
+                        break;
                 }
                 break;
             case 5:
-                if(objProgram.inputManager.input == 0)
+                switch(get_input_method())
                 {
-                    // TOUCHSCREEN -> GAMEPAD
-                    android_device_set_mode_gamepad(0);
-                    objProgram.inputManager.input = 1;
-                    if(!objProgram.inputManager.gamepad_update_enabled)
-                    {
-                        with(objProgram.inputManager)
-                        {
-                            event_user(0);
-                        }
-                    }
-                }
-                else
-                {
-                    if(objProgram.inputManager.gamepad_update_enabled)
-                    {
+                    case INPUT_TOUCHSCREEN:
+                        // TOUCHSCREEN -> GAMEPAD
+                        set_input_method(INPUT_GAMEPAD, false);
+                        break;
+                    case INPUT_GAMEPAD:
                         // GAMEPAD -> KEYBOARD
-                        android_device_set_mode_keyboard(0);
-                        with(objProgram.inputManager)
-                        {
-                            event_user(0);
-                        }
-                    }
-                    else
-                    {
+                        set_input_method(INPUT_KEYBOARD, false);
+                        break;
+                    case INPUT_KEYBOARD:
                         // KEYBOARD -> TOUCHSCREEN
-                        objProgram.inputManager.input = 0;
-                    }
+                        set_input_method(INPUT_TOUCHSCREEN, false);
+                        break;
                 }
         }
         break;
@@ -183,16 +150,14 @@ else
 if(DEVICE_INFO & DEVICE_TYPE_SMARTPHONE)
 {
     var inputLabel = tr("Touchscreen");
-    if(objProgram.inputManager.input == 1)
+    switch(get_input_method())
     {
-        if(objProgram.inputManager.gamepad_update_enabled)
-        {
+        case INPUT_GAMEPAD:
             inputLabel = tr("Gamepad");
-        }
-        else
-        {
+            break;
+        case INPUT_KEYBOARD:
             inputLabel = tr("Keyboard");
-        }
+            break;
     }
     menu_fn_refresh_displayed_value(5, "< "+inputLabel+ " >");
 }

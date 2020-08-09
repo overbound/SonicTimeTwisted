@@ -68,7 +68,7 @@ if(substate >= 2 && substate <= 9)
         }
         if (pressed_key != -1) {
             
-            if (pressed_key == objProgram.back_button)
+            if (pressed_key == DEVICE_BACK_BUTTON)
             {
                 // cancel key pressed - Abort! Abort! Abort! Return to the menu's usual operating mode
                 ds_map_destroy(temp_map);
@@ -137,7 +137,7 @@ if(substate >= 2 && substate <= 9)
     if(state == 9)
     {
         // remapping up on gamepad
-        if(keyboard_check_pressed(objProgram.back_button))
+        if(keyboard_check_pressed(DEVICE_BACK_BUTTON))
         {
             // cancel key pressed - Abort! Abort! Abort! Return to the menu's usual operating mode
             // it's also present in this option, in case the player wants to remap the peripheral they don't have

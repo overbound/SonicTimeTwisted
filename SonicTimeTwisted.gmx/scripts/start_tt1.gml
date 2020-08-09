@@ -9,4 +9,4 @@ if objProgram.spawn_tag == 0 {
     with objTitlecard instance_destroy();
 }
 with objLevel { silence = 1; }
-with objProgram.inputManager flag_player_input = true;
+set_input_enabled(true);

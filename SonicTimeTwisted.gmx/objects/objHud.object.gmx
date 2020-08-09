@@ -315,8 +315,6 @@ if objProgram.paused {
 var lives_x_left = view_xview[view_current]+view_wview[view_current] - 100;
 var lives_y_top = view_yview[view_current]+16-(16*objScreen.split_screen);
 
-show_debug_message("lives_x_left: "+string(lives_x_left));
-show_debug_message("lives_y_top: "+string(lives_y_top));
 // Smartphone mode - the HUD is drawn in the top-right corner
 // lives setpiece
 draw_sprite(sprLives, character_id[view_current], lives_x_left, lives_y_top - 12);

@@ -13,6 +13,6 @@ if landed
 }
 // sound
 audio_play_sound(sndBoost, 0, 0);
-objProgram.inputManager.flag_player_input = false;
+set_input_enabled(false);
 // hard collision found
 return false;

@@ -36,7 +36,7 @@ with instance_create(0, 0, objTitlecard)
     event_perform(ev_other, ev_room_start);
     mode = 1;
 }
-with objProgram.inputManager flag_player_input = true;
+set_input_enabled(true);
 // remove trigger
 with argument0 instance_destroy();
 // hard collision found

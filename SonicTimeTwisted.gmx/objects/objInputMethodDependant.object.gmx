@@ -25,7 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>is_touchscreen = false;
+            <string>/// This means that an object has a is_touchscreen variable that should be updated
+
+is_touchscreen = false;
 </string>
           </argument>
         </arguments>

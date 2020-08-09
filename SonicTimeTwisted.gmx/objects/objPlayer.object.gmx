@@ -162,7 +162,7 @@ waterCountAlpha = 0;
 waterCountTime = 0;
 waterCountDigit = 0;
 
-with objProgram.inputManager flag_player_input = true;
+set_input_enabled(true);
 </string>
           </argument>
         </arguments>

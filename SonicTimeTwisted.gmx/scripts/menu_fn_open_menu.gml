@@ -21,3 +21,7 @@ else
 }
 state = 1;
 timer = 0;
+with(objProgram.inputManager)
+{
+    use_fallback = true;
+}

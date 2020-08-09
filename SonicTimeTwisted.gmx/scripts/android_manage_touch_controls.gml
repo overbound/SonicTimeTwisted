@@ -15,7 +15,6 @@ for(var device = 0; device <= 4; device++)
             pressed_y = device_mouse_y(device);
             break;
         }
-        
     }
 }
 if(is_pressed && instance_exists(objPlayer))

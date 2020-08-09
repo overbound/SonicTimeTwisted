@@ -11,10 +11,7 @@
     <Config>Configs\Linux</Config>
   </Configs>
   <datafiles number="43" name="datafiles"/>
-  <NewExtensions>
-    <extension index="0">extensions\BtInputs</extension>
-    <extension index="1">extensions\SonicTimeTwistedGUI</extension>
-  </NewExtensions>
+  <NewExtensions/>
   <sounds name="sound">
     <sounds name="BGM">
       <sounds name="Attraction Attack">
@@ -423,20 +420,20 @@
       </sprites>
       <sprites name="Touchscreen">
         <sprite>sprites\sprGyroscopeTest</sprite>
-        <sprite>sprites\sprTouchscreenButton</sprite>
+        <sprite>sprites\sprTouchscreenButtonBig</sprite>
         <sprite>sprites\sprTouchscreenButtonSmall</sprite>
         <sprite>sprites\sprTouchscreenButtonMed</sprite>
-        <sprite>sprites\sprTouchscreenDPadBase</sprite>
+        <sprite>sprites\sprTouchscreenDPadBaseBig</sprite>
         <sprite>sprites\sprTouchscreenDPadBaseMed</sprite>
         <sprite>sprites\sprTouchscreenDPadBaseSmall</sprite>
-        <sprite>sprites\sprTouchscreenDPadJoy</sprite>
+        <sprite>sprites\sprTouchscreenDPadJoyBig</sprite>
         <sprite>sprites\sprTouchscreenDPadJoyMed</sprite>
         <sprite>sprites\sprTouchscreenDPadJoySmall</sprite>
-        <sprite>sprites\sprTouchscreenDPadTemplate</sprite>
+        <sprite>sprites\sprTouchscreenDPadTemplateBig</sprite>
         <sprite>sprites\sprTouchscreenDPadTemplateMed</sprite>
         <sprite>sprites\sprTouchscreenDPadTemplateSmall</sprite>
         <sprite>sprites\sprTouchscreenPauseButton</sprite>
-        <sprite>sprites\sprTouchscreenRunButton</sprite>
+        <sprite>sprites\sprTouchscreenRunButtonBig</sprite>
         <sprite>sprites\sprTouchscreenRunButtonMed</sprite>
         <sprite>sprites\sprTouchscreenRunButtonSmall</sprite>
         <sprite>sprites\sprTouchscreenSuperButtonBlue</sprite>
@@ -1906,6 +1903,42 @@
           <script>scripts\computer_input_set_released.gml</script>
           <script>scripts\computer_input_setup.gml</script>
         </scripts>
+        <scripts name="Input Methods">
+          <scripts name="Smartphone">
+            <scripts name="Common">
+              <script>scripts\input_method_smartphone_common.gml</script>
+              <script>scripts\input_method_smartphone_draw_common.gml</script>
+              <script>scripts\input_method_touchscreen_draw_small.gml</script>
+              <script>scripts\input_method_touchscreen_draw_med.gml</script>
+              <script>scripts\input_method_touchscreen_draw_big.gml</script>
+              <script>scripts\input_method_touchscreen_common.gml</script>
+              <script>scripts\input_method_touchscreen_small.gml</script>
+              <script>scripts\input_method_touchscreen_big.gml</script>
+              <script>scripts\input_method_touchscreen_med.gml</script>
+            </scripts>
+            <script>scripts\input_method_draw_touchscreen.gml</script>
+            <script>scripts\input_method_init_touchscreen.gml</script>
+            <script>scripts\input_method_haptics_touchscreen.gml</script>
+            <script>scripts\input_method_touchscreen.gml</script>
+            <script>scripts\input_method_haptics_ssgyro.gml</script>
+            <script>scripts\input_method_ssgyro.gml</script>
+            <script>scripts\input_method_draw_ssgyro.gml</script>
+            <script>scripts\input_method_init_ssgyro.gml</script>
+            <script>scripts\input_method_ggpoint.gml</script>
+            <script>scripts\input_method_haptics_ggpoint.gml</script>
+            <script>scripts\input_method_init_ggpoint.gml</script>
+            <script>scripts\input_method_draw_ggpoint.gml</script>
+          </scripts>
+          <script>scripts\input_method_dummy_script.gml</script>
+          <script>scripts\input_method_gamepad.gml</script>
+          <script>scripts\input_method_gamepad_create_vars.gml</script>
+          <script>scripts\input_method_init_physical.gml</script>
+          <script>scripts\input_method_init_smartphone.gml</script>
+          <script>scripts\input_method_keyboard.gml</script>
+          <script>scripts\input_method_keyboard_create_vars.gml</script>
+          <script>scripts\input_method_touchscreen_create_vars.gml</script>
+          <script>scripts\set_smartphone_controls_enabled.gml</script>
+        </scripts>
         <scripts name="Loading">
           <script>scripts\input_load.gml</script>
           <script>scripts\load_gamepad_support.gml</script>
@@ -1955,31 +1988,14 @@
           <script>scripts\input_check_released.gml</script>
           <script>scripts\input_is_touchscreen.gml</script>
         </scripts>
-        <scripts name="Input Methods">
-          <scripts name="Smartphone">
-            <script>scripts\input_method_touchscreen.gml</script>
-            <script>scripts\input_method_draw_touchscreen.gml</script>
-            <script>scripts\input_method_ssgyro.gml</script>
-            <script>scripts\input_method_draw_ssgyro.gml</script>
-            <script>scripts\input_method_ggpoint.gml</script>
-            <script>scripts\input_method_draw_ggpoint.gml</script>
-          </scripts>
-          <script>scripts\input_method_keyboard.gml</script>
-          <script>scripts\input_method_gamepad.gml</script>
-          <script>scripts\input_method_smartphone.gml</script>
-          <script>scripts\input_method_init_physical.gml</script>
-          <script>scripts\input_method_dummy_script.gml</script>
-          <script>scripts\input_method_init_smartphone.gml</script>
-          <script>scripts\input_method_draw_smartphone.gml</script>
-          <script>scripts\input_method_haptic_smartphone.gml</script>
-          <script>scripts\nput_method_keyboard_create_vars.gml</script>
-          <script>scripts\nput_method_gamepad_create_vars.gml</script>
-          <script>scripts\nput_method_touchscreen_create_vars.gml</script>
-        </scripts>
-        <script>scripts\set_input_method.gml</script>
         <script>scripts\get_input_method.gml</script>
-        <script>scripts\set_input_method_detailed.gml</script>
         <script>scripts\reinit_input_method.gml</script>
+        <script>scripts\reinit_fallback_input_method.gml</script>
+        <script>scripts\set_input_method.gml</script>
+        <script>scripts\set_input_method_detailed.gml</script>
+        <script>scripts\init_input_method.gml</script>
+        <script>scripts\init_touchscreen_vars.gml</script>
+        <script>scripts\set_input_enabled.gml</script>
       </scripts>
       <scripts name="Math">
         <script>scripts\Lerp.gml</script>
@@ -1989,6 +2005,112 @@
         <script>scripts\toward.gml</script>
         <script>scripts\toward_wrap.gml</script>
         <script>scripts\wrap.gml</script>
+      </scripts>
+      <scripts name="Menu">
+        <scripts name="menu_functions">
+          <script>scripts\menu_fn_init.gml</script>
+          <script>scripts\menu_fn_step.gml</script>
+          <script>scripts\menu_fn_step_end.gml</script>
+          <script>scripts\menu_fn_step_begin.gml</script>
+          <script>scripts\menu_fn_draw.gml</script>
+          <script>scripts\menu_fn_draw_no_surface.gml</script>
+          <script>scripts\menu_fn_longconfirmation.gml</script>
+          <script>scripts\menu_fn_draw_default.gml</script>
+          <script>scripts\menu_fn_step_default.gml</script>
+          <script>scripts\menu_fn_touchscreen_default.gml</script>
+          <script>scripts\menu_fn_keys_default.gml</script>
+          <script>scripts\menu_fn_open_menu.gml</script>
+          <script>scripts\menu_fn_set_scripts.gml</script>
+          <script>scripts\menu_fn_set_scripts_from_next.gml</script>
+          <script>scripts\menu_fn_open_confirmation_window.gml</script>
+          <script>scripts\menu_fn_open_mapping_window.gml</script>
+          <script>scripts\menu_fn_update_mapping_window.gml</script>
+          <script>scripts\menu_fn_cleanup.gml</script>
+          <script>scripts\menu_fn_goto_submenu.gml</script>
+          <script>scripts\menu_fn_exit_submenu.gml</script>
+          <script>scripts\menu_fn_refresh_displayed_value.gml</script>
+          <script>scripts\menu_fn_add_option.gml</script>
+          <script>scripts\menu_fn_add_title.gml</script>
+          <script>scripts\menu_fn_get_keymap_getkey.gml</script>
+          <script>scripts\menu_fn_open_slider_window.gml</script>
+          <script>scripts\menu_fn_sync_slider.gml</script>
+          <script>scripts\menu_fn_get_touchscreen_dpad_sprite.gml</script>
+          <script>scripts\menu_fn_get_touchscreen_bt_sprite.gml</script>
+          <script>scripts\menu_fn_get_touchscreen_bt_radius.gml</script>
+          <script>scripts\menu_fn_keys_returnonly.gml</script>
+          <script>scripts\menu_fn_close_menu.gml</script>
+          <script>scripts\menu_fn_finalize.gml</script>
+          <scripts name="actions_on_close">
+            <script>scripts\menu_fn_exitgame.gml</script>
+            <script>scripts\menu_fn_restart_game.gml</script>
+            <script>scripts\menu_fn_levelselect_goto_act.gml</script>
+            <script>scripts\menu_fn_levelselect_goto_specialstage.gml</script>
+            <script>scripts\menu_fn_resume_game.gml</script>
+            <script>scripts\menu_fn_resume_specialstage.gml</script>
+            <script>scripts\menu_fn_quit_specialstage.gml</script>
+            <script>scripts\menu_fn_restart_specialstage.gml</script>
+          </scripts>
+        </scripts>
+        <scripts name="menu_parts">
+          <script>scripts\menu_part_title_items.gml</script>
+          <script>scripts\menu_part_title_actions.gml</script>
+          <script>scripts\menu_part_zone_items.gml</script>
+          <script>scripts\menu_part_zone_actions.gml</script>
+          <scripts name="options">
+            <script>scripts\menu_part_options_items.gml</script>
+            <script>scripts\menu_part_options_actions.gml</script>
+            <script>scripts\menu_part_videooptions_items.gml</script>
+            <script>scripts\menu_part_videooptions_actions.gml</script>
+            <script>scripts\menu_part_keymap_items.gml</script>
+            <script>scripts\menu_part_keymap_actions.gml</script>
+            <script>scripts\menu_part_keymap_step.gml</script>
+            <script>scripts\menu_part_joymap_items.gml</script>
+            <script>scripts\menu_part_joymap_actions.gml</script>
+            <script>scripts\menu_part_joymap_step.gml</script>
+            <scripts name="smartphone">
+              <script>scripts\menu_part_touchscreen_items.gml</script>
+              <script>scripts\menu_part_touchscreen_actions.gml</script>
+              <script>scripts\menu_part_touchscreen_step.gml</script>
+              <script>scripts\menu_part_touchscreen_draw.gml</script>
+              <script>scripts\menu_part_buttonreposition_items.gml</script>
+              <script>scripts\menu_part_buttonreposition_actions.gml</script>
+              <script>scripts\menu_part_buttonreposition_step.gml</script>
+              <script>scripts\menu_part_buttonreposition_draw.gml</script>
+              <script>scripts\menu_part_buttonreposition_touchscreen.gml</script>
+              <script>scripts\menu_part_buttonreposition_confirm_items.gml</script>
+              <script>scripts\menu_part_buttonreposition_confirm_actions.gml</script>
+              <script>scripts\menu_part_gyroscope_items.gml</script>
+              <script>scripts\menu_part_gyroscope_actions.gml</script>
+              <script>scripts\menu_part_gyroscope_draw.gml</script>
+              <script>scripts\menu_part_gyroscope_step.gml</script>
+            </scripts>
+          </scripts>
+          <scripts name="special_stage">
+            <script>scripts\menu_part_sstage_offtrack_items.gml</script>
+            <script>scripts\menu_part_sstage_norings_items.gml</script>
+            <script>scripts\menu_part_sstage_defeat_items.gml</script>
+            <script>scripts\menu_part_sstage_loss_items.gml</script>
+            <script>scripts\menu_part_sstage_loss_actions.gml</script>
+            <script>scripts\menu_part_sstage_loss_step.gml</script>
+            <script>scripts\menu_part_sstage_loss_draw.gml</script>
+          </scripts>
+          <scripts name="level_select">
+            <script>scripts\menu_part_levelselect_char_items.gml</script>
+            <script>scripts\menu_part_levelselect_char_actions.gml</script>
+            <script>scripts\menu_part_levelselect_char_draw.gml</script>
+            <script>scripts\menu_part_levelselect_char_step.gml</script>
+            <script>scripts\menu_part_levelselect_char_keys.gml</script>
+            <script>scripts\menu_part_levelselect_char_touchscreen.gml</script>
+            <script>scripts\menu_part_levelselect_items.gml</script>
+            <script>scripts\menu_part_levelselect_actions.gml</script>
+            <script>scripts\menu_part_levelselect_4acts_items.gml</script>
+            <script>scripts\menu_part_levelselect_4acts_actions.gml</script>
+            <script>scripts\menu_part_levelselect_ppanic_items.gml</script>
+            <script>scripts\menu_part_levelselect_ppanic_actions.gml</script>
+            <script>scripts\menu_part_levelselect_sstages_items.gml</script>
+            <script>scripts\menu_part_levelselect_sstages_actions.gml</script>
+          </scripts>
+        </scripts>
       </scripts>
       <scripts name="Program">
         <scripts name="Order">
@@ -2515,135 +2637,18 @@
     <scripts name="Ports">
       <scripts name="Smartphone">
         <scripts name="Android">
-          <script>scripts\android_input_any_gamepad_axis.gml</script>
-          <script>scripts\android_input_any_gamepad_button.gml</script>
           <script>scripts\android_vk_is_pressed.gml</script>
           <script>scripts\android_vk_press.gml</script>
           <script>scripts\android_vk_release.gml</script>
-          <script>scripts\android_device_set_mode_gamepad.gml</script>
-          <script>scripts\android_device_set_mode_keyboard.gml</script>
           <script>scripts\android_manage_gyroscope_controls.gml</script>
           <script>scripts\android_manage_touch_controls.gml</script>
           <script>scripts\android_manage_touchscreen_controls.gml</script>
-          <script>scripts\android_menu_key_mapping_states.gml</script>
           <script>scripts\android_read_gyroscope_x.gml</script>
           <script>scripts\android_read_gyroscope_y.gml</script>
         </scripts>
         <script>scripts\smartphone_disable_virtual_keys.gml</script>
         <script>scripts\smartphone_enable_virtual_keys.gml</script>
         <script>scripts\smartphone_save_configuration.gml</script>
-      </scripts>
-    </scripts>
-    <scripts name="Extensions">
-      <scripts name="GUI">
-        <scripts name="menu_functions">
-          <script>scripts\menu_fn_init.gml</script>
-          <script>scripts\menu_fn_step.gml</script>
-          <script>scripts\menu_fn_step_end.gml</script>
-          <script>scripts\menu_fn_step_begin.gml</script>
-          <script>scripts\menu_fn_draw.gml</script>
-          <script>scripts\menu_fn_draw_no_surface.gml</script>
-          <script>scripts\menu_fn_longconfirmation.gml</script>
-          <script>scripts\menu_fn_draw_default.gml</script>
-          <script>scripts\menu_fn_step_default.gml</script>
-          <script>scripts\menu_fn_touchscreen_default.gml</script>
-          <script>scripts\menu_fn_keys_default.gml</script>
-          <script>scripts\menu_fn_open_menu.gml</script>
-          <script>scripts\menu_fn_set_scripts.gml</script>
-          <script>scripts\menu_fn_set_scripts_from_next.gml</script>
-          <script>scripts\menu_fn_open_confirmation_window.gml</script>
-          <script>scripts\menu_fn_open_mapping_window.gml</script>
-          <script>scripts\menu_fn_update_mapping_window.gml</script>
-          <script>scripts\menu_fn_cleanup.gml</script>
-          <script>scripts\menu_fn_goto_submenu.gml</script>
-          <script>scripts\menu_fn_exit_submenu.gml</script>
-          <script>scripts\menu_fn_refresh_displayed_value.gml</script>
-          <script>scripts\menu_fn_add_option.gml</script>
-          <script>scripts\menu_fn_add_title.gml</script>
-          <script>scripts\menu_fn_get_keymap_getkey.gml</script>
-          <script>scripts\menu_fn_open_slider_window.gml</script>
-          <script>scripts\menu_fn_sync_slider.gml</script>
-          <script>scripts\menu_fn_get_touchscreen_dpad_sprite.gml</script>
-          <script>scripts\menu_fn_get_touchscreen_bt_sprite.gml</script>
-          <script>scripts\menu_fn_get_touchscreen_bt_radius.gml</script>
-          <script>scripts\menu_fn_keys_returnonly.gml</script>
-          <script>scripts\menu_fn_close_menu.gml</script>
-          <script>scripts\menu_fn_finalize.gml</script>
-          <scripts name="actions_on_close">
-            <script>scripts\menu_fn_exitgame.gml</script>
-            <script>scripts\menu_fn_restart_game.gml</script>
-            <script>scripts\menu_fn_levelselect_goto_act.gml</script>
-            <script>scripts\menu_fn_levelselect_goto_specialstage.gml</script>
-            <script>scripts\menu_fn_resume_game.gml</script>
-            <script>scripts\menu_fn_resume_specialstage.gml</script>
-            <script>scripts\menu_fn_quit_specialstage.gml</script>
-            <script>scripts\menu_fn_restart_specialstage.gml</script>
-          </scripts>
-        </scripts>
-        <scripts name="menu_parts">
-          <scripts name="test">
-            <script>scripts\menu_part_levelselect_zones_items_test.gml</script>
-            <script>scripts\menu_part_levelselect_zones_actions_test.gml</script>
-          </scripts>
-          <script>scripts\menu_part_title_items.gml</script>
-          <script>scripts\menu_part_title_actions.gml</script>
-          <script>scripts\menu_part_zone_items.gml</script>
-          <script>scripts\menu_part_zone_actions.gml</script>
-          <scripts name="options">
-            <script>scripts\menu_part_options_items.gml</script>
-            <script>scripts\menu_part_options_actions.gml</script>
-            <script>scripts\menu_part_videooptions_items.gml</script>
-            <script>scripts\menu_part_videooptions_actions.gml</script>
-            <script>scripts\menu_part_keymap_items.gml</script>
-            <script>scripts\menu_part_keymap_actions.gml</script>
-            <script>scripts\menu_part_keymap_step.gml</script>
-            <script>scripts\menu_part_joymap_items.gml</script>
-            <script>scripts\menu_part_joymap_actions.gml</script>
-            <script>scripts\menu_part_joymap_step.gml</script>
-            <scripts name="smartphone">
-              <script>scripts\menu_part_touchscreen_items.gml</script>
-              <script>scripts\menu_part_touchscreen_actions.gml</script>
-              <script>scripts\menu_part_touchscreen_step.gml</script>
-              <script>scripts\menu_part_touchscreen_draw.gml</script>
-              <script>scripts\menu_part_buttonreposition_items.gml</script>
-              <script>scripts\menu_part_buttonreposition_actions.gml</script>
-              <script>scripts\menu_part_buttonreposition_step.gml</script>
-              <script>scripts\menu_part_buttonreposition_draw.gml</script>
-              <script>scripts\menu_part_buttonreposition_touchscreen.gml</script>
-              <script>scripts\menu_part_buttonreposition_confirm_items.gml</script>
-              <script>scripts\menu_part_buttonreposition_confirm_actions.gml</script>
-              <script>scripts\menu_part_gyroscope_items.gml</script>
-              <script>scripts\menu_part_gyroscope_actions.gml</script>
-              <script>scripts\menu_part_gyroscope_draw.gml</script>
-              <script>scripts\menu_part_gyroscope_step.gml</script>
-            </scripts>
-          </scripts>
-          <scripts name="special_stage">
-            <script>scripts\menu_part_sstage_offtrack_items.gml</script>
-            <script>scripts\menu_part_sstage_norings_items.gml</script>
-            <script>scripts\menu_part_sstage_defeat_items.gml</script>
-            <script>scripts\menu_part_sstage_loss_items.gml</script>
-            <script>scripts\menu_part_sstage_loss_actions.gml</script>
-            <script>scripts\menu_part_sstage_loss_step.gml</script>
-            <script>scripts\menu_part_sstage_loss_draw.gml</script>
-          </scripts>
-          <scripts name="level_select">
-            <script>scripts\menu_part_levelselect_char_items.gml</script>
-            <script>scripts\menu_part_levelselect_char_actions.gml</script>
-            <script>scripts\menu_part_levelselect_char_draw.gml</script>
-            <script>scripts\menu_part_levelselect_char_step.gml</script>
-            <script>scripts\menu_part_levelselect_char_keys.gml</script>
-            <script>scripts\menu_part_levelselect_char_touchscreen.gml</script>
-            <script>scripts\menu_part_levelselect_items.gml</script>
-            <script>scripts\menu_part_levelselect_actions.gml</script>
-            <script>scripts\menu_part_levelselect_4acts_items.gml</script>
-            <script>scripts\menu_part_levelselect_4acts_actions.gml</script>
-            <script>scripts\menu_part_levelselect_ppanic_items.gml</script>
-            <script>scripts\menu_part_levelselect_ppanic_actions.gml</script>
-            <script>scripts\menu_part_levelselect_sstages_items.gml</script>
-            <script>scripts\menu_part_levelselect_sstages_actions.gml</script>
-          </scripts>
-        </scripts>
       </scripts>
     </scripts>
   </scripts>
@@ -3097,6 +3102,7 @@
         <object>objects\objSaveControl</object>
       </objects>
       <object>objects\objHud</object>
+      <object>objects\objInputHelp</object>
       <object>objects\objMenu</object>
       <object>objects\objParallax</object>
       <object>objects\objThanksControl</object>

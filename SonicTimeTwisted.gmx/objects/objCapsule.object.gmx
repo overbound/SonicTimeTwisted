@@ -220,7 +220,7 @@ else if active != 0
 {
     if (camera_pass == 0)
     {
-        objProgram.inputManager.flag_player_input = false;
+        set_input_enabled(false);
         player_id.camera.right = min(x + 426 - 84, room_width);
         player_id.camera.left = max(x - 256, 0);
         player_id.camera.top = max(y - 120, 0);
@@ -259,7 +259,7 @@ else if active != 0
                     computer_input_set_released(cRIGHT);
                     state = player_state_complete;
                     animation_new = "level_end";
-                    objProgram.inputManager.flag_player_input = true;
+                    set_input_enabled(true);
                     facing = 1;
                 }
             }
