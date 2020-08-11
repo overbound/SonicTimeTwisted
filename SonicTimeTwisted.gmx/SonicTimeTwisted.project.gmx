@@ -1908,18 +1908,13 @@
             <scripts name="Common">
               <script>scripts\input_method_smartphone_common.gml</script>
               <script>scripts\input_method_smartphone_draw_common.gml</script>
-              <script>scripts\input_method_touchscreen_draw_small.gml</script>
-              <script>scripts\input_method_touchscreen_draw_med.gml</script>
-              <script>scripts\input_method_touchscreen_draw_big.gml</script>
-              <script>scripts\input_method_touchscreen_common.gml</script>
-              <script>scripts\input_method_touchscreen_small.gml</script>
-              <script>scripts\input_method_touchscreen_big.gml</script>
-              <script>scripts\input_method_touchscreen_med.gml</script>
+              <script>scripts\input_method_touchscreen_draw.gml</script>
+              <script>scripts\input_method_touchscreen_dpad_abs.gml</script>
+              <script>scripts\input_method_touchscreen_dpad_rel.gml</script>
             </scripts>
             <script>scripts\input_method_draw_touchscreen.gml</script>
             <script>scripts\input_method_init_touchscreen.gml</script>
             <script>scripts\input_method_haptics_touchscreen.gml</script>
-            <script>scripts\input_method_touchscreen.gml</script>
             <script>scripts\input_method_haptics_ssgyro.gml</script>
             <script>scripts\input_method_ssgyro.gml</script>
             <script>scripts\input_method_draw_ssgyro.gml</script>
@@ -2072,6 +2067,7 @@
               <script>scripts\menu_part_touchscreen_actions.gml</script>
               <script>scripts\menu_part_touchscreen_step.gml</script>
               <script>scripts\menu_part_touchscreen_draw.gml</script>
+              <script>scripts\menu_part_touchscreen_save.gml</script>
               <script>scripts\menu_part_buttonreposition_items.gml</script>
               <script>scripts\menu_part_buttonreposition_actions.gml</script>
               <script>scripts\menu_part_buttonreposition_step.gml</script>
@@ -2646,9 +2642,6 @@
           <script>scripts\android_read_gyroscope_x.gml</script>
           <script>scripts\android_read_gyroscope_y.gml</script>
         </scripts>
-        <script>scripts\smartphone_disable_virtual_keys.gml</script>
-        <script>scripts\smartphone_enable_virtual_keys.gml</script>
-        <script>scripts\smartphone_save_configuration.gml</script>
       </scripts>
     </scripts>
   </scripts>
@@ -3067,6 +3060,7 @@
         <object>objects\objTitleDynamo</object>
         <object>objects\objTitleEffects</object>
         <object>objects\objTitleLighting</object>
+        <object>objects\objTitleLightingNoShader</object>
         <object>objects\objTitleRing</object>
         <object>objects\objTitleRingOverlay</object>
         <object>objects\objTitlescreenPlane</object>
@@ -3087,6 +3081,7 @@
         <object>objects\objSSToLevel</object>
         <object>objects\objSSZEndTransition</object>
         <object>objects\objTimeTravel</object>
+        <object>objects\objTimeTravelNoShader</object>
         <object>objects\objTitlecard</object>
         <object>objects\objTitlecardDisolve</object>
         <object>objects\objTitleCardFFZ</object>
@@ -3190,6 +3185,7 @@
           <object>objects\objTailsIntroPast</object>
           <object>objects\objTailsLight</object>
           <object>objects\objTimeTravelVortex</object>
+          <object>objects\objTimeTravelVortexNoShader</object>
         </objects>
         <objects name="Outro">
           <object>objects\objAmyEnding</object>
@@ -3453,16 +3449,12 @@
     </objects>
     <objects name="Ports">
       <objects name="Android">
-        <object>objects\objAndroid</object>
         <object>objects\objSSHud_Android</object>
         <object>objects\objSSLevel_Android</object>
         <object>objects\objAndroidInput</object>
         <object>objects\objAndroidInputSmartphone</object>
         <object>objects\objLevel_Android</object>
       </objects>
-      <object>objects\objTimeTravelVortexNoShader</object>
-      <object>objects\objTimeTravelNoShader</object>
-      <object>objects\objTitleLightingNoShader</object>
     </objects>
   </objects>
   <timelines name="timelines">

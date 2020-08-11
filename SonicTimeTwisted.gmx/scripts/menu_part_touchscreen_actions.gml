@@ -7,7 +7,7 @@ switch(argument0)
         objProgram.inputManager.vksize = (objProgram.inputManager.vksize + 1) mod 3;
         break;
     case 2:
-        objProgram.inputManager.dpadMode = (objProgram.inputManager.dpadMode + 1) mod 2;
+        objProgram.inputManager.dpadmode = (objProgram.inputManager.dpadmode + 1) mod 2;
         break;
     case 3:
         menu_fn_open_slider_window(tr('Opacity'), round(objProgram.inputManager.vkalpha*100), 0, 100);
@@ -23,6 +23,7 @@ switch(argument0)
         break;
     case 7:
     case -1:
+        menu_part_touchscreen_save();
         menu_fn_exit_submenu(menu_part_options_items, 6);
         break;
     case -2:
@@ -40,13 +41,13 @@ switch(argument0)
                 }
                 break;
             case 2:
-                if(objProgram.inputManager.dpadMode)
+                if(objProgram.inputManager.dpadmode)
                 {
-                    objProgram.inputManager.dpadMode--;
+                    objProgram.inputManager.dpadmode--;
                 }
                 else
                 {
-                    objProgram.inputManager.dpadMode = 1;
+                    objProgram.inputManager.dpadmode = 1;
                 }
                 break;
             case 3:
@@ -82,7 +83,7 @@ switch(argument0)
                 objProgram.inputManager.vksize = (objProgram.inputManager.vksize + 1) mod 3;
                 break;
             case 2:
-                objProgram.inputManager.dpadMode = (objProgram.inputManager.dpadMode + 1) mod 2;
+                objProgram.inputManager.dpadmode = (objProgram.inputManager.dpadmode + 1) mod 2;
                 break;
             case 3:
                 menu_fn_open_slider_window(tr('Opacity'), min(100, round(objProgram.inputManager.vkalpha*100) + 1), 0, 100);
@@ -113,7 +114,7 @@ if(objProgram.inputManager.vksize == 2)
 menu_fn_refresh_displayed_value(1, "< "+dpadSizeLabel+ " >");
 
 var dpadModeLabel = tr('Static');
-if(objProgram.inputManager.dpadMode)
+if(objProgram.inputManager.dpadmode)
 {
     dpadModeLabel = tr('Dynamic');
 }

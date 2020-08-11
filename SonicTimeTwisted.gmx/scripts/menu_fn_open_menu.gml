@@ -24,4 +24,5 @@ timer = 0;
 with(objProgram.inputManager)
 {
     use_fallback = true;
+    visible = false;
 }

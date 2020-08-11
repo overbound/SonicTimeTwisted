@@ -1,4 +1,4 @@
-// Control method: pointing where Superr Sonic should go in GGZ
+// Control method: pointing where Super Sonic should go in GGZ
 input_method_smartphone_common();
 pressingGamepad = -1;
 

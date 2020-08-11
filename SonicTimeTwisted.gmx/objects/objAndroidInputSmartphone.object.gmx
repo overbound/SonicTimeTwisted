@@ -248,7 +248,7 @@ if(input == 0)
         // Let's see if touchscreen needs to be disabled
         if(!vk_should_be_active)
         {
-            smartphone_disable_virtual_keys();
+            // smartphone_disable_virtual_keys();
         }
         else
         {
@@ -314,12 +314,12 @@ if(input == 0)
         {
             if(instance_exists(objPlayer))
             {
-                smartphone_enable_virtual_keys(false);
+                // smartphone_enable_virtual_keys(false);
             }
             else
             if(instance_exists(objSSPlayer))
             {
-                smartphone_enable_virtual_keys(true);
+                // smartphone_enable_virtual_keys(true);
             }
         }
         else
@@ -583,7 +583,7 @@ vk_active = true;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>smartphone_disable_virtual_keys();
+            <string>//smartphone_disable_virtual_keys();
 alpha = 0;
 </string>
           </argument>

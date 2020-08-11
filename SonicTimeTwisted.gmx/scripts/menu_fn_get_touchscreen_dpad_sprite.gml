@@ -3,12 +3,12 @@
 // if gyroscope in special stages is activated and dpad is dynamic, show the UP button (2)
 // else, show a combination of the two (0)
 var dpadgraphic = 0;
-if((!objProgram.inputManager.gyroinss) && (!objProgram.inputManager.dpadMode))
+if((!objProgram.inputManager.gyroinss) && (!objProgram.inputManager.dpadmode))
 {
     dpadgraphic = 1;
 }
 else
-if(objProgram.inputManager.gyroinss && objProgram.inputManager.dpadMode)
+if(objProgram.inputManager.gyroinss && objProgram.inputManager.dpadmode)
 {
     dpadgraphic = 2;
 }

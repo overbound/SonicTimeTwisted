@@ -325,7 +325,7 @@ draw_set_alpha(image_alpha);
 draw_set_valign(fa_top);
 draw_set_halign(fa_right);
 draw_set_font(objResources.fontLives);
-draw_text(lives_x_left + 78, lives_y_top, objGameData.player_lives[view_current]);
+draw_text(lives_x_left + 77, lives_y_top + 1, objGameData.player_lives[view_current]);
 </string>
           </argument>
         </arguments>

@@ -4,10 +4,25 @@ smartphone_controls_enabled = false;
 // Regular touchscreen controls
 vkalpha = 0.8; // alpha
 vksize = 0; // 0 - big controls, 1 - medium controls, 2 - small controls
+dpadmode = 0; // 0 - static, 1 - dynamic
 
-// direction pad coordinates
+// direction pad coordinates - saved in file
 dpadx = 64;
 dpady = 178;
+
+// direction pad current coordinates - relevant when using dynamic D-Pad
+current_dpadx = 64;
+current_dpady = 178;
+
+// josytick current position - as drawn
+joyx = dpadx;
+joyy = dpady;
+
+// sprites for the joystick and run & jump buttons, which vary from size to size
+dpad_base_sprite = sprTouchscreenDPadBaseBig;
+dpad_joystick_sprite = sprTouchscreenDPadJoyBig;
+dpad_jumpbutton_sprite = sprTouchscreenButtonBig;
+dpad_runbutton_sprite = sprTouchscreenRunButtonBig;
 
 // A button coordinates
 bax = 364;
@@ -23,10 +38,9 @@ bsy = 16;
 // Super button coordinates
 bbx = 324;
 bby = 88;
+super_button_enabled = false;
 
-// below variables are not stored in ini
 button_radius = 0; // derived from vksize
-
 
 // Gyroscope for special stages
 gyroinss = 1; // 0 - use d-pad to turn, 1 - use gyroscope
@@ -41,11 +55,14 @@ image_alpha = 0;
 
 
 
+
+
+
+
 gyroscopeMode = false;
 gyroscopeModeDraw = false; // whether to draw UP button instead of the D-Pad
 ggCurrentMode = 0; // galacnik gauntlet mode
 gyroscopeTilt = 0;
-dpadMode = 0; // 0 - static, 1 - dynamic
 
 gyroinss = 1; // use gyroscope controls in special stages
 gyromode = 1; // 0 - gyroscope simply turns the buttons no and off; 1 - pseudo-analog mode
@@ -57,7 +74,7 @@ gyro_analog_end_x = 0.6; // angle to which the analog control goes
 var file = 'settings.ini';
 if (file_exists(file)) {
     ini_open(file);
-    dpadMode = ini_read_real('smartphone','dpadmode',0);
+    dpadmode = ini_read_real('smartphone','dpadmode',0);
     input = ini_read_real('smartphone','input',0);
     vkalpha = ini_read_real('smartphone','vkalpha',0.8);
     gyroinss = ini_read_real('smartphone','gyroinss',1);

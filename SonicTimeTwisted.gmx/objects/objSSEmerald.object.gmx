@@ -76,13 +76,7 @@ with(objSSEnemy)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/*
-with(objSSPlayer)
-{
-    instance_create(x,y,objSSScoreCard);
-}
-*/
-special_level_go_to_score();
+            <string>special_level_go_to_score();
 </string>
           </argument>
         </arguments>
