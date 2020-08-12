@@ -426,16 +426,13 @@
         <sprite>sprites\sprTouchscreenDPadBaseBig</sprite>
         <sprite>sprites\sprTouchscreenDPadBaseMed</sprite>
         <sprite>sprites\sprTouchscreenDPadBaseSmall</sprite>
+        <sprite>sprites\sprTouchscreenDPadVertSmall</sprite>
+        <sprite>sprites\sprTouchscreenDPadVertMed</sprite>
+        <sprite>sprites\sprTouchscreenDPadVertBig</sprite>
         <sprite>sprites\sprTouchscreenDPadJoyBig</sprite>
         <sprite>sprites\sprTouchscreenDPadJoyMed</sprite>
         <sprite>sprites\sprTouchscreenDPadJoySmall</sprite>
-        <sprite>sprites\sprTouchscreenDPadTemplateBig</sprite>
-        <sprite>sprites\sprTouchscreenDPadTemplateMed</sprite>
-        <sprite>sprites\sprTouchscreenDPadTemplateSmall</sprite>
         <sprite>sprites\sprTouchscreenPauseButton</sprite>
-        <sprite>sprites\sprTouchscreenRunButtonBig</sprite>
-        <sprite>sprites\sprTouchscreenRunButtonMed</sprite>
-        <sprite>sprites\sprTouchscreenRunButtonSmall</sprite>
         <sprite>sprites\sprTouchscreenSuperButtonBlue</sprite>
         <sprite>sprites\sprTouchscreenSuperButtonYellow</sprite>
         <sprite>sprites\sprTouchscreenFastForward</sprite>
@@ -1909,8 +1906,10 @@
               <script>scripts\input_method_smartphone_common.gml</script>
               <script>scripts\input_method_smartphone_draw_common.gml</script>
               <script>scripts\input_method_touchscreen_draw.gml</script>
-              <script>scripts\input_method_touchscreen_dpad_abs.gml</script>
-              <script>scripts\input_method_touchscreen_dpad_rel.gml</script>
+              <script>scripts\input_method_touchscreen_abs.gml</script>
+              <script>scripts\input_method_ssgyro_abs.gml</script>
+              <script>scripts\input_method_touchscreen_rel.gml</script>
+              <script>scripts\input_method_ssgyro_rel.gml</script>
             </scripts>
             <script>scripts\input_method_draw_touchscreen.gml</script>
             <script>scripts\input_method_init_touchscreen.gml</script>

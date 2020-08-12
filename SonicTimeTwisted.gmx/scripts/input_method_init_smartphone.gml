@@ -29,9 +29,6 @@ if(instance_exists(objSSLevel))
     if(objProgram.inputManager.gyroinss)
     {
         input_method_init_ssgyro();
-        input_manage_script = input_method_ssgyro;
-        input_rumble_script = input_method_haptics_ssgyro;
-        input_draw_script = input_method_draw_ssgyro;
     }
     else
     {

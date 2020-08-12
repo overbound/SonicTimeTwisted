@@ -107,6 +107,7 @@ case 2: // fade in
         started = true; 
         timer_enabled = true;
         }
+    set_input_enabled(true);
     objProgram.temp_spawn_tag = -1;
     instance_destroy();
     break;

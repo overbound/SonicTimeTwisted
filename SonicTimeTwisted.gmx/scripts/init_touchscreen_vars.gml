@@ -22,7 +22,6 @@ joyy = dpady;
 dpad_base_sprite = sprTouchscreenDPadBaseBig;
 dpad_joystick_sprite = sprTouchscreenDPadJoyBig;
 dpad_jumpbutton_sprite = sprTouchscreenButtonBig;
-dpad_runbutton_sprite = sprTouchscreenRunButtonBig;
 
 // A button coordinates
 bax = 364;
