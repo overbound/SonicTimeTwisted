@@ -124,28 +124,28 @@ for(var i=0; i < objProgram.inputManager.key_count; i++)
     switch(objProgram.inputManager.key_control[i])
     {
         case cUP:
-            upLabel = get_kb_label(stored_key);
+            upLabel = menu_fn_get_kb_label(stored_key);
             break;
         case cDOWN:
-            downLabel = get_kb_label(stored_key);
+            downLabel = menu_fn_get_kb_label(stored_key);
             break;
         case cLEFT:
-            leftLabel = get_kb_label(stored_key);
+            leftLabel = menu_fn_get_kb_label(stored_key);
             break;
         case cRIGHT:
-            rightLabel = get_kb_label(stored_key);
+            rightLabel = menu_fn_get_kb_label(stored_key);
             break;
         case cA:
-            aLabel = get_kb_label(stored_key);
+            aLabel = menu_fn_get_kb_label(stored_key);
             break;
         case cB:
-            bLabel = get_kb_label(stored_key);
+            bLabel = menu_fn_get_kb_label(stored_key);
             break;
         case cC:
-            cLabel = get_kb_label(stored_key);
+            cLabel = menu_fn_get_kb_label(stored_key);
             break;
         case cSTART:
-            startLabel = get_kb_label(stored_key);
+            startLabel = menu_fn_get_kb_label(stored_key);
             break;
     }
 }

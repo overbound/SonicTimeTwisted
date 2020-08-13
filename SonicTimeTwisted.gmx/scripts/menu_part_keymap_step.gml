@@ -29,7 +29,7 @@ if(state == 13 || state == 14)
         }
         else
         {
-            if(is_key_mappable(pressed_key, confirmation_cursor))
+            if(menu_fn_is_key_mappable(pressed_key, confirmation_cursor))
             {
                 var key_to_map = menu_fn_get_keymap_getkey(confirmation_cursor);
                 if(is_string(key_to_map))

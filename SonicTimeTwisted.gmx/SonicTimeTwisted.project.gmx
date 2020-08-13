@@ -2034,6 +2034,12 @@
           <script>scripts\menu_fn_keys_returnonly.gml</script>
           <script>scripts\menu_fn_close_menu.gml</script>
           <script>scripts\menu_fn_finalize.gml</script>
+          <script>scripts\menu_fn_get_gp_label.gml</script>
+          <script>scripts\menu_fn_get_kb_label.gml</script>
+          <script>scripts\menu_fn_is_axis_mappable.gml</script>
+          <script>scripts\menu_fn_is_button_mappable.gml</script>
+          <script>scripts\menu_fn_is_key_mappable.gml</script>
+          <script>scripts\menu_fn_save_options.gml</script>
           <scripts name="actions_on_close">
             <script>scripts\menu_fn_exitgame.gml</script>
             <script>scripts\menu_fn_restart_game.gml</script>
@@ -2169,14 +2175,7 @@
         <script>scripts\randomize_number.gml</script>
       </scripts>
       <scripts name="Menu">
-        <script>scripts\get_gp_label.gml</script>
-        <script>scripts\get_kb_label.gml</script>
         <script>scripts\get_30_fps.gml</script>
-        <script>scripts\is_axis_mappable.gml</script>
-        <script>scripts\is_button_mappable.gml</script>
-        <script>scripts\is_key_mappable.gml</script>
-        <script>scripts\menu_key_mapping_states.gml</script>
-        <script>scripts\save_options.gml</script>
       </scripts>
       <scripts name="Parallax">
         <script>scripts\parallax_create.gml</script>

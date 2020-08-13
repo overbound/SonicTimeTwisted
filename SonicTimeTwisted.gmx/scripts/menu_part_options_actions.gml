@@ -51,6 +51,7 @@ switch(argument0)
         break;
     case -1:
     case 4:
+        menu_fn_save_options();
         switch(menu_type)
         {
             // depending on the kind of the menu, return to different places
@@ -61,7 +62,6 @@ switch(argument0)
                 menu_fn_exit_submenu(menu_part_zone_items, 1);
                 break;
         }
-        
         break;
     case -2:
         // left key

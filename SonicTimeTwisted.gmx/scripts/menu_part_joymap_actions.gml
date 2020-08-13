@@ -154,28 +154,28 @@ for(var i=0; i < objProgram.inputManager.button_count; i++)
     switch(objProgram.inputManager.button_control[i])
     {
         case cUP:
-            upLabel = get_gp_label(stored_key);
+            upLabel = menu_fn_get_gp_label(stored_key);
             break;
         case cDOWN:
-            downLabel = get_gp_label(stored_key);
+            downLabel = menu_fn_get_gp_label(stored_key);
             break;
         case cLEFT:
-            leftLabel = get_gp_label(stored_key);
+            leftLabel = menu_fn_get_gp_label(stored_key);
             break;
         case cRIGHT:
-            rightLabel = get_gp_label(stored_key);
+            rightLabel = menu_fn_get_gp_label(stored_key);
             break;
         case cA:
-            aLabel = get_gp_label(stored_key);
+            aLabel = menu_fn_get_gp_label(stored_key);
             break;
         case cB:
-            bLabel = get_gp_label(stored_key);
+            bLabel = menu_fn_get_gp_label(stored_key);
             break;
         case cC:
-            cLabel = get_gp_label(stored_key);
+            cLabel = menu_fn_get_gp_label(stored_key);
             break;
         case cSTART:
-            startLabel = get_gp_label(stored_key);
+            startLabel = menu_fn_get_gp_label(stored_key);
             break;
     }
 }
@@ -192,28 +192,28 @@ for(var i=0; i < objProgram.inputManager.axis_count; i++)
     switch(objProgram.inputManager.axis_control[i])
     {
         case cUP:
-            upLabel = get_gp_label(stored_key);
+            upLabel = menu_fn_get_gp_label(stored_key);
             break;
         case cDOWN:
-            downLabel = get_gp_label(stored_key);
+            downLabel = menu_fn_get_gp_label(stored_key);
             break;
         case cLEFT:
-            leftLabel = get_gp_label(stored_key);
+            leftLabel = menu_fn_get_gp_label(stored_key);
             break;
         case cRIGHT:
-            rightLabel = get_gp_label(stored_key);
+            rightLabel = menu_fn_get_gp_label(stored_key);
             break;
         case cA:
-            aLabel = get_gp_label(stored_key);
+            aLabel = menu_fn_get_gp_label(stored_key);
             break;
         case cB:
-            bLabel = get_gp_label(stored_key);
+            bLabel = menu_fn_get_gp_label(stored_key);
             break;
         case cC:
-            cLabel = get_gp_label(stored_key);
+            cLabel = menu_fn_get_gp_label(stored_key);
             break;
         case cSTART:
-            startLabel = get_gp_label(stored_key);
+            startLabel = menu_fn_get_gp_label(stored_key);
             break;
     }
 }

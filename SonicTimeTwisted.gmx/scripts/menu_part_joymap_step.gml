@@ -13,7 +13,7 @@ if(state == 13 || state == 14)
         var axis = input_any_gamepad_axis();
         if(axis != "")
         {
-            if(is_axis_mappable(axis, confirmation_cursor))
+            if(menu_fn_is_axis_mappable(axis, confirmation_cursor))
             {
                 var key_to_map = menu_fn_get_keymap_getkey(confirmation_cursor);
                 if(is_string(key_to_map))
@@ -36,7 +36,7 @@ if(state == 13 || state == 14)
             var button = input_any_gamepad_button();
             if(button != -1)
             {
-                if(is_button_mappable(button, confirmation_cursor))
+                if(menu_fn_is_button_mappable(button, confirmation_cursor))
                 {
                     var key_to_map = false;
                     switch(confirmation_cursor)
