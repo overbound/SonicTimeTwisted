@@ -156,7 +156,7 @@ down = input_check(cDOWN);
 left = input_check(cLEFT);;
 right = input_check(cRIGHT);;
 ok = input_check(cCONFIRM);
-cancel = keyboard_check(cCANCEL);
+cancel = input_check(cCANCEL);
 </string>
           </argument>
         </arguments>

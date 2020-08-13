@@ -2160,6 +2160,7 @@
         <script>scripts\get_video_mode.gml</script>
         <script>scripts\load_video_settings.gml</script>
         <script>scripts\save_video_settings.gml</script>
+        <script>scripts\get_30_fps.gml</script>
         <script>scripts\set_30_fps.gml</script>
         <script>scripts\set_video_mode.gml</script>
         <script>scripts\get_flashing_reduced.gml</script>
@@ -2173,9 +2174,6 @@
       <scripts name="Hud">
         <script>scripts\draw_top_hud.gml</script>
         <script>scripts\randomize_number.gml</script>
-      </scripts>
-      <scripts name="Menu">
-        <script>scripts\get_30_fps.gml</script>
       </scripts>
       <scripts name="Parallax">
         <script>scripts\parallax_create.gml</script>
@@ -3039,6 +3037,7 @@
     <object>objects\obj3DSlant</object>
     <object>objects\objLampPost</object>
     <object>objects\objLevel</object>
+    <object>objects\objMenu</object>
     <object>objects\objMonitor</object>
     <object>objects\objPathSplitStall</object>
     <object>objects\objRing</object>
@@ -3096,7 +3095,6 @@
       </objects>
       <object>objects\objHud</object>
       <object>objects\objInputHelp</object>
-      <object>objects\objMenu</object>
       <object>objects\objParallax</object>
       <object>objects\objThanksControl</object>
       <object>objects\objScoreCard</object>

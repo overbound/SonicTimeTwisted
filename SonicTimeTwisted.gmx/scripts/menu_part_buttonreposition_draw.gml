@@ -10,12 +10,12 @@ if(is_array(temporary_variable))
     draw_text(200, 0, tr('Press Back to save or discard'));
 
     draw_sprite(dpadSprite, 0,
-        temporary_variable[5, 1] - dpadRadius,
-        temporary_variable[5, 2] - dpadRadius);
+        temporary_variable[5, 1],
+        temporary_variable[5, 2]);
     
     draw_sprite(buttonSprite, 0,
-        temporary_variable[6, 1] - dpadRadius,
-        temporary_variable[6, 2] - dpadRadius);
+        temporary_variable[6, 1],
+        temporary_variable[6, 2]);
     
     draw_sprite(sprTouchscreenPauseButton, 0,
         temporary_variable[7, 1],

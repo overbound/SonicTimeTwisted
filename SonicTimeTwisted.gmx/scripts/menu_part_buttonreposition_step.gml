@@ -35,7 +35,14 @@ if(!is_array(temporary_variable))
 }
 if(state == 2)
 {
-    // nothing?
+    if(is_touchscreen)
+    {
+        script_execute(touchscreen_script);
+    }
+    else
+    {
+        script_execute(keys_script);
+    }
 }
 else
 {

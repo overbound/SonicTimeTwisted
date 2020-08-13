@@ -6,7 +6,7 @@ switch(argument0)
         break;
     case 1:
         objProgram.score_tally_mode = (objProgram.score_tally_mode + 1) mod 3;
-        save_options();
+        menu_fn_save_options();
         break;
     case 2:
         set_flashing_reduced(!get_flashing_reduced());
