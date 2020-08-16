@@ -28,6 +28,14 @@ else
 {
     input_manage_script = input_method_ssgyro_rel;
 }
+if(gyromode)
+{
+    input_gyro_script = input_method_ssgyro_gyro_analog;
+}
+else
+{
+    input_gyro_script = input_method_ssgyro_gyro_simple;
+}
 input_rumble_script = input_method_haptics_ssgyro;
 input_draw_script = input_method_draw_ssgyro;
 // Enable super button if the character is Sonic and all seven Chaod Emeralds are collected

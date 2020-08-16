@@ -74,10 +74,10 @@ if the score tally mode is "random digits" or "variable speed",
 which are basically the same outside of what's displayed,
 then the "change" depends on the biggest bonus value from which
 to count down. Else, its value is mostly fixed
-objProgram.score_tally_mode : 0 - random digits, 1 - variable speed, 2 - constant speed
+objScreen.score_tally_mode : 0 - random digits, 1 - variable speed, 2 - constant speed
 */
 max_change = 100;
-if(objProgram.score_tally_mode &lt; 2)
+if(objScreen.score_tally_mode &lt; 2)
 {
    max_change = max(1, max(time_bonus, rings_bonus, perfect_bonus) div (215));
 }

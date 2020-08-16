@@ -1908,8 +1908,10 @@
               <script>scripts\input_method_touchscreen_draw.gml</script>
               <script>scripts\input_method_touchscreen_abs.gml</script>
               <script>scripts\input_method_ssgyro_abs.gml</script>
-              <script>scripts\input_method_touchscreen_rel.gml</script>
               <script>scripts\input_method_ssgyro_rel.gml</script>
+              <script>scripts\input_method_ssgyro_gyro_simple.gml</script>
+              <script>scripts\input_method_ssgyro_gyro_analog.gml</script>
+              <script>scripts\input_method_touchscreen_rel.gml</script>
             </scripts>
             <script>scripts\input_method_draw_touchscreen.gml</script>
             <script>scripts\input_method_init_touchscreen.gml</script>
@@ -1929,13 +1931,10 @@
           <script>scripts\input_method_init_physical.gml</script>
           <script>scripts\input_method_init_smartphone.gml</script>
           <script>scripts\input_method_keyboard.gml</script>
-          <script>scripts\input_method_keyboard_create_vars.gml</script>
-          <script>scripts\input_method_touchscreen_create_vars.gml</script>
           <script>scripts\set_smartphone_controls_enabled.gml</script>
         </scripts>
         <scripts name="Loading">
           <script>scripts\input_load.gml</script>
-          <script>scripts\load_gamepad_support.gml</script>
         </scripts>
         <scripts name="Other">
           <script>scripts\fix_bad_gamepad_axis.gml</script>
@@ -1988,7 +1987,6 @@
         <script>scripts\set_input_method.gml</script>
         <script>scripts\set_input_method_detailed.gml</script>
         <script>scripts\init_input_method.gml</script>
-        <script>scripts\init_touchscreen_vars.gml</script>
         <script>scripts\set_input_enabled.gml</script>
       </scripts>
       <scripts name="Math">
@@ -2039,7 +2037,6 @@
           <script>scripts\menu_fn_is_axis_mappable.gml</script>
           <script>scripts\menu_fn_is_button_mappable.gml</script>
           <script>scripts\menu_fn_is_key_mappable.gml</script>
-          <script>scripts\menu_fn_save_options.gml</script>
           <scripts name="actions_on_close">
             <script>scripts\menu_fn_exitgame.gml</script>
             <script>scripts\menu_fn_restart_game.gml</script>
@@ -2072,7 +2069,6 @@
               <script>scripts\menu_part_touchscreen_actions.gml</script>
               <script>scripts\menu_part_touchscreen_step.gml</script>
               <script>scripts\menu_part_touchscreen_draw.gml</script>
-              <script>scripts\menu_part_touchscreen_save.gml</script>
               <script>scripts\menu_part_buttonreposition_items.gml</script>
               <script>scripts\menu_part_buttonreposition_actions.gml</script>
               <script>scripts\menu_part_buttonreposition_step.gml</script>
@@ -2138,7 +2134,6 @@
       </scripts>
       <scripts name="Save">
         <script>scripts\create_new_save.gml</script>
-        <script>scripts\save_gamepad_input_enabled.gml</script>
         <script>scripts\save_file_name.gml</script>
         <script>scripts\save_level.gml</script>
         <script>scripts\save_lives.gml</script>
@@ -2150,21 +2145,16 @@
         <script>scripts\load_emeralds.gml</script>
         <script>scripts\load_big_ring.gml</script>
         <script>scripts\load_lives.gml</script>
-        <script>scripts\load_options.gml</script>
       </scripts>
       <scripts name="Settings">
         <script>scripts\delete_settings.gml</script>
-        <script>scripts\is_settings_file_present.gml</script>
+        <script>scripts\load_options.gml</script>
+        <script>scripts\save_options.gml</script>
       </scripts>
       <scripts name="Video">
-        <script>scripts\get_video_mode.gml</script>
-        <script>scripts\load_video_settings.gml</script>
-        <script>scripts\save_video_settings.gml</script>
         <script>scripts\get_30_fps.gml</script>
         <script>scripts\set_30_fps.gml</script>
-        <script>scripts\set_video_mode.gml</script>
-        <script>scripts\get_flashing_reduced.gml</script>
-        <script>scripts\set_flashing_reduced.gml</script>
+        <script>scripts\apply_video_settings.gml</script>
       </scripts>
       <scripts name="I18n">
         <script>scripts\tr.gml</script>

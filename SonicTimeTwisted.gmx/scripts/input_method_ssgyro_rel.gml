@@ -8,18 +8,8 @@ if(smartphone_controls_enabled)
     {
         var input_state = 0;
         var dpad_is_pressed = false;
-        // tilting controls
-        var tilt_x = device_get_tilt_y();
-        // simple mode where tilting simply presses left and right
-        if(tilt_x < -1*gyro_switch_on_angle_x)
-        {
-            input_state |= cLEFT;
-        }
-        else
-        if(tilt_x > gyro_switch_on_angle_x)
-        {
-            input_state |= cRIGHT;
-        }
+        // gyroscope
+        input_state |= script_execute(input_gyro_script);
         for(var device = 0; device <= 4; device++)
         {
             if(device_mouse_check_button(device, mb_any))

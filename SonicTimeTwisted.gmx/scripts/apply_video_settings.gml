@@ -8,9 +8,7 @@ Video modes:
 **/
 if(DEVICE_INFO & DEVICE_TYPE_COMPUTER)
 {
-    with objScreen {
-        video_mode = argument0;
-        
+    with objScreen {        
         if(video_mode >= 0 && video_mode < 3)
         {
             window_state = video_mode + 1;
@@ -32,4 +30,4 @@ if(DEVICE_INFO & DEVICE_TYPE_COMPUTER)
         }
     }
 }
-save_video_settings();
+set_30_fps(framerate);

@@ -1,15 +1,16 @@
 switch(argument0)
 {
     case 0:
-        var vm = get_video_mode();
-        set_video_mode((vm + 1) mod 4);
+        with(objScreen)
+        {
+            event_user(0);
+        }
         break;
     case 1:
-        objProgram.score_tally_mode = (objProgram.score_tally_mode + 1) mod 3;
-        menu_fn_save_options();
+        objScreen.score_tally_mode = (objScreen.score_tally_mode + 1) mod 3;
         break;
     case 2:
-        set_flashing_reduced(!get_flashing_reduced());
+        objMenu.flashing_reduced = !objMenu.flashing_reduced;
         break;
     case 3:
         set_30_fps(!get_30_fps());
@@ -23,19 +24,20 @@ switch(argument0)
         switch(items[cursor, 1])
         {
             case 0:
-                var vm = get_video_mode() - 1;
-                if(vm < 0) vm = 3;
-                set_video_mode(vm);
+                with(objScreen)
+                {
+                    event_user(1);
+                }
                 break;
             case 1:
-                objProgram.score_tally_mode--;
-                if(objProgram.score_tally_mode < 0)
+                objScreen.score_tally_mode--;
+                if(objScreen.score_tally_mode < 0)
                 {
-                    objProgram.score_tally_mode = 2
+                    objScreen.score_tally_mode = 2
                 }
                 break;
             case 2:
-                set_flashing_reduced(!get_flashing_reduced());
+                objMenu.flashing_reduced = !objMenu.flashing_reduced;
                 break;
             case 3:
                 set_30_fps(!get_30_fps());
@@ -47,14 +49,16 @@ switch(argument0)
         switch(items[cursor, 1])
         {
             case 0:
-                var vm = get_video_mode();
-                set_video_mode((vm + 1) mod 4);
+                with(objScreen)
+                {
+                    event_user(0);
+                }
                 break;
             case 1:
-                objProgram.score_tally_mode = (objProgram.score_tally_mode + 1) mod 3;
+                objScreen.score_tally_mode = (objScreen.score_tally_mode + 1) mod 3;
                 break;
             case 2:
-                set_flashing_reduced(!get_flashing_reduced());
+                objMenu.flashing_reduced = !objMenu.flashing_reduced;
                 break;
             case 3:
                 set_30_fps(!get_30_fps());
@@ -65,7 +69,7 @@ switch(argument0)
 
 // refresh displayed values
 
-switch(get_video_mode())
+switch(objScreen.video_mode)
 {
     case 0:
         menu_fn_refresh_displayed_value(0, "< "+tr("Window 1x")+ " >");
@@ -81,7 +85,7 @@ switch(get_video_mode())
         break;
 }
 
-switch(objProgram.score_tally_mode)
+switch(objScreen.score_tally_mode)
 {
     case 0:
         menu_fn_refresh_displayed_value(1, "< "+tr("Random digits")+ " >");
@@ -94,7 +98,7 @@ switch(objProgram.score_tally_mode)
         break;
 }
 
-if(get_flashing_reduced())
+if(objScreen.flashing_reduced)
 {
     menu_fn_refresh_displayed_value(2, "< "+tr("On")+ " >");
 }

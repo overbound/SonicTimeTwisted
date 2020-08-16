@@ -74,8 +74,6 @@ stream = -1;
 stream_size = $FF;
 input_load();
 fix_bad_gamepad_axis();
-gamepad_update_enabled = true;
-load_gamepad_support();
 
 // rumble/haptics
 rumble_queue = ds_queue_create();
@@ -94,11 +92,74 @@ input_method = 0;
 input_method_fallback = 0;
 use_fallback = false;
 
-// touchscreen if applies
-if(DEVICE_INFO &amp; DEVICE_TYPE_SMARTPHONE)
-{
-    init_touchscreen_vars();
-}
+/**
+ * touchscreen-specific variables
+ */
+/// Made a separate script to be called conditionally because of the sheer number of variables
+smartphone_controls_enabled = false;
+
+// Regular touchscreen controls
+vkalpha = 0.8; // alpha
+vksize = 0; // 0 - big controls, 1 - medium controls, 2 - small controls
+dpadmode = 0; // 0 - static, 1 - dynamic
+
+// direction pad coordinates - saved in file
+dpadx = 64;
+dpady = 178;
+
+// direction pad current coordinates - relevant when using dynamic D-Pad
+current_dpadx = 64;
+current_dpady = 178;
+
+// josytick current position - as drawn
+joyx = dpadx;
+joyy = dpady;
+
+// sprites for the joystick and run &amp; jump buttons, which vary from size to size
+dpad_base_sprite = sprTouchscreenDPadBaseBig;
+dpad_joystick_sprite = sprTouchscreenDPadJoyBig;
+dpad_jumpbutton_sprite = sprTouchscreenButtonBig;
+
+// A button coordinates
+bax = 364;
+bay = 178;
+
+// direction pad &amp; A button radius
+bar = 32;
+
+// Start button coordinates
+bsx = 200;
+bsy = 16;
+
+// Super button coordinates
+bbx = 324;
+bby = 88;
+super_button_enabled = false;
+
+button_radius = 0; // derived from vksize
+
+// Gyroscope for special stages
+gyroinss = 1; // 0 - use d-pad to turn, 1 - use gyroscope
+gyromode = 1; // 0 - gyroscope simply turns the buttons on and off; 1 - pseudo-analog mode
+gyro_switch_on_angle_x = 0.15; // angle on which the button is pressed
+gyro_analog_start_x = 0.05; // angle from which the analog control starts
+gyro_analog_end_x = 0.5; // angle to which the analog control goes
+
+// Special scheme for Galacnik Gauntlet
+gg_mode = 1; // 0 - use d-pad and button, 1 - point on screen
+
+// On start, the controls are invisible
+image_alpha = 0;
+
+// subscript for managing gyroscope in special stages
+input_gyro_script = input_method_dummy_script;
+
+// special counter for the analog mode for gyroscope in special stages
+gyro_counter = 0;
+
+/**
+ * touchscreen-specific variables end
+ */
 </string>
           </argument>
         </arguments>
@@ -288,31 +349,6 @@ case "gamepad lost":
         </arguments>
       </action>
     </event>
-    <event eventtype="7" enumb="10">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Change gamepad status
-gamepad_update_enabled = !gamepad_update_enabled;
-save_gamepad_input_enabled(gamepad_update_enabled);
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="7" enumb="5">
       <action>
         <libid>1</libid>
@@ -407,6 +443,36 @@ set_smartphone_controls_enabled(false);
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Enable fallback controls unconditionally on certain maps: title screen, save screen
+switch(room)
+{
+    case titlescreen:
+    case saveSelect:
+        use_fallback = true;
+        break;
+    default:
+        use_fallback = false;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="8" enumb="64">
       <action>
@@ -426,29 +492,6 @@ set_smartphone_controls_enabled(false);
           <argument>
             <kind>1</kind>
             <string>script_execute(input_draw_script);
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="9" enumb="112">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>event_user(0);
 </string>
           </argument>
         </arguments>

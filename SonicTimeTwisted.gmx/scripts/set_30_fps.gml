@@ -19,4 +19,3 @@ else
     objScreen.framerate = 0;
     objScreen.frame_counter_increment = 1;
 }
-save_video_settings();

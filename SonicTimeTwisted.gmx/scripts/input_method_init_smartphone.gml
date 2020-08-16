@@ -13,9 +13,6 @@ if(instance_exists(objLevel))
         objProgram.inputManager.gg_mode == 1)
     {
         input_method_init_ggpoint();
-        input_manage_script = input_method_ggpoint;
-        input_rumble_script = input_method_haptics_ggpoint;
-        input_draw_script = input_method_draw_ggpoint;
     }
     else
     {

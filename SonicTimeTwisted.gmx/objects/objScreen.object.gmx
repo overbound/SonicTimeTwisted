@@ -35,6 +35,7 @@ split_screen = false;
 paused = false;
 screenshot = -1; // for pausing
 scanlines = false;
+flashing_reduced = 1;
 default_image_speed = 1;
 alarm[0] = 2;
 view_enabled = true;
@@ -62,25 +63,8 @@ Load the appropriate video mode. See the set_video_mode script for details
 **/
 video_mode = 0;
 framerate = 0; // 0 - 60fps, 1 - 30fps
-load_video_settings();
-set_video_mode(video_mode);
-set_30_fps(framerate);
-// sync window properties
-if window_get_fullscreen() window_mode = 2; else
-if window_get_width() &gt; width or window_get_height() &gt; height { window_mode = 1; window_scale = 2 } else
-if (window_get_width() != width * window_scale) or (window_get_height() != height * window_scale) window_set_size(width * window_scale, height * window_scale);
-surface_resize(application_surface, width, height);
-
-// os properties
-/*fullscreen_enabled = false;
-switch os_type
-{
-case os_windows:
-case os_macosx:
-    if (os_browser != browser_not_a_browser) break;
-    fullscreen_enabled = true;
-    break;
-}*/
+score_tally_mode = 0;
+load_options();
 </string>
           </argument>
         </arguments>
@@ -129,6 +113,62 @@ window_center();
             <kind>1</kind>
             <string>/// Unpause
 if not paused and screenshot &gt; -1 { background_delete(screenshot); screenshot = -1; }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="11">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Scroll through screen modes - backwards
+video_mode = (video_mode - 1);
+if(video_mode &lt; 0)
+{
+    video_mode = 3;
+}
+apply_video_settings();
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="10">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Scroll through screen modes - forwards
+video_mode = (video_mode + 1) mod 4;
+apply_video_settings();
+
 </string>
           </argument>
         </arguments>
@@ -271,9 +311,7 @@ else if scanlines
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Scroll through screen modes
-set_video_mode((get_video_mode() + 1) mod 4);
-
+            <string>event_user(0);
 </string>
           </argument>
         </arguments>

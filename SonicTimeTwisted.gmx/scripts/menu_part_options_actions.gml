@@ -51,7 +51,7 @@ switch(argument0)
         break;
     case -1:
     case 4:
-        menu_fn_save_options();
+        save_options();
         switch(menu_type)
         {
             // depending on the kind of the menu, return to different places
@@ -138,7 +138,7 @@ switch(argument0)
 
 // refresh displayed values
 
-if(objProgram.inputManager.gamepad_update_enabled)
+if(objProgram.inputManager.input_method == INPUT_GAMEPAD)
 {
     menu_fn_refresh_displayed_value(1, "< "+tr("Yes")+ " >");
 }

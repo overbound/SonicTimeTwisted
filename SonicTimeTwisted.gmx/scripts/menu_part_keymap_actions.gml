@@ -92,7 +92,7 @@ switch(argument0)
         ds_map_destroy(temp_map);
         break;
     case 30:
-        // group mapping - cancelled, discard backup
+        // group mapping - cancelled, restore backup
         var mapkey = ds_map_find_first(temp_map);
         for(var i = 0; i < ds_map_size(temp_map); i++)
         {

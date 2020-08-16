@@ -23,7 +23,6 @@ switch(argument0)
         break;
     case 7:
     case -1:
-        menu_part_touchscreen_save();
         menu_fn_exit_submenu(menu_part_options_items, 6);
         break;
     case -2:
