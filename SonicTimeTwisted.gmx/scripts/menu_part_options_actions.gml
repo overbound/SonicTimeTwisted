@@ -1,3 +1,4 @@
+var prev_is_touchscreen = is_touchscreen;
 switch(argument0)
 {
     case 0:
@@ -161,5 +162,6 @@ if(DEVICE_INFO & DEVICE_TYPE_SMARTPHONE)
     }
     menu_fn_refresh_displayed_value(5, "< "+inputLabel+ " >");
 }
+is_touchscreen = prev_is_touchscreen;
 // preserve the cursor value - usually false for the sake of touchscreen controls
 return false;
