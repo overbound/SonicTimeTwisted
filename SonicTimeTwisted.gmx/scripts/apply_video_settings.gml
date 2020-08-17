@@ -30,4 +30,3 @@ if(DEVICE_INFO & DEVICE_TYPE_COMPUTER)
         }
     }
 }
-set_30_fps(framerate);

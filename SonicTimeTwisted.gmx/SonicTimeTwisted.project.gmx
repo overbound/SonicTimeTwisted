@@ -2152,8 +2152,6 @@
         <script>scripts\save_options.gml</script>
       </scripts>
       <scripts name="Video">
-        <script>scripts\get_30_fps.gml</script>
-        <script>scripts\set_30_fps.gml</script>
         <script>scripts\apply_video_settings.gml</script>
       </scripts>
       <scripts name="I18n">
@@ -2962,7 +2960,6 @@
     </objects>
     <objects name="Game">
       <object>objects\objGameData</object>
-      <object>objects\objFramerate</object>
       <object>objects\objInput</object>
       <object>objects\objInputMethodDependant</object>
       <object>objects\objMusic</object>

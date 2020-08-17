@@ -44,20 +44,16 @@ view_wview[0] = width;
 view_hview[0] = height;
 view_wport[0] = width;
 view_hport[0] = height;
-/**
-These variables manage... flashing. yes, flashing.
-Essential for the 30FPS mode, they also allow to remove some
-"mod" and "!boolean" calculations here and there.
-**/
+
 // A simple boolean that goes from between 0 and 1 every drawn frame
+// Allows to remove some "mod" and "!boolean" calculations here and there
+// while displaying flashing objects.
 flashing_visible = false;
+
 // A lot of flashing objects rely on objScreen.image_index mod 4
 // This variable will replace the calls to that property, but
 // only when the conditioned code is purely visual
 frame_counter = 0;
-// Made this a variable so that the 30FPS mode doesn't incur
-// constant "if 30FPS enabled" checks
-frame_counter_increment = 1;
 /**
 Load the appropriate video mode. See the set_video_mode script for details
 **/
@@ -250,13 +246,9 @@ for (var i = 0; i &lt; 2; i += 1)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// manage flashing (30 FPS-compatible)
+            <string>/// manage flashing
 flashing_visible = !flashing_visible;
-frame_counter = (frame_counter + frame_counter_increment) mod 4;
-with(all)
-{
-    event_user(15);
-}
+frame_counter = (frame_counter + 1) mod 4;
 </string>
           </argument>
         </arguments>

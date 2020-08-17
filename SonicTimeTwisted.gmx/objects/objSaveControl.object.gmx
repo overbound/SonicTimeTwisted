@@ -1278,8 +1278,6 @@ mouse_dx = 0;
         <relative>0</relative>
         <isnot>0</isnot>
       </action>
-    </event>
-    <event eventtype="7" enumb="25">
       <action>
         <libid>1</libid>
         <id>603</id>

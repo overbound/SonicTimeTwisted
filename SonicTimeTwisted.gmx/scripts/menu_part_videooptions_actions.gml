@@ -13,9 +13,6 @@ switch(argument0)
         objMenu.flashing_reduced = !objMenu.flashing_reduced;
         break;
     case 3:
-        set_30_fps(!get_30_fps());
-        break;
-    case 4:
     case -1:
         menu_fn_exit_submenu(menu_part_options_items, 0);
         break;
@@ -39,9 +36,6 @@ switch(argument0)
             case 2:
                 objMenu.flashing_reduced = !objMenu.flashing_reduced;
                 break;
-            case 3:
-                set_30_fps(!get_30_fps());
-                break;
         }
         break;
     case -3:
@@ -59,9 +53,6 @@ switch(argument0)
                 break;
             case 2:
                 objMenu.flashing_reduced = !objMenu.flashing_reduced;
-                break;
-            case 3:
-                set_30_fps(!get_30_fps());
                 break;
         }
         break;
@@ -105,15 +96,6 @@ if(objScreen.flashing_reduced)
 else
 {
     menu_fn_refresh_displayed_value(2, "< "+tr("Off")+ " >");
-}
-
-if(get_30_fps())
-{
-    menu_fn_refresh_displayed_value(3, "< "+tr("30 FPS")+ " >");
-}
-else
-{
-    menu_fn_refresh_displayed_value(3, "< "+tr("60 FPS")+ " >");
 }
 
 // preserve the cursor value - usually false for the sake of touchscreen controls

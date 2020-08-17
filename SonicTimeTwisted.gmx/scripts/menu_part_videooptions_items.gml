@@ -7,8 +7,7 @@ if(DEVICE_INFO & DEVICE_TYPE_COMPUTER)
 }
 menu_fn_add_option(tr("Score tally mode"), 1, 1, "");
 menu_fn_add_option(tr("Flashing reduction"), 2, 1, "");
-menu_fn_add_option(tr("Frame rate"), 3, 1, "");
-menu_fn_add_option(tr("< Back"), 4);
+menu_fn_add_option(tr("< Back"), 3);
 
 button_width = 350;
 
