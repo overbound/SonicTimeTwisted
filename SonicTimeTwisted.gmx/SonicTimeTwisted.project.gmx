@@ -3430,15 +3430,6 @@
         <object>objects\objVVPastBackSun</object>
       </objects>
     </objects>
-    <objects name="Ports">
-      <objects name="Android">
-        <object>objects\objSSHud_Android</object>
-        <object>objects\objSSLevel_Android</object>
-        <object>objects\objAndroidInput</object>
-        <object>objects\objAndroidInputSmartphone</object>
-        <object>objects\objLevel_Android</object>
-      </objects>
-    </objects>
   </objects>
   <timelines name="timelines">
     <timelines name="Cutscene">

@@ -22,13 +22,6 @@ switch(argument0)
             input_method_dummy_script,
             argument1
         );
-        if(objProgram.inputManager.gamepad_update_enabled)
-        {
-            with(objProgram.inputManager)
-            {
-                event_user(0);
-            }
-        }
         break;
     case INPUT_GAMEPAD:
         set_input_method_detailed(
