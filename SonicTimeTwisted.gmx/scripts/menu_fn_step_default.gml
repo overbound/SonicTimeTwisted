@@ -10,6 +10,9 @@ if(scrollable)
 {
     if(scroll != scroll_target)
     {
+        // make sure scroll_target does not go out of bounds
+        scroll_target = min(max(scroll_target, 0), internal__button_count - button_page_count);
+        
         if(is_touchscreen)
         {
             audio_play_sound(sndBeep, 0, 0);

@@ -25,12 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>// keep this as a GML script instead of a DND action.
-// That way, if the extension is replaced/updated, this won't get corrupted
+            <string>sync_is_touchscreen();
 menu_fn_init();
-
-// temporary
-flashing_reduced = false;
 </string>
           </argument>
         </arguments>
@@ -203,7 +199,7 @@ menu_fn_step_begin();
             <kind>1</kind>
             <string>/// step
 var prev_is_touchscreen = is_touchscreen;
-input_method_smartphone_switch();
+script_execute(switch_script);
 if(is_touchscreen != prev_is_touchscreen)
 {
     if(is_touchscreen &amp;&amp; cursor &gt;= 0)

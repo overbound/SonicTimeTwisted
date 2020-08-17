@@ -556,6 +556,7 @@ if(pauseState == 3)
     if(start &amp;&amp; menu.state == 0)
     {
         var do_start = false;
+        script_execute(switch_script);
         if(is_fallback_touchscreen)
         {
             do_start = (levelSelect &lt; 6 &amp;&amp; device_mouse_check_button_pressed(0, mb_left))
