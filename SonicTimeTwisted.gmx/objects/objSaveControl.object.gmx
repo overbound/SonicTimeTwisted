@@ -81,7 +81,6 @@ stageDeleteConfirmSprite = sprDeleteConfirm;
 flash_visibility = true;
 
 // some touchscreen variables
-is_touchscreen = input_is_touchscreen();
 mouse_prev_x = 0;
 mouse_prev_y = 0;
 mouse_dx = 0;

@@ -68,8 +68,8 @@ if(allow_skipping)
 {
    event_user(0);
 }
-is_touchscreen = input_is_touchscreen();
-if(is_touchscreen)
+sync_is_touchscreen();
+if(is_fallback_touchscreen)
 {
     startText = tr('Touch to start');
 }
@@ -291,14 +291,14 @@ if name &gt; 2 &amp;&amp; name &lt; 9 {
         }
         break;
     case 1:
-        if(is_touchscreen)
+        if(is_fallback_touchscreen)
         {
             if(device_mouse_check_button_pressed(0, mb_left))
             {
                 state = 2;
             }
         }
-        else
+        if(!is_touchscreen)
         {
             if(input_check_pressed(cSTART))
             {
@@ -419,14 +419,14 @@ if name &gt; 2 &amp;&amp; name &lt; 9 {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(is_touchscreen)
+            <string>if(is_fallback_touchscreen)
 {
     if(device_mouse_check_button_pressed(0, mb_left))
     {
         state = 3;
     }
 }
-else
+if(!is_touchscreen)
 {
     if(input_check_pressed(cSTART) || input_check_pressed(cA) || input_check_pressed(cB) || input_check_pressed(cC))
     {
@@ -556,12 +556,12 @@ if(pauseState == 3)
     if(start &amp;&amp; menu.state == 0)
     {
         var do_start = false;
-        if(is_touchscreen)
+        if(is_fallback_touchscreen)
         {
             do_start = (levelSelect &lt; 6 &amp;&amp; device_mouse_check_button_pressed(0, mb_left))
                 || (levelSelect &gt;= 6 &amp;&amp; level_select_max_presses &lt; 2 &amp;&amp; device_mouse_check_button_released(0, mb_left));
         }
-        else
+        if(!is_touchscreen)
         {
             do_start = input_check_pressed(cSTART);
         }
@@ -605,7 +605,7 @@ if objProgram.inputManager.pressingGamepad == -1 {
             <string>/// Skipping to title and Level Select Code
 if(menu.state == 0)
 {
-    if(is_touchscreen)
+    if(is_fallback_touchscreen)
     {
         // touchscreen version - tap on every displayed name, then touch the title screen with two fingers
         if(levelSelect &lt; 6)
@@ -736,7 +736,7 @@ if(menu.state == 0)
             }
         }
     }
-    else
+    if(!is_touchscreen)
     {
         // button version - left, left, right, right, up, down, a+start
         switch(levelSelect) {
@@ -1124,7 +1124,7 @@ audio_stop_all();
     }
     if(allow_skipping)
     {
-        if(name &lt; 9 &amp;&amp; is_touchscreen)
+        if(name &lt; 9 &amp;&amp; is_fallback_touchscreen)
         {
            draw_sprite(sprTouchscreenFastForward, 0, view_xview[0] + view_wview[0] - 36, view_yview[0] + 12);
         }

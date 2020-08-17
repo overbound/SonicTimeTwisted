@@ -202,6 +202,19 @@ menu_fn_step_begin();
           <argument>
             <kind>1</kind>
             <string>/// step
+var prev_is_touchscreen = is_touchscreen;
+input_method_smartphone_switch();
+if(is_touchscreen != prev_is_touchscreen)
+{
+    if(is_touchscreen &amp;&amp; cursor &gt;= 0)
+    {
+        cursor = -1;
+    }
+    if((!is_touchscreen) &amp;&amp; cursor &lt; 0)
+    {
+        cursor = 0;
+    }
+}
 menu_fn_step();
 </string>
           </argument>

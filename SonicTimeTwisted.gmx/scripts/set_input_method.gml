@@ -1,7 +1,9 @@
 objProgram.inputManager.input_method = argument0;
+is_touchscreen = argument0 == INPUT_TOUCHSCREEN;
 if(argument1)
 {
     objProgram.inputManager.input_method_fallback = argument0;
+    is_fallback_touchscreen = argument0 == INPUT_TOUCHSCREEN;
 }
 switch(argument0)
 {
@@ -35,20 +37,27 @@ switch(argument0)
 }
 with(objTitleControl)
 {
-    is_touchscreen = argument0 == INPUT_TOUCHSCREEN;
+    sync_is_touchscreen();
 }
 with(objInputMethodDependant)
 {
-    is_touchscreen = argument0 == INPUT_TOUCHSCREEN;
-}
-with(objHud)
-{
-    if(is_touchscreen)
+    sync_is_touchscreen();  
+    if(object_index == objHud || object_index == objSSHud)
     {
-        draw_lives_event = 1;
-    }
-    else
-    {
-        draw_lives_event = 0;
+        if(is_touchscreen)
+        {
+            draw_lives_event = 1;
+        }
+        else
+        {
+            draw_lives_event = 0;
+        }
     }
 }
+
+
+
+
+
+
+

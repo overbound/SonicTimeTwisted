@@ -35,8 +35,7 @@ cancel = false;
 cancel_prev = false;
 cancel_press = false;
 
-is_touchscreen = input_is_touchscreen();
-is_30_fps = false;
+sync_is_touchscreen();
 
 draw_offset_x = 0;
 draw_offset_y = 0;
