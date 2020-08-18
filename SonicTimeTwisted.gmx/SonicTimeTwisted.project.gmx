@@ -11,7 +11,9 @@
     <Config>Configs\Linux</Config>
   </Configs>
   <datafiles number="43" name="datafiles"/>
-  <NewExtensions/>
+  <NewExtensions>
+    <extension index="0">extensions\SttAndroidRumble</extension>
+  </NewExtensions>
   <sounds name="sound">
     <sounds name="BGM">
       <sounds name="Attraction Attack">
