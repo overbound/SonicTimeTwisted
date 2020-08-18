@@ -2615,20 +2615,6 @@
         </scripts>
       </scripts>
     </scripts>
-    <scripts name="Ports">
-      <scripts name="Smartphone">
-        <scripts name="Android">
-          <script>scripts\android_vk_is_pressed.gml</script>
-          <script>scripts\android_vk_press.gml</script>
-          <script>scripts\android_vk_release.gml</script>
-          <script>scripts\android_manage_gyroscope_controls.gml</script>
-          <script>scripts\android_manage_touch_controls.gml</script>
-          <script>scripts\android_manage_touchscreen_controls.gml</script>
-          <script>scripts\android_read_gyroscope_x.gml</script>
-          <script>scripts\android_read_gyroscope_y.gml</script>
-        </scripts>
-      </scripts>
-    </scripts>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\DeflateShader.shader</shader>
@@ -3710,7 +3696,7 @@
     </rooms>
   </rooms>
   <constants number="112">
-    <constant name="VERSION">"1.1.0-WIP"</constant>
+    <constant name="VERSION">"v1.1.0-dev"</constant>
     <constant name="GAMEPAD_POV_Y">7</constant>
     <constant name="GAMEPAD_POV_X">6</constant>
     <constant name="GAMEPAD_AXIS_V">5</constant>

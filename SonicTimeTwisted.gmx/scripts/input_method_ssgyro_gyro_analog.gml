@@ -2,7 +2,6 @@
 var input_state = 0;
 var tilt_x = device_get_tilt_y();
 var abs_tilt = abs(tilt_x);
-var tilt_dir = 1;
 var tilt_value = 0;
 if(abs_tilt > 0)
 {

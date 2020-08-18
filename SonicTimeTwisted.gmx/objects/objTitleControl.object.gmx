@@ -1069,40 +1069,43 @@ audio_stop_all();
     draw_set_font(objResources.fontHud);
     
     switch name {
-    case 0: case 1: case 2:
-        draw_set_color(c_black);
-        draw_set_alpha(logoAlpha);
-        draw_rectangle(view_xview,view_yview,view_xview+view_wview,view_yview+view_hview,false);
-        draw_set_alpha(1);
-        draw_set_color(c_white);
-        draw_sprite_ext(sprOverboundLogo,0,view_xview[0]+213,view_yview[0]+90,1,1,0,c_white,logoAlpha);
-        draw_text_color(view_xview[0]+213,view_yview[0]+15,tr('A Sonic fangame by'),c_white,c_white,c_teal,c_teal,logoAlpha)
-        draw_text_color(view_xview[0]+213,view_yview[0]+150,tr('This game is freeware.'),c_white,c_white,c_teal,c_teal,logoAlpha)
-        draw_text_color(view_xview[0]+213,view_yview[0]+170,tr('Do not sell!'),c_white,c_white,c_red,c_red,logoAlpha)
-    break;
-    case 3:
-    case 4:
-    case 5:
-    case 6:
-    case 7:
-    case 8:
-        var yshift = 120;
-        if(alarm[0] &gt;= 60)
-        {
-            yshift = yshift + 27 + (alarm[0] - 60) * 32;
-        }
-        else
-        if(alarm[0] &gt; 5)
-        {
-            yshift = yshift - 27 + alarm[0] - 5;
-        }
-        else
-        {
-            yshift = yshift - 27 - (5 - alarm[0]) * 32;            
-        }
-        draw_text_color(view_xview[0]+213,view_yview[0]+yshift,names[name - 3],c_white,c_white,c_yellow,c_yellow,1); break;
-    break;
-    case 12: if pauseState == 3 draw_text_color(view_xview[0]+213, view_yview[0]+228, startText,c_white,c_white,c_yellow,c_yellow,1); start=true; break;
+        case 0:
+        case 1:
+        case 2:
+            draw_set_color(c_black);
+            draw_set_alpha(logoAlpha);
+            draw_rectangle(view_xview,view_yview,view_xview+view_wview,view_yview+view_hview,false);
+            draw_set_alpha(1);
+            draw_set_color(c_white);
+            draw_sprite_ext(sprOverboundLogo,0,view_xview[0]+213,view_yview[0]+90,1,1,0,c_white,logoAlpha);
+            draw_text_color(view_xview[0]+213,view_yview[0]+15,tr('A Sonic fangame by'),c_white,c_white,c_teal,c_teal,logoAlpha)
+            draw_text_color(view_xview[0]+213,view_yview[0]+150,tr('This game is freeware.'),c_white,c_white,c_teal,c_teal,logoAlpha)
+            draw_text_color(view_xview[0]+213,view_yview[0]+170,tr('Do not sell!'),c_white,c_white,c_red,c_red,logoAlpha)
+            break;
+        case 3:
+        case 4:
+        case 5:
+        case 6:
+        case 7:
+        case 8:
+            var yshift = 120;
+            if(alarm[0] &gt;= 60)
+            {
+                yshift = yshift + 27 + (alarm[0] - 60) * 32;
+            }
+            else
+            if(alarm[0] &gt; 5)
+            {
+                yshift = yshift - 27 + alarm[0] - 5;
+            }
+            else
+            {
+                yshift = yshift - 27 - (5 - alarm[0]) * 32;            
+            }
+            draw_text_color(view_xview[0]+213,view_yview[0]+yshift,names[name - 3],c_white,c_white,c_yellow,c_yellow,1); break;
+            break;
+        case 12:
+            if pauseState == 3 draw_text_color(view_xview[0]+213, view_yview[0]+228, startText,c_white,c_white,c_yellow,c_yellow,1); start=true; break;
     }
     draw_set_halign(fa_center);
     draw_set_color(c_yellow);
@@ -1163,6 +1166,19 @@ if(state &lt;= 2 || state == 4)
     draw_text_ext_colour(text_origin, view_yview[view_current] + disclaimer_y, disclaimer, 12, line_length, c_ltgray, c_ltgray, c_white, c_white, textAlpha);
     draw_text_ext_colour(text_origin, view_yview[view_current] + github_y, github, 12, line_length, c_blue, c_blue, c_white, c_white, textAlpha);
     draw_set_alpha(1);   
+}
+/// version number
+if(menu.state &gt; 0)
+{
+    draw_set_font(objResources.fontLives);
+    draw_set_halign(fa_right);
+    draw_set_valign(fa_bottom);
+    draw_text(
+        view_xview[view_current] + view_wview[view_current],
+        view_yview[view_current] + view_hview[view_current],
+        VERSION
+    );
+    
 }
 </string>
           </argument>
