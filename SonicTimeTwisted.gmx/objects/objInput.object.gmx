@@ -63,11 +63,12 @@ rumble_configuration_script = rumble_configuration_active;
 // input devices management
 input_init_script = input_method_dummy_script;
 input_manage_script = input_method_dummy_script;
-input_rumble_script = input_method_dummy_script;
+input_rumble_trigger_script = input_method_dummy_script;
+input_rumble_manage_script = input_method_dummy_script;
+input_rumble_perform_script = input_method_dummy_script;
 input_draw_script = input_method_dummy_script;
 input_init_script_fallback = input_method_dummy_script;
 input_manage_script_fallback = input_method_dummy_script;
-input_rumble_script_fallback = input_method_dummy_script;
 input_draw_script_fallback = input_method_dummy_script;
 input_method = 0;
 input_method_fallback = 0;
@@ -138,6 +139,9 @@ input_gyro_script = input_method_dummy_script;
 // special counter for the analog mode for gyroscope in special stages
 gyro_counter = 0;
 
+// rumble type for smartphones
+// 0 - none, 1 - haptics,  2 - contextual, 3 - both
+vibration_type = 0;
 /**
  * touchscreen-specific variables end
  */
@@ -263,31 +267,12 @@ if (state &amp; cDOWN &amp;&amp; flag_player_input) || (computer_cDOWN &amp;&amp
 // pressing and releasing
 state_press = (state &amp; previous_state) ^ state;
 state_release = (state &amp; previous_state) ^ previous_state;
+
+/// Manage rumble/haptic
+script_execute(input_rumble_manage_script);
+script_execute(input_rumble_perform_script);
+
 previous_state = state;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="3" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Manage rumble/haptic
-script_execute(input_rumble_script);
 </string>
           </argument>
         </arguments>

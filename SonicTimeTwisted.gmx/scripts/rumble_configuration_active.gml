@@ -59,4 +59,4 @@ switch(argument0)
         script = rumble_instant_strong;
         break;
 }
-return script;
+return rumble_enqueue(script_execute(script));

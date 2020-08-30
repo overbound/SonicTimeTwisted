@@ -36,6 +36,7 @@ if (file_exists(file)) {
         gyro_analog_start_x = ini_read_real('smartphone','gyro_analog_start_x',0.1);
         gyro_analog_end_x = ini_read_real('smartphone','gyro_analog_end_x',0.6);
         gg_mode = ini_read_real('smartphone','gg_mode',1);
+        vibration_type = ini_read_real('smartphone','vibration_type',0);
     }
     
     return true;

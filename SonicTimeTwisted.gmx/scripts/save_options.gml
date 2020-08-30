@@ -25,6 +25,7 @@ if(instance_exists(objProgram.inputManager))
     ini_write_real('smartphone', 'gyro_analog_start_x', objProgram.inputManager.gyro_analog_start_x);
     ini_write_real('smartphone', 'gyro_analog_end_x', objProgram.inputManager.gyro_analog_end_x);
     ini_write_real('smartphone', 'gg_mode', objProgram.inputManager.gg_mode);
+    ini_write_real('smartphone', 'vibration_type', objProgram.inputManager.vibration_type);
 }
 ini_close();
 reinit_input_method();

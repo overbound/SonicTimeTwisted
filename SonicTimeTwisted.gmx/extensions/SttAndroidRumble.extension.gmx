@@ -3,7 +3,7 @@
   <name>SttAndroidRumble</name>
   <version>1.1.0</version>
   <packageID></packageID>
-  <ProductID>ACBD3CFF4E539AD869A0E8E3B4B022DD</ProductID>
+  <ProductID></ProductID>
   <date>19/08/20</date>
   <license>Free to use, also for commercial games.</license>
   <description></description>
@@ -31,7 +31,7 @@
       <CopyToMask>9223372036854775807</CopyToMask>
     </Config>
     <Config name="AndroidSmartphone">
-      <CopyToMask>9223372036854775807</CopyToMask>
+      <CopyToMask>2097160</CopyToMask>
     </Config>
     <Config name="AndroidConsole">
       <CopyToMask>9223372036854775807</CopyToMask>
@@ -57,8 +57,8 @@
     <file>
       <filename>SttAndroidRumble.ext</filename>
       <origname>extensions\SttAndroidRumble.ext</origname>
-      <init></init>
-      <final></final>
+      <init>Init</init>
+      <final>Final</final>
       <kind>4</kind>
       <uncompress>0</uncompress>
       <ConfigOptions>
@@ -69,7 +69,7 @@
           <CopyToMask>9223372036854775807</CopyToMask>
         </Config>
         <Config name="AndroidSmartphone">
-          <CopyToMask>9223372036854775807</CopyToMask>
+          <CopyToMask>2097160</CopyToMask>
         </Config>
         <Config name="AndroidConsole">
           <CopyToMask>9223372036854775807</CopyToMask>
@@ -99,6 +99,24 @@
           <args>
             <arg>2</arg>
           </args>
+        </function>
+        <function>
+          <name>Init</name>
+          <externalName>Init</externalName>
+          <kind>11</kind>
+          <help></help>
+          <returnType>2</returnType>
+          <argCount>0</argCount>
+          <args/>
+        </function>
+        <function>
+          <name>Final</name>
+          <externalName>Final</externalName>
+          <kind>11</kind>
+          <help></help>
+          <returnType>2</returnType>
+          <argCount>-1</argCount>
+          <args/>
         </function>
       </functions>
       <constants/>

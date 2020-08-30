@@ -1,5 +1,5 @@
 // Must be called from within an objInput.
-var rumble_data = script_execute(argument0);
+var rumble_data = argument0;
 if(!is_array(rumble_data))
 {
     exit;
@@ -27,15 +27,14 @@ if(target_rumble_length > rumble_length)
     {
         var rstart = rumble_data[rumble_data_element, RUMBLE_START_TIME];
         var rend = rumble_data[rumble_data_element, RUMBLE_END_TIME];
-        var rleft = rumble_data[rumble_data_element, RUMBLE_LEFT];
-        var rright = rumble_data[rumble_data_element, RUMBLE_RIGHT];
+        var rforce = rumble_data[rumble_data_element, RUMBLE_FORCE];
         
         rumble_length = ds_queue_size(rumble_queue);
         for(var j = rstart; j <= rend; j++)
         {
             if (j >= rumble_length)
             {
-                ds_queue_enqueue(rumble_queue, rleft * 1000 + rright);
+                ds_queue_enqueue(rumble_queue, rforce);
             }
         }
     }

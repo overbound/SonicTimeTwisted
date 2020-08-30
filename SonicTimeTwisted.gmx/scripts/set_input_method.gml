@@ -13,6 +13,8 @@ switch(argument0)
             input_method_keyboard,
             input_method_dummy_script,
             input_method_dummy_script,
+            input_method_dummy_script,
+            input_method_dummy_script,
             argument1
         );
         break;
@@ -22,6 +24,8 @@ switch(argument0)
             input_method_dummy_script,
             input_method_dummy_script,
             input_method_dummy_script,
+            rumble_perform_android_smartphone,
+            input_method_dummy_script,
             argument1
         );
         break;
@@ -29,7 +33,9 @@ switch(argument0)
         set_input_method_detailed(
             input_method_init_physical,
             input_method_gamepad,
-            rumble_perform,
+            input_method_dummy_script,
+            rumble_contextual,
+            rumble_perform_windows_gamepad,
             input_method_dummy_script,
             argument1
         );

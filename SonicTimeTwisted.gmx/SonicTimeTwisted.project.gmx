@@ -1944,11 +1944,14 @@
         </scripts>
         <scripts name="Rumble">
           <scripts name="Control">
+            <scripts name="Rumble trigger scripts">
+              <script>scripts\rumble_configuration_active.gml</script>
+            </scripts>
+            <scripts name="Rumble manage scripts">
+              <script>scripts\rumble_haptics.gml</script>
+            </scripts>
             <script>scripts\rumble.gml</script>
-            <script>scripts\rumble_configuration_active.gml</script>
-            <script>scripts\rumble_configuration_inactive.gml</script>
             <script>scripts\rumble_enqueue.gml</script>
-            <script>scripts\rumble_perform.gml</script>
           </scripts>
           <scripts name="Effects">
             <script>scripts\rumble_short_weak.gml</script>
@@ -1968,6 +1971,11 @@
             <script>scripts\rumble_long_decreasing.gml</script>
             <script>scripts\rumble_verylong_strong.gml</script>
             <script>scripts\rumble_none.gml</script>
+          </scripts>
+          <scripts name="Hardware">
+            <script>scripts\rumble_perform_android_smartphone.gml</script>
+            <script>scripts\rumble_perform_windows_gamepad.gml</script>
+            <script>scripts\rumble_perform_null.gml</script>
           </scripts>
         </scripts>
         <scripts name="Saving">
@@ -3697,7 +3705,7 @@
       </rooms>
     </rooms>
   </rooms>
-  <constants number="112">
+  <constants number="111">
     <constant name="VERSION">"v1.1.0-dev"</constant>
     <constant name="GAMEPAD_POV_Y">7</constant>
     <constant name="GAMEPAD_POV_X">6</constant>
@@ -3779,8 +3787,7 @@
     <constant name="RUMBLE_EVENT_BREAKABLE_BLOCK">15</constant>
     <constant name="RUMBLE_START_TIME">0</constant>
     <constant name="RUMBLE_END_TIME">1</constant>
-    <constant name="RUMBLE_LEFT">2</constant>
-    <constant name="RUMBLE_RIGHT">3</constant>
+    <constant name="RUMBLE_FORCE">2</constant>
     <constant name="RUMBLE_FORCE_OVERRIDE">4</constant>
     <constant name="RUMBLE_EVENT_HURT_SHIELDS">16</constant>
     <constant name="RUMBLE_EVENT_HURT_RINGS">17</constant>

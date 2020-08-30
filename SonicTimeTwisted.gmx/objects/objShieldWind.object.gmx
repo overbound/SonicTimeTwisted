@@ -108,12 +108,7 @@ image_angle = angle_wrap(image_angle+4*(abs(cosine[image_angle])+0.1));
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Animate
-// increase index infinitely
-index += 0.25;
-// flicker
-image_alpha = !image_alpha;
-</string>
+            <string></string>
           </argument>
         </arguments>
       </action>
@@ -135,13 +130,22 @@ image_alpha = !image_alpha;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Render shield
+            <string>/// Animate &amp; Render shield
+// increase index
+index += 0.25;
+// flicker
+image_alpha = !image_alpha;
 // back wind
 draw_sprite_ext(sprite_index, 10 + (index mod 7), x, y, image_xscale, image_yscale, image_angle+45, image_blend, image_alpha);
 // surrounding wind
 draw_sprite_ext(sprite_index, index mod 3, x, y, image_xscale, image_yscale, 0, image_blend, 1-image_alpha);
 // front wind
 draw_sprite_ext(sprite_index, 3 + (index mod 7), x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
+
+if(index &gt;= 21)
+{
+    index = 0;
+}
 </string>
           </argument>
         </arguments>

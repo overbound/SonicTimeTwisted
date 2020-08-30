@@ -2,8 +2,8 @@
 if(!ds_queue_empty(rumble_queue))
 {
     var rumble_value = ds_queue_dequeue(rumble_queue);
-    var motor_speed = (rumble_value div 1000)/100;
-    gamepad_set_vibration(0, (rumble_value div 1000)/100, (rumble_value mod 1000)/100);
+    var motor_speed = rumble_value/100;
+    gamepad_set_vibration(0, motor_speed, motor_speed);
 }
 else
 {

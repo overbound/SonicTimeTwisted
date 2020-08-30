@@ -6,6 +6,15 @@ switch(argument0)
         break;
     case 0:
         // rumble
+         if(objProgram.inputManager.rumble_configuration_script == rumble_configuration_active)
+         {
+             objProgram.inputManager.rumble_configuration_script = input_method_dummy_script;
+         }
+         else
+         {
+             objProgram.inputManager.rumble_configuration_script = rumble_configuration_active;
+         }
+         break;
     case 1:
         // general mapping - prepare a map for a backup, then engage!
         if(ds_exists(temp_map, ds_type_map))
@@ -127,7 +136,7 @@ switch(argument0)
          {
              if(objProgram.inputManager.rumble_configuration_script == rumble_configuration_active)
              {
-                 objProgram.inputManager.rumble_configuration_script = rumble_configuration_inactive;
+                 objProgram.inputManager.rumble_configuration_script = input_method_dummy_script;
              }
              else
              {
