@@ -2177,6 +2177,10 @@
         <script>scripts\parallax_create.gml</script>
         <script>scripts\parallax_create_sprite.gml</script>
       </scripts>
+      <scripts name="Shaders">
+        <script>scripts\timetravel_shader_init.gml</script>
+        <script>scripts\timetravel_shader_draw.gml</script>
+      </scripts>
       <scripts name="Transitions">
         <script>scripts\transition_to.gml</script>
       </scripts>
@@ -3040,7 +3044,6 @@
         <object>objects\objTitleDynamo</object>
         <object>objects\objTitleEffects</object>
         <object>objects\objTitleLighting</object>
-        <object>objects\objTitleLightingNoShader</object>
         <object>objects\objTitleRing</object>
         <object>objects\objTitleRingOverlay</object>
         <object>objects\objTitlescreenPlane</object>
@@ -3061,7 +3064,6 @@
         <object>objects\objSSToLevel</object>
         <object>objects\objSSZEndTransition</object>
         <object>objects\objTimeTravel</object>
-        <object>objects\objTimeTravelNoShader</object>
         <object>objects\objTitlecard</object>
         <object>objects\objTitlecardDisolve</object>
         <object>objects\objTitleCardFFZ</object>
@@ -3164,7 +3166,6 @@
           <object>objects\objTailsIntroPast</object>
           <object>objects\objTailsLight</object>
           <object>objects\objTimeTravelVortex</object>
-          <object>objects\objTimeTravelVortexNoShader</object>
         </objects>
         <objects name="Outro">
           <object>objects\objAmyEnding</object>
@@ -3704,7 +3705,7 @@
       </rooms>
     </rooms>
   </rooms>
-  <constants number="111">
+  <constants number="110">
     <constant name="VERSION">"v1.1.0-dev"</constant>
     <constant name="GAMEPAD_POV_Y">7</constant>
     <constant name="GAMEPAD_POV_X">6</constant>
@@ -3810,7 +3811,6 @@
     <constant name="DEVICE_OS_UNKNOWN">512</constant>
     <constant name="DEVICE_INFO">DEVICE_TYPE_UNKNOWN | DEVICE_OS_UNKNOWN</constant>
     <constant name="DEVICE_BACK_BUTTON">vk_escape</constant>
-    <constant name="DEVICE_TT_SHADER_SUPPORTED">1</constant>
     <constant name="INPUT_KEYBOARD">0</constant>
     <constant name="INPUT_TOUCHSCREEN">1</constant>
     <constant name="INPUT_GAMEPAD">2</constant>
