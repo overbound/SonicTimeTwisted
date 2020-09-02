@@ -1944,11 +1944,9 @@
         </scripts>
         <scripts name="Rumble">
           <scripts name="Control">
-            <scripts name="Rumble trigger scripts">
-              <script>scripts\rumble_configuration_active.gml</script>
-            </scripts>
             <script>scripts\rumble.gml</script>
             <script>scripts\rumble_enqueue.gml</script>
+            <script>scripts\rumble_manage.gml</script>
           </scripts>
           <scripts name="Effects">
             <script>scripts\rumble_short_weak.gml</script>

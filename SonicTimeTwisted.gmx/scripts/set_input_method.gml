@@ -34,7 +34,7 @@ switch(argument0)
             input_method_init_physical,
             input_method_gamepad,
             input_method_dummy_script,
-            rumble_contextual,
+            rumble_manage,
             rumble_perform_windows_gamepad,
             input_method_dummy_script,
             argument1

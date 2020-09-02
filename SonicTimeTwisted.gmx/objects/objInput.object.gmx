@@ -58,7 +58,7 @@ fix_bad_gamepad_axis();
 
 // rumble/haptics
 rumble_queue = ds_queue_create();
-rumble_configuration_script = rumble_configuration_active;
+rumble_configuration_script = input_method_dummy_script;
 
 // input devices management
 input_init_script = input_method_dummy_script;

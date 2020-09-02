@@ -6,13 +6,13 @@ switch(argument0)
         break;
     case 0:
         // rumble
-         if(objProgram.inputManager.rumble_configuration_script == rumble_configuration_active)
+         if(objProgram.inputManager.rumble_configuration_script == rumble_manage)
          {
              objProgram.inputManager.rumble_configuration_script = input_method_dummy_script;
          }
          else
          {
-             objProgram.inputManager.rumble_configuration_script = rumble_configuration_active;
+             objProgram.inputManager.rumble_configuration_script = rumble_manage;
          }
          break;
     case 1:
@@ -134,13 +134,13 @@ switch(argument0)
          // press left or right
          if(items[cursor, 1] == 0)
          {
-             if(objProgram.inputManager.rumble_configuration_script == rumble_configuration_active)
+             if(objProgram.inputManager.rumble_configuration_script == rumble_manage)
              {
                  objProgram.inputManager.rumble_configuration_script = input_method_dummy_script;
              }
              else
              {
-                 objProgram.inputManager.rumble_configuration_script = rumble_configuration_active;
+                 objProgram.inputManager.rumble_configuration_script = rumble_manage;
              }
          }
          break;
@@ -227,7 +227,7 @@ for(var i=0; i < objProgram.inputManager.axis_count; i++)
     }
 }
 
-if(objProgram.inputManager.rumble_configuration_script == rumble_configuration_active)
+if(objProgram.inputManager.rumble_configuration_script == rumble_manage)
 {
     menu_fn_refresh_displayed_value(0, "< "+tr("On")+" >");
 }
