@@ -10,7 +10,7 @@ switch(argument0)
         objScreen.score_tally_mode = (objScreen.score_tally_mode + 1) mod 3;
         break;
     case 2:
-        objMenu.flashing_reduced = !objMenu.flashing_reduced;
+        objScreen.flashing_reduced = !objScreen.flashing_reduced;
         break;
     case 3:
     case -1:
@@ -34,7 +34,7 @@ switch(argument0)
                 }
                 break;
             case 2:
-                objMenu.flashing_reduced = !objMenu.flashing_reduced;
+                objScreen.flashing_reduced = !objScreen.flashing_reduced;
                 break;
         }
         break;
@@ -52,7 +52,7 @@ switch(argument0)
                 objScreen.score_tally_mode = (objScreen.score_tally_mode + 1) mod 3;
                 break;
             case 2:
-                objMenu.flashing_reduced = !objMenu.flashing_reduced;
+                objScreen.flashing_reduced = !objScreen.flashing_reduced;
                 break;
         }
         break;
