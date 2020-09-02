@@ -4,10 +4,10 @@ menu_fn_add_option(tr("Reposition buttons"), 0);
 menu_fn_add_option(tr("Button size"), 1, 1, "");
 menu_fn_add_option(tr("D-Pad mode"), 2, 1, "");
 menu_fn_add_option(tr("Opacity"), 3, 1, "");
-menu_fn_add_option(tr("Vibrations"), 4, 1, "");
-menu_fn_add_option(tr("Special stage controls"), 5, 1, "");
-menu_fn_add_option(tr("Final zone controls"), 6, 1, "");
-menu_fn_add_option(tr("Configure gyroscope"), 7);
+menu_fn_add_option(tr("Special stage controls"), 4, 1, "");
+menu_fn_add_option(tr("Final zone controls"), 5, 1, "");
+menu_fn_add_option(tr("Configure gyroscope"), 6);
+menu_fn_add_option(tr("Configure vibrations"), 7);
 menu_fn_add_option(tr("< Back"), 8);
 
 button_width = 360;

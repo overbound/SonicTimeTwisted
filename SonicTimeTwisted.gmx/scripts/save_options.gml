@@ -26,6 +26,9 @@ if(instance_exists(objProgram.inputManager))
     ini_write_real('smartphone', 'gyro_analog_end_x', objProgram.inputManager.gyro_analog_end_x);
     ini_write_real('smartphone', 'gg_mode', objProgram.inputManager.gg_mode);
     ini_write_real('smartphone', 'vibration_type', objProgram.inputManager.vibration_type);
+    ini_write_real('smartphone', 'haptics_strength', objProgram.inputManager.haptics_strength);
+    ini_write_real('smartphone', 'haptics_duration', objProgram.inputManager.haptics_duration);
+    ini_write_real('smartphone', 'rumble_strength', objProgram.inputManager.rumble_strength);
 }
 ini_close();
 reinit_input_method();

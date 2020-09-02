@@ -142,9 +142,9 @@ gyro_counter = 0;
 // rumble type for smartphones
 // 0 - none, 1 - haptics,  2 - contextual, 3 - both
 vibration_type = 0;
-/**
- * touchscreen-specific variables end
- */
+haptics_strength = 50;
+haptics_duration = 5;
+rumble_strength = 1;
 </string>
           </argument>
         </arguments>

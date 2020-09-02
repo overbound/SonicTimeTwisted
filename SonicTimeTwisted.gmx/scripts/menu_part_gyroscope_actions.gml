@@ -5,13 +5,13 @@ switch(argument0)
         menu_fn_set_scripts(menu_part_gyroscope_items, 0);
         break;
     case 1:
-        menu_fn_open_slider_window(tr('Trigger angle'), round(radtodeg(objProgram.inputManager.gyro_switch_on_angle_x)), 5, 90);
+        menu_fn_open_slider_window(1, tr('Trigger angle'), round(radtodeg(objProgram.inputManager.gyro_switch_on_angle_x)), 5, 90);
         break;
     case 2:
-        menu_fn_open_slider_window(tr('Start angle'), round(radtodeg(objProgram.inputManager.gyro_analog_start_x)), 5, round(radtodeg(objProgram.inputManager.gyro_analog_end_x)) - 1);
+        menu_fn_open_slider_window(2, tr('Start angle'), round(radtodeg(objProgram.inputManager.gyro_analog_start_x)), 5, round(radtodeg(objProgram.inputManager.gyro_analog_end_x)) - 1);
         break;
     case 3:
-        menu_fn_open_slider_window(tr('End angle'), round(radtodeg(objProgram.inputManager.gyro_analog_end_x)), round(radtodeg(objProgram.inputManager.gyro_analog_start_x)) + 1, 90);
+        menu_fn_open_slider_window(3, tr('End angle'), round(radtodeg(objProgram.inputManager.gyro_analog_end_x)), round(radtodeg(objProgram.inputManager.gyro_analog_start_x)) + 1, 90);
         break;
     case 4:
     case -1:

@@ -37,6 +37,9 @@ if (file_exists(file)) {
         gyro_analog_end_x = ini_read_real('smartphone','gyro_analog_end_x',0.6);
         gg_mode = ini_read_real('smartphone','gg_mode',1);
         vibration_type = ini_read_real('smartphone','vibration_type',0);
+        haptics_strength = round(ini_read_real('smartphone', 'haptics_strength', 50));
+        haptics_duration = round(ini_read_real('smartphone', 'haptics_duration', 5));
+        rumble_strength = ini_read_real('smartphone', 'rumble_strength', 1);
     }
     
     return true;

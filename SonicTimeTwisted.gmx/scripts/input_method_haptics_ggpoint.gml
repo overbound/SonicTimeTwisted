@@ -5,7 +5,7 @@ if(mouse_check_button_pressed(mb_left))
     rgrid[0, RUMBLE_FORCE_OVERRIDE] = 0;
     
     rgrid[0, RUMBLE_START_TIME] = 0;
-    rgrid[0, RUMBLE_END_TIME] = 5;
-    rgrid[0, RUMBLE_FORCE] = 50;
+    rgrid[0, RUMBLE_END_TIME] = haptics_duration;
+    rgrid[0, RUMBLE_FORCE] = haptics_strength;
     rumble_enqueue(rgrid);
 }

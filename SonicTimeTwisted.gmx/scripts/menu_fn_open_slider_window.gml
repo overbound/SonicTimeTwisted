@@ -2,11 +2,11 @@
 // argument1 - current value
 // argument2 - minimum value
 // argument3 - maximum value
-
-confirmation_text = argument0;
-confirmation_cursor = argument1;
-confirmation_no_action = argument2; // used as minimum instead
-confirmation_yes_action = argument3; // used as maximum instead
+confirmation_index = argument0;
+confirmation_text = argument1;
+confirmation_cursor = argument2;
+confirmation_no_action = argument3; // used as minimum instead
+confirmation_yes_action = argument4; // used as maximum instead
 
 var view_width = view_wview[view_current];
 var view_height = view_hview[view_current];

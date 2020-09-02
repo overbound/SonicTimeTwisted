@@ -10,19 +10,24 @@ switch(argument0)
         objProgram.inputManager.dpadmode = (objProgram.inputManager.dpadmode + 1) mod 2;
         break;
     case 3:
-        menu_fn_open_slider_window(tr('Opacity'), round(objProgram.inputManager.vkalpha*100), 0, 100);
+        menu_fn_open_slider_window(3, tr('Opacity'), round(objProgram.inputManager.vkalpha*100), 0, 100);
         break;
+        /*
     case 4:
         objProgram.inputManager.vibration_type = (objProgram.inputManager.vibration_type + 1) mod 4;
         break;
-    case 5:
+        */
+    case 4:
         objProgram.inputManager.gyroinss = (objProgram.inputManager.gyroinss + 1) mod 2;
         break;
-    case 6:
+    case 5:
         objProgram.inputManager.gg_mode = (objProgram.inputManager.gg_mode + 1) mod 2;
         break;
-    case 7:
+    case 6:
         menu_fn_goto_submenu(menu_part_gyroscope_items);
+        break;
+    case 7:
+        menu_fn_goto_submenu(menu_part_touchscreen_vibrations_items);
         break;
     case 8:
     case -1:
@@ -53,8 +58,9 @@ switch(argument0)
                 }
                 break;
             case 3:
-                menu_fn_open_slider_window(tr('Opacity'), max(0, round(objProgram.inputManager.vkalpha*100) - 1), 0, 100);
+                menu_fn_open_slider_window(3, tr('Opacity'), max(0, round(objProgram.inputManager.vkalpha*100) - 1), 0, 100);
                 break;
+                /*
             case 4:
                 if(objProgram.inputManager.vibration_type)
                 {
@@ -65,7 +71,8 @@ switch(argument0)
                     objProgram.inputManager.vibration_type = 3;
                 }
                 break;
-            case 5:
+                */
+            case 4:
                 if(objProgram.inputManager.gyroinss)
                 {
                     objProgram.inputManager.gyroinss--;
@@ -75,7 +82,7 @@ switch(argument0)
                     objProgram.inputManager.gyroinss = 1;
                 }
                 break;
-            case 6:
+            case 5:
                 if(objProgram.inputManager.gg_mode)
                 {
                     objProgram.inputManager.gg_mode--;
@@ -98,15 +105,17 @@ switch(argument0)
                 objProgram.inputManager.dpadmode = (objProgram.inputManager.dpadmode + 1) mod 2;
                 break;
             case 3:
-                menu_fn_open_slider_window(tr('Opacity'), min(100, round(objProgram.inputManager.vkalpha*100) + 1), 0, 100);
+                menu_fn_open_slider_window(3, tr('Opacity'), min(100, round(objProgram.inputManager.vkalpha*100) + 1), 0, 100);
                 break;
+                /*
             case 4:
                 objProgram.inputManager.vibration_type = (objProgram.inputManager.vibration_type + 1) mod 4;
                 break;
-            case 5:
+                */
+            case 4:
                 objProgram.inputManager.gyroinss = (objProgram.inputManager.gyroinss + 1) mod 2;
                 break;
-            case 6:
+            case 5:
                 objProgram.inputManager.gg_mode = (objProgram.inputManager.gg_mode + 1) mod 2;
                 break;
         }

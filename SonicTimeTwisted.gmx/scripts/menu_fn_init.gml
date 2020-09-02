@@ -62,6 +62,7 @@ temporary_variable = -1;
 // used to remap keys
 temp_map = ds_map_create();
 
+confirmation_index = 0;
 confirmation_text = '';
 confirmation_yes_label = '';
 confirmation_no_label = '';

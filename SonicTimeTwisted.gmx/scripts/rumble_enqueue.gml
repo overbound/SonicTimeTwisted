@@ -27,7 +27,7 @@ if(target_rumble_length > rumble_length)
     {
         var rstart = rumble_data[rumble_data_element, RUMBLE_START_TIME];
         var rend = rumble_data[rumble_data_element, RUMBLE_END_TIME];
-        var rforce = rumble_data[rumble_data_element, RUMBLE_FORCE];
+        var rforce = max(0, min(100, rumble_strength * rumble_data[rumble_data_element, RUMBLE_FORCE]));
         
         rumble_length = ds_queue_size(rumble_queue);
         for(var j = rstart; j <= rend; j++)

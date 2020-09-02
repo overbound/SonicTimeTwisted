@@ -2087,6 +2087,9 @@
               <script>scripts\menu_part_gyroscope_actions.gml</script>
               <script>scripts\menu_part_gyroscope_draw.gml</script>
               <script>scripts\menu_part_gyroscope_step.gml</script>
+              <script>scripts\menu_part_touchscreen_vibrations_items.gml</script>
+              <script>scripts\menu_part_touchscreen_vibrations_actions.gml</script>
+              <script>scripts\menu_part_touchscreen_vibrations_step.gml</script>
             </scripts>
           </scripts>
           <scripts name="special_stage">
