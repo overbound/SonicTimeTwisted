@@ -3,29 +3,8 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <datafiles number="43" name="datafiles">
-    <datafile>
-      <name>GMXInput.dll</name>
-      <exists>-1</exists>
-      <size>159744</size>
-      <exportAction>2</exportAction>
-      <exportDir></exportDir>
-      <overwrite>0</overwrite>
-      <freeData>-1</freeData>
-      <removeEnd>0</removeEnd>
-      <store>0</store>
-      <ConfigOptions>
-        <Config name="Default">
-          <CopyToMask>9223372036854775807</CopyToMask>
-        </Config>
-      </ConfigOptions>
-      <filename>GMXInput.dll</filename>
-    </datafile>
-  </datafiles>
-  <NewExtensions>
-    <extension index="0">extensions\GetFocus</extension>
-    <extension index="1">extensions\SFML Input</extension>
-  </NewExtensions>
+  <datafiles number="43" name="datafiles"/>
+  <NewExtensions/>
   <sounds name="sound">
     <sounds name="BGM">
       <sounds name="Attraction Attack">
@@ -1876,9 +1855,6 @@
         <scripts name="Loading">
           <script>scripts\input_load.gml</script>
           <script>scripts\load_gamepad_support.gml</script>
-        </scripts>
-        <scripts name="Other">
-          <script>scripts\fix_bad_gamepad_axis.gml</script>
         </scripts>
         <scripts name="Saving">
           <script>scripts\save_control_map_gamepad.gml</script>

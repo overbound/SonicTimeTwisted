@@ -47,7 +47,6 @@ state_release = 0;
 // axes
 x_axis = 0;
 y_axis = 0;
-badAxis = 0;
 pad = -1;
 button_count = 0;
 axis_count = 0;
@@ -57,7 +56,6 @@ stream = -1;
 stream_size = $FF;
 
 input_load();
-fix_bad_gamepad_axis();
 
 gamepad_update_enabled = true;
 load_gamepad_support()
@@ -137,11 +135,6 @@ state = 0;
 state_press = 0;
 state_release = 0;
 
-/*
-if objScreen.image_index mod 8 == 0
-    gamepad_update();*/
-
-
 // keys
 for (i = 0; i &lt; key_count; i++)
     if (keyboard_check(key[i])) state |= key_control[i];
@@ -150,14 +143,10 @@ if(gamepad_update_enabled) {
     // buttons
     for (i = 0; i &lt; button_count; i++)
         if (gamepad_button_check(pad, button[i])) state |= button_control[i];
-        //if (gamepad_button_check(button_gamepad[i], button[i])) state |= button_control[i];
-        // if (gamepad_button(pad, button[i])) state |= button_control[i];
     
     // axes
     for (i = 0; i &lt; axis_count; i++)
         if (gamepad_axis_value(pad, axis[i]) * axis_direction[i] &gt; axis_deadzone[i]) state |= axis_control[i];
-        //if (gamepad_axis_value(axis_gamepad[i], axis[i]) * axis_direction[i] &gt; axis_deadzone[i]) state |= axis_control[i];
-        // if (gamepad_axis(pad, axis[i]) * axis_direction[i] &gt; axis_deadzone[i]) state |= axis_control[i];
 }
     
 // axes
@@ -199,13 +188,6 @@ if pressingGamepad != -1 {
         pressingGamepad = -1;
     }
 }
-
-/*
-if pressingGamepad != -1 {
-    if !gamepad_button(0,pressingGamepad) &amp;&amp; alarm[0] == -1  {
-        pressingGamepad = -1;
-    }
-}*/
 </string>
           </argument>
         </arguments>
