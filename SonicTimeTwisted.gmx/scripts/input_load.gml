@@ -5,7 +5,7 @@ axis_count = 0;
 var file = 'settings.ini';
 if (file_exists(file)) {
     ini_open(file);
-    pad = round(ini_read_real('gamepad_controls','padnumber', 0));
+    pad = round(ini_read_real('gamepad_controls','padnumber', pad));
     
     // keyboard
     input_bind_key(round(ini_read_real('keyboard_controls','up',vk_up)), cUP);
@@ -18,34 +18,41 @@ if (file_exists(file)) {
     input_bind_key(round(ini_read_real('keyboard_controls', 'start', vk_enter)), cSTART);
     
     // gamepad inputs
-    input_bind_button(pad, round(ini_read_real('gamepad_controls','a',0)), cA);
-    input_bind_button(pad, round(ini_read_real('gamepad_controls','b',1)), cB);
-    input_bind_button(pad, round(ini_read_real('gamepad_controls','c',2)), cC);
-    input_bind_button(pad, round(ini_read_real('gamepad_controls','start',7)), cSTART);
+    input_bind_button(pad, round(ini_read_real('gamepad_controls','a', gp_face1)), cA);
+    input_bind_button(pad, round(ini_read_real('gamepad_controls','b', gp_face2)), cB);
+    input_bind_button(pad, round(ini_read_real('gamepad_controls','c', gp_face3)), cC);
+    input_bind_button(pad, round(ini_read_real('gamepad_controls','start', gp_start)), cSTART);
    
-    if (string_pos('+',ini_read_string('gamepad_controls','up',6)) or string_pos('-',ini_read_string('gamepad_controls','up',6))) {
-        input_bind_axis(pad, abs(round(real(ini_read_string('gamepad_controls','up',6)))),1*sign(real(ini_read_string('gamepad_controls','up',6))),.3, cUP);
+    var _up, _down, _left, _right;
+    _up = ini_read_string('gamepad_controls', 'up', string(-gp_axislv));
+    _down = ini_read_string('gamepad_controls', 'down', '+' + string(gp_axislv));
+    _left = ini_read_string('gamepad_controls', 'left', string(-gp_axislh));
+    _right = ini_read_string('gamepad_controls', 'right', '+' + string(gp_axislh));
+    
+    if (string_pos('+',_up) or string_pos('-',_up)) {
+        input_bind_axis(pad, abs(round(real(_up))), 1*sign(real(_up)), .3, cUP);
     } else {
-        input_bind_button(pad, round(real(ini_read_string('gamepad_controls','up',6))), cUP);
+        input_bind_button(pad, round(real(_up)), cUP);
     }
     
-    if (string_pos('+',ini_read_string('gamepad_controls','down',-6)) or string_pos('-',ini_read_string('gamepad_controls','down',-6))) {
-        input_bind_axis(pad, abs(round(real(ini_read_string('gamepad_controls','down',-6)))),1*sign(real(ini_read_string('gamepad_controls','down',-6))),.3,  cDOWN);
+    if (string_pos('+',_down) or string_pos('-',_down)) {
+        input_bind_axis(pad, abs(round(real(_down))), 1*sign(real(_down)), .3, cDOWN);
     } else {
-        input_bind_button(pad, round(real(ini_read_string('gamepad_controls', 'down', -6))), cDOWN);
+        input_bind_button(pad, round(real(_down)), cDOWN);
     }
     
-    if (string_pos('+',ini_read_string('gamepad_controls','left',-7)) or string_pos('-',ini_read_string('gamepad_controls','left',-7))) {
-        input_bind_axis(pad, abs(round(real(ini_read_string('gamepad_controls','left',-7)))),1*sign(real(ini_read_string('gamepad_controls','left',-7))),.3,  cLEFT);
+    if (string_pos('+',_left) or string_pos('-',_left)) {
+        input_bind_axis(pad, abs(round(real(_left))), 1*sign(real(_left)), .3, cLEFT);
     } else {
-        input_bind_button(pad, round(real(ini_read_string('gamepad_controls','left',-7))), cLEFT);
+        input_bind_button(pad, round(real(_left)), cLEFT);
     }
     
-    if (string_pos('+',ini_read_string('gamepad_controls','right',7)) or string_pos('-',ini_read_string('gamepad_controls','right',7))) {
-        input_bind_axis(pad, abs(round(real(ini_read_string('gamepad_controls','right',7)))),1*sign(real(ini_read_string('gamepad_controls','right',7))),.3,  cRIGHT);
+    if (string_pos('+',_right) or string_pos('-',_right)) {
+        input_bind_axis(pad, abs(round(real(_right))), 1*sign(real(_right)), .3, cRIGHT);
     } else {
-        input_bind_button(pad, round(real(ini_read_string('gamepad_controls','right',7))), cRIGHT);
+        input_bind_button(pad, round(real(_right)), cRIGHT);
     }
+    
     ini_close();
     
 } else {
@@ -61,6 +68,16 @@ if (file_exists(file)) {
     input_bind_key(ord('A'), cA);
     input_bind_key(ord('S'), cB);
     input_bind_key(ord('D'), cC);
+    
+    input_bind_button(pad, gp_face1, cA);
+    input_bind_button(pad, gp_face2, cB);
+    input_bind_button(pad, gp_face3, cC);
+    input_bind_button(pad, gp_start, cSTART);
+    
+    input_bind_axis(pad, gp_axislv, -1, .3, cUP);
+    input_bind_axis(pad, gp_axislv,  1, .3, cDOWN);
+    input_bind_axis(pad, gp_axislh, -1, .3, cLEFT);
+    input_bind_axis(pad, gp_axislh,  1, .3, cRIGHT);
     
     input_bind_key(vk_enter, cSTART);
 }

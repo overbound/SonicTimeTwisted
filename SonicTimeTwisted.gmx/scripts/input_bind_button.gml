@@ -1,4 +1,4 @@
-// input_bind_button(gamepad, button, control)
+///input_bind_button(gamepad, button, control)
 button_gamepad[button_count] = argument0;
 button[button_count] = argument1;
 button_control[button_count] = argument2;

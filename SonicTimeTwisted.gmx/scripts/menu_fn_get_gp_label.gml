@@ -52,6 +52,69 @@ if(fChar == "-" || fChar == "+")
 else
 {
     var code = round(real(argument0));   
+    var descr = objProgram.inputManager.paddesc;
+    if (descr == "sony dualshock 4")
+    {
+        switch(code)
+        {             
+            case gp_face1:
+                 return "X";
+                 break;
+            case gp_face2:
+                 return "O";
+                 break;
+            case gp_face3:
+                 return "SQUARE";
+                 break;
+            case gp_face4:
+                 return "TRIANGLE";
+                 break;
+            case gp_shoulderl:
+                 return "L1";
+                 break;
+            case gp_shoulderlb:
+                 return "L2";
+                 break;
+            case gp_shoulderr:
+                 return "R1";
+                 break;
+            case gp_shoulderrb:
+                 return "R2";
+                 break;
+            case gp_select:
+                 return "TOUCHPAD";
+                 // this one is weird. on PS4 "Select" is a touchpad press. on PC it's inpressable.
+                 // in GMS2 you can modify gamecontrollerdb directly and change the mapping to an actual SHARE button.
+                 // but this is GM:S 1.4 so nope.
+                 break;
+            case gp_start:
+                 return "OPTIONS";
+                 break;
+            case gp_stickl:
+                 return "L3";
+                 break;
+            case gp_stickr:
+                 return "R3";
+                 break;
+            case gp_padu:
+                 return "DPAD UP";
+                 break;
+            case gp_padd:
+                 return "DPAD DOWN";
+                 break;
+            case gp_padl:
+                 return "DPAD LEFT";
+                 break;
+            case gp_padr:
+                 return "DPAD RIGHT";
+                 break;
+            default:
+                 show_debug_message(string(argument0));
+                 return "UNKNOWN";
+                 break;
+             }
+    }
+    
     switch(code)
     {             
         case gp_face1:
