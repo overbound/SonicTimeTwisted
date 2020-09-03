@@ -1,6 +1,6 @@
 with objProgram.inputManager {
     //if pressingGamepad != -1 return -1;
-        for(var i = 0; i < 4; i++) {
+        for(var i = 0; i < padcount; i++) {
             for (var axis = gp_axislh; axis <= gp_axisrv; axis++) {
                 if array_length_1d(badAxis) > axis {
                     if badAxis[axis]

@@ -10,15 +10,46 @@ if(state == 13 || state == 14)
     else
     {
         // confirmation_cursor - used to store the currently mapped key
-        var axis = input_any_gamepad_axis();
-        if(axis != "")
+        var _axis = input_any_gamepad_axis();
+        if(_axis != "")
         {
-            if(menu_fn_is_axis_mappable(axis, confirmation_cursor))
+            if(menu_fn_is_axis_mappable(_axis, confirmation_cursor))
             {
                 var key_to_map = menu_fn_get_keymap_getkey(confirmation_cursor);
                 if(is_string(key_to_map))
                 {
-                    save_control_map_gamepad(key_to_map, axis);
+                    save_control_map_gamepad(key_to_map, _axis);
+                    
+                    with(objProgram.inputManager)
+                    {
+                        var found = false;
+                        for (var i = 0; i < axis_count; i++)
+                        {
+                            if (other.confirmation_cursor == axis_control[i])
+                            {
+                                axis[i] = abs(real(_axis));
+                                axis_direction[i] = sign(real(_axis));
+                                found = true;
+                                show_debug_message("axis rebind ok!");
+                                break;
+                            }
+                        }
+                        
+                        if (!found)
+                        {
+                            for (var i = 0; i < button_count; i++)
+                            {
+                                if (other.confirmation_cursor == button_control[i])
+                                {
+                                    button[i] = -1; // this button is now invalid.
+                                    input_bind_axis(pad, abs(real(_axis)), sign(real(_axis)), .3, other.confirmation_cursor);
+                                    button_control[i] = -1;
+                                    show_debug_message("was a button, now an axis!");
+                                }
+                            }
+                        }
+                    }
+                    
                     state = 15;
                 }
             }
@@ -33,10 +64,10 @@ if(state == 13 || state == 14)
         }
         else
         {
-            var button = input_any_gamepad_button();
-            if(button != -1)
+            var _button = input_any_gamepad_button();
+            if(_button != -1)
             {
-                if(menu_fn_is_button_mappable(button, confirmation_cursor))
+                if(menu_fn_is_button_mappable(_button, confirmation_cursor))
                 {
                     var key_to_map = false;
                     switch(confirmation_cursor)
@@ -66,9 +97,40 @@ if(state == 13 || state == 14)
                             key_to_map = "start";
                             break;   
                     }
+                    
                     if(is_string(key_to_map))
                     {
-                        save_control_map_gamepad(key_to_map, button);
+                        save_control_map_gamepad(key_to_map, _button);
+                        
+                        with(objProgram.inputManager)
+                        {
+                            var found = false;
+                            for (var i = 0; i < button_count; i++)
+                            {
+                                if (other.confirmation_cursor == button_control[i])
+                                {
+                                    button[i] = _button;
+                                    found = true;
+                                    show_debug_message("rebind ok!");
+                                    break;
+                                }
+                            }
+                            
+                            if (!found) // user wants to rebind axis to a button.
+                            {
+                                for (var i = 0; i < axis_count; i++)
+                                {
+                                    if (other.confirmation_cursor == axis_control[i])
+                                    {
+                                        axis[i] = -1; // disable this axis, from now on it is invalid.
+                                        input_bind_button(pad, _button, axis_control[i]); // rebind axis to a button.
+                                        show_debug_message("was an axis, now a button!");
+                                        axis_control[i] = -1;
+                                    }
+                                }
+                            }
+                        }
+                        
                         state = 15;
                     }
                 }

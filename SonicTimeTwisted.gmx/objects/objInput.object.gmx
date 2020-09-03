@@ -44,7 +44,10 @@ state_release = 0;
 x_axis = 0;
 y_axis = 0;
 badAxis = 0;
-pad = -1;
+pad = 0;
+paddesc = "unknown";
+padcount = gamepad_get_device_count();
+for (i = padcount - 1; i &gt; -1; i--) padarray[i] = false;
 button_count = 0;
 axis_count = 0;
 // input stream
@@ -299,15 +302,31 @@ previous_state = state;
 switch (async_load[?"event_type"]) {
 case "gamepad discovered":
     var index = async_load[?"pad_index"];
-    if (pad == -1) {
-        pad = index;
-    }
+    pad = index;
+    paddesc = string_lower(gamepad_get_description(pad));
+    padarray[pad] = true;
+    show_debug_message('Slot: ' + string(pad));
+    show_debug_message('Model: ' + gamepad_get_description(pad));
+    
     break;
 case "gamepad lost":
     var index = async_load[?"pad_index"];
+    padarray[pad] = false;
+    
+    show_debug_message('Lost pad at slot ' + string(pad));
+    
     if (pad == index) {
-        pad = -1;
+        for (var i = 0; i &lt; padcount; i++) {
+            if (padarray[i]) {
+                pad = i;
+                paddesc = string_lower(gamepad_get_description(pad));
+                break;
+            }
+        }
     }
+    
+    pad = 0; // set slot to 0, if we didn't break out of the loop.
+    
     break;
 }
 </string>
