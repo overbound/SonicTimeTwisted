@@ -1,22 +1,25 @@
+var result = "";
 with objProgram.inputManager {
-    //if pressingGamepad != -1 return -1;
-        for(var i = 0; i < padcount; i++) {
-            for (var axis = gp_axislh; axis <= gp_axisrv; axis++) {
-                if array_length_1d(badAxis) > axis {
-                    if badAxis[axis]
-                        continue;
+    var devices = gamepad_get_device_count();
+    var value;
+    for (var device = 0; device < devices; ++device) {
+        for (var axis = gp_axislh; axis <= gp_axisrv; ++axis) {
+            value = gamepad_axis_value(device, axis);
+            if (abs(value) > 0.5) {
+                pressingGamepad = axis;
+                if (sign(value) == -1) {
+                    result = "-" + string(axis);
+                } else {
+                    result = "+" + string(axis);
                 }
-            
-                 if abs(gamepad_axis_value(i, axis)) > .5 {
-                    var something = string(axis) + string(sign(gamepad_axis_value(i, axis)));
-                    pressingGamepad = axis;
-                    if sign(gamepad_axis_value(i, axis)) == -1 {
-                        return "-"+string(axis);
-                    } else {
-                        return "+"+string(axis);
-                    }
-                }
+                break;
             }
         }
-        return "";
+        if (result != "") {
+            break;
+        }
+    }
 }
+
+return result;
+

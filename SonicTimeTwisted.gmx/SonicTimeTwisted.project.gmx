@@ -1939,9 +1939,6 @@
         <scripts name="Loading">
           <script>scripts\input_load.gml</script>
         </scripts>
-        <scripts name="Other">
-          <script>scripts\fix_bad_gamepad_axis.gml</script>
-        </scripts>
         <scripts name="Rumble">
           <scripts name="Control">
             <script>scripts\rumble.gml</script>

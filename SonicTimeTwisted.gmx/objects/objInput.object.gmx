@@ -43,7 +43,6 @@ state_release = 0;
 // axes
 x_axis = 0;
 y_axis = 0;
-badAxis = 0;
 pad = 0;
 paddesc = "unknown";
 padcount = gamepad_get_device_count();
@@ -57,7 +56,6 @@ stream_size = $FF;
 is_touchscreen = false;
 is_fallback_touchscreen = false;
 input_load();
-fix_bad_gamepad_axis();
 
 // rumble/haptics
 rumble_queue = ds_queue_create();
