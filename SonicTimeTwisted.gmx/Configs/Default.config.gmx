@@ -60,7 +60,7 @@
     <option_android_licensing_key></option_android_licensing_key>
     <option_android_lint>0</option_android_lint>
     <option_android_major_version>1</option_android_major_version>
-    <option_android_min_sdk_version>9</option_android_min_sdk_version>
+    <option_android_min_sdk_version>16</option_android_min_sdk_version>
     <option_android_minor_version>0</option_android_minor_version>
     <option_android_mmedia_ads>0</option_android_mmedia_ads>
     <option_android_mobage>0</option_android_mobage>
@@ -794,7 +794,7 @@
     <option_winUAP_wide_logo>Configs\Default\WindowsUAP\logos\WideLogo.scale-100.png</option_winUAP_wide_logo>
     <option_windowcolor>clBlue</option_windowcolor>
     <option_windows_alternate_sync_method>True</option_windows_alternate_sync_method>
-    <option_windows_build_version>0</option_windows_build_version>
+    <option_windows_build_version>1</option_windows_build_version>
     <option_windows_company_info>Overbound Game Studio</option_windows_company_info>
     <option_windows_copyright_info></option_windows_copyright_info>
     <option_windows_create_textures_on_demand>False</option_windows_create_textures_on_demand>

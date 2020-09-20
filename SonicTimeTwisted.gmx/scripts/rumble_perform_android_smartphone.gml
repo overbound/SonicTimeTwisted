@@ -3,9 +3,9 @@ if(!ds_queue_empty(rumble_queue))
 {
     var rumble_value = ds_queue_dequeue(rumble_queue);
     var motor_speed = rumble_value/100;
-    rumble_perform_android(motor_speed);
+    android_rumble_perform(0, motor_speed);
 }
 else
 {
-    rumble_perform_android(0);
+    android_rumble_perform(0, 0);
 }

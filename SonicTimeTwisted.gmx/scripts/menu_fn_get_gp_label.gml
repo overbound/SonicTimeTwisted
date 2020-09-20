@@ -15,11 +15,11 @@ if(fChar == "-" || fChar == "+")
     {
         case gp_axislh:
         case gp_axislv:
-            axisLabel = "LSTICK";
+            axisLabel = tr("LStick %d");
             break;
         case gp_axisrh:
         case gp_axisrv:
-            axisLabel = "RSTICK";
+            axisLabel = tr("RStick %d");
             break;
     }
     switch(axis)
@@ -28,22 +28,22 @@ if(fChar == "-" || fChar == "+")
         case gp_axisrh:
             if(fChar == "+")
             {
-                axisLabel += " RIGHT";
+                axisLabel = string_replace(axisLabel, "%d", tr("Right"));
             }
             else
             {
-                axisLabel += " LEFT";
+                axisLabel = string_replace(axisLabel, "%d", tr("Left"));
             }
             break;
         case gp_axislv:
         case gp_axisrv:
             if(fChar == "+")
             {
-                axisLabel += " DOWN";
+                axisLabel = string_replace(axisLabel, "%d", tr("Down"));
             }
             else
             {
-                axisLabel += " UP";
+                axisLabel = string_replace(axisLabel, "%d", tr("Up"));
             }
             break;
     }
@@ -58,59 +58,59 @@ else
         switch(code)
         {             
             case gp_face1:
-                 return "X";
+                 return tr("X");
                  break;
             case gp_face2:
-                 return "O";
+                 return tr("O");
                  break;
             case gp_face3:
-                 return "SQUARE";
+                 return tr("Square");
                  break;
             case gp_face4:
-                 return "TRIANGLE";
+                 return tr("Triangle");
                  break;
             case gp_shoulderl:
-                 return "L1";
+                 return tr("L1");
                  break;
             case gp_shoulderlb:
-                 return "L2";
+                 return tr("L2");
                  break;
             case gp_shoulderr:
-                 return "R1";
+                 return tr("R1");
                  break;
             case gp_shoulderrb:
-                 return "R2";
+                 return tr("R2");
                  break;
             case gp_select:
-                 return "TOUCHPAD";
+                 return tr("Touchpad");
                  // this one is weird. on PS4 "Select" is a touchpad press. on PC it's inpressable.
                  // in GMS2 you can modify gamecontrollerdb directly and change the mapping to an actual SHARE button.
                  // but this is GM:S 1.4 so nope.
                  break;
             case gp_start:
-                 return "OPTIONS";
+                 return tr("Options");
                  break;
             case gp_stickl:
-                 return "L3";
+                 return tr("L3");
                  break;
             case gp_stickr:
-                 return "R3";
+                 return tr("R3");
                  break;
             case gp_padu:
-                 return "DPAD UP";
+                 return tr("DPad Up");
                  break;
             case gp_padd:
-                 return "DPAD DOWN";
+                 return tr("DPad Down");
                  break;
             case gp_padl:
-                 return "DPAD LEFT";
+                 return tr("DPad Left");
                  break;
             case gp_padr:
-                 return "DPAD RIGHT";
+                 return tr("DPad Right");
                  break;
             default:
                  show_debug_message(string(argument0));
-                 return "UNKNOWN";
+                 return string_replace("Other %k", "%k", string(argument0));
                  break;
              }
     }
@@ -118,56 +118,56 @@ else
     switch(code)
     {             
         case gp_face1:
-             return "A";
+             return tr("A");
              break;
         case gp_face2:
-             return "B";
+             return tr("B");
              break;
         case gp_face3:
-             return "X";
+             return tr("X");
              break;
         case gp_face4:
-             return "Y";
+             return tr("Y");
              break;
         case gp_shoulderl:
-             return "LEFT SHLD BT";
+             return tr("L1");
              break;
         case gp_shoulderlb:
-             return "LEFT TRIGGER";
+             return tr("L2");
              break;
         case gp_shoulderr:
-             return "RIGHT SHLD BT";
+             return tr("R1");
              break;
         case gp_shoulderrb:
-             return "RIGHT TRIGGER";
+             return tr("R2");
              break;
         case gp_select:
-             return "SELECT";
+             return tr("Select");
              break;
         case gp_start:
-             return "START";
+             return tr("Start");
              break;
         case gp_stickl:
-             return "LEFT STICK";
+             return tr("L3");
              break;
         case gp_stickr:
-             return "RIGHT STICK";
+             return tr("R3");
              break;
         case gp_padu:
-             return "DPAD UP";
+             return tr("DPad Up");
              break;
         case gp_padd:
-             return "DPAD DOWN";
+             return tr("DPad Down");
              break;
         case gp_padl:
-             return "DPAD LEFT";
+             return tr("DPad Left");
              break;
         case gp_padr:
-             return "DPAD RIGHT";
+             return tr("DPad Right");
              break;
         default:
              show_debug_message(string(argument0));
-             return "UNKNOWN";
+             return string_replace("Other %k", "%k", string(argument0));
              break;
          }
 }
