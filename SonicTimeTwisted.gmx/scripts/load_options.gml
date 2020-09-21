@@ -19,29 +19,8 @@ if (file_exists(file)) {
         {
             input_method = input_method_fallback;
         }
-        dpadmode = ini_read_real('smartphone','dpadmode',0);
-        vkalpha = ini_read_real('smartphone','vkalpha',0.8);
-        gyroinss = ini_read_real('smartphone','gyroinss',1);
-        vksize = ini_read_real('smartphone','vksize',0);
-        dpadx = ini_read_real('smartphone','dpadx',64);
-        dpady = ini_read_real('smartphone','dpady',178);
-        bax = ini_read_real('smartphone','bax',364);
-        bay = ini_read_real('smartphone','bay',178);
-        bsx = ini_read_real('smartphone','bsx',200);
-        bsy = ini_read_real('smartphone','bsy',16);
-        bbx = ini_read_real('smartphone','bbx',324);
-        bby = ini_read_real('smartphone','bby',88);
-        gyromode = ini_read_real('smartphone','gyromode',1);
-        gyro_switch_on_angle_x = ini_read_real('smartphone','gyro_switch_on_angle_x',0.15);
-        gyro_analog_start_x = ini_read_real('smartphone','gyro_analog_start_x',0.1);
-        gyro_analog_end_x = ini_read_real('smartphone','gyro_analog_end_x',0.6);
-        gg_mode = ini_read_real('smartphone','gg_mode',1);
-        vibration_type = ini_read_real('smartphone','vibration_type',0);
-        haptics_strength = round(ini_read_real('smartphone', 'haptics_strength', 50));
-        haptics_duration = round(ini_read_real('smartphone', 'haptics_duration', 5));
-        rumble_strength = ini_read_real('smartphone', 'rumble_strength', 1);
+
     }
-    
     return true;
 }
 return false;

@@ -8,14 +8,36 @@ if(DEVICE_INFO & DEVICE_TYPE_COMPUTER)
 }
 if(DEVICE_INFO & DEVICE_TYPE_SMARTPHONE)
 {
-    menu_fn_add_option(tr("Input method"), 5, true, "");
+    if (DEVICE_INFO & DEVICE_OS_ANDROID)
+    {
+        menu_fn_add_option(tr("Input method"), 8, true, "");
+    }
+    else
+    {
+        menu_fn_add_option(tr("Input method"), 5, true, "");
+    }
     menu_fn_add_option(tr("Configure touchscreen"), 6);
 }
-if(DEVICE_INFO & DEVICE_TYPE_COMPUTER || DEVICE_INFO & DEVICE_TYPE_SMARTPHONE)
+if(DEVICE_INFO & DEVICE_TYPE_COMPUTER)
 {
     menu_fn_add_option(tr("Map keys"), 2);
+    menu_fn_add_option(tr("Map gamepad"), 3);
 }
-menu_fn_add_option(tr("Map gamepad"), 3);
+else
+{
+   if(DEVICE_INFO & DEVICE_TYPE_SMARTPHONE || DEVICE_INFO & DEVICE_TYPE_CONSOLE)
+   {
+       if(DEVICE_INFO & DEVICE_OS_ANDROID)
+       {
+            menu_fn_add_option(tr("Map BT/USB device"), 9);
+       }
+       else
+       {
+            menu_fn_add_option(tr("Map keys"), 2);
+            menu_fn_add_option(tr("Map gamepad"), 3);
+       }
+   }
+}
 if (menu_type == 0)
 {
     menu_fn_add_option(tr("Warnings and disclaimers"), 7);

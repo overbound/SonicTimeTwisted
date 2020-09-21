@@ -1687,6 +1687,9 @@ public class SttAndroidGamepad extends ExtensionBase {
     protected int[][] axispresses;
     protected RumbleThread phoneRumbleThread;
 
+    protected float previous_axis;
+    protected float previous_button;
+
     public SttAndroidGamepad()
     {
         buttonpresses = new HashMap[PLAYERS_MAX_COUNT];
@@ -1713,6 +1716,8 @@ public class SttAndroidGamepad extends ExtensionBase {
         im = (InputManager) RunnerJNILib.GetApplicationContext().getSystemService(Context.INPUT_SERVICE);
         il = new InputListener(this);
         im.registerInputDeviceListener(il, il);
+        previous_axis = 0;
+        previous_button = -1;
     }
 
     protected boolean isDeviceIndexGamepad(InputDevice device)
@@ -1865,6 +1870,8 @@ public class SttAndroidGamepad extends ExtensionBase {
         if(im.isButtonMappingPossible((int) keyCode, (int) inputCode))
         {
             im.mapButton((int) keyCode, (int) inputCode);
+            previous_axis = 0;
+            previous_button = -1;
             return 1.0;
         }
         return 0.0;
@@ -1878,6 +1885,8 @@ public class SttAndroidGamepad extends ExtensionBase {
         if(im.isAxisMappingPossible(usedAxis, dir, (int) inputCode))
         {
             im.mapAxis(usedAxis, dir, (int) inputCode);
+            previous_axis = 0;
+            previous_button = -1;
             return 1.0;
         }
         return 0.0;
@@ -1887,7 +1896,13 @@ public class SttAndroidGamepad extends ExtensionBase {
         for (int i = 0; i < 48; i++) {
             int value = axispresses[(int) inputNumber][i];
             if (value != 0) {
-                return (i + 1) * (value < 0 ? -1 : 1);
+                float returned = (i + 1) * (value < 0 ? -1 : 1);
+                if(returned != previous_axis)
+                {
+                    previous_axis = returned;
+                    return returned;
+                }
+                return 0;
             }
         }
         return 0;
@@ -1896,7 +1911,13 @@ public class SttAndroidGamepad extends ExtensionBase {
     public double android_get_any_gamepad_button(double inputNumber) {
         for (Map.Entry<Integer, Boolean> entry : buttonpresses[(int) inputNumber].entrySet()) {
             if (entry.getValue()) {
-                return (float) entry.getKey();
+                float returned = (float) entry.getKey();
+                if(returned != previous_button)
+                {
+                    previous_button = returned;
+                    return returned;
+                }
+                return -1;
             }
         }
         return -1;

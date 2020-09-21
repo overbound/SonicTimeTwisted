@@ -1915,6 +1915,11 @@
               <script>scripts\input_method_ssgyro_gyro_analog.gml</script>
               <script>scripts\input_method_touchscreen_rel.gml</script>
             </scripts>
+            <scripts name="Android">
+              <script>scripts\input_method_init_android_btusb.gml</script>
+              <script>scripts\input_method_android_btusb.gml</script>
+              <script>scripts\input_method_android_btusb_rumble.gml</script>
+            </scripts>
             <script>scripts\input_method_draw_touchscreen.gml</script>
             <script>scripts\input_method_init_touchscreen.gml</script>
             <script>scripts\input_method_haptics_touchscreen.gml</script>
@@ -1937,6 +1942,13 @@
           <script>scripts\set_smartphone_controls_enabled.gml</script>
         </scripts>
         <scripts name="Loading">
+          <scripts name="Devices">
+            <script>scripts\input_load_keyboard_controls.gml</script>
+            <script>scripts\input_load_gamepad_controls.gml</script>
+            <script>scripts\input_load_touchscreen_controls.gml</script>
+            <script>scripts\input_load_android_device_controls.gml</script>
+            <script>scripts\input_load_android_device_one_control.gml</script>
+          </scripts>
           <script>scripts\input_load.gml</script>
         </scripts>
         <scripts name="Rumble">
@@ -1973,6 +1985,7 @@
         <scripts name="Saving">
           <script>scripts\save_control_map_gamepad.gml</script>
           <script>scripts\save_control_map_keyboard.gml</script>
+          <script>scripts\save_control_map_android_device.gml</script>
         </scripts>
         <scripts name="State">
           <script>scripts\input_any_gamepad_axis.gml</script>
@@ -2070,6 +2083,11 @@
             <script>scripts\menu_part_joymap_step.gml</script>
             <scripts name="smartphone">
               <scripts name="android">
+                <script>scripts\menu_part_android_btusb_items.gml</script>
+                <script>scripts\menu_part_android_btusb_actions.gml</script>
+                <script>scripts\menu_part_android_btusb_step.gml</script>
+                <script>scripts\android_get_compiled_value.gml</script>
+                <script>scripts\android_set_compiled_value.gml</script>
                 <script>scripts\android_get_mapped_label.gml</script>
               </scripts>
               <script>scripts\menu_part_touchscreen_items.gml</script>
@@ -3814,7 +3832,7 @@
     <constant name="INPUT_KEYBOARD">0</constant>
     <constant name="INPUT_TOUCHSCREEN">1</constant>
     <constant name="INPUT_GAMEPAD">2</constant>
-    <constant name="INPUT_MAX">2</constant>
+    <constant name="INPUT_OS_SPECIFIC_1">3</constant>
     <constant name="DEVICE_HAS_TOUCHSCREEN">0</constant>
   </constants>
   <help>

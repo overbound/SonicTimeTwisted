@@ -50,6 +50,25 @@ switch(argument0)
             textAlpha = 1;
         }
         break;
+    
+    case 8:
+        switch(android_get_input_mode())
+        {
+            case 0:
+                // TOUCHSCREEN -> EXTERNAL DEVICE
+                android_set_input_mode(1);
+                set_input_method(INPUT_OS_SPECIFIC_1, false);
+                break;
+            case 1:
+                // EXTERNAL DEVICE -> TOUCHSCREEN
+                android_set_input_mode(0);
+                set_input_method(INPUT_TOUCHSCREEN, false);
+                break;
+        }
+        break;
+    case 9:
+         menu_fn_goto_submenu(menu_part_android_btusb_items);
+         break;
     case -1:
     case 4:
         save_options();
@@ -98,6 +117,22 @@ switch(argument0)
                         break;
                 }
                 break;
+            case 8:
+                switch(android_get_input_mode())
+                {
+                    case 0:
+                        // TOUCHSCREEN -> EXTERNAL DEVICE
+                        android_set_input_mode(1);
+                        set_input_method(INPUT_OS_SPECIFIC_1, false);
+                        break;
+                    case 1:
+                        // EXTERNAL DEVICE -> TOUCHSCREEN
+                        android_set_input_mode(0);
+                        set_input_method(INPUT_TOUCHSCREEN, false);
+                        break;
+                        
+                }
+                break;
         }
         break;
     case -3:
@@ -118,6 +153,7 @@ switch(argument0)
                 }
                 break;
             case 5:
+                // kept this as a default input selection for smartphones. Android needed an override in any case
                 switch(get_input_method())
                 {
                     case INPUT_TOUCHSCREEN:
@@ -133,6 +169,23 @@ switch(argument0)
                         set_input_method(INPUT_TOUCHSCREEN, false);
                         break;
                 }
+                break;
+            case 8:
+                switch(android_get_input_mode())
+                {
+                    case 0:
+                        // TOUCHSCREEN -> EXTERNAL DEVICE
+                        android_set_input_mode(1);
+                        set_input_method(INPUT_OS_SPECIFIC_1, false);
+                        break;
+                    case 1:
+                        // EXTERNAL DEVICE -> TOUCHSCREEN
+                        android_set_input_mode(0);
+                        set_input_method(INPUT_TOUCHSCREEN, false);
+                        break;
+                        
+                }
+                break;
         }
         break;
 }
@@ -151,16 +204,32 @@ else
 if(DEVICE_INFO & DEVICE_TYPE_SMARTPHONE)
 {
     var inputLabel = tr("Touchscreen");
-    switch(get_input_method())
+    if(DEVICE_INFO & DEVICE_OS_ANDROID)
     {
-        case INPUT_GAMEPAD:
-            inputLabel = tr("Gamepad");
-            break;
-        case INPUT_KEYBOARD:
-            inputLabel = tr("Keyboard");
-            break;
+        switch(android_get_input_mode())
+        {
+            case 0:
+                inputLabel = tr("Touchsreen");
+                break;
+            case 1:
+                inputLabel = tr("BT/USB device");
+                break;
+        }
+        menu_fn_refresh_displayed_value(8, "< "+inputLabel+ " >");
     }
-    menu_fn_refresh_displayed_value(5, "< "+inputLabel+ " >");
+    else
+    {
+        switch(get_input_method())
+        {
+            case INPUT_GAMEPAD:
+                inputLabel = tr("Gamepad");
+                break;
+            case INPUT_KEYBOARD:
+                inputLabel = tr("Keyboard");
+                break;
+        }
+        menu_fn_refresh_displayed_value(5, "< "+inputLabel+ " >");
+    }
 }
 is_touchscreen = prev_is_touchscreen;
 // preserve the cursor value - usually false for the sake of touchscreen controls
