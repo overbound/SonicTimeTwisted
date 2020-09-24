@@ -376,11 +376,9 @@
       <sprite>sprites\sprFontHud</sprite>
       <sprite>sprites\sprFontLives</sprite>
       <sprite>sprites\sprFontHudMin</sprite>
-      <sprite>sprites\sprFontTitle</sprite>
       <sprite>sprites\sprFontTitleLarge</sprite>
       <sprite>sprites\sprFontTitleSmall</sprite>
       <sprite>sprites\sprFontTitleSmallest</sprite>
-      <sprite>sprites\sprFontTitleYellow</sprite>
       <sprite>sprites\sprFontMicro</sprite>
     </sprites>
     <sprites name="Overlays">
@@ -2201,6 +2199,10 @@
       </scripts>
       <scripts name="Transitions">
         <script>scripts\transition_to.gml</script>
+      </scripts>
+      <scripts name="Titlecard">
+        <script>scripts\init_titlecard.gml</script>
+        <script>scripts\render_titlecard.gml</script>
       </scripts>
     </scripts>
     <scripts name="Scene Objects">

@@ -98,7 +98,7 @@ tally_ox = (objScreen.width * 0.5) + 104;
 // offsets
 title_offset1 = ceil((title_ox1 + string_width(line1)) * 0.0625) * 16;
 title_offset2 = ceil((objScreen.width - title_ox2) * 0.0625) * 16;
-draw_set_font(objResources.fontTitle);
+draw_set_font(objResources.fontTitleSmallest);
 score_offset1 = (ceil((objScreen.width - score_ox) * 0.0625) * 16) + 48;
 score_offset2 = score_offset1 + 80;
 score_offset3 = score_offset1 + 80;

@@ -33,10 +33,8 @@ fontHud = font_add_sprite(sprFontHud, ord('"'), 0,0);
 fontHudMin = font_add_sprite(sprFontHudMin, ord('"'), 0,0);
 fontLives = font_add_sprite(sprFontLives, ord('"'), 0, 0);
 fontMicro = font_add_sprite(sprFontMicro, ord('"'), 0, 0);
-fontTitle = font_add_sprite(sprFontTitle, 32, 1, 0);
 fontTitleLarge = font_add_sprite(sprFontTitleLarge, 48, 1, 0);
 fontTitleSmall = font_add_sprite(sprFontTitleSmall, 65, 1, 0);
-fontTitleYellow = font_add_sprite(sprFontTitleYellow, 48, 1, 0);
 fontTitleSmallest = font_add_sprite(sprFontTitleSmallest, 48, 1, 0);
 // water splash
 splash = part_type_create();

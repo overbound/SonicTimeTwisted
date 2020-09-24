@@ -265,27 +265,7 @@ if (banner_ox &lt; 0) banner_ox += 208;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Setup title
-var i, j;
-// setup lengths and offsets
-draw_set_halign(fa_left);
-for (i=0; i&lt;4; i+=1)
-{
-    // get length in characters
-    title_length[i] = string_length(title_string[i]);
-    if title_length[i]&lt;1 continue;
-    // set font
-    switch i
-    {
-    case 2: draw_set_font(objResources.fontTitleSmall); break;
-    case 3: draw_set_font(objResources.fontTitleYellow); break;
-    default: draw_set_font(objResources.fontTitleLarge);
-    }
-    // set offset
-    title_ox[i] = 298-string_width(title_string[i]);
-    // go through each character
-    for (j=0; j&lt;title_length[i]; j+=1) title_scale[i, j] = 12;
-}
+            <string>init_titlecard();
 </string>
           </argument>
         </arguments>
@@ -308,49 +288,7 @@ for (i=0; i&lt;4; i+=1)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Render title
-var i;
-// fill screen with black
-/*
-draw_set_color(c_black);
-draw_set_alpha(fade_alpha);
-draw_rectangle(view_xview, view_yview, view_xview+view_wview, view_yview+view_hview, false);
-draw_set_color(c_white);
-draw_set_alpha(1);*/
-// ignore if not rendering card
-if mode&lt;1 or mode&gt;2 exit;
-// planet back
-draw_set_color(image_blend);
-draw_set_alpha(image_alpha);
-draw_sprite(sprTitlePlanet, 0, view_xview+planet_ox, view_yview+planet_oy);
-// banner
-var boxm = floor(banner_ox)-208;
-draw_sprite(sprTitleBannerLeft, 0, view_xview+boxm, view_yview+186);
-for (i=0; i&lt;3; i+=1) {
-    draw_sprite(sprTitleBanner, 0, view_xview+boxm+(i*208), view_yview+186);
-}
-// planet front
-draw_sprite(sprTitlePlanet, 1, view_xview+planet_ox, view_yview+planet_oy);
-// title first word
-draw_set_halign(fa_left);
-draw_set_font(objResources.fontTitleLarge);
-for (i=0; i&lt;title_pos[0]+1; i+=1) draw_text_transformed(view_xview+title_ox[0]+string_width(string_copy(title_string[0], 0, i)), view_yview+64, string_char_at(title_string[0], i+1), title_scale[0, i], title_scale[0, i], 0);
-// title second word
-if title_word&gt;0 for (i=0; i&lt;title_pos[1]+1; i+=1) draw_text_transformed(view_xview+title_ox[1]+string_width(string_copy(title_string[1], 0, i)), view_yview+98, string_char_at(title_string[1], i+1), title_scale[1, i], title_scale[1, i], 0);
-// title "Zone"
-if title_word&gt;1
-{
-    draw_set_font(objResources.fontTitleSmall);
-    for (i=0; i&lt;title_pos[2]+1; i+=1) draw_text_transformed(view_xview+title_ox[2]+string_width(string_copy(title_string[2], 0, i)), view_yview+132, string_char_at(title_string[2], i+1), title_scale[2, i], title_scale[2, i], 0);
-}
-// title "Act"
-if title_word&gt;2
-{
-    draw_set_font(objResources.fontTitleYellow);
-    for (i=0; i&lt;title_pos[3]+1; i+=1) draw_text_transformed(view_xview+title_ox[3]+string_width(string_copy(title_string[3], 0, i)), view_yview+166, string_char_at(title_string[3], i+1), title_scale[3, i], title_scale[3, i], 0);
-}
-draw_set_color(c_white);
-draw_set_alpha(1);
+            <string>render_titlecard();
 </string>
           </argument>
         </arguments>

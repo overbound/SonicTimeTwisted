@@ -47,27 +47,9 @@ title_string[1] = "2"
 title_string[2] = "1"
 title_string[3] = "G"
 blue=make_colour_rgb(27,57,176);
-/// Setup title
-var i, j;
-// setup lengths and offsets
-draw_set_halign(fa_left);
-for (i=0; i&lt;4; i+=1)
-{
-    // get length in characters
-    title_length[i] = string_length(title_string[i]);
-    if title_length[i]&lt;1 continue;
-    // set font
-    switch i
-    {
-    case 2: draw_set_font(objResources.fontTitleSmall); break;
-    case 3: draw_set_font(objResources.fontTitleYellow); break;
-    default: draw_set_font(objResources.fontTitleLarge);
-    }
-    // set offset
-    title_ox[i] = 298-string_width(title_string[i]);
-    // go through each character
-    for (j=0; j&lt;title_length[i]; j+=1) title_scale[i, j] = 12;
-}
+
+init_titlecard();
+
 set_input_enabled(false);
 </string>
           </argument>
