@@ -2,7 +2,10 @@ items = false;
 
 menu_fn_add_option(tr("_main_menu_Play"), 0);
 menu_fn_add_option(tr("_main_menu_Options"), 1);
-menu_fn_add_option(tr("_main_menu_Exit"), 2);
+if(DEVICE_INFO & DEVICE_TYPE_COMPUTER)
+{
+    menu_fn_add_option(tr("_main_menu_Exit"), 2);
+}
 
 // this means "main menu"
 menu_type = 0;
