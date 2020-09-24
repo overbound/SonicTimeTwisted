@@ -10,7 +10,86 @@
     <Config>Configs\AppleTV</Config>
     <Config>Configs\Linux</Config>
   </Configs>
-  <datafiles number="43" name="datafiles"/>
+  <datafiles number="45" name="datafiles">
+    <datafile>
+      <name>translations.txt</name>
+      <exists>-1</exists>
+      <size>29</size>
+      <exportAction>2</exportAction>
+      <exportDir></exportDir>
+      <overwrite>0</overwrite>
+      <freeData>-1</freeData>
+      <removeEnd>0</removeEnd>
+      <store>0</store>
+      <ConfigOptions>
+        <Config name="Default">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+        <Config name="Windows">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+        <Config name="AndroidSmartphone">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+        <Config name="AndroidConsole">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+        <Config name="MacOS">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+        <Config name="iPhone">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+        <Config name="AppleTV">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+        <Config name="Linux">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+      </ConfigOptions>
+      <filename>translations.txt</filename>
+    </datafile>
+    <datafiles number="45" name="translations">
+      <datafile>
+        <name>English.json</name>
+        <exists>-1</exists>
+        <size>1328</size>
+        <exportAction>2</exportAction>
+        <exportDir></exportDir>
+        <overwrite>0</overwrite>
+        <freeData>-1</freeData>
+        <removeEnd>0</removeEnd>
+        <store>0</store>
+        <ConfigOptions>
+          <Config name="Default">
+            <CopyToMask>9223372036854775807</CopyToMask>
+          </Config>
+          <Config name="Windows">
+            <CopyToMask>9223372036854775807</CopyToMask>
+          </Config>
+          <Config name="AndroidSmartphone">
+            <CopyToMask>9223372036854775807</CopyToMask>
+          </Config>
+          <Config name="AndroidConsole">
+            <CopyToMask>9223372036854775807</CopyToMask>
+          </Config>
+          <Config name="MacOS">
+            <CopyToMask>9223372036854775807</CopyToMask>
+          </Config>
+          <Config name="iPhone">
+            <CopyToMask>9223372036854775807</CopyToMask>
+          </Config>
+          <Config name="AppleTV">
+            <CopyToMask>9223372036854775807</CopyToMask>
+          </Config>
+          <Config name="Linux">
+            <CopyToMask>9223372036854775807</CopyToMask>
+          </Config>
+        </ConfigOptions>
+        <filename>English.json</filename>
+      </datafile>
+    </datafiles>
+  </datafiles>
   <NewExtensions>
     <extension index="0">extensions\SttAndroidGamepad</extension>
   </NewExtensions>
@@ -2184,6 +2263,10 @@
       </scripts>
       <scripts name="I18n">
         <script>scripts\tr.gml</script>
+        <script>scripts\tr_init.gml</script>
+        <script>scripts\tr_load_files.gml</script>
+        <script>scripts\tr_load_file.gml</script>
+        <script>scripts\tr_set_default_lang.gml</script>
       </scripts>
     </scripts>
     <scripts name="Overlays">
@@ -3723,7 +3806,7 @@
       </rooms>
     </rooms>
   </rooms>
-  <constants number="110">
+  <constants number="111">
     <constant name="VERSION">"v1.1.0-dev"</constant>
     <constant name="GAMEPAD_POV_Y">7</constant>
     <constant name="GAMEPAD_POV_X">6</constant>
@@ -3834,6 +3917,7 @@
     <constant name="INPUT_GAMEPAD">2</constant>
     <constant name="INPUT_OS_SPECIFIC_1">3</constant>
     <constant name="DEVICE_HAS_TOUCHSCREEN">0</constant>
+    <constant name="DEVICE_SUPPORTS_FILE_FIND">1</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>

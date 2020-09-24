@@ -1,0 +1,44 @@
+{
+	"__info": {
+		"__intname": "en",
+		"__friendlyname": "English",
+		"__authors": "Overbound",
+		"__explanation": "__intname field is required, it's basically the country code.",
+		"__explanation2": "the actual translation is in 'data'"
+	},
+	"data": {
+		"_epilepsy_title": "Epilepsy warning",
+		"_epilepsy": "A few people may experience epileptic seizures when exposed to certain light patterns or flashing lights, such as while watching TV or playing video games, even those with no history of prior seizures or epilepsy.\nIf you experience any of the following symptoms - altered vision, muscle or eye twitching, loss of awareness, disorientation, any involutary movement, or convulsions - IMMEDIATELY stop playing and consult your physician.",
+		"_disclaimer_title": "Disclaimer",
+		"_disclaimer": "This game is a non-profit fangame project and should not be sold. Overbound Game Studio and contributors are in no way affiliated with Sega or Sonic Team.\nSonic the Hedgehog is a trademark of SEGA®. The copyrights of “Sonic the Hedgehog” and all associated characters, names, terms, art, and music thereof belong to SEGA®. All registered trademarks and copyrights belong to SEGA® and Sonic Team®.",
+		"_github": "Source code available at https://github.com/overbound/SonicTimeTwisted under GPL v3",
+		"_main_menu_Play": "Play",
+		"_main_menu_Options": "Options",
+		"_main_menu_Exit": "Exit",
+		
+		"_zone_menu_Continue": "Continue",
+		"_zone_menu_Options": "Options",
+		"_zone_menu_Restart_game": "Restart game",
+		
+		"_specialstage_menu_Off_Track": "Off track...",
+		"_specialstage_menu_Out_of_rings": "Out of rings...",
+		"_specialstage_menu_Metal_Sonic_Wins": "Metal Sonic wins...",
+		"_specialstage_menu_Try_Again": "Try again",
+		"_specialstage_menu_Quit": "Quit",
+		"_specialstage_menu_Try_Again_life": "Try again (-1 life)",
+		"_specialstage_menu_Return_to_act": "Return to act",
+		
+		"_levelselect_menu_Level_Select": "Level select",
+		"_levelselect_menu_AAZ": "Attraction Attack Zone",
+		"_levelselect_menu_RRZ": "Raging Ruins Zone",
+		"_levelselect_menu_FFZ": "Frigid Fortress Zone",
+		"_levelselect_menu_VVZ": "Viridian Valley Zone",
+		"_levelselect_menu_DDZ": "Drifting Dynamo Zone",
+		"_levelselect_menu_TTZ": "Tidal Tubes Zone",
+		"_levelselect_menu_SSZ": "Sunken Saucer Zone",
+		"_levelselect_menu_PPZ": "Planetary Panic Zone",
+		"_levelselect_menu_GGZ": "Galacnik Gauntlet Zone",
+		"_levelselect_menu_SST": "Special Stage",
+		"_levelselect_menu_Back": "Back",
+	}
+}

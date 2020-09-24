@@ -1,17 +1,17 @@
 if(objProgram.saveSlot == -1)
 {
     // level select
-    menu_fn_add_option(tr("Try again"), 0);
-    menu_fn_add_option(tr("Quit"), 2);
+    menu_fn_add_option(tr("_specialstage_menu_Try_Again"), 0);
+    menu_fn_add_option(tr("_specialstage_menu_Quit"), 2);
     button_width = 200;
 }
 else
 {
     if(objGameData.player_lives[0] > 1)
     {
-        menu_fn_add_option(tr("Try again (-1 life)"), 0);
+        menu_fn_add_option(tr("_specialstage_menu_Try_Again_life"), 0);
     }
-    menu_fn_add_option(tr("Return to act"), 1);
+    menu_fn_add_option(tr("_specialstage_menu_Return_to_act"), 1);
     button_width = 240;
 }
 // this means "special stage defeat menu"

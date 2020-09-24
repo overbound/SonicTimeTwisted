@@ -15,16 +15,16 @@
     <option_android_amazon_gc_whispersync>0</option_android_amazon_gc_whispersync>
     <option_android_amazon_iap>0</option_android_amazon_iap>
     <option_android_apk_expansion>0</option_android_apk_expansion>
-    <option_android_arch_armv5>True</option_android_arch_armv5>
+    <option_android_arch_armv5>False</option_android_arch_armv5>
     <option_android_arch_armv7>True</option_android_arch_armv7>
-    <option_android_arch_mips>True</option_android_arch_mips>
+    <option_android_arch_mips>False</option_android_arch_mips>
     <option_android_arch_mipsr2>True</option_android_arch_mipsr2>
     <option_android_arch_mipsr2sf>True</option_android_arch_mipsr2sf>
     <option_android_arch_x86>True</option_android_arch_x86>
-    <option_android_build_tools_version>23.0.1</option_android_build_tools_version>
+    <option_android_build_tools_version>28.0.3</option_android_build_tools_version>
     <option_android_build_version>0</option_android_build_version>
-    <option_android_color_depth>0</option_android_color_depth>
-    <option_android_compile_sdk_version>23</option_android_compile_sdk_version>
+    <option_android_color_depth>1</option_android_color_depth>
+    <option_android_compile_sdk_version>28</option_android_compile_sdk_version>
     <option_android_display_name>Sonic Time Twisted</option_android_display_name>
     <option_android_facebook_app_display_name></option_android_facebook_app_display_name>
     <option_android_facebook_appid></option_android_facebook_appid>
@@ -60,8 +60,8 @@
     <option_android_licensing_key></option_android_licensing_key>
     <option_android_lint>0</option_android_lint>
     <option_android_major_version>1</option_android_major_version>
-    <option_android_min_sdk_version>9</option_android_min_sdk_version>
-    <option_android_minor_version>0</option_android_minor_version>
+    <option_android_min_sdk_version>17</option_android_min_sdk_version>
+    <option_android_minor_version>1</option_android_minor_version>
     <option_android_mmedia_ads>0</option_android_mmedia_ads>
     <option_android_mobage>0</option_android_mobage>
     <option_android_mobage_appkey></option_android_mobage_appkey>
@@ -73,7 +73,7 @@
     <option_android_moga>0</option_android_moga>
     <option_android_mopub_ads>0</option_android_mopub_ads>
     <option_android_orient_landscape>True</option_android_orient_landscape>
-    <option_android_orient_landscape_flipped>False</option_android_orient_landscape_flipped>
+    <option_android_orient_landscape_flipped>True</option_android_orient_landscape_flipped>
     <option_android_orient_portrait>False</option_android_orient_portrait>
     <option_android_orient_portrait_flipped>False</option_android_orient_portrait_flipped>
     <option_android_orientation>2</option_android_orientation>
@@ -93,8 +93,8 @@
     <option_android_sleep_margin>4</option_android_sleep_margin>
     <option_android_splash_png>Configs\AndroidSmartphone\android\splash.png</option_android_splash_png>
     <option_android_splash_time>0</option_android_splash_time>
-    <option_android_support_lib_version>23.1.1</option_android_support_lib_version>
-    <option_android_target_sdk_version>16</option_android_target_sdk_version>
+    <option_android_support_lib_version>28.0.0</option_android_support_lib_version>
+    <option_android_target_sdk_version>28</option_android_target_sdk_version>
     <option_android_texture_page>2048</option_android_texture_page>
     <option_android_use_test_ads>0</option_android_use_test_ads>
     <option_androidfire_GPU_device>0</option_androidfire_GPU_device>
@@ -254,7 +254,7 @@
     <option_facebook_app_display_name></option_facebook_app_display_name>
     <option_facebook_appid></option_facebook_appid>
     <option_facebook_enable>0</option_facebook_enable>
-    <option_fast_collision_compatibility>False</option_fast_collision_compatibility>
+    <option_fast_collision_compatibility>True</option_fast_collision_compatibility>
     <option_freeze>false</option_freeze>
     <option_frequency>0</option_frequency>
     <option_frontimage>nil</option_frontimage>
@@ -445,7 +445,7 @@
     <option_noborder>false</option_noborder>
     <option_nobuttons>false</option_nobuttons>
     <option_noscreensaver>true</option_noscreensaver>
-    <option_ouya_packaging>-1</option_ouya_packaging>
+    <option_ouya_packaging>0</option_ouya_packaging>
     <option_priority>0</option_priority>
     <option_ps3_build_version>0</option_ps3_build_version>
     <option_ps3_interpolate>-1</option_ps3_interpolate>
@@ -710,7 +710,7 @@
     <option_tvos_splash_png>Configs\AndroidSmartphone\tvos\splash.png</option_tvos_splash_png>
     <option_tvos_splash_time>0</option_tvos_splash_time>
     <option_tvos_texture_page>2048</option_tvos_texture_page>
-    <option_use_fast_collision>False</option_use_fast_collision>
+    <option_use_fast_collision>True</option_use_fast_collision>
     <option_use_new_audio>True</option_use_new_audio>
     <option_variableerrors>False</option_variableerrors>
     <option_version>100</option_version>
