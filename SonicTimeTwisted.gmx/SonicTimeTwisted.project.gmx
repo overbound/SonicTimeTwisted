@@ -2806,7 +2806,6 @@
       </objects>
       <object>objects\objHud</object>
       <object>objects\objParallax</object>
-      <object>objects\objThanksControl</object>
       <object>objects\objScoreCard</object>
     </objects>
     <objects name="Planetary Panic">
@@ -3389,7 +3388,6 @@
       </rooms>
     </rooms>
     <room>rooms\titlescreen</room>
-    <room>rooms\Thanks</room>
     <rooms name="Cutscenes">
       <rooms name="intro Future">
         <room>rooms\intro1</room>
