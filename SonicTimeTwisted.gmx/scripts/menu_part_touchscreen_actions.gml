@@ -120,7 +120,6 @@ switch(argument0)
                 break;
         }
         break;
-        break;
 }
 
 // refresh displayed values

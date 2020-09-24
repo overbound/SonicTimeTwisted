@@ -1102,7 +1102,7 @@ audio_stop_all();
             {
                 yshift = yshift - 27 - (5 - alarm[0]) * 32;            
             }
-            draw_text_color(view_xview[0]+213,view_yview[0]+yshift,names[name - 3],c_white,c_white,c_yellow,c_yellow,1); break;
+            draw_text_color(view_xview[0]+213,view_yview[0]+yshift,names[name - 3],c_white,c_white,c_yellow,c_yellow,1);
             break;
         case 12:
             if pauseState == 3 draw_text_color(view_xview[0]+213, view_yview[0]+228, startText,c_white,c_white,c_yellow,c_yellow,1); start=true; break;
