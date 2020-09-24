@@ -1,8 +1,8 @@
 items = false;
 
-menu_fn_add_option(tr("Play"), 0);
-menu_fn_add_option(tr("Options"), 1);
-menu_fn_add_option(tr("Exit"), 2);
+menu_fn_add_option(tr("_main_menu_Play"), 0);
+menu_fn_add_option(tr("_main_menu_Options"), 1);
+menu_fn_add_option(tr("_main_menu_Exit"), 2);
 
 // this means "main menu"
 menu_type = 0;

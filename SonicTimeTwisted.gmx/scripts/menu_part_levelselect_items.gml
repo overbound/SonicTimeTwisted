@@ -1,17 +1,17 @@
 items = false;
 
-menu_fn_add_title(tr("Level select"));
-menu_fn_add_option(tr("Attraction Attack Zone"), 0);
-menu_fn_add_option(tr("Raging Ruins Zone"), 1);
-menu_fn_add_option(tr("Frigid Fortress Zone"), 2);
-menu_fn_add_option(tr("Viridian Valley Zone"), 3);
-menu_fn_add_option(tr("Drifting Dynamo Zone"), 4);
-menu_fn_add_option(tr("Tidal Tubes Zone"), 5);
-menu_fn_add_option(tr("Sunken Saucer Zone"), 6);
-menu_fn_add_option(tr("Planetary Panic Zone"), 7);
-menu_fn_add_option(tr("Galacnik Gauntlet Zone"), 8);
-menu_fn_add_option(tr("Special Stage"), 9);
-menu_fn_add_option("< "+tr("Back"), 10);
+menu_fn_add_title(tr("_levelselect_menu_Level_Select"));
+menu_fn_add_option(tr("_levelselect_menu_AAZ"), 0);
+menu_fn_add_option(tr("_levelselect_menu_RRZ"), 1);
+menu_fn_add_option(tr("_levelselect_menu_FFZ"), 2);
+menu_fn_add_option(tr("_levelselect_menu_VVZ"), 3);
+menu_fn_add_option(tr("_levelselect_menu_DDZ"), 4);
+menu_fn_add_option(tr("_levelselect_menu_TTZ"), 5);
+menu_fn_add_option(tr("_levelselect_menu_SSZ"), 6);
+menu_fn_add_option(tr("_levelselect_menu_PPZ"), 7);
+menu_fn_add_option(tr("_levelselect_menu_GGZ"), 8);
+menu_fn_add_option(tr("_levelselect_menu_SST"), 9);
+menu_fn_add_option("< "+tr("_levelselect_menu_Back"), 10);
 
 // this means "level select"
 menu_type = 3;

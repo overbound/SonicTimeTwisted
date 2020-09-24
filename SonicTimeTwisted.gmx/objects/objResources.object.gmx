@@ -27,6 +27,10 @@
             <kind>1</kind>
             <string>/// Initialize custom resources
 image_speed = 0;
+tr_init();
+tr_load_files();
+if (objProgram.first_run) tr_set_default_lang();
+// TODO: add custom font support here!!!
 /* AUTHOR NOTE: created resources (fonts, particles, libraries, etc.) go here! */
 // fonts
 fontHud = font_add_sprite(sprFontHud, ord('"'), 0,0);
