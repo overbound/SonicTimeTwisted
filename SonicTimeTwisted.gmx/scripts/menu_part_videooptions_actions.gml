@@ -13,6 +13,9 @@ switch(argument0)
         objScreen.flashing_reduced = !objScreen.flashing_reduced;
         break;
     case 3:
+        with (objScreen) event_user(2);
+        break;
+    case 4:
     case -1:
         menu_fn_exit_submenu(menu_part_options_items, 0);
         break;
@@ -30,11 +33,14 @@ switch(argument0)
                 objScreen.score_tally_mode--;
                 if(objScreen.score_tally_mode < 0)
                 {
-                    objScreen.score_tally_mode = 2
+                    objScreen.score_tally_mode = 2;
                 }
                 break;
             case 2:
                 objScreen.flashing_reduced = !objScreen.flashing_reduced;
+                break;
+            case 3:
+                with (objScreen) event_user(2);
                 break;
         }
         break;
@@ -53,6 +59,9 @@ switch(argument0)
                 break;
             case 2:
                 objScreen.flashing_reduced = !objScreen.flashing_reduced;
+                break;
+            case 3:
+                with (objScreen) event_user(2);
                 break;
         }
         break;
@@ -96,6 +105,15 @@ if(objScreen.flashing_reduced)
 else
 {
     menu_fn_refresh_displayed_value(2, "< "+tr("Off")+ " >");
+}
+
+if(objScreen.vsync)
+{
+    menu_fn_refresh_displayed_value(3, "< "+tr("On")+ " >");
+}
+else
+{
+    menu_fn_refresh_displayed_value(3, "< "+tr("Off")+ " >");
 }
 
 // preserve the cursor value - usually false for the sake of touchscreen controls
