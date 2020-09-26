@@ -76,8 +76,8 @@ scroll_max = 0;
 scroll_target = 0;
 scrollable = false;
 
-s = surface_create(512, 256);
-scrollable_s = surface_create(512, 256);
+s = -1;
+scrollable_s = -1;
 
 // these variables are calculated in item scripts for default displays and shouldn't be directly used in action scripts
 internal__draw_menu_rect_x1 = 0;

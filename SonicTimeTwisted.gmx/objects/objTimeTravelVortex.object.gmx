@@ -133,7 +133,7 @@ x=truex;
 
 // draw the surface again below, without the shader
 // so you can see the untextured animation
-draw_surface(tt_surface, 0,512);
+if (surface_exists(tt_surface)) draw_surface(tt_surface, 0,512);
 
 
 

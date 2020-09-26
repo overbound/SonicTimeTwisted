@@ -86,11 +86,8 @@ angle_change = 2;
 angle_warp = -15;
 scale = 1.1;
 sampler_index_warp = shader_get_sampler_index(NebulaShader, "warp");
-surface_warp = surface_create(256, 256);
-//surface_set_target(surface_warp);
-draw_clear_alpha(0, 0);
-surface_reset_target();
-texture_warp = surface_get_texture(surface_warp);
+surface_warp = -1;
+texture_warp = pointer_null;
 whirl_angle = 0;
 </string>
           </argument>
