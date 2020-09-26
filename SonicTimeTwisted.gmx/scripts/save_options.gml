@@ -1,4 +1,4 @@
-ini_open(working_directory+"\settings.ini");
+ini_open("settings.ini");
 if(instance_exists(objScreen))
 {
     ini_write_real('video_options', "mode", objScreen.video_mode);

@@ -1,4 +1,4 @@
-var file = working_directory+"\settings.ini";
+var file = "settings.ini";
 if (file_exists(file)) {
     ini_open(file);
     
