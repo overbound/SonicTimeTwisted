@@ -69,6 +69,9 @@ switch(argument0)
     case 9:
          menu_fn_goto_submenu(menu_part_android_btusb_items);
          break;
+    case 10:
+         menu_fn_goto_submenu(menu_part_l18n_items);
+         break;
     case -1:
     case 4:
         save_options();
@@ -194,11 +197,11 @@ switch(argument0)
 
 if(objProgram.inputManager.input_method == INPUT_GAMEPAD)
 {
-    menu_fn_refresh_displayed_value(1, "< "+tr("Yes")+ " >");
+    menu_fn_refresh_displayed_value(1, "< "+tr("_Yes")+ " >");
 }
 else
 {
-    menu_fn_refresh_displayed_value(1, "< "+tr("No")+ " >");
+    menu_fn_refresh_displayed_value(1, "< "+tr("_No")+ " >");
 }
 
 if(DEVICE_INFO & DEVICE_TYPE_SMARTPHONE)

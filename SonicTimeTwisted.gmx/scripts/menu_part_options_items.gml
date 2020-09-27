@@ -1,27 +1,27 @@
 items = false;
 
-menu_fn_add_title(tr("Options"));
-menu_fn_add_option(tr("Video options"), 0);
+menu_fn_add_title(tr("_options_menu_Title"));
+menu_fn_add_option(tr("_options_menu_Video"), 0);
 if(DEVICE_INFO & DEVICE_TYPE_COMPUTER)
 {
-    menu_fn_add_option(tr("Enable gamepad"), 1, 1, "");
+    menu_fn_add_option(tr("_options_menu_enable_gamepad"), 1, 1, "");
 }
 if(DEVICE_INFO & DEVICE_TYPE_SMARTPHONE)
 {
     if (DEVICE_INFO & DEVICE_OS_ANDROID)
     {
-        menu_fn_add_option(tr("Input method"), 8, true, "");
+        menu_fn_add_option(tr("_options_menu_Input_Method"), 8, true, "");
     }
     else
     {
-        menu_fn_add_option(tr("Input method"), 5, true, "");
+        menu_fn_add_option(tr("_options_menu_Input_Method"), 5, true, "");
     }
-    menu_fn_add_option(tr("Configure touchscreen"), 6);
+    menu_fn_add_option(tr("_options_menu_Configure_Touchscreen"), 6);
 }
 if(DEVICE_INFO & DEVICE_TYPE_COMPUTER)
 {
-    menu_fn_add_option(tr("Map keys"), 2);
-    menu_fn_add_option(tr("Map gamepad"), 3);
+    menu_fn_add_option(tr("_options_menu_Map_keys"), 2);
+    menu_fn_add_option(tr("_options_menu_Map_gamepad"), 3);
 }
 else
 {
@@ -29,20 +29,21 @@ else
    {
        if(DEVICE_INFO & DEVICE_OS_ANDROID)
        {
-            menu_fn_add_option(tr("Map BT/USB device"), 9);
+            menu_fn_add_option(tr("_options_menu_Map_BTUSB_device"), 9);
        }
        else
        {
-            menu_fn_add_option(tr("Map keys"), 2);
-            menu_fn_add_option(tr("Map gamepad"), 3);
+            menu_fn_add_option(tr("_options_menu_Map_keys"), 2);
+            menu_fn_add_option(tr("_options_menu_Map_gamepad"), 3);
        }
    }
 }
 if (menu_type == 0)
 {
-    menu_fn_add_option(tr("Warnings and disclaimers"), 7);
+    menu_fn_add_option(tr("_options_menu_WaD"), 7);
 }
-menu_fn_add_option(tr("< Back"), 4);
+menu_fn_add_option(tr("_options_menu_Localization"), 10);
+menu_fn_add_option(tr("_options_menu_Back"), 4);
 
 button_width = 300;
 

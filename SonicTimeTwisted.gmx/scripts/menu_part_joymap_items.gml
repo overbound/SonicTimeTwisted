@@ -1,8 +1,8 @@
 items = false;
 
-menu_fn_add_title(tr("Map gamepad"));
-menu_fn_add_option(tr("Rumble"), 0, 1, "< Off >");
-menu_fn_add_option(tr("Remap all"), 1);
+menu_fn_add_title(tr("_options_menu_Map_gamepad"));
+menu_fn_add_option(tr("_btusb_joymap_Rumble"), 0, 1, "< " + tr("_Off") + " >");
+menu_fn_add_option(tr("_options_menu_Remap_all"), 1);
 menu_fn_add_option(tr("Up"), 2, 1, "");
 menu_fn_add_option(tr("Down"), 3, 1, "");
 menu_fn_add_option(tr("Left"), 4, 1, "");
@@ -11,7 +11,7 @@ menu_fn_add_option(tr("A"), 6, 1, "");
 menu_fn_add_option(tr("B"), 7, 1, "");
 menu_fn_add_option(tr("C"), 8, 1, "");
 menu_fn_add_option(tr("Start"), 9, 1, "");
-menu_fn_add_option(tr("< Back"), 10);
+menu_fn_add_option(tr("_options_menu_Back"), 10);
 
 button_width = 200;
 

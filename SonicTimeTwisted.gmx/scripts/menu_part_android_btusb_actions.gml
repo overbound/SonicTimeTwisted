@@ -139,11 +139,11 @@ switch(argument0)
 // refreshing gamepad labels
 if(objProgram.inputManager.rumble_configuration_script == rumble_manage)
 {
-    menu_fn_refresh_displayed_value(0, "< "+tr("On")+" >");
+    menu_fn_refresh_displayed_value(0, "< "+tr("_On")+" >");
 }
 else
 {
-    menu_fn_refresh_displayed_value(0, "< "+tr("Off")+" >");
+    menu_fn_refresh_displayed_value(0, "< "+tr("_Off")+" >");
 }
 
 menu_fn_refresh_displayed_value(2, android_get_mapped_label(0, cUP));

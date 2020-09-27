@@ -1,11 +1,11 @@
 items = false;
-menu_fn_add_title(tr("Character select"));
+menu_fn_add_title(tr("_chselect_Title"));
 // these options only serve to set the window's height
 // the handling of options here is mostly custom
 menu_fn_add_title("");
 menu_fn_add_title("");
 menu_fn_add_title("");
-menu_fn_add_option("< "+tr("Main menu"), 0);
+menu_fn_add_option("< "+tr("_chselect_MainMenu"), 0);
 
 
 // this means "level select"

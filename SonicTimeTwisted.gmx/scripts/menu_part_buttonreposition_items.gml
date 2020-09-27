@@ -1,5 +1,5 @@
 items = false;
-menu_fn_add_option(tr("< Back"), 0);
+menu_fn_add_option(tr("_options_menu_Back"), 0);
 
 button_width = 200;
 

@@ -31,5 +31,6 @@ if(instance_exists(objProgram.inputManager))
     ini_write_real('smartphone', 'haptics_duration', objProgram.inputManager.haptics_duration);
     ini_write_real('smartphone', 'rumble_strength', objProgram.inputManager.rumble_strength);
 }
+ini_write_string('localization', "language", global.TR_lang);
 ini_close();
 reinit_input_method();

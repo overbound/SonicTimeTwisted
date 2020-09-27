@@ -22,6 +22,8 @@ if (file_exists(file)) {
         }
 
     }
+    global.TR_lang = ini_read_string('localization', "language", "en");
+    ini_close();
     return true;
 }
 return false;

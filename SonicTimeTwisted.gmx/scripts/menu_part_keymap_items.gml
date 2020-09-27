@@ -1,7 +1,7 @@
 items = false;
 
-menu_fn_add_title(tr("Map keys"));
-menu_fn_add_option(tr("Remap all"), 0);
+menu_fn_add_title(tr("_options_menu_Map_keys"));
+menu_fn_add_option(tr("_options_menu_Remap_all"), 0);
 menu_fn_add_option(tr("Up"), 1, 1, "");
 menu_fn_add_option(tr("Down"), 2, 1, "");
 menu_fn_add_option(tr("Left"), 3, 1, "");
@@ -10,7 +10,7 @@ menu_fn_add_option(tr("A"), 5, 1, "");
 menu_fn_add_option(tr("B"), 6, 1, "");
 menu_fn_add_option(tr("C"), 7, 1, "");
 menu_fn_add_option(tr("Start"), 8, 1, "");
-menu_fn_add_option(tr("< Back"), 9);
+menu_fn_add_option(tr("_options_menu_Back"), 9);
 
 button_width = 200;
 
