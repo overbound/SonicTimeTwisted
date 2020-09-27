@@ -26,6 +26,14 @@
           <argument>
             <kind>1</kind>
             <string>/// Initialize
+
+// restore VM math precision as early as possible, if it's YYC.
+if (code_is_compiled())
+{
+    show_debug_message("YYC is enabled, expect weird behaviour.");
+    math_set_epsilon(0.00001);
+}
+
 image_speed = 0;
 level = "";
 /* AUTHOR NOTE: This object controls all global game operations, such as the
@@ -71,8 +79,6 @@ stop_sound = true;
 ss_perfect_bonus = 0;
 ss_rings_bonus = 0;
 ss_time_bonus = 0;
-//game_directory="%localappdata%\Sonic_Time_Twisted\"
-game_directory="\Sonic_Time_Twisted\";
 // music
 jingle = -1;
 music = -1;

@@ -1,9 +1,10 @@
-ini_open(working_directory+"\settings.ini");
+ini_open("settings.ini");
 if(instance_exists(objScreen))
 {
     ini_write_real('video_options', "mode", objScreen.video_mode);
     ini_write_real('video_options', "flashing_reduced", objScreen.flashing_reduced);
     ini_write_real('video_options', 'score_tally_mode', objScreen.score_tally_mode);
+    ini_write_real('video_options', "vsync", objScreen.vsync);
 }
 if(instance_exists(objProgram.inputManager))
 {

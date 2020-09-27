@@ -9,6 +9,8 @@ Video modes:
 if(DEVICE_INFO & DEVICE_TYPE_COMPUTER)
 {
     with objScreen {        
+        display_set_windows_alternate_sync(vsync);
+        display_reset(0, vsync);
         if(video_mode >= 0 && video_mode < 3)
         {
             window_state = video_mode + 1;

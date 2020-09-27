@@ -98,7 +98,7 @@ if(is_touchscreen)
     // hints update
     event_user(3);
 }
-hint_surface = surface_create(512, 512);
+hint_surface = -1;
 hint_up_to_date = false;
 </string>
           </argument>

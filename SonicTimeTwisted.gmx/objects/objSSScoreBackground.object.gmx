@@ -139,7 +139,7 @@ else
     menu.state = menuStatus;
     with(menu)
     {
-        delay_timer = delay_timer_default;
+        delay_timer = 0;
         event_user(1);
     }
 }
