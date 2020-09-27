@@ -72,48 +72,48 @@ switch(argument0)
 switch(objScreen.video_mode)
 {
     case 0:
-        menu_fn_refresh_displayed_value(0, "< "+tr("Window 1x")+ " >");
+        menu_fn_refresh_displayed_value(0, "< "+tr("_graphics_menu_1x")+ " >");
         break;
     case 1:
-        menu_fn_refresh_displayed_value(0, "< "+tr("Window 2x")+ " >");
+        menu_fn_refresh_displayed_value(0, "< "+tr("_graphics_menu_2x")+ " >");
         break;
     case 2:
-        menu_fn_refresh_displayed_value(0, "< "+tr("Window 3x")+ " >");
+        menu_fn_refresh_displayed_value(0, "< "+tr("_graphics_menu_3x")+ " >");
         break;
     case 3:
-        menu_fn_refresh_displayed_value(0, "< "+tr("Full screen")+ " >");
+        menu_fn_refresh_displayed_value(0, "< "+tr("_graphics_menu_Fs")+ " >");
         break;
 }
 
 switch(objScreen.score_tally_mode)
 {
     case 0:
-        menu_fn_refresh_displayed_value(1, "< "+tr("Random digits")+ " >");
+        menu_fn_refresh_displayed_value(1, "< "+tr("_graphics_menu_Randomdigits")+ " >");
         break;
     case 1:
-        menu_fn_refresh_displayed_value(1, "< "+tr("Variable speed")+ " >");
+        menu_fn_refresh_displayed_value(1, "< "+tr("_graphics_menu_Variablespeed")+ " >");
         break;
     case 2:
-        menu_fn_refresh_displayed_value(1, "< "+tr("Fixed speed")+ " >");
+        menu_fn_refresh_displayed_value(1, "< "+tr("_graphics_menu_Fixedspeed")+ " >");
         break;
 }
 
 if(objScreen.flashing_reduced)
 {
-    menu_fn_refresh_displayed_value(2, "< "+tr("On")+ " >");
+    menu_fn_refresh_displayed_value(2, "< "+tr("_On")+ " >");
 }
 else
 {
-    menu_fn_refresh_displayed_value(2, "< "+tr("Off")+ " >");
+    menu_fn_refresh_displayed_value(2, "< "+tr("_Off")+ " >");
 }
 
 if(objScreen.vsync)
 {
-    menu_fn_refresh_displayed_value(3, "< "+tr("On")+ " >");
+    menu_fn_refresh_displayed_value(3, "< "+tr("_On")+ " >");
 }
 else
 {
-    menu_fn_refresh_displayed_value(3, "< "+tr("Off")+ " >");
+    menu_fn_refresh_displayed_value(3, "< "+tr("_Off")+ " >");
 }
 
 // preserve the cursor value - usually false for the sake of touchscreen controls

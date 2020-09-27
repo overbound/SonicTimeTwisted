@@ -33,7 +33,7 @@ if(argument_count > 4)
 }
 else
 {
-    confirmation_yes_label = tr("Yes");
+    confirmation_yes_label = tr("_Yes");
 }
 
 
@@ -43,7 +43,7 @@ if(argument_count > 5)
 }
 else
 {
-    confirmation_no_label = tr("No");
+    confirmation_no_label = tr("_No");
 }
 
 

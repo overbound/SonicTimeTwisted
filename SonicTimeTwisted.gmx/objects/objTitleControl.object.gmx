@@ -71,11 +71,11 @@ if(allow_skipping)
 sync_is_touchscreen();
 if(is_fallback_touchscreen)
 {
-    startText = tr('Touch to start');
+    startText = tr('_startText_MO');
 }
 else
 {
-    startText = tr('Press Start');
+    startText = tr('_startText_PC');
 }
 level_select_max_presses = 0;
 menu = instance_create(x,y,objMenu);
@@ -1078,9 +1078,9 @@ audio_stop_all();
             draw_set_alpha(1);
             draw_set_color(c_white);
             draw_sprite_ext(sprOverboundLogo,0,view_xview[0]+213,view_yview[0]+90,1,1,0,c_white,logoAlpha);
-            draw_text_color(view_xview[0]+213,view_yview[0]+15,tr('A Sonic fangame by'),c_white,c_white,c_teal,c_teal,logoAlpha)
-            draw_text_color(view_xview[0]+213,view_yview[0]+150,tr('This game is freeware.'),c_white,c_white,c_teal,c_teal,logoAlpha)
-            draw_text_color(view_xview[0]+213,view_yview[0]+170,tr('Do not sell!'),c_white,c_white,c_red,c_red,logoAlpha)
+            draw_text_color(view_xview[0]+213,view_yview[0]+15,tr('_splash_ASonicfangame'),c_white,c_white,c_teal,c_teal,logoAlpha);
+            draw_text_color(view_xview[0]+213,view_yview[0]+150,tr('_splash_ThisGameIsFreeware'),c_white,c_white,c_teal,c_teal,logoAlpha);
+            draw_text_color(view_xview[0]+213,view_yview[0]+170,tr('_splash_DoNotSell'),c_white,c_white,c_red,c_red,logoAlpha);
             break;
         case 3:
         case 4:

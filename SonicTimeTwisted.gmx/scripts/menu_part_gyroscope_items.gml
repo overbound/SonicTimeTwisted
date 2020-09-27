@@ -12,7 +12,7 @@ else
     menu_fn_add_option(tr("End angle"), 3, true, "");
 }
 
-menu_fn_add_option(tr("< Back"), 4);
+menu_fn_add_option(tr("_options_menu_Back"), 4);
 
 button_width = 300;
 

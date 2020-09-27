@@ -1,19 +1,19 @@
 items = false;
 
-menu_fn_add_title(tr("Video options"));
+menu_fn_add_title(tr("_graphics_menu_Title"));
 if(DEVICE_INFO & DEVICE_TYPE_COMPUTER)
 {
-    menu_fn_add_option(tr("Screen size"), 0, 1, "");
+    menu_fn_add_option(tr("_graphics_menu_Screen_size"), 0, 1, "");
 }
-menu_fn_add_option(tr("Score tally mode"), 1, 1, "");
-menu_fn_add_option(tr("Flashing reduction"), 2, 1, "");
+menu_fn_add_option(tr("_graphics_menu_Stm"), 1, 1, "");
+menu_fn_add_option(tr("_graphics_menu_Fr"), 2, 1, "");
 if (DEVICE_INFO & DEVICE_TYPE_COMPUTER)
 {
-    menu_fn_add_option(tr("VSync"), 3, 1, "");
+    menu_fn_add_option(tr("_graphics_menu_VSync"), 3, 1, "");
 }
-menu_fn_add_option(tr("< Back"), 4);
+menu_fn_add_option(tr("_options_menu_Back"), 4);
 
-button_width = 350;
+button_width = 360;
 
 action_script = menu_part_videooptions_actions;
 draw_script = menu_fn_draw_default;

@@ -1,6 +1,6 @@
 items = false;
 
-menu_fn_add_title(tr("Special Stage"));
+menu_fn_add_title(tr("_levelselect_menu_SST"));
 menu_fn_add_option(tr("Chaos Emerald 1"), 0);
 menu_fn_add_option(tr("Chaos Emerald 2"), 1);
 menu_fn_add_option(tr("Chaos Emerald 3"), 2);
@@ -15,7 +15,7 @@ menu_fn_add_option(tr("Time Stone 4"), 10);
 menu_fn_add_option(tr("Time Stone 5"), 11);
 menu_fn_add_option(tr("Time Stone 6"), 12);
 menu_fn_add_option(tr("Time Stone 7"), 13);
-menu_fn_add_option("< "+tr("Back"), 14);
+menu_fn_add_option("< "+tr("_levelselect_menu_Back"), 14);
 
 // this means "level select"
 menu_type = 3;

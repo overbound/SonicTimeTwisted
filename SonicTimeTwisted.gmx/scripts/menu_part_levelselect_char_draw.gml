@@ -28,7 +28,7 @@ else
     draw_set_colour(c_yellow);
     draw_text(internal__draw_menu_rect_x_center,
         internal__draw_menu_buttons_offset_y + 8,
-        tr("Character select"));
+        tr("_chselect_Title"));
     draw_set_colour(c_white);
     
     if(cursor < CHARS_COUNT || is_touchscreen)
@@ -186,5 +186,5 @@ else
     draw_set_halign(fa_center);
         draw_text(internal__draw_menu_rect_x_center,
             internal__draw_menu_buttons_offset_y + button_slot_height * 4 + 8 + text_y_offset,
-            tr('<< Main menu'));
+            tr('_chselect_MainMenu'));
 }

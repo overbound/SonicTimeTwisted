@@ -27,9 +27,8 @@
             <kind>1</kind>
             <string>/// Initialize custom resources
 image_speed = 0;
-tr_init();
-tr_load_files();
 if (objProgram.first_run) tr_set_default_lang();
+tr_load_files();
 // TODO: add custom font support here!!!
 /* AUTHOR NOTE: created resources (fonts, particles, libraries, etc.) go here! */
 // fonts
@@ -40,6 +39,7 @@ fontMicro = font_add_sprite(sprFontMicro, ord('"'), 0, 0);
 fontTitleLarge = font_add_sprite(sprFontTitleLarge, 48, 1, 0);
 fontTitleSmall = font_add_sprite(sprFontTitleSmall, 65, 1, 0);
 fontTitleSmallest = font_add_sprite(sprFontTitleSmallest, 48, 1, 0);
+tr_load_fonts(); // this will replace fonts with translated ones only if translated variant exists.
 // water splash
 splash = part_type_create();
 part_type_sprite(splash, sprSplash, 1, 1, 0);
