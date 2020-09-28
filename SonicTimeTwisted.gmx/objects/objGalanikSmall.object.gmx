@@ -39,40 +39,27 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>state=0;
-image_speed=0;
-remove=0;
+            <string>/// Initialize
+x = objPPBossController.x;
+image_speed = 0;
+timeline_index = animGalanikSmallFire;
+timeline_running = false;
+timeline_loop = false;
+remove = 0;
+state = "entering";
 firingCount = 0;
+fireball = noone;
+ySpeed = 2;
+zSpeed = 0.002;
+zPosition = 0.25;
 x3StepsBack = x;
 y3StepsBack = y;
 x2StepsBack = x;
 y2StepsBack = y;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="1" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>with(objGalanikFireball)
-{
-    instance_destroy();
-}
+afterImageAlpha = 0.5;
+afterImageBlend1 = c_red;
+afterImageBlend2 = c_blue;
+afterImageBlend3 = c_green;
 </string>
           </argument>
         </arguments>
@@ -95,8 +82,35 @@ y2StepsBack = y;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Reset Firing
-state = 1;
+            <string>/// Restart firing
+event_user(0);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Blur
+x3StepsBack = x2StepsBack
+y3StepsBack = y2StepsBack
+x2StepsBack = xprevious;
+y2StepsBack = yprevious;
 </string>
           </argument>
         </arguments>
@@ -119,104 +133,98 @@ state = 1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>switch state {
-case 0: // Move On Screen
-    if instance_exists(objLevel.player[0]) {
-        x=objPPBossController.x;
-        if image_xscale &gt; .25 {
-            image_xscale -=0.002;
-            image_yscale -=0.002;
-        }
-    
-        if y &gt; view_yview + view_hview*0.5 {
-        
-            y-=2;
-        
-        } else {
-            y=view_yview + view_hview*0.5;
-            state=1;
-        
-        }
-    }
-    
-break;
-case 1: // Fire
-    
-    /*if firingCount &gt; 5 {
-    
-        state = 3;
-    
-    }*/
-    
-    firingCount +=1;
-    fireball = instance_create(x,y,objGalanikFireball);
-    image_speed = .25;
-    with objLevel.player[0] {
-    
-        if terrain_id == noone {
-            other.fireball.platformId = instance_nearest(x,y,objBossPlatform);
-        } else other.fireball.platformId = terrain_id;
-    
-    }
-    
-    y=view_yview + view_hview*0.5 ;
-    state = 2;
-break;
-case 2: // Firing 
-    if image_index == 4 {
-    
-        fireball.fire = true;
-        
-        
-        
-        image_speed = 0;
-        image_index=0;
-        if firingCount &gt; 4 {
-        
-            state = 3;
-            
-        } //else state = 1;
-    
-    }
-    y=view_yview + view_hview*0.5 ;
-break;
-case 3: // Move Off Screen
-    if instance_exists(objLevel.player[0]) {
-        if image_xscale &lt; 1 {
-            image_xscale +=0.002;
-            image_yscale +=0.002;
-        }
-    
-        if y &lt; view_yview + view_hview+6 {
-        
-            y+=2;
-        
-        } else {
-        
-            //state=4;
-            instance_destroy();
-            
-            with objGalanik {
-            
-                state = 5;
-                audio_play_sound(sndQuake,10,0);
-                //alarm[0] = 100;
-            
-            }
-        
-        }
-    }
-break;
-case 4: // Rest Reset
-    image_xscale = 1;
-    image_yscale = 1;
-break;
-}
-
-with(objGalanikFireball)
+            <string>/// Attack
+switch (state)
 {
-    event_user(0);
+case "entering":
+    if (instance_exists(objLevel.player[0]))
+    {
+        if (image_xscale &gt; zPosition or image_yscale &gt; zPosition)
+        {
+            image_xscale = max(image_xscale - zSpeed, zPosition);
+            image_yscale = max(image_yscale - zSpeed, zPosition);
+        }
+        y -= ySpeed;
+        var cameraCentre = view_yview[0] + (view_hview[0] * 0.5);
+        if (y &lt;= cameraCentre)
+        {
+            y = cameraCentre;
+            event_user(0);
+        }
+    }
+    break;
+
+case "waiting":
+    y = view_yview[0] + (view_hview[0] * 0.5);
+    break;
+
+case "exiting":
+    if (instance_exists(objLevel.player[0]))
+    {
+        if (image_xscale &lt; 1 or image_yscale &lt; 1)
+        {
+            image_xscale = min(image_xscale + zSpeed, 1);
+            image_yscale = min(image_yscale + zSpeed, 1);
+        }
+        y += ySpeed;
+        if (y &gt;= view_yview[0] + view_hview[0] + 6)
+        {
+            with (objGalanik)
+            {
+                audio_play_sound(sndQuake, 10, 0);
+                state = 5;
+            }
+            instance_destroy();
+        }
+    }
+    break;
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="10">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Fire
+firingCount++;
+timeline_position = 0;
+timeline_running = true;
+var target = noone;
+with (objLevel.player[0])
+{
+    if (terrain_id != noone)
+    {
+        target = terrain_id;
+    }
+    else
+    {
+        target = instance_nearest(x, y, objBossPlatform);
+    }
+}
+if (instance_exists(fireball))
+{
+    instance_destroy(fireball);
+}
+fireball = instance_create(x, y, objGalanikFireball);
+fireball.platformId = target;
+audio_play_sound(sndGalacnikAttack, 2, false);
+state = "waiting";
 </string>
           </argument>
         </arguments>
@@ -239,64 +247,29 @@ with(objGalanikFireball)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if xprevious &lt;&gt; x || yprevious &lt;&gt; y {
-    var xdir = sign(x-xprevious);
-    var ydir = sign(y-yprevious);
-    if x3StepsBack &lt;&gt; x2StepsBack || y3StepsBack &lt;&gt; y2StepsBack {
-        d3d_set_fog(1,c_green,0,0);
-            draw_sprite_ext(sprite_index,image_index,x3StepsBack+xdir*3,y3StepsBack-ydir*3,image_xscale,image_yscale,0,c_white,.5);
-        d3d_set_fog(0,c_white,0,0);
+            <string>/// Draw After-Images and self.
+if (xprevious != x || yprevious != y)
+{
+    var xdir = sign(x - xprevious);
+    var ydir = sign(y - yprevious);
+    if (x3StepsBack != x2StepsBack || y3StepsBack != y2StepsBack)
+    {
+        d3d_set_fog(1, afterImageBlend3, 0, 0);
+        draw_sprite_ext(sprite_index, image_index, x3StepsBack + xdir * 3, y3StepsBack - ydir * 3, image_xscale, image_yscale, 0, c_white, afterImageAlpha);
+        d3d_set_fog(0, c_white, 0, 0);
     }
-    
-    if xprevious &lt;&gt; x2StepsBack || yprevious &lt;&gt; y2StepsBack {
-        d3d_set_fog(1,c_blue,0,0);
-            draw_sprite_ext(sprite_index,image_index,x2StepsBack+xdir*3,y2StepsBack-ydir*3,image_xscale,image_yscale,0,c_white,.5);
-        d3d_set_fog(0,c_white,0,0);
+    if (xprevious != x2StepsBack || yprevious != y2StepsBack)
+    {
+        d3d_set_fog(1, afterImageBlend2, 0, 0);
+        draw_sprite_ext(sprite_index, image_index, x2StepsBack + xdir * 3, y2StepsBack - ydir * 3, image_xscale, image_yscale, 0, c_white, afterImageAlpha);
+        d3d_set_fog(0, c_white, 0, 0);
     }
-    
-    d3d_set_fog(1,c_red,0,0);
-    draw_sprite_ext(sprite_index,image_index,xprevious+xdir*3,yprevious-ydir*3,image_xscale,image_yscale,0,c_white,.5);
-    d3d_set_fog(0,c_white,0,0);
+    d3d_set_fog(1, afterImageBlend1, 0, 0);
+    draw_sprite_ext(sprite_index, image_index, xprevious + xdir * 3, yprevious - ydir * 3, image_xscale, image_yscale, 0, c_white, afterImageAlpha);
+    d3d_set_fog(0, c_white, 0, 0);
 }
-
 
 draw_self();
-
-x3StepsBack = x2StepsBack
-y3StepsBack = y2StepsBack
-x2StepsBack = xprevious;
-y2StepsBack = yprevious;
-/*
-var xdir = sign(x-xprevious);
-var ydir = sign(y-yprevious);
-var color = c_red;
-for(i=0; i &lt; 64; i+=4;) {
-    d3d_set_fog(1,color,0,0);
-        draw_sprite_ext(sprite_index,image_index,x+i*xdir,y-i*ydir,image_xscale,image_yscale,0,c_white,.5);
-        
-        show_debug_message(x-i*xdir);
-        show_debug_message(y*+i*ydir);
-        
-    d3d_set_fog(0,c_white,0,0);
-    if color == c_white {
-    
-        color = c_red;
-    
-    } else if color == c_red {
-    
-        color = c_blue;
-        
-    } else if color == c_blue {
-    
-        color = c_green;
-        
-    } else if color = c_green{
-    
-        color = c_white;
-    
-    }
-}
-*/
 </string>
           </argument>
         </arguments>

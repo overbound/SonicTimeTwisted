@@ -3350,7 +3350,6 @@
       <object>objects\objHud</object>
       <object>objects\objInputHelp</object>
       <object>objects\objParallax</object>
-      <object>objects\objThanksControl</object>
       <object>objects\objScoreCard</object>
     </objects>
     <objects name="Planetary Panic">
@@ -3850,6 +3849,9 @@
     <timelines name="Specific">
       <timelines name="Bosses">
         <timeline>timelines\animBossExplosion</timeline>
+        <timeline>timelines\animGalanikFireballFade</timeline>
+        <timeline>timelines\animGalanikFireballGrow</timeline>
+        <timeline>timelines\animGalanikSmallFire</timeline>
         <timeline>timelines\timeAA1Boss</timeline>
         <timeline>timelines\timeEggWalkerStartWalk</timeline>
         <timeline>timelines\timeFinalBossArm</timeline>
@@ -3933,7 +3935,6 @@
       </rooms>
     </rooms>
     <room>rooms\titlescreen</room>
-    <room>rooms\Thanks</room>
     <rooms name="Cutscenes">
       <rooms name="intro Future">
         <room>rooms\intro1</room>
