@@ -136,7 +136,7 @@ else
                     other.player_id=noone;
                 }
             // execute reaction
-            if player_get_reaction(hit_wall, wall_direction) return false;
+            if player_get_reaction(hit_wall, wall_direction) exit;
             // if moving towards wall
             if wall_direction!=0 and sign(xspeed)==wall_direction
             {

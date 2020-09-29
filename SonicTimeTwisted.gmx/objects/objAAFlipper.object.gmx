@@ -73,18 +73,18 @@ with player_id
     xspeed = 0.5*other.image_xscale;
     
     // update position
-    if not player_movement_ground() {other.player_id = noone; return false;}
+    if not player_movement_ground() {other.player_id = noone; exit;}
     
     // falling
     //if not landed {other.player_id = noone; return player_is_falling();}
     if other.image_xscale == 1 {  
-        if bbox_left &gt; other.bbox_right { other.player_id = noone; return player_is_falling(); }
+        if bbox_left &gt; other.bbox_right { other.player_id = noone; player_is_falling(); exit;}
     }
     else {
-        if bbox_right &lt; other.bbox_left { other.player_id = noone; return player_is_falling(); }
+        if bbox_right &lt; other.bbox_left { other.player_id = noone; player_is_falling(); exit;}
     }
     // release control if not on flipper
-    if (terrain_id!=other.id) {other.player_id = noone; return player_is_rolling();}
+    if (terrain_id!=other.id) {other.player_id = noone; player_is_rolling(); exit;}
     // fling upward
     if input_check_pressed(cACTION)
     {

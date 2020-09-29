@@ -206,7 +206,8 @@ with player_id
         if objProgram.in_past audio_play_sound(sndChantFuture, 1, false); else
         audio_play_sound(sndChantPast, 1, false);
         // time travel
-        return player_is_exiting();
+        player_is_exiting();
+        exit;
     }
     // cancelling
     if (input_axis_x() == -facing)
@@ -225,7 +226,8 @@ with player_id
         // other
         depth = 0;
         // running
-        return player_is_running();
+        player_is_running();
+        exit;
     }
     // jumping
     if input_check_pressed(cACTION)
@@ -241,7 +243,8 @@ with player_id
         // other
         depth = 0;
         // running
-        return player_is_jumping();
+        player_is_jumping();
+        exit;
     }
 }
 </string>
