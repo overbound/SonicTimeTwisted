@@ -85,7 +85,7 @@ if input_check_pressed(cACTION) and not player_collision_ceiling(offset_y + 5)
     return 0;
 }
 // animate
-if (input_check(cUP) || input_check(cDOWN)) == false{
+if !(input_check(cUP) || input_check(cDOWN)) {
     image_index = 0; 
     timeline_speed = 0;
     timeline_position = 0;
