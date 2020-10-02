@@ -1,4 +1,4 @@
-ini_open("settings.ini");
+stt_ini_open("settings.ini");
 if(instance_exists(objScreen))
 {
     ini_write_real('video_options', "mode", objScreen.video_mode);
@@ -32,5 +32,6 @@ if(instance_exists(objProgram.inputManager))
     ini_write_real('smartphone', 'rumble_strength', objProgram.inputManager.rumble_strength);
 }
 ini_write_string('localization', "language", global.TR_lang);
-ini_close();
+stt_ini_close();
+stt_save_files();
 reinit_input_method();

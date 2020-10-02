@@ -33,7 +33,7 @@ else
        }
        else
        {
-            menu_fn_add_option(tr("_options_menu_Map_keys"), 2);
+            if (!(DEVICE_INFO & DEVICE_OS_PLAYSTATION)) menu_fn_add_option(tr("_options_menu_Map_keys"), 2);
             menu_fn_add_option(tr("_options_menu_Map_gamepad"), 3);
        }
    }

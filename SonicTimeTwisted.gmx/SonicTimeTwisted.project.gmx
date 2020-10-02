@@ -9,6 +9,7 @@
     <Config>Configs\iPhone</Config>
     <Config>Configs\AppleTV</Config>
     <Config>Configs\Linux</Config>
+    <Config>Configs\PlayStation</Config>
   </Configs>
   <datafiles number="49" name="datafiles">
     <datafile>
@@ -44,6 +45,9 @@
           <CopyToMask>9223372036854775807</CopyToMask>
         </Config>
         <Config name="Linux">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+        <Config name="PlayStation">
           <CopyToMask>9223372036854775807</CopyToMask>
         </Config>
       </ConfigOptions>
@@ -85,6 +89,9 @@
           <Config name="Linux">
             <CopyToMask>9223372036854775807</CopyToMask>
           </Config>
+          <Config name="PlayStation">
+            <CopyToMask>9223372036854775807</CopyToMask>
+          </Config>
         </ConfigOptions>
         <filename>English.json</filename>
       </datafile>
@@ -121,6 +128,9 @@
             <CopyToMask>9223372036854775807</CopyToMask>
           </Config>
           <Config name="Linux">
+            <CopyToMask>9223372036854775807</CopyToMask>
+          </Config>
+          <Config name="PlayStation">
             <CopyToMask>9223372036854775807</CopyToMask>
           </Config>
         </ConfigOptions>
@@ -162,6 +172,9 @@
             <Config name="Linux">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
+            <Config name="PlayStation">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
           </ConfigOptions>
           <filename>sprFontHud.png</filename>
         </datafile>
@@ -200,6 +213,9 @@
             <Config name="Linux">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
+            <Config name="PlayStation">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
           </ConfigOptions>
           <filename>sprFontLives.png</filename>
         </datafile>
@@ -236,6 +252,9 @@
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="Linux">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="PlayStation">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
           </ConfigOptions>
@@ -637,10 +656,7 @@
       </sprites>
       <sprites name="Title Screen">
         <sprite>sprites\sprCharacterSelect</sprite>
-        <sprite>sprites\sprLevelSelect</sprite>
         <sprite>sprites\sprOverboundLogo</sprite>
-        <sprite>sprites\sprSelectLong</sprite>
-        <sprite>sprites\sprSelector</sprite>
         <sprite>sprites\sprTitleCloud0</sprite>
         <sprite>sprites\sprTitleCloud1</sprite>
         <sprite>sprites\sprTitleFog</sprite>
@@ -2408,6 +2424,14 @@
         <script>scripts\load_emeralds.gml</script>
         <script>scripts\load_big_ring.gml</script>
         <script>scripts\load_lives.gml</script>
+        <scripts name="PlayStation">
+          <script>scripts\stt_load_files.gml</script>
+          <script>scripts\stt_ini_open.gml</script>
+          <script>scripts\stt_ini_close.gml</script>
+          <script>scripts\stt_file_exists.gml</script>
+          <script>scripts\stt_file_delete.gml</script>
+          <script>scripts\stt_save_files.gml</script>
+        </scripts>
       </scripts>
       <scripts name="Settings">
         <script>scripts\delete_settings.gml</script>
@@ -2431,6 +2455,7 @@
         <script>scripts\tr_reload_all.gml</script>
         <script>scripts\tr_readd_builtin_fonts.gml</script>
         <script>scripts\tr_export_builtin_fonts.gml</script>
+        <script>scripts\tr_free.gml</script>
       </scripts>
     </scripts>
     <scripts name="Overlays">
@@ -3305,8 +3330,6 @@
     <objects name="Overlays">
       <objects name="Title Screen">
         <object>objects\objCharacterSelect</object>
-        <object>objects\objLevelSelect</object>
-        <object>objects\objSelector</object>
         <object>objects\objTitleCloud0</object>
         <object>objects\objTitleCloud1</object>
         <object>objects\objTitleControl</object>
@@ -3886,8 +3909,6 @@
   <rooms name="rooms">
     <room>rooms\startup</room>
     <room>rooms\saveSelect</room>
-    <room>rooms\charselect</room>
-    <room>rooms\level_select</room>
     <rooms name="Zones">
       <rooms name="Attraction Attack">
         <room>rooms\AA1_f</room>
@@ -3975,7 +3996,7 @@
       </rooms>
     </rooms>
   </rooms>
-  <constants number="111">
+  <constants number="112">
     <constant name="VERSION">"v1.1.0-dev"</constant>
     <constant name="GAMEPAD_POV_Y">7</constant>
     <constant name="GAMEPAD_POV_X">6</constant>
@@ -4078,7 +4099,8 @@
     <constant name="DEVICE_OS_LINUX">64</constant>
     <constant name="DEVICE_OS_IOS">128</constant>
     <constant name="DEVICE_OS_ANDROID">256</constant>
-    <constant name="DEVICE_OS_UNKNOWN">512</constant>
+    <constant name="DEVICE_OS_PLAYSTATION">512</constant>
+    <constant name="DEVICE_OS_UNKNOWN">1024</constant>
     <constant name="DEVICE_INFO">DEVICE_TYPE_UNKNOWN | DEVICE_OS_UNKNOWN</constant>
     <constant name="DEVICE_BACK_BUTTON">vk_escape</constant>
     <constant name="INPUT_KEYBOARD">0</constant>

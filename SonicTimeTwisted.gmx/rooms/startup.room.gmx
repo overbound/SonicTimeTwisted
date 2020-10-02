@@ -7,9 +7,9 @@
   <hsnap>16</hsnap>
   <isometric>0</isometric>
   <speed>60</speed>
-  <persistent>-1</persistent>
-  <colour>12632256</colour>
-  <showcolour>0</showcolour>
+  <persistent>0</persistent>
+  <colour>0</colour>
+  <showcolour>-1</showcolour>
   <code></code>
   <enableViews>0</enableViews>
   <clearViewBackground>0</clearViewBackground>

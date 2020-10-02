@@ -1417,7 +1417,8 @@ hint_up_to_date = false;
 var filename = save_file_name(selectCheck);
 slots[selectCheck].visiblePast=0;
 slots[selectCheck].visibleFuture=0;
-file_delete(filename);
+stt_file_delete(filename);
+stt_save_files();
 slots[selectCheck].iconIndex = 0;
 slots[selectCheck].characterSelect=1;
 slots[selectCheck].alarm[0] = 1;
@@ -1512,7 +1513,7 @@ if selectState == 4 {
 
 } else {
         var filename = save_file_name(selectCheck);
-        if !file_exists(filename) {
+        if !stt_file_exists(filename) {
             selectState = 2;
             allowLevelStart = false;
             

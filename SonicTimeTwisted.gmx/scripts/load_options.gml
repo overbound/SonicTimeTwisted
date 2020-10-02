@@ -1,6 +1,6 @@
 var file = "settings.ini";
-if (file_exists(file)) {
-    ini_open(file);
+if (stt_file_exists(file)) {
+    stt_ini_open(file);
     
     with(objScreen)
     {
@@ -23,7 +23,7 @@ if (file_exists(file)) {
 
     }
     global.TR_lang = ini_read_string('localization', "language", "en");
-    ini_close();
+    stt_ini_close();
     return true;
 }
 return false;

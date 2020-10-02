@@ -77,8 +77,6 @@ use_fallback = false;
 smartphone_controls_enabled = false;
 // initialize touchscreen-specific controls without copy-pasting everything, there are a lot of variables
 input_load_touchscreen_controls(false);
-
-input_load();
 </string>
           </argument>
         </arguments>
@@ -283,8 +281,8 @@ case "gamepad lost":
           <argument>
             <kind>1</kind>
             <string>/// Delete input stream
-if stream ds_list_destroy(stream);
-stream = -1;
+if (ds_exists(stream, ds_type_list)) ds_list_destroy(stream);
+if (ds_exists(rumble_queue, ds_type_queue)) ds_queue_destroy(rumble_queue);
 computer_input_reset_state();
 </string>
           </argument>

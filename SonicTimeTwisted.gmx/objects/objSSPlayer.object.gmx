@@ -1065,7 +1065,8 @@ if z &gt;= 24 {
          image_speed = .25;  
          }  
         save_emeralds();
-        save_big_ring() 
+        save_big_ring();
+        stt_save_files();
         
     } else {
         with objSSMessages { closing=1; }

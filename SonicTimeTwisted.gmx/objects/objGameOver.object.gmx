@@ -284,6 +284,7 @@ case 1: // fade out
 case -1: // fade in
     if image_alpha&gt;=1 {
         save_lives(3);
+        stt_save_files();
         instance_destroy(); 
         break;
     }

@@ -48,6 +48,9 @@
     <Config name="Linux">
       <CopyToMask>9223372036854775807</CopyToMask>
     </Config>
+    <Config name="PlayStation">
+      <CopyToMask>9223372036854775807</CopyToMask>
+    </Config>
   </ConfigOptions>
   <androidPermissions>
     <Permission>android.permission.VIBRATE</Permission>
@@ -84,6 +87,9 @@
           <CopyToMask>9223372036854775807</CopyToMask>
         </Config>
         <Config name="Linux">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+        <Config name="PlayStation">
           <CopyToMask>9223372036854775807</CopyToMask>
         </Config>
       </ConfigOptions>

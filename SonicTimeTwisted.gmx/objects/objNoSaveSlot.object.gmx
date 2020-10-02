@@ -60,7 +60,7 @@ currentEmerald = 0;
           <argument>
             <kind>1</kind>
             <string>/// Choose Icon
-ini_open(save_file_name(slotNumber));
+ini_open_from_string("");
 futureLevels[0]=real(base64_decode(ini_read_string(LEVELS, aAA1_f, false)));
 futureLevels[1]=real(base64_decode(ini_read_string(LEVELS, aAA2_f, false)));
 futureLevels[2]=real(base64_decode(ini_read_string(LEVELS, aRR1_f, false)));
@@ -97,6 +97,8 @@ characterSelect=real(base64_decode(ini_read_string(STATS, CHARACTER, base64_enco
 currentStone = real(base64_decode(ini_read_string(EMERALDS, PAST,0)));
 currentEmerald = real(base64_decode(ini_read_string(EMERALDS, FUTURE,0)));
 ini_close();
+// is this code even meaningful?
+// what it does in the obj[NO]SavSlot context?
 for(i=0; i &lt; 16; i++) {
     if pastLevels[i] == true {
         
