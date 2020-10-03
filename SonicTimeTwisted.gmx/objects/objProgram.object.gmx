@@ -169,6 +169,7 @@ if (DEVICE_INFO &amp; DEVICE_OS_PLAYSTATION)
 else
 {
     event_user(1);
+    show_debug_overlay(true);
 }
 </string>
           </argument>

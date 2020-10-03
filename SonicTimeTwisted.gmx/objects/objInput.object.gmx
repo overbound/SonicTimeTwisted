@@ -59,6 +59,7 @@ is_fallback_touchscreen = false;
 // rumble/haptics
 rumble_queue = ds_queue_create();
 rumble_configuration_script = input_method_dummy_script;
+rumble_enabled = false;
 
 // input devices management
 input_init_script = input_method_dummy_script;
@@ -282,7 +283,7 @@ case "gamepad lost":
             <kind>1</kind>
             <string>/// Delete input stream
 if (ds_exists(stream, ds_type_list)) ds_list_destroy(stream);
-if (ds_exists(rumble_queue, ds_type_queue)) ds_queue_destroy(rumble_queue);
+//if (ds_exists(rumble_queue, ds_type_queue)) ds_queue_destroy(rumble_queue);
 computer_input_reset_state();
 </string>
           </argument>

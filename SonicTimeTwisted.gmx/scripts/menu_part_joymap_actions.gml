@@ -6,14 +6,15 @@ switch(argument0)
         break;
     case 0:
         // rumble
-         if(objProgram.inputManager.rumble_configuration_script == rumble_manage)
+         if(objProgram.inputManager.rumble_enabled)
          {
-             objProgram.inputManager.rumble_configuration_script = input_method_dummy_script;
+             objProgram.inputManager.input_rumble_trigger_script = input_method_dummy_script;
          }
          else
          {
-             objProgram.inputManager.rumble_configuration_script = rumble_manage;
+             objProgram.inputManager.input_rumble_trigger_script = rumble_manage;
          }
+         objProgram.inputManager.rumble_enabled = !objProgram.inputManager.rumble_enabled;
          break;
     case 1:
         // general mapping - prepare a map for a backup, then engage!
@@ -134,14 +135,15 @@ switch(argument0)
          // press left or right
          if(items[cursor, 1] == 0)
          {
-             if(objProgram.inputManager.rumble_configuration_script == rumble_manage)
+             if(objProgram.inputManager.rumble_enabled)
              {
-                 objProgram.inputManager.rumble_configuration_script = input_method_dummy_script;
+                 objProgram.inputManager.input_rumble_trigger_script = input_method_dummy_script;
              }
              else
              {
-                 objProgram.inputManager.rumble_configuration_script = rumble_manage;
+                 objProgram.inputManager.input_rumble_trigger_script = rumble_manage;
              }
+             objProgram.inputManager.rumble_enabled = !objProgram.inputManager.rumble_enabled;
          }
          break;
          
@@ -227,7 +229,7 @@ for(var i=0; i < objProgram.inputManager.axis_count; i++)
     }
 }
 
-if(objProgram.inputManager.rumble_configuration_script == rumble_manage)
+if(objProgram.inputManager.rumble_enabled)
 {
     menu_fn_refresh_displayed_value(0, "< "+tr("_On")+" >");
 }

@@ -30,10 +30,12 @@ switch(argument0)
         );
         break;
     case INPUT_GAMEPAD:
+        var trigger_script = input_method_dummy_script;
+        if (objProgram.inputManager.rumble_enabled) trigger_script = rumble_manage;
         set_input_method_detailed(
             input_method_init_physical,
             input_method_gamepad,
-            input_method_dummy_script,
+            trigger_script,
             rumble_manage,
             rumble_perform_windows_gamepad,
             input_method_dummy_script,
