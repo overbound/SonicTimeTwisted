@@ -5,8 +5,7 @@ var saveSlot = argument1;
 if(saveSlot <= 0)
 {
     // if no save mode : flush temporary storage
-    ds_map_destroy(objProgram.no_save_data);
-    objProgram.no_save_data = ds_map_create();
+    ds_map_clear(objProgram.no_save_data);
     save_data_write(STATS, CHARACTER, character);
     save_data_write(STATS, LIVES, 3);
     save_data_write(LEVELS, aAA1_f, 1);
@@ -43,7 +42,7 @@ if(saveSlot <= 0)
 else
 {
     var filename = "save" +string(selectCheck)+".ini";
-    ini_open(filename);
+    stt_ini_open(filename);
     ini_write_string(STATS, CHARACTER, base64_encode(string(character)));
     ini_write_string(STATS, LIVES, base64_encode(string(3)));
     ini_write_string(LEVELS, aAA1_f, base64_encode(string(1)));
@@ -77,5 +76,5 @@ else
     ini_write_string(EMERALDS, FUTURE, base64_encode(string(0)));
     ini_write_string(EMERALDS, PAST, base64_encode(string(0)));
     
-    ini_close();
+    stt_ini_close();
 }

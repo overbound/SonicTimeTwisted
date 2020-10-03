@@ -61,7 +61,7 @@ Load the appropriate video mode. See the set_video_mode script for details
 video_mode = 0;
 framerate = 0; // 0 - 60fps, 1 - 30fps
 score_tally_mode = 0;
-load_options();
+//load_options();
 </string>
           </argument>
         </arguments>
@@ -109,7 +109,7 @@ window_center();
           <argument>
             <kind>1</kind>
             <string>/// Unpause
-if not paused and screenshot &gt; -1 { background_delete(screenshot); screenshot = -1; }
+if not paused and background_exists(screenshot) { background_delete(screenshot); }
 </string>
           </argument>
         </arguments>
@@ -214,7 +214,7 @@ apply_video_settings();
           <argument>
             <kind>1</kind>
             <string>/// Clean up
-if screenshot &gt; -1 { background_delete(screenshot); screenshot = -1; }
+if background_exists(screenshot) { background_delete(screenshot); }
 </string>
           </argument>
         </arguments>
@@ -298,7 +298,7 @@ frame_counter = (frame_counter + 1) mod 4;
           <argument>
             <kind>1</kind>
             <string>/// Screenshot and scanlines
-if screenshot &gt; -1 &amp;&amp; !instance_exists(objSSHud)
+if background_exists(screenshot) &amp;&amp; !instance_exists(objSSHud)
 {
     draw_enable_alphablend(false);
     draw_background_stretched_ext(screenshot, view_xview[view_current], view_yview[view_current], width, height, c_white, 1);

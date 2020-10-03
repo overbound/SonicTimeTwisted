@@ -23,7 +23,7 @@ if(target_rumble_length > rumble_length)
     {
         rumble_data_element++;
     }
-    for(; rumble_data_element < array_height_2d(rumble_data); rumble_data_element++)
+    while (rumble_data_element < array_height_2d(rumble_data))
     {
         var rstart = rumble_data[rumble_data_element, RUMBLE_START_TIME];
         var rend = rumble_data[rumble_data_element, RUMBLE_END_TIME];
@@ -37,5 +37,7 @@ if(target_rumble_length > rumble_length)
                 ds_queue_enqueue(rumble_queue, rforce);
             }
         }
+        
+        rumble_data_element++;
     }
 }

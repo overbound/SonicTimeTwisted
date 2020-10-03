@@ -27,11 +27,10 @@
             <kind>1</kind>
             <string>/// Initialize custom resources
 image_speed = 0;
-if (objProgram.first_run) tr_set_default_lang();
-tr_load_files();
 // TODO: add custom font support here!!!
 /* AUTHOR NOTE: created resources (fonts, particles, libraries, etc.) go here! */
 // fonts
+tr_load_files();
 fontHud = font_add_sprite(sprFontHud, ord('"'), 0,0);
 fontHudMin = font_add_sprite(sprFontHudMin, ord('"'), 0,0);
 fontLives = font_add_sprite(sprFontLives, ord('"'), 0, 0);
@@ -39,7 +38,6 @@ fontMicro = font_add_sprite(sprFontMicro, ord('"'), 0, 0);
 fontTitleLarge = font_add_sprite(sprFontTitleLarge, 48, 1, 0);
 fontTitleSmall = font_add_sprite(sprFontTitleSmall, 65, 1, 0);
 fontTitleSmallest = font_add_sprite(sprFontTitleSmallest, 48, 1, 0);
-tr_load_fonts(); // this will replace fonts with translated ones only if translated variant exists.
 // water splash
 splash = part_type_create();
 part_type_sprite(splash, sprSplash, 1, 1, 0);
@@ -225,6 +223,126 @@ ds_map_add(anim_sonic_super, "swing", animSuperSonicSwing);
 ds_map_add(anim_sonic_super, "wallrun", animSuperSonicWallRun);
 ds_map_add(anim_sonic_super, "float", animSuperSonicFloat);
 ds_map_add(anim_sonic_super, "stand_rotate", animeSuperSonicStandRotate);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="10">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Load custom translation files.
+
+if (objProgram.first_run) tr_set_default_lang();
+tr_load_fonts(); // this will replace fonts with translated ones only if translated variant exists.
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="3">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Free resources...
+
+ds_map_destroy(anim_sonic);
+ds_map_destroy(anim_tails);
+ds_map_destroy(anim_knuckles);
+ds_map_destroy(anim_sonic_super);
+part_type_destroy(splash);
+part_type_destroy(bubble_pop);
+part_type_destroy(sparkle);
+part_type_destroy(explosion1);
+part_type_destroy(explosion2);
+part_type_destroy(dust);
+part_type_destroy(lspark);
+part_type_destroy(flame);
+part_type_destroy(flame_dust);
+part_type_destroy(ff_snow);
+font_delete(fontHud);
+font_delete(fontHudMin);
+font_delete(fontLives);
+font_delete(fontMicro);
+font_delete(fontTitleLarge);
+font_delete(fontTitleSmall);
+font_delete(fontTitleSmallest);
+tr_free();
+
+// free all stuff just in case.
+for (var i = 0; i &lt; 4096; i++)
+{
+    if (i != application_surface &amp;&amp; surface_exists(i))
+    {
+        surface_free(i);
+        show_debug_message("Freed surface " + string(i));
+    }
+    
+    if (buffer_exists(i))
+    {
+        buffer_delete(i);
+        show_debug_message("Freed buffer " + string(i));
+    }
+    
+    if (ds_exists(i, ds_type_map))
+    {
+        ds_map_destroy(i);
+        show_debug_message("Freed DS Map " + string(i));
+    }
+    
+    if (ds_exists(i, ds_type_list))
+    {
+        ds_map_destroy(i);
+        show_debug_message("Freed DS List " + string(i));
+    }
+    
+    if (ds_exists(i, ds_type_queue))
+    {
+        ds_map_destroy(i);
+        show_debug_message("Freed DS Queue " + string(i));
+    }
+    
+    if (part_system_exists(i))
+    {
+        part_system_destroy(i);
+        show_debug_message("Freed Particle System " + string(i));
+    }
+    
+    if (part_type_exists(i))
+    {
+        part_type_destroy(i);
+        show_debug_message("Freed Particle Type " + string(i));
+    }
+}
+
+draw_texture_flush();
 </string>
           </argument>
         </arguments>

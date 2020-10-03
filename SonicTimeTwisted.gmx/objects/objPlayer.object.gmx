@@ -498,7 +498,7 @@ ds_list_destroy(ytable);
 audio_emitter_free(audio);
 
 // Remove id
-with objLevel{ player[other.player_id] = noone; }
+objLevel.player[player_id] = noone;
 </string>
           </argument>
         </arguments>

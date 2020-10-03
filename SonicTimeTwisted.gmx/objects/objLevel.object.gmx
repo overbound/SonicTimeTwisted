@@ -665,6 +665,7 @@ with player[0] {
             <kind>1</kind>
             <string>/// save level and play music
 save_level();
+stt_save_files();
     // if cutscene, let cutscene take over
     if objProgram.cutscene
     {

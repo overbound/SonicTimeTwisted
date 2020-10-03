@@ -95,7 +95,7 @@
 		"_options_menu_Configure_Touchscreen": "Настройки тачскрина",
 		"_options_menu_Map_keys": "Настройки клавиатуры",
 		"_options_menu_Map_gamepad": "Настройки геймпада",
-		"_options_menu_Map_BTUSB_device": "Map BT/USB device",
+		"_options_menu_Map_BTUSB_device": "Настройки BT/USB устр.",
 		"_options_menu_WaD": "Предупреждения и дисклеймеры",
 		"_options_menu_Back": "< Назад",
 		"_options_menu_Remap_all": "Переназначить все",
@@ -104,7 +104,7 @@
 		
 		"_graphics_menu_Title": "Настройки графики",
 		"_graphics_menu_Screen_size": "Размер окна",
-		"_graphics_menu_Stm": "Режим подсчёта очков",
+		"_graphics_menu_Stm": "Реж. подсч. очков",
 		"_graphics_menu_Fr": "Уменьшение мерцания",
 		"_graphics_menu_VSync": "Вертикальная синхронизация",
 		"_graphics_menu_1x": "Оконный 1x",
@@ -131,6 +131,9 @@
 		"_charname_KTE": "НАКЛЗ",
 		
 		"_save_delete": "УДАЛИТЬ",
-		"_save_nosave": "НЕ СОХР."
+		"_save_nosave": "НЕ СОХР.",
+		
+		"_PS_SAVING": "СОХРАНЕНИЕ...",
+		"_PS_LOADING": "ЗАГРУЗКА..."
 	}
 }

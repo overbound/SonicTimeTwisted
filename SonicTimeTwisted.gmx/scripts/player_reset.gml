@@ -5,6 +5,7 @@ objGameData.rings[0] = 0;
 if not (debug_mode or instance_exists(objCutscene)) {
     objGameData.player_lives[player_id] -= 1;
     save_lives(objGameData.player_lives[player_id]);
+    stt_save_files();
 }
 // handle lives based on mode
 /*switch objProgram.game_mode

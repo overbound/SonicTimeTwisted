@@ -1,6 +1,6 @@
 var file = "settings.ini";
-if (file_exists(file)) {
-    ini_open(file);
+if (stt_file_exists(file)) {
+    stt_ini_open(file);
     
     with(objScreen)
     {
@@ -20,10 +20,17 @@ if (file_exists(file)) {
         {
             input_method = input_method_fallback;
         }
-
+        
+        rumble_enabled = ini_read_real('input', 'rumble', false);
+        
+        if (rumble_enabled)
+            input_rumble_trigger_script = rumble_manage;
+        else
+            input_rumble_trigger_script = input_method_dummy_script;
     }
     global.TR_lang = ini_read_string('localization', "language", "en");
-    ini_close();
+    if (!ds_map_exists(global.TR_map, global.TR_lang)) global.TR_lang = "en";
+    stt_ini_close();
     return true;
 }
 return false;

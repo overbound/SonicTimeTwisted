@@ -1,4 +1,4 @@
-ini_open("settings.ini");
+stt_ini_open("settings.ini");
 if(instance_exists(objScreen))
 {
     ini_write_real('video_options', "mode", objScreen.video_mode);
@@ -9,6 +9,7 @@ if(instance_exists(objScreen))
 if(instance_exists(objProgram.inputManager))
 {
     ini_write_real('input', 'method', objProgram.inputManager.input_method);
+    ini_write_real('input', 'rumble', objProgram.inputManager.rumble_enabled);
     ini_write_real('smartphone', 'dpadmode', objProgram.inputManager.dpadmode);
     ini_write_real('smartphone', 'vkalpha', objProgram.inputManager.vkalpha);
     ini_write_real('smartphone', 'gyroinss', objProgram.inputManager.gyroinss);
@@ -32,5 +33,6 @@ if(instance_exists(objProgram.inputManager))
     ini_write_real('smartphone', 'rumble_strength', objProgram.inputManager.rumble_strength);
 }
 ini_write_string('localization', "language", global.TR_lang);
-ini_close();
+stt_ini_close();
+stt_save_files();
 reinit_input_method();

@@ -167,7 +167,7 @@ screenshot = -1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if screenshot &gt; -1 
+            <string>if background_exists(screenshot)
 {
     draw_background_stretched_ext(screenshot, view_xview[view_current], view_yview[view_current]+screen_y, objScreen.width, objScreen.height, c_white, image_alpha);
 }

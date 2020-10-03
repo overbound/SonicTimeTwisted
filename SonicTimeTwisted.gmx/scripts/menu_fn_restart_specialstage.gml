@@ -10,6 +10,7 @@ else
     {
         objGameData.player_lives[0] -= 1;
         save_lives(objGameData.player_lives[0]);
+        stt_save_files();
         room_restart();
         with objSSLevel loopMusic = true;
     }

@@ -100,6 +100,9 @@
 		"_charname_KTE": "К.Е.",
 		
 		"_save_delete": "DELETE",
-		"_save_nosave": "NO SAVE"
+		"_save_nosave": "NO SAVE",
+		
+		"_PS_SAVING": "SAVING...",
+		"_PS_LOADING": "LOADING..."
 	}
 }

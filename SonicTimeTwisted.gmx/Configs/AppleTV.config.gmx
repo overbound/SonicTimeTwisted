@@ -903,10 +903,9 @@
     <option_xbone_title_id></option_xbone_title_id>
   </Options>
   <ConfigConstants>
-    <constants number="4">
+    <constants number="3">
       <constant name="DEVICE_INFO">DEVICE_TYPE_CONSOLE | DEVICE_OS_IOS</constant>
       <constant name="DEVICE_BACK_BUTTON">vk_backspace</constant>
-      <constant name="DEVICE_TT_SHADER_SUPPORTED">0</constant>
       <constant name="DEVICE_HAS_TOUCHSCREEN">0</constant>
     </constants>
   </ConfigConstants>
