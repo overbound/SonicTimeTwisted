@@ -30,7 +30,34 @@
 				"yorig": 0,
 				"prop": 0,
 				"sep": 0
-			}
+			},
+			"sprFontTitleLarge": {
+				"alphabet": "!0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя",
+				"removeback": 0,
+				"smooth": 0,
+				"xorig": 0,
+				"yorig": 0,
+				"prop": 1,
+				"sep": 0
+			},
+			"sprFontTitleSmall": {
+				"alphabet": "!ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя",
+				"removeback": 0,
+				"smooth": 0,
+				"xorig": 0,
+				"yorig": 0,
+				"prop": 1,
+				"sep": 0
+			},
+			"sprFontTitleSmallest": {
+				"alphabet": "!0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ",
+				"removeback": 0,
+				"smooth": 0,
+				"xorig": 0,
+				"yorig": 0,
+				"prop": 1,
+				"sep": 0
+			},
 		}
 	},
 	"comments": {
@@ -126,14 +153,23 @@
 		"_HUD_TIME": "ВРЕМЯ",
 		"_HUD_RINGS": "КОЛЬЦА",
 		
-		"_charname_Sonic": "СОНИК",
-		"_charname_Tails": "ТЭЙЛС",
-		"_charname_KTE": "НАКЛЗ",
+		"_charname_0": "СОНИК",
+		"_charname_1": "ТЭЙЛС",
+		"_charname_2": "НАКЛЗ",
 		
 		"_save_delete": "УДАЛИТЬ",
 		"_save_nosave": "НЕ СОХР.",
 		
 		"_PS_SAVING": "СОХРАНЕНИЕ...",
-		"_PS_LOADING": "ЗАГРУЗКА..."
+		"_PS_LOADING": "ЗАГРУЗКА...",
+		
+		"_ACT1_FUTURE": "АКТ1 БУДУЩЕЕ",
+		"_ACT2_FUTURE": "АКТ2 БУДУЩЕЕ",
+		"_ACT1_PAST": "АКТ1 ПРОШЛОЕ",
+		"_ACT2_PAST": "АКТ2 ПРОШЛОЕ",
+		
+		"_zonename_AAZ_A": "Зона",
+		"_zonename_AAZ_B": "Прыгающих",
+		"_zonename_AAZ_C": "Котов",
 	}
 }

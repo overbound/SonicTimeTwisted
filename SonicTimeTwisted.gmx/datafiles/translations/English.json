@@ -95,14 +95,25 @@
 		"_HUD_TIME": "TIME",
 		"_HUD_RINGS": "RINGS",
 		
-		"_charname_Sonic": "СОНИК",
-		"_charname_Tails": "ТЭЙЛС",
-		"_charname_KTE": "К.Е.",
+		"_charname_0": "SONIC",
+		"_charname_1": "TAILS",
+		"_charname_2": "K.T.E",
 		
 		"_save_delete": "DELETE",
 		"_save_nosave": "NO SAVE",
 		
 		"_PS_SAVING": "SAVING...",
-		"_PS_LOADING": "LOADING..."
+		"_PS_LOADING": "LOADING...",
+		
+		"_ACT1_FUTURE": "ACT1 FUTURE",
+		"_ACT2_FUTURE": "ACT2 FUTURE",
+		"_ACT1_PAST": "ACT1 PAST",
+		"_ACT2_PAST": "ACT2 PAST",
+		
+		"_zonename_AAZ_A": "Attraction",
+		"_zonename_AAZ_B": "Attack",
+		"_zonename_AAZ_C": "Zone",
+		
+		
 	}
 }
