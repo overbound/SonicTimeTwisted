@@ -32,7 +32,7 @@
 				"sep": 0
 			},
 			"sprFontTitleLarge": {
-				"alphabet": "!0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя",
+				"alphabet": "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя",
 				"removeback": 0,
 				"smooth": 0,
 				"xorig": 0,
@@ -41,7 +41,7 @@
 				"sep": 0
 			},
 			"sprFontTitleSmall": {
-				"alphabet": "!ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя",
+				"alphabet": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя",
 				"removeback": 0,
 				"smooth": 0,
 				"xorig": 0,
@@ -50,7 +50,7 @@
 				"sep": 0
 			},
 			"sprFontTitleSmallest": {
-				"alphabet": "!0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ",
+				"alphabet": "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ",
 				"removeback": 0,
 				"smooth": 0,
 				"xorig": 0,
@@ -158,6 +158,7 @@
 		"_charname_2": "НАКЛЗ",
 		
 		"_save_delete": "УДАЛИТЬ",
+		"_save_delete_YesNo": "<Да Нет>",
 		"_save_nosave": "НЕ СОХР.",
 		
 		"_PS_SAVING": "СОХРАНЕНИЕ...",
