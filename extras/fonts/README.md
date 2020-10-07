@@ -32,7 +32,7 @@ As of the time of writing this README, seven fonts are used in the game, and an 
 
 A font is a font. Next!
 
-Nah, just kidding. In fact, a font is defined by a PNG image, several parameters that are pretty much set in stone (planned and approved presentation changes notwithstanding) , and extensions. All of these are contained in the font/ subdirectory. Let's go over these one by one.
+Nah, just kidding. In fact, a font is defined by a PNG image, several parameters that are pretty much set in stone (planned and approved presentation changes notwithstanding) , and extensions. All of these are contained in the **fonts/** subdirectory. Let's go over these one by one.
 
 #### Font definition files ####
 
@@ -41,25 +41,25 @@ The **fonts/** subdirectory contains three types of files: PNG files containing 
 The XML file **fonts.xml** contains, for each font, the following properties:
 
 - A name.
-- A maximum height and a maximum width.
+- A maximum height and a maximum width (keep in mind that most fonts are monospaced) .
 - Whether the font should include a contour and/or a shadow, and whether the contour should be rounded.
 - The characters contained in the base font. These sequences are usually identical and strictly cover the ASCII characters.
 
 The XSD file **fonts.xsd** is used by the tool to validate the XML file.
 
-The XSD file **font_extension.xsd** is used to validate etension XML files (see below) .
+The XSD file **font_extension.xsd** is used to validate extension XML files (see below) .
 
 The PNG files contain the symbols included in a font. While reading these PNG files, the tool only takes black (#000000) pixels into account. Pixels of any other color are ignored by the tool and can be freely used to, for instance, add markers for how big capital and small letters should be or frames to help acccount for automatically added contours and margins.
 
 #### Font extensions ####
 
-The one subdirectory that should interest a translator is **fonts/extensions/**.
+One subdirectory that should interest a translator is **fonts/extensions/**.
 
 This subdirectory contains extensions for fonts, that allow adding new symbols without editing commonly used files. An extension is comprised of a PNG file and an XML file validated by **font_extension.xsd**.
 
 The XML defines the characters contained in an extension and the font the extension applied to. Extensions use the same dimensions as the fonts they apply to.
 
-The PNG file contains the symbols to include in the new font. Just as above, a PNG file can include all sorts of colors, but only the black color is taken into account.
+The PNG file contains the symbols to include in the new font. Just as above, a PNG file can include all sorts of colors, but only black is taken into account.
 
 The tool considers an XML and a PNG file with the same name to be the same extension. While creating an extension, it is highly advised to use the CDATA node in the XML file.
 
@@ -73,7 +73,7 @@ A new preset can be added to the **presets/** subdirectory by creating an XML fi
 
 Examples of presets for English, French, Russian, and Ukrainian, as well as a preset exporting the ASCII characters, the western european characters, and the cyrillic characters as big strips with everything at once, and another one that exports several emojis in addition to the basic ASCII set, are present as examples and can be used as bases for new presets.
 
-As shown with the emojis example, when a symbol is not supported (by a given font or any of its extensions) , a space is exported instead.
+As shown with the emojis example, when a symbol is not supported (by a given font or any of its extensions) , an empty space is exported instead.
 
 ## How to use ##
 
