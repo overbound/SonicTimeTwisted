@@ -40,7 +40,7 @@
 				"xorig": 0,
 				"yorig": 0,
 				"prop": 1,
-				"sep": 0
+				"sep": 2
 			},
 			"sprFontTitleSmall": {
 				"alphabet": " ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя",
@@ -49,7 +49,7 @@
 				"xorig": 0,
 				"yorig": 0,
 				"prop": 1,
-				"sep": 0
+				"sep": 2
 			},
 			"sprFontTitleSmallest": {
 				"alphabet": " 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ",
@@ -58,6 +58,15 @@
 				"xorig": 0,
 				"yorig": 0,
 				"prop": 1,
+				"sep": 2
+			},
+			"sprFontMicro": {
+				"alphabet": " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~ АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя",
+				"removeback": 0,
+				"smooth": 0,
+				"xorig": 0,
+				"yorig": 0,
+				"prop": 0,
 				"sep": 0
 			}
 		}
@@ -76,9 +85,9 @@
 		"_Off": "Выкл",
 		"_exit_the_game": "Выйти из игры?",
 		"_epilepsy_title": "Предупреждение об эпилепсии",
-		"_epilepsy": "A few people may experience epileptic seizures when exposed to certain light patterns or flashing lights, such as while watching TV or playing video games, even those with no history of prior seizures or epilepsy.\nIf you experience any of the following symptoms - altered vision, muscle or eye twitching, loss of awareness, disorientation, any involutary movement, or convulsions - IMMEDIATELY stop playing and consult your physician.",
+		"_epilepsy": "Небольшой процент людей подвержен припадкам от воздействия визуальных эффектов, таких как повторение определённых узоров или мерцающий свет, которые могут появляться на телевидении или в видеоиграх, даже при отсутствии истории подобных приступов и диагноза эпилепсии.\nЕсли вы испытываете один из следующих симптомов: искажённое визуальное восприятие, судороги лицевых мышц, помутнение сознания, потеря ориентации, непроизвольные движения или конвульсии, НЕМЕДЛЕННО прекратите играть и проконсультируйтесь с врачом.",
 		"_disclaimer_title": "Дисклеймер",
-		"_disclaimer": "This game is a non-profit fangame project and should not be sold. Overbound Game Studio and contributors are in no way affiliated with Sega or Sonic Team.\nSonic the Hedgehog is a trademark of SEGA®. The copyrights of “Sonic the Hedgehog” and all associated characters, names, terms, art, and music thereof belong to SEGA®. All registered trademarks and copyrights belong to SEGA® and Sonic Team®.",
+		"_disclaimer": "Эта игра - это некоммерческий фанатский проект. Overbound Game Studio и контрибьюторы никак не связаны с SEGA или с Sonic Team.\nSonic The Hedgehog это торговая марка SEGA®. Авторские права на \"Sonic the Hedgehog\" и всех связанных персонажей, имена, термины, изображения, и музыку принадлежат SEGA®. Все зарегистрированные торговые марки и авторские права принадлежат SEGA® и Sonic Team®.",
 		"_github": "Исходный код игры доступен на https://github.com/overbound/SonicTimeTwisted под лицензией GPL v3",
 		"_main_menu_Play": "Играть",
 		"_main_menu_Options": "Настройки",
@@ -171,10 +180,18 @@
 		"_charname_0": "СОНИК",
 		"_charname_1": "ТЭЙЛС",
 		"_charname_2": "НАКЛЗ",
+		"_charname_0_lc": "Соника",
+		"_charname_1_lc": "Тэйлса",
+		"_charname_2_lc": "Наклза",
+		"_charname_0_altnoun": "Соником",
+		"_charname_1_altnoun": "Тэйлсом",
+		"_charname_2_altnoun": "Наклзом",
 		
 		"_save_delete": "УДАЛИТЬ",
 		"_save_delete_YesNo": "<Да Нет>",
 		"_save_nosave": "НЕ СОХР.",
+		"_save_Past": "Прощлое",
+		"_save_Future": "Будущее",
 		
 		"_ssselect_CE1": "Изумруды хаоса 1",
 		"_ssselect_CE2": "Изумруды хаоса 2",
@@ -191,6 +208,23 @@
 		"_ssselect_TS6": "Кристаллы времени 6",
 		"_ssselect_TS7": "Кристаллы времени 7",
 		
+		"_scorecard_line1": "%c ПРОШЁЛ",
+		"_scorecard_line2": "АКТ %a",
+		"_scorecard_TIME_BONUS": "БОНУС ПО ВРЕМЕНИ",
+		"_scorecard_RING_BONUS": "БОНУС ЗА КОЛЬЦА",
+		"_scorecard_PERFECT_BONUS": "БЕЗУПРЕЧНОСТЬ",
+		"_scorecard_TOTAL": "ИТОГО",
+		"_ss_scorecard_TIME_STONES": "КРИСТАЛЛЫ ВРЕМЕНИ",
+		"_ss_scorecard_TIME_STONE": "КРИСТАЛЛ ВРЕМЕНИ",
+		"_ss_scorecard_CHAOS_EMERALDS": "ИЗУМРУДЫ ХАОСА",
+		"_ss_scorecard_CHAOS_EMERALD": "ИЗУМРУД ХАОСА",
+		"_ss_scorecard_GOT_ALL": "%c ПОЛУЧИЛ ВСЕ",
+		"_ss_scorecard_GOT_A": "%c ПОЛУЧИЛ",
+		"_ss_scorecard_SUPER": "СУПЕР %c",
+		"_ss_scorecard_CAN_NOW_BECOME": "%c ТЕПЕРЬ МОЖЕТ СТАТЬ",
+		"_ss_scorecard_JUMP_AND_HOLD": "Прыгни и зажми A и B",
+		"_ss_scorecard_TO_TURN_INTO": "для превращения в Супер %c",
+		
 		"_PS_SAVING": "СОХРАНЕНИЕ...",
 		"_PS_LOADING": "ЗАГРУЗКА...",
 		
@@ -201,6 +235,14 @@
 		
 		"_zonename_AAZ_A": "Зона",
 		"_zonename_AAZ_B": "Прыгающих",
-		"_zonename_AAZ_C": "Котов"
+		"_zonename_AAZ_C": "Котов",
+		
+		"_zonename_FFZ_A": "Зона",
+		"_zonename_FFZ_B": "Замёрзшего",
+		"_zonename_FFZ_C": "Замка",
+		
+		"_zonename_TTZ_A": "Зона",
+		"_zonename_TTZ_B": "Прибрежных",
+		"_zonename_TTZ_C": "Платформ"
 	}
 }

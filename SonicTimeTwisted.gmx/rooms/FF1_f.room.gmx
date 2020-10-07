@@ -17,9 +17,9 @@ objProgram.in_past=false;
 // setup titlecard
 with objTitlecard
 {
-    title_string[0] = "Frigid";
-    title_string[1] = "Fortress";
-    title_string[2] = "Zone";
+    title_string[0] = tr("_zonename_FFZ_A");
+    title_string[1] = tr("_zonename_FFZ_B");
+    title_string[2] = tr("_zonename_FFZ_C");
     title_string[3] = "ACT1 FUTURE";
 }</code>
   <enableViews>0</enableViews>

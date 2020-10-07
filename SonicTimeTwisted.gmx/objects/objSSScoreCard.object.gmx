@@ -43,24 +43,24 @@
 if objProgram.in_past {
     if(objProgram.special_past_current_level == 7)
     {
-        line1 = string_replace("%c GOT ALL", "%c", name_tag);
-        line2 = "TIME STONES";
+        line1 = string_replace(tr("_ss_scorecard_GOT_ALL"), "%c", name_tag);
+        line2 = tr("_ss_scorecard_TIME_STONES");
     }
     else
     {
-        line1 = string_replace("%c GOT A", "%c", name_tag);
-        line2 = "TIME STONE";
+        line1 = string_replace(tr("_ss_scorecard_GOT_A"), "%c", name_tag);
+        line2 = tr("_ss_scorecard_TIME_STONE");
     }
 } else {
     if(objProgram.special_future_current_level == 7)
     {
-        line1 = string_replace("%c GOT ALL", "%c", name_tag);
-        line2 = "CHAOS EMERALDS";
+        line1 = string_replace(tr("_ss_scorecard_GOT_ALL"), "%c", name_tag);
+        line2 = tr("_ss_scorecard_CHAOS_EMERALDS");
     }
     else
     {
-        line1 = string_replace("%c GOT A", "%c", name_tag);
-        line2 = "CHAOS EMERALD";
+        line1 = string_replace(tr("_ss_scorecard_GOT_A"), "%c", name_tag);
+        line2 = tr("_ss_scorecard_CHAOS_EMERALD");
     }
 }
 title_ox1 = (objScreen.width * 0.5) - (string_width(line1) * 0.5);
@@ -111,18 +111,27 @@ default_score_offset3 = score_offset3;
 default_score_offset4 = score_offset4;
 
 // lowercase name tag
-switch objGameData.character_id[0]
+switch (objGameData.character_id[0])
 {
-case 2: name_tag_lc = "Tails"; break;
-case 3: name_tag_lc = "Knuckles"; break;
-default: name_tag_lc = "Sonic";
+case 2: name_tag_lc = tr("_charname_1_lc"); break;
+case 3: name_tag_lc = tr("_charname_2_lc"); break;
+default: name_tag_lc = tr("_charname_0_lc"); break;
 }
-super_title_line1 = string_replace("%c CAN NOW BECOME", "%c", name_tag);
-super_title_line2 = string_replace("SUPER %c", "%c", name_tag);
+
+var name_tag_altnoun = "";
+switch (objGameData.character_id[0])
+{
+case 2: name_tag_altnoun = tr("_charname_1_altnoun"); break;
+case 3: name_tag_altnoun = tr("_charname_2_altnoun"); break;
+default: name_tag_altnoun = tr("_charname_0_altnoun"); break;
+}
+
+super_title_line1 = string_replace(tr("_ss_scorecard_CAN_NOW_BECOME"), "%c", name_tag);
+super_title_line2 = string_replace(tr("_ss_scorecard_SUPER"), "%c", name_tag_altnoun);
 super_title_line1_player_overlay = name_tag;
-super_title_line2_player_overlay = string_replace("SUPER %c", "%c", name_tag);
-ss_instructions1 = string_replace("Jump and hold A and B", "%c", name_tag_lc);
-ss_instructions2 = string_replace("to turn into Super %c", "%c", name_tag_lc);
+super_title_line2_player_overlay = string_replace(tr("_ss_scorecard_SUPER"), "%c", name_tag_altnoun);
+ss_instructions1 = string_replace(tr("_ss_scorecard_JUMP_AND_HOLD"), "%c", name_tag_lc);
+ss_instructions2 = string_replace(tr("_ss_scorecard_TO_TURN_INTO"), "%c", name_tag_lc);
 next_message = false;
 score_ox1 = score_ox;
 score_ox2 = score_ox;

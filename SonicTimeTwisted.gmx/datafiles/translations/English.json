@@ -113,10 +113,19 @@
 		"_charname_0": "SONIC",
 		"_charname_1": "TAILS",
 		"_charname_2": "K.T.E",
+		"_charname_2_wide": "KNUCKLES",
+		"_charname_0_lc": "Sonic",
+		"_charname_1_lc": "Tails",
+		"_charname_2_lc": "Knuckles",
+		"_charname_0_altnoun": "SONIC",
+		"_charname_1_altnoun": "TAILS",
+		"_charname_2_altnoun": "KNUCKLES",
 		
 		"_save_delete": "DELETE",
 		"_save_delete_YesNo": "<Yes No>",
 		"_save_nosave": "NO SAVE",
+		"_save_Past": "Past",
+		"_save_Future": "Future",
 		
 		"_ssselect_CE1": "Chaos Emerald 1",
 		"_ssselect_CE2": "Chaos Emerald 2",
@@ -133,6 +142,23 @@
 		"_ssselect_TS6": "Time Stone 6",
 		"_ssselect_TS7": "Time Stone 7",
 		
+		"_scorecard_line1": "%c GOT",
+		"_scorecard_line2": "THROUGH ACT %a",
+		"_scorecard_TIME_BONUS": "TIME BONUS",
+		"_scorecard_RING_BONUS": "RING BONUS",
+		"_scorecard_PERFECT_BONUS": "PERFECT BONUS",
+		"_scorecard_TOTAL": "TOTAL",
+		"_ss_scorecard_TIME_STONES": "TIME STONES",
+		"_ss_scorecard_TIME_STONE": "TIME STONE",
+		"_ss_scorecard_CHAOS_EMERALDS": "CHAOS EMERALDS",
+		"_ss_scorecard_CHAOS_EMERALD": "CHAOS EMERALD",
+		"_ss_scorecard_GOT_ALL": "%c GOT ALL",
+		"_ss_scorecard_GOT_A": "%c GOT A",
+		"_ss_scorecard_SUPER": "SUPER %c",
+		"_ss_scorecard_CAN_NOW_BECOME": "%c CAN NOW BECOME",
+		"_ss_scorecard_JUMP_AND_HOLD": "Jump and hold A and B",
+		"_ss_scorecard_TO_TURN_INTO": "to turn into Super %c",
+		
 		"_PS_SAVING": "SAVING...",
 		"_PS_LOADING": "LOADING...",
 		
@@ -143,6 +169,14 @@
 		
 		"_zonename_AAZ_A": "Attraction",
 		"_zonename_AAZ_B": "Attack",
-		"_zonename_AAZ_C": "Zone"
+		"_zonename_AAZ_C": "Zone",
+		
+		"_zonename_FFZ_A": "Frigid",
+		"_zonename_FFZ_B": "Fortress",
+		"_zonename_FFZ_C": "Zone",
+		
+		"_zonename_TTZ_A": "Tidal",
+		"_zonename_TTZ_B": "Tubes",
+		"_zonename_TTZ_C": "Zone"
 	}
 }

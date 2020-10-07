@@ -20,10 +20,10 @@ objProgram.in_past=false;
 // setup titlecard
 with objTitlecard
 {
-    title_string[0] = "Tidal";
-    title_string[1] = "Tubes";
-    title_string[2] = "Zone";
-    title_string[3] = "ACT2 FUTURE";
+    title_string[0] = tr("_zonename_TTZ_A");
+    title_string[1] = tr("_zonename_TTZ_B");
+    title_string[2] = tr("_zonename_TTZ_C");
+    title_string[3] = tr("_ACT2_FUTURE");
 }</code>
   <enableViews>0</enableViews>
   <clearViewBackground>-1</clearViewBackground>

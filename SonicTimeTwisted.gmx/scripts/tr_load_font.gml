@@ -27,7 +27,7 @@ var _transspr = sprite_add(_path, string_length(_fontparams[? "alphabet"]), _fon
 if (!sprite_exists(_transspr)) return -1;
 
 if (_fontparams[? "prop"])
-    sprite_collision_mask(_transspr, true, 0, 0, 0, sprite_get_width(_transspr) - 1, sprite_get_height(_transspr) - 1, 0, 0);
+    sprite_collision_mask(_transspr, false, 0, 0, 0, 0, 0, 0, 0);
 
 if (sprite_exists(global.TR_sprarr[@ argument1])) sprite_delete(global.TR_sprarr[@ argument1]);
 global.TR_sprarr[@ argument1] = _transspr;
