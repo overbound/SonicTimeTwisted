@@ -2,6 +2,8 @@
 	"info": {
 		"intname": "ru",
 		"friendlyname": "Russian (Русский)",
+		
+		"top_hud_offset": 16,
 
 		"font_param": {
 			"sprFontHud": {
@@ -32,7 +34,7 @@
 				"sep": 0
 			},
 			"sprFontTitleLarge": {
-				"alphabet": "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя",
+				"alphabet": " 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя",
 				"removeback": 0,
 				"smooth": 0,
 				"xorig": 0,
@@ -41,7 +43,7 @@
 				"sep": 0
 			},
 			"sprFontTitleSmall": {
-				"alphabet": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя",
+				"alphabet": " ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя",
 				"removeback": 0,
 				"smooth": 0,
 				"xorig": 0,
@@ -50,14 +52,14 @@
 				"sep": 0
 			},
 			"sprFontTitleSmallest": {
-				"alphabet": "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ",
+				"alphabet": " 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ",
 				"removeback": 0,
 				"smooth": 0,
 				"xorig": 0,
 				"yorig": 0,
 				"prop": 1,
 				"sep": 0
-			},
+			}
 		}
 	},
 	"comments": {
@@ -86,7 +88,7 @@
 		"_zone_menu_Options": "Настройки",
 		"_zone_menu_Restart_game": "Начать сначала",
 
-		"_zone_menu_AreYouSure": "Вы уверены?#Весь несохранённый прогресс будет утерян.",
+		"_zone_menu_AreYouSure": "Вы уверены?\nВесь несохранённый прогресс будет утерян.",
 
 		"_specialstage_menu_Off_Track": "Сбился с пути...",
 		"_specialstage_menu_Out_of_rings": "Закончились кольца...",
@@ -110,6 +112,10 @@
 		"_levelselect_menu_GGZ": "Galacnik Gauntlet Zone",
 		"_levelselect_menu_SST": "Особые уровни",
 		"_levelselect_menu_Back": "Назад",
+		"_levelselect_menu_A1F": "Акт 1 - Будущее",
+		"_levelselect_menu_A1P": "Акт 1 - Прошлое",
+		"_levelselect_menu_A2F": "Акт 2 - Будущее",
+		"_levelselect_menu_A2P": "Акт 2 - Прошлое",
 
 		"_splash_ASonicfangame": "Фан игра по Сонику от",
 		"_splash_ThisGameIsFreeware": "Эта игра распространяется бесплатно.",
@@ -128,6 +134,15 @@
 		"_options_menu_Remap_all": "Переназначить все",
 		"_options_menu_Localization": "Настройки локализации",
 		"_btusb_joymap_Rumble": "Вибрация",
+		
+		"_buttonname_Up": "Вверх",
+		"_buttonname_Down": "Вниз",
+		"_buttonname_Left": "Влево",
+		"_buttonname_Right": "Вправо",
+		"_buttonname_A": "A",
+		"_buttonname_B": "B",
+		"_buttonname_C": "C",
+		"_buttonname_Start": "Старт",
 		
 		"_graphics_menu_Title": "Настройки графики",
 		"_graphics_menu_Screen_size": "Размер окна",
@@ -161,6 +176,21 @@
 		"_save_delete_YesNo": "<Да Нет>",
 		"_save_nosave": "НЕ СОХР.",
 		
+		"_ssselect_CE1": "Изумруды хаоса 1",
+		"_ssselect_CE2": "Изумруды хаоса 2",
+		"_ssselect_CE3": "Изумруды хаоса 3",
+		"_ssselect_CE4": "Изумруды хаоса 4",
+		"_ssselect_CE5": "Изумруды хаоса 5",
+		"_ssselect_CE6": "Изумруды хаоса 6",
+		"_ssselect_CE7": "Изумруды хаоса 7",
+		"_ssselect_TS1": "Кристаллы времени 1",
+		"_ssselect_TS2": "Кристаллы времени 2",
+		"_ssselect_TS3": "Кристаллы времени 3",
+		"_ssselect_TS4": "Кристаллы времени 4",
+		"_ssselect_TS5": "Кристаллы времени 5",
+		"_ssselect_TS6": "Кристаллы времени 6",
+		"_ssselect_TS7": "Кристаллы времени 7",
+		
 		"_PS_SAVING": "СОХРАНЕНИЕ...",
 		"_PS_LOADING": "ЗАГРУЗКА...",
 		
@@ -171,6 +201,6 @@
 		
 		"_zonename_AAZ_A": "Зона",
 		"_zonename_AAZ_B": "Прыгающих",
-		"_zonename_AAZ_C": "Котов",
+		"_zonename_AAZ_C": "Котов"
 	}
 }
