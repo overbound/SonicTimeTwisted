@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<preset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="preset.xsd">
+	<font name="fontHud"><![CDATA[ !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~ ÀÂÄÆÇÈÉÊËÎÏÔÖÙÛÜàâäæçèéêëîïôöùûü]]></font>
+	<font name="fontHudMin"><![CDATA[ !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~ ÀÂÄÆÇÈÉÊËÎÏÔÖÙÛÜàâäæçèéêëîïôöùûü]]></font>
+	<font name="fontLives"><![CDATA[ !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~ ÀÂÄÆÇÈÉÊËÎÏÔÖÙÛÜàâäæçèéêëîïôöùûü]]></font>
+	<font name="fontMicro"><![CDATA[ !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~ ÀÂÄÆÇÈÉÊËÎÏÔÖÙÛÜàâäæçèéêëîïôöùûü]]></font>
+	<font name="fontMicroBackup"><![CDATA[ ]]></font>
+	<font name="fontTitleLarge"><![CDATA[ 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'ÀÂÄÆÇÈÉÊËÎÏÔÖÙÛÜàâäæçèéêëîïôöùûü]]></font>
+	<font name="fontTitleSmall"><![CDATA[ ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'ÀÂÄÆÇÈÉÊËÎÏÔÖÙÛÜàâäæçèéêëîïôöùûü]]></font>
+	<font name="fontTitleSmallest"><![CDATA[ 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'ÀÂÄÆÇÈÉÊËÎÏÔÖÙÛÜ]]></font>
+</preset>
