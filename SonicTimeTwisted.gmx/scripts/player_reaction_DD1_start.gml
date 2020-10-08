@@ -35,12 +35,12 @@ with objHud visible=1;
 // setup titlecard
 with instance_create(0, 0, objTitlecard)
 {
-    title_string[0] = "Drifting";
-    title_string[1] = "Dynamo";
-    title_string[2] = "Zone";
+    title_string[0] = tr("_zonename_DDZ_A");
+    title_string[1] = tr("_zonename_DDZ_B");
+    title_string[2] = tr("_zonename_DDZ_C");
         if objProgram.in_past
-        title_string[3] = "ACT1 PAST";
-    else title_string[3] = "ACT1 FUTURE";
+        title_string[3] = tr("_ACT1_PAST");
+    else title_string[3] = tr("_ACT1_FUTURE");
     event_perform(ev_other, ev_room_start);
     mode = 1;
 }

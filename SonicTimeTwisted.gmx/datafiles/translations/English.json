@@ -166,17 +166,43 @@
 		"_ACT2_FUTURE": "ACT2 FUTURE",
 		"_ACT1_PAST": "ACT1 PAST",
 		"_ACT2_PAST": "ACT2 PAST",
+		"_ACT1": "ACT1",
+		"_ACT2": "ACT2",
 		
 		"_zonename_AAZ_A": "Attraction",
 		"_zonename_AAZ_B": "Attack",
 		"_zonename_AAZ_C": "Zone",
 		
+		"_zonename_RRZ_A": "Raging",
+		"_zonename_RRZ_B": "Ruins",
+		"_zonename_RRZ_C": "Zone",
+		
 		"_zonename_FFZ_A": "Frigid",
 		"_zonename_FFZ_B": "Fortress",
 		"_zonename_FFZ_C": "Zone",
 		
+		"_zonename_VVZ_A": "Viridian",
+		"_zonename_VVZ_B": "Valley",
+		"_zonename_VVZ_C": "Zone",
+		
+		"_zonename_DDZ_A": "Drifting",
+		"_zonename_DDZ_B": "Dynamo",
+		"_zonename_DDZ_C": "Zone",
+		
 		"_zonename_TTZ_A": "Tidal",
 		"_zonename_TTZ_B": "Tubes",
-		"_zonename_TTZ_C": "Zone"
+		"_zonename_TTZ_C": "Zone",
+		
+		"_zonename_SSZ_A": "Sunken",
+		"_zonename_SSZ_B": "Saucer",
+		"_zonename_SSZ_C": "Zone",
+		
+		"_zonename_PPZ_A": "Planetary",
+		"_zonename_PPZ_B": "Panic",
+		"_zonename_PPZ_C": "Zone",
+		
+		"_zonename_GGZ_A": "Galacnik",
+		"_zonename_GGZ_B": "Gauntlet",
+		"_zonename_GGZ_C": "Zone"
 	}
 }

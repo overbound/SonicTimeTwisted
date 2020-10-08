@@ -1612,6 +1612,7 @@ if selectState == 4 {
     }
     surface_set_target(hint_surface);
     draw_clear_alpha(c_black, 0);
+    draw_set_halign(fa_center);
     draw_set_font(objResources.fontMicro);
     
     if(hint_top != "")

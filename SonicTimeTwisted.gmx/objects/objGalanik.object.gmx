@@ -283,9 +283,9 @@ case 8:
             if room == MM1
                 with instance_create(0, 0, objTitlecard)
                 {
-                    title_string[0] = "Galacnik";
-                    title_string[1] = "Gauntlet";
-                    title_string[2] = "Zone";
+                    title_string[0] = tr("_zonename_GGZ_A");
+                    title_string[1] = tr("_zonename_GGZ_B");
+                    title_string[2] = tr("_zonename_GGZ_C");
                     title_string[3] = "";
                     event_perform(ev_other, ev_room_start);
                     //mode = 1;

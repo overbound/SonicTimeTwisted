@@ -19,9 +19,9 @@ objProgram.in_past=false;
 // setup titlecard
 with objTitlecard
 {
-    title_string[0] = "Sunken";
-    title_string[1] = "Saucer";
-    title_string[2] = "Zone";
+    title_string[0] = tr("_zonename_SSZ_A");
+    title_string[1] = tr("_zonename_SSZ_B");
+    title_string[2] = tr("_zonename_SSZ_C");
     title_string[3] = "";
 }
 if objProgram.spawn_tag == 0 {

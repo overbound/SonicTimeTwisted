@@ -40,7 +40,7 @@
 				"xorig": 0,
 				"yorig": 0,
 				"prop": 1,
-				"sep": 2
+				"sep": 0
 			},
 			"sprFontTitleSmall": {
 				"alphabet": " ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя",
@@ -49,7 +49,7 @@
 				"xorig": 0,
 				"yorig": 0,
 				"prop": 1,
-				"sep": 2
+				"sep": 0
 			},
 			"sprFontTitleSmallest": {
 				"alphabet": " 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ",
@@ -58,7 +58,7 @@
 				"xorig": 0,
 				"yorig": 0,
 				"prop": 1,
-				"sep": 2
+				"sep": 0
 			},
 			"sprFontMicro": {
 				"alphabet": " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~ АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя",
@@ -76,7 +76,8 @@
 		"2": "или анекдоты, всё равно эта секция будет выгружена из памяти.",
 		"3": "вот вам анекдот:",
 		"4": "Ребята помогите лампочка горит что делать?",
-		"5": "кстати шрифт сделал AlexKhayrullin"
+		"5": "кстати шрифт сделал AlexKhayrullin",
+		"6_ВАЖНО": "ДОДЕЛАТЬ НАЗВАНИЯ ЗОН!!!"
 	},
 	"data": {
 		"_Yes": "Да",
@@ -112,10 +113,10 @@
 		"_levelselect_menu_Level_Select": "Выбор уровня",
 		"_levelselect_menu_AAZ": "Attraction Attack Zone",
 		"_levelselect_menu_RRZ": "Raging Ruins Zone",
-		"_levelselect_menu_FFZ": "Frigid Fortress Zone",
+		"_levelselect_menu_FFZ": "Зона Замёрзшего Мрака",
 		"_levelselect_menu_VVZ": "Viridian Valley Zone",
 		"_levelselect_menu_DDZ": "Drifting Dynamo Zone",
-		"_levelselect_menu_TTZ": "Tidal Tubes Zone",
+		"_levelselect_menu_TTZ": "Зона Прибрежных Платформ",
 		"_levelselect_menu_SSZ": "Sunken Saucer Zone",
 		"_levelselect_menu_PPZ": "Planetary Panic Zone",
 		"_levelselect_menu_GGZ": "Galacnik Gauntlet Zone",
@@ -232,17 +233,43 @@
 		"_ACT2_FUTURE": "АКТ2 БУДУЩЕЕ",
 		"_ACT1_PAST": "АКТ1 ПРОШЛОЕ",
 		"_ACT2_PAST": "АКТ2 ПРОШЛОЕ",
+		"_ACT1": "АКТ1",
+		"_ACT2": "АКТ2",
 		
 		"_zonename_AAZ_A": "Зона",
 		"_zonename_AAZ_B": "Прыгающих",
 		"_zonename_AAZ_C": "Котов",
 		
+		"_zonename_RRZ_A": "Raging",
+		"_zonename_RRZ_B": "Ruins",
+		"_zonename_RRZ_C": "Zone",
+		
 		"_zonename_FFZ_A": "Зона",
 		"_zonename_FFZ_B": "Замёрзшего",
 		"_zonename_FFZ_C": "Замка",
 		
+		"_zonename_VVZ_A": "Viridian",
+		"_zonename_VVZ_B": "Valley",
+		"_zonename_VVZ_C": "Zone",
+		
+		"_zonename_DDZ_A": "Drifting",
+		"_zonename_DDZ_B": "Dynamo",
+		"_zonename_DDZ_C": "Zone",
+		
 		"_zonename_TTZ_A": "Зона",
 		"_zonename_TTZ_B": "Прибрежных",
-		"_zonename_TTZ_C": "Платформ"
+		"_zonename_TTZ_C": "Платформ",
+		
+		"_zonename_SSZ_A": "Sunken",
+		"_zonename_SSZ_B": "Saucer",
+		"_zonename_SSZ_C": "Zone",
+		
+		"_zonename_PPZ_A": "Planetary",
+		"_zonename_PPZ_B": "Panic",
+		"_zonename_PPZ_C": "Zone",
+		
+		"_zonename_GGZ_A": "Galacnik",
+		"_zonename_GGZ_B": "Gauntlet",
+		"_zonename_GGZ_C": "Zone"
 	}
 }

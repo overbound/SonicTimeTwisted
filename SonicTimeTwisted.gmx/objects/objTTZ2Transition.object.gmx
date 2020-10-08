@@ -153,7 +153,7 @@ case -1: // fade in
             title_string[2] = tr("_zonename_TTZ_C");
             if objProgram.in_past
                  title_string[3] = tr("_ACT2_PAST");
-            else title_string[3] = tr("ACT2_FUTURE");
+            else title_string[3] = tr("_ACT2_FUTURE");
             event_perform(ev_other, ev_room_start);
             mode = 1;
         }

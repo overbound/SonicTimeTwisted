@@ -20,12 +20,12 @@ if landed {
     // setup titlecard
     with instance_create(0, 0, objTitlecard)
     {
-        title_string[0] = "Raging";
-        title_string[1] = "Ruins";
-        title_string[2] = "Zone";
+        title_string[0] = tr("_zonename_RRZ_A");
+        title_string[1] = tr("_zonename_RRZ_B");
+        title_string[2] = tr("_zonename_RRZ_C");
         if objProgram.in_past
-            title_string[3] = "ACT1 PAST";
-        else title_string[3] = "ACT1 FUTURE";
+            title_string[3] = tr("_ACT1_PAST");
+        else title_string[3] = tr("_ACT1_FUTURE");
         event_perform(ev_other, ev_room_start);
         mode = 1;
     }

@@ -42,10 +42,10 @@ for (var i=0; i&lt;4; i+=1)
     title_scale[i, 0] = 12;
 }
 
-title_string[0] = "3"
-title_string[1] = "2" 
-title_string[2] = "1"
-title_string[3] = "G"
+title_string[0] = "3";
+title_string[1] = "2";
+title_string[2] = "1";
+title_string[3] = "G";
 blue=make_colour_rgb(27,57,176);
 
 init_titlecard();
