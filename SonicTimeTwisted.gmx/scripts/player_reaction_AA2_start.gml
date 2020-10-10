@@ -40,12 +40,12 @@ objLevel.timer = 36000
 // setup titlecard
 with instance_create(0, 0, objTitlecard)
 {
-    title_string[0] = "Attraction";
-    title_string[1] = "Attack";
-    title_string[2] = "Zone";
+    title_string[0] = tr("_zonename_AAZ_A");
+    title_string[1] = tr("_zonename_AAZ_B");
+    title_string[2] = tr("_zonename_AAZ_C");
     if objProgram.in_past
-        title_string[3] = "ACT2 PAST";
-        else title_string[3] = "ACT2 FUTURE";
+        title_string[3] = tr("_ACT2_PAST");
+        else title_string[3] = tr("_ACT2_FUTURE");
     event_perform(ev_other, ev_room_start);
     mode = 1;
 }

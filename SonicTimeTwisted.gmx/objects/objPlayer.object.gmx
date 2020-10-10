@@ -195,7 +195,7 @@ audio_emitter_free(audio);
 if (character_id==2) with tails_effect instance_destroy();
 
 // Remove id
-objLevel.player[player_id] = noone;
+with (objLevel) player[other.player_id] = noone;
 </string>
           </argument>
         </arguments>
@@ -498,7 +498,7 @@ ds_list_destroy(ytable);
 audio_emitter_free(audio);
 
 // Remove id
-objLevel.player[player_id] = noone;
+with (objLevel) player[other.player_id] = noone;
 </string>
           </argument>
         </arguments>

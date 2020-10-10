@@ -349,15 +349,25 @@ draw_text(lives_x_left + 77, lives_y_top + 1, objGameData.player_lives[view_curr
           <argument>
             <kind>1</kind>
             <string>/// draw lives - normal variant
-// lives setpiece
+
+// character "avatar"
 draw_sprite(sprLives, character_id[view_current], view_xview[view_current]+16, view_yview[view_current]+view_hview-24);
 // lives string
 draw_set_color(c_white);
 draw_set_alpha(image_alpha);
-draw_set_valign(fa_top);
-draw_set_halign(fa_right);
 draw_set_font(objResources.fontLives);
-draw_text(view_xview[view_current]+94, view_yview[view_current]+view_hview[view_current]-11, objGameData.player_lives[view_current]);
+draw_set_halign(fa_left);
+
+// draw character name.
+var drawname = tr("_charname_" + string(character_id[view_current]));
+draw_text_colour(view_xview[view_current] + 16 + 32, view_yview[view_current] + view_hview - 24 + 4, drawname, c_yellow, c_yellow, c_white, c_white, 1);
+
+// make lives string.
+var drawstring = "";
+if (objGameData.player_lives[view_current] &gt;= 10) drawstring = string(objGameData.player_lives[view_current]);
+else drawstring = " " + string(objGameData.player_lives[view_current]);
+draw_text(view_xview[view_current] + 16 + 32, view_yview[view_current] + view_hview - 24 + 4, chr(10) + "  x" + drawstring);
+// chr(10) and other chr() calls with a constant value are preprocessed by GM by the way...
 </string>
           </argument>
         </arguments>

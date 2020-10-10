@@ -46,9 +46,9 @@ total_bonus = 0;
 // name tag
 switch objGameData.character_id[0]
 {
-case 2: name_tag = "TAILS"; break;
-case 3: name_tag = "KNUCKLES"; break;
-default: name_tag = "SONIC";
+case 2: name_tag = tr("_charname_1"); break;
+case 3: name_tag = tr("_charname_2_wide"); break;
+default: name_tag = tr("_charname_0");
 }
 // title color
 title_color = c_white;
@@ -85,8 +85,8 @@ if(instance_exists(objLevel))
     act = objLevel.act;
 }
 // lines to display : "character got" and "through act 1/2"
-line1 = string_replace("%c GOT", "%c", name_tag);
-line2 = string_replace("THROUGH ACT %a", "%a", string(act));
+line1 = string_replace(tr("_scorecard_line1"), "%c", name_tag);
+line2 = string_replace(tr("_scorecard_line2"), "%a", string(act));
 // ring bonus
 rings_bonus = objGameData.rings[0]*10;
 // screen positions
@@ -504,10 +504,10 @@ if(!is_act_scorecard)
 }
 draw_set_font(objResources.fontHud);
 draw_set_halign(fa_left);
-draw_text_color(draw_x_offset+score_ox + score_offset1, draw_y_offset_score + 112, 'TIME BONUS',c_white,c_white,c_yellow,c_yellow,1);
-draw_text_color(draw_x_offset+score_ox + score_offset2, draw_y_offset_score + 128, 'RING BONUS',c_white,c_white,c_yellow,c_yellow,1);
-if perfect_bonus &gt; -1 draw_text_color(draw_x_offset+score_ox + score_offset3, draw_y_offset_score + 144, 'PERFECT BONUS',c_white,c_white,c_yellow,c_yellow,1);
-draw_text_color(draw_x_offset+score_ox + score_offset4, draw_y_offset_score + 160, 'TOTAL',c_white,c_white,c_yellow,c_yellow,1);
+draw_text_color(draw_x_offset+score_ox + score_offset1, draw_y_offset_score + 112, tr('_scorecard_TIME_BONUS'),c_white,c_white,c_yellow,c_yellow,1);
+draw_text_color(draw_x_offset+score_ox + score_offset2, draw_y_offset_score + 128, tr('_scorecard_RING_BONUS'),c_white,c_white,c_yellow,c_yellow,1);
+if perfect_bonus &gt; -1 draw_text_color(draw_x_offset+score_ox + score_offset3, draw_y_offset_score + 144, tr('_scorecard_PERFECT_BONUS'),c_white,c_white,c_yellow,c_yellow,1);
+draw_text_color(draw_x_offset+score_ox + score_offset4, draw_y_offset_score + 160, tr('_scorecard_TOTAL'),c_white,c_white,c_yellow,c_yellow,1);
 // text
 draw_set_color(c_white);
 draw_set_alpha(image_alpha);

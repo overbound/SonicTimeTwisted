@@ -8,4 +8,4 @@ if (DEVICE_INFO & DEVICE_OS_PLAYSTATION)
         storage_map[? _name] = "";
     }
 }
-else return file_exists(argument0);
+else return file_delete(argument0);

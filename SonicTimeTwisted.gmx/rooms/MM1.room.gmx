@@ -20,9 +20,9 @@ objProgram.spawn_tag = 0;
 // setup titlecard
 with objTitlecard
 {
-    title_string[0] = "Galacnik";
-    title_string[1] = "Gauntlet";
-    title_string[2] = "Zone";
+    title_string[0] = tr("_zonename_GGZ_A");
+    title_string[1] = tr("_zonename_GGZ_B");
+    title_string[2] = tr("_zonename_GGZ_C");
     title_string[3] = "";
 }</code>
   <enableViews>0</enableViews>

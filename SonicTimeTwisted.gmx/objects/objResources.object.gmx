@@ -313,7 +313,7 @@ for (var i = 0; i &lt; 4096; i++)
     
     if (ds_exists(i, ds_type_map))
     {
-        ds_map_destroy(i);
+        //ds_map_destroy(i);
         show_debug_message("Freed DS Map " + string(i));
     }
     

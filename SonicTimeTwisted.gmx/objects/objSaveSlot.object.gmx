@@ -191,6 +191,14 @@ if (other.stageLeftRight == 1 &amp;&amp; visibleFuture == 1) or (other.stageLeft
             <kind>1</kind>
             <string>
 draw_sprite_ext(sprite_index,0,x,y,image_xscale,image_yscale,0,c_white,1);
+draw_set_font(objResources.fontMicro);
+draw_set_halign(fa_center);
+draw_set_valign(fa_middle);
+draw_text_colour(x - 19, y - 19, tr("_save_Past"), c_white, c_white, c_white, c_white, 1);
+draw_text_colour(x + 18, y - 19, tr("_save_Future"), c_white, c_white, c_white, c_white, 1);
+draw_set_halign(fa_left);
+draw_set_valign(fa_top);
+
 draw_sprite_ext(sprStatic,floor(staticIndex),x,y-57,1,1,0,c_white,1);
 draw_sprite_ext(sprSaveIconsFuture,iconIndex,x,y-57,image_xscale,image_yscale,0,c_white,visibleFuture);
 draw_sprite_ext(sprSaveIconsPast,iconIndex,x,y-57,image_xscale,image_yscale,0,c_white,visiblePast);

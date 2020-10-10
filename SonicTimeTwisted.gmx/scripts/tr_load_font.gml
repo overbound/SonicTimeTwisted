@@ -20,10 +20,18 @@ if (os_type == os_windows) _sep = "\";
 
 var _path = "translations" + _sep + _fname + _sep + _sprname + ".png"; // translations\Russian\sprFont.png
 show_debug_message("Loading spritefont " + _path);
+
 if (!file_exists(_path)) return -1;
+
 var _transspr = sprite_add(_path, string_length(_fontparams[? "alphabet"]), _fontparams[? "removeback"], _fontparams[? "smooth"], _fontparams[? "xorig"], _fontparams[? "yorig"]);
 if (!sprite_exists(_transspr)) return -1;
+
+if (_fontparams[? "prop"])
+    sprite_collision_mask(_transspr, false, 0, 0, 0, 0, 0, 0, 0);
+
 if (sprite_exists(global.TR_sprarr[@ argument1])) sprite_delete(global.TR_sprarr[@ argument1]);
 global.TR_sprarr[@ argument1] = _transspr;
+
 var _font = font_add_sprite_ext(_transspr, _fontparams[? "alphabet"], _fontparams[? "prop"], _fontparams[? "sep"]);
+
 return _font;

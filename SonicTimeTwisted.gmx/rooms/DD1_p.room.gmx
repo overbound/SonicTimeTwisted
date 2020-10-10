@@ -19,10 +19,10 @@ objProgram.in_past = true;
 // setup titlecard
 with objTitlecard
 {
-    title_string[0] = "Drifting";
-    title_string[1] = "Dynamo";
-    title_string[2] = "Zone";
-    title_string[3] = "ACT1 PAST";
+    title_string[0] = tr("_zonename_DDZ_A");
+    title_string[1] = tr("_zonename_DDZ_B");
+    title_string[2] = tr("_zonename_DDZ_C");
+    title_string[3] = tr("_ACT1_PAST");
 }</code>
   <enableViews>0</enableViews>
   <clearViewBackground>-1</clearViewBackground>

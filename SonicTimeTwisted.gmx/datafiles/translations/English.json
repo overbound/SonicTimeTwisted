@@ -1,7 +1,9 @@
 {
 	"info": {
 		"intname": "en",
-		"friendlyname": "English"
+		"friendlyname": "English",
+		
+		"top_hud_offset": 0
 	},
 	"comments": {
 		"1": "You can do whatever you want in this section, it will be freed from memory when loading the strings.",
@@ -28,7 +30,7 @@
 		"_zone_menu_Options": "Options",
 		"_zone_menu_Restart_game": "Restart game",
 
-		"_zone_menu_AreYouSure": "Are you sure?#All progress will be lost.",
+		"_zone_menu_AreYouSure": "Are you sure?\nAll progress will be lost.",
 
 		"_specialstage_menu_Off_Track": "Off track...",
 		"_specialstage_menu_Out_of_rings": "Out of rings...",
@@ -52,6 +54,10 @@
 		"_levelselect_menu_GGZ": "Galacnik Gauntlet Zone",
 		"_levelselect_menu_SST": "Special Stage",
 		"_levelselect_menu_Back": "Back",
+		"_levelselect_menu_A1F": "Act 1 - Future",
+		"_levelselect_menu_A1P": "Act 1 - Past",
+		"_levelselect_menu_A2F": "Act 2 - Future",
+		"_levelselect_menu_A2P": "Act 2 - Past",
 
 		"_splash_ASonicfangame": "A Sonic fangame by",
 		"_splash_ThisGameIsFreeware": "This game is freeware.",
@@ -70,6 +76,15 @@
 		"_options_menu_Remap_all": "Remap all",
 		"_options_menu_Localization": "Localization settings",
 		"_btusb_joymap_Rumble": "Rumble",
+		
+		"_buttonname_Up": "Up",
+		"_buttonname_Down": "Down",
+		"_buttonname_Left": "Left",
+		"_buttonname_Right": "Right",
+		"_buttonname_A": "A",
+		"_buttonname_B": "B",
+		"_buttonname_C": "C",
+		"_buttonname_Start": "Start",
 		
 		"_graphics_menu_Title": "Video options",
 		"_graphics_menu_Screen_size": "Screen size",
@@ -95,14 +110,99 @@
 		"_HUD_TIME": "TIME",
 		"_HUD_RINGS": "RINGS",
 		
-		"_charname_Sonic": "СОНИК",
-		"_charname_Tails": "ТЭЙЛС",
-		"_charname_KTE": "К.Е.",
+		"_charname_0": "SONIC",
+		"_charname_1": "TAILS",
+		"_charname_2": "K.T.E",
+		"_charname_2_wide": "KNUCKLES",
+		"_charname_0_lc": "Sonic",
+		"_charname_1_lc": "Tails",
+		"_charname_2_lc": "Knuckles",
+		"_charname_0_altnoun": "SONIC",
+		"_charname_1_altnoun": "TAILS",
+		"_charname_2_altnoun": "KNUCKLES",
 		
 		"_save_delete": "DELETE",
+		"_save_delete_YesNo": "<Yes No>",
 		"_save_nosave": "NO SAVE",
+		"_save_Past": "Past",
+		"_save_Future": "Future",
+		
+		"_ssselect_CE1": "Chaos Emerald 1",
+		"_ssselect_CE2": "Chaos Emerald 2",
+		"_ssselect_CE3": "Chaos Emerald 3",
+		"_ssselect_CE4": "Chaos Emerald 4",
+		"_ssselect_CE5": "Chaos Emerald 5",
+		"_ssselect_CE6": "Chaos Emerald 6",
+		"_ssselect_CE7": "Chaos Emerald 7",
+		"_ssselect_TS1": "Time Stone 1",
+		"_ssselect_TS2": "Time Stone 2",
+		"_ssselect_TS3": "Time Stone 3",
+		"_ssselect_TS4": "Time Stone 4",
+		"_ssselect_TS5": "Time Stone 5",
+		"_ssselect_TS6": "Time Stone 6",
+		"_ssselect_TS7": "Time Stone 7",
+		
+		"_scorecard_line1": "%c GOT",
+		"_scorecard_line2": "THROUGH ACT %a",
+		"_scorecard_TIME_BONUS": "TIME BONUS",
+		"_scorecard_RING_BONUS": "RING BONUS",
+		"_scorecard_PERFECT_BONUS": "PERFECT BONUS",
+		"_scorecard_TOTAL": "TOTAL",
+		"_ss_scorecard_TIME_STONES": "TIME STONES",
+		"_ss_scorecard_TIME_STONE": "TIME STONE",
+		"_ss_scorecard_CHAOS_EMERALDS": "CHAOS EMERALDS",
+		"_ss_scorecard_CHAOS_EMERALD": "CHAOS EMERALD",
+		"_ss_scorecard_GOT_ALL": "%c GOT ALL",
+		"_ss_scorecard_GOT_A": "%c GOT A",
+		"_ss_scorecard_SUPER": "SUPER %c",
+		"_ss_scorecard_CAN_NOW_BECOME": "%c CAN NOW BECOME",
+		"_ss_scorecard_JUMP_AND_HOLD": "Jump and hold A and B",
+		"_ss_scorecard_TO_TURN_INTO": "to turn into Super %c",
 		
 		"_PS_SAVING": "SAVING...",
-		"_PS_LOADING": "LOADING..."
+		"_PS_LOADING": "LOADING...",
+		
+		"_ACT1_FUTURE": "ACT1 FUTURE",
+		"_ACT2_FUTURE": "ACT2 FUTURE",
+		"_ACT1_PAST": "ACT1 PAST",
+		"_ACT2_PAST": "ACT2 PAST",
+		"_ACT1": "ACT1",
+		"_ACT2": "ACT2",
+		
+		"_zonename_AAZ_A": "Attraction",
+		"_zonename_AAZ_B": "Attack",
+		"_zonename_AAZ_C": "Zone",
+		
+		"_zonename_RRZ_A": "Raging",
+		"_zonename_RRZ_B": "Ruins",
+		"_zonename_RRZ_C": "Zone",
+		
+		"_zonename_FFZ_A": "Frigid",
+		"_zonename_FFZ_B": "Fortress",
+		"_zonename_FFZ_C": "Zone",
+		
+		"_zonename_VVZ_A": "Viridian",
+		"_zonename_VVZ_B": "Valley",
+		"_zonename_VVZ_C": "Zone",
+		
+		"_zonename_DDZ_A": "Drifting",
+		"_zonename_DDZ_B": "Dynamo",
+		"_zonename_DDZ_C": "Zone",
+		
+		"_zonename_TTZ_A": "Tidal",
+		"_zonename_TTZ_B": "Tubes",
+		"_zonename_TTZ_C": "Zone",
+		
+		"_zonename_SSZ_A": "Sunken",
+		"_zonename_SSZ_B": "Saucer",
+		"_zonename_SSZ_C": "Zone",
+		
+		"_zonename_PPZ_A": "Planetary",
+		"_zonename_PPZ_B": "Panic",
+		"_zonename_PPZ_C": "Zone",
+		
+		"_zonename_GGZ_A": "Galacnik",
+		"_zonename_GGZ_B": "Gauntlet",
+		"_zonename_GGZ_C": "Zone"
 	}
 }

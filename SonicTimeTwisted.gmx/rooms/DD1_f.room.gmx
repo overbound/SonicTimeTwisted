@@ -27,10 +27,10 @@ with objTitlecard
 {
     if objProgram.spawn_tag== 0
         mode=3;
-    title_string[0] = "Drifting";
-    title_string[1] = "Dynamo";
-    title_string[2] = "Zone";
-    title_string[3] = "ACT1 FUTURE";
+    title_string[0] = tr("_zonename_DDZ_A");
+    title_string[1] = tr("_zonename_DDZ_B");
+    title_string[2] = tr("_zonename_DDZ_C");
+    title_string[3] = tr("_ACT1_FUTURE");
 }</code>
   <enableViews>0</enableViews>
   <clearViewBackground>-1</clearViewBackground>

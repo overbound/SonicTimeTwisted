@@ -2,6 +2,8 @@
 	"info": {
 		"intname": "ru",
 		"friendlyname": "Russian (Русский)",
+		
+		"top_hud_offset": 16,
 
 		"font_param": {
 			"sprFontHud": {
@@ -30,6 +32,42 @@
 				"yorig": 0,
 				"prop": 0,
 				"sep": 0
+			},
+			"sprFontTitleLarge": {
+				"alphabet": " 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя",
+				"removeback": 0,
+				"smooth": 0,
+				"xorig": 0,
+				"yorig": 0,
+				"prop": 1,
+				"sep": 0
+			},
+			"sprFontTitleSmall": {
+				"alphabet": " ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя",
+				"removeback": 0,
+				"smooth": 0,
+				"xorig": 0,
+				"yorig": 0,
+				"prop": 1,
+				"sep": 0
+			},
+			"sprFontTitleSmallest": {
+				"alphabet": " 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ",
+				"removeback": 0,
+				"smooth": 0,
+				"xorig": 0,
+				"yorig": 0,
+				"prop": 1,
+				"sep": 0
+			},
+			"sprFontMicro": {
+				"alphabet": " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~ АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя",
+				"removeback": 0,
+				"smooth": 0,
+				"xorig": 0,
+				"yorig": 0,
+				"prop": 0,
+				"sep": 0
 			}
 		}
 	},
@@ -38,7 +76,8 @@
 		"2": "или анекдоты, всё равно эта секция будет выгружена из памяти.",
 		"3": "вот вам анекдот:",
 		"4": "Ребята помогите лампочка горит что делать?",
-		"5": "кстати шрифт сделал AlexKhayrullin"
+		"5": "кстати шрифт сделал AlexKhayrullin",
+		"6_ВАЖНО": "ДОДЕЛАТЬ НАЗВАНИЯ ЗОН!!!"
 	},
 	"data": {
 		"_Yes": "Да",
@@ -47,9 +86,9 @@
 		"_Off": "Выкл",
 		"_exit_the_game": "Выйти из игры?",
 		"_epilepsy_title": "Предупреждение об эпилепсии",
-		"_epilepsy": "A few people may experience epileptic seizures when exposed to certain light patterns or flashing lights, such as while watching TV or playing video games, even those with no history of prior seizures or epilepsy.\nIf you experience any of the following symptoms - altered vision, muscle or eye twitching, loss of awareness, disorientation, any involutary movement, or convulsions - IMMEDIATELY stop playing and consult your physician.",
+		"_epilepsy": "Небольшой процент людей подвержен припадкам от воздействия визуальных эффектов, таких как повторение определённых узоров или мерцающий свет, которые могут появляться на телевидении или в видеоиграх, даже при отсутствии истории подобных приступов и диагноза эпилепсии.\nЕсли вы испытываете один из следующих симптомов: искажённое визуальное восприятие, судороги лицевых мышц, помутнение сознания, потеря ориентации, непроизвольные движения или конвульсии, НЕМЕДЛЕННО прекратите играть и проконсультируйтесь с врачом.",
 		"_disclaimer_title": "Дисклеймер",
-		"_disclaimer": "This game is a non-profit fangame project and should not be sold. Overbound Game Studio and contributors are in no way affiliated with Sega or Sonic Team.\nSonic the Hedgehog is a trademark of SEGA®. The copyrights of “Sonic the Hedgehog” and all associated characters, names, terms, art, and music thereof belong to SEGA®. All registered trademarks and copyrights belong to SEGA® and Sonic Team®.",
+		"_disclaimer": "Эта игра - это некоммерческий фанатский проект. Overbound Game Studio и контрибьюторы никак не связаны с SEGA или с Sonic Team.\nSonic The Hedgehog это торговая марка SEGA®. Авторские права на \"Sonic the Hedgehog\" и всех связанных персонажей, имена, термины, изображения, и музыку принадлежат SEGA®. Все зарегистрированные торговые марки и авторские права принадлежат SEGA® и Sonic Team®.",
 		"_github": "Исходный код игры доступен на https://github.com/overbound/SonicTimeTwisted под лицензией GPL v3",
 		"_main_menu_Play": "Играть",
 		"_main_menu_Options": "Настройки",
@@ -59,7 +98,7 @@
 		"_zone_menu_Options": "Настройки",
 		"_zone_menu_Restart_game": "Начать сначала",
 
-		"_zone_menu_AreYouSure": "Вы уверены?#Весь несохранённый прогресс будет утерян.",
+		"_zone_menu_AreYouSure": "Вы уверены?\nВесь несохранённый прогресс будет утерян.",
 
 		"_specialstage_menu_Off_Track": "Сбился с пути...",
 		"_specialstage_menu_Out_of_rings": "Закончились кольца...",
@@ -74,15 +113,19 @@
 		"_levelselect_menu_Level_Select": "Выбор уровня",
 		"_levelselect_menu_AAZ": "Attraction Attack Zone",
 		"_levelselect_menu_RRZ": "Raging Ruins Zone",
-		"_levelselect_menu_FFZ": "Frigid Fortress Zone",
+		"_levelselect_menu_FFZ": "Зона Замёрзшего Мрака",
 		"_levelselect_menu_VVZ": "Viridian Valley Zone",
 		"_levelselect_menu_DDZ": "Drifting Dynamo Zone",
-		"_levelselect_menu_TTZ": "Tidal Tubes Zone",
+		"_levelselect_menu_TTZ": "Зона Прибрежных Платформ",
 		"_levelselect_menu_SSZ": "Sunken Saucer Zone",
 		"_levelselect_menu_PPZ": "Planetary Panic Zone",
 		"_levelselect_menu_GGZ": "Galacnik Gauntlet Zone",
 		"_levelselect_menu_SST": "Особые уровни",
 		"_levelselect_menu_Back": "Назад",
+		"_levelselect_menu_A1F": "Акт 1 - Будущее",
+		"_levelselect_menu_A1P": "Акт 1 - Прошлое",
+		"_levelselect_menu_A2F": "Акт 2 - Будущее",
+		"_levelselect_menu_A2P": "Акт 2 - Прошлое",
 
 		"_splash_ASonicfangame": "Фан игра по Сонику от",
 		"_splash_ThisGameIsFreeware": "Эта игра распространяется бесплатно.",
@@ -101,6 +144,15 @@
 		"_options_menu_Remap_all": "Переназначить все",
 		"_options_menu_Localization": "Настройки локализации",
 		"_btusb_joymap_Rumble": "Вибрация",
+		
+		"_buttonname_Up": "Вверх",
+		"_buttonname_Down": "Вниз",
+		"_buttonname_Left": "Влево",
+		"_buttonname_Right": "Вправо",
+		"_buttonname_A": "A",
+		"_buttonname_B": "B",
+		"_buttonname_C": "C",
+		"_buttonname_Start": "Старт",
 		
 		"_graphics_menu_Title": "Настройки графики",
 		"_graphics_menu_Screen_size": "Размер окна",
@@ -126,14 +178,98 @@
 		"_HUD_TIME": "ВРЕМЯ",
 		"_HUD_RINGS": "КОЛЬЦА",
 		
-		"_charname_Sonic": "СОНИК",
-		"_charname_Tails": "ТЭЙЛС",
-		"_charname_KTE": "НАКЛЗ",
+		"_charname_0": "СОНИК",
+		"_charname_1": "ТЭЙЛС",
+		"_charname_2": "НАКЛЗ",
+		"_charname_0_lc": "Соника",
+		"_charname_1_lc": "Тэйлса",
+		"_charname_2_lc": "Наклза",
+		"_charname_0_altnoun": "Соником",
+		"_charname_1_altnoun": "Тэйлсом",
+		"_charname_2_altnoun": "Наклзом",
 		
 		"_save_delete": "УДАЛИТЬ",
+		"_save_delete_YesNo": "<Да Нет>",
 		"_save_nosave": "НЕ СОХР.",
+		"_save_Past": "Прошлое",
+		"_save_Future": "Будущее",
+		
+		"_ssselect_CE1": "Изумруды хаоса 1",
+		"_ssselect_CE2": "Изумруды хаоса 2",
+		"_ssselect_CE3": "Изумруды хаоса 3",
+		"_ssselect_CE4": "Изумруды хаоса 4",
+		"_ssselect_CE5": "Изумруды хаоса 5",
+		"_ssselect_CE6": "Изумруды хаоса 6",
+		"_ssselect_CE7": "Изумруды хаоса 7",
+		"_ssselect_TS1": "Кристаллы времени 1",
+		"_ssselect_TS2": "Кристаллы времени 2",
+		"_ssselect_TS3": "Кристаллы времени 3",
+		"_ssselect_TS4": "Кристаллы времени 4",
+		"_ssselect_TS5": "Кристаллы времени 5",
+		"_ssselect_TS6": "Кристаллы времени 6",
+		"_ssselect_TS7": "Кристаллы времени 7",
+		
+		"_scorecard_line1": "%c ПРОШЁЛ",
+		"_scorecard_line2": "АКТ %a",
+		"_scorecard_TIME_BONUS": "БОНУС ПО ВРЕМЕНИ",
+		"_scorecard_RING_BONUS": "БОНУС ЗА КОЛЬЦА",
+		"_scorecard_PERFECT_BONUS": "БЕЗУПРЕЧНОСТЬ",
+		"_scorecard_TOTAL": "ИТОГО",
+		"_ss_scorecard_TIME_STONES": "КРИСТАЛЛЫ ВРЕМЕНИ",
+		"_ss_scorecard_TIME_STONE": "КРИСТАЛЛ ВРЕМЕНИ",
+		"_ss_scorecard_CHAOS_EMERALDS": "ИЗУМРУДЫ ХАОСА",
+		"_ss_scorecard_CHAOS_EMERALD": "ИЗУМРУД ХАОСА",
+		"_ss_scorecard_GOT_ALL": "%c ПОЛУЧИЛ ВСЕ",
+		"_ss_scorecard_GOT_A": "%c ПОЛУЧИЛ",
+		"_ss_scorecard_SUPER": "СУПЕР %c",
+		"_ss_scorecard_CAN_NOW_BECOME": "%c ТЕПЕРЬ МОЖЕТ СТАТЬ",
+		"_ss_scorecard_JUMP_AND_HOLD": "Прыгни и зажми A и B",
+		"_ss_scorecard_TO_TURN_INTO": "для превращения в Супер %c",
 		
 		"_PS_SAVING": "СОХРАНЕНИЕ...",
-		"_PS_LOADING": "ЗАГРУЗКА..."
+		"_PS_LOADING": "ЗАГРУЗКА...",
+		
+		"_ACT1_FUTURE": "АКТ1 БУДУЩЕЕ",
+		"_ACT2_FUTURE": "АКТ2 БУДУЩЕЕ",
+		"_ACT1_PAST": "АКТ1 ПРОШЛОЕ",
+		"_ACT2_PAST": "АКТ2 ПРОШЛОЕ",
+		"_ACT1": "АКТ1",
+		"_ACT2": "АКТ2",
+		
+		"_zonename_AAZ_A": "Зона",
+		"_zonename_AAZ_B": "Прыгающих",
+		"_zonename_AAZ_C": "Котов",
+		
+		"_zonename_RRZ_A": "Raging",
+		"_zonename_RRZ_B": "Ruins",
+		"_zonename_RRZ_C": "Zone",
+		
+		"_zonename_FFZ_A": "Зона",
+		"_zonename_FFZ_B": "Замёрзшего",
+		"_zonename_FFZ_C": "Замка",
+		
+		"_zonename_VVZ_A": "Viridian",
+		"_zonename_VVZ_B": "Valley",
+		"_zonename_VVZ_C": "Zone",
+		
+		"_zonename_DDZ_A": "Drifting",
+		"_zonename_DDZ_B": "Dynamo",
+		"_zonename_DDZ_C": "Zone",
+		
+		"_zonename_TTZ_A": "Зона",
+		"_zonename_TTZ_B": "Прибрежных",
+		"_zonename_TTZ_C": "Платформ",
+		
+		"_zonename_SSZ_A": "Sunken",
+		"_zonename_SSZ_B": "Saucer",
+		"_zonename_SSZ_C": "Zone",
+		
+		"_zonename_PPZ_A": "Planetary",
+		"_zonename_PPZ_B": "Panic",
+		"_zonename_PPZ_C": "Zone",
+		
+		"_zonename_GGZ_A": "Galacnik",
+		"_zonename_GGZ_B": "Gauntlet",
+		"_zonename_GGZ_C": "Zone"
 	}
 }
