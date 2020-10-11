@@ -206,16 +206,16 @@ else
 
 if(DEVICE_INFO & DEVICE_TYPE_SMARTPHONE)
 {
-    var inputLabel = tr("Touchscreen");
+    var inputLabel = tr("_options_menu_InputLabel_Touchscreen");
     if(DEVICE_INFO & DEVICE_OS_ANDROID)
     {
         switch(android_get_input_mode())
         {
             case 0:
-                inputLabel = tr("Touchsreen");
+                inputLabel = tr("_options_menu_InputLabel_Touchscreen");
                 break;
             case 1:
-                inputLabel = tr("BT/USB device");
+                inputLabel = tr("_options_menu_InputLabel_BTUSB_device");
                 break;
         }
         menu_fn_refresh_displayed_value(8, "< "+inputLabel+ " >");
@@ -225,10 +225,10 @@ if(DEVICE_INFO & DEVICE_TYPE_SMARTPHONE)
         switch(get_input_method())
         {
             case INPUT_GAMEPAD:
-                inputLabel = tr("Gamepad");
+                inputLabel = tr("_options_menu_InputLabel_Gamepad");
                 break;
             case INPUT_KEYBOARD:
-                inputLabel = tr("Keyboard");
+                inputLabel = tr("_options_menu_InputLabel_Keyboard");
                 break;
         }
         menu_fn_refresh_displayed_value(5, "< "+inputLabel+ " >");

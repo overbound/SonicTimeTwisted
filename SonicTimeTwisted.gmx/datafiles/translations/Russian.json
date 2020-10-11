@@ -145,6 +145,11 @@
 		"_options_menu_Localization": "Настройки локализации",
 		"_btusb_joymap_Rumble": "Вибрация",
 		
+		"_options_menu_InputLabel_Touchscreen": "Тачскрин",
+		"_options_menu_InputLabel_Gamepad": "Геймпад",
+		"_options_menu_InputLabel_Keyboard": "Клавиатура",
+		"_options_menu_InputLabel_BTUSB_device": "BT/USB устр.",
+		
 		"_buttonname_Up": "Вверх",
 		"_buttonname_Down": "Вниз",
 		"_buttonname_Left": "Влево",
@@ -225,6 +230,9 @@
 		"_ss_scorecard_CAN_NOW_BECOME": "%c ТЕПЕРЬ МОЖЕТ СТАТЬ",
 		"_ss_scorecard_JUMP_AND_HOLD": "Прыгни и зажми A и B",
 		"_ss_scorecard_TO_TURN_INTO": "для превращения в Супер %c",
+		
+		"_ss_intro_Race": "Гонка с",
+		"_ss_intro_Metal_Sonic": "Метал Соником",
 		
 		"_PS_SAVING": "СОХРАНЕНИЕ...",
 		"_PS_LOADING": "ЗАГРУЗКА...",
