@@ -16,6 +16,7 @@
         <xsd:attribute name="name" type="xsd:string" use="required" />
         <xsd:attribute name="height" type="xsd:int" use="required" />
         <xsd:attribute name="width" type="xsd:int" use="required" />
+        <xsd:attribute name="space_pixels" type="xsd:boolean" use="required" />
     </xsd:complexType>
     <xsd:complexType name="contour_node">
         <xsd:attribute name="enabled" type="xsd:boolean" use="required" />

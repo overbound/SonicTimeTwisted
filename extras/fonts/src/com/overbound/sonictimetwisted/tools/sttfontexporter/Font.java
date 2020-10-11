@@ -86,6 +86,11 @@ public class Font {
     protected boolean shadowEnabled;
     
     /**
+     * Whether space should have special pixels with 1/255 alpha in the corners
+     */
+    protected boolean spacePixelsEnabled;
+    
+    /**
      * Constructor
      * 
      * @param pName Font name
@@ -183,6 +188,16 @@ public class Font {
     }
     
     /**
+     * Adds (or not) 1/255 pixels to the corners of the " " (space) character
+     * @param pSpacePixelsEnabled Whether pixels should be added
+     */
+    public void setSpacePixelsEnabled(boolean pSpacePixelsEnabled)
+    {
+        Logger.writeLine(pSpacePixelsEnabled ? "Space pixels enabled" : "Space pixels disabled");
+        spacePixelsEnabled = pSpacePixelsEnabled;
+    }
+    
+    /**
      * Exports a PNG strip with some of the symbols contained in the font
      * 
      * @param characters List of characters to export
@@ -202,14 +217,15 @@ public class Font {
             int c = codePoints[i];
             offset = i * fontWidth;
             int[][] characterMatrix;
+            String currentChars = new String(Character.toChars(c));
             if(characterMatrices.containsKey(c))
             {
-                Logger.writeLine("Exporting character %0%.", new String(Character.toChars(c)));
+                Logger.writeLine("Exporting character %0%.", currentChars);
                 characterMatrix = characterMatrices.get(c);
             }
             else
             {
-                Logger.writeLine("Requested character %0% not found, exporting a space instead.", new String(Character.toChars(c)));
+                Logger.writeLine("Requested character %0% not found, exporting a space instead.", currentChars);
                 characterMatrix = new int[fontWidth][fontHeight];
                 for(x = 0; x < fontWidth; x++)
                 {
@@ -218,6 +234,14 @@ public class Font {
                         characterMatrix[x][y] = Constants.PIX_BLANK;
                     }    
                 }
+            }
+            if(spacePixelsEnabled && currentChars.equals(" "))
+            {
+                Logger.writeLine("Exporting pixels that force space to be in full width.");
+                characterMatrix[1][0] = Constants.PIX_BLANK_SPACE_CORNER;
+                characterMatrix[fontWidth - 1][1] = Constants.PIX_BLANK_SPACE_CORNER;
+                characterMatrix[0][fontHeight - 2] = Constants.PIX_BLANK_SPACE_CORNER;
+                characterMatrix[fontWidth - 2][fontHeight - 1] = Constants.PIX_BLANK_SPACE_CORNER;
             }
             if(contourEnabled)
             {
