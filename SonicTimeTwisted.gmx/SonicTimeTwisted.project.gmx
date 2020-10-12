@@ -11,7 +11,7 @@
     <Config>Configs\Linux</Config>
     <Config>Configs\PlayStation</Config>
   </Configs>
-  <datafiles number="53" name="datafiles">
+  <datafiles number="61" name="datafiles">
     <datafile>
       <name>translations.txt</name>
       <exists>-1</exists>
@@ -53,7 +53,48 @@
       </ConfigOptions>
       <filename>translations.txt</filename>
     </datafile>
-    <datafiles number="53" name="translations">
+    <datafiles number="61" name="translations">
+      <datafile>
+        <name>German.json</name>
+        <exists>-1</exists>
+        <size>5658</size>
+        <exportAction>2</exportAction>
+        <exportDir></exportDir>
+        <overwrite>0</overwrite>
+        <freeData>-1</freeData>
+        <removeEnd>0</removeEnd>
+        <store>0</store>
+        <ConfigOptions>
+          <Config name="Default">
+            <CopyToMask>9223372036854775807</CopyToMask>
+          </Config>
+          <Config name="Windows">
+            <CopyToMask>9223372036854775807</CopyToMask>
+          </Config>
+          <Config name="AndroidSmartphone">
+            <CopyToMask>9223372036854775807</CopyToMask>
+          </Config>
+          <Config name="AndroidConsole">
+            <CopyToMask>9223372036854775807</CopyToMask>
+          </Config>
+          <Config name="MacOS">
+            <CopyToMask>9223372036854775807</CopyToMask>
+          </Config>
+          <Config name="iPhone">
+            <CopyToMask>9223372036854775807</CopyToMask>
+          </Config>
+          <Config name="AppleTV">
+            <CopyToMask>9223372036854775807</CopyToMask>
+          </Config>
+          <Config name="Linux">
+            <CopyToMask>9223372036854775807</CopyToMask>
+          </Config>
+          <Config name="PlayStation">
+            <CopyToMask>9223372036854775807</CopyToMask>
+          </Config>
+        </ConfigOptions>
+        <filename>German.json</filename>
+      </datafile>
       <datafile>
         <name>English.json</name>
         <exists>-1</exists>
@@ -136,7 +177,7 @@
         </ConfigOptions>
         <filename>Russian.json</filename>
       </datafile>
-      <datafiles number="53" name="Russian">
+      <datafiles number="61" name="Russian">
         <datafile>
           <name>sprFontHud.png</name>
           <exists>-1</exists>
@@ -423,6 +464,295 @@
             </Config>
           </ConfigOptions>
           <filename>sprFontMicro.png</filename>
+        </datafile>
+      </datafiles>
+      <datafiles number="61" name="German">
+        <datafile>
+          <name>sprFontLives.png</name>
+          <exists>-1</exists>
+          <size>2431</size>
+          <exportAction>2</exportAction>
+          <exportDir></exportDir>
+          <overwrite>0</overwrite>
+          <freeData>-1</freeData>
+          <removeEnd>0</removeEnd>
+          <store>0</store>
+          <ConfigOptions>
+            <Config name="Default">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="Windows">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="AndroidSmartphone">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="AndroidConsole">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="MacOS">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="iPhone">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="AppleTV">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="Linux">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="PlayStation">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+          </ConfigOptions>
+          <filename>sprFontLives.png</filename>
+        </datafile>
+        <datafile>
+          <name>sprFontMicro.png</name>
+          <exists>-1</exists>
+          <size>1076</size>
+          <exportAction>2</exportAction>
+          <exportDir></exportDir>
+          <overwrite>0</overwrite>
+          <freeData>-1</freeData>
+          <removeEnd>0</removeEnd>
+          <store>0</store>
+          <ConfigOptions>
+            <Config name="Default">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="Windows">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="AndroidSmartphone">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="AndroidConsole">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="MacOS">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="iPhone">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="AppleTV">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="Linux">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="PlayStation">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+          </ConfigOptions>
+          <filename>sprFontMicro.png</filename>
+        </datafile>
+        <datafile>
+          <name>sprFontTitleLarge.png</name>
+          <exists>-1</exists>
+          <size>9298</size>
+          <exportAction>2</exportAction>
+          <exportDir></exportDir>
+          <overwrite>0</overwrite>
+          <freeData>-1</freeData>
+          <removeEnd>0</removeEnd>
+          <store>0</store>
+          <ConfigOptions>
+            <Config name="Default">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="Windows">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="AndroidSmartphone">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="AndroidConsole">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="MacOS">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="iPhone">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="AppleTV">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="Linux">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="PlayStation">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+          </ConfigOptions>
+          <filename>sprFontTitleLarge.png</filename>
+        </datafile>
+        <datafile>
+          <name>sprFontTitleSmall.png</name>
+          <exists>-1</exists>
+          <size>5480</size>
+          <exportAction>2</exportAction>
+          <exportDir></exportDir>
+          <overwrite>0</overwrite>
+          <freeData>-1</freeData>
+          <removeEnd>0</removeEnd>
+          <store>0</store>
+          <ConfigOptions>
+            <Config name="Default">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="Windows">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="AndroidSmartphone">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="AndroidConsole">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="MacOS">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="iPhone">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="AppleTV">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="Linux">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="PlayStation">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+          </ConfigOptions>
+          <filename>sprFontTitleSmall.png</filename>
+        </datafile>
+        <datafile>
+          <name>sprFontTitleSmallest.png</name>
+          <exists>-1</exists>
+          <size>2350</size>
+          <exportAction>2</exportAction>
+          <exportDir></exportDir>
+          <overwrite>0</overwrite>
+          <freeData>-1</freeData>
+          <removeEnd>0</removeEnd>
+          <store>0</store>
+          <ConfigOptions>
+            <Config name="Default">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="Windows">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="AndroidSmartphone">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="AndroidConsole">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="MacOS">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="iPhone">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="AppleTV">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="Linux">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="PlayStation">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+          </ConfigOptions>
+          <filename>sprFontTitleSmallest.png</filename>
+        </datafile>
+        <datafile>
+          <name>sprFontHud.png</name>
+          <exists>-1</exists>
+          <size>4061</size>
+          <exportAction>2</exportAction>
+          <exportDir></exportDir>
+          <overwrite>0</overwrite>
+          <freeData>-1</freeData>
+          <removeEnd>0</removeEnd>
+          <store>0</store>
+          <ConfigOptions>
+            <Config name="Default">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="Windows">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="AndroidSmartphone">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="AndroidConsole">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="MacOS">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="iPhone">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="AppleTV">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="Linux">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="PlayStation">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+          </ConfigOptions>
+          <filename>sprFontHud.png</filename>
+        </datafile>
+        <datafile>
+          <name>sprFontHudMin.png</name>
+          <exists>-1</exists>
+          <size>3318</size>
+          <exportAction>2</exportAction>
+          <exportDir></exportDir>
+          <overwrite>0</overwrite>
+          <freeData>-1</freeData>
+          <removeEnd>0</removeEnd>
+          <store>0</store>
+          <ConfigOptions>
+            <Config name="Default">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="Windows">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="AndroidSmartphone">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="AndroidConsole">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="MacOS">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="iPhone">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="AppleTV">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="Linux">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="PlayStation">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+          </ConfigOptions>
+          <filename>sprFontHudMin.png</filename>
         </datafile>
       </datafiles>
     </datafiles>
