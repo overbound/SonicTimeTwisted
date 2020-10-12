@@ -33,6 +33,9 @@ public interface Constants {
     // completely transparent
     static int PIX_BLANK = 0b00000000111111110000000011111111;
     
+    // completely transparent (
+    static int PIX_BLANK_SPACE_CORNER = 0b00000001111111111111111111111111;
+    
     // white
     static int PIX_MAIN = 0b11111111111111111111111111111111;
     

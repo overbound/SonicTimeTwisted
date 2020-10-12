@@ -12,11 +12,6 @@ switch(argument0)
     case 3:
         menu_fn_open_slider_window(3, tr('Opacity'), round(objProgram.inputManager.vkalpha*100), 0, 100);
         break;
-        /*
-    case 4:
-        objProgram.inputManager.vibration_type = (objProgram.inputManager.vibration_type + 1) mod 4;
-        break;
-        */
     case 4:
         objProgram.inputManager.gyroinss = (objProgram.inputManager.gyroinss + 1) mod 2;
         break;
@@ -60,18 +55,6 @@ switch(argument0)
             case 3:
                 menu_fn_open_slider_window(3, tr('Opacity'), max(0, round(objProgram.inputManager.vkalpha*100) - 1), 0, 100);
                 break;
-                /*
-            case 4:
-                if(objProgram.inputManager.vibration_type)
-                {
-                    objProgram.inputManager.vibration_type--;
-                }
-                else
-                {
-                    objProgram.inputManager.vibration_type = 3;
-                }
-                break;
-                */
             case 4:
                 if(objProgram.inputManager.gyroinss)
                 {
@@ -107,11 +90,6 @@ switch(argument0)
             case 3:
                 menu_fn_open_slider_window(3, tr('Opacity'), min(100, round(objProgram.inputManager.vkalpha*100) + 1), 0, 100);
                 break;
-                /*
-            case 4:
-                objProgram.inputManager.vibration_type = (objProgram.inputManager.vibration_type + 1) mod 4;
-                break;
-                */
             case 4:
                 objProgram.inputManager.gyroinss = (objProgram.inputManager.gyroinss + 1) mod 2;
                 break;
@@ -148,31 +126,16 @@ if(objProgram.inputManager.gyroinss)
 {
     gyroLabel = tr('Gyroscope');
 }
-menu_fn_refresh_displayed_value(5, "< "+gyroLabel+ " >");
+menu_fn_refresh_displayed_value(4, "< "+gyroLabel+ " >");
 
 var gyroGGLabel = tr('D-Pad');
 if(objProgram.inputManager.gg_mode == 1)
 {
     gyroGGLabel = tr('Point');
 }
-menu_fn_refresh_displayed_value(6, "< "+gyroGGLabel+ " >");
+menu_fn_refresh_displayed_value(5, "< "+gyroGGLabel+ " >");
 var alphaLabel = string(round(objProgram.inputManager.vkalpha*100));
 menu_fn_refresh_displayed_value(3, "< "+alphaLabel+ " >");
-
-var vibrationLabel = tr('None');
-switch(objProgram.inputManager.vibration_type)
-{
-    case 1:
-        vibrationLabel = tr('Haptics');
-        break;
-    case 2:
-        vibrationLabel = tr('Contextual');
-        break;
-    case 3:
-        vibrationLabel = tr('Both');
-        break;
-}
-menu_fn_refresh_displayed_value(4, "< "+vibrationLabel+ " >");
 
 // preserve the cursor value - usually false for the sake of touchscreen controls
 return false;

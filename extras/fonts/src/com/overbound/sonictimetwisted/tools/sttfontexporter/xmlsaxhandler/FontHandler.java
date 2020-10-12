@@ -33,23 +33,86 @@ import org.xml.sax.SAXException;
  */
 public class FontHandler extends DefaultHandler {
     
-    
+    /**
+     * A tag representing a font
+     */
     private static final String DEFINITION = "definition";
+    
+    /**
+     * A tag containing a font's contour and shadow-related properties
+     */
     private static final String CONTOUR = "contour";
+    
+    /**
+     * A tag containing the sequence of characters a font contains by default
+     */
     private static final String SEQUENCE = "sequence";
     
+    /**
+     * The subdirectory where fonts are located
+     */
     protected String definitionsDirectory;
+    
+    /**
+     * The fonts created by parsing the font.xml file
+     */
     protected List<Font> fonts;
+    
+    /**
+     * Width of the currently parsed font
+     */
     protected int currentFontWidth = 0;
+    
+    /**
+     * Height of the currently parsed font
+     */
     protected int currentFontHeight = 0;
+    
+    /**
+     * Name of the currently parsed font
+     */
     protected String currentFontName;
+    
+    /**
+     * Characters contained in the currently parsed font
+     */
     protected String currentFontChars;
+    
+    /**
+     * Pixels read from the currently parsed font's image
+     */
     protected int[][] currentFontMatrix;
+    
+    /**
+     * Whether a contour is enabled for the currently parsed front
+     */
     protected boolean currentContourEnabled = true;
+    
+    /**
+     * Whether the contour of the currently parsed font is rounded
+     */
     protected boolean currentContourRounded = false;
+    
+    /**
+     * Whether the currently parsed font has a shadow enabled
+     */
     protected boolean currentShadowEnabled = true;
+    
+    /**
+     * Whether the currently parsed font has space pixels enabled
+     */
+    protected boolean currentSpacePixelsEnabled = false;
+    
+    /**
+     * Set to true if a character sequence is being parsed
+     */
     protected boolean currentlyInSequence = false;
     
+    /**
+     * Constructor
+     * 
+     * @param directory The fonts subdirectory
+     */
     public FontHandler(String directory)
     {
         fonts = new ArrayList<>();
@@ -61,6 +124,11 @@ public class FontHandler extends DefaultHandler {
         }
     }
     
+    /**
+     * Returns the parsed fonts
+     * 
+     * @return fonts extracted from the XML file and the accompanying PNG files
+     */
     public Font[] getFonts()
     {
         Font[] result = new Font[fonts.size()];
@@ -72,6 +140,16 @@ public class FontHandler extends DefaultHandler {
         return result;
     }
     
+    /**
+     * Parser: element start
+     * Used to read information on a font, either from it's overall definition or from the contour node
+     * 
+     * @param uri
+     * @param lName
+     * @param qName
+     * @param attr
+     * @throws SAXException 
+     */
     @Override
     public void startElement(String uri, String lName, String qName, Attributes attr) throws SAXException {
         currentlyInSequence = qName.equals(SEQUENCE);
@@ -80,6 +158,7 @@ public class FontHandler extends DefaultHandler {
                 currentFontName = attr.getValue("name");
                 currentFontWidth = Integer.valueOf(attr.getValue("width"));
                 currentFontHeight = Integer.valueOf(attr.getValue("height"));
+                currentSpacePixelsEnabled = attr.getValue("space_pixels").equals("true");
                 break;
             case CONTOUR:
                 currentContourEnabled = attr.getValue("enabled").equals("true");
@@ -92,7 +171,16 @@ public class FontHandler extends DefaultHandler {
         }
     }
  
-    
+    /**
+     * Parser: element end
+     * 
+     * When a font definition has been read, opens the associated PNG file and extracts the pixels.
+     * 
+     * @param uri
+     * @param localName
+     * @param qName
+     * @throws SAXException 
+     */
     @Override
     public void endElement(String uri, String localName, String qName) throws SAXException {
         currentlyInSequence = false;
@@ -108,12 +196,21 @@ public class FontHandler extends DefaultHandler {
                 newFont.setContourEnabled(currentContourEnabled);
                 newFont.setContourRounded(currentContourRounded);
                 newFont.setShadowEnabled(currentShadowEnabled);
+                newFont.setSpacePixelsEnabled(currentSpacePixelsEnabled);
                 fonts.add(newFont);
                 Logger.writeLine("Font loaded successfully.");
             }
         }
     }
     
+    /**
+     * Parser: read a text node
+     * 
+     * @param ch
+     * @param start
+     * @param length
+     * @throws SAXException 
+     */
     @Override
     public void characters (char ch[], int start, int length)
         throws SAXException

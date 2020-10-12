@@ -31,7 +31,7 @@
       <CopyToMask>8</CopyToMask>
     </Config>
     <Config name="AndroidSmartphone">
-      <CopyToMask>105553895358702</CopyToMask>
+      <CopyToMask>2097160</CopyToMask>
     </Config>
     <Config name="AndroidConsole">
       <CopyToMask>9223372036854775807</CopyToMask>
