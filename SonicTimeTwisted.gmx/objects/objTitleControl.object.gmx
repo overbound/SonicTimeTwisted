@@ -700,7 +700,7 @@ break;
 case 3: draw_text_color(view_xview[0]+213,view_yview[0]+120,'BRYCE STOCK "OVERBOUND"',c_white,c_white,c_yellow,c_yellow,1); break;
 case 4: draw_text_color(view_xview[0]+213, view_yview[0]+120, 'HINCHY',c_white,c_white,c_yellow,c_yellow,1) break;
 case 5: draw_text_color(view_xview[0]+213, view_yview[0]+120, 'JOEVAN SALMON-JOHNSON "VECTORSATYR"',c_white,c_white,c_yellow,c_yellow,1) break;
-case 6: draw_text_color(view_xview[0]+213, view_yview[0]+120, 'MARC "DERZOCKER"',c_white,c_white,c_yellow,c_yellow,1) break;
+case 6: draw_text_color(view_xview[0]+213, view_yview[0]+120, 'DEE LITEYEARS',c_white,c_white,c_yellow,c_yellow,1) break;
 case 7: draw_text_color(view_xview[0]+213, view_yview[0]+120, 'DEVIN REEVES "MERCURY"',c_white,c_white,c_yellow,c_yellow,1)break;
 case 8: draw_text_color(view_xview[0]+213, view_yview[0]+120, 'SHANE "SPARKS"',c_white,c_white,c_yellow,c_yellow,1) break;
 case 12: if pauseState == 3 draw_text_color(view_xview[0]+213, view_yview[0]+228, 'PRESS START',c_white,c_white,c_yellow,c_yellow,1); start=true; break;

@@ -127,7 +127,7 @@ break;
 case 3:
     draw_text_color(view_xview+160,view_yview+6,'GAME ART BY',c_white,c_white,c_yellow,c_yellow,image_alpha);
     draw_text_color(view_xview+160,view_yview+28,'BRYCE STOCK "OVERBOUND"',c_white,c_white,c_yellow,c_yellow,image_alpha);
-    draw_text_color(view_xview+160,view_yview+42,'MARC "DER ZOCKER"',c_white,c_white,c_yellow,c_yellow,image_alpha);
+    draw_text_color(view_xview+160,view_yview+42,'DEE LITEYEARS',c_white,c_white,c_yellow,c_yellow,image_alpha);
 break;
 
 case 4:
