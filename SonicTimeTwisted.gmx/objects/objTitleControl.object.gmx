@@ -84,12 +84,12 @@ menu.default_state = 1;
 // Names of the original team behind the game.
 // The menu is hardcoded to only include 6 names, and should remain this way
 names = false;
-names[0] = tr('Bryce Stock "Overbound"');
+names[0] = tr('Bryce Stock (Overbound)');
 names[1] = tr('Hinchy');
-names[2] = tr('Joevan Salmon-Johnson "VectorSatyr"');
-names[3] = tr('Marc "DerZocker"');
-names[4] = tr('Devin Reeves "Mercury"');
-names[5] = tr('Shane "Sparks"');
+names[2] = tr('VectorSatyr');
+names[3] = tr('Dee Liteyears');
+names[4] = tr('Mercury');
+names[5] = tr('Shane (Sparks)');
 
 epilepsy_title = tr("_epilepsy_title");
 epilepsy = tr("_epilepsy");
