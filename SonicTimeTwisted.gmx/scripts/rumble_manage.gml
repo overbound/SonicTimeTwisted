@@ -1,4 +1,5 @@
 var script = rumble_none;
+
 switch(argument0)
 {
     case RUMBLE_EVENT_RING_GET:
