@@ -54,6 +54,31 @@ spr=sprite_index;
         <arguments>
           <argument>
             <kind>1</kind>
+            <string>// increase the shift amount; this will cycle the colours
+shift += 0.01;
+time++;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
             <string>/// Check Surface Exists
 if (!surface_exists(tt_surface) &amp;&amp; view_yview &lt; room_height - view_hview - 64)
 {
@@ -62,6 +87,7 @@ if (!surface_exists(tt_surface) &amp;&amp; view_yview &lt; room_height - view_hv
 if (view_yview &gt;= room_height - view_hview - 64)
 {
     if (surface_exists(tt_surface)) surface_free(tt_surface);
+    instance_destroy();
     exit;
 }
 </string>
@@ -84,7 +110,8 @@ if (view_yview &gt;= room_height - view_hview - 64)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>// set the drawing target to the surface
+            <string>///Draw the lightning to the surface.
+// set the drawing target to the surface
 var temp_Detail = 30;
 var temp_Centre = 213;
 var temp_Offset = 25;
@@ -96,7 +123,7 @@ var temp_Wave_3 = 0; // larger wave
     if (view_yview &lt; room_height - view_hview - 64)
     {
 surface_set_target(tt_surface);
-    draw_clear_alpha(0, 0);
+    draw_clear_alpha(c_black, 0);
     draw_primitive_begin(pr_trianglefan); // pr_trianglefan // pr_linestrip
     draw_vertex_colour(213, 120, c_white, 1);
         for (var j = 0; j &lt; 2; j++)
@@ -152,15 +179,10 @@ surface_reset_target();
 //draw_sprite_ext(spr, floor(image_index), xoffset, 0, 1, 1, 0, c_white, 1);
 //draw_sprite_ext(spr, floor(image_index), 0, 1, 1, 1, 0, c_white, 1); // ORIGINAL IMAGE
 // reset the drawing target to the screen
-// increase the shift amount; this will cycle the colours
-shift += 0.01;
-time++;
 </string>
           </argument>
         </arguments>
       </action>
-    </event>
-    <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -177,7 +199,8 @@ time++;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>// draw a dummy background for the effect to cover
+            <string>///Draw the surface.
+// draw a dummy background for the effect to cover
 //draw_background_ext(zonebkg, 0, 0, 2, 2, 0, c_white, 1);
 // turn on the time travel effect shader
 if (view_yview &lt; room_height - view_hview - 64)

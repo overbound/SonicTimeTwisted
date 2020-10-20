@@ -63,6 +63,38 @@ audio_play_sound(sndMetalAttack,10,false);
         <arguments>
           <argument>
             <kind>1</kind>
+            <string>// increase the shift amount; this will cycle the colours
+shift += 0.01;
+if image_xscale &lt; 1 {
+    image_xscale+=0.0208;
+    image_yscale+=0.0208;
+   truex-=2.5;
+   // truey-=5;
+}
+y=truey;
+x=truex;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
             <string>/// Render Background Elements
 draw_sprite(sprTitleFog,0,304,1960);
 </string>
@@ -89,55 +121,18 @@ draw_sprite(sprTitleFog,0,304,1960);
 if not surface_exists(tt_surface) tt_surface = surface_create(426, 240);
 surface_set_target(tt_surface);
 // clear the surface
-draw_clear_alpha(0, 0);
+draw_clear_alpha(c_black, 0);
 // draw the sprite mirrored on the y axis to create the zipper shape
 //draw_sprite_ext(spr, floor(image_index), xoffset, 0, 1, 1, 0, c_white, 1);
 draw_sprite_ext(spr, floor(image_index), 0, 1, 1, 1, 0, c_white, 1);
 // reset the drawing target to the screen
 surface_reset_target();
 
-// increase the shift amount; this will cycle the colours
-shift += 0.01;
-if image_xscale &lt; 1 {
-    image_xscale+=0.0208;
-    image_yscale+=0.0208;
-   truex-=2.5;
-   // truey-=5;
-}
-y=truey;
-x=truex;
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="8" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>timetravel_shader_draw(426, 240, x, y);
+timetravel_shader_draw(426, 240, x, y);
 
 // draw the surface again below, without the shader
 // so you can see the untextured animation
 if (surface_exists(tt_surface)) draw_surface(tt_surface, 0,512);
-
-
-
-
 </string>
           </argument>
         </arguments>

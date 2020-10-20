@@ -87,6 +87,7 @@ angle_warp = -15;
 scale = 1.1;
 sampler_index_warp = shader_get_sampler_index(NebulaShader, "warp");
 surface_warp = -1;
+copy_surface = -1;
 texture_warp = pointer_null;
 whirl_angle = 0;
 </string>
@@ -111,29 +112,60 @@ whirl_angle = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if not surface_exists(surface_warp) {
-    surface_warp = surface_create(256,256);
-    texture_warp = surface_get_texture(surface_warp);
-}
-   
-    whirl_angle += angle_change;
-    var shift = -128 * scale;
-    
-    surface_set_target(surface_warp);
-    texture_set_interpolation(true);
-    d3d_transform_set_rotation_z(angle_warp);
-    d3d_transform_add_translation(128, 128, 0);
-    draw_surface_ext(surface_warp, shift, shift, scale, scale, 0, c_white, 1);
-    d3d_transform_set_identity();
-    draw_sprite_ext(WhirlSpr, 0, 128, 128, 1, 1, whirl_angle, c_white, 1);
-    texture_set_interpolation(false);
-    surface_reset_target();
+            <string>whirl_angle += angle_change;
 </string>
           </argument>
         </arguments>
       </action>
     </event>
     <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Render PP background to the surface.
+
+var clean = false;
+var shift = -128 * scale;
+
+if not surface_exists(surface_warp) {
+    surface_warp = surface_create(256,256);
+    clean = true;
+    texture_warp = surface_get_texture(surface_warp);
+}
+
+if not surface_exists(copy_surface) {
+    copy_surface = surface_create(256,256);
+}
+
+surface_copy(copy_surface, 0, 0, surface_warp);
+
+surface_set_target(surface_warp);
+
+if (clean) draw_clear_alpha(c_black, 0);
+d3d_transform_set_rotation_z(angle_warp);
+d3d_transform_add_translation(128, 128, 0);
+draw_surface_ext(copy_surface, shift, shift, scale, scale, 0, c_white, 1);
+d3d_transform_set_identity();
+draw_sprite_ext(WhirlSpr, 0, 128, 128, 1, 1, whirl_angle, c_white, 1);
+
+surface_reset_target();
+</string>
+          </argument>
+        </arguments>
+      </action>
       <action>
         <libid>1</libid>
         <id>603</id>
