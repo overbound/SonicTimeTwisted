@@ -152,7 +152,7 @@ audio_play_sound(bgmIntro,3,0);
             if view_yview[view_current] &gt; 0//pan up until at the top
                 view_yview[view_current]-=2;    
                 else{
-                    state = .5;
+                    state = -1;
                     alarm[0]=80;
                     }             
             }
@@ -176,7 +176,7 @@ audio_play_sound(bgmIntro,3,0);
                 image_index = 12;
                 image_speed = 0; 
                 other.alarm[1]=60;
-                other.state = 1.5;
+                other.state = -1;
                 instance_create(x,y,objIntroMetalZoom);
                 instance_create(x,y,objDustCloud);
                 }
@@ -200,7 +200,7 @@ audio_play_sound(bgmIntro,3,0);
                 image_speed = 0;
                 image_index = 8;
                 other.alarm[2]=60;
-                other.state = 2.5;
+                other.state = -1;
             }
             }
             

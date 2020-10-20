@@ -117,7 +117,7 @@ if objGameData.character_id[0] == 1 {
             view_yview[view_current] -=8;
         else {
             view_yview[view_current] = 0;
-            state = .5;
+            state = -1;
             alarm[0]=20;
             }
     break;
@@ -131,7 +131,7 @@ if objGameData.character_id[0] == 1 {
         if image_index &gt;= 7 {
             image_index = 7;
             image_speed = 0;
-            other.state = 1.5;
+            other.state = -1;
             other.alarm[1] = 100;
             instance_create(x+227,y+59,objPyramidJump)
             background_hspeed[0] = 0;

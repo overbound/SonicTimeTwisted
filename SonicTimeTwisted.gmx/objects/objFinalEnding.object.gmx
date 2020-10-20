@@ -122,7 +122,7 @@ screenshot = -1;
     break;
         
     case 1:
-        screenshot = background_create_from_surface(application_surface, 0, 0, objScreen.width, objScreen.height, 0, 0);
+        screenshot = sprite_create_from_surface(application_surface, 0, 0, objScreen.width, objScreen.height, 0, 0, 0, 0);
         
         with objFinalBoss instance_destroy();
         state = 2;
@@ -167,9 +167,9 @@ screenshot = -1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if background_exists(screenshot)
+            <string>if sprite_exists(screenshot)
 {
-    draw_background_stretched_ext(screenshot, view_xview[view_current], view_yview[view_current]+screen_y, objScreen.width, objScreen.height, c_white, image_alpha);
+    draw_sprite_stretched_ext(screenshot, 0, view_xview[view_current], view_yview[view_current]+screen_y, objScreen.width, objScreen.height, c_white, image_alpha);
 }
 </string>
           </argument>

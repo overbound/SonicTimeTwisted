@@ -109,7 +109,7 @@ window_center();
           <argument>
             <kind>1</kind>
             <string>/// Unpause
-if not paused and background_exists(screenshot) { background_delete(screenshot); }
+if not paused and sprite_exists(screenshot) { sprite_delete(screenshot); }
 </string>
           </argument>
         </arguments>
@@ -214,7 +214,7 @@ apply_video_settings();
           <argument>
             <kind>1</kind>
             <string>/// Clean up
-if background_exists(screenshot) { background_delete(screenshot); }
+if sprite_exists(screenshot) { sprite_delete(screenshot); }
 </string>
           </argument>
         </arguments>
@@ -299,14 +299,15 @@ with (all) event_user(15); // toggle "flashing event" in all objects that have i
           <argument>
             <kind>1</kind>
             <string>/// Screenshot and scanlines
-if background_exists(screenshot) &amp;&amp; !instance_exists(objSSHud)
+if sprite_exists(screenshot) &amp;&amp; !instance_exists(objSSHud)
 {
     draw_enable_alphablend(false);
-    draw_background_stretched_ext(screenshot, view_xview[view_current], view_yview[view_current], width, height, c_white, 1);
+    draw_sprite_stretched_ext(screenshot, 0, view_xview[view_current], view_yview[view_current], width, height, c_white, 1);
     draw_enable_alphablend(true);
 }
 else if scanlines
 {
+    // draw the screenshot with a scanline shader?
 }
 </string>
           </argument>
