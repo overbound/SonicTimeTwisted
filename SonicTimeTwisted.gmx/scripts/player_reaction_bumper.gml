@@ -1,7 +1,7 @@
 // player_reaction_bumper(local_id)
 var bounce_direction;
 // ignore if layer mismatch
-if not (layer&argument0.layer) return false;
+if not (depth_mask&argument0.depth_mask) return false;
 // fall if hurt
 if (state==player_state_hurt) player_is_falling();
 // get bounce direction

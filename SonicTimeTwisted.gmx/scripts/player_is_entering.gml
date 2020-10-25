@@ -15,7 +15,7 @@ state = player_state_enter;
 // movement and collision
 ds_list_clear(terrain_list);
 facing = objProgram.time_traveling;
-layer = 1;
+depth_mask = 1;
 cliff = 0;
 limit_xspeed = false;
 limit_yspeed = true;

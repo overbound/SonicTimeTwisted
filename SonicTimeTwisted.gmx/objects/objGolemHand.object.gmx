@@ -63,7 +63,7 @@ reaction_script2=player_reaction_golem_hand_target;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>layer = 3;
+            <string>depth_mask = 3;
 </string>
           </argument>
         </arguments>
@@ -136,7 +136,7 @@ if instance_exists(objGolem)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if layer == 4 &amp;&amp; reaction_script2 != noone {
+            <string>if depth_mask == 4 &amp;&amp; reaction_script2 != noone {
     with other script_execute(other.reaction_script2,other);   
     reaction_script2 = noone;
 }

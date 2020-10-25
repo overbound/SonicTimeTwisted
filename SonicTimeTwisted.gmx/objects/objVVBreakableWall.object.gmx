@@ -130,7 +130,7 @@ for (var j=0; j&lt;height; j+=1)
         with instance_create(x+i*16, y+j*16, objVVBreakableWallDebris)
         {
             // setup sprite
-            layer=4;
+            depth_mask=4;
             sprite_index = other.debris;
             depth = -1;
             

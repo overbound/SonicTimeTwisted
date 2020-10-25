@@ -1,7 +1,7 @@
 // player_reaction_AA_Bumper(local_id)
 var bounce_direction;
 // ignore if layer mismatch
-if not (layer&argument0.layer) return false;
+if not (depth_mask&argument0.depth_mask) return false;
 // ignore if still recoiling
 if argument0.alarm[0] return false;
 // ignore if not "close" enough

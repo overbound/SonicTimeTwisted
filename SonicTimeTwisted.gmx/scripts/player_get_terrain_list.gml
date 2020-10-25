@@ -11,7 +11,7 @@ y2 = floor(y)+offset_y*2;
 with objSolid
 {
     // continue if not current terrain and on different layers
-    if (id!=other.terrain_id) and not (layer&other.layer) continue;
+    if (id!=other.terrain_id) and not (depth_mask&other.depth_mask) continue;
     // check collision rect
     if not collision_rectangle(x1, y1, x2, y2, id, true, false) continue;
     // add solid to list

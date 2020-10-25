@@ -87,7 +87,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>layer</string>
+            <string>depth_mask</string>
           </argument>
           <argument>
             <kind>0</kind>
