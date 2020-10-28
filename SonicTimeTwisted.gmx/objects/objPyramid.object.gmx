@@ -43,9 +43,9 @@ if objGameData.character_id[0] == 1 {
     <event eventtype="2" enumb="1">
       <action>
         <libid>1</libid>
-        <id>611</id>
-        <kind>6</kind>
-        <userelative>-1</userelative>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
         <isquestion>0</isquestion>
         <useapplyto>-1</useapplyto>
         <exetype>2</exetype>
@@ -57,11 +57,8 @@ if objGameData.character_id[0] == 1 {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>state</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>2</string>
+            <string>state = 2;
+</string>
           </argument>
         </arguments>
       </action>
@@ -69,9 +66,9 @@ if objGameData.character_id[0] == 1 {
     <event eventtype="2" enumb="0">
       <action>
         <libid>1</libid>
-        <id>611</id>
-        <kind>6</kind>
-        <userelative>-1</userelative>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
         <isquestion>0</isquestion>
         <useapplyto>-1</useapplyto>
         <exetype>2</exetype>
@@ -83,11 +80,8 @@ if objGameData.character_id[0] == 1 {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>state</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>1</string>
+            <string>state = 1;
+</string>
           </argument>
         </arguments>
       </action>
@@ -160,22 +154,6 @@ if lights == true
 </string>
           </argument>
         </arguments>
-      </action>
-    </event>
-    <event eventtype="5" enumb="113">
-      <action>
-        <libid>1</libid>
-        <id>331</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_restart_game</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
       </action>
     </event>
   </events>
