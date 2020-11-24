@@ -1,0 +1,1 @@
+java -jar gms1sync.jar "C:\\Android-Studio-Project-Path\\SttAndroid" "com.example.sttandroid" "SttAndroid" "D:\\GameMaker-Studio-1-Projects\\SonicTimeTwisted\\SonicTimeTwisted.gmx" > export.log
