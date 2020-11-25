@@ -458,23 +458,23 @@ public class InputDeviceManager {
     public boolean softwareMapKey(int inputCode, int keyCode) {
         // if this input is already set for a different keyCode, return false
         for (Entry<Integer, Integer> entry : mainSoftwareMappings.entrySet()) {
-            if (entry.getValue() == inputCode) {
-                if (entry.getKey() != keyCode) {
+            if (entry.getValue() == keyCode) {
+                if (entry.getKey() != inputCode) {
                     return false;
                 }
             }
         }
         for (Entry<Integer, Integer> entry : backupSoftwareMappings.entrySet()) {
-            if (entry.getValue() == inputCode) {
+            if (entry.getValue() == keyCode) {
                 backupSoftwareMappings.remove(entry.getKey());
                 break;
             }
         }
-        if (mainSoftwareMappings.containsKey(keyCode)
-                && mainSoftwareMappings.get(keyCode) != inputCode) {
-            backupSoftwareMappings.put(keyCode, mainSoftwareMappings.get(keyCode));
+        if (mainSoftwareMappings.containsKey(inputCode)
+                && mainSoftwareMappings.get(inputCode) != keyCode) {
+            backupSoftwareMappings.put(inputCode, mainSoftwareMappings.get(inputCode));
         }
-        mainSoftwareMappings.put(keyCode, inputCode);
+        mainSoftwareMappings.put(inputCode, keyCode);
 
         updateSoftwareMappingsOnDevices();
         return true;
@@ -725,6 +725,20 @@ public class InputDeviceManager {
             }
         }
         this.rumbleEnabled = rumbleEnabled;
+    }
+
+    /**
+     * Swap device0 and device1 if two devices are connected
+     */
+    public void swapDevices() {
+        if(device0 != null && device1 != null) {
+            DeviceWrapper tmp = device0;
+            device0 = device1;
+            device1 = tmp;
+
+            // forces label recreation
+            deviceLabel = null;
+        }
     }
 
     /**

@@ -189,20 +189,20 @@ public class MainActivity extends AppCompatActivity {
         sttAndroid.android_feed_input_mapping_done();
         updateDisplay();
 
-        sttAndroid.android_map_input(0, 12, 1);
-        sttAndroid.android_map_input(0, 11, 2);
-        sttAndroid.android_map_input(0, 2, 4);
-        sttAndroid.android_map_input(0, 1, 8);
+        sttAndroid.android_map_input(0, SttAndroid.cUP, 12);
+        sttAndroid.android_map_input(0, SttAndroid.cDOWN, 11);
+        sttAndroid.android_map_input(0, SttAndroid.cLEFT, 2);
+        sttAndroid.android_map_input(0, SttAndroid.cRIGHT, 1);
 
-        sttAndroid.android_map_input(0, 162, 1);
-        sttAndroid.android_map_input(0, 161, 2);
-        sttAndroid.android_map_input(0, 152, 4);
-        sttAndroid.android_map_input(0, 151, 8);
+        sttAndroid.android_map_input(0, SttAndroid.cUP, 162);
+        sttAndroid.android_map_input(0, SttAndroid.cDOWN, 161);
+        sttAndroid.android_map_input(0, SttAndroid.cLEFT, 152);
+        sttAndroid.android_map_input(0, SttAndroid.cRIGHT, 151);
 
-        sttAndroid.android_map_input(0, 990, 16);
-        sttAndroid.android_map_input(0, 960, 32);
-        sttAndroid.android_map_input(0, 970, 64);
-        sttAndroid.android_map_input(0, 1080, 128);
+        sttAndroid.android_map_input(0, SttAndroid.cA,  990);
+        sttAndroid.android_map_input(0, SttAndroid.cB,  960);
+        sttAndroid.android_map_input(0, SttAndroid.cC,  970);
+        sttAndroid.android_map_input(0, SttAndroid.cSTART,  1080);
     }
 
     @Override

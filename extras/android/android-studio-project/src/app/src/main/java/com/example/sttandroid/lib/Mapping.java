@@ -205,10 +205,42 @@ public class Mapping {
                 Map<String, String> columns = Mapping.getAsMapWithHeaders(Mapping.readCsvRow(
                         row, false
                 ));
+                // check whether devices should be swapped
+                if (columns.get("vendor").equals(Mapping.otherVendorString)
+                        && columns.get("product").equals(Mapping.otherProductString)
+                        && columns.get("other_vendor").equals(Mapping.vendorString)
+                        && columns.get("other_product").equals(Mapping.productString)) {
+                    // only swap the devices if the API version matches too
+                    int minApi = -1;
+                    int maxApi = -1;
+                    if (columns.get("min_api").trim().matches("^\\d+$")) {
+                        minApi = Integer.parseInt(columns.get("min_api").trim());
+                    }
+                    if (columns.get("max_api").trim().matches("^\\d+$")) {
+                        maxApi = Integer.parseInt(columns.get("max_api").trim());
+                    }
+
+                    if (
+                            (minApi > -1 && maxApi > -1
+                                    && (android.os.Build.VERSION.SDK_INT >= minApi
+                                    && android.os.Build.VERSION.SDK_INT <= maxApi))
+                                    ||
+                                    (minApi > -1 && maxApi == -1
+                                            && android.os.Build.VERSION.SDK_INT >= minApi)
+                                    ||
+                                    (maxApi > -1 && minApi == -1
+                                            && android.os.Build.VERSION.SDK_INT <= maxApi)
+                                    ||
+                                    (maxApi == -1 && minApi == -1)
+                    ) {
+                        Mapping.swapDevices();
+                    }
+                }
+
                 if (columns.get("vendor").equals(Mapping.vendorString)
-                        && columns.get("product").equals(Mapping.productString)
-                        && columns.get("other_vendor").equals(Mapping.otherVendorString)
-                        && columns.get("other_product").equals(Mapping.otherProductString)) {
+                    && columns.get("product").equals(Mapping.productString)
+                    && columns.get("other_vendor").equals(Mapping.otherVendorString)
+                    && columns.get("other_product").equals(Mapping.otherProductString)) {
 
                     int minApi = -1;
                     int maxApi = -1;
@@ -419,6 +451,29 @@ public class Mapping {
         }
         return result;
     }
+
+    /**
+     * Swap Input Device's Manager device0 and device1 if two devices are connected
+     */
+    public static void swapDevices() {
+
+        if(Mapping.inputDeviceManager.device0 != null && Mapping.inputDeviceManager.device1 != null) {
+            Mapping.inputDeviceManager.swapDevices();
+
+            int vendor = inputDeviceManager.device0.device.getVendorId();
+            int product = inputDeviceManager.device0.device.getProductId();
+
+            Mapping.vendorString = Hex.getFourDigitHexString(vendor);
+            Mapping.productString = Hex.getFourDigitHexString(product);
+
+            vendor = inputDeviceManager.device1.device.getVendorId();
+            product = inputDeviceManager.device1.device.getProductId();
+
+            Mapping.otherVendorString = Hex.getFourDigitHexString(vendor);
+            Mapping.otherProductString = Hex.getFourDigitHexString(product);
+        }
+    }
+
 
     /**
      * A hardware mapping entry

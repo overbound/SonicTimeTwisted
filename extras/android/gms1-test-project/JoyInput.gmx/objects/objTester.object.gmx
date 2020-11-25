@@ -42,18 +42,18 @@ for(var i = 0; i &lt; 36; i++)
 }
 android_set_input_mode(1);
 // android_map_input(inputNumber, inputCode, keyCode)
-android_map_input(0, 12, cUP);
-android_map_input(0, 11, cDOWN);
-android_map_input(0, 2, cLEFT);
-android_map_input(0, 1, cRIGHT);
-android_map_input(0, 162, cUP);
-android_map_input(0, 161, cDOWN);
-android_map_input(0, 152, cLEFT);
-android_map_input(0, 151, cRIGHT);
-android_map_input(0, 990, cA);
-android_map_input(0, 960, cB);
-android_map_input(0, 970, cC);
-android_map_input(0, 1080, cSTART);
+android_map_input(0, cUP, 12);
+android_map_input(0, cDOWN, 11);
+android_map_input(0, cLEFT, 2);
+android_map_input(0, cRIGHT, 1);
+android_map_input(0, cUP, 162);
+android_map_input(0, cDOWN, 161);
+android_map_input(0, cLEFT, 152);
+android_map_input(0, cRIGHT, 151);
+android_map_input(0, cA, 990);
+android_map_input(0, cB, 960);
+android_map_input(0, cC, 970);
+android_map_input(0, cSTART, 1080);
 
 add_console_output("Key mappings:");
 add_console_output("UP: "+string(android_get_formatted_mapped_descriptor(0, cUP)));

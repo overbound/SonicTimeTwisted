@@ -65,18 +65,15 @@ public class RumbleThread extends Thread {
     }
 
     /**
-     * Run the thread, vibrating.
-     * It has been done with patterns originally, but they didn't seem to work at all.
+     * Run the thread, vibrating if power is over 0.
+     *
+     * It has been attempted with patterns originally, but they didn't work at all.
      * So this horror was created instead.
      */
     public void run() {
         while (!done) {
             try {
                 switch ((int) power) {
-                    case 0:
-                        sleep(50);
-                        break;
-
                     case 1:
                         v.vibrate(1);
                         sleep(49);
@@ -1443,6 +1440,9 @@ public class RumbleThread extends Thread {
                         break;
                     case 50:
                         v.vibrate(50);
+                        break;
+                    default:
+                        sleep(50);
                         break;
                 }
 
