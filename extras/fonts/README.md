@@ -10,9 +10,9 @@ Hence, this tool that can let one not only export dedicated PNG strips of fonts 
 
 This tool also automatically adds contours and shadows to fonts that use them, otherwise they are very long and annoying to draw and especially to edit afterwards.
 
-## Licence ##
+## License ##
 
-This tool is part of the Sonic Time Twisted project, therefore the same licence applies. The GNU General Public Licence is available in the root directory of Sonic Time Twisted.
+This tool is part of the Sonic Time Twisted project, therefore the same license applies. The GNU General Public License is available in the root directory of Sonic Time Twisted.
 
 ## General concepts ##
 
