@@ -456,11 +456,12 @@ public class InputDeviceManager {
      * @return Whether the entry could be added
      */
     public boolean softwareMapKey(int inputCode, int keyCode) {
-        // if this input is already set for a different keyCode, return false
+        // if this input is already set for a different keyCode, override it
         for (Entry<Integer, Integer> entry : mainSoftwareMappings.entrySet()) {
             if (entry.getValue() == keyCode) {
                 if (entry.getKey() != inputCode) {
-                    return false;
+                    mainSoftwareMappings.remove(entry.getKey());
+                    break;
                 }
             }
         }
@@ -470,10 +471,15 @@ public class InputDeviceManager {
                 break;
             }
         }
-        if (mainSoftwareMappings.containsKey(inputCode)
-                && mainSoftwareMappings.get(inputCode) != keyCode) {
-            backupSoftwareMappings.put(inputCode, mainSoftwareMappings.get(inputCode));
+        if (mainSoftwareMappings.containsKey(inputCode)) {
+            if (mainSoftwareMappings.get(inputCode) != keyCode) {
+                backupSoftwareMappings.put(inputCode, mainSoftwareMappings.get(inputCode));
+            }
+            else {
+                backupSoftwareMappings.remove(inputCode);
+            }
         }
+
         mainSoftwareMappings.put(inputCode, keyCode);
 
         updateSoftwareMappingsOnDevices();

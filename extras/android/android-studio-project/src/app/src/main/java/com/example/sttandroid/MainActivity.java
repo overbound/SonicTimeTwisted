@@ -29,7 +29,6 @@ import com.yoyogames.runner.RunnerJNILib;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -52,7 +51,6 @@ public class MainActivity extends AppCompatActivity {
     protected String[] consoleOutput;
     protected int appState;
     protected int cursor;
-    protected int keyEventCounter;
 
     static final int APPSTATE_IDLE = 0;
     static final int APPSTATE_MENU = 1;
@@ -81,7 +79,6 @@ public class MainActivity extends AppCompatActivity {
         appState = APPSTATE_IDLE;
         cursor = 0;
         thread = null;
-        keyEventCounter = 0;
         updateDisplay();
 
     }
@@ -91,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
         if(sttAndroid.android_has_assigned_device(0) > 0 &&
                 sttAndroid.android_is_device_hardware_mapped(0) == 0)
         {
-            injectHardwareMappings();
+            injectMappings();
         }
         if (!sttAndroid.dispatchKeyEvent(event)) {
             // automatic hardware map if state == -1
@@ -155,7 +152,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    protected void injectHardwareMappings()
+    protected void injectMappings()
     {
         sttAndroid.android_feed_input_mapping_start(0);
         sttAndroid.android_feed_input_mapping_new_file();
@@ -203,6 +200,31 @@ public class MainActivity extends AppCompatActivity {
         sttAndroid.android_map_input(0, SttAndroid.cB,  960);
         sttAndroid.android_map_input(0, SttAndroid.cC,  970);
         sttAndroid.android_map_input(0, SttAndroid.cSTART,  1080);
+
+
+        print("UP   : "+getMappedDescriptor(SttAndroid.cUP));
+        print("DOWN : "+getMappedDescriptor(SttAndroid.cDOWN));
+        print("LEFT : "+getMappedDescriptor(SttAndroid.cLEFT));
+        print("RIGHT: "+getMappedDescriptor(SttAndroid.cRIGHT));
+        print("A    : "+getMappedDescriptor(SttAndroid.cA));
+        print("B    : "+getMappedDescriptor(SttAndroid.cB));
+        print("C    : "+getMappedDescriptor(SttAndroid.cC));
+        print("START: "+getMappedDescriptor(SttAndroid.cSTART));
+    }
+
+    protected String getMappedDescriptor(int inputCode)
+    {
+        String descriptor = sttAndroid.android_get_mapped_descriptor(0, inputCode);
+        String[] parts = descriptor.split("\\|\\|", 4);
+
+        if(parts.length == 4)
+        {
+            return parts[1]+parts[0]+(parts[2].length() > 0 ? "/"+parts[3]+parts[2] : "");
+        }
+        else
+        {
+            return ""+parts.length+descriptor;
+        }
     }
 
     @Override
@@ -210,7 +232,7 @@ public class MainActivity extends AppCompatActivity {
         if(sttAndroid.android_has_assigned_device(0) > 0 &&
             sttAndroid.android_is_device_hardware_mapped(0) == 0)
         {
-            injectHardwareMappings();
+            injectMappings();
         }
 
         boolean result = sttAndroid.dispatchGenericMotionEvent(event);
@@ -347,9 +369,6 @@ public class MainActivity extends AppCompatActivity {
         {
             sb.append("\n\n\n");
         }
-        sb.append("Key events: ");
-        sb.append(keyEventCounter);
-        sb.append("\n");
         for(int i = 0; i < consoleOutput.length; i++)
         {
             sb.append(consoleOutput[i]+"\n");

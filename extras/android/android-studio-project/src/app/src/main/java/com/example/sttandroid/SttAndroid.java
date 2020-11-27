@@ -242,7 +242,7 @@ public class SttAndroid extends ExtensionBase {
         if (!externalDevicesEnabled) {
             return false;
         }
-        if (doubleInputDetectingMode > -1 && event.getAction() == KeyEvent.ACTION_UP) {
+        if (doubleInputDetectingMode > -1 && event.getAction() == KeyEvent.ACTION_DOWN) {
             if (android_double_device_detecting_mode_get_state() == 1) {
                 if (isDeviceSuitable(event.getDevice())) {
                     doubleDeviceModeTempInputDevice = event.getDevice();
@@ -429,7 +429,7 @@ public class SttAndroid extends ExtensionBase {
     }
 
     /**
-     * Exits the double device detection mode wwithout applying changes
+     * Exits the double device detection mode without applying changes
      *
      * @return Random value because GameMaker Studio needs a return type.
      */
