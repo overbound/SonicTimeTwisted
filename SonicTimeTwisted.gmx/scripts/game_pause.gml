@@ -8,7 +8,7 @@ if not argument0
 }
 else
 {
-    with objScreen screenshot = background_create_from_surface(application_surface, 0, 0, width, height, 0, 0);
+    with objScreen screenshot = sprite_create_from_surface(application_surface, 0, 0, width, height, 0, 0, 0, 0);
     instance_deactivate_object(objSceneObject);
     audio_pause_all();
 }

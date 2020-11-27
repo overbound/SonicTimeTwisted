@@ -97,7 +97,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>layer=3;
+            <string>depth_mask=3;
 reaction_script=noone;
 </string>
           </argument>
@@ -148,7 +148,7 @@ reaction_script=noone;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>layer=4;
+            <string>depth_mask=4;
 with objLevel.player[0] {
         
         if (terrain_id == other.id &amp;&amp; landed) {

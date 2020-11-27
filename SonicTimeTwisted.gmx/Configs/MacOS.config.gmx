@@ -415,32 +415,32 @@
     <option_loadalpha>255</option_loadalpha>
     <option_loadimage>nil</option_loadimage>
     <option_loadtransparent>false</option_loadtransparent>
-    <option_mac_app_category></option_mac_app_category>
-    <option_mac_app_id></option_mac_app_id>
-    <option_mac_appstore_incoming_allow>0</option_mac_appstore_incoming_allow>
-    <option_mac_appstore_outgoing_allow>0</option_mac_appstore_outgoing_allow>
+    <option_mac_app_category>Action Games : public.app-category.action-games</option_mac_app_category>
+    <option_mac_app_id>com.overboundstudio.sonictimetwisted</option_mac_app_id>
+    <option_mac_appstore_incoming_allow>-1</option_mac_appstore_incoming_allow>
+    <option_mac_appstore_outgoing_allow>-1</option_mac_appstore_outgoing_allow>
     <option_mac_build_version>0</option_mac_build_version>
-    <option_mac_copyright_info>(c)2012 CompanyName Ltd...</option_mac_copyright_info>
-    <option_mac_create_app_store>-1</option_mac_create_app_store>
-    <option_mac_display_name>Sonic2K</option_mac_display_name>
-    <option_mac_enable_retina>0</option_mac_enable_retina>
+    <option_mac_copyright_info>(c)2020 Overbound Game Studio</option_mac_copyright_info>
+    <option_mac_create_app_store>0</option_mac_create_app_store>
+    <option_mac_display_name>Sonic Time Twisted</option_mac_display_name>
+    <option_mac_enable_retina>-1</option_mac_enable_retina>
     <option_mac_enable_steam>0</option_mac_enable_steam>
     <option_mac_fullscreen>0</option_mac_fullscreen>
     <option_mac_icon_png>Configs\MacOS\mac\icon512.png</option_mac_icon_png>
     <option_mac_interpolate>0</option_mac_interpolate>
     <option_mac_major_version>1</option_mac_major_version>
     <option_mac_menu_dock>0</option_mac_menu_dock>
-    <option_mac_minor_version>0</option_mac_minor_version>
-    <option_mac_output_dir>~/GameMaker-Studio/Sonic2K</option_mac_output_dir>
+    <option_mac_minor_version>1</option_mac_minor_version>
+    <option_mac_output_dir>~/GameMaker-Studio/SonicTimeTwisted</option_mac_output_dir>
     <option_mac_scale>-1</option_mac_scale>
     <option_mac_screenkey>-1</option_mac_screenkey>
-    <option_mac_showcursor>-1</option_mac_showcursor>
-    <option_mac_signing_identity>Developer ID Application:</option_mac_signing_identity>
+    <option_mac_showcursor>0</option_mac_showcursor>
+    <option_mac_signing_identity>Mac Developer: an-unknown@rambler.ru (3YX98V2Q96)</option_mac_signing_identity>
     <option_mac_sizeable>0</option_mac_sizeable>
     <option_mac_splash_png>Configs\MacOS\mac\splash.png</option_mac_splash_png>
     <option_mac_steam_app_id>0</option_mac_steam_app_id>
-    <option_mac_sync>0</option_mac_sync>
-    <option_mac_team_id></option_mac_team_id>
+    <option_mac_sync>1</option_mac_sync>
+    <option_mac_team_id>ZC6H7FCFFZ</option_mac_team_id>
     <option_mac_texture_page>2048</option_mac_texture_page>
     <option_noborder>false</option_noborder>
     <option_nobuttons>false</option_nobuttons>
@@ -794,7 +794,7 @@
     <option_winUAP_wide_logo>Configs\MacOS\WindowsUAP\logos\WideLogo.scale-100.png</option_winUAP_wide_logo>
     <option_windowcolor>clBlue</option_windowcolor>
     <option_windows_alternate_sync_method>True</option_windows_alternate_sync_method>
-    <option_windows_build_version>0</option_windows_build_version>
+    <option_windows_build_version>1</option_windows_build_version>
     <option_windows_company_info>Overbound Game Studio</option_windows_company_info>
     <option_windows_copyright_info></option_windows_copyright_info>
     <option_windows_create_textures_on_demand>False</option_windows_create_textures_on_demand>

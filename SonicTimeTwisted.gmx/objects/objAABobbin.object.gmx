@@ -209,7 +209,7 @@ if type&gt;0
     // adjust depth to "distance"
     if image_xscale&gt;1 depth = -1; else depth = 1;
     // negate collision if too far back
-    layer = 3*(image_xscale&gt;0.85 and image_xscale&lt;1.15);
+    depth_mask = 3*(image_xscale&gt;0.85 and image_xscale&lt;1.15);
 }
 </string>
           </argument>

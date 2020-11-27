@@ -1,6 +1,6 @@
 // player_reaction_AA_shock_bumper(local_id)
 // ignore if layer mismatch
-if not (layer&argument0.layer) return false;
+if not (depth_mask&argument0.depth_mask) return false;
 // ignore if still recoiling
 if argument0.alarm[0] return false;
 // ignore if not "close" enough

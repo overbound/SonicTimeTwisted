@@ -393,25 +393,25 @@
     <option_ios_texture_page>1024</option_ios_texture_page>
     <option_ios_use_test_ads>0</option_ios_use_test_ads>
     <option_lastchanged></option_lastchanged>
-    <option_linux_display_name>Sonic</option_linux_display_name>
+    <option_linux_display_name>Sonic Time Twisted</option_linux_display_name>
     <option_linux_enable_steam>0</option_linux_enable_steam>
     <option_linux_fullscreen>0</option_linux_fullscreen>
-    <option_linux_homepage>http://www.Sonic_Time_Twisted.com</option_linux_homepage>
+    <option_linux_homepage>https://overboundstudio.com/</option_linux_homepage>
     <option_linux_icon>Configs\Linux\linux\icon64.png</option_linux_icon>
-    <option_linux_interpolate>-1</option_linux_interpolate>
-    <option_linux_long_desc>Sonic_Time_Twisted</option_linux_long_desc>
-    <option_linux_maintainer_email></option_linux_maintainer_email>
+    <option_linux_interpolate>0</option_linux_interpolate>
+    <option_linux_long_desc>A classic-style Sonic fangame epic with time travel, accurate physics, custom pixel art, a fully original CD-quality soundtrack, and sprawling zones with loops, gizmos, alternate routes, and hidden secrets! Stop Metal Sonic from capturing the Time Stones and resurrecting his former master.</option_linux_long_desc>
+    <option_linux_maintainer_email>overboundstudio@example.com</option_linux_maintainer_email>
     <option_linux_scale>-1</option_linux_scale>
     <option_linux_screenkey>-1</option_linux_screenkey>
-    <option_linux_short_desc>Sonic_Time_Twisted</option_linux_short_desc>
+    <option_linux_short_desc>Sonic Time Twisted</option_linux_short_desc>
     <option_linux_sizeable>0</option_linux_sizeable>
     <option_linux_splash_png>Configs\Linux\linux\splash.png</option_linux_splash_png>
     <option_linux_steam_app_id>0</option_linux_steam_app_id>
-    <option_linux_sync>0</option_linux_sync>
+    <option_linux_sync>-1</option_linux_sync>
     <option_linux_texture_page>2048</option_linux_texture_page>
     <option_linux_version_build>0</option_linux_version_build>
     <option_linux_version_major>1</option_linux_version_major>
-    <option_linux_version_minor>0</option_linux_version_minor>
+    <option_linux_version_minor>1</option_linux_version_minor>
     <option_loadalpha>255</option_loadalpha>
     <option_loadimage>nil</option_loadimage>
     <option_loadtransparent>false</option_loadtransparent>
@@ -440,7 +440,7 @@
     <option_mac_splash_png>Configs\Linux\mac\splash.png</option_mac_splash_png>
     <option_mac_steam_app_id>0</option_mac_steam_app_id>
     <option_mac_sync>0</option_mac_sync>
-    <option_mac_team_id></option_mac_team_id>
+    <option_mac_team_id>ZC6H7FCFFZ</option_mac_team_id>
     <option_mac_texture_page>2048</option_mac_texture_page>
     <option_noborder>false</option_noborder>
     <option_nobuttons>false</option_nobuttons>
@@ -794,7 +794,7 @@
     <option_winUAP_wide_logo>Configs\Linux\WindowsUAP\logos\WideLogo.scale-100.png</option_winUAP_wide_logo>
     <option_windowcolor>clBlue</option_windowcolor>
     <option_windows_alternate_sync_method>True</option_windows_alternate_sync_method>
-    <option_windows_build_version>0</option_windows_build_version>
+    <option_windows_build_version>1</option_windows_build_version>
     <option_windows_company_info>Overbound Game Studio</option_windows_company_info>
     <option_windows_copyright_info></option_windows_copyright_info>
     <option_windows_create_textures_on_demand>False</option_windows_create_textures_on_demand>

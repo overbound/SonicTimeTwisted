@@ -28,7 +28,7 @@
             <string>/// Initialize
 // state
 mode = 0;
-screenshot = background_create_from_surface(application_surface, 0, 0, objScreen.width, objScreen.height, 0, 0);
+screenshot = sprite_create_from_surface(application_surface, 0, 0, objScreen.width, objScreen.height, 0, 0, 0, 0);
 // banners
 fade_alpha = 0;
 planet_ox = 600; //608;
@@ -248,9 +248,9 @@ if (banner_ox &lt; 0) banner_ox += 208;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if screenshot &gt; -1 
+            <string>if sprite_exists(screenshot)
 {
-    draw_background_stretched_ext(screenshot, view_xview[view_current], view_yview[view_current], objScreen.width, objScreen.height, c_white, fade_alpha);
+    draw_sprite_stretched_ext(screenshot, 0, view_xview[view_current], view_yview[view_current], objScreen.width, objScreen.height, c_white, fade_alpha);
 }
 render_titlecard();
 </string>

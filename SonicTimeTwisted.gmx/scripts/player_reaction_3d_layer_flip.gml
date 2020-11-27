@@ -18,10 +18,10 @@ if (swap)
     xspeed *= -1;
     facing = sign(xspeed);
     reverse_control = !reverse_control;
-    if (layer == 1) layer = 2; else
-    if (layer == 2) layer = 1;
+    if (depth_mask == 1) depth_mask = 2; else
+    if (depth_mask == 2) depth_mask = 1;
     
-    if (layer == 2) depth = 6;
+    if (depth_mask == 2) depth = 6;
     else depth = 0;
 }
 return false;

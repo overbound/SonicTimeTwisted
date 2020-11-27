@@ -125,7 +125,7 @@ image_speed = 0;
             view_xview[view_current] += 1;
             
             else {
-                    state = .5;
+                    state = -1;
                     alarm[1] = 100;
                 }
     
@@ -153,7 +153,7 @@ image_speed = 0;
     case 2:
     if image_index == 29 {
         alarm[2]=60;
-        state = 2.5;
+        state = -1;
         image_speed = 0;
         }
     break;

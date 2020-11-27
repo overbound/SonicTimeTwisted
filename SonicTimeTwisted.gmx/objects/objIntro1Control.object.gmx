@@ -59,21 +59,22 @@ audio_play_sound(bgmIntro,3,0);
     <event eventtype="2" enumb="2">
       <action>
         <libid>1</libid>
-        <id>224</id>
-        <kind>0</kind>
+        <id>603</id>
+        <kind>7</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_another_room</functionname>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
-            <kind>11</kind>
-            <room>intro2</room>
+            <kind>1</kind>
+            <string>room_goto(intro2);
+</string>
           </argument>
         </arguments>
       </action>
@@ -152,7 +153,7 @@ audio_play_sound(bgmIntro,3,0);
             if view_yview[view_current] &gt; 0//pan up until at the top
                 view_yview[view_current]-=2;    
                 else{
-                    state = .5;
+                    state = -1;
                     alarm[0]=80;
                     }             
             }
@@ -176,7 +177,7 @@ audio_play_sound(bgmIntro,3,0);
                 image_index = 12;
                 image_speed = 0; 
                 other.alarm[1]=60;
-                other.state = 1.5;
+                other.state = -1;
                 instance_create(x,y,objIntroMetalZoom);
                 instance_create(x,y,objDustCloud);
                 }
@@ -200,7 +201,7 @@ audio_play_sound(bgmIntro,3,0);
                 image_speed = 0;
                 image_index = 8;
                 other.alarm[2]=60;
-                other.state = 2.5;
+                other.state = -1;
             }
             }
             
@@ -210,22 +211,6 @@ audio_play_sound(bgmIntro,3,0);
 </string>
           </argument>
         </arguments>
-      </action>
-    </event>
-    <event eventtype="5" enumb="113">
-      <action>
-        <libid>1</libid>
-        <id>331</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_restart_game</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
       </action>
     </event>
     <event eventtype="7" enumb="5">
