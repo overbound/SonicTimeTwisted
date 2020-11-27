@@ -22,15 +22,15 @@ switch(argument0)
             ds_map_destroy(temp_map);
         }
         temp_map = ds_map_create();
-        ds_map_add(temp_map, cUP, android_get_compiled_value(cUP));
-        ds_map_add(temp_map, cDOWN, android_get_compiled_value(cDOWN));
-        ds_map_add(temp_map, cLEFT, android_get_compiled_value(cLEFT));
-        ds_map_add(temp_map, cRIGHT, android_get_compiled_value(cRIGHT));
-        ds_map_add(temp_map, cA, android_get_compiled_value(cA));
-        ds_map_add(temp_map, cB, android_get_compiled_value(cB));
-        ds_map_add(temp_map, cC, android_get_compiled_value(cC));
-        ds_map_add(temp_map, cSTART, android_get_compiled_value(cSTART));
-        menu_part_joymap_actions(21);
+        ds_map_add(temp_map, cUP, android_get_mapped_value(0, cUP, -1));
+        ds_map_add(temp_map, cDOWN, android_get_mapped_value(0, cDOWN, -1));
+        ds_map_add(temp_map, cLEFT, android_get_mapped_value(0, cLEFT, -1));
+        ds_map_add(temp_map, cRIGHT, android_get_mapped_value(0, cRIGHT, -1));
+        ds_map_add(temp_map, cA, android_get_mapped_value(0, cA, -1));
+        ds_map_add(temp_map, cB, android_get_mapped_value(0, cB, -1));
+        ds_map_add(temp_map, cC, android_get_mapped_value(0, cC, -1));
+        ds_map_add(temp_map, cSTART, android_get_mapped_value(0, cSTART, -1));
+        menu_part_android_btusb_actions(21);
         break;
     case 2:
         // individual map - button Up
@@ -69,42 +69,52 @@ switch(argument0)
         break;
     case 21:
         // group mapping - up
+        android_set_any_key_mode(0, true);
         menu_fn_open_mapping_window(tr('Press "Up"'), cUP, 22, 30);
         break;
     case 22:
         // group mapping - down
+        android_set_any_key_mode(0, true);
         menu_fn_open_mapping_window(tr('Press "Down"'), cDOWN, 23, 30);
         break;
     case 23:
         // group mapping - left
+        android_set_any_key_mode(0, true);
         menu_fn_open_mapping_window(tr('Press "Left"'), cLEFT, 24, 30);
         break;
     case 24:
         // group mapping - right
+        android_set_any_key_mode(0, true);
         menu_fn_open_mapping_window(tr('Press "Right"'), cRIGHT, 25, 30);
         break;
     case 25:
         // group mapping - a
+        android_set_any_key_mode(0, true);
         menu_fn_open_mapping_window(tr('Press "A"'), cA, 26, 30);
         break;
     case 26:
         // group mapping - b
+        android_set_any_key_mode(0, true);
         menu_fn_open_mapping_window(tr('Press "B"'), cB, 27, 30);
         break;
     case 27:
         // group mapping - c
+        android_set_any_key_mode(0, true);
         menu_fn_open_mapping_window(tr('Press "C"'), cC, 28, 30);
         break;
     case 28:
         // group mapping - c
+        android_set_any_key_mode(0, true);
         menu_fn_open_mapping_window(tr('Press "Start"'), cSTART, 29, 30);
         break;
     case 29:
         // group mapping - success, discard the backup
+        android_set_any_key_mode(0, false);
         ds_map_destroy(temp_map);
         break;
     case 30:
         // group mapping - cancelled, discard backup
+        android_set_any_key_mode(0, false);
         var mapkey = ds_map_find_first(temp_map);
         for(var i = 0; i < ds_map_size(temp_map); i++)
         {
@@ -117,6 +127,9 @@ switch(argument0)
             mapkey = ds_map_find_next(temp_map, mapkey);
         }
         ds_map_destroy(temp_map);
+        break;
+    case 31:
+        menu_fn_goto_submenu(menu_part_android_btusb_device_items);
         break;
     case -2:
     case -3:
@@ -154,5 +167,24 @@ menu_fn_refresh_displayed_value(6, android_get_mapped_label(0, cA));
 menu_fn_refresh_displayed_value(7, android_get_mapped_label(0, cB));
 menu_fn_refresh_displayed_value(8, android_get_mapped_label(0, cC));
 menu_fn_refresh_displayed_value(9, android_get_mapped_label(0, cSTART));
+
+var deviceLabel = objProgram.inputManager.device_label;
+if(string_length(deviceLabel) == 0)
+{
+    if(android_get_input_mode())
+    {
+        // there is supposed to be an input device, but none has been triggered yet
+        deviceLabel = tr("_btusb_joymap_Device_Unknown");
+    }
+    else
+    {
+        // there is not supposed to be an input device
+        deviceLabel = tr("_btusb_joymap_Device_Disabled");
+    }
+    
+}
+menu_fn_refresh_displayed_label(31, deviceLabel);
+
+
 // preserve the cursor value - usually false for the sake of touchscreen controls
 return false;

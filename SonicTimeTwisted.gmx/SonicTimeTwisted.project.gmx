@@ -11,7 +11,7 @@
     <Config>Configs\Linux</Config>
     <Config>Configs\PlayStation</Config>
   </Configs>
-  <datafiles number="61" name="datafiles">
+  <datafiles number="62" name="datafiles">
     <datafile>
       <name>translations.txt</name>
       <exists>-1</exists>
@@ -53,7 +53,7 @@
       </ConfigOptions>
       <filename>translations.txt</filename>
     </datafile>
-    <datafiles number="61" name="translations">
+    <datafiles number="62" name="translations">
       <datafile>
         <name>German.json</name>
         <exists>-1</exists>
@@ -177,7 +177,7 @@
         </ConfigOptions>
         <filename>Russian.json</filename>
       </datafile>
-      <datafiles number="61" name="Russian">
+      <datafiles number="62" name="Russian">
         <datafile>
           <name>sprFontHud.png</name>
           <exists>-1</exists>
@@ -466,7 +466,7 @@
           <filename>sprFontMicro.png</filename>
         </datafile>
       </datafiles>
-      <datafiles number="61" name="German">
+      <datafiles number="62" name="German">
         <datafile>
           <name>sprFontLives.png</name>
           <exists>-1</exists>
@@ -756,9 +756,54 @@
         </datafile>
       </datafiles>
     </datafiles>
+    <datafiles number="62" name="android">
+      <datafiles number="62" name="gamepad">
+        <datafile>
+          <name>switch.csv</name>
+          <exists>-1</exists>
+          <size>3185</size>
+          <exportAction>2</exportAction>
+          <exportDir></exportDir>
+          <overwrite>0</overwrite>
+          <freeData>-1</freeData>
+          <removeEnd>0</removeEnd>
+          <store>0</store>
+          <ConfigOptions>
+            <Config name="Default">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="Windows">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="AndroidSmartphone">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="AndroidConsole">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="MacOS">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="iPhone">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="AppleTV">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="Linux">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="PlayStation">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+          </ConfigOptions>
+          <filename>switch.csv</filename>
+        </datafile>
+      </datafiles>
+    </datafiles>
   </datafiles>
   <NewExtensions>
-    <extension index="0">extensions\SttAndroidGamepad</extension>
+    <extension index="0">extensions\SttAndroid</extension>
   </NewExtensions>
   <sounds name="sound">
     <sounds name="BGM">
@@ -2631,6 +2676,9 @@
         <script>scripts\play_previous.gml</script>
         <script>scripts\stop_all_music.gml</script>
       </scripts>
+      <scripts name="Helper">
+        <script>scripts\string_explode.gml</script>
+      </scripts>
       <scripts name="Input">
         <scripts name="Binding">
           <script>scripts\input_bind_axis.gml</script>
@@ -2660,6 +2708,7 @@
               <script>scripts\input_method_init_android_btusb.gml</script>
               <script>scripts\input_method_android_btusb.gml</script>
               <script>scripts\input_method_android_btusb_rumble.gml</script>
+              <script>scripts\android_run_hardware_mapping.gml</script>
             </scripts>
             <script>scripts\input_method_draw_touchscreen.gml</script>
             <script>scripts\input_method_init_touchscreen.gml</script>
@@ -2774,11 +2823,13 @@
           <script>scripts\menu_fn_set_scripts_from_next.gml</script>
           <script>scripts\menu_fn_open_confirmation_window.gml</script>
           <script>scripts\menu_fn_open_mapping_window.gml</script>
+          <script>scripts\menu_fn_open_device_detect_window.gml</script>
           <script>scripts\menu_fn_update_mapping_window.gml</script>
           <script>scripts\menu_fn_cleanup.gml</script>
           <script>scripts\menu_fn_goto_submenu.gml</script>
           <script>scripts\menu_fn_exit_submenu.gml</script>
           <script>scripts\menu_fn_refresh_displayed_value.gml</script>
+          <script>scripts\menu_fn_refresh_displayed_label.gml</script>
           <script>scripts\menu_fn_add_option.gml</script>
           <script>scripts\menu_fn_add_title.gml</script>
           <script>scripts\menu_fn_get_keymap_getkey.gml</script>
@@ -2805,6 +2856,9 @@
             <script>scripts\menu_fn_quit_specialstage.gml</script>
             <script>scripts\menu_fn_restart_specialstage.gml</script>
           </scripts>
+          <scripts name="android">
+            <script>scripts\android_get_mapped_label.gml</script>
+          </scripts>
         </scripts>
         <scripts name="menu_parts">
           <script>scripts\menu_part_title_items.gml</script>
@@ -2825,11 +2879,11 @@
             <scripts name="smartphone">
               <scripts name="android">
                 <script>scripts\menu_part_android_btusb_items.gml</script>
-                <script>scripts\menu_part_android_btusb_actions.gml</script>
+                <script>scripts\scripts/script582.gml</script>
                 <script>scripts\menu_part_android_btusb_step.gml</script>
-                <script>scripts\android_get_compiled_value.gml</script>
-                <script>scripts\android_set_compiled_value.gml</script>
-                <script>scripts\android_get_mapped_label.gml</script>
+                <script>scripts\menu_part_android_btusb_device_items.gml</script>
+                <script>scripts\menu_part_android_btusb_device_actions.gml</script>
+                <script>scripts\menu_part_android_btusb_device_step.gml</script>
               </scripts>
               <script>scripts\menu_part_touchscreen_items.gml</script>
               <script>scripts\menu_part_touchscreen_actions.gml</script>
@@ -2889,6 +2943,9 @@
         </scripts>
         <scripts name="Pausing">
           <script>scripts\game_pause.gml</script>
+        </scripts>
+        <scripts name="Startup">
+          <script>scripts\show_startup_window.gml</script>
         </scripts>
         <scripts name="Transitions">
           <script>scripts\end_level_normal.gml</script>

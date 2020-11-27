@@ -21,10 +21,10 @@ with (objResources) {
     }
     
     // fonts
-    fontHud = font_add_sprite(sprFontHud, ord('"'), 0,0);
-    fontHudMin = font_add_sprite(sprFontHudMin, ord('"'), 0,0);
-    fontLives = font_add_sprite(sprFontLives, ord('"'), 0, 0);
-    fontMicro = font_add_sprite(sprFontMicro, ord('"'), 0, 0);
+    fontHud = font_add_sprite(sprFontHud, 32, 0,0);
+    fontHudMin = font_add_sprite(sprFontHudMin, 32, 0,0);
+    fontLives = font_add_sprite(sprFontLives, 32, 0, 0);
+    fontMicro = font_add_sprite(sprFontMicro, 32, 0, 0);
     fontTitleLarge = font_add_sprite(sprFontTitleLarge, 48, 1, 0);
     fontTitleSmall = font_add_sprite(sprFontTitleSmall, 65, 1, 0);
     fontTitleSmallest = font_add_sprite(sprFontTitleSmallest, 48, 1, 0);

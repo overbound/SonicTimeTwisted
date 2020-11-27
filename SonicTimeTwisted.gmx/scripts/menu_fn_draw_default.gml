@@ -305,14 +305,16 @@ switch(state)
             case 12:
             case 15:      
             case 16:
-            case 18:        
+            case 18:
+            case 19:
+            case 22:        
                 var width_offset = 0;
-                if(state == 9 || state == 12 || state == 16)
+                if(state == 9 || state == 12 || state == 16 || state == 19)
                 {   
                     width_offset = round((internal__draw_confirmation_rect_x2 - internal__draw_confirmation_rect_x1 ) / 20 * (10 - timer));
                     draw_set_alpha(timer/20);
                 }
-                if(state == 11 || state == 15 || state == 18)
+                if(state == 11 || state == 15 || state == 18 || state == 22)
                 {
                     width_offset = round((internal__draw_confirmation_rect_x2 - internal__draw_confirmation_rect_x1 ) / 20 * timer);
                     draw_set_alpha(0.5 - (timer/20));
@@ -338,6 +340,8 @@ switch(state)
             case 13:
             case 14:
             case 17:
+            case 20:
+            case 21:
                 draw_set_alpha(0.5);
                 draw_rectangle_colour(0, 0, 512, 256, c_black, c_black, c_black, c_black, false);
                 draw_set_alpha(1);
@@ -477,7 +481,7 @@ switch(state)
                 }
                 else
                 {
-                    if(state == 13 || state == 14)
+                    if(state == 13 || state == 14 || state == 20 || state == 21)
                     {
                         draw_set_halign(fa_center);
                         draw_set_font(objResources.fontHudMin);

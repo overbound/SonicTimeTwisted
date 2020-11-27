@@ -338,8 +338,10 @@ if (first_run)
     save_options();
     stt_save_files();
 }
-
-room_goto(titlescreen);
+if(!show_startup_window())
+{
+    room_goto(titlescreen);
+}
 </string>
           </argument>
         </arguments>
