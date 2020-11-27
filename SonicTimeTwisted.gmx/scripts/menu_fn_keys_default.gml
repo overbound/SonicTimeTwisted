@@ -58,9 +58,16 @@ if(state == 2)
         }
         else
         {
-            if(ok_press)
+            if(ok_press && cursor > -1 && cursor < array_height_2d(items))
             {
-                script_execute(action_script, items[cursor, 1]);
+                // in cases where we're playing alternatively with the touchscreen and the gamepad in mobile ports,
+                // cursor can end up with a weird value or positioned on the title. Hence, all these checks.
+                
+                // because of the way GMS interprets && (not stopping at first FALSE), the following needs to be a separate if()
+                if(array_length_2d(items, cursor) >= 2)
+                {
+                    script_execute(action_script, items[cursor, 1]);               
+                }
             }
             else
             {
