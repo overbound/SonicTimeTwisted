@@ -2879,7 +2879,7 @@
             <scripts name="smartphone">
               <scripts name="android">
                 <script>scripts\menu_part_android_btusb_items.gml</script>
-                <script>scripts\scripts/script582.gml</script>
+                <script>scripts\menu_part_android_btusb_actions.gml</script>
                 <script>scripts\menu_part_android_btusb_step.gml</script>
                 <script>scripts\menu_part_android_btusb_device_items.gml</script>
                 <script>scripts\menu_part_android_btusb_device_actions.gml</script>
