@@ -17,6 +17,8 @@
  */
 package ${YYAndroidPackageName}.lib;
 
+import android.annotation.SuppressLint;
+import android.hardware.input.InputManager;
 import android.os.Vibrator;
 import android.view.InputDevice;
 import android.view.KeyEvent;
@@ -159,14 +161,14 @@ public class InputDeviceManager {
     /**
      * Checks whether an input device matches this input
      *
-     * @param device The device to test
+     * @param deviceId The ID of the device to test
      * @return Whether an input device matches this input
      */
-    public boolean isDeviceAssigned(InputDevice device) {
-        if (device0 != null && device0.device.getId() == device.getId()) {
+    public boolean isDeviceAssigned(int deviceId) {
+        if (device0 != null && device0.device.getId() == deviceId) {
             return true;
         } else {
-            return device1 != null && device1.device.getId() == device.getId();
+            return device1 != null && device1.device.getId() == deviceId;
         }
     }
 
@@ -519,6 +521,16 @@ public class InputDeviceManager {
     }
 
     /**
+     * Disconnects if the provided device ID matches at least one device
+     * @param deviceId The device ID to dicsonnect
+     */
+    public void disconnectById(int deviceId) {
+        if(isDeviceAssigned(deviceId)) {
+            disconnect();
+        }
+    }
+
+    /**
      * Gets the label of the used device. In case of two devices, both are joined with a slash.
      * The label can be truncated to a certain maximum length.
      *
@@ -658,6 +670,63 @@ public class InputDeviceManager {
             return "||";
         } else {
             return "||||";
+        }
+    }
+
+    /**
+     * Returns a sequence of two numeric strings separated with "," with inputs mapped
+     * to a command. First the one in the main mapping, then the one in the backup mapping
+     *
+     * @param inputCode Constant for the mapped input as managed by Sonic Time Twisted
+     * @return A string describing a mapped button or axis
+     */
+    @SuppressWarnings("ConstantConditions")
+    @SuppressLint("DefaultLocale")
+    public String getSoftwareMappedConfiguration(int inputCode) {
+        int main = mainSoftwareMappings.containsKey(inputCode)
+                ? mainSoftwareMappings.get(inputCode) : -1;
+        int backup = backupSoftwareMappings.containsKey(inputCode)
+                ? backupSoftwareMappings.get(inputCode) : -1;
+        return String.format("%d,%d", main, backup);
+    }
+
+    /**
+     * Applies a sequence returned by getSoftwareMappedConfiguration.
+     *
+     * The first value will be stored in the main map, the second value will be stored in the
+     * backup map.
+     *
+     * @param inputCode     Constant for the mapped input as managed by Sonic Time Twisted
+     * @param configuration A string with mapped values
+     * @return Random value because GameMaker Studio needs a return type.
+     */
+    public void setSoftwareMappedConfiguration(int inputCode, String configuration) {
+        if(configuration.matches("^-?[0-9]+,-?[0-9]+$")) {
+            String[] parts = configuration.split(",");
+            // due to the regexp above, it is guaranteed the string will have two parts
+            int main = Integer.parseInt(parts[0]);
+            if(main >= 0)
+            {
+                mainSoftwareMappings.put(inputCode, main);
+            }
+            else
+            {
+                if(mainSoftwareMappings.containsKey(inputCode)) {
+                    mainSoftwareMappings.remove(inputCode);
+                }
+            }
+            int backup = Integer.parseInt(parts[1]);
+            if(backup >= 0)
+            {
+                backupSoftwareMappings.put(inputCode, backup);
+            }
+            else
+            {
+                if(backupSoftwareMappings.containsKey(inputCode)) {
+                    backupSoftwareMappings.remove(inputCode);
+                }
+            }
+            this.updateSoftwareMappingsOnDevices();
         }
     }
 
@@ -881,6 +950,13 @@ public class InputDeviceManager {
             hardwareMapButton(KeyEvent.KEYCODE_BUTTON_R1);
             hardwareMapButton(KeyEvent.KEYCODE_BUTTON_R2);
             hardwareMapButton(KeyEvent.KEYCODE_BUTTON_THUMBR);
+
+            hardwareMapButton(KeyEvent.KEYCODE_VOLUME_DOWN);
+            hardwareMapButton(KeyEvent.KEYCODE_VOLUME_UP);
+            hardwareMapButton(KeyEvent.KEYCODE_MEDIA_PLAY);
+            hardwareMapButton(KeyEvent.KEYCODE_MEDIA_PLAY_PAUSE);
+            hardwareMapButton(KeyEvent.KEYCODE_MEDIA_FAST_FORWARD);
+            hardwareMapButton(KeyEvent.KEYCODE_MEDIA_REWIND);
         }
 
         /**
@@ -888,17 +964,31 @@ public class InputDeviceManager {
          */
         public void initDefaultDoubleLeft() {
             hardwareMappings.clear();
+            hardwareMap(InputDeviceManager.BUTTON, KeyEvent.KEYCODE_BUTTON_X, false, 0,
+                    InputDeviceManager.AXIS, MotionEvent.AXIS_HAT_Y,  true, -1);
+            hardwareMap(InputDeviceManager.BUTTON, KeyEvent.KEYCODE_BUTTON_B, false, 0,
+                    InputDeviceManager.AXIS, MotionEvent.AXIS_HAT_Y,  true, 1);
+            hardwareMap(InputDeviceManager.BUTTON, KeyEvent.KEYCODE_BUTTON_A, false, 0,
+                    InputDeviceManager.AXIS, MotionEvent.AXIS_HAT_X,  true, -1);
+            hardwareMap(InputDeviceManager.BUTTON, KeyEvent.KEYCODE_BUTTON_Y, false, 0,
+                    InputDeviceManager.AXIS, MotionEvent.AXIS_HAT_X,  true, 1);
 
-            hardwareMapAxis(MotionEvent.AXIS_X, MotionEvent.AXIS_X);
-            hardwareMapAxis(MotionEvent.AXIS_Y, MotionEvent.AXIS_Y);
-            hardwareMapAxis(MotionEvent.AXIS_Z, MotionEvent.AXIS_Z);
-            hardwareMapAxis(MotionEvent.AXIS_RX, MotionEvent.AXIS_RX);
-            hardwareMapAxis(MotionEvent.AXIS_RY, MotionEvent.AXIS_RY);
-            hardwareMapAxis(MotionEvent.AXIS_RZ, MotionEvent.AXIS_RZ);
-            hardwareMapAxis(MotionEvent.AXIS_LTRIGGER, MotionEvent.AXIS_LTRIGGER);
-            hardwareMapAxis(MotionEvent.AXIS_RTRIGGER, MotionEvent.AXIS_RTRIGGER);
-            hardwareMapAxis(MotionEvent.AXIS_HAT_X, MotionEvent.AXIS_HAT_X);
-            hardwareMapAxis(MotionEvent.AXIS_HAT_Y, MotionEvent.AXIS_HAT_Y);
+
+            hardwareMap(InputDeviceManager.BUTTON, KeyEvent.KEYCODE_BUTTON_START, false, 0,
+                    InputDeviceManager.BUTTON, KeyEvent.KEYCODE_BUTTON_SELECT,  false, 0);
+            hardwareMap(InputDeviceManager.BUTTON, KeyEvent.KEYCODE_BUTTON_THUMBR, false, 0,
+                    InputDeviceManager.BUTTON, KeyEvent.KEYCODE_BUTTON_THUMBL,  false, 0);
+
+
+            hardwareMap(InputDeviceManager.AXIS, MotionEvent.AXIS_Z, true, -1,
+                    InputDeviceManager.AXIS, MotionEvent.AXIS_X,  true, -1);
+            hardwareMap(InputDeviceManager.AXIS, MotionEvent.AXIS_Z, true, 1,
+                    InputDeviceManager.AXIS, MotionEvent.AXIS_X,  true, 1);
+
+            hardwareMap(InputDeviceManager.AXIS, MotionEvent.AXIS_RZ, true, -1,
+                    InputDeviceManager.AXIS, MotionEvent.AXIS_Y,  true, 1);
+            hardwareMap(InputDeviceManager.AXIS, MotionEvent.AXIS_RZ, true, 1,
+                    InputDeviceManager.AXIS, MotionEvent.AXIS_Y,  true, -1);
         }
 
         /**
@@ -907,16 +997,30 @@ public class InputDeviceManager {
         public void initDefaultDoubleRight() {
             hardwareMappings.clear();
 
-            hardwareMapAxis(MotionEvent.AXIS_X, MotionEvent.AXIS_X);
-            hardwareMapAxis(MotionEvent.AXIS_Y, MotionEvent.AXIS_Y);
-            hardwareMapAxis(MotionEvent.AXIS_Z, MotionEvent.AXIS_Z);
-            hardwareMapAxis(MotionEvent.AXIS_RX, MotionEvent.AXIS_RX);
-            hardwareMapAxis(MotionEvent.AXIS_RY, MotionEvent.AXIS_RY);
-            hardwareMapAxis(MotionEvent.AXIS_RZ, MotionEvent.AXIS_RZ);
-            hardwareMapAxis(MotionEvent.AXIS_LTRIGGER, MotionEvent.AXIS_LTRIGGER);
-            hardwareMapAxis(MotionEvent.AXIS_RTRIGGER, MotionEvent.AXIS_RTRIGGER);
-            hardwareMapAxis(MotionEvent.AXIS_HAT_X, MotionEvent.AXIS_HAT_X);
-            hardwareMapAxis(MotionEvent.AXIS_HAT_Y, MotionEvent.AXIS_HAT_Y);
+            hardwareMap(InputDeviceManager.BUTTON, KeyEvent.KEYCODE_BUTTON_X, false, 0,
+                    InputDeviceManager.BUTTON, KeyEvent.KEYCODE_BUTTON_A,  false, 0);
+
+            hardwareMap(InputDeviceManager.BUTTON, KeyEvent.KEYCODE_BUTTON_Y, false, 0,
+                    InputDeviceManager.BUTTON, KeyEvent.KEYCODE_BUTTON_X,  false, 0);
+
+            hardwareMap(InputDeviceManager.BUTTON, KeyEvent.KEYCODE_BUTTON_B, false, 0,
+                    InputDeviceManager.BUTTON, KeyEvent.KEYCODE_BUTTON_Y,  false, 0);
+
+            hardwareMap(InputDeviceManager.BUTTON, KeyEvent.KEYCODE_BUTTON_A, false, 0,
+                    InputDeviceManager.BUTTON, KeyEvent.KEYCODE_BUTTON_B,  false, 0);
+
+            hardwareMapButton(KeyEvent.KEYCODE_BUTTON_START);
+            hardwareMapButton(KeyEvent.KEYCODE_BUTTON_THUMBR);
+
+            hardwareMap(InputDeviceManager.AXIS, MotionEvent.AXIS_RZ, true, -1,
+                    InputDeviceManager.AXIS, MotionEvent.AXIS_Z,  true, -1);
+            hardwareMap(InputDeviceManager.AXIS, MotionEvent.AXIS_RZ, true, 1,
+                    InputDeviceManager.AXIS, MotionEvent.AXIS_Z,  true, 1);
+
+            hardwareMap(InputDeviceManager.AXIS, MotionEvent.AXIS_Z, true, -1,
+                    InputDeviceManager.AXIS, MotionEvent.AXIS_RZ,  true, 1);
+            hardwareMap(InputDeviceManager.AXIS, MotionEvent.AXIS_Z, true, 1,
+                    InputDeviceManager.AXIS, MotionEvent.AXIS_RZ,  true, -1);
         }
 
         /**
@@ -1321,6 +1425,38 @@ public class InputDeviceManager {
                     }
                 }
             }
+        }
+    }
+
+    /**
+     * A listener for handling device disconnections.
+     *
+     * @author AlexKhayrullin
+     */
+    public static class Listener implements InputManager.InputDeviceListener {
+
+        protected InputDeviceManager[] inputDeviceManagers;
+
+
+        public Listener(InputDeviceManager[] inputDeviceManagers) {
+            this.inputDeviceManagers = inputDeviceManagers;
+        }
+
+        @Override
+        public void onInputDeviceAdded(int i) {
+            // nothing to do
+        }
+
+        @Override
+        public void onInputDeviceRemoved(int i) {
+            for(InputDeviceManager inputDeviceManager : this.inputDeviceManagers) {
+                inputDeviceManager.disconnectById(i);
+            }
+        }
+
+        @Override
+        public void onInputDeviceChanged(int i) {
+            // nothing to do
         }
     }
 }

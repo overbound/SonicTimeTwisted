@@ -22,90 +22,83 @@ switch(argument0)
             ds_map_destroy(temp_map);
         }
         temp_map = ds_map_create();
-        ds_map_add(temp_map, cUP, android_get_mapped_value(0, cUP, -1));
-        ds_map_add(temp_map, cDOWN, android_get_mapped_value(0, cDOWN, -1));
-        ds_map_add(temp_map, cLEFT, android_get_mapped_value(0, cLEFT, -1));
-        ds_map_add(temp_map, cRIGHT, android_get_mapped_value(0, cRIGHT, -1));
-        ds_map_add(temp_map, cA, android_get_mapped_value(0, cA, -1));
-        ds_map_add(temp_map, cB, android_get_mapped_value(0, cB, -1));
-        ds_map_add(temp_map, cC, android_get_mapped_value(0, cC, -1));
-        ds_map_add(temp_map, cSTART, android_get_mapped_value(0, cSTART, -1));
+        ds_map_add(temp_map, cUP, android_get_mapped_configuration(0, cUP));
+        ds_map_add(temp_map, cDOWN, android_get_mapped_configuration(0, cDOWN));
+        ds_map_add(temp_map, cLEFT, android_get_mapped_configuration(0, cLEFT));
+        ds_map_add(temp_map, cRIGHT, android_get_mapped_configuration(0, cRIGHT));
+        ds_map_add(temp_map, cA, android_get_mapped_configuration(0, cA));
+        ds_map_add(temp_map, cB, android_get_mapped_configuration(0, cB));
+        ds_map_add(temp_map, cC, android_get_mapped_configuration(0, cC));
+        ds_map_add(temp_map, cSTART, android_get_mapped_configuration(0, cSTART));
         menu_part_android_btusb_actions(21);
         break;
     case 2:
         // individual map - button Up
-        menu_fn_open_mapping_window(tr('Press "Up"'), cUP, 11);
+        android_start_software_mapping(tr('Press "Up"'), cUP, 11, -1);
         break;
     case 3:
         // individual map - button Down
-        menu_fn_open_mapping_window(tr('Press "Down"'), cDOWN, 11);
+        android_start_software_mapping(tr('Press "Down"'), cDOWN, 11, -1);
         break;
     case 4:
         // individual map - button Left
-        menu_fn_open_mapping_window(tr('Press "Left"'), cLEFT, 11);
+        android_start_software_mapping(tr('Press "Left"'), cLEFT, 11, -1);
         break;
     case 5:
         // individual map - button Right
-        menu_fn_open_mapping_window(tr('Press "Right"'), cRIGHT, 11);
+        android_start_software_mapping(tr('Press "Right"'), cRIGHT, 11, -1);
         break;
     case 6:
         // individual map - button A
-        menu_fn_open_mapping_window(tr('Press "A"'), cA, 11);
+        android_start_software_mapping(tr('Press "A"'), cA, 11, -1);
         break;
     case 7:
         // individual map - button B
-        menu_fn_open_mapping_window(tr('Press "B"'), cB, 11);
+        android_start_software_mapping(tr('Press "B"'), cB, 11, -1);
         break;
     case 8:
         // individual map - button C
-        menu_fn_open_mapping_window(tr('Press "C"'), cC, 11);
+        android_start_software_mapping(tr('Press "C"'), cC, 11, -1);
         break;
     case 9:
         // individual map - button Start
-        menu_fn_open_mapping_window(tr('Press "Start"'), cSTART, 11);
+        android_start_software_mapping(tr('Press "Start"'), cSTART, 11, -1);
         break;
     case 11:
-        // just refresh 
+        // save the mapped button
+        android_set_any_key_mode(0, false);
         break;
     case 21:
         // group mapping - up
-        android_set_any_key_mode(0, true);
-        menu_fn_open_mapping_window(tr('Press "Up"'), cUP, 22, 30);
+        android_start_software_mapping(tr('Press "Up"'), cUP, 22, 30);
         break;
     case 22:
         // group mapping - down
-        android_set_any_key_mode(0, true);
-        menu_fn_open_mapping_window(tr('Press "Down"'), cDOWN, 23, 30);
+        android_start_software_mapping(tr('Press "Down"'), cDOWN, 23, 30);
         break;
     case 23:
         // group mapping - left
-        android_set_any_key_mode(0, true);
-        menu_fn_open_mapping_window(tr('Press "Left"'), cLEFT, 24, 30);
+        android_start_software_mapping(tr('Press "Left"'), cLEFT, 24, 30);
         break;
     case 24:
         // group mapping - right
-        android_set_any_key_mode(0, true);
-        menu_fn_open_mapping_window(tr('Press "Right"'), cRIGHT, 25, 30);
+        android_start_software_mapping(tr('Press "Right"'), cRIGHT, 25, 30);
         break;
     case 25:
         // group mapping - a
-        android_set_any_key_mode(0, true);
-        menu_fn_open_mapping_window(tr('Press "A"'), cA, 26, 30);
+        android_start_software_mapping(tr('Press "A"'), cA, 26, 30);
         break;
     case 26:
         // group mapping - b
-        android_set_any_key_mode(0, true);
-        menu_fn_open_mapping_window(tr('Press "B"'), cB, 27, 30);
+        android_start_software_mapping(tr('Press "B"'), cB, 27, 30);
         break;
     case 27:
         // group mapping - c
-        android_set_any_key_mode(0, true);
-        menu_fn_open_mapping_window(tr('Press "C"'), cC, 28, 30);
+        android_start_software_mapping(tr('Press "C"'), cC, 28, 30);
         break;
     case 28:
         // group mapping - c
-        android_set_any_key_mode(0, true);
-        menu_fn_open_mapping_window(tr('Press "Start"'), cSTART, 29, 30);
+        android_start_software_mapping(tr('Press "Start"'), cSTART, 29, 30);
         break;
     case 29:
         // group mapping - success, discard the backup
@@ -119,11 +112,7 @@ switch(argument0)
         for(var i = 0; i < ds_map_size(temp_map); i++)
         {
             var mapvalue = ds_map_find_value(temp_map, mapkey);
-            var mapkey_to_save = menu_fn_get_keymap_getkey(mapkey);
-            if(is_string(mapkey_to_save))
-            {
-                save_control_map_android_device(mapkey_to_save, mapvalue);
-            }
+            android_set_mapped_configuration(0, mapkey, mapvalue);
             mapkey = ds_map_find_next(temp_map, mapkey);
         }
         ds_map_destroy(temp_map);

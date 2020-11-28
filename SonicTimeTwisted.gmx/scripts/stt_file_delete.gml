@@ -8,4 +8,9 @@ if (DEVICE_INFO & DEVICE_OS_PLAYSTATION)
         storage_map[? _name] = "";
     }
 }
+else
+if(DEVICE_INFO & DEVICE_OS_ANDROID)
+{
+    return file_delete(working_directory + argument0);
+}
 else return file_delete(argument0);

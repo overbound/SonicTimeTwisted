@@ -386,6 +386,42 @@
             <arg>2</arg>
           </args>
         </function>
+        <function>
+          <name>android_get_mapped_configuration</name>
+          <externalName>android_get_mapped_configuration</externalName>
+          <kind>11</kind>
+          <help>android_get_mapped_configuration(inputNumber,inputCode)</help>
+          <returnType>1</returnType>
+          <argCount>2</argCount>
+          <args>
+            <arg>2</arg>
+            <arg>2</arg>
+          </args>
+        </function>
+        <function>
+          <name>android_set_mapped_configuration</name>
+          <externalName>android_set_mapped_configuration</externalName>
+          <kind>11</kind>
+          <help>android_set_mapped_configuration(inputNumber,inputCode,configuration)</help>
+          <returnType>2</returnType>
+          <argCount>3</argCount>
+          <args>
+            <arg>2</arg>
+            <arg>2</arg>
+            <arg>1</arg>
+          </args>
+        </function>
+        <function>
+          <name>android_has_assigned_device</name>
+          <externalName>android_has_assigned_device</externalName>
+          <kind>11</kind>
+          <help>android_has_assigned_device(inputNumber)</help>
+          <returnType>2</returnType>
+          <argCount>1</argCount>
+          <args>
+            <arg>2</arg>
+          </args>
+        </function>
       </functions>
       <constants/>
     </file>

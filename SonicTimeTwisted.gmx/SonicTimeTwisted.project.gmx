@@ -2858,6 +2858,7 @@
           </scripts>
           <scripts name="android">
             <script>scripts\android_get_mapped_label.gml</script>
+            <script>scripts\android_start_software_mapping.gml</script>
           </scripts>
         </scripts>
         <scripts name="menu_parts">

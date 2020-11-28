@@ -15,7 +15,7 @@ if(state == 13 || state == 14)
         {
             if(android_map_input(0, confirmation_cursor, _input))
             {
-                save_control_map_android_device(confirmation_cursor, _input);
+                save_control_map_android_device(confirmation_cursor);
                 state = 15;
             }
             else

@@ -60,7 +60,7 @@
     <option_android_licensing_key></option_android_licensing_key>
     <option_android_lint>0</option_android_lint>
     <option_android_major_version>1</option_android_major_version>
-    <option_android_min_sdk_version>17</option_android_min_sdk_version>
+    <option_android_min_sdk_version>19</option_android_min_sdk_version>
     <option_android_minor_version>1</option_android_minor_version>
     <option_android_mmedia_ads>0</option_android_mmedia_ads>
     <option_android_mobage>0</option_android_mobage>

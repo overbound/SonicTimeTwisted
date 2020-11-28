@@ -25,7 +25,7 @@ if(state == 20)
     }
     else
     {
-        if(dd_state == 0/* && confirmation_cursor == 2*/)
+        if(dd_state == 0)
         {
             if(!android_double_device_detecting_mode_is_last_successful())
             {

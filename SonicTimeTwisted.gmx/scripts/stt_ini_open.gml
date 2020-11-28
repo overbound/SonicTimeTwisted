@@ -9,4 +9,11 @@ if (DEVICE_INFO & DEVICE_OS_PLAYSTATION)
         async_ininame = _name;
     }
 }
+
+else
+if(DEVICE_INFO & DEVICE_OS_ANDROID)
+{
+    show_debug_message("Opening "+working_directory + argument0);
+    return ini_open(working_directory + argument0);
+}
 else ini_open(argument0);

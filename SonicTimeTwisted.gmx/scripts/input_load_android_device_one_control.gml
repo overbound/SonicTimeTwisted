@@ -1,6 +1,8 @@
-var backupValue = ini_read_real('android_input_controls_types', menu_fn_get_keymap_getkey(argument0)+'_backup', argument2);
-if(backupValue > -1)
-{
-     android_map_input(0, argument0, backupValue);
-}
-android_map_input(0, argument0, ini_read_real('android_input_controls_types', menu_fn_get_keymap_getkey(argument0), argument1));
+
+var value = ini_read_string('android_input_controls', menu_fn_get_keymap_getkey(argument0), argument1);
+
+show_debug_message("LOAD INPUT: "+string(argument0)+" -> "+string(value));
+android_set_mapped_configuration(0, argument0, value);
+
+
+

@@ -18,6 +18,7 @@
 package com.example.sttandroid;
 
 import android.content.Context;
+import android.hardware.input.InputManager;
 import android.os.Vibrator;
 import android.view.InputDevice;
 import android.view.KeyEvent;
@@ -138,6 +139,10 @@ public class SttAndroid extends ExtensionBase {
         delegateRumbleToExternalDevices = true;
         android_set_input_mode(0.0);
         android_set_vibrate_mode(0.0);
+
+        InputManager im = (InputManager) RunnerJNILib.GetApplicationContext().getSystemService(Context.INPUT_SERVICE);
+        im.registerInputDeviceListener(new InputDeviceManager.Listener(inputs), null);
+
     }
 
     /**
@@ -204,10 +209,10 @@ public class SttAndroid extends ExtensionBase {
      * @return The matching input device manager
      */
     protected InputDeviceManager getInputDeviceManagerToUse(InputDevice device) {
-        if (inputs[0].isDeviceAssigned(device)) {
+        if (inputs[0].isDeviceAssigned(device.getId())) {
             return inputs[0];
         } else {
-            if (inputs[1].isDeviceAssigned(device)) {
+            if (inputs[1].isDeviceAssigned(device.getId())) {
                 return inputs[1];
             } else {
                 if (isDeviceSuitable(device)) {
@@ -492,8 +497,7 @@ public class SttAndroid extends ExtensionBase {
      * @return Integer unique to a button press or axis state or -1 if nothing is pressed
      */
     public double android_get_any_key(double inputNumber) {
-        int result = inputs[(int) inputNumber].getAnyInput();
-        return result;
+        return inputs[(int) inputNumber].getAnyInput();
     }
 
     /**
@@ -545,6 +549,36 @@ public class SttAndroid extends ExtensionBase {
      */
     public String android_get_mapped_descriptor(double inputNumber, double inputCode) {
         return inputs[(int) inputNumber].getSoftwareMappedDescriptor((int) inputCode);
+    }
+
+
+    /**
+     * Returns a sequence of two numeric strings separated with "," with inputs mapped
+     * to a command. First the one in the main mapping, then the one in the backup mapping
+     *
+     * @param inputNumber Player number: 0 or 1
+     * @param inputCode   Constant for the mapped input as managed by Sonic Time Twisted
+     * @return A string describing a mapped button or axis
+     */
+    public String android_get_mapped_configuration(double inputNumber, double inputCode) {
+        return inputs[(int) inputNumber].getSoftwareMappedConfiguration((int) inputCode);
+    }
+
+    /**
+     * Applies a sequence returned by android_get_mapped_configuration.
+     *
+     * The first value will be stored in the main map, the second value will be stored in the
+     * backup map
+     *
+     * @param inputNumber   Player number: 0 or 1
+     * @param inputCode     Constant for the mapped input as managed by Sonic Time Twisted
+     * @param configuration A string with mapped values
+     * @return Random value because GameMaker Studio needs a return type.
+     */
+    public double android_set_mapped_configuration(double inputNumber, double inputCode,
+                                                   String configuration) {
+        inputs[(int) inputNumber].setSoftwareMappedConfiguration((int) inputCode, configuration);
+        return 0.0;
     }
 
     /**

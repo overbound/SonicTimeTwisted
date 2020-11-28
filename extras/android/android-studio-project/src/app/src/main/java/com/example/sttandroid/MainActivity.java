@@ -186,6 +186,7 @@ public class MainActivity extends AppCompatActivity {
         sttAndroid.android_feed_input_mapping_done();
         updateDisplay();
 
+        /**
         sttAndroid.android_map_input(0, SttAndroid.cUP, 12);
         sttAndroid.android_map_input(0, SttAndroid.cDOWN, 11);
         sttAndroid.android_map_input(0, SttAndroid.cLEFT, 2);
@@ -200,6 +201,16 @@ public class MainActivity extends AppCompatActivity {
         sttAndroid.android_map_input(0, SttAndroid.cB,  960);
         sttAndroid.android_map_input(0, SttAndroid.cC,  970);
         sttAndroid.android_map_input(0, SttAndroid.cSTART,  1080);
+         **/
+
+        setMappingConfig(SttAndroid.cUP, "162,12");
+        setMappingConfig(SttAndroid.cDOWN, "161,11");
+        setMappingConfig(SttAndroid.cLEFT, "152,2");
+        setMappingConfig(SttAndroid.cRIGHT, "151,1");
+        setMappingConfig(SttAndroid.cA, "990,-1");
+        setMappingConfig(SttAndroid.cB, "960,-1");
+        setMappingConfig(SttAndroid.cC, "970,-1");
+        setMappingConfig(SttAndroid.cSTART, "1080,1000");
 
 
         print("UP   : "+getMappedDescriptor(SttAndroid.cUP));
@@ -210,6 +221,16 @@ public class MainActivity extends AppCompatActivity {
         print("B    : "+getMappedDescriptor(SttAndroid.cB));
         print("C    : "+getMappedDescriptor(SttAndroid.cC));
         print("START: "+getMappedDescriptor(SttAndroid.cSTART));
+
+
+        print("UP   : "+getMappingConfig(SttAndroid.cUP));
+        print("DOWN : "+getMappingConfig(SttAndroid.cDOWN));
+        print("LEFT : "+getMappingConfig(SttAndroid.cLEFT));
+        print("RIGHT: "+getMappingConfig(SttAndroid.cRIGHT));
+        print("A    : "+getMappingConfig(SttAndroid.cA));
+        print("B    : "+getMappingConfig(SttAndroid.cB));
+        print("C    : "+getMappingConfig(SttAndroid.cC));
+        print("START: "+getMappingConfig(SttAndroid.cSTART));
     }
 
     protected String getMappedDescriptor(int inputCode)
@@ -225,6 +246,16 @@ public class MainActivity extends AppCompatActivity {
         {
             return ""+parts.length+descriptor;
         }
+    }
+
+    protected void setMappingConfig(int inputCode, String config)
+    {
+        sttAndroid.android_set_mapped_configuration(0, inputCode, config);
+    }
+
+    protected String getMappingConfig(int inputCode)
+    {
+        return sttAndroid.android_get_mapped_configuration(0, inputCode);
     }
 
     @Override
