@@ -18,6 +18,13 @@ if(objProgram.inputManager.device_label == "")
 // dual input device detection states
 if(state == 20)
 {
+    if(keyboard_check_pressed(DEVICE_BACK_BUTTON))
+    {
+        if(android_double_device_detecting_mode_get_state() != 0)
+        {
+            android_double_device_detecting_mode_cancel();
+        }
+    }
     var dd_state = real(android_double_device_detecting_mode_get_state());
     if(dd_state == 2 && confirmation_cursor == 1)
     {
