@@ -21,6 +21,7 @@ if(state == 20)
     var dd_state = real(android_double_device_detecting_mode_get_state());
     if(dd_state == 2 && confirmation_cursor == 1)
     {
+        objProgram.inputManager.device_label = "";
         state = 22;
     }
     else
@@ -31,6 +32,7 @@ if(state == 20)
             {
                 android_disconnect_input(0);
             }
+            objProgram.inputManager.device_label = "";
             state = 22;
         }
     }

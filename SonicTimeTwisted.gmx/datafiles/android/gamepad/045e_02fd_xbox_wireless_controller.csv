@@ -1,0 +1,25 @@
+min_api,max_api,vendor,product,other_vendor,other_product,event_device,event_type,event_code,event_value,mapped_type,mapped_code,mapped_value,comment
+,,045e,02fd,,,0,axis,1,-1,axis,1,-1,"Xbox Wireless Controller, Left Stick UP, Other possible event(s)"
+,,,,,,,,1,1,,1,1,Left Stick DOWN
+,,,,,,,,0,-1,,0,-1,Left Stick LEFT
+,,,,,,,,0,1,,0,1,Left Stick RIGHT
+,,,,,,,,16,-1,,16,-1,D-Pad UP
+,,,,,,,,16,1,,16,1,D-Pad DOWN
+,,,,,,,,15,-1,,15,-1,D-Pad LEFT
+,,,,,,,,15,1,,15,1,D-Pad RIGHT
+,,,,,,,,14,-1,,14,-1,Right Stick UP
+,,,,,,,,14,1,,14,1,Right Stick DOWN
+,,,,,,,,11,-1,,11,-1,Right Stick LEFT
+,,,,,,,,11,1,,11,1,Right Stick RIGHT
+,,,,,,,button,96,,button,96,,Cross/A/Bottom button
+,,,,,,,,97,,,97,,Circle/B/Right button
+,,,,,,,,99,,,99,,Square/X/Left button
+,,,,,,,,100,,,100,,Triangle/Y/Top button
+,,,,,,,,108,,,108,,Start button
+,,,,,,,,109,,,109,,Select button
+,,,,,,,,102,,,102,,L1 button
+,,,,,,,,103,,,103,,R1 button
+,,,,,,,axis,17,1,,104,,"L2 button, Other possible event(s): D:0,A:+23 "
+,,,,,,,,18,1,,105,,"R2 button, Other possible event(s): D:0,A:+22 "
+,,,,,,,button,106,,,106,,Left stick press
+,,,,,,,,107,,,107,,Right stick press

@@ -2,6 +2,8 @@
 
 The Android port of Sonic Time Twisted uses a native library that manages controller inputs and vibrations.
 
+## Tools for working on the library
+
 This directory contains everything that can be used (and has been used) to work on this library.
  - **android-studio-project**: the Android Studio project that is the preferred way to work on the library.
  - **doc**: design document.
@@ -17,3 +19,7 @@ Then, prepare your working environment by copying the **android-studio-project**
 Once you are done with improving the library, use **gms1-class-sync** to sync it with **gms1-test-project** and test it out with a real Game Maker Studio 1 test project.
 
 Ultimately, use **gms1-class-sync** to sync the library with the game itself once everything is tested and confirmed to be working.
+
+## Hardware mappings generator
+
+The subdirectory **android-studio-hwmapping-generator** contains the source code for an app that can be used to create hardware mappings for input devices.

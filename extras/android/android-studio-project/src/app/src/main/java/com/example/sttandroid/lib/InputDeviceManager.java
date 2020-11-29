@@ -945,10 +945,8 @@ public class InputDeviceManager {
             hardwareMapButton(KeyEvent.KEYCODE_BUTTON_START);
             hardwareMapButton(KeyEvent.KEYCODE_BUTTON_SELECT);
             hardwareMapButton(KeyEvent.KEYCODE_BUTTON_L1);
-            hardwareMapButton(KeyEvent.KEYCODE_BUTTON_L2);
             hardwareMapButton(KeyEvent.KEYCODE_BUTTON_THUMBL);
             hardwareMapButton(KeyEvent.KEYCODE_BUTTON_R1);
-            hardwareMapButton(KeyEvent.KEYCODE_BUTTON_R2);
             hardwareMapButton(KeyEvent.KEYCODE_BUTTON_THUMBR);
 
             hardwareMapButton(KeyEvent.KEYCODE_VOLUME_DOWN);

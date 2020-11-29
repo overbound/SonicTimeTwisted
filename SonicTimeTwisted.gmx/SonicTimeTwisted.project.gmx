@@ -11,7 +11,7 @@
     <Config>Configs\Linux</Config>
     <Config>Configs\PlayStation</Config>
   </Configs>
-  <datafiles number="62" name="datafiles">
+  <datafiles number="66" name="datafiles">
     <datafile>
       <name>translations.txt</name>
       <exists>-1</exists>
@@ -53,7 +53,7 @@
       </ConfigOptions>
       <filename>translations.txt</filename>
     </datafile>
-    <datafiles number="62" name="translations">
+    <datafiles number="66" name="translations">
       <datafile>
         <name>German.json</name>
         <exists>-1</exists>
@@ -177,7 +177,7 @@
         </ConfigOptions>
         <filename>Russian.json</filename>
       </datafile>
-      <datafiles number="62" name="Russian">
+      <datafiles number="66" name="Russian">
         <datafile>
           <name>sprFontHud.png</name>
           <exists>-1</exists>
@@ -466,7 +466,7 @@
           <filename>sprFontMicro.png</filename>
         </datafile>
       </datafiles>
-      <datafiles number="62" name="German">
+      <datafiles number="66" name="German">
         <datafile>
           <name>sprFontLives.png</name>
           <exists>-1</exists>
@@ -756,12 +756,12 @@
         </datafile>
       </datafiles>
     </datafiles>
-    <datafiles number="62" name="android">
-      <datafiles number="62" name="gamepad">
+    <datafiles number="66" name="android">
+      <datafiles number="66" name="gamepad">
         <datafile>
-          <name>switch.csv</name>
+          <name>045e_02fd_xbox_wireless_controller.csv</name>
           <exists>-1</exists>
-          <size>3185</size>
+          <size>1113</size>
           <exportAction>2</exportAction>
           <exportDir></exportDir>
           <overwrite>0</overwrite>
@@ -797,7 +797,130 @@
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
           </ConfigOptions>
-          <filename>switch.csv</filename>
+          <filename>045e_02fd_xbox_wireless_controller.csv</filename>
+        </datafile>
+        <datafile>
+          <name>057e_2006_057e_2007_joy_con__l__joy_con__r_.csv</name>
+          <exists>-1</exists>
+          <size>1040</size>
+          <exportAction>2</exportAction>
+          <exportDir></exportDir>
+          <overwrite>0</overwrite>
+          <freeData>-1</freeData>
+          <removeEnd>0</removeEnd>
+          <store>0</store>
+          <ConfigOptions>
+            <Config name="Default">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="Windows">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="AndroidSmartphone">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="AndroidConsole">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="MacOS">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="iPhone">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="AppleTV">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="Linux">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="PlayStation">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+          </ConfigOptions>
+          <filename>057e_2006_057e_2007_joy_con__l__joy_con__r_.csv</filename>
+        </datafile>
+        <datafile>
+          <name>057e_2006_joy_con__l_.csv</name>
+          <exists>-1</exists>
+          <size>652</size>
+          <exportAction>2</exportAction>
+          <exportDir></exportDir>
+          <overwrite>0</overwrite>
+          <freeData>-1</freeData>
+          <removeEnd>0</removeEnd>
+          <store>0</store>
+          <ConfigOptions>
+            <Config name="Default">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="Windows">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="AndroidSmartphone">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="AndroidConsole">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="MacOS">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="iPhone">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="AppleTV">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="Linux">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="PlayStation">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+          </ConfigOptions>
+          <filename>057e_2006_joy_con__l_.csv</filename>
+        </datafile>
+        <datafile>
+          <name>057e_2007_joy_con__r_.csv</name>
+          <exists>-1</exists>
+          <size>652</size>
+          <exportAction>2</exportAction>
+          <exportDir></exportDir>
+          <overwrite>0</overwrite>
+          <freeData>-1</freeData>
+          <removeEnd>0</removeEnd>
+          <store>0</store>
+          <ConfigOptions>
+            <Config name="Default">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="Windows">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="AndroidSmartphone">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="AndroidConsole">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="MacOS">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="iPhone">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="AppleTV">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="Linux">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="PlayStation">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+          </ConfigOptions>
+          <filename>057e_2007_joy_con__r_.csv</filename>
         </datafile>
       </datafiles>
     </datafiles>

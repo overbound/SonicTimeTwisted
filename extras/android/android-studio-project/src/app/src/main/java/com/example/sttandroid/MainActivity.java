@@ -39,6 +39,8 @@ import java.util.List;
  * The main activity used to test the project by instantiating {@link SttAndroid} and calling its
  * android_* methods. This is just a sandbox, feel free to edit.
  *
+ * Also, this class is not commented at all :)
+ *
  * @author AlexKhayrullin
  */
 public class MainActivity extends AppCompatActivity {
@@ -58,6 +60,8 @@ public class MainActivity extends AppCompatActivity {
     static final int APPSTATE_MAPPING = 3;
 
     protected Thread thread;
+
+    protected boolean vibrating;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,6 +83,7 @@ public class MainActivity extends AppCompatActivity {
         appState = APPSTATE_IDLE;
         cursor = 0;
         thread = null;
+        vibrating = false;
         updateDisplay();
 
     }
@@ -109,8 +114,15 @@ public class MainActivity extends AppCompatActivity {
                         switch(event.getKeyCode())
                         {
                             case KeyEvent.KEYCODE_VOLUME_UP:
+                                cursor--;
+                                if(cursor < 0)
+                                {
+                                    cursor = 2;
+                                }
+                                updateDisplay();
+                                return true;
                             case KeyEvent.KEYCODE_VOLUME_DOWN:
-                                cursor = 1 - cursor;
+                                cursor = (cursor + 1) % 3;
                                 updateDisplay();
                                 return true;
                             case KeyEvent.KEYCODE_BACK:
@@ -139,6 +151,19 @@ public class MainActivity extends AppCompatActivity {
                                         thread.start();
                                         updateDisplay();
                                         return true;
+                                    case 2:
+                                        if(vibrating)
+                                        {
+                                            sttAndroid.android_rumble_perform(0, 0);
+                                            vibrating = false;
+                                        }
+                                        else
+                                        {
+                                            sttAndroid.android_rumble_perform(0, 50);
+                                            vibrating = true;
+                                        }
+                                        appState = MainActivity.APPSTATE_IDLE;
+                                        updateDisplay();
                                 }
                         }
                 }
@@ -423,6 +448,8 @@ public class MainActivity extends AppCompatActivity {
         sb.append(" double device mode\n");
         sb.append(cursor == 1 ? " > " : "   ");
         sb.append("Map keys\n");
+        sb.append(cursor == 2 ? " > " : "   ");
+        sb.append(vibrating ? "Stop vibrating\n" : "Vibrate\n");
 
 
 
