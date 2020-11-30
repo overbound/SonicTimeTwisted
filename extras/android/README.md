@@ -10,7 +10,7 @@ This directory contains everything that can be used (and has been used) to work 
  - **gms1-class-sync**: a plain Java project, a small tool used for copying classes from the Android Studio project to the Game Maker Studio project.
  - **gms1-test-project**: a small Game Maker Studio 1 test project that allows testing the library without recompiling Sonic Time Twisted.
 
-**Note**: an Android Studio project, as well as a test Game Maker Studio project, in addition to the game itself, mean that the library is committed three times. Unless you are willing to develop a tool that will synchronize the three copies, please make suure they are synchronized manually.
+**Note**: an Android Studio project, as well as a test Game Maker Studio project, in addition to the game itself, mean that the library is committed three times. Unless you are willing to develop a tool that will synchronize the three copies, please make sure they are synchronized manually.
 
 First, read the documentation in the **doc** subdirectory.
 
