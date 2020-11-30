@@ -3,6 +3,8 @@ argument0 - timer
 argument1 - rings
 argument2 - offsetX
 argument3 - offsetY
+argument4 - shield draw script
+argument5 - shield value
 */
 
 // Drawing lives - exported into a different event
@@ -33,3 +35,5 @@ if not objScreen.split_screen draw_text(argument2+122 + tr_get_real_prop("top_hu
 draw_text(argument2+122 + tr_get_real_prop("top_hud_offset"), argument3+40-(16*objScreen.split_screen), argument1);
 draw_text(argument2+122+timeOffset + + tr_get_real_prop("top_hud_offset"), argument3+24-(16*objScreen.split_screen), time_stamp);
 draw_set_halign(fa_left);
+script_execute(argument4, argument2, argument3, argument5);
+

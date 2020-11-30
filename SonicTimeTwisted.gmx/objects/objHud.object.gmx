@@ -400,7 +400,7 @@ draw_text(view_xview[view_current] + 16 + 32, view_yview[view_current] + view_hv
           <argument>
             <kind>1</kind>
             <string>/// Render HUD
-draw_top_hud(objLevel.timer, objGameData.rings[view_current], view_xview[view_current], view_yview[view_current]);
+draw_top_hud(objLevel.timer, objGameData.rings[view_current], view_xview[view_current], view_yview[view_current], draw_shield_act, objLevel.player[0].shield_type);
 // TODO Remove FPS
 //draw_text(view_xview[view_current]+400,view_yview[view_current]+24, fps);
 //black bg for pause

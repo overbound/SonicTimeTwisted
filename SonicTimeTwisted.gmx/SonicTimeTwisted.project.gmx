@@ -1297,6 +1297,10 @@
     </sprites>
     <sprites name="Overlays">
       <sprites name="HUD">
+        <sprites name="Shields">
+          <sprite>sprites\sprShieldIconAct</sprite>
+          <sprite>sprites\sprShieldIconSS</sprite>
+        </sprites>
         <sprite>sprites\sprGameOver</sprite>
         <sprite>sprites\sprHud</sprite>
         <sprite>sprites\sprLives</sprite>
@@ -3138,6 +3142,8 @@
       <scripts name="Hud">
         <script>scripts\draw_top_hud.gml</script>
         <script>scripts\randomize_number.gml</script>
+        <script>scripts\draw_shield_act.gml</script>
+        <script>scripts\draw_shield_ss.gml</script>
       </scripts>
       <scripts name="Parallax">
         <script>scripts\parallax_create.gml</script>

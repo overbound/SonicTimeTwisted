@@ -499,7 +499,7 @@ d3d_set_projection_ortho(0, 0, view_wport, view_hport, 0);
 // score / time / rings string
 draw_set_font(objResources.fontHud);
 if !objProgram.paused {
-draw_top_hud(objSSLevel.timer, objSSPlayer.rings, 0, 0);
+draw_top_hud(objSSLevel.timer, objSSPlayer.rings, 0, 0, draw_shield_ss, objProgram.temp_shield);
 } else {
     draw_set_color(c_black);
     draw_rectangle(0,0,426,240,false);
