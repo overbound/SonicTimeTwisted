@@ -7,9 +7,9 @@
   <coltolerance>0</coltolerance>
   <sepmasks>0</sepmasks>
   <bboxmode>0</bboxmode>
-  <bbox_left>13</bbox_left>
-  <bbox_right>49</bbox_right>
-  <bbox_top>14</bbox_top>
+  <bbox_left>14</bbox_left>
+  <bbox_right>48</bbox_right>
+  <bbox_top>13</bbox_top>
   <bbox_bottom>49</bbox_bottom>
   <HTile>0</HTile>
   <VTile>0</VTile>
@@ -32,6 +32,5 @@
     <frame index="1">images\sprKnucklesSSJump_1.png</frame>
     <frame index="2">images\sprKnucklesSSJump_2.png</frame>
     <frame index="3">images\sprKnucklesSSJump_3.png</frame>
-    <frame index="4">images\sprKnucklesSSJump_4.png</frame>
   </frames>
 </sprite>
