@@ -17,3 +17,4 @@ var drawstring = "";
 if (objGameData.player_lives[view_current] >= 10) drawstring = string(objGameData.player_lives[view_current]);
 else drawstring = " " + string(objGameData.player_lives[view_current]);
 draw_text(argument0 + 32, argument1 + 4, chr(10) + "  x" + drawstring);
+draw_set_font(objResources.fontHud);

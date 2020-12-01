@@ -65,10 +65,10 @@ timeOffset = 0;
 timer = 0;
 rings = 0;
 menu = instance_create(0,0,objMenu);
-draw_lives_script = draw_lives_default;
+hud_draw_script = draw_hud_act_default;
 if(is_touchscreen)
 {
-    draw_lives_script = draw_lives_touchscreen;
+    hud_draw_script = draw_hud_act_touchscreen;
 }
 </string>
           </argument>
@@ -294,56 +294,6 @@ if objProgram.paused {
         </arguments>
       </action>
     </event>
-    <event eventtype="7" enumb="11">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// draw lives - touchscreen variant
-
-draw_lives_touchscreen(view_xview[view_current], view_yview[view_current]);
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="7" enumb="10">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// draw lives - normal variant
-
-draw_lives_default(view_xview[view_current], view_yview[view_current]);
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
@@ -362,10 +312,11 @@ draw_lives_default(view_xview[view_current], view_yview[view_current]);
           <argument>
             <kind>1</kind>
             <string>/// Render HUD
-draw_top_hud(objLevel.timer, objGameData.rings[view_current], view_xview[view_current], view_yview[view_current], draw_shield_act, objLevel.player[0].shield_type);
-// TODO Remove FPS
-//draw_text(view_xview[view_current]+400,view_yview[view_current]+24, fps);
-//black bg for pause
+// The part with score/time/rings is constant among contexts and input devices...
+draw_hud_score_time_rings(objLevel.timer, objGameData.rings[view_current], view_xview[view_current], view_yview[view_current]);
+// While the shield's position depends on the context and the lives' position depends on the input device
+script_execute(hud_draw_script);
+
 draw_set_alpha(white)
 draw_set_color(c_black);
     draw_rectangle(view_xview,view_yview,view_xview+view_wview,view_yview+view_hview,false);

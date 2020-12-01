@@ -3140,16 +3140,16 @@
     </scripts>
     <scripts name="Overlays">
       <scripts name="Hud">
-        <script>scripts\draw_top_hud.gml</script>
+        <script>scripts\draw_hud_score_time_rings.gml</script>
         <script>scripts\randomize_number.gml</script>
         <script>scripts\draw_shield_act.gml</script>
-        <script>scripts\draw_shield_ss_touchscreen.gml</script>
-        <script>scripts\draw_shield_ss_default.gml</script>
         <script>scripts\draw_shield_ss.gml</script>
-        <script>scripts\draw_lives_default.gml</script>
-        <script>scripts\draw_lives_touchscreen.gml</script>
         <script>scripts\draw_lives.gml</script>
         <script>scripts\draw_ss_progress_bar.gml</script>
+        <script>scripts\draw_hud_act_default.gml</script>
+        <script>scripts\draw_hud_act_touchscreen.gml</script>
+        <script>scripts\draw_hud_ss_default.gml</script>
+        <script>scripts\draw_hud_ss_touchscreen.gml</script>
       </scripts>
       <scripts name="Parallax">
         <script>scripts\parallax_create.gml</script>
