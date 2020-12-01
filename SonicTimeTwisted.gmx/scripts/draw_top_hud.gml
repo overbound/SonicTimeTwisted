@@ -3,12 +3,12 @@ argument0 - timer
 argument1 - rings
 argument2 - offsetX
 argument3 - offsetY
-argument4 - shield draw script
+argument4 - shield draw script - is hardcoded in the normal HUD, can be set in the Special Stage one
 argument5 - shield value
 */
 
 // Drawing lives - exported into a different event
-event_user(draw_lives_event);
+script_execute(draw_lives_script, argument2, argument3);
 draw_set_halign(fa_left);
 draw_set_font(objResources.fontHud);
 // Hud Graphic

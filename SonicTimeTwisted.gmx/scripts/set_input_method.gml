@@ -74,6 +74,17 @@ with(objInputMethodDependant)
         {
             draw_lives_event = 0;
         }
+        if(object_index == objSSHud)
+        {
+            if(is_touchscreen)
+            {
+                draw_lives_event = 1;
+            }
+            else
+            {
+                draw_lives_event = 0;
+            }
+        }
     }
 }
 
