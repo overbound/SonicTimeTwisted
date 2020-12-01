@@ -380,25 +380,7 @@ draw_sprite(sprRacerIcon, objGameData.character_id[0]-1, pbOffsetX + objSSPlayer
 var pbOffsetX = 128;
 if(objProgram.saveSlot &gt; -1) // if we are playing this in the mini-game/level select mode, lives don't appear
 {
-    // lives setpiece
-    draw_sprite(sprLives, character_id[view_current], 16, view_hview-24);
-    
-    // lives string
-    draw_set_color(c_white);
-    draw_set_alpha(image_alpha);
-    draw_set_font(objResources.fontLives);
-    draw_set_halign(fa_left);
-    
-    // draw character name.
-    var drawname = tr("_charname_" + string(character_id[view_current]));
-    draw_text_colour(16 + 32, view_hview - 24 + 4, drawname, c_yellow, c_yellow, c_white, c_white, 1);
-    
-    // make lives string.
-    var drawstring = "";
-    if (objGameData.player_lives[view_current] &gt;= 10) drawstring = string(objGameData.player_lives[view_current]);
-    else drawstring = " " + string(objGameData.player_lives[view_current]);
-    
-    draw_text(16 + 32, view_hview - 24 + 4, chr(10) + "  x" + drawstring);
+    draw_lives_default(0, 0);
 }
 else
 {
@@ -481,7 +463,6 @@ d3d_set_projection_ortho(0, 0, view_wport, view_hport, 0);
 // score / time / rings string
 draw_set_font(objResources.fontHud);
 if !objProgram.paused {
-draw_top_hud(objSSLevel.timer, objSSPlayer.rings, 0, 0, draw_shield_ss, objProgram.temp_shield);
 draw_top_hud(objSSLevel.timer, objSSPlayer.rings, 0, 0, draw_shield_script, objProgram.temp_shield);
 } else {
     draw_set_color(c_black);
