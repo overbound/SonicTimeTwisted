@@ -340,8 +340,7 @@ if (first_run)
 }
 if(!show_startup_window())
 {
-    //room_goto(titlescreen);
-    room_goto(ending);
+    room_goto(titlescreen);
 }
 </string>
           </argument>
