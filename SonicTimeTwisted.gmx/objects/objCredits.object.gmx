@@ -119,6 +119,7 @@ lines[13, 2] = tr('Nik');
 
 lines[14, 0] = tr("Additional Art by");
 lines[14, 1] = tr('Alex Khayrullin');
+lines[14, 2] = tr('bennascar');
 
 // the array above is designed to be easy to edit, now we're converting it to the format we'll actually use
 event_user(0);
