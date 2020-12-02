@@ -93,7 +93,11 @@ if objProgram.in_past == false {
           <argument>
             <kind>1</kind>
             <string>if objProgram.in_past == false {
-    visible = !visible;
+
+    if visible == true
+        visible = false;
+    else visible = true;
+
 }
 </string>
           </argument>
