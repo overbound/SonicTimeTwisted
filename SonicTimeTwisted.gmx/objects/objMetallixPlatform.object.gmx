@@ -128,6 +128,31 @@ harmSensor[1] = instance_create(x,y-harmfulOffset,objMetallixPlatformHarmful);
         <arguments>
           <argument>
             <kind>1</kind>
+            <string>if alarm[0] {
+    if visible 
+        visible = false;
+        else visible = true;
+} else visible = true;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
             <string>///state
 switch state {
 case 1:
@@ -177,31 +202,6 @@ if instance_exists(harmSensor[0]){
     harmSensor[1].x=x-harmfulOffset;
     harmSensor[1].y=y;
 }
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="7" enumb="25">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if alarm[0] {
-    visible = objScreen.flashing_visible;
-} else visible = true;
 </string>
           </argument>
         </arguments>

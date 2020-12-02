@@ -116,7 +116,9 @@ if in_view(view_current,0) {
           <argument>
             <kind>1</kind>
             <string>switch state {
+
 case 0:
+
     image_xscale+=.025;
     image_yscale+=.025;
     
@@ -139,8 +141,15 @@ case 0:
     
     if image_index &gt; 3 {
         image_speed=0;
+
     }
+
+    if visible == true
+    visible = false;
+    else visible = true;
+
 break;
+
 case 1:
         
     if image_index &gt; 3 {
@@ -151,9 +160,14 @@ case 1:
         if image_xscale &lt; 2 {
             image_xscale+=.025;
             image_yscale+=.025;
+        
+            if visible == true
+                visible = false;
+            else visible = true;
         }
         
 break;
+
 case 2:
     remove=2;
     if image_index &gt; 6 &amp;&amp; image_speed &lt;&gt; 0{
@@ -166,7 +180,10 @@ case 2:
         instance_destroy();
     
     }
+
 break;
+
+
 
 
 }
@@ -194,32 +211,6 @@ break;
 if lighting_index &gt; 4 {
     lighting_index=0;
 } else lighting_index +=.25;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="7" enumb="25">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if(state == 0 || (state == 1 &amp;&amp; image_xscale &lt; 2))
-{
-    visible = objScreen.flashing_visible;
-}
 </string>
           </argument>
         </arguments>

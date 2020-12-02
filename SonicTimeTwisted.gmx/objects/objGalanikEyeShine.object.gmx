@@ -70,8 +70,6 @@ y = parentId.y+yoffset;
           </argument>
         </arguments>
       </action>
-    </event>
-    <event eventtype="7" enumb="25">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -88,7 +86,13 @@ y = parentId.y+yoffset;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>visible = objScreen.flashing_visible;
+            <string>
+    if visible == true {
+    
+        visible = false;
+        
+    } else visible = true;
+
 </string>
           </argument>
         </arguments>

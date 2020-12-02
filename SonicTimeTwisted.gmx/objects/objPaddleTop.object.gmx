@@ -142,8 +142,6 @@ if xstart+128 &gt; x &amp;&amp; x &lt; objLevel.player[0].x {
           </argument>
         </arguments>
       </action>
-    </event>
-    <event eventtype="7" enumb="25">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -161,9 +159,17 @@ if xstart+128 &gt; x &amp;&amp; x &lt; objLevel.player[0].x {
           <argument>
             <kind>1</kind>
             <string>/// Flash
+
 if flash == true {
-    visible = objScreen.flashing_visible;
+
+    if visible == true {
+    
+        visible = false;
+            
+    } else visible = true;
+    
 }
+
 </string>
           </argument>
         </arguments>
