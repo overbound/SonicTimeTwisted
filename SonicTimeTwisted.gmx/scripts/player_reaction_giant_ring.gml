@@ -1,69 +1,68 @@
-// player_reaction_giant_ring(local_id)
-if objProgram.in_past {
-    ds_list_add(objProgram.ring_past_list,argument0.tag)
-    // do we have all the emeralds?
-        if objProgram.special_past_current_level < 7
-        {
-            // go to special stage
-                special_level_go_to();
-                visible = 0;
-                with objTailsEffect instance_destroy();
-                with shield visible = false;
-                state=player_state_standby;
-                xspeed = 0;
-                yspeed = 0;
-                objProgram.temp_spawn_tag = argument0.tag;
-                //objProgram.spawn_tag = 
-                objProgram.temp_spawn_time = objLevel.timer;
-                objProgram.temp_shield = shield_type;
-                
-        }
-        else
-        {
-            player_get_rings(50);
-        }
-    } else {
-    
-        ds_list_add(objProgram.ring_future_list,argument0.tag)
-        
-        if objProgram.special_future_current_level < 7
-        {
-            // go to special stage
-                special_level_go_to();
-                visible = 0;
-                with objTailsEffect instance_destroy();
-                with shield visible = false;
-                state=player_state_standby;
-                xspeed = 0;
-                yspeed = 0;
-                
-                objProgram.temp_spawn_tag = argument0.tag;
-                //objProgram.spawn_tag = 
-                objProgram.temp_spawn_time = objLevel.timer;
-                
-        }
-        else
-        {
-            // collect 50 rings
-            player_get_rings(50);
-            
-            // ring sparkle
-            //part_particles_create(objLevel.particles, argument0.x, argument0.y, objResources.sparkle, 1);
-           
-        }
+/// player_reaction_giant_ring(local_id)
+var local_id = argument0;
+
+var warping = false;
+
+with (objProgram)
+{
+    // remember the origin and find the current special stage number
+    var level_id;
+    if(in_past)
+    {
+        ds_list_add(ring_past_list, local_id.tag);
+        level_id = special_past_current_level;
     }
-// destroy ring
-     with argument0 {
-     
-        reaction_script=noone;
-        sprite_index = sprGiantRingDisapear;
-        image_index=0;
-        image_speed=1.5;
-        
-     }
- // audio
- audio_play_sound(sndEnterSpecialStage,1,false);
-// rumble
+    else
+    {
+        ds_list_add(ring_future_list, local_id.tag);
+        level_id = special_future_current_level;
+    }
+    
+    if (level_id < 7)
+    {
+        // enter next special stage
+        temp_spawn_tag = local_id.tag;
+        temp_spawn_time = objLevel.timer;
+        temp_shield = other.shield_type;
+        var level;
+        if(in_past)
+        {
+            level = ds_list_find_value(special_past_list, level_id);
+        }
+        else
+        {
+            level = ds_list_find_value(special_future_list, level_id);
+        }
+        transition_to(objLevelToSS, level, 20);
+        global.special_level_music_played = false;
+        warping = true;
+    }
+}
+
+if (warping)
+{
+    // dissapear
+    state = player_state_standby;
+    xspeed = 0;
+    yspeed = 0;
+    visible = false;
+    with objTailsEffect instance_destroy();
+    with (shield) visible = false;
+}
+else
+{
+    // gain 50 rings instead
+    player_get_rings(50);
+}
+
+with (local_id)
+{
+    reaction_script = noone;
+    sprite_index = sprGiantRingDisapear;
+    image_index = 0;
+    image_speed = 1.5;
+}
+
+audio_play_sound(sndEnterSpecialStage, 1, false);
 rumble(RUMBLE_EVENT_GIANT_RING);
-// not a hard collision
-return false;
+return false; // 'soft' collision

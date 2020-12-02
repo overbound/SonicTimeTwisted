@@ -3087,7 +3087,6 @@
           <script>scripts\level_goto_tt1p.gml</script>
           <script>scripts\level_goto_vv1.gml</script>
           <script>scripts\level_time_travel.gml</script>
-          <script>scripts\special_level_go_to.gml</script>
         </scripts>
       </scripts>
       <scripts name="Save">
