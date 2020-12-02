@@ -57,7 +57,7 @@ lines[6, 4] = tr('Hinchy');
 lines[6, 5] = tr('Joevan Salmon-Johnson (VectorSatyr)');
 lines[6, 6] = tr('Jonathan Rose (Dimension Warped)');
 lines[6, 7] = tr('Shane (Sparks)');
-lines[6, 8] = tr('"Tommy C"');
+lines[6, 8] = tr('Tommy C');
 
 lines[7, 0] = tr("Additional Programming by");
 lines[7, 1] = tr('Jonathan Rose (Dimension Warped)');
@@ -250,10 +250,6 @@ for(var i = 0; i &lt; array_height_2d(lines); i++)
     {
         flat_credits_content[index] = '';
         index++;
-        /*
-        flat_credits_content[index] = '';
-        index++;
-        */
     }
     else
     {
