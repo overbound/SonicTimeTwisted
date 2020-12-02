@@ -80,17 +80,24 @@ backRightLeg[0]=instance_create(x,y-24,objEggWalkerLeg);
 backRightLeg[1]=instance_create(x-25,y,objEggWalkerLeg);
 backLeftLeg[0]=instance_create(x+50,y-24,objEggWalkerLeg);
 backLeftLeg[1]=instance_create(x+75,y,objEggWalkerLeg);
+
 sensorHandle=instance_create(x,y,objEggWalkerBossSensor);
 if image_xscale==1{
+
 // FRONT RIGHT LEG
+
 with frontRightLeg[0] {
+
 xoffset=-50;
 yoffset=-24;
 image_angle=30;
 sprite_index=sprFrontRightLeg;
 depth=2;
+
 }
+
 with frontRightLeg[1] {
+
 allowStop=true;
 angleOffset=0;
 stop = false;
@@ -99,15 +106,22 @@ yoffset=0;
 image_angle=90;
 sprite_index=sprFrontRightLeg;
 depth=2;
+
 }
+
 // FRONT LEFT LEG
+
 with frontLeftLeg[0] {
+
 xoffset=0;
 yoffset=-24;
 image_angle=330;//330
 sprite_index=sprFrontLeftLeg;
+
 }
+
 with frontLeftLeg[1] {
+
 allowStop=true;
 angleOffset=0;
 stop = false;
@@ -115,16 +129,23 @@ xoffset=25;
 yoffset=0;
 image_angle=270;
 sprite_index=sprFrontLeftLeg;
+
 }
+
 // Back RIGHT LEG
+
 with backRightLeg[0] {
+
 xoffset=0;
 yoffset=-24;
 image_angle=30;
 sprite_index=sprFrontRightLeg;
 depth=2;
+
 }
+
 with backRightLeg[1] {
+
 allowStop=true;
 angleOffset=0;
 stop = false;
@@ -133,15 +154,22 @@ yoffset=0;
 image_angle=90;
 sprite_index=sprBackRightLeg;
 depth=2;
+
 }
+
 // BACK LEFT LEG
+
 with backLeftLeg[0] {
+
 xoffset=50;
 yoffset=-24;
 image_angle=330;
 sprite_index=sprBackLeftLeg;
+
 }
+
 with backLeftLeg[1] {
+
 allowStop=true;
 angleOffset=0;
 stop = false;
@@ -149,19 +177,28 @@ xoffset=75;
 yoffset=0;
 image_angle=270;
 sprite_index=sprBackLeftLeg;
+
 }
+
 }
+
 //FACING LEFT image_index = -1
 else{
+
 // FRONT RIGHT LEG
+
 with frontRightLeg[0] {
+
 xoffset=0;
 yoffset=-24;
 image_angle=30;
 sprite_index=sprFrontRightLeg;
 depth=2;
+
 }
+
 with frontRightLeg[1] {
+
 allowStop=true;
 angleOffset=0;
 stop = false;
@@ -170,15 +207,22 @@ yoffset=0;
 image_angle=90;
 sprite_index=sprBackRightLeg;
 depth=2;
+
 }
+
 // FRONT LEFT LEG
+
 with frontLeftLeg[0] {
+
 xoffset=0;
 yoffset=-24;
 image_angle=330;//330
 sprite_index=sprFrontLeftLeg;
+
 }
+
 with frontLeftLeg[1] {
+
 allowStop=true;
 angleOffset=0;
 stop = false;
@@ -186,16 +230,23 @@ xoffset=25;
 yoffset=0;
 image_angle=270;
 sprite_index=sprFrontLeftLeg;
+
 }
+
 // Back RIGHT LEG
+
 with backRightLeg[0] {
+
 xoffset=0;
 yoffset=-24;
 image_angle=30;
 sprite_index=sprFrontRightLeg;
 depth=2;
+
 }
+
 with backRightLeg[1] {
+
 allowStop=true;
 angleOffset=0;
 stop = false;
@@ -204,15 +255,22 @@ yoffset=0;
 image_angle=90;
 sprite_index=sprBackRightLeg;
 depth=2;
+
 }
+
 // BACK LEFT LEG
+
 with backLeftLeg[0] {
+
 xoffset=50;
 yoffset=-24;
 image_angle=330;
 sprite_index=sprBackLeftLeg;
+
 }
+
 with backLeftLeg[1] {
+
 allowStop=true;
 angleOffset=0;
 stop = false;
@@ -220,7 +278,9 @@ xoffset=75;
 yoffset=0;
 image_angle=270;
 sprite_index=sprBackLeftLeg;
+
 }
+
 }
 </string>
           </argument>
@@ -285,18 +345,24 @@ sprite_index=sprBackLeftLeg;
           <argument>
             <kind>1</kind>
             <string>/// Left Gun
+
 gunHandle[0] = instance_create(x-24,y-64,objEggWalkerGun);
 with gunHandle[0] {
+
     yoffset=-64;
     xoffset=32;
     walkerId= other.id;
+
 }
+
 gunHandle[1] = instance_create(x-64,y-68,objEggWalkerGun);
 with gunHandle[1] {
+
     depth=10;
     yoffset=-68;
     xoffset=-38;
     walkerId= other.id;
+
 }
 </string>
           </argument>
@@ -319,15 +385,21 @@ with gunHandle[1] {
           <argument>
             <kind>1</kind>
             <string>/// Walk Left
+
 // FRONT RIGHT LEG
+
 with frontRightLeg[0] {
+
 xoffset=-50;
 yoffset=-24;
 image_angle=30;
 sprite_index=sprFrontRightLeg;
 depth=2;
+
 }
+
 with frontRightLeg[1] {
+
 allowStop=true;
 angleOffset=0;
 stop = false;
@@ -336,15 +408,22 @@ yoffset=0;
 image_angle=90;
 sprite_index=sprFrontRightLeg;
 depth=2;
+
 }
+
 // FRONT LEFT LEG
+
 with frontLeftLeg[0] {
+
 xoffset=0;
 yoffset=-24;
 image_angle=330;//330
 sprite_index=sprFrontLeftLeg;
+
 }
+
 with frontLeftLeg[1] {
+
 allowStop=true;
 angleOffset=0;
 stop = false;
@@ -352,16 +431,23 @@ xoffset=25;
 yoffset=0;
 image_angle=270;
 sprite_index=sprFrontLeftLeg;
+
 }
+
 // Back RIGHT LEG
+
 with backRightLeg[0] {
+
 xoffset=0;
 yoffset=-24;
 image_angle=30;
 sprite_index=sprFrontRightLeg;
 depth=2;
+
 }
+
 with backRightLeg[1] {
+
 allowStop=true;
 angleOffset=0;
 stop = false;
@@ -370,15 +456,22 @@ yoffset=0;
 image_angle=90;
 sprite_index=sprBackRightLeg;
 depth=2;
+
 }
+
 // BACK LEFT LEG
+
 with backLeftLeg[0] {
+
 xoffset=50;
 yoffset=-24;
 image_angle=330;
 sprite_index=sprBackLeftLeg;
+
 }
+
 with backLeftLeg[1] {
+
 allowStop=true;
 angleOffset=0;
 stop = false;
@@ -386,7 +479,9 @@ xoffset=75;
 yoffset=0;
 image_angle=270;
 sprite_index=sprBackLeftLeg;
+
 }
+
 
 </string>
           </argument>
@@ -451,18 +546,24 @@ sprite_index=sprBackLeftLeg;
           <argument>
             <kind>1</kind>
             <string>/// Right Gun
+
 gunHandle[0] = instance_create(x-24,y-64,objEggWalkerGun);
 with gunHandle[0] {
+
     yoffset=-64;
     xoffset=-32;
     walkerId= other.id;
+
 }
+
 gunHandle[1] = instance_create(x-64,y-68,objEggWalkerGun);
 with gunHandle[1] {
+
     depth=10;
     yoffset=-68;
     xoffset=+38;
     walkerId= other.id;
+
 }
 </string>
           </argument>
@@ -488,15 +589,20 @@ with gunHandle[1] {
 // FRONT RIGHT LEG
 /*
 if image_index == -1*/
+
 with frontRightLeg[0] {
+
 image_xscale=-1;
 xoffset=51;
 yoffset=-24;
 image_angle=330;
 sprite_index=sprFrontRightLeg;
 depth=2;
+
 }
+
 with frontRightLeg[1] {
+
 image_xscale=-1;
 allowStop=true;
 angleOffset=0;
@@ -506,16 +612,23 @@ yoffset=0;
 image_angle=270;
 sprite_index=sprFrontRightLeg;
 depth=2;
+
 }
+
 // FRONT LEFT LEG
+
 with frontLeftLeg[0] {
+
 image_xscale=-1;
 xoffset=0;//-50
 yoffset=-24;//-24
 image_angle=30;//330
 sprite_index=sprFrontLeftLeg;
+
 }
+
 with frontLeftLeg[1] {
+
 image_xscale=-1;
 allowStop=true;
 angleOffset=0;
@@ -524,17 +637,24 @@ xoffset=-25;//-55
 yoffset=0;//0
 image_angle=90;
 sprite_index=sprFrontLeftLeg;
+
 }
+
 // Back RIGHT LEG
+
 with backRightLeg[0] {
+
 image_xscale=-1;
 xoffset=25;
 yoffset=-24;
 image_angle=30;
 sprite_index=sprFrontRightLeg;
 depth=2;
+
 }
+
 with backRightLeg[1] {
+
 image_xscale=-1;
 allowStop=true;
 angleOffset=0;
@@ -544,17 +664,24 @@ yoffset=1;
 image_angle=90;//90
 sprite_index=sprBackRightLeg;
 depth=2;
+
 }
 
+
 // BACK LEFT LEG
+
 with backLeftLeg[0] {
+
 image_xscale=-1;
 xoffset=-50;//0
 yoffset=-24;//-40
 image_angle=30;
 sprite_index=sprBackLeftLeg;
+
 }
+
 with backLeftLeg[1] {
+
 image_xscale=-1;
 allowStop=true;
 angleOffset=0;
@@ -563,7 +690,10 @@ xoffset=-75;//-24
 yoffset=0;//0
 image_angle=270;
 sprite_index=sprBackLeftLeg;
+
 }
+
+
 
 </string>
           </argument>
@@ -632,28 +762,6 @@ timeline_loop = false;
           </argument>
         </arguments>
       </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Initialize flashing
-used_image_speed = 0;
-</string>
-          </argument>
-        </arguments>
-      </action>
     </event>
     <event eventtype="2" enumb="4">
       <action>
@@ -674,7 +782,6 @@ used_image_speed = 0;
             <kind>1</kind>
             <string>image_speed =0;
 image_index=0;
-used_image_speed = 0;
 </string>
           </argument>
         </arguments>
@@ -711,6 +818,7 @@ for(i = 0; i &lt; 2; i+=1){
         laser.image_angle=image_angle;
     }
 }
+
 alarm[1]=400;
 </string>
           </argument>
@@ -736,10 +844,13 @@ alarm[1]=400;
             <kind>1</kind>
             <string>/// Prep Fire
 if destroyed exit;
+
 alarm[2]=150;
 audio_play_sound(sndEggWalkerCharge,2,false);
+
 with objLevel.player[0] {
 if !(camera.left &gt; other.x+128 &amp;&amp; other.image_xscale == 1  &amp;&amp; objEggWalkerBossController.state &gt; 1) &amp;&amp; !(camera.right &lt; other.x-128 &amp;&amp; other.image_xscale == -1 &amp;&amp; objEggWalkerBossController.state &gt; 1 ){
+
 
     for(i = 0; i &lt; 2; i+=1){
     
@@ -747,6 +858,7 @@ if !(camera.left &gt; other.x+128 &amp;&amp; other.image_xscale == 1  &amp;&amp;
     other.gunHandle[i].alarm[0]=165;
     
     }
+
 }
 }
 </string>
@@ -775,6 +887,7 @@ if !(camera.left &gt; other.x+128 &amp;&amp; other.image_xscale == 1  &amp;&amp;
 frontLeftLeg[1].allowStop =true;
 backLeftLeg[1].allowStop = true;
 backRightLeg[1].allowStop = true;
+
 
 </string>
           </argument>
@@ -876,93 +989,140 @@ backRightLeg[1].allowStop = true;
             <kind>1</kind>
             <string>/// Leg Movement Left
 //FRONT RIGHT
+
 with frontRightLeg[0] {
+
     x = other.x + xoffset;
     y = other.y + yoffset;
+
 }
+
 with frontRightLeg[1] {
+
     x = other.x + xoffset;
     y = other.ystart + yoffset;
+
 }
+
 with frontRightLeg[1] {
+
     if stop == false {
         angleOffset = floor(cos(step / other.legFrames) * 35)
         image_angle = 70 + angleOffset; //cos
     }
+
     if image_angle &gt; 100 &amp;&amp; stop == false &amp;&amp; sign(angleOffset) == 1 &amp;&amp; allowStop == true {
+
         image_angle = 101;
         other.xspeed = 0;
         stop = true;
         allowStop = false;
         if objEggWalkerBossController.state == 1 || objEggWalkerBossController.state == 2
             audio_play_sound(sndEggWalkerStomp,1,false);
+
     }
+
 }
+
 // FRONT LEFT
+
 with frontLeftLeg[0] {
+
     x = other.x + xoffset;
     y = other.y + yoffset;
+
 }
+
 with frontLeftLeg[1] {
+
     x = other.x + xoffset;
     y = other.ystart + yoffset;
+
 }
+
 with frontLeftLeg[1] {
+
     if stop == false {
         angleOffset = -floor(cos(step / other.legFrames) * 35); //sin
         image_angle = 290 + angleOffset;
+
     }
+
     if image_angle &lt; 260 &amp;&amp; stop == false &amp;&amp; sign(angleOffset) == -1 &amp;&amp; allowStop == true {
+
         image_angle = 261;
         other.xspeed = 0;
         stop = true;
         allowStop = false;
+
     }
 }
+
 // BACK RIGHT
+
 with backRightLeg[0] {
+
     x = other.x + xoffset;
     y = other.y + yoffset;
 }
 with backRightLeg[1] {
+
     x = other.x + xoffset;
     y = other.ystart + yoffset;
 }
+
 with backRightLeg[1] {
+
     if stop == false {
+
         angleOffset = floor(sin(step / other.legFrames) * 35);
         image_angle = 70 + angleOffset;
     }
+
     if image_angle &gt; 100 &amp;&amp; stop == false &amp;&amp; sign(angleOffset) == 1 &amp;&amp; allowStop == true {
+
         image_angle = 101;
         stop = true;
         other.xspeed = 0;
         allowStop = false;
     }
 }
+
 // BACK LEFT
+
 with backLeftLeg[0] {
+
     x = other.x + xoffset;
     y = other.y + yoffset;
 }
+
 with backLeftLeg[1] {
+
     x = other.x + xoffset;
     y = other.ystart + yoffset;
 }
+
 with backLeftLeg[1] {
+
     if stop == false {
+
         angleOffset = -floor(sin(step / other.legFrames) * 35);
         image_angle = 290 + angleOffset; //sin
+
     }
     if image_angle &lt; 260 &amp;&amp; stop == false &amp;&amp; sign(angleOffset) == -1 &amp;&amp; allowStop == true {
+
         image_angle = 261;
         other.xspeed = 0;
         stop = true;
         allowStop = false;
     }
 }
+
 if frontRightLeg[1].stop == false &amp;&amp; frontLeftLeg[1].stop == false &amp;&amp; backLeftLeg[1].stop == false &amp;&amp; backRightLeg[1].stop == false &amp;&amp; backRightLeg[1].allowStop == false &amp;&amp; alarm[0] == -1 {
+
     alarm[0] = 10;
+
 }
 </string>
           </argument>
@@ -986,12 +1146,17 @@ if frontRightLeg[1].stop == false &amp;&amp; frontLeftLeg[1].stop == false &amp;
             <kind>1</kind>
             <string>/// Gun Movement Left
 
+
+
     for(i = 0; i &lt; 2; i+=1){
     with gunHandle[i] {
+
         x = other.x+xoffset;
         y = other.y+yoffset;
+
         }
     }
+
 </string>
           </argument>
         </arguments>
@@ -1057,20 +1222,30 @@ if frontRightLeg[1].stop == false &amp;&amp; frontLeftLeg[1].stop == false &amp;
             <string>/// Leg Movement Right
 // Leg Movement
 //FRONT RIGHT
+
 with frontRightLeg[0] {
+
     x = other.x + xoffset;
     y = other.y + yoffset;
+
 }
+
 with frontRightLeg[1] {
+
     x = other.x + xoffset;
     y = other.ystart + yoffset;
+
 }
+
 with frontRightLeg[1] {
+
     if stop == false {
         angleOffset = floor(sin(step / other.legFrames) * 35)
         image_angle = 290 + angleOffset; //cos
     }
+
     if image_angle &lt; 260 &amp;&amp; stop == false &amp;&amp; sign(angleOffset) == -1 &amp;&amp; allowStop == true {
+
         image_angle = 261;
         stop = true;
         allowStop = false;
@@ -1079,43 +1254,65 @@ with frontRightLeg[1] {
     }
 }
 
+
 // FRONT LEFT
+
 with frontLeftLeg[0] {
+
     x = other.x + xoffset;
     y = other.y + yoffset;
+
 }
+
 with frontLeftLeg[1] {
+
     x = other.x + xoffset;
     y = other.ystart + yoffset;
+
 }
+
 with frontLeftLeg[1] {
+
     if stop == false {
         angleOffset = -floor(sin(step / other.legFrames) * 35); 
         image_angle = 70 + angleOffset;//290
+
     }
+
     if image_angle &gt; 100 &amp;&amp; stop == false &amp;&amp; sign(angleOffset) == 1 &amp;&amp; allowStop == true {
+
         image_angle = 101;
         other.xspeed = 0;
         stop = true;
         allowStop = false;
+
     }
 }
 
+
 // BACK RIGHT
+
 with backRightLeg[0] {
+
     x = other.x + xoffset;
     y = other.y + yoffset;
 }
 with backRightLeg[1] {
+
     x = other.x + xoffset;
     y = other.ystart + yoffset;
 }
+
 with backRightLeg[1] {
+
     if stop == false {
+
         angleOffset = floor(cos(step / other.legFrames) * 35); //cos
         image_angle = 290 + angleOffset;//70
     }
+
     if image_angle &lt; 260 &amp;&amp; stop == false &amp;&amp; sign(angleOffset) == -1 &amp;&amp; allowStop == true {//100
+
         image_angle = 261;//101
         stop = true;
         other.xspeed = 0;
@@ -1123,30 +1320,43 @@ with backRightLeg[1] {
     }
 }
 
+
 // BACK LEFT
+
 with backLeftLeg[0] {
+
     x = other.x + xoffset;
     y = other.y + yoffset;
 }
+
 with backLeftLeg[1] {
+
     x = other.x + xoffset;
     y = other.ystart + yoffset;
 }
 
+
 with backLeftLeg[1] {
+
     if stop == false {
+
         angleOffset = -floor(cos(step / other.legFrames) * 35);
         image_angle = 70 + angleOffset; //290
+
     }
     if image_angle &gt; 100 &amp;&amp; stop == false &amp;&amp; sign(angleOffset) == 1 &amp;&amp; allowStop == true {
+
         image_angle = 101;
         other.xspeed = 0;
         stop = true;
         allowStop = false;
     }
 }
+
 if frontRightLeg[1].stop == false &amp;&amp; frontLeftLeg[1].stop == false &amp;&amp; backLeftLeg[1].stop == false &amp;&amp; backRightLeg[1].stop == false &amp;&amp; backRightLeg[1].allowStop == false &amp;&amp; alarm[0] == -1 {
+
     alarm[0] = 10;
+
 }
 </string>
           </argument>
@@ -1170,12 +1380,17 @@ if frontRightLeg[1].stop == false &amp;&amp; frontLeftLeg[1].stop == false &amp;
             <kind>1</kind>
             <string>/// Gun Movement Right
 
+
+
     for(i = 0; i &lt; 2; i+=1){
     with gunHandle[i] {
+
         x = other.x+xoffset;
         y = other.y+yoffset;
+
         }
     }
+
 </string>
           </argument>
         </arguments>
@@ -1226,6 +1441,7 @@ if frontRightLeg[1].stop == false &amp;&amp; frontLeftLeg[1].stop == false &amp;
             <kind>1</kind>
             <string>/// Egg Movement
 x+=xspeed;
+
 //bounce in his step
 if !destroyed 
     y=ystart-floor(cos(objScreen.image_index/(legFrames*.5))*1.025);
@@ -1262,6 +1478,7 @@ if !destroyed
             y=other.y-160;
         
         } 
+
        /* with objLevel.player[0] {
         
            // camera.right = room_width;
@@ -1274,6 +1491,7 @@ if !destroyed
         timeline_running = false;
         timeline_loop = false;
 
+
     }/* else {
         
             frontRightLeg[0].stop = true;
@@ -1285,6 +1503,7 @@ if !destroyed
             backLeftLeg[0].stop = true;
             backLeftLeg[1].stop = true;
         }*/
+
 </string>
           </argument>
         </arguments>
@@ -1306,6 +1525,7 @@ if !destroyed
           <argument>
             <kind>1</kind>
             <string>/// Sensors
+
 if image_xscale == -1
     with sensorHandle {
     
@@ -1344,21 +1564,30 @@ else
             <kind>1</kind>
             <string>/// turn if off screen
 
+
 if destroyed exit;
+
 var offset = 128;
+
 with objLevel.player[0] {
 if camera.left &gt; other.x+128 &amp;&amp; other.image_xscale == 1  &amp;&amp; objEggWalkerBossController.state &gt; 1{
+
 with other {
+
         image_xscale = -1;
         event_perform(ev_other,ev_user0);
         
     }
+
 }else if camera.right &lt; other.x-128 &amp;&amp; other.image_xscale == -1 &amp;&amp; objEggWalkerBossController.state &gt; 1 {
+
 with other {
+
         image_xscale = 1;
         event_perform(ev_other,ev_user0);
         
     }
+
 }
 }
 </string>
@@ -1367,91 +1596,6 @@ with other {
       </action>
     </event>
     <event eventtype="7" enumb="25">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>image_index += used_image_speed;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="7" enumb="24">
-      <action>
-        <libid>1</libid>
-        <id>605</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>0</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>This used to be event 15, sans the intentionally faulty IF. TODO: see whether it is still necessary, delete if it isn't.</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>612</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>-1</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_if_variable</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>0</kind>
-            <string>false</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>true</string>
-          </argument>
-          <argument>
-            <kind>4</kind>
-            <string>0</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>422</id>
-        <kind>1</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>0</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-      </action>
       <action>
         <libid>1</libid>
         <id>612</id>
@@ -1511,15 +1655,21 @@ with other {
           <argument>
             <kind>1</kind>
             <string>/// Walk Left
+
 // FRONT RIGHT LEG
+
 with frontRightLeg[0] {
+
 xoffset=-50;
 yoffset=-24;
 image_angle=30;
 sprite_index=sprFrontRightLeg;
 depth=2;
+
 }
+
 with frontRightLeg[1] {
+
 allowStop=true;
 angleOffset=0;
 stop = false;
@@ -1528,15 +1678,22 @@ yoffset=0;
 image_angle=90;
 sprite_index=sprFrontRightLeg;
 depth=2;
+
 }
+
 // FRONT LEFT LEG
+
 with frontLeftLeg[0] {
+
 xoffset=0;
 yoffset=-24;
 image_angle=330;//330
 sprite_index=sprFrontLeftLeg;
+
 }
+
 with frontLeftLeg[1] {
+
 allowStop=true;
 angleOffset=0;
 stop = false;
@@ -1544,16 +1701,23 @@ xoffset=25;
 yoffset=0;
 image_angle=270;
 sprite_index=sprFrontLeftLeg;
+
 }
+
 // Back RIGHT LEG
+
 with backRightLeg[0] {
+
 xoffset=0;
 yoffset=-24;
 image_angle=30;
 sprite_index=sprFrontRightLeg;
 depth=2;
+
 }
+
 with backRightLeg[1] {
+
 allowStop=true;
 angleOffset=0;
 stop = false;
@@ -1562,15 +1726,22 @@ yoffset=0;
 image_angle=90;
 sprite_index=sprBackRightLeg;
 depth=2;
+
 }
+
 // BACK LEFT LEG
+
 with backLeftLeg[0] {
+
 xoffset=50;
 yoffset=-24;
 image_angle=330;
 sprite_index=sprBackLeftLeg;
+
 }
+
 with backLeftLeg[1] {
+
 allowStop=true;
 angleOffset=0;
 stop = false;
@@ -1578,7 +1749,9 @@ xoffset=75;
 yoffset=0;
 image_angle=270;
 sprite_index=sprBackLeftLeg;
+
 }
+
 
 </string>
           </argument>
@@ -1646,15 +1819,20 @@ sprite_index=sprBackLeftLeg;
 // FRONT RIGHT LEG
 /*
 if image_index == -1*/
+
 with frontRightLeg[0] {
+
 image_xscale=-1;
 xoffset=51;
 yoffset=-24;
 image_angle=330;
 sprite_index=sprFrontRightLeg;
 depth=2;
+
 }
+
 with frontRightLeg[1] {
+
 image_xscale=-1;
 allowStop=true;
 angleOffset=0;
@@ -1664,16 +1842,23 @@ yoffset=0;
 image_angle=270;
 sprite_index=sprFrontRightLeg;
 depth=2;
+
 }
+
 // FRONT LEFT LEG
+
 with frontLeftLeg[0] {
+
 image_xscale=-1;
 xoffset=0;//-50
 yoffset=-24;//-24
 image_angle=30;//330
 sprite_index=sprFrontLeftLeg;
+
 }
+
 with frontLeftLeg[1] {
+
 image_xscale=-1;
 allowStop=true;
 angleOffset=0;
@@ -1682,17 +1867,24 @@ xoffset=-25;//-55
 yoffset=0;//0
 image_angle=90;
 sprite_index=sprFrontLeftLeg;
+
 }
+
 // Back RIGHT LEG
+
 with backRightLeg[0] {
+
 image_xscale=-1;
 xoffset=25;
 yoffset=-24;
 image_angle=30;
 sprite_index=sprFrontRightLeg;
 depth=2;
+
 }
+
 with backRightLeg[1] {
+
 image_xscale=-1;
 allowStop=true;
 angleOffset=0;
@@ -1702,17 +1894,24 @@ yoffset=1;
 image_angle=90;//90
 sprite_index=sprBackRightLeg;
 depth=2;
+
 }
 
+
 // BACK LEFT LEG
+
 with backLeftLeg[0] {
+
 image_xscale=-1;
 xoffset=-50;//0
 yoffset=-24;//-40
 image_angle=30;
 sprite_index=sprBackLeftLeg;
+
 }
+
 with backLeftLeg[1] {
+
 image_xscale=-1;
 allowStop=true;
 angleOffset=0;
@@ -1721,25 +1920,14 @@ xoffset=-75;//-24
 yoffset=0;//0
 image_angle=270;
 sprite_index=sprBackLeftLeg;
+
 }
+
+
 
 </string>
           </argument>
         </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>424</id>
-        <kind>2</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>0</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
       </action>
       <action>
         <libid>1</libid>
@@ -1774,10 +1962,12 @@ sprite_index=sprBackLeftLeg;
           <argument>
             <kind>1</kind>
             <string>/// reset walk timeline
+
 timeline_index = timeEggWalkerStartWalk
 timeline_position = 0;
 timeline_running = true;
 timeline_loop = false;
+
 
 </string>
           </argument>
@@ -1801,7 +1991,9 @@ timeline_loop = false;
             <kind>1</kind>
             <string>/// reset sensor
 with sensorHandle {
+
     image_xscale*=-1;
+
 }
 </string>
           </argument>
@@ -1866,16 +2058,22 @@ with sensorHandle {
           <argument>
             <kind>1</kind>
             <string>/// Right Gun
+
 with gunHandle[0] {
+
     yoffset=-64;
     xoffset=-32;
     walkerId= other.id;
+
 }
+
 with gunHandle[1] {
+
     depth=10;
     yoffset=-68;
     xoffset=+38;
     walkerId= other.id;
+
 }
 </string>
           </argument>
@@ -1900,7 +2098,9 @@ with gunHandle[1] {
             <string>/// Walk Right
 // FRONT RIGHT LEG
 
+
 with frontRightLeg[0] {
+
 step=0;
 image_xscale*=-1;
 xoffset=51;
@@ -1909,8 +2109,11 @@ image_angle=330;
 sprite_index=sprFrontRightLeg;
 depth=2;
 
+
 }
+
 with frontRightLeg[1] {
+
 step=0;
 image_xscale*=-1;
 allowStop=true;
@@ -1921,17 +2124,24 @@ yoffset=0;
 image_angle=270;
 sprite_index=sprFrontRightLeg;
 depth=2;
+
 }
+
 // FRONT LEFT LEG
+
 with frontLeftLeg[0] {
+
 step=0;
 image_xscale*=-1;
 xoffset=0;//-50
 yoffset=-24;//-24
 image_angle=30;//330
 sprite_index=sprFrontLeftLeg;
+
 }
+
 with frontLeftLeg[1] {
+
 step=0;
 image_xscale*=-1;
 allowStop=true;
@@ -1941,9 +2151,13 @@ xoffset=-25;//-55
 yoffset=0;//0
 image_angle=90;
 sprite_index=sprFrontLeftLeg;
+
 }
+
 // Back RIGHT LEG
+
 with backRightLeg[0] {
+
 step=0;
 image_xscale*=-1;
 xoffset=25;
@@ -1951,8 +2165,11 @@ yoffset=-24;
 image_angle=30;
 sprite_index=sprFrontRightLeg;
 depth=2;
+
 }
+
 with backRightLeg[1] {
+
 step=0;
 image_xscale*=-1;
 allowStop=true;
@@ -1963,18 +2180,25 @@ yoffset=1;
 image_angle=90;//90
 sprite_index=sprBackRightLeg;
 depth=2;
+
 }
 
+
 // BACK LEFT LEG
+
 with backLeftLeg[0] {
+
 step=0;
 image_xscale*=-1;
 xoffset=-50;//0
 yoffset=-24;//-40
 image_angle=30;
 sprite_index=sprBackLeftLeg;
+
 }
+
 with backLeftLeg[1] {
+
 step=0;
 image_xscale*=-1;
 allowStop=true;
@@ -1984,7 +2208,10 @@ xoffset=-75;//-24
 yoffset=0;//0
 image_angle=270;
 sprite_index=sprBackLeftLeg;
+
 }
+
+
 
 </string>
           </argument>
@@ -2050,17 +2277,23 @@ sprite_index=sprBackLeftLeg;
             <kind>1</kind>
             <string>/// Left Gun
 alarm[1]=80;
+
 with gunHandle[0] {
+
     yoffset=-64;
     xoffset=32;
     walkerId= other.id;
+
 }
 
+
 with gunHandle[1] {
+
     depth=10;
     yoffset=-68;
     xoffset=-38;
     walkerId= other.id;
+
 }
 </string>
           </argument>
@@ -2084,16 +2317,22 @@ with gunHandle[1] {
             <kind>1</kind>
             <string>/// Walk Left
 /// Walk Left
+
 // FRONT RIGHT LEG
+
 with frontRightLeg[0] {
+
 xoffset=-50;
 yoffset=-24;
 image_angle=30;
 sprite_index=sprFrontRightLeg;
 depth=2;
 image_xscale*=-1;
+
 }
+
 with frontRightLeg[1] {
+
 allowStop=true;
 angleOffset=0;
 stop = false;
@@ -2103,16 +2342,23 @@ image_angle=90;
 image_xscale*=-1;
 sprite_index=sprFrontRightLeg;
 depth=2;
+
 }
+
 // FRONT LEFT LEG
+
 with frontLeftLeg[0] {
+
 xoffset=0;
 yoffset=-24;
 image_angle=330;//330
 sprite_index=sprFrontLeftLeg;
 image_xscale*=-1;
+
 }
+
 with frontLeftLeg[1] {
+
 allowStop=true;
 angleOffset=0;
 stop = false;
@@ -2121,17 +2367,24 @@ yoffset=0;
 image_angle=270;
 sprite_index=sprFrontLeftLeg;
 image_xscale*=-1;
+
 }
+
 // Back RIGHT LEG
+
 with backRightLeg[0] {
+
 xoffset=0;
 yoffset=-24;
 image_angle=30;
 sprite_index=sprFrontRightLeg;
 depth=2;
 image_xscale*=-1;
+
 }
+
 with backRightLeg[1] {
+
 allowStop=true;
 angleOffset=0;
 stop = false;
@@ -2141,16 +2394,23 @@ image_angle=90;
 sprite_index=sprBackRightLeg;
 depth=2;
 image_xscale*=-1;
+
 }
+
 // BACK LEFT LEG
+
 with backLeftLeg[0] {
+
 xoffset=50;
 yoffset=-24;
 image_angle=330;
 sprite_index=sprBackLeftLeg;
 image_xscale*=-1;
+
 }
+
 with backLeftLeg[1] {
+
 allowStop=true;
 angleOffset=0;
 stop = false;
@@ -2159,7 +2419,9 @@ yoffset=0;
 image_angle=270;
 sprite_index=sprBackLeftLeg;
 image_xscale*=-1;
+
 }
+
 
 </string>
           </argument>

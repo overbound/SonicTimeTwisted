@@ -65,31 +65,9 @@ image_alpha = .5;
           <argument>
             <kind>1</kind>
             <string>if objScreen mod 2 exit;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="7" enumb="25">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if objScreen.flashing_visible
-    image_alpha = 1;
-    else image_alpha = 0.5;
+if image_alpha = 1
+    image_alpha = 0.5;
+    else image_alpha = 1;
 </string>
           </argument>
         </arguments>
