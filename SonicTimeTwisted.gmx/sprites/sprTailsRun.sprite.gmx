@@ -2,7 +2,7 @@
 <sprite>
   <type>0</type>
   <xorig>22</xorig>
-  <yorigin>18</yorigin>
+  <yorigin>19</yorigin>
   <colkind>1</colkind>
   <coltolerance>0</coltolerance>
   <sepmasks>0</sepmasks>
@@ -34,6 +34,5 @@
     <frame index="3">images\sprTailsRun_3.png</frame>
     <frame index="4">images\sprTailsRun_4.png</frame>
     <frame index="5">images\sprTailsRun_5.png</frame>
-    <frame index="6">images\sprTailsRun_6.png</frame>
   </frames>
 </sprite>
