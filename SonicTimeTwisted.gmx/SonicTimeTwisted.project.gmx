@@ -3725,7 +3725,6 @@
       <objects name="PP2">
         <object>objects\objBossPlatform</object>
         <object>objects\objGalanik</object>
-        <object>objects\objGalanikEyeShine</object>
         <object>objects\objGalanikFireball</object>
         <object>objects\objGalanikNose</object>
         <object>objects\objGalanikSmall</object>
