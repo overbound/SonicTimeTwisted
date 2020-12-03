@@ -129,9 +129,7 @@ harmSensor[1] = instance_create(x,y-harmfulOffset,objMetallixPlatformHarmful);
           <argument>
             <kind>1</kind>
             <string>if alarm[0] {
-    if visible 
-        visible = false;
-        else visible = true;
+    visible = !visible;
 } else visible = true;
 </string>
           </argument>

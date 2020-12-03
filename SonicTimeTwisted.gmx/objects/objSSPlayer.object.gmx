@@ -123,9 +123,7 @@ switch objGameData.character_id[0] {
 if invincible &gt; 0 {
 invincible -=1
 
-if visible == 1 
-    visible = false;
-else visible = 1;
+visible = !visible;
 
 }
 else visible = true;

@@ -134,13 +134,7 @@ flash = false;
           <argument>
             <kind>1</kind>
             <string>if flash {
-
-    if visible == true {
-    
-        visible = false;
-        
-    } else visible = true;
-
+    visible = !visible;
 }
 </string>
           </argument>

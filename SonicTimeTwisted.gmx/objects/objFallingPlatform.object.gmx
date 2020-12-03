@@ -406,18 +406,12 @@
             <string>//appear!
 
 if appear &gt; 0 &amp;&amp; appear &lt; 40 {
-
-    if visible == true {
-    
-        visible = false
-    
-    }else visible = true;
-
+    visible = !visible;
     appear +=1;
-}else {
-            appear = 0;
-            visible = true;
-        }
+} else {
+    appear = 0;
+    visible = true;
+}
 </string>
           </argument>
         </arguments>

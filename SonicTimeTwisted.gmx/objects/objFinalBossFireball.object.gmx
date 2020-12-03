@@ -144,9 +144,7 @@ case 0:
 
     }
 
-    if visible == true
-    visible = false;
-    else visible = true;
+    visible = !visible;
 
 break;
 
@@ -161,9 +159,7 @@ case 1:
             image_xscale+=.025;
             image_yscale+=.025;
         
-            if visible == true
-                visible = false;
-            else visible = true;
+            visible = !visible;
         }
         
 break;

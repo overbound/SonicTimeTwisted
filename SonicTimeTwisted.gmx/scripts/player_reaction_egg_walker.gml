@@ -18,7 +18,7 @@ with argument0 {
     }
 }
 with argument0 {
-    used_image_speed = .5;
+    image_speed = .5;
     alarm[4]=60;
 }
 // hard collision found

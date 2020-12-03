@@ -179,12 +179,7 @@ else image_index = 2;
           <argument>
             <kind>1</kind>
             <string>if invulnerable &amp;&amp; life &gt; 0 {
-
-    if visible==true 
-        visible = false;
-        else
-            visible = true;
-
+    visible = !visible;
 }
 
 x=xstart+cos(objScreen.image_index/128)*16; 

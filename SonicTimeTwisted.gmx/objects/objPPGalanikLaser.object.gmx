@@ -275,9 +275,7 @@ if state &lt; 2
             <kind>1</kind>
             <string>/// Flash Visiblity
 if state &lt; 1000
-    if visible 
-        visible = false;
-        else visible = true;
+    visible = !visible;
 </string>
           </argument>
         </arguments>

@@ -438,9 +438,7 @@ case 3: // apply scores
             <string>/// Flash if about to disapear
 if alarm[3] &gt; 0
     if objScreen.image_index mod 2 {
-        if visible visible = false;
-            else visible = true;
-    
+        visible = !visible;
     }
 </string>
           </argument>

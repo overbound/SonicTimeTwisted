@@ -252,8 +252,6 @@ alarm[1] = 20;
             <string>///
 
 if active &lt; 2 &amp;&amp; active != 0{
-
-
     y+=random(2)-1;
     x+=random(2)-1;
     
@@ -265,10 +263,8 @@ if active &lt; 2 &amp;&amp; active != 0{
 
         
     if flash == true{
-        if visible == 1
-        visible = 0;
-        else visible = 1;
-        }
+        visible = !visible;
+    }
 }
 </string>
           </argument>

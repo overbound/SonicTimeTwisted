@@ -160,14 +160,8 @@ if xstart+128 &gt; x &amp;&amp; x &lt; objLevel.player[0].x {
             <kind>1</kind>
             <string>/// Flash
 
-if flash == true {
-
-    if visible == true {
-    
-        visible = false;
-            
-    } else visible = true;
-    
+if flash {
+    visible = !visible;
 }
 
 </string>

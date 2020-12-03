@@ -67,9 +67,7 @@ if objProgram.in_past == false {
           <argument>
             <kind>1</kind>
             <string>if objProgram.in_past == false {
-    if visible == true
-        visible = false;
-    else visible = true;
+    visible = !visible;
 }
 </string>
           </argument>

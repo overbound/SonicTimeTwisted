@@ -73,9 +73,7 @@ audio = audio_emitter_create();
           <argument>
             <kind>1</kind>
             <string>/// Visibility Shield    
-if shieldVisible == true {
-    shieldVisible = false;
-} else shieldVisible = true;
+shieldVisible = !shieldVisible;
 </string>
           </argument>
         </arguments>

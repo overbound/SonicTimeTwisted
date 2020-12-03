@@ -275,7 +275,6 @@ for (var i = 0; i &lt; 2; i += 1)
             <string>/// manage flashing
 flashing_visible = !flashing_visible;
 frame_counter = (frame_counter + 1) mod 4;
-with (all) event_user(15); // toggle "flashing event" in all objects that have it.
 </string>
           </argument>
         </arguments>

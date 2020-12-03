@@ -86,12 +86,7 @@ y = parentId.y+yoffset;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-    if visible == true {
-    
-        visible = false;
-        
-    } else visible = true;
+            <string>visible = !visible;
 
 </string>
           </argument>

@@ -115,11 +115,7 @@ z +=zspeed;
 timer-=1;
 
 if timer &lt; 60 {
-
-    if visible == true
-        visible = false;
-        else
-            visible = true;
+    visible = !visible;
 }
 
 if timer &lt;= 0 {
