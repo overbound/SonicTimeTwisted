@@ -3918,7 +3918,6 @@
         </scripts>
         <scripts name="Other">
           <script>scripts\d3d_point_direction.gml</script>
-          <script>scripts\special_level_go_to_from_level_select.gml</script>
           <script>scripts\special_level_go_to_score.gml</script>
           <script>scripts\ssplayer_hit.gml</script>
         </scripts>
