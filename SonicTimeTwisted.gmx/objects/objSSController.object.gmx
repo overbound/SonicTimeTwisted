@@ -252,6 +252,7 @@ timeline_running=true;
     
         with objSSMetalCut instance_destroy();
         with objSSRobotnik instance_destroy();
+        with objMetalSonicVoice instance_destroy();
         
         
         with objSSBack {

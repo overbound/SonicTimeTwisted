@@ -1807,6 +1807,7 @@
           <sprite>sprites\sprMetalNoHarmVoice</sprite>
           <sprite>sprites\sprMetalStopVoice</sprite>
           <sprite>sprites\sprMetalTheCreatorVoice</sprite>
+          <sprite>sprites\sprMetalVoice</sprite>
         </sprites>
         <sprites name="Special Stage">
           <sprite>sprites\sprIdleRotate</sprite>
@@ -4307,6 +4308,7 @@
         <object>objects\objFlower</object>
         <object>objects\objFlowerSpark</object>
         <object>objects\objScorePopup</object>
+        <object>objects\objMetalSonicVoice</object>
       </objects>
       <objects name="Particles">
         <object>objects\objExplosionCluster</object>
