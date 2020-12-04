@@ -1802,11 +1802,7 @@
       </sprites>
       <sprites name="Metal Sonic">
         <sprites name="Cutscenes">
-          <sprite>sprites\sprMetalCreatorVoice</sprite>
           <sprite>sprites\sprMetalDamage</sprite>
-          <sprite>sprites\sprMetalNoHarmVoice</sprite>
-          <sprite>sprites\sprMetalStopVoice</sprite>
-          <sprite>sprites\sprMetalTheCreatorVoice</sprite>
           <sprite>sprites\sprMetalVoice</sprite>
         </sprites>
         <sprites name="Special Stage">
