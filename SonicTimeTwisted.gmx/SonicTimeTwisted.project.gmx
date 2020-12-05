@@ -11,7 +11,7 @@
     <Config>Configs\Linux</Config>
     <Config>Configs\PlayStation</Config>
   </Configs>
-  <datafiles number="75" name="datafiles">
+  <datafiles number="77" name="datafiles">
     <datafile>
       <name>translations.txt</name>
       <exists>-1</exists>
@@ -53,7 +53,7 @@
       </ConfigOptions>
       <filename>translations.txt</filename>
     </datafile>
-    <datafiles number="75" name="translations">
+    <datafiles number="77" name="translations">
       <datafile>
         <name>German.json</name>
         <exists>-1</exists>
@@ -177,7 +177,7 @@
         </ConfigOptions>
         <filename>Russian.json</filename>
       </datafile>
-      <datafiles number="75" name="Russian">
+      <datafiles number="77" name="Russian">
         <datafile>
           <name>sprFontHud.png</name>
           <exists>-1</exists>
@@ -465,8 +465,90 @@
           </ConfigOptions>
           <filename>sprFontMicro.png</filename>
         </datafile>
+        <datafile>
+          <name>sprFuturePost.png</name>
+          <exists>-1</exists>
+          <size>1445</size>
+          <exportAction>2</exportAction>
+          <exportDir></exportDir>
+          <overwrite>0</overwrite>
+          <freeData>-1</freeData>
+          <removeEnd>0</removeEnd>
+          <store>0</store>
+          <ConfigOptions>
+            <Config name="Default">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="Windows">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="AndroidSmartphone">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="AndroidConsole">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="MacOS">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="iPhone">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="AppleTV">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="Linux">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="PlayStation">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+          </ConfigOptions>
+          <filename>sprFuturePost.png</filename>
+        </datafile>
+        <datafile>
+          <name>sprPastPost.png</name>
+          <exists>-1</exists>
+          <size>1445</size>
+          <exportAction>2</exportAction>
+          <exportDir></exportDir>
+          <overwrite>0</overwrite>
+          <freeData>-1</freeData>
+          <removeEnd>0</removeEnd>
+          <store>0</store>
+          <ConfigOptions>
+            <Config name="Default">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="Windows">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="AndroidSmartphone">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="AndroidConsole">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="MacOS">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="iPhone">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="AppleTV">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="Linux">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="PlayStation">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+          </ConfigOptions>
+          <filename>sprPastPost.png</filename>
+        </datafile>
       </datafiles>
-      <datafiles number="75" name="German">
+      <datafiles number="77" name="German">
         <datafile>
           <name>sprFontLives.png</name>
           <exists>-1</exists>
@@ -796,7 +878,7 @@
         </ConfigOptions>
         <filename>BrazilianPortuguese.json</filename>
       </datafile>
-      <datafiles number="75" name="BrazilianPortuguese">
+      <datafiles number="77" name="BrazilianPortuguese">
         <datafile>
           <name>sprFontHud.png</name>
           <exists>-1</exists>
@@ -1086,8 +1168,8 @@
         </datafile>
       </datafiles>
     </datafiles>
-    <datafiles number="75" name="android">
-      <datafiles number="75" name="gamepad">
+    <datafiles number="77" name="android">
+      <datafiles number="77" name="gamepad">
         <datafile>
           <name>045e_02fd_xbox_wireless_controller.csv</name>
           <exists>-1</exists>
@@ -3402,6 +3484,7 @@
         </scripts>
         <scripts name="Pausing">
           <script>scripts\game_pause.gml</script>
+          <script>scripts\game_unpause_events.gml</script>
         </scripts>
         <scripts name="Startup">
           <script>scripts\show_startup_window.gml</script>
@@ -3467,6 +3550,9 @@
         <script>scripts\tr_free.gml</script>
         <script>scripts\tr_get_real_prop.gml</script>
         <script>scripts\tr_format.gml</script>
+        <script>scripts\tr_load_localized_sprites.gml</script>
+        <script>scripts\tr_load_localized_sprite.gml</script>
+        <script>scripts\tr_load_assets.gml</script>
       </scripts>
     </scripts>
     <scripts name="Overlays">

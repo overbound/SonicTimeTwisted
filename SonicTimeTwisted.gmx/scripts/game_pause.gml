@@ -5,6 +5,7 @@ if not argument0
 {
     instance_activate_object(objSceneObject);
     audio_resume_all();
+    game_unpause_events();
 }
 else
 {

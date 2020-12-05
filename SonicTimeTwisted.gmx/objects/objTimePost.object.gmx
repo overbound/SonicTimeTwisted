@@ -135,9 +135,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if objProgram.in_past == true {
-    sprite_index = sprFuturePost;
-}
+            <string>/// Setting the sprite using the dedicated event
+event_user(0);
 </string>
           </argument>
         </arguments>
@@ -245,6 +244,50 @@ with player_id
         // running
         player_is_jumping();
         exit;
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="10">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Setting the sprite, depends on the time period and the locale
+// Call this when a room loads or when the current language changes
+if objProgram.in_past == true {
+    if(sprite_exists(objResources.timePostFutureSprite))
+    {
+        sprite_index = objResources.timePostFutureSprite;
+    }
+    else
+    {
+        sprite_index = sprFuturePost;
+    }
+}
+else {
+    if(sprite_exists(objResources.timePostPastSprite))
+    {
+        sprite_index = objResources.timePostPastSprite;
+    }
+    else
+    {
+        sprite_index = sprPastPost;
     }
 }
 </string>
