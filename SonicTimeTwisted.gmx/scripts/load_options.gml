@@ -28,6 +28,15 @@ if (stt_file_exists(file)) {
         else
             input_rumble_trigger_script = input_method_dummy_script;
     }
+    
+    with (objMusic)
+    {
+        sfxGain = ini_read_real('sound_settings', "sfx_volume", 100);
+        bgmGain = ini_read_real('sound_settings', "bgm_volume", 100);
+        masterGain = ini_read_real('sound_settings', "master_volume", 75);
+        event_user(0);
+    }
+    
     global.TR_lang = ini_read_string('localization', "language", "en");
     if (!ds_map_exists(global.TR_map, global.TR_lang)) global.TR_lang = "en";
     stt_ini_close();

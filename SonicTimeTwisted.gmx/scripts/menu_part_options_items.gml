@@ -43,6 +43,7 @@ if (menu_type == 0)
     menu_fn_add_option(tr("_options_menu_WaD"), 7);
 }
 menu_fn_add_option(tr("_options_menu_Localization"), 10);
+menu_fn_add_option("Sound Settings", 11);
 menu_fn_add_option(tr("_options_menu_Back"), 4);
 
 button_width = 300;

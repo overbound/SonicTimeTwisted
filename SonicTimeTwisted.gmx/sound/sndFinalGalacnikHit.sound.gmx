@@ -62,8 +62,8 @@
   </bitDepths>
   <preload>-1</preload>
   <data>sndFinalGalacnikHit.mp3</data>
-  <compressed>0</compressed>
+  <compressed>1</compressed>
   <streamed>0</streamed>
   <uncompressOnLoad>0</uncompressOnLoad>
-  <audioGroup>0</audioGroup>
+  <audioGroup>1</audioGroup>
 </sound>

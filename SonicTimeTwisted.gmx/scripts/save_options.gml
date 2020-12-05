@@ -32,6 +32,12 @@ if(instance_exists(objProgram.inputManager))
     ini_write_real('smartphone', 'haptics_duration', objProgram.inputManager.haptics_duration);
     ini_write_real('smartphone', 'rumble_strength', objProgram.inputManager.rumble_strength);
 }
+if (instance_exists(objMusic))
+{
+    ini_write_real('sound_settings', "sfx_volume", objMusic.sfxGain);
+    ini_write_real('sound_settings', "bgm_volume", objMusic.bgmGain);
+    ini_write_real('sound_settings', "master_volume", objMusic.masterGain);
+}
 ini_write_string('localization', "language", global.TR_lang);
 stt_ini_close();
 stt_save_files();
