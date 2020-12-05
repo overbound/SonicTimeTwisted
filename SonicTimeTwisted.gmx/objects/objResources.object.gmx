@@ -39,6 +39,11 @@ fontMicro = font_add_sprite(sprFontMicro, 32, 0, 0);
 fontTitleLarge = font_add_sprite(sprFontTitleLarge, 48, 1, 0);
 fontTitleSmall = font_add_sprite(sprFontTitleSmall, 65, 1, 0);
 fontTitleSmallest = font_add_sprite(sprFontTitleSmallest, 48, 1, 0);
+
+// These change 
+timePostPastSprite = -1;
+timePostFutureSprite = -1;
+
 // water splash
 splash = part_type_create();
 part_type_sprite(splash, sprSplash, 1, 1, 0);
@@ -249,7 +254,7 @@ ds_map_add(anim_sonic_super, "stand_rotate", animeSuperSonicStandRotate);
             <string>///Load custom translation files.
 
 if (objProgram.first_run) tr_set_default_lang();
-tr_load_fonts(); // this will replace fonts with translated ones only if translated variant exists.
+tr_load_assets(); // this will replace fonts with translated ones only if translated variant exists.
 </string>
           </argument>
         </arguments>

@@ -10,5 +10,5 @@ for (var i = 0; i < 7; i++)
         sprite_delete(global.TR_sprarr[i]);
     }
 }
-
+tr_free_localized_sprites();
 global.TR_sprarr = 0;
