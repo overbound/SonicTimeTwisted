@@ -1,7 +1,9 @@
-// argument0 - text
-// argument1 - current value
-// argument2 - minimum value
-// argument3 - maximum value
+/// menu_fn_open_slider_window(sliderIndex, text, currentValue, min, max)
+// argument0 - slider index (allows having mutiple sliders per page)
+// argument1 - text
+// argument2 - current value
+// argument3 - minimum value
+// argument4 - maximum value
 confirmation_index = argument0;
 confirmation_text = argument1;
 confirmation_cursor = argument2;
