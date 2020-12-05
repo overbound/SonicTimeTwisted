@@ -90,6 +90,8 @@
 		"_options_menu_InputLabel_Keyboard": "Keyboard",
 		"_options_menu_InputLabel_BTUSB_device": "BT/USB device",
 		
+		"_options_menu_keymap_press": "Press \"%0\"",
+		
 		"_buttonname_Up": "Up",
 		"_buttonname_Down": "Down",
 		"_buttonname_Left": "Left",

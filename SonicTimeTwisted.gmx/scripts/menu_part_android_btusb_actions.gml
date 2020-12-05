@@ -34,35 +34,35 @@ switch(argument0)
         break;
     case 2:
         // individual map - button Up
-        android_start_software_mapping(tr('Press "Up"'), cUP, 11, -1);
+        android_start_software_mapping(tr_format(tr("_options_menu_keymap_press"), tr("_buttonname_Up")), cUP, 11, -1);
         break;
     case 3:
         // individual map - button Down
-        android_start_software_mapping(tr('Press "Down"'), cDOWN, 11, -1);
+        android_start_software_mapping(tr_format(tr("_options_menu_keymap_press"), tr("_buttonname_Down")), cDOWN, 11, -1);
         break;
     case 4:
         // individual map - button Left
-        android_start_software_mapping(tr('Press "Left"'), cLEFT, 11, -1);
+        android_start_software_mapping(tr_format(tr("_options_menu_keymap_press"), tr("_buttonname_Left")), cLEFT, 11, -1);
         break;
     case 5:
         // individual map - button Right
-        android_start_software_mapping(tr('Press "Right"'), cRIGHT, 11, -1);
+        android_start_software_mapping(tr_format(tr("_options_menu_keymap_press"), tr("_buttonname_Right")), cRIGHT, 11, -1);
         break;
     case 6:
         // individual map - button A
-        android_start_software_mapping(tr('Press "A"'), cA, 11, -1);
+        android_start_software_mapping(tr_format(tr("_options_menu_keymap_press"), tr("_buttonname_A")), cA, 11, -1);
         break;
     case 7:
         // individual map - button B
-        android_start_software_mapping(tr('Press "B"'), cB, 11, -1);
+        android_start_software_mapping(tr_format(tr("_options_menu_keymap_press"), tr("_buttonname_B")), cB, 11, -1);
         break;
     case 8:
         // individual map - button C
-        android_start_software_mapping(tr('Press "C"'), cC, 11, -1);
+        android_start_software_mapping(tr_format(tr("_options_menu_keymap_press"), tr("_buttonname_C")), cC, 11, -1);
         break;
     case 9:
         // individual map - button Start
-        android_start_software_mapping(tr('Press "Start"'), cSTART, 11, -1);
+        android_start_software_mapping(tr_format(tr("_options_menu_keymap_press"), tr("_buttonname_Start")), cSTART, 11, -1);
         break;
     case 11:
         // save the mapped button
@@ -70,35 +70,35 @@ switch(argument0)
         break;
     case 21:
         // group mapping - up
-        android_start_software_mapping(tr('Press "Up"'), cUP, 22, 30);
+        android_start_software_mapping(tr_format(tr("_options_menu_keymap_press"), tr("_buttonname_Up")), cUP, 22, 30);
         break;
     case 22:
         // group mapping - down
-        android_start_software_mapping(tr('Press "Down"'), cDOWN, 23, 30);
+        android_start_software_mapping(tr_format(tr("_options_menu_keymap_press"), tr("_buttonname_Down")), cDOWN, 23, 30);
         break;
     case 23:
         // group mapping - left
-        android_start_software_mapping(tr('Press "Left"'), cLEFT, 24, 30);
+        android_start_software_mapping(tr_format(tr("_options_menu_keymap_press"), tr("_buttonname_Left")), cLEFT, 24, 30);
         break;
     case 24:
         // group mapping - right
-        android_start_software_mapping(tr('Press "Right"'), cRIGHT, 25, 30);
+        android_start_software_mapping(tr_format(tr("_options_menu_keymap_press"), tr("_buttonname_Right")), cRIGHT, 25, 30);
         break;
     case 25:
         // group mapping - a
-        android_start_software_mapping(tr('Press "A"'), cA, 26, 30);
+        android_start_software_mapping(tr_format(tr("_options_menu_keymap_press"), tr("_buttonname_A")), cA, 26, 30);
         break;
     case 26:
         // group mapping - b
-        android_start_software_mapping(tr('Press "B"'), cB, 27, 30);
+        android_start_software_mapping(tr_format(tr("_options_menu_keymap_press"), tr("_buttonname_B")), cB, 27, 30);
         break;
     case 27:
         // group mapping - c
-        android_start_software_mapping(tr('Press "C"'), cC, 28, 30);
+        android_start_software_mapping(tr_format(tr("_options_menu_keymap_press"), tr("_buttonname_C")), cC, 28, 30);
         break;
     case 28:
-        // group mapping - c
-        android_start_software_mapping(tr('Press "Start"'), cSTART, 29, 30);
+        // group mapping - start
+        android_start_software_mapping(tr_format(tr("_options_menu_keymap_press"), tr("_buttonname_Start")), cSTART, 29, 30);
         break;
     case 29:
         // group mapping - success, discard the backup
