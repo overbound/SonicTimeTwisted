@@ -4,7 +4,7 @@ menu_fn_add_title(tr("_options_menu_Title"));
 menu_fn_add_option(tr("_options_menu_Video"), 0);
 if(DEVICE_INFO & DEVICE_TYPE_COMPUTER)
 {
-    menu_fn_add_option(tr("_options_menu_enable_gamepad"), 1, 1, "");
+    menu_fn_add_option(tr("_options_menu_Input_Method"), 1, 1, "");
 }
 if(DEVICE_INFO & DEVICE_TYPE_SMARTPHONE)
 {

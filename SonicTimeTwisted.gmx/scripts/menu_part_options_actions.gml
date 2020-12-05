@@ -200,11 +200,11 @@ switch(argument0)
 
 if(objProgram.inputManager.input_method == INPUT_GAMEPAD)
 {
-    menu_fn_refresh_displayed_value(1, "< "+tr("_Yes")+ " >");
+    menu_fn_refresh_displayed_value(1, "< "+tr("_options_menu_InputLabel_Gamepad")+ " >");
 }
 else
 {
-    menu_fn_refresh_displayed_value(1, "< "+tr("_No")+ " >");
+    menu_fn_refresh_displayed_value(1, "< "+tr("_options_menu_InputLabel_Keyboard")+ " >");
 }
 
 if(DEVICE_INFO & DEVICE_TYPE_SMARTPHONE)
