@@ -10,7 +10,9 @@
   <persistent>0</persistent>
   <colour>0</colour>
   <showcolour>-1</showcolour>
-  <code>if(objProgram.saveSlot == -1) // if we are playing this in the mini-game/level select mode, lives don't appear
+  <code>// if we're playing this using the level select, then a different BGM plays
+// and we get a menu instead of a countdown
+if(objProgram.saveSlot == -1)
 {
     play_music_intro(bgmSaveScreenIntro,0);
     objMusic.musicLoop = bgmSaveScreenLoop;

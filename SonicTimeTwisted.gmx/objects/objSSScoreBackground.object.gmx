@@ -105,6 +105,33 @@ ss_instructions2 = "";
         </arguments>
       </action>
     </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>with(menu)
+{
+    menu_fn_open_menu(menu_part_sstage_levelselect_result_items, true);
+    event_user(1);
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="2" enumb="0">
       <action>
         <libid>1</libid>
@@ -125,6 +152,7 @@ ss_instructions2 = "";
             <string>if(objProgram.saveSlot &gt; -1) // if we are playing this in the mini-game/level select mode, lives don't appear
 {
     var score_card = instance_create(64, 0, objSSScoreCard);
+    score_card.visible = true;
     if(ss_instructions_override)
     {
         score_card.ss_instructions1 = ss_instructions1;
@@ -133,14 +161,74 @@ ss_instructions2 = "";
 }
 else
 {
-    var menuStatus = 25;
-    menu.wait_for_release = false;
-    menu.active = true;
-    menu.state = menuStatus;
-    with(menu)
+    // if we're playing this using the level select, we get a menu instead of a countdown
+    alarm[1] = 80;
+
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>// Only show the menu in level select mode
+if(objProgram.saveSlot == -1)
+{
+    if(menu.state != 0)
     {
-        delay_timer = 0;
-        event_user(1);
+        with(menu)
+        {
+            event_user(2);
+        }
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>// Only show the menu in level select mode
+if(objProgram.saveSlot == -1)
+{
+    if(menu.state != 0)
+    {
+        with(menu)
+        {
+            event_user(1);
+        }
     }
 }
 </string>
@@ -165,11 +253,14 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(menu.state != 0)// putting this condition first because of how GML works
+            <string>if(objProgram.saveSlot == -1)
 {
-    if((menu.state &gt;= 4 &amp;&amp; menu.state &lt;= 6) || menu.state == 10 || (menu.state &gt;= 21 &amp;&amp; menu.state &lt;= 25))
+    if(menu.state != 0)
     {
-        with(menu) event_user(0);
+        with(menu)
+        {
+            event_user(0);
+        }
     }
 }
 </string>
@@ -206,11 +297,14 @@ if(objProgram.saveSlot &gt; -1) // emeralds only appear in regular gameplay mode
         draw_sprite_ext(other_em_sprite, i, oem_x + i*16, oem_y, 0.35, 0.35, 0, c_white, 1);
     }
 }
-if(menu.state != 0) // putting this condition first because of how GML works
+else
 {
-    if((menu.state &gt;= 4 &amp;&amp; menu.state &lt;= 6) || menu.state == 10 || (menu.state &gt;= 21 &amp;&amp; menu.state &lt;= 25))
+    if(menu.state &gt; 0) // putting this condition first because of how GML works
     {
-        with(menu) event_user(4);
+        with(menu)
+        {
+            event_user(3);
+        }
     }
 }
 </string>
