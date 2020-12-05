@@ -144,7 +144,7 @@ As the code has been annotated, and is fairly straightforward, this document wil
 
 ## Rumble feature
 
-The logic is managed exclusively on Game Maker Studio's side. All that is sent to the library is the power of vibration, going from 0 to 50. When a power is set, the device keeps vibrating until a new value is set.
+The logic is managed exclusively on Game Maker Studio's side. All that is sent to the library is the power of vibration, a decimal value between 0 and 1 which is then internally converted into an integer value between 0 and 50. When a power is set, the device keeps vibrating until a new value is set.
 
 The library can be set to use gamepads or the main device (smartphone) to vibrate, in both cases the library function to call is the same.
 
@@ -194,7 +194,7 @@ Covered method:
 
 Make a device vibrate for an indefinite amount of time. Normally, the inputNumber should indicate, in case of gamepads, which one rumbles, but Android doesn't detect gamepad vibrators.
 
-Power normally goes from 0 (disabled) to 50 (vibrates constantly) . Any other value amounts to 0.
+Power is a decimal value that goes from 0 (disabled) to 1 (vibrates constantly) . Any other value amounts to 0.
 
 ### Handling input devices
 

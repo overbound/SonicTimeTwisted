@@ -613,15 +613,15 @@ public class SttAndroid extends ExtensionBase {
      * Does not deactivate by itself, use power 0.
      *
      * @param inputNumber Player number: 0 or 1
-     * @param power       Vibration power: 0 to 50
+     * @param power       Vibration power: 0 to 1 with decimals
      * @return Random value because GameMaker Studio needs a return type.
      */
     public double android_rumble_perform(double inputNumber, double power) {
         if (delegateRumbleToExternalDevices) {
-            inputs[(int) inputNumber].performRumble((int) power);
+            inputs[(int) inputNumber].performRumble((int) (power * 50));
         } else {
             if ((rumbleThread != null)) {
-                rumbleThread.setPower((int) power);
+                rumbleThread.setPower((int) (power * 50));
             }
         }
         return 0.0;

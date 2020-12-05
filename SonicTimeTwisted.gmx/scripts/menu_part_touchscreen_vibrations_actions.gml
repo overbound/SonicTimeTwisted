@@ -1,13 +1,21 @@
 switch(argument0)
 {
     case 0:
-        if (objProgram.inputManager.vibration_type & 1)
+        with(objProgram.inputManager)
         {
-            objProgram.inputManager.vibration_type--;
-        }
-        else
-        {
-            objProgram.inputManager.vibration_type++;
+            if (vibration_type & 1)
+            {
+                vibration_type--;
+            }
+            else
+            {
+                vibration_type++;
+            }
+            if(input_method == INPUT_TOUCHSCREEN)
+            {
+                // reload the scripts to make sure rumble scripts work correctly
+                script_execute(input_init_script);
+            }
         }
         break;
     case 1:
@@ -17,14 +25,23 @@ switch(argument0)
         menu_fn_open_slider_window(2, tr('Haptic feedback strength (%)'), objProgram.inputManager.haptics_strength, 0, 100);
         break;
     case 3:
-        if (objProgram.inputManager.vibration_type >> 1)
+        with(objProgram.inputManager)
         {
-            objProgram.inputManager.vibration_type -= 2;
+            if (vibration_type >> 1)
+            {
+                vibration_type -= 2;
+            }
+            else
+            {
+                vibration_type += 2;
+            }    
+            if(input_method == INPUT_TOUCHSCREEN)
+            {
+                // reload the scripts to make sure rumble scripts work correctly
+                script_execute(input_init_script);
+            }    
         }
-        else
-        {
-            objProgram.inputManager.vibration_type += 2;
-        }
+
         break;
     case 4:
         menu_fn_open_slider_window(4, tr('Contextual rumble strength (%)'), round(objProgram.inputManager.rumble_strength*100), 0, 200);

@@ -159,7 +159,7 @@ public class MainActivity extends AppCompatActivity {
                                         }
                                         else
                                         {
-                                            sttAndroid.android_rumble_perform(0, 50);
+                                            sttAndroid.android_rumble_perform(0, 1);
                                             vibrating = true;
                                         }
                                         appState = MainActivity.APPSTATE_IDLE;

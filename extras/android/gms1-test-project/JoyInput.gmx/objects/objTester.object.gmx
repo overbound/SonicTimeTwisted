@@ -36,6 +36,7 @@ textRows = false;
 doubleDeviceMode = false;
 doubleDeviceModeIsDetecting = false;
 deviceLabel = "";
+vibrating = false;
 for(var i = 0; i &lt; 36; i++)
 {
     textRows[i] = "";
@@ -275,6 +276,24 @@ if(state == 3)
             subState = 0;
             
         }
+        else
+        if(mouse_y &lt; 300)
+        {
+            if(vibrating)
+            {
+                add_console_output("Vibration stopped");    
+                android_rumble_perform(0, 0);
+            }
+            else
+            {
+                add_console_output("Vibration started");            
+                android_rumble_perform(0, 1);
+            }
+            vibrating = !vibrating;
+            state = 0;
+            subState = 0;
+            
+        }
         break;    
 }
 
@@ -306,6 +325,7 @@ if(state == 1)
 {
     draw_rectangle_colour(1, 1, 238, 99, c_white, c_white, c_white, c_white, true);
     draw_rectangle_colour(1, 101, 238, 199, c_white, c_white, c_white, c_white, true);
+    draw_rectangle_colour(1, 201, 238, 299, c_white, c_white, c_white, c_white, true);
     
     draw_set_halign(fa_middle);
     draw_set_valign(fa_center);
@@ -319,6 +339,15 @@ if(state == 1)
     {
         draw_text(120, 150, "Double device mode: OFF");
     }
+    if(vibrating)
+    {
+        draw_text(120, 250, "Stop vibrating");
+    }
+    else
+    {
+        draw_text(120, 250, "Vibrate");
+    }
+    
 }
 else
 {
