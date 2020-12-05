@@ -13,45 +13,13 @@ switch(argument0)
     case -1:
         menu_fn_exit_submenu(menu_part_options_items, 0);
         break;
+        
+    // sliders exist for a reason.
     case -2:
         // left key
-        switch(items[cursor, 1])
-        {
-            case 0:
-                with(objScreen)
-                {
-                    event_user(1);
-                }
-                break;
-            case 1:
-                objScreen.score_tally_mode--;
-                if(objScreen.score_tally_mode < 0)
-                {
-                    objScreen.score_tally_mode = 2;
-                }
-                break;
-            case 2:
-                objScreen.flashing_reduced = !objScreen.flashing_reduced;
-                break;
-        }
         break;
     case -3:
         // right key
-        switch(items[cursor, 1])
-        {
-            case 0:
-                with(objScreen)
-                {
-                    event_user(0);
-                }
-                break;
-            case 1:
-                objScreen.score_tally_mode = (objScreen.score_tally_mode + 1) mod 3;
-                break;
-            case 2:
-                objScreen.flashing_reduced = !objScreen.flashing_reduced;
-                break;
-        }
         break;
 }
 
