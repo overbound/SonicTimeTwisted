@@ -111,8 +111,6 @@ instance_create(0, 0, objMusic);
 instance_create(0, 0, objScreen);
 tr_init();
 instance_create(0, 0, objResources);
-// set default volume gain
-audio_set_master_gain(0, 0.75);
 // start critical processes
 // add levels to list
 //PLEASE NOTE THE TRUE LEVEL ORDER IS AAZ, FFZ, VVZ, DDZ, TTZ, SSZ, RRZ, PPZ
@@ -239,6 +237,13 @@ else
           <argument>
             <kind>1</kind>
             <string>///React to saveload events from the PS's firmware.
+
+// is this an audiogroup event?
+if (ds_map_exists(async_load, "group_id"))
+{
+    show_debug_message("Loaded Audiogroup ID " + string(async_load[? "group_id"]));
+    exit;
+}
 
 if (DEVICE_INFO &amp; DEVICE_OS_PLAYSTATION)
 {

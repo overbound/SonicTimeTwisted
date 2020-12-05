@@ -3363,6 +3363,9 @@
               <script>scripts\menu_part_l18n_items.gml</script>
               <script>scripts\menu_part_l18n_actions.gml</script>
             </scripts>
+            <script>scripts\menu_part_sound_items.gml</script>
+            <script>scripts\menu_part_sound_actions.gml</script>
+            <script>scripts\menu_part_sound_step.gml</script>
           </scripts>
           <scripts name="special_stage">
             <script>scripts\menu_part_sstage_offtrack_items.gml</script>
@@ -5133,18 +5136,7 @@
   </help>
   <audiogroups name="audiogroups">
     <audiogroup name="audiogroup_default"/>
-    <audiogroup name="AttractionAttack"/>
-    <audiogroup name="FrigidFortress"/>
-    <audiogroup name="RagingRuins"/>
-    <audiogroup name="ViridianValley"/>
-    <audiogroup name="TidalTubes"/>
-    <audiogroup name="SunkenSaucer"/>
-    <audiogroup name="PlanetaryPanic"/>
-    <audiogroup name="BossFight"/>
-    <audiogroup name="MetalSonic"/>
-    <audiogroup name="SpecialStageFuture"/>
-    <audiogroup name="SpecialStagePast"/>
-    <audiogroup name="SoundEffects"/>
+    <audiogroup name="audiogroup_sfx"/>
   </audiogroups>
   <TutorialState>
     <IsTutorial>0</IsTutorial>

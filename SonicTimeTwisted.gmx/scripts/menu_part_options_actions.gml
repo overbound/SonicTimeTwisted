@@ -72,6 +72,9 @@ switch(argument0)
     case 10:
          menu_fn_goto_submenu(menu_part_l18n_items);
          break;
+    case 11:
+         menu_fn_goto_submenu(menu_part_sound_items);
+         break;
     case -1:
     case 4:
         save_options();
