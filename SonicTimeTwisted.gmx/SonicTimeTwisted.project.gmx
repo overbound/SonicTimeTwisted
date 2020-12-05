@@ -3466,6 +3466,7 @@
         <script>scripts\tr_export_builtin_fonts.gml</script>
         <script>scripts\tr_free.gml</script>
         <script>scripts\tr_get_real_prop.gml</script>
+        <script>scripts\tr_format.gml</script>
       </scripts>
     </scripts>
     <scripts name="Overlays">
