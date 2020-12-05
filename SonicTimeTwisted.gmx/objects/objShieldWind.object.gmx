@@ -80,35 +80,21 @@
           <argument>
             <kind>1</kind>
             <string>/// Animate
+
 // increase index infinitely
-//index += 0.25; - moved to event 15
+index += 0.25;
+if(index &gt;= 21)
+{
+    index = 0;
+}
 // rotate
 image_angle = angle_wrap(image_angle+4*(abs(cosine[image_angle])+0.1));
+
 // flicker
-//image_alpha = !image_alpha; - moved to event 15
+image_alpha = !image_alpha;
+
+
 </string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="7" enumb="25">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string></string>
           </argument>
         </arguments>
       </action>
@@ -130,11 +116,8 @@ image_angle = angle_wrap(image_angle+4*(abs(cosine[image_angle])+0.1));
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Animate &amp; Render shield
-// increase index
-index += 0.25;
-// flicker
-image_alpha = !image_alpha;
+            <string>/// Render shield
+
 // back wind
 draw_sprite_ext(sprite_index, 10 + (index mod 7), x, y, image_xscale, image_yscale, image_angle+45, image_blend, image_alpha);
 // surrounding wind
@@ -142,10 +125,7 @@ draw_sprite_ext(sprite_index, index mod 3, x, y, image_xscale, image_yscale, 0, 
 // front wind
 draw_sprite_ext(sprite_index, 3 + (index mod 7), x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
 
-if(index &gt;= 21)
-{
-    index = 0;
-}
+
 </string>
           </argument>
         </arguments>

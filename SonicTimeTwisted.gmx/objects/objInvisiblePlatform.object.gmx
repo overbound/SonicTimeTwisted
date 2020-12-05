@@ -72,7 +72,7 @@ appear = 2;
         </arguments>
       </action>
     </event>
-    <event eventtype="7" enumb="25">
+    <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -90,7 +90,7 @@ appear = 2;
           <argument>
             <kind>1</kind>
             <string>if appear== true {
-    visible = objScreen.flashing_visible;
+    visible = !visible;
 }
 </string>
           </argument>

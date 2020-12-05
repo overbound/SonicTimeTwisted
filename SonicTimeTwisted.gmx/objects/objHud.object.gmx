@@ -65,10 +65,10 @@ timeOffset = 0;
 timer = 0;
 rings = 0;
 menu = instance_create(0,0,objMenu);
-draw_lives_event = 0;
+hud_draw_script = draw_hud_act_default;
 if(is_touchscreen)
 {
-    draw_lives_event = 1;
+    hud_draw_script = draw_hud_act_touchscreen;
 }
 </string>
           </argument>
@@ -294,94 +294,6 @@ if objProgram.paused {
         </arguments>
       </action>
     </event>
-    <event eventtype="7" enumb="11">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// draw lives - touchscreen variant
-var lives_x_left = view_xview[view_current]+view_wview[view_current] - 100;
-var lives_y_top = (view_yview[view_current]+16-(16*objScreen.split_screen)) - 12;
-
-// Smartphone mode - the HUD is drawn in the top-right corner
-// lives setpiece
-draw_sprite(sprLives, character_id[view_current], lives_x_left, lives_y_top);
-
-// lives string
-draw_set_color(c_white);
-draw_set_alpha(image_alpha);
-draw_set_valign(fa_top);
-draw_set_font(objResources.fontLives);
-draw_set_halign(fa_left);
-
-// draw character name.
-var drawname = tr("_charname_" + string(character_id[view_current]));
-draw_text_colour(lives_x_left + 32, lives_y_top + 4, drawname, c_yellow, c_yellow, c_white, c_white, 1);
-
-// make lives string.
-var drawstring = "";
-if (objGameData.player_lives[view_current] &gt;= 10) drawstring = string(objGameData.player_lives[view_current]);
-else drawstring = " " + string(objGameData.player_lives[view_current]);
-draw_text(lives_x_left + 32, lives_y_top + 4, chr(10) + "  x" + drawstring);
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="7" enumb="10">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// draw lives - normal variant
-
-// character "avatar"
-draw_sprite(sprLives, character_id[view_current], view_xview[view_current]+16, view_yview[view_current]+view_hview-24);
-// lives string
-draw_set_color(c_white);
-draw_set_alpha(image_alpha);
-draw_set_font(objResources.fontLives);
-draw_set_halign(fa_left);
-
-// draw character name.
-var drawname = tr("_charname_" + string(character_id[view_current]));
-draw_text_colour(view_xview[view_current] + 16 + 32, view_yview[view_current] + view_hview - 24 + 4, drawname, c_yellow, c_yellow, c_white, c_white, 1);
-
-// make lives string.
-var drawstring = "";
-if (objGameData.player_lives[view_current] &gt;= 10) drawstring = string(objGameData.player_lives[view_current]);
-else drawstring = " " + string(objGameData.player_lives[view_current]);
-draw_text(view_xview[view_current] + 16 + 32, view_yview[view_current] + view_hview - 24 + 4, chr(10) + "  x" + drawstring);
-// chr(10) and other chr() calls with a constant value are preprocessed by GM by the way...
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
@@ -400,10 +312,11 @@ draw_text(view_xview[view_current] + 16 + 32, view_yview[view_current] + view_hv
           <argument>
             <kind>1</kind>
             <string>/// Render HUD
-draw_top_hud(objLevel.timer, objGameData.rings[view_current], view_xview[view_current], view_yview[view_current]);
-// TODO Remove FPS
-//draw_text(view_xview[view_current]+400,view_yview[view_current]+24, fps);
-//black bg for pause
+// The part with score/time/rings is constant among contexts and input devices...
+draw_hud_score_time_rings(objLevel.timer, objGameData.rings[view_current], view_xview[view_current], view_yview[view_current]);
+// While the shield's position depends on the context and the lives' position depends on the input device
+script_execute(hud_draw_script);
+
 draw_set_alpha(white)
 draw_set_color(c_black);
     draw_rectangle(view_xview,view_yview,view_xview+view_wview,view_yview+view_hview,false);

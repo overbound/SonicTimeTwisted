@@ -57,7 +57,7 @@ lines[6, 4] = tr('Hinchy');
 lines[6, 5] = tr('Joevan Salmon-Johnson (VectorSatyr)');
 lines[6, 6] = tr('Jonathan Rose (Dimension Warped)');
 lines[6, 7] = tr('Shane (Sparks)');
-lines[6, 8] = tr('"Tommy C"');
+lines[6, 8] = tr('Tommy C');
 
 lines[7, 0] = tr("Additional Programming by");
 lines[7, 1] = tr('Jonathan Rose (Dimension Warped)');
@@ -119,6 +119,7 @@ lines[13, 2] = tr('Nik');
 
 lines[14, 0] = tr("Additional Art by");
 lines[14, 1] = tr('Alex Khayrullin');
+lines[14, 2] = tr('bennascar');
 
 // the array above is designed to be easy to edit, now we're converting it to the format we'll actually use
 event_user(0);
@@ -250,10 +251,6 @@ for(var i = 0; i &lt; array_height_2d(lines); i++)
     {
         flat_credits_content[index] = '';
         index++;
-        /*
-        flat_credits_content[index] = '';
-        index++;
-        */
     }
     else
     {

@@ -123,9 +123,7 @@ switch objGameData.character_id[0] {
 if invincible &gt; 0 {
 invincible -=1
 
-if visible == 1 
-    visible = false;
-else visible = 1;
+visible = !visible;
 
 }
 else visible = true;
@@ -1083,34 +1081,6 @@ if z &gt;= 24 {
     with other instance_destroy();
 
 }
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="7" enumb="25">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if invincible &gt; 0 {
-if visible == 1 
-    visible = false;
-else visible = 1;
-}
-else visible = true;
 </string>
           </argument>
         </arguments>

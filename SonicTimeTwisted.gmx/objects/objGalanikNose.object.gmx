@@ -97,7 +97,6 @@ if life &lt;= 0 {
     }
     with objGalanikSmall instance_destroy();
     with objBossPlatform ysp = 0;
-    with objGalanikEyeShine instance_destroy();
     instance_destroy();
    
 }

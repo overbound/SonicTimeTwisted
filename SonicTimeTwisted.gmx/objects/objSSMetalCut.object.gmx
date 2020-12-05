@@ -98,7 +98,6 @@ case 3:
             alarm[0]= 110;
             state = 2;
             shake=true;
-            audio_play_sound(sndMetalSpeak,1,false);
          }
     }
     
@@ -120,6 +119,23 @@ blastImageIndex +=.5;
     }
     
 if !audio_is_playing(sndSSWave) &amp;&amp; state &gt; 0 audio_play_sound(sndSSWave, 0,0); 
+
+// textbox
+if image_index == 2 {
+    if(instance_exists(objMetalSonicVoice))
+    {
+        objMetalSonicVoice.x = round(x + 12);
+        objMetalSonicVoice.y = round(y - 16);
+    }
+    else
+    {
+        with(instance_create(round(x + 12), round(y - 16), objMetalSonicVoice))
+        {
+            message = tr('_metal_sonic_voice_Creator');
+            event_user(0);
+        }
+    }
+}
 </string>
           </argument>
         </arguments>
@@ -153,9 +169,7 @@ if !audio_is_playing(sndSSWave) &amp;&amp; state &gt; 0 audio_play_sound(sndSSWa
     
     
 } else draw_sprite_ext(sprite_index,image_index,x,y,1,1,0,c_white,1);
-if image_index == 2 {
-    draw_sprite_ext(sprMetalCreatorVoice,0,x+12,y-16,1,1,0,c_white,messageVisibility);
-}
+
 </string>
           </argument>
         </arguments>

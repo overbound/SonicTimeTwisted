@@ -64,11 +64,12 @@ timeOffset = 0;
 timer = 0;
 rings = 0;
 menu = instance_create(0,0,objMenu);
-draw_lives_event = 0;
+hud_draw_script = draw_hud_ss_default;
 if(is_touchscreen)
 {
-    draw_lives_event = 1;
+    hud_draw_script = draw_hud_ss_touchscreen;
 }
+
 </string>
           </argument>
         </arguments>
@@ -295,163 +296,6 @@ if objProgram.inputManager.pressingGamepad == -1 {
         </arguments>
       </action>
     </event>
-    <event eventtype="7" enumb="11">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// draw lives - touchscreen variant
-
-if(objProgram.saveSlot &gt; -1) // if we are playing this in the mini-game/level select mode, lives don't appear
-{
-    var lives_x_left = view_wview[view_current] - 100;
-    var lives_y_top = (16-(16*objScreen.split_screen)) - 12;
-    // Smartphone mode - the HUD is drawn in the top-right corner
-    // lives setpiece
-    draw_sprite(sprLives, character_id[view_current], lives_x_left, lives_y_top);
-    
-    // lives string
-    draw_set_color(c_white);
-    draw_set_alpha(image_alpha);
-    draw_set_valign(fa_top);
-    draw_set_font(objResources.fontLives);
-    draw_set_halign(fa_left);
-    
-    // draw character name.
-    var drawname = tr("_charname_" + string(character_id[view_current]));
-    draw_text_colour(lives_x_left + 32, lives_y_top + 4, drawname, c_yellow, c_yellow, c_white, c_white, 1);
-    
-    // make lives string.
-    var drawstring = "";
-    if (objGameData.player_lives[view_current] &gt;= 10) drawstring = string(objGameData.player_lives[view_current]);
-    else drawstring = " " + string(objGameData.player_lives[view_current]);
-    draw_text(lives_x_left + 32, lives_y_top + 4, chr(10) + "  x" + drawstring);
-}
-else
-{
-    draw_set_valign(fa_top);
-    draw_set_halign(fa_right);
-}
-// Progress bar
-var pbOffsetX = 72;
-var pbOffsetY = 80;
-
-draw_set_alpha(0.25);
-draw_set_color(c_white);
-draw_line_width(pbOffsetX, pbOffsetY, pbOffsetX+282, pbOffsetY, 4);
-draw_set_alpha(1);
-
-var xmetalprog = 128 + objSSMetalSonic.progress * 280;
-if metalProgDisplay &gt; xmetalprog +2{
-    metalProgDisplay-=2;
-}
-else if metalProgDisplay &lt; xmetalprog -2 {
-    metalProgDisplay+=2;
-}
-
-var xplayerprog = 128 + objSSPlayer.progress * 280;
-if playerProgDisplay &gt; xplayerprog +2{
-    playerProgDisplay-=2;
-}
-else if playerProgDisplay &lt; xplayerprog -2{
-    playerProgDisplay+=2;
-}
-draw_sprite_ext(sprRacerIcon, 3, pbOffsetX + objSSMetalSonic.progress * 280, pbOffsetY, 1, 1, 0, c_white, 1);
-draw_sprite(sprRacerIcon, objGameData.character_id[0]-1, pbOffsetX + objSSPlayer.progress * 280, pbOffsetY);
-//draw_sprite_ext(sprRacerIcon, 3, metalProgDisplay, 224, 1, 1, 0, c_white, 1);
-//draw_sprite(sprRacerIcon, objGameData.character_id[0]-1, playerProgDisplay, 224);
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="7" enumb="10">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// draw lives - normal variant
-var pbOffsetX = 128;
-if(objProgram.saveSlot &gt; -1) // if we are playing this in the mini-game/level select mode, lives don't appear
-{
-    // lives setpiece
-    draw_sprite(sprLives, character_id[view_current], 16, view_hview-24);
-    
-    // lives string
-    draw_set_color(c_white);
-    draw_set_alpha(image_alpha);
-    draw_set_font(objResources.fontLives);
-    draw_set_halign(fa_left);
-    
-    // draw character name.
-    var drawname = tr("_charname_" + string(character_id[view_current]));
-    draw_text_colour(16 + 32, view_hview - 24 + 4, drawname, c_yellow, c_yellow, c_white, c_white, 1);
-    
-    // make lives string.
-    var drawstring = "";
-    if (objGameData.player_lives[view_current] &gt;= 10) drawstring = string(objGameData.player_lives[view_current]);
-    else drawstring = " " + string(objGameData.player_lives[view_current]);
-    
-    draw_text(16 + 32, view_hview - 24 + 4, chr(10) + "  x" + drawstring);
-}
-else
-{
-    draw_set_valign(fa_top);
-    draw_set_halign(fa_right);
-    pbOffsetX = 72;
-}
-// Progress bar
-draw_set_alpha(0.25);
-draw_set_color(c_white);
-draw_line_width(pbOffsetX, 224, pbOffsetX + 282, 224, 4);
-draw_set_alpha(1);
-var xmetalprog = pbOffsetX + objSSMetalSonic.progress * 280;
-if metalProgDisplay &gt; xmetalprog +2{
-    metalProgDisplay-=2;
-}
-else if metalProgDisplay &lt; xmetalprog -2 {
-    metalProgDisplay+=2;
-}
-var xplayerprog = pbOffsetX + objSSPlayer.progress * 280;
-if playerProgDisplay &gt; xplayerprog +2{
-    playerProgDisplay-=2;
-}
-else if playerProgDisplay &lt; xplayerprog -2{
-    playerProgDisplay+=2;
-}
-draw_sprite_ext(sprRacerIcon, 3, pbOffsetX + objSSMetalSonic.progress * 280, 224, 1, 1, 0, c_white, 1);
-draw_sprite(sprRacerIcon, objGameData.character_id[0]-1, pbOffsetX + objSSPlayer.progress * 280, 224);
-//draw_sprite_ext(sprRacerIcon, 3, metalProgDisplay, 224, 1, 1, 0, c_white, 1);
-//draw_sprite(sprRacerIcon, objGameData.character_id[0]-1, playerProgDisplay, 224);
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="7" enumb="4">
       <action>
         <libid>1</libid>
@@ -499,7 +343,11 @@ d3d_set_projection_ortho(0, 0, view_wport, view_hport, 0);
 // score / time / rings string
 draw_set_font(objResources.fontHud);
 if !objProgram.paused {
-draw_top_hud(objSSLevel.timer, objSSPlayer.rings, 0, 0);
+
+// The part with score/time/rings is constant among contexts and input devices...
+draw_hud_score_time_rings(objSSLevel.timer, objSSPlayer.rings, 0, 0);
+// While the shield's position depends on the context and the lives' position depends on the input device
+script_execute(hud_draw_script);
 } else {
     draw_set_color(c_black);
     draw_rectangle(0,0,426,240,false);

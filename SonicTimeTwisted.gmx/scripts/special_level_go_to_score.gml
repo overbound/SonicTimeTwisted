@@ -1,5 +1,4 @@
 /// Leave the special stage and proceed to the dedicated results screen
-// special_level_go_to_score()
 // save score in global object
 if(object_exists(objSSLevel) && object_exists(objSSPlayer))
 {

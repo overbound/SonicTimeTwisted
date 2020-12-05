@@ -235,40 +235,6 @@
           </argument>
         </arguments>
       </action>
-    </event>
-    <event eventtype="4" ename="objSolid">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Handle bouncing
-var relative_hspeed, relative_vspeed;
-// get vectors relative to gravity direction
-relative_hspeed = lengthdir_x(speed, (direction-gravity_direction)-90);
-relative_vspeed = lengthdir_y(speed, (direction-gravity_direction)-90);
-// vertical collision
-if relative_vspeed&gt;0 relative_vspeed *= -0.75;
-// redirect using new vector
-speed = point_distance(0, 0, relative_hspeed, relative_vspeed);
-direction = point_direction(0, 0, relative_hspeed, relative_vspeed)+gravity_angle();
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="7" enumb="25">
       <action>
         <libid>1</libid>
         <id>612</id>
@@ -317,7 +283,39 @@ direction = point_direction(0, 0, relative_hspeed, relative_vspeed)+gravity_angl
           </argument>
           <argument>
             <kind>0</kind>
-            <string>objScreen.flashing_visible</string>
+            <string>not visible</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="objSolid">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Handle bouncing
+var relative_hspeed, relative_vspeed;
+// get vectors relative to gravity direction
+relative_hspeed = lengthdir_x(speed, (direction-gravity_direction)-90);
+relative_vspeed = lengthdir_y(speed, (direction-gravity_direction)-90);
+// vertical collision
+if relative_vspeed&gt;0 relative_vspeed *= -0.75;
+// redirect using new vector
+speed = point_distance(0, 0, relative_hspeed, relative_vspeed);
+direction = point_direction(0, 0, relative_hspeed, relative_vspeed)+gravity_angle();
+</string>
           </argument>
         </arguments>
       </action>

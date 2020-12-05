@@ -64,15 +64,26 @@ with(objTitleControl)
 with(objInputMethodDependant)
 {
     sync_is_touchscreen();  
-    if(object_index == objHud || object_index == objSSHud)
+    if(object_index == objHud)
     {
         if(is_touchscreen)
         {
-            draw_lives_event = 1;
+            hud_draw_script = draw_hud_act_touchscreen;
         }
         else
         {
-            draw_lives_event = 0;
+            hud_draw_script = draw_hud_act_default;
+        }
+    }
+    if(object_index == objSSHud)
+    {
+        if(is_touchscreen)
+        {
+            hud_draw_script = draw_hud_ss_touchscreen;
+        }
+        else
+        {
+            hud_draw_script = draw_hud_ss_default;
         }
     }
 }

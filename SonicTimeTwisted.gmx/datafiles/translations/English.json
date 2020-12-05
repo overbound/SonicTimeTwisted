@@ -124,6 +124,7 @@
 		"_HUD_SCORE": "SCORE",
 		"_HUD_TIME": "TIME",
 		"_HUD_RINGS": "RINGS",
+		"_HUD_SHIELD": "SHIELD",
 		
 		"_charname_0": "SONIC",
 		"_charname_1": "TAILS",
@@ -187,11 +188,11 @@
 		"_ACT1": "ACT1",
 		"_ACT2": "ACT2",
 		
-		"_metal_sonic_voice_Creator": "Creator…",
+		"_metal_sonic_voice_Creator": "Creator...",
 		
 		"_metal_sonic_voice_Stop": "Stop!",
-		"_metal_sonic_voice_No_Harm": "Do not\nharm…",
-		"_metal_sonic_voice_The_Creator": "…the\nCreator!",
+		"_metal_sonic_voice_No_Harm": "Do not\nharm...",
+		"_metal_sonic_voice_The_Creator": "...the\nCreator!",
 		
 		"_zonename_AAZ_A": "Attraction",
 		"_zonename_AAZ_B": "Attack",
