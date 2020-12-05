@@ -3265,8 +3265,8 @@
           <script>scripts\menu_fn_step.gml</script>
           <script>scripts\menu_fn_step_end.gml</script>
           <script>scripts\menu_fn_step_begin.gml</script>
-          <script>scripts\menu_fn_draw.gml</script>
-          <script>scripts\menu_fn_draw_no_surface.gml</script>
+          <script>scripts\menu_fn_draw_with_surface.gml</script>
+          <script>scripts\menu_fn_draw_with_d3d_projection.gml</script>
           <script>scripts\menu_fn_longconfirmation.gml</script>
           <script>scripts\menu_fn_draw_default.gml</script>
           <script>scripts\menu_fn_step_default.gml</script>

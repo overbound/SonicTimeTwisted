@@ -1,6 +1,9 @@
-if(surface_exists(s))
+if(s > -1)
 {
-    surface_free(s);
+    if(surface_exists(s))
+    {
+        surface_free(s);
+    }
 }
 if(ds_exists(temp_map, ds_type_map))
 {

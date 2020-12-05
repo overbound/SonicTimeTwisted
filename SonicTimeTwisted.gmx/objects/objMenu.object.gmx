@@ -74,8 +74,9 @@ menu_fn_finalize();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// draw menu without using surfaces (works in Special Stages)
-menu_fn_draw_no_surface();
+            <string>/// draw menu using D3D projections (works in Special Stages)
+menu_fn_draw_with_d3d_projection();
+
 </string>
           </argument>
         </arguments>
@@ -98,8 +99,8 @@ menu_fn_draw_no_surface();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// draw menu
-menu_fn_draw();
+            <string>/// draw menu using a surface (works everywhere except Special Stages)
+menu_fn_draw_with_surface();
 </string>
           </argument>
         </arguments>

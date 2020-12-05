@@ -115,9 +115,17 @@ if started == false
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>// Pause
-/// Pausing
-if started and not instance_exists(objTransition) and input_check_pressed(cPAUSE) and (!objProgram.paused) {objProgram.paused = not objProgram.paused; game_pause(objProgram.paused);}
+            <string>/// Pausing
+
+// Since GMS analyzes ALL conditions joined by &amp;&amp;, one of them is exported to another if(), the one that has the least chances to succeed to every frame
+if(input_check_pressed(cPAUSE))
+{
+    if(started &amp;&amp; (!instance_exists(objTransition)) &amp;&amp; (!objProgram.paused) &amp;&amp; hud.menu.state == 0)
+    {
+        objProgram.paused = !objProgram.paused;
+        game_pause(objProgram.paused);
+    }
+}
 </string>
           </argument>
         </arguments>
