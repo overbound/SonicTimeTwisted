@@ -2,7 +2,7 @@ if(objProgram.saveSlot == -1)
 {
     // level select
     menu_fn_add_option(tr("_specialstage_menu_Try_Again"), 0);
-    menu_fn_add_option(tr("_specialstage_menu_Quit"), 2);
+    menu_fn_add_option(tr("_specialstage_menu_Quit"), 1);
     button_width = 210;
 }
 else

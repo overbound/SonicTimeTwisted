@@ -349,15 +349,16 @@ draw_hud_score_time_rings(objSSLevel.timer, objSSPlayer.rings, 0, 0);
 // While the shield's position depends on the context and the lives' position depends on the input device
 script_execute(hud_draw_script);
 } else {
+
     draw_set_color(c_black);
     draw_rectangle(0,0,426,240,false);
     draw_set_color(c_white);
 }
+// this handles both the pause menu and the defeat messages
 if(menu.state != 0)
 {
     with(menu) event_user(4);
 }
-
 </string>
           </argument>
         </arguments>

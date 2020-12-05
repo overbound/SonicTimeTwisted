@@ -3372,6 +3372,10 @@
             <script>scripts\menu_part_sstage_loss_actions.gml</script>
             <script>scripts\menu_part_sstage_loss_step.gml</script>
             <script>scripts\menu_part_sstage_loss_draw.gml</script>
+            <script>scripts\menu_part_sstage_levelselect_result_items.gml</script>
+            <script>scripts\menu_part_sstage_levelselect_result_actions.gml</script>
+            <script>scripts\menu_part_sstage_levelselect_sstages_items.gml</script>
+            <script>scripts\menu_part_sstage_levelselect_sstages_actions.gml</script>
           </scripts>
           <scripts name="level_select">
             <script>scripts\menu_part_levelselect_char_items.gml</script>
