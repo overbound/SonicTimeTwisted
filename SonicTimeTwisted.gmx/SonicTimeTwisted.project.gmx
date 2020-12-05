@@ -3547,12 +3547,13 @@
         <script>scripts\tr_reload_all.gml</script>
         <script>scripts\tr_readd_builtin_fonts.gml</script>
         <script>scripts\tr_export_builtin_fonts.gml</script>
-        <script>scripts\tr_free.gml</script>
         <script>scripts\tr_get_real_prop.gml</script>
         <script>scripts\tr_format.gml</script>
         <script>scripts\tr_load_localized_sprites.gml</script>
         <script>scripts\tr_load_localized_sprite.gml</script>
         <script>scripts\tr_load_assets.gml</script>
+        <script>scripts\tr_free.gml</script>
+        <script>scripts\tr_free_localized_sprites.gml</script>
       </scripts>
     </scripts>
     <scripts name="Overlays">
