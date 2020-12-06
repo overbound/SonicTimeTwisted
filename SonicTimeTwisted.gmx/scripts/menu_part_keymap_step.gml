@@ -29,23 +29,12 @@ if(state == 13 || state == 14)
         }
         else
         {
-            if(menu_fn_is_key_mappable(pressed_key, confirmation_cursor))
+            var control_to_map = confirmation_cursor;
+            with(objProgram.inputManager)
             {
-                var key_to_map = menu_fn_get_keymap_getkey(confirmation_cursor);
-                if(is_string(key_to_map))
-                {
-                    save_control_map_keyboard(key_to_map, pressed_key);
-                    state = 15;
-                }
+                input_bind_key(pressed_key, control_to_map);
             }
-            else
-            {
-                if(state == 13)
-                {
-                    menu_fn_update_mapping_window(confirmation_text+'#'+tr('This key is already used.'));
-                    state = 14;
-                }
-            }
+            state = 15;
         }
     }
 }

@@ -53,7 +53,8 @@ switch(argument0)
         menu_fn_open_mapping_window(tr_format(tr("_options_menu_keymap_press"), tr("_buttonname_Start")), cSTART, 10);
         break;
     case 10:
-        // just refresh 
+        // individual map = save everything
+        save_control_map_keyboard();
         break;
     case 21:
         // group mapping - up
@@ -88,35 +89,26 @@ switch(argument0)
         menu_fn_open_mapping_window(tr_format(tr("_options_menu_keymap_press"), tr("_buttonname_Start")), cSTART, 29, 30);
         break;
     case 29:
-        // group mapping - success, discard the backup
+        // group mapping - success, discard the backup and save everything
         ds_map_destroy(temp_map);
+        save_control_map_keyboard();
         break;
     case 30:
-        // group mapping - cancelled, restore backup
-        var mapkey = ds_map_find_first(temp_map);
-        for(var i = 0; i < ds_map_size(temp_map); i++)
-        {
-            var mapvalue = ds_map_find_value(temp_map, mapkey);
-            var mapkey_to_save = menu_fn_get_keymap_getkey(mapkey);
-            if(is_string(mapkey_to_save))
-            {
-                save_control_map_keyboard(mapkey_to_save, mapvalue);
-            }
-            mapkey = ds_map_find_next(temp_map, mapkey);
-        }
+        // group mapping - cancelled, reload mappings from the ini file
+        input_reload_keyboard_controls();
         ds_map_destroy(temp_map);
         break;
 }
 
 // refreshing key labels
-var upLabel = 0;
-var downLabel = 0;
-var leftLabel = 0;
-var rightLabel = 0;
-var aLabel = 0;
-var bLabel = 0;
-var cLabel = 0;
-var startLabel = 0;
+var upLabel = '';
+var downLabel = '';
+var leftLabel = '';
+var rightLabel = '';
+var aLabel = '';
+var bLabel = '';
+var cLabel = '';
+var startLabel = '';
 
 for(var i=0; i < objProgram.inputManager.key_count; i++)
 {
@@ -124,28 +116,28 @@ for(var i=0; i < objProgram.inputManager.key_count; i++)
     switch(objProgram.inputManager.key_control[i])
     {
         case cUP:
-            upLabel = menu_fn_get_kb_label(stored_key);
+            upLabel = menu_fn_set_or_prepend_kb_label(stored_key, upLabel);
             break;
         case cDOWN:
-            downLabel = menu_fn_get_kb_label(stored_key);
+            downLabel = menu_fn_set_or_prepend_kb_label(stored_key, downLabel);
             break;
         case cLEFT:
-            leftLabel = menu_fn_get_kb_label(stored_key);
+            leftLabel = menu_fn_set_or_prepend_kb_label(stored_key, leftLabel);
             break;
         case cRIGHT:
-            rightLabel = menu_fn_get_kb_label(stored_key);
+            rightLabel = menu_fn_set_or_prepend_kb_label(stored_key, rightLabel);
             break;
         case cA:
-            aLabel = menu_fn_get_kb_label(stored_key);
+            aLabel = menu_fn_set_or_prepend_kb_label(stored_key, aLabel);
             break;
         case cB:
-            bLabel = menu_fn_get_kb_label(stored_key);
+            bLabel = menu_fn_set_or_prepend_kb_label(stored_key, bLabel);
             break;
         case cC:
-            cLabel = menu_fn_get_kb_label(stored_key);
+            cLabel = menu_fn_set_or_prepend_kb_label(stored_key, cLabel);
             break;
         case cSTART:
-            startLabel = menu_fn_get_kb_label(stored_key);
+            startLabel = menu_fn_set_or_prepend_kb_label(stored_key, startLabel);
             break;
     }
 }

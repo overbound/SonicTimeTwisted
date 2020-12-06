@@ -1,4 +1,5 @@
-/// Explode a string using a separator
+/// string_explode(separator, string)
+// Explode a string using a separator
 // argument0  - separator
 // argument1  - string
 

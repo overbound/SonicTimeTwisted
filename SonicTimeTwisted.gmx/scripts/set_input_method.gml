@@ -1,3 +1,4 @@
+///set_input_method(method, asFallback)
 objProgram.inputManager.input_method = argument0;
 is_touchscreen = argument0 == INPUT_TOUCHSCREEN;
 if(argument1)
