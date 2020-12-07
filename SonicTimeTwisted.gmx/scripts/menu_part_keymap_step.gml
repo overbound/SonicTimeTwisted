@@ -6,11 +6,8 @@ if(state == 13 || state == 14)
     var pressed_key = -1;
     for(var i = 4; i <= 255; i++)
     {
-        if (i == vk_anykey)
-        {
-            continue;
-        }
-        if (i == vk_nokey)
+        // F2 is reset, F12 is delete configurations
+        if (i == vk_anykey || i == vk_nokey || i == vk_f2 || i == vk_f12)
         {
             continue;
         }
