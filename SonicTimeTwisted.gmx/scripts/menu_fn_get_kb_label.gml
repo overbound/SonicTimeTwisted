@@ -1,5 +1,9 @@
 /// get button label to display on the configuration screen
 var code = round(real(argument0));
+if(code == 0)
+{
+    return '';
+}
 switch(code)
 {
     case vk_add:

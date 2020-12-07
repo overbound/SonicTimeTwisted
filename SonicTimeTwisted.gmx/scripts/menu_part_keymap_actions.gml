@@ -2,7 +2,14 @@ switch(argument0)
 {
     case 9:
     case -1:
-        menu_fn_exit_submenu(menu_part_options_items, 2);
+        if(input_check_button_bindings_complete())
+        {
+            menu_fn_exit_submenu(menu_part_options_items, 2);
+        }
+        else
+        {
+            menu_fn_open_confirmation_window(tr("_options_menu_keymap_incomplete"), 21, 11, false, tr("_options_menu_keymap_remap"), tr("_options_menu_keymap_reset"));
+        }        
         break;
     case 0:
         // general mapping - prepare a map for a backup, then engage!
@@ -54,6 +61,14 @@ switch(argument0)
         break;
     case 10:
         // individual map = save everything
+        save_control_map_keyboard();
+        break;
+    case 11:
+        // incomplete mapping - revert
+        with(objProgram.inputManager)
+        {
+            input_load_keyboard_controls(false);
+        }
         save_control_map_keyboard();
         break;
     case 21:

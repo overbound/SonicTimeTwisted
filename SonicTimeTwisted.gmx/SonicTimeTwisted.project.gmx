@@ -3225,6 +3225,7 @@
           <script>scripts\input_bind_button.gml</script>
           <script>scripts\input_bind_key.gml</script>
           <script>scripts\input_reset_key_bindings.gml</script>
+          <script>scripts\input_check_button_bindings_complete.gml</script>
         </scripts>
         <scripts name="Computer Input">
           <script>scripts\computer_input_reset_state.gml</script>

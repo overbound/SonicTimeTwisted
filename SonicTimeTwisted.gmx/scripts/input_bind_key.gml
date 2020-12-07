@@ -55,3 +55,5 @@ Applying key binding
 key[key_count] = argument0;
 key_control[key_count] = argument1;
 key_count += 1;
+
+show_debug_message("Key mapped: "+string(argument1)+" <- "+string(argument0));

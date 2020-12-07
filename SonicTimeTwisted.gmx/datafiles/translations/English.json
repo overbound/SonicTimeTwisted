@@ -100,6 +100,10 @@
 		"_buttonname_C": "C",
 		"_buttonname_Start": "Start",
 		
+		"_options_menu_keymap_incomplete": "The mapping is incomplete. Either remap\nall controls or reset to default.",
+		"_options_menu_keymap_remap": "Remap",
+		"_options_menu_keymap_reset": "Reset",
+		
 		"_graphics_menu_Title": "Video options",
 		"_graphics_menu_Screen_size": "Screen size",
 		"_graphics_menu_Stm": "Score tally mode",
