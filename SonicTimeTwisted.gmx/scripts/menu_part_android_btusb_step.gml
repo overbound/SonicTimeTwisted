@@ -13,27 +13,7 @@ if(state == 13 || state == 14)
         var _input = android_get_any_key(0);
         if(_input > -1)
         {
-            if(android_map_input(0, confirmation_cursor, _input))
-            {
-                save_control_map_android_device(confirmation_cursor);
-                state = 15;
-            }
-            else
-            {
-                if(state == 13)
-                {
-                    if(_input % 10 == 0)
-                    {
-                        menu_fn_update_mapping_window(confirmation_text+'#'+tr('This button is already used.'));
-                        state = 14;
-                    }
-                    else
-                    {
-                        menu_fn_update_mapping_window(confirmation_text+'#'+tr('This axis is already used.'));
-                        state = 14;
-                    }
-                }
-            }
+            android_map_input(0, confirmation_cursor, _input);
             state = 15;
         }
     }

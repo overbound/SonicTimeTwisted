@@ -50,42 +50,42 @@ public class SttAndroid extends ExtensionBase {
     /**
      * In Sonic Time Twisted's state variable, UP is the leftmost bit
      */
-    static final int cUP = 1;
+    public static final int cUP = 1;
 
     /**
      * In Sonic Time Twisted's state variable, DOWN is the second leftmost bit
      */
-    static final int cDOWN = 2;
+    public static final int cDOWN = 2;
 
     /**
      * In Sonic Time Twisted's state variable, LEFT is the third leftmost bit
      */
-    static final int cLEFT = 4;
+    public static final int cLEFT = 4;
 
     /**
      * In Sonic Time Twisted's state variable, RIGHT is the fourth leftmost bit
      */
-    static final int cRIGHT = 8;
+    public static final int cRIGHT = 8;
 
     /**
      * In Sonic Time Twisted's state variable, A is the fifth leftmost bit
      */
-    static final int cA = 16;
+    public static final int cA = 16;
 
     /**
      * In Sonic Time Twisted's state variable, B is the sixth leftmost bit
      */
-    static final int cB = 32;
+    public static final int cB = 32;
 
     /**
      * In Sonic Time Twisted's state variable, C is the seventh leftmost bit
      */
-    static final int cC = 64;
+    public static final int cC = 64;
 
     /**
      * In Sonic Time Twisted's state variable, START is the eighth leftmost bit
      */
-    static final int cSTART = 128;
+    public static final int cSTART = 128;
 
     /**
      * Inputs, one per player. At the time of coding this, only one player is supported, but leaving
@@ -582,6 +582,16 @@ public class SttAndroid extends ExtensionBase {
                                                    String configuration) {
         inputs[(int) inputNumber].setSoftwareMappedConfiguration((int) inputCode, configuration);
         return 0.0;
+    }
+
+    /**
+     * Returns whether all in-game buttons are mapped for the current player.
+     *
+     * @param inputNumber   Player number: 0 or 1
+     * @return 1 if all buttons are mapped for the given player, 0 otherwise
+     */
+    public double android_is_mapping_complete(double inputNumber) {
+        return inputs[(int) inputNumber].isSoftwareMappingComplete() ? 1.0 : 0.0;
     }
 
     /**

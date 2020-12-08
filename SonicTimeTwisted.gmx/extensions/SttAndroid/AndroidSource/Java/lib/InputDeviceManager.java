@@ -24,6 +24,8 @@ import android.view.InputDevice;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 
+import ${YYAndroidPackageName}.SttAndroid;
+
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -754,6 +756,23 @@ public class InputDeviceManager {
             }
         }
         return false;
+    }
+
+    /**
+     * Returns whether all in-game buttons are mapped for the current player.
+     *
+     * @return Whether all buttons are mapped for the given player
+     */
+    public boolean isSoftwareMappingComplete()
+    {
+        return mainSoftwareMappings.containsKey(SttAndroid.cUP)
+                && mainSoftwareMappings.containsKey(SttAndroid.cDOWN)
+                && mainSoftwareMappings.containsKey(SttAndroid.cLEFT)
+                && mainSoftwareMappings.containsKey(SttAndroid.cRIGHT)
+                && mainSoftwareMappings.containsKey(SttAndroid.cA)
+                && mainSoftwareMappings.containsKey(SttAndroid.cB)
+                && mainSoftwareMappings.containsKey(SttAndroid.cC)
+                && mainSoftwareMappings.containsKey(SttAndroid.cSTART);
     }
 
     /**

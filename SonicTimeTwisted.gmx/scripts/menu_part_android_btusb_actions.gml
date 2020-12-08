@@ -2,7 +2,14 @@ switch(argument0)
 {
     case 10:
     case -1:
-        menu_fn_exit_submenu(menu_part_options_items, 3);
+        if(android_is_mapping_complete(0))
+        {
+            menu_fn_exit_submenu(menu_part_options_items, 3);
+        }
+        else
+        {
+            menu_fn_open_confirmation_window(tr("_options_menu_keymap_incomplete"), 21, 12, false, tr("_options_menu_keymap_remap"), tr("_options_menu_keymap_reset"));
+        }        
         break;
     case 0:
         // rumble
@@ -67,6 +74,11 @@ switch(argument0)
     case 11:
         // save the mapped button
         android_set_any_key_mode(0, false);
+        save_control_map_android_device();
+        break;
+    case 12:
+        // reset default software mapping
+        input_load_android_device_default_controls();
         break;
     case 21:
         // group mapping - up
@@ -101,9 +113,10 @@ switch(argument0)
         android_start_software_mapping(tr_format(tr("_options_menu_keymap_press"), tr("_buttonname_Start")), cSTART, 29, 30);
         break;
     case 29:
-        // group mapping - success, discard the backup
+        // group mapping - success, discard the backup and save
         android_set_any_key_mode(0, false);
         ds_map_destroy(temp_map);
+        save_control_map_android_device();
         break;
     case 30:
         // group mapping - cancelled, discard backup

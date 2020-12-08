@@ -422,6 +422,17 @@
             <arg>2</arg>
           </args>
         </function>
+        <function>
+          <name>android_is_mapping_complete</name>
+          <externalName>android_is_mapping_complete</externalName>
+          <kind>11</kind>
+          <help>android_is_mapping_complete(inputNumber)</help>
+          <returnType>2</returnType>
+          <argCount>1</argCount>
+          <args>
+            <arg>2</arg>
+          </args>
+        </function>
       </functions>
       <constants/>
     </file>
