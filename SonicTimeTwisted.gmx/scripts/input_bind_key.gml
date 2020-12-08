@@ -6,16 +6,18 @@ Combing over already stored mappings, finding two things:
 */
 var found_mapping_key1 = -1;
 var found_mapping_key2 = -1;
-var found_alread_used_index = -1;
+var found_already_used_index = -1;
 var do_delete_values = false
 
 for(var i = 0; i < key_count; i++)
 {
+    // check whether the current key is already used
     if(key[i] == argument0)
     {
-        found_alread_used_index = i;
+        found_already_used_index = i;
         do_delete_values = true;
     }
+    // check whether this control is already mapped twice
     if(key_control[i] == argument1)
     {
         if(found_mapping_key1 == -1)
@@ -43,10 +45,10 @@ if(do_delete_values)
         found_mapping_backup = found_mapping_key1;
     }
     /*
-    Deleting existing backup mapping and mapping for another key (-1 indexes are ignored, but this also means we'll need to recalculate key_count)
+    Deleting existing backup mapping and mapping for the same key (-1 indexes are ignored, but this also means we'll need to recalculate key_count)
     */
-    key = array_1d_delete_keys(key, found_alread_used_index, found_mapping_backup);
-    key_control = array_1d_delete_keys(key_control, found_alread_used_index, found_mapping_backup);
+    key = array_1d_delete_keys(key, found_already_used_index, found_mapping_backup);
+    key_control = array_1d_delete_keys(key_control, found_already_used_index, found_mapping_backup);
     key_count = array_length_1d(key);
 }
 /*

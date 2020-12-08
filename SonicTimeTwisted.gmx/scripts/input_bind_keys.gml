@@ -1,12 +1,12 @@
-///input_bind_keys(storedSetting, default)
-var mappedString = string(argument0);
-if(string_pos(",",mappedString) > 0)
+///input_bind_keys(storedSetting, control)
+var mapped_string = string(argument0);
+if(string_pos(",",mapped_string) > 0)
 {
-    var mappedKeys = string_explode(',', mappedString);
-    input_bind_key(real(mappedKeys[1]), argument1);
-    input_bind_key(real(mappedKeys[0]), argument1);    
+    var mapped_keys = string_explode(',', mapped_string);
+    input_bind_key(real(mapped_keys[1]), argument1);
+    input_bind_key(real(mapped_keys[0]), argument1);    
 }
 else
 {
-    input_bind_key(real(mappedString), argument1);
+    input_bind_key(real(mapped_string), argument1);
 }

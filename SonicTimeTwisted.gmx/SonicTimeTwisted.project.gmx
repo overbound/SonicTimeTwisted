@@ -3220,12 +3220,17 @@
         <scripts name="Binding">
           <scripts name="With backup">
             <script>scripts\input_bind_keys.gml</script>
+            <script>scripts\input_bind_buttons_or_axes.gml</script>
           </scripts>
           <script>scripts\input_bind_axis.gml</script>
           <script>scripts\input_bind_button.gml</script>
           <script>scripts\input_bind_key.gml</script>
-          <script>scripts\input_reset_key_bindings.gml</script>
-          <script>scripts\input_check_button_bindings_complete.gml</script>
+          <script>scripts\input_reset_keyboard_bindings.gml</script>
+          <script>scripts\input_reset_gamepad_bindings.gml</script>
+          <script>scripts\input_check_keyboard_bindings_complete.gml</script>
+          <script>scripts\input_check_gamepad_bindings_complete.gml</script>
+          <script>scripts\input_clear_gamepad_backup_mappings.gml</script>
+          <script>scripts\input_clear_gamepad_backup_mapping.gml</script>
         </scripts>
         <scripts name="Computer Input">
           <script>scripts\computer_input_reset_state.gml</script>
@@ -3281,6 +3286,7 @@
             <script>scripts\input_load_android_device_controls.gml</script>
             <script>scripts\input_load_android_device_one_control.gml</script>
             <script>scripts\input_reload_keyboard_controls.gml</script>
+            <script>scripts\input_reload_gamepad_controls.gml</script>
             <script>scripts\input_load_android_device_default_controls.gml</script>
           </scripts>
           <script>scripts\input_load.gml</script>
@@ -3321,6 +3327,7 @@
           <script>scripts\save_control_map_keyboard.gml</script>
           <script>scripts\save_control_map_android_device.gml</script>
           <script>scripts\get_control_map_keyboard_value.gml</script>
+          <script>scripts\get_control_map_gamepad_value.gml</script>
         </scripts>
         <scripts name="State">
           <script>scripts\input_any_gamepad_axis.gml</script>
@@ -3389,6 +3396,7 @@
           <script>scripts\menu_fn_get_gp_label.gml</script>
           <script>scripts\menu_fn_get_kb_label.gml</script>
           <script>scripts\menu_fn_set_or_prepend_kb_label.gml</script>
+          <script>scripts\menu_fn_set_or_prepend_gp_label.gml</script>
           <script>scripts\menu_fn_is_axis_mappable.gml</script>
           <script>scripts\menu_fn_is_button_mappable.gml</script>
           <scripts name="actions_on_close">

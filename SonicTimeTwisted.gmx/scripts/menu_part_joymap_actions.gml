@@ -2,7 +2,14 @@ switch(argument0)
 {
     case 10:
     case -1:
-        menu_fn_exit_submenu(menu_part_options_items, 3);
+        if(input_check_gamepad_bindings_complete())
+        {
+            menu_fn_exit_submenu(menu_part_options_items, 3);
+        }
+        else
+        {
+            menu_fn_open_confirmation_window(tr("_options_menu_keymap_incomplete"), 21, 12, false, tr("_options_menu_keymap_remap"), tr("_options_menu_keymap_reset"));
+        }
         break;
     case 0:
         // rumble
@@ -77,7 +84,16 @@ switch(argument0)
         menu_fn_open_mapping_window(tr_format(tr("_options_menu_keymap_press"), tr("_buttonname_Start")), cSTART, 11);
         break;
     case 11:
-        // just refresh 
+        // individual map = save everything
+        save_control_map_gamepad();
+        break;
+    case 12:
+        // incomplete mapping - revert
+        with(objProgram.inputManager)
+        {
+            input_load_gamepad_controls(false);
+        }
+        save_control_map_gamepad();
         break;
     case 21:
         // group mapping - up
@@ -112,22 +128,13 @@ switch(argument0)
         menu_fn_open_mapping_window(tr_format(tr("_options_menu_keymap_press"), tr("_buttonname_Start")), cSTART, 29, 30);
         break;
     case 29:
-        // group mapping - success, discard the backup
+        // group mapping - success, discard the backup and save everything
         ds_map_destroy(temp_map);
+        save_control_map_gamepad();
         break;
     case 30:
-        // group mapping - cancelled, discard backup
-        var mapkey = ds_map_find_first(temp_map);
-        for(var i = 0; i < ds_map_size(temp_map); i++)
-        {
-            var mapvalue = ds_map_find_value(temp_map, mapkey);
-            var mapkey_to_save = menu_fn_get_keymap_getkey(mapkey);
-            if(is_string(mapkey_to_save))
-            {
-                save_control_map_gamepad(mapkey_to_save, mapvalue);
-            }
-            mapkey = ds_map_find_next(temp_map, mapkey);
-        }
+        // group mapping - cancelled, reload mappings from the ini file
+        input_reload_gamepad_controls();
         ds_map_destroy(temp_map);
         break;
     case -2:
@@ -150,84 +157,71 @@ switch(argument0)
 }
 
 // refreshing gamepad labels
-var upLabel = 0;
-var downLabel = 0;
-var leftLabel = 0;
-var rightLabel = 0;
-var aLabel = 0;
-var bLabel = 0;
-var cLabel = 0;
-var startLabel = 0;
+var upLabel = '';
+var downLabel = '';
+var leftLabel = '';
+var rightLabel = '';
+var aLabel = '';
+var bLabel = '';
+var cLabel = '';
+var startLabel = '';
 
-for(var i=0; i < objProgram.inputManager.button_count; i++)
+
+with(objProgram.inputManager)
 {
-    var stored_key = objProgram.inputManager.button[i];
-    switch(objProgram.inputManager.button_control[i])
+    for(var i=0; i < gamepad_mapping_count; i++)
     {
-        case cUP:
-            upLabel = menu_fn_get_gp_label(stored_key);
-            break;
-        case cDOWN:
-            downLabel = menu_fn_get_gp_label(stored_key);
-            break;
-        case cLEFT:
-            leftLabel = menu_fn_get_gp_label(stored_key);
-            break;
-        case cRIGHT:
-            rightLabel = menu_fn_get_gp_label(stored_key);
-            break;
-        case cA:
-            aLabel = menu_fn_get_gp_label(stored_key);
-            break;
-        case cB:
-            bLabel = menu_fn_get_gp_label(stored_key);
-            break;
-        case cC:
-            cLabel = menu_fn_get_gp_label(stored_key);
-            break;
-        case cSTART:
-            startLabel = menu_fn_get_gp_label(stored_key);
-            break;
+        var stored_key = "";
+        var stored_control = 0;
+        var mapping_kind = gamepad_mapping[i] % 10;
+        var mapping_index = floor(gamepad_mapping[i]/10);
+        if(mapping_kind == 0)
+        {
+            stored_key = objProgram.inputManager.button[mapping_index];
+            stored_control = button_control[mapping_index];
+        }
+        else
+        {
+            var axiscode = "+";
+            if(axis_direction[mapping_index] < 0)
+            {
+                axiscode = "-";
+            }
+            axiscode += string(axis[mapping_index]);
+            stored_key = axiscode;
+            stored_control = axis_control[mapping_index];
+        }
+        switch(stored_control)
+        {
+            case cUP:
+                upLabel = menu_fn_set_or_prepend_gp_label(stored_key, upLabel);
+                break;
+            case cDOWN:
+                downLabel = menu_fn_set_or_prepend_gp_label(stored_key, downLabel);
+                break;
+            case cLEFT:
+                leftLabel = menu_fn_set_or_prepend_gp_label(stored_key, leftLabel);
+                break;
+            case cRIGHT:
+                rightLabel = menu_fn_set_or_prepend_gp_label(stored_key, rightLabel);
+                break;
+            case cA:
+                aLabel = menu_fn_set_or_prepend_gp_label(stored_key, aLabel);
+                break;
+            case cB:
+                bLabel = menu_fn_set_or_prepend_gp_label(stored_key, bLabel);
+                break;
+            case cC:
+                cLabel = menu_fn_set_or_prepend_gp_label(stored_key, cLabel);
+                break;
+            case cSTART:
+                startLabel = menu_fn_set_or_prepend_gp_label(stored_key, startLabel);
+                break;
+        }
+        
     }
 }
-for(var i=0; i < objProgram.inputManager.axis_count; i++)
-{
-    var axiscode = "+";
-    if(objProgram.inputManager.axis_direction[i] < 0)
-    {
-        axiscode = "-";
-    }
-    axiscode += string(objProgram.inputManager.axis[i]);
-    stored_key = axiscode;
-    
-    switch(objProgram.inputManager.axis_control[i])
-    {
-        case cUP:
-            upLabel = menu_fn_get_gp_label(stored_key);
-            break;
-        case cDOWN:
-            downLabel = menu_fn_get_gp_label(stored_key);
-            break;
-        case cLEFT:
-            leftLabel = menu_fn_get_gp_label(stored_key);
-            break;
-        case cRIGHT:
-            rightLabel = menu_fn_get_gp_label(stored_key);
-            break;
-        case cA:
-            aLabel = menu_fn_get_gp_label(stored_key);
-            break;
-        case cB:
-            bLabel = menu_fn_get_gp_label(stored_key);
-            break;
-        case cC:
-            cLabel = menu_fn_get_gp_label(stored_key);
-            break;
-        case cSTART:
-            startLabel = menu_fn_get_gp_label(stored_key);
-            break;
-    }
-}
+
 
 if(objProgram.inputManager.rumble_enabled)
 {

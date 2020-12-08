@@ -49,6 +49,8 @@ padcount = gamepad_get_device_count();
 for (i = padcount - 1; i &gt; -1; i--) padarray[i] = false;
 button_count = 0;
 axis_count = 0;
+// references gamepad mappings in order for handling main/backup mappings
+gamepad_mapping_count = 0;
 // input stream
 stream = -1;
 stream_size = $FF;

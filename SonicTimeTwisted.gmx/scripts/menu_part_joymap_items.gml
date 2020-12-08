@@ -13,7 +13,7 @@ menu_fn_add_option(tr("_buttonname_C"), 8, 1, "");
 menu_fn_add_option(tr("_buttonname_Start"), 9, 1, "");
 menu_fn_add_option(tr("_options_menu_Back"), 10);
 
-button_width = 200;
+button_width = 300;
 
 action_script = menu_part_joymap_actions;
 draw_script = menu_fn_draw_default;

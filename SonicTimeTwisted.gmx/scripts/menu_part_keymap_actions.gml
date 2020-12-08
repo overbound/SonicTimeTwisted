@@ -2,7 +2,7 @@ switch(argument0)
 {
     case 9:
     case -1:
-        if(input_check_button_bindings_complete())
+        if(input_check_keyboard_bindings_complete())
         {
             menu_fn_exit_submenu(menu_part_options_items, 2);
         }

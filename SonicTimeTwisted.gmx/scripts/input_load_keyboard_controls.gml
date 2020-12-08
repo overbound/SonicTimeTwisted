@@ -1,5 +1,5 @@
 // keyboard
-input_reset_key_bindings();
+input_reset_keyboard_bindings();
 var loaded = false;
 if(argument0) // argument0 - from INI, default values if false
 {
@@ -12,10 +12,10 @@ if(argument0) // argument0 - from INI, default values if false
     input_bind_keys(ini_read_string('keyboard_controls', 'c', ord('D')), cC);
     input_bind_keys(ini_read_string('keyboard_controls', 'start', vk_enter), cSTART);
     
-    loaded = input_check_button_bindings_complete();
+    loaded = input_check_keyboard_bindings_complete();
     if(!loaded)
     {
-        input_reset_key_bindings();
+        input_reset_keyboard_bindings();
     }
 }
 if(!loaded)

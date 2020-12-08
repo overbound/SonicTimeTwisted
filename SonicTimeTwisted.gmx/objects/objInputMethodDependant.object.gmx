@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>sync_is_touchscreen();
+            <string>/// Parent for objects that need to be aware of the touchscreen
+sync_is_touchscreen();
 </string>
           </argument>
         </arguments>
