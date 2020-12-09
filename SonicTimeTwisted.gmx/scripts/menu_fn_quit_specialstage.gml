@@ -1,4 +1,4 @@
-if(objProgram.saveSlot == -1)
+if(objProgram.saveSlot == -2)
 {
     // Level select: proceed to the stage end menu        
     if objProgram.in_past

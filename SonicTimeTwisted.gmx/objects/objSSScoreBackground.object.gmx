@@ -149,7 +149,7 @@ ss_instructions2 = "";
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(objProgram.saveSlot &gt; -1) // if we are playing this in the mini-game/level select mode, lives don't appear
+            <string>if(objProgram.saveSlot &gt; -2) // if we are playing this in the mini-game/level select mode, lives don't appear
 {
     var score_card = instance_create(64, 0, objSSScoreCard);
     score_card.visible = true;
@@ -188,7 +188,7 @@ else
           <argument>
             <kind>1</kind>
             <string>// Only show the menu in level select mode
-if(objProgram.saveSlot == -1)
+if(objProgram.saveSlot == -2)
 {
     if(menu.state != 0)
     {
@@ -221,7 +221,7 @@ if(objProgram.saveSlot == -1)
           <argument>
             <kind>1</kind>
             <string>// Only show the menu in level select mode
-if(objProgram.saveSlot == -1)
+if(objProgram.saveSlot == -2)
 {
     if(menu.state != 0)
     {
@@ -253,7 +253,7 @@ if(objProgram.saveSlot == -1)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(objProgram.saveSlot == -1)
+            <string>if(objProgram.saveSlot == -2)
 {
     if(menu.state != 0)
     {
@@ -286,7 +286,7 @@ if(objProgram.saveSlot == -1)
           <argument>
             <kind>1</kind>
             <string>draw_background_ext(bg, bg_x, bg_y, 2, 1, 0, c_white, 0.2);
-if(objProgram.saveSlot &gt; -1) // emeralds only appear in regular gameplay mode
+if(objProgram.saveSlot &gt; -2) // emeralds only appear in regular gameplay mode
 {
     for(var i = 0; i &lt; level; i++)
     {

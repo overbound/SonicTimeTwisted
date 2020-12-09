@@ -2,7 +2,7 @@
 // normally, save_data_write would have been used en masse, but for peformance's sake, we don't do it in case of a saved slot
 var character = argument0;
 var saveSlot = argument1;
-if(saveSlot <= 0)
+if(saveSlot < 0)
 {
     // if no save mode : flush temporary storage
     ds_map_clear(objProgram.no_save_data);
@@ -41,7 +41,7 @@ if(saveSlot <= 0)
 }
 else
 {
-    var filename = "save" +string(selectCheck)+".ini";
+    var filename = "save" +string(saveSlot)+".ini";
     stt_ini_open(filename);
     ini_write_string(STATS, CHARACTER, base64_encode(string(character)));
     ini_write_string(STATS, LIVES, base64_encode(string(3)));

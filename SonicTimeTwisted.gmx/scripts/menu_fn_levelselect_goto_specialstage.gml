@@ -1,8 +1,8 @@
-/// Leave the special stage and proceed to level select
-// Used if level select had been used to access the special stage in the first place
-// argument0 - past
-// argument1 - level
-objProgram.saveSlot = -1;
+/// menu_fn_levelselect_goto_specialstage(inPast, currentLevel)
+
+// -2 is a special mode in which one Special Stage is played at a time
+objProgram.saveSlot = -2;
+ds_map_clear(objProgram.no_save_data);
 var special_level;
 if(argument0)
 {

@@ -48,9 +48,6 @@ event_inherited();
           <argument>
             <kind>1</kind>
             <string>/// Initialize objects for the screen and read saved data
-// For backwards compatibility, all existing save files are shifted one slot to the right
-// if a save exists in slot 0.
-shift_savefiles();
 /// Create Objects and Variables
 slots[0]=instance_create(64,120,objNoSaveSlot);
 slots[1]=instance_create(192,120,objSaveSlot);
@@ -61,15 +58,15 @@ slots[5]=instance_create(704,120,objSaveSlot);
 slots[6]=instance_create(832,120,objSaveSlot);
 slots[7]=instance_create(960,120,objSaveSlot);
 slots[8]=instance_create(1088,120,objDeleteSlot);
-slots[0].slotNumber = 0;
-slots[1].slotNumber = 1;
-slots[2].slotNumber = 2;
-slots[3].slotNumber = 3;
-slots[4].slotNumber = 4;
-slots[5].slotNumber = 5;
-slots[6].slotNumber = 6;
-slots[7].slotNumber = 7;
-slots[8].slotNumber = 8;
+slots[0].slotNumber = -1;
+slots[1].slotNumber = 0;
+slots[2].slotNumber = 1;
+slots[3].slotNumber = 2;
+slots[4].slotNumber = 3;
+slots[5].slotNumber = 4;
+slots[6].slotNumber = 5;
+slots[7].slotNumber = 6;
+slots[8].slotNumber = 7;
 xSpeed=0;
 selectCheck = 1;
 x=slots[1].x;
@@ -163,7 +160,6 @@ hint_up_to_date = false;
 7 - centering camera before cancelling delete mode (touchscreen-specific)
 
 */
-show_debug_message(selectState);
 </string>
           </argument>
         </arguments>
@@ -1414,7 +1410,7 @@ hint_up_to_date = false;
           <argument>
             <kind>1</kind>
             <string>/// Delete a slot
-var filename = save_file_name(selectCheck);
+var filename = save_file_name(slots[selectCheck].slotNumber);
 slots[selectCheck].visiblePast=0;
 slots[selectCheck].visibleFuture=0;
 stt_file_delete(filename);
@@ -1448,11 +1444,11 @@ slots[selectCheck].lastPastLevel = 0;
             <kind>1</kind>
             <string>/// Create save or start a no-save game
 
-create_new_save(slots[selectCheck].characterSelect, other.selectCheck);
+create_new_save(slots[selectCheck].characterSelect, slots[selectCheck].slotNumber);
 slots[selectCheck].futureLevels[0]=true;
 slots[selectCheck].allowLevelStart =false;
 slots[selectCheck].visibleFuture=1;
-if(selectCheck &gt; 0)
+if(slots[selectCheck].slotNumber &gt;= 0)
 {
     selectState = 1;
     // Hints update
@@ -1461,7 +1457,7 @@ if(selectCheck &gt; 0)
 else
 {
     // if it's a no save slot, the game immediately starts
-    objProgram.saveSlot=other.selectCheck;
+    objProgram.saveSlot=-1;
     objProgram.in_past = false;
     objGameData.character_id[0] = slots[selectCheck].characterSelect;
     load_emeralds();
@@ -1512,7 +1508,7 @@ if selectState == 4 {
     }
 
 } else {
-        var filename = save_file_name(selectCheck);
+        var filename = save_file_name(slots[selectCheck].slotNumber);
         if !stt_file_exists(filename) {
             selectState = 2;
             allowLevelStart = false;

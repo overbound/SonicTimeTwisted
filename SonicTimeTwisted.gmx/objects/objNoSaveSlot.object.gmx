@@ -60,75 +60,46 @@ currentEmerald = 0;
           <argument>
             <kind>1</kind>
             <string>/// Choose Icon
-var _b64false = base64_encode(string(false));
-ini_open_from_string("");
-futureLevels[0]=real(base64_decode(ini_read_string(LEVELS, aAA1_f, _b64false)));
-futureLevels[1]=real(base64_decode(ini_read_string(LEVELS, aAA2_f, _b64false)));
-futureLevels[2]=real(base64_decode(ini_read_string(LEVELS, aRR1_f, _b64false)));
-futureLevels[3]=real(base64_decode(ini_read_string(LEVELS, aRR2_f, _b64false)));
-futureLevels[4]=real(base64_decode(ini_read_string(LEVELS, aFF1_f, _b64false)));
-futureLevels[5]=real(base64_decode(ini_read_string(LEVELS, aFF2_f, _b64false)));
-futureLevels[6]=real(base64_decode(ini_read_string(LEVELS, aVV1_f, _b64false)));
-futureLevels[7]=real(base64_decode(ini_read_string(LEVELS, aVV2_f, _b64false)));
-futureLevels[8]=real(base64_decode(ini_read_string(LEVELS, aDD1_f, _b64false)));
-futureLevels[9]=real(base64_decode(ini_read_string(LEVELS, aDD2_f, _b64false)));
-futureLevels[10]=real(base64_decode(ini_read_string(LEVELS, aTT1_f, _b64false)));
-futureLevels[11]=real(base64_decode(ini_read_string(LEVELS, aTT2_f, _b64false)));
-futureLevels[12]=real(base64_decode(ini_read_string(LEVELS, aSS1, _b64false)));
-futureLevels[13]=real(base64_decode(ini_read_string(LEVELS, aPP1, _b64false)));
-futureLevels[14]=real(base64_decode(ini_read_string(LEVELS, aPP2, _b64false)));
-futureLevels[15]=real(base64_decode(ini_read_string(LEVELS, aMM1, _b64false)));
-pastLevels[0]=real(base64_decode(ini_read_string(LEVELS, aAA1_p, _b64false)));
-pastLevels[1]=real(base64_decode(ini_read_string(LEVELS, aAA2_p, _b64false)));
-pastLevels[2]=real(base64_decode(ini_read_string(LEVELS, aRR1_p, _b64false)));
-pastLevels[3]=real(base64_decode(ini_read_string(LEVELS, aRR2_p, _b64false)));
-pastLevels[4]=real(base64_decode(ini_read_string(LEVELS, aFF1_p, _b64false)));
-pastLevels[5]=real(base64_decode(ini_read_string(LEVELS, aFF2_p, _b64false)));
-pastLevels[6]=real(base64_decode(ini_read_string(LEVELS, aVV1_p, _b64false)));
-pastLevels[7]=real(base64_decode(ini_read_string(LEVELS, aVV2_p, _b64false)));
-pastLevels[8]=real(base64_decode(ini_read_string(LEVELS, aDD1_p, _b64false)));
-pastLevels[9]=real(base64_decode(ini_read_string(LEVELS, aDD2_p, _b64false)));
-pastLevels[10]=real(base64_decode(ini_read_string(LEVELS, aTT1_p, _b64false)));
-pastLevels[11]=real(base64_decode(ini_read_string(LEVELS, aTT2_p, _b64false)));
+futureLevels[0]=false;
+futureLevels[1]=false;
+futureLevels[2]=false;
+futureLevels[3]=false;
+futureLevels[4]=false;
+futureLevels[5]=false;
+futureLevels[6]=false;
+futureLevels[7]=false;
+futureLevels[8]=false;
+futureLevels[9]=false;
+futureLevels[10]=false;
+futureLevels[11]=false;
+futureLevels[12]=false;
+futureLevels[13]=false;
+futureLevels[14]=false;
+futureLevels[15]=false;
+pastLevels[0]=false;
+pastLevels[1]=false;
+pastLevels[2]=false;
+pastLevels[3]=false;
+pastLevels[4]=false;
+pastLevels[5]=false;
+pastLevels[6]=false;
+pastLevels[7]=false;
+pastLevels[8]=false;
+pastLevels[9]=false;
+pastLevels[10]=false;
+pastLevels[11]=false;
 pastLevels[12]=false;
 pastLevels[13]=false;
 pastLevels[14]=false;
 pastLevels[15]=false;
-characterSelect=real(base64_decode(ini_read_string(STATS, CHARACTER, base64_encode(string(1)))));
-currentStone = real(base64_decode(ini_read_string(EMERALDS, PAST, _b64false)));
-currentEmerald = real(base64_decode(ini_read_string(EMERALDS, FUTURE, _b64false)));
-ini_close();
-// is this code even meaningful?
-// what it does in the obj[NO]SavSlot context?
-for(i=0; i &lt; 16; i++) {
-    if pastLevels[i] == true {
-        
-        lastPastLevel=i;
-    
-    } 
-    
-    if futureLevels[i] == true {
-        
-        lastFutureLevel=i;
-    
-    } 
-}
+characterSelect=1;
+currentStone = false;
+currentEmerald = false;
 show_debug_message("Last FUTURE" + string(lastFutureLevel));
-if lastPastLevel &gt; lastFutureLevel {
-    iconIndex = lastPastLevel;
-}
-else iconIndex = lastFutureLevel;
-lastIndex = iconIndex;
-if pastLevels[iconIndex] == true {
-     visiblePast=1;
- }
- else if pastLevels[iconIndex] == false 
-     visiblePast = 0;
- 
- if futureLevels[iconIndex] == true {
-     visibleFuture=1;
- }
- else if futureLevels[iconIndex] == false  visibleFuture = 0;
+iconIndex = lastFutureLevel;
+lastIndex = lastFutureLevel;
+visiblePast = 0;
+visibleFuture = 0;
 </string>
           </argument>
         </arguments>

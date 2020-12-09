@@ -3532,7 +3532,6 @@
         <script>scripts\save_big_ring.gml</script>
         <script>scripts\save_data_read.gml</script>
         <script>scripts\save_data_write.gml</script>
-        <script>scripts\shift_savefiles.gml</script>
         <script>scripts\load_emeralds.gml</script>
         <script>scripts\load_big_ring.gml</script>
         <script>scripts\load_lives.gml</script>

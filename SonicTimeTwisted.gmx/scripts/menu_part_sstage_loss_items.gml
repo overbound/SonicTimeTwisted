@@ -1,4 +1,4 @@
-if(objProgram.saveSlot == -1)
+if(objProgram.saveSlot == -2)
 {
     // level select
     menu_fn_add_option(tr("_specialstage_menu_Try_Again"), 0);

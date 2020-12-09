@@ -12,7 +12,7 @@
   <showcolour>-1</showcolour>
   <code>// if we're playing this using the level select, then a different BGM plays
 // and we get a menu instead of a countdown
-if(objProgram.saveSlot == -1)
+if(objProgram.saveSlot == -2)
 {
     play_music_intro(bgmSaveScreenIntro,0);
     objMusic.musicLoop = bgmSaveScreenLoop;

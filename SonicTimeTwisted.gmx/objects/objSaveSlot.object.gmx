@@ -158,7 +158,11 @@ if (other.stageLeftRight == 1 &amp;&amp; visibleFuture == 1) or (other.stageLeft
     else objProgram.in_past = false;
 
     objGameData.character_id[0] = characterSelect;
-    objProgram.saveSlot=other.selectCheck;
+    objProgram.saveSlot=other.slots[other.selectCheck].slotNumber;
+    if(objProgram.saveSlot &lt; 0)
+    {
+        ds_map_clear(objProgram.no_save_data);
+    }
     load_emeralds();
     load_lives();
     if iconIndex &gt; 0 {

@@ -1,3 +1,6 @@
+/// menu_fn_levelselect_goto_act(inPast, currentLevel)
+objProgram.saveSlot = -1;
+ds_map_clear(objProgram.no_save_data);
 objProgram.in_past = argument0;
 objProgram.current_level = argument1;
 

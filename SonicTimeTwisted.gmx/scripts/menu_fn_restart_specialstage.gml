@@ -1,5 +1,5 @@
 // Special stage failure menu
-if(objProgram.saveSlot == -1) // if we are playing this in the mini-game/level select mode, this menu behaves differently
+if(objProgram.saveSlot == -2) // if we are playing this in the mini-game/level select mode, this menu behaves differently
 {
     room_restart();
     with objSSLevel loopMusic = true;
