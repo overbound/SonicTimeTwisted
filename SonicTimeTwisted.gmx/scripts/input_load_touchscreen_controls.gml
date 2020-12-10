@@ -3,6 +3,8 @@ if(argument0) // argument0 - from INI, default values if false
 {
     dpadmode = ini_read_real('smartphone','dpadmode',0);
     vkalpha = ini_read_real('smartphone','vkalpha',0.8);
+    vkdeadzone = ini_read_real('smartphone','vkdeadzone',0.3);
+    vkdeadzoness = ini_read_real('smartphone','vkdeadzoness',0.3);
     gyroinss = ini_read_real('smartphone','gyroinss',1);
     vksize = ini_read_real('smartphone','vksize',0);
     dpadx = ini_read_real('smartphone','dpadx',64);
@@ -32,6 +34,7 @@ else
     vkalpha = 0.8; // alpha
     vksize = 0; // 0 - big controls, 1 - medium controls, 2 - small controls
     dpadmode = 0; // 0 - static, 1 - dynamic
+    vkdeadzone = 0.3; // dead zone: 0.1 to 1
     
     // direction pad coordinates - saved in file
     dpadx = 64;
@@ -74,6 +77,7 @@ else
     gyro_switch_on_angle_x = 0.15; // angle on which the button is pressed
     gyro_analog_start_x = 0.05; // angle from which the analog control starts
     gyro_analog_end_x = 0.5; // angle to which the analog control goes
+    vkdeadzoness = 0.3; // d-pad dead zone: 0.1 to 1
     
     // Special scheme for Galacnik Gauntlet
     gg_mode = 1; // 0 - use d-pad and button, 1 - point on screen
@@ -96,3 +100,5 @@ else
     
     android_set_input_mode(0);
 }
+    
+used_deadzone = 10;

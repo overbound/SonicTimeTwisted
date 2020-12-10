@@ -19,6 +19,7 @@ if(instance_exists(objLevel))
         // this one init's all the others
         input_method_init_touchscreen();
     }
+    used_deadzone = menu_fn_get_touchscreen_bt_radius() * vkdeadzone;
 }
 else
 if(instance_exists(objSSLevel))
@@ -32,4 +33,5 @@ if(instance_exists(objSSLevel))
         // this one init's all the others
         input_method_init_touchscreen();
     }
+    used_deadzone = menu_fn_get_touchscreen_bt_radius() * vkdeadzoness;
 }

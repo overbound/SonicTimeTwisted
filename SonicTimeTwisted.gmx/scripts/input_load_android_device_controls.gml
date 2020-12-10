@@ -1,7 +1,7 @@
 // anddroid BT/USB controls
+var loaded = false;
 if(argument0) // argument0 - from INI, default values if false
 {
-    var loaded = false;
     show_debug_message("Load controls from INI");
     android_set_input_mode(round(ini_read_real('android_input_controls','mode',0)));
     

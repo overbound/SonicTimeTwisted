@@ -60,17 +60,20 @@ if(smartphone_controls_enabled)
                             {
                                 joyx = current_dpadx;
                                 joyy = current_dpady - sin(d_radians) * bar;
-                            }
-                        
-                            if(d_direction <= 180)
+                            }                            
+                            if(p_distance > used_deadzone)
                             {
-                                input_state |= cUP;
-                            }
-                            else
-                            {
-                                input_state |= cDOWN;
-                            }
-                        }   
+                                if(d_direction <= 180)
+                                {
+                                    input_state |= cUP;
+                                }
+                                else
+                                {
+                                    input_state |= cDOWN;
+                                }
+                            }   
+                        }
+
                     }
                     dpad_is_pressed = true;
                 }

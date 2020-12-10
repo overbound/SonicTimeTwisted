@@ -42,16 +42,19 @@ if(smartphone_controls_enabled)
                         joyx = dpadx;
                         joyy = dpady - sin(d_radians) * bar;
                     }
-                
-                    if(d_direction <= 180)
+                    if(p_distance > used_deadzone)
                     {
-                        input_state |= cUP;
-                    }
-                    else
-                    {
-                        input_state |= cDOWN;
+                        if(d_direction <= 180)
+                        {
+                            input_state |= cUP;
+                        }
+                        else
+                        {
+                            input_state |= cDOWN;
+                        }
                     }
                 }
+
                 // Pressing Start overrides everything else
                 if(point_in_rectangle(device_mouse_x_to_gui(device), device_mouse_y_to_gui(device),
                     bsx, bsy, bsx + 24, bsy + 24

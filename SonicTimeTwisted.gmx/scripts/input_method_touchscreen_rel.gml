@@ -102,24 +102,27 @@ if(smartphone_controls_enabled)
                                 joyx = current_dpadx + cos(d_radians) * bar;
                                 joyy = current_dpady - sin(d_radians) * bar;
                             }
+                            if(p_distance > used_deadzone)
+                            {
+                                if(d_direction <= 55 || d_direction >= 305)
+                                {
+                                    input_state |= cRIGHT;
+                                }
+                                if (d_direction >= 35 && d_direction <= 145)
+                                {
+                                    input_state |= cUP;
+                                }
+                                if (d_direction >= 125 && d_direction <= 235)
+                                {
+                                    input_state |= cLEFT;
+                                }
+                                if (d_direction >= 215 && d_direction <= 325)
+                                {
+                                    input_state |= cDOWN;
+                                }
+                            }   
+                        }
                         
-                            if(d_direction <= 55 || d_direction >= 305)
-                            {
-                                input_state |= cRIGHT;
-                            }
-                            if (d_direction >= 35 && d_direction <= 145)
-                            {
-                                input_state |= cUP;
-                            }
-                            if (d_direction >= 125 && d_direction <= 235)
-                            {
-                                input_state |= cLEFT;
-                            }
-                            if (d_direction >= 215 && d_direction <= 325)
-                            {
-                                input_state |= cDOWN;
-                            }
-                        }   
                     }
                     dpad_is_pressed = true;
                 }

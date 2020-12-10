@@ -40,24 +40,26 @@ if(smartphone_controls_enabled)
                         joyx = dpadx + cos(d_radians) * bar;
                         joyy = dpady - sin(d_radians) * bar;
                     }
-                
-                    if(d_direction <= 55 || d_direction >= 305)
+                    if(p_distance > used_deadzone)
                     {
-                        input_state |= cRIGHT;
-                    }
-                    if (d_direction >= 35 && d_direction <= 145)
-                    {
-                        input_state |= cUP;
-                    }
-                    if (d_direction >= 125 && d_direction <= 235)
-                    {
-                        input_state |= cLEFT;
-                    }
-                    if (d_direction >= 215 && d_direction <= 325)
-                    {
-                        input_state |= cDOWN;
-                    }
-                }            
+                        if(d_direction <= 55 || d_direction >= 305)
+                        {
+                            input_state |= cRIGHT;
+                        }
+                        if (d_direction >= 35 && d_direction <= 145)
+                        {
+                            input_state |= cUP;
+                        }
+                        if (d_direction >= 125 && d_direction <= 235)
+                        {
+                            input_state |= cLEFT;
+                        }
+                        if (d_direction >= 215 && d_direction <= 325)
+                        {
+                            input_state |= cDOWN;
+                        }
+                    }          
+                }  
                 if(super_button_enabled)
                 {
                     var is_invulnerable = false;

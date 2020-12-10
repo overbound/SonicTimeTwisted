@@ -3457,6 +3457,10 @@
               <script>scripts\menu_part_touchscreen_vibrations_items.gml</script>
               <script>scripts\menu_part_touchscreen_vibrations_actions.gml</script>
               <script>scripts\menu_part_touchscreen_vibrations_step.gml</script>
+              <script>scripts\menu_part_touchscreenss_items.gml</script>
+              <script>scripts\menu_part_touchscreenss_actions.gml</script>
+              <script>scripts\menu_part_touchscreenss_step.gml</script>
+              <script>scripts\menu_part_touchscreenss_draw.gml</script>
             </scripts>
             <scripts name="l18n">
               <script>scripts\menu_part_l18n_items.gml</script>

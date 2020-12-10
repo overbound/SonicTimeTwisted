@@ -31,6 +31,8 @@ if(instance_exists(objProgram.inputManager))
     ini_write_real('smartphone', 'haptics_strength', objProgram.inputManager.haptics_strength);
     ini_write_real('smartphone', 'haptics_duration', objProgram.inputManager.haptics_duration);
     ini_write_real('smartphone', 'rumble_strength', objProgram.inputManager.rumble_strength);
+    ini_write_real('smartphone', 'vkdeadzone', objProgram.inputManager.vkdeadzone);
+    ini_write_real('smartphone', 'vkdeadzoness', objProgram.inputManager.vkdeadzoness);
 }
 if (instance_exists(objMusic))
 {
