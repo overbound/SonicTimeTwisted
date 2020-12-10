@@ -6,7 +6,7 @@ if(state == 2)
 {
     if(up_press)
     {
-        audio_play_sound(sndBeep, 0, 0);
+        var do_beep = true;
         prev_cursor = cursor;
         if(cursor == 0)
         {
@@ -21,12 +21,29 @@ if(state == 2)
             // do it again            
             if(cursor == 0)
             {
-                cursor = internal__button_count - 1;
+                if(scroll_target == 0)
+                {
+                    cursor = internal__button_count - 1;
+                }
+                else
+                {
+                    // we're at the first button, and there's a title that's not visible right now. Instead of just jumping to the last button, scroll up instead.
+                    scroll_target = 0;
+                    cursor = 1;
+                    // this is also the only case where there's no beep
+                    do_beep = false;
+                    break;
+                }
+                
             }
             else
             {
                 cursor = cursor - 1;
             }
+        }
+        if(do_beep)
+        {
+            audio_play_sound(sndBeep, 0, 0);
         }
     }
     else
@@ -38,6 +55,7 @@ if(state == 2)
             if(cursor == internal__button_count - 1)
             {
                 cursor = 0;
+                scroll_target = 0;
             }
             else
             {
