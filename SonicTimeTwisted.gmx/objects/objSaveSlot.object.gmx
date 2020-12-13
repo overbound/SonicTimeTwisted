@@ -28,6 +28,7 @@
             <string>/// initialize values
 iconIndex=0;
 slotNumber=-1;
+position=-1;
 lastPastLevel=0;
 lastFutureLevel=0;
 alarm[0]=1;

@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>image_speed=.125;
+position=-1;
 </string>
           </argument>
         </arguments>
