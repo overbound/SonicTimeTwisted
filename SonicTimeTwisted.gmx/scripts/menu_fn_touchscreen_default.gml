@@ -7,8 +7,8 @@ switch(state)
             var target_percentage = -1;
             if(mouse_check_button(mb_left))
             {
-                var mx = mouse_x - view_xview[view_current];
-                var my = mouse_y - view_yview[view_current];
+                mx = device_mouse_x_to_gui(0);
+                my = device_mouse_y_to_gui(0);
                 
                 if(mx >= internal__draw_menu_rect_x2 - margin * 2 && mx <= internal__draw_menu_rect_x2)
                 {
@@ -32,13 +32,13 @@ switch(state)
                                 {
                                     scroll_target = min(scroll_max, scroll_target + 1);
                                     internal__touch_y -= button_slot_height;
-                                    internal__touch_dy = mouse_y - internal__touch_y;
+                                    internal__touch_dy = device_mouse_y_to_gui(0) - internal__touch_y;
                                 }
                                 while(internal__touch_dy < -0.5 * button_slot_height)
                                 {
                                     scroll_target =  min(scroll_max, scroll_target + 0.5);
                                     internal__touch_y -= (button_slot_height div 2);
-                                    internal__touch_dy = mouse_y - internal__touch_y;
+                                    internal__touch_dy = device_mouse_y_to_gui(0) - internal__touch_y;
                                 }
                             }
                             else
@@ -49,14 +49,14 @@ switch(state)
                                     {
                                         scroll_target = max(0, scroll_target - 1);
                                         internal__touch_y += button_slot_height;
-                                        internal__touch_dy = mouse_y - internal__touch_y;
+                                        internal__touch_dy = device_mouse_y_to_gui(0) - internal__touch_y;
                                     }
                                     while(internal__touch_dy > 0.5 * button_slot_height)
                                     {
                                         
                                         scroll_target = max(0, scroll_target - 0.5);
                                         internal__touch_y += (button_slot_height div 2);
-                                        internal__touch_dy = mouse_y - internal__touch_y;
+                                        internal__touch_dy = device_mouse_y_to_gui(0) - internal__touch_y;
                                     }
                                 }
                             }
@@ -136,8 +136,8 @@ switch(state)
             {
                 if(scroll == round(scroll))
                 {
-                    mx = mouse_x - internal__draw_menu_rect_x1 - view_xview[view_current];
-                    my = mouse_y - internal__draw_menu_rect_y1 - view_yview[view_current];
+                    mx = device_mouse_x_to_gui(0) - internal__draw_menu_rect_x1;
+                    my = device_mouse_y_to_gui(0) - internal__draw_menu_rect_y1;
                     if(mx >= margin && mx <= margin + button_width)
                     {
                         if(my >= margin)
@@ -152,8 +152,8 @@ switch(state)
                 }
                 else
                 {
-                    mx = mouse_x - internal__draw_menu_rect_x1 - view_xview[view_current];
-                    my = mouse_y - internal__draw_menu_rect_y1 - view_yview[view_current];
+                    mx = device_mouse_x_to_gui(0) - internal__draw_menu_rect_x1;
+                    my = device_mouse_y_to_gui(0) - internal__draw_menu_rect_y1;
                     if(mx >= margin && mx <= margin + button_width)
                     {
                         if(my >= margin - (button_slot_height div 2))
@@ -197,8 +197,8 @@ switch(state)
     case 10:
         if(mouse_check_button_pressed(mb_left))
         {
-            var mx = mouse_x - view_xview[view_current];
-            var my = mouse_y - view_yview[view_current];
+            mx = device_mouse_x_to_gui(0);
+            my = device_mouse_y_to_gui(0);
             
             if(mx < internal__draw_confirmation_rect_x1 || mx > internal__draw_confirmation_rect_x2 ||
               my < internal__draw_confirmation_rect_y1 || my > internal__draw_confirmation_rect_y2)
@@ -239,8 +239,8 @@ switch(state)
     case 14:
         if(mouse_check_button_pressed(mb_left))
         {
-            var mx = mouse_x - view_xview[view_current];
-            var my = mouse_y - view_yview[view_current];
+            mx = device_mouse_x_to_gui(0);
+            my = device_mouse_y_to_gui(0);
             
             if(mx < internal__draw_confirmation_rect_x1 || mx > internal__draw_confirmation_rect_x2 ||
               my < internal__draw_confirmation_rect_y1 || my > internal__draw_confirmation_rect_y2)
@@ -260,8 +260,8 @@ switch(state)
     case 17:
         if(mouse_check_button_pressed(mb_left))
         {
-            var mx = mouse_x - view_xview[view_current];
-            var my = mouse_y - view_yview[view_current];
+            mx = device_mouse_x_to_gui(0);
+            my = device_mouse_y_to_gui(0);
             
             if(mx < internal__draw_confirmation_rect_x1 || mx > internal__draw_confirmation_rect_x2 ||
                   my < internal__draw_confirmation_rect_y1 || my > internal__draw_confirmation_rect_y2)
@@ -274,8 +274,8 @@ switch(state)
             if(mouse_check_button(mb_left))
             {
                 // updating value
-                var mx = mouse_x - view_xview[view_current];
-                var my = mouse_y - view_yview[view_current];
+                mx = device_mouse_x_to_gui(0);
+                my = device_mouse_y_to_gui(0);
                 confirmation_prev_cursor = -1;
                 if(mx >= internal__draw_confirmation_rect_x_center - 100 && mx <= internal__draw_confirmation_rect_x_center + 100)
                 {

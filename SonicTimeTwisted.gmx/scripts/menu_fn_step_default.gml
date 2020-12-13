@@ -262,15 +262,15 @@ if(is_touchscreen)
 {
     if(mouse_check_button_pressed(mb_left))
     {
-        internal__touch_x = mouse_x;
-        internal__touch_y = mouse_y;
+        internal__touch_x = device_mouse_x_to_gui(0);
+        internal__touch_y = device_mouse_y_to_gui(0);
         internal__touch_dx = 0;
         internal__touch_dy = 0;
     }
     if(mouse_check_button(mb_left))
     {
-        internal__touch_dx = mouse_x - internal__touch_x;
-        internal__touch_dy = mouse_y - internal__touch_y;
+        internal__touch_dx = device_mouse_x_to_gui(0) - internal__touch_x;
+        internal__touch_dy = device_mouse_y_to_gui(0) - internal__touch_y;
         internal__touch_len = sqrt(power(internal__touch_dx, 2) + power(internal__touch_dy, 2));
         if(internal__touch_len > 0)
         {

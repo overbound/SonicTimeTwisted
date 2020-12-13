@@ -45,6 +45,7 @@ view_wview[0] = width;
 view_hview[0] = height;
 view_wport[0] = width;
 view_hport[0] = height;
+display_set_gui_size(width, height);
 
 // A simple boolean that goes from between 0 and 1 every drawn frame
 // Allows to remove some "mod" and "!boolean" calculations here and there

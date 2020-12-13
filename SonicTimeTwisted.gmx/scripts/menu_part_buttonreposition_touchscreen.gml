@@ -13,8 +13,8 @@ if(state == 2)
             var detected = 0;
             var dx = 0;
             var dy = 0;
-            mx = device_mouse_x(i) - view_xview[view_current];
-            my = device_mouse_y(i) - view_yview[view_current];
+            mx = device_mouse_x_to_gui(i);
+            my = device_mouse_y_to_gui(i);
             
             if(point_in_circle(mx, my, temporary_variable[5, 1], temporary_variable[5, 2], dpadRadius))
             {
@@ -50,8 +50,8 @@ if(state == 2)
         else
         if(device_mouse_check_button(i, mb_left))
         {
-            mx = device_mouse_x(i) - view_xview[view_current];
-            my = device_mouse_y(i) - view_yview[view_current];
+            mx = device_mouse_x_to_gui(i);
+            my = device_mouse_y_to_gui(i);
             var btx = mx - temporary_variable[i, 1];
             var bty = my - temporary_variable[i, 2];
             switch(temporary_variable[i, 0])
