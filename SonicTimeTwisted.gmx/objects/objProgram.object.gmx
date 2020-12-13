@@ -166,6 +166,7 @@ if (DEVICE_INFO &amp; DEVICE_OS_PLAYSTATION)
 }
 else
 {
+    load_options();
     event_user(1);
 }
 </string>

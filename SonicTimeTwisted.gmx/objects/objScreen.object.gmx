@@ -62,7 +62,6 @@ Load the appropriate video mode. See the set_video_mode script for details
 video_mode = 0;
 framerate = 0; // 0 - 60fps, 1 - 30fps
 score_tally_mode = 0;
-//load_options();
 </string>
           </argument>
         </arguments>
@@ -191,7 +190,7 @@ apply_video_settings();
             <string>/// Scroll through screen modes - forwards
 video_mode = (video_mode + 1) mod 4;
 apply_video_settings();
-
+save_options();
 </string>
           </argument>
         </arguments>
