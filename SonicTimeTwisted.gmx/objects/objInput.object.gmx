@@ -354,28 +354,6 @@ script_execute(input_init_script);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Disable smartphone controls until they are explicitly enabled
-set_smartphone_controls_enabled(false);
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
             <string>/// Enable fallback controls unconditionally on certain maps: title screen, save screen
 switch(room)
 {

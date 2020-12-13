@@ -70,8 +70,11 @@ audio = audio_emitter_create();
             <kind>1</kind>
             <string>/// Handle state
 
+if (objProgram.inputManager.flag_player_input)
+{
+    set_input_enabled(false);
+}
 with objLevel.player[0] {
-    flag_player_input = false;
     switch other.state {
     
     case 0: //stand on plane
@@ -185,7 +188,7 @@ if path_position &gt; .78 &amp;&amp; state == 0
             <string>if objProgram.spawn_tag != 0 { instance_destroy(); exit; }
 // fade out only
 with objTitlecard mode = 3;
-with objProgram.inputManager flag_player_input = false;
+set_input_enabled(false);
 //play_music_intro(objMusic.musicIntro,0);
 //with objLevel started = true;
 </string>
