@@ -21,6 +21,3 @@ if (!onGround) || argument0.alarm[0] != -1 exit;
         player_get_lives(1);
     }
     
-    // rumble
-    rumble(RUMBLE_EVENT_RING_GET);
-    

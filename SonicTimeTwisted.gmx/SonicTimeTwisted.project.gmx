@@ -5189,7 +5189,7 @@
     <constant name="aPP2">'A:Lfda'</constant>
     <constant name="aMM1">'^&amp;*(jkl'</constant>
     <constant name="RUMBLE_EVENT_PRESS_BUTTON">0</constant>
-    <constant name="RUMBLE_EVENT_RING_GET">1</constant>
+    <constant name="RUMBLE_EVENT_UNUSED_1">1</constant>
     <constant name="RUMBLE_EVENT_GIANT_RING">2</constant>
     <constant name="RUMBLE_EVENT_BREAK_MONITOR">3</constant>
     <constant name="RUMBLE_EVENT_BREAK_ROBOT">4</constant>

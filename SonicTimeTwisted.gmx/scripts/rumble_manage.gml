@@ -2,9 +2,6 @@ var script = rumble_none;
 
 switch(argument0)
 {
-    case RUMBLE_EVENT_RING_GET:
-        script = rumble_short_weak;
-        break;
     case RUMBLE_EVENT_GIANT_RING:
     case RUMBLE_EVENT_EMERALD_GET:
         script = rumble_short_mid;
