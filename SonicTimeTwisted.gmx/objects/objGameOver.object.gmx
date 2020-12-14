@@ -31,8 +31,13 @@ image_speed = 0.04167;
 image_alpha = 0;
 mode = 1;
 objLevel.cleared = true;
-alarm[0] = 26;
+alarm[0] = 27;
 audio_play_sound(bgmGameOver, 0, false);
+
+word1 = tr('_GAMEOVER_WORD1');
+word2 = tr('_GAMEOVER_WORD2');
+x_center = view_wview[view_current]/2 + 8 * (string_length(word1) - string_length(word2));
+
 </string>
           </argument>
         </arguments>
@@ -102,7 +107,7 @@ game_restart();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>alarm[1] = 660;
+            <string>alarm[1] = 659;
 </string>
           </argument>
         </arguments>
@@ -168,10 +173,10 @@ draw_set_font(objResources.fontTitleSmallest);
 // draw the first word
 draw_set_valign(fa_middle);
 draw_set_halign(fa_right);
-draw_text_color(view_xview[view_current]+(view_wview[view_current]/2)-4-max(alarm[0]*16, 0), view_yview[view_current]+view_hview[view_current]/2, string_upper(tr('_gameover_word1')), c_ltgray, c_ltgray, c_white, c_white, 1);
+draw_text_color(view_xview[view_current]+x_center-8-max(alarm[0]*16, 0), view_yview[view_current]+view_hview[view_current]/2, word1, c_ltgray, c_ltgray, c_white, c_white, 1);
 // draw the second row
 draw_set_halign(fa_left);
-draw_text_color(view_xview[view_current]+(view_wview[view_current]/2)+4+max(alarm[0]*16, 0), view_yview[view_current]+view_hview[view_current]/2, string_upper(tr('_gameover_word2')), c_ltgray, c_ltgray, c_white, c_white, 1);
+draw_text_color(view_xview[view_current]+x_center+8+max(alarm[0]*16, 0), view_yview[view_current]+view_hview[view_current]/2, word2, c_ltgray, c_ltgray, c_white, c_white, 1);
 draw_set_halign(fa_left);
 draw_set_valign(fa_top);
 draw_set_font(objResources.fontHud);

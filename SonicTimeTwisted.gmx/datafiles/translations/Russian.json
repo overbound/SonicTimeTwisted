@@ -301,10 +301,10 @@
 		"_zonename_GGZ_B": "Gauntlet",
 		"_zonename_GGZ_C": "Zone",
 		
-		"_gameover_word1": "Игра",
-		"_gameover_word2": "окончена",
+		"_GAMEOVER_WORD1": "ИГРА",
+		"_GAMEOVER_WORD2": "ОКОНЧЕНА",
 		
-		"_timeover_word1": "Время",
-		"_timeover_word2": "вышло"
+		"_TIMEOVER_WORD1": "ВРЕМЯ",
+		"_TIMEOVER_WORD2": "ВЫШЛО"
 	}
 }

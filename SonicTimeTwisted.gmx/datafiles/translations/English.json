@@ -234,10 +234,10 @@
 		"_zonename_GGZ_B": "Gauntlet",
 		"_zonename_GGZ_C": "Zone",
 		
-		"_gameover_word1": "Game",
-		"_gameover_word2": "Over",
+		"_GAMEOVER_WORD1": "GAME",
+		"_GAMEOVER_WORD2": "OVER",
 		
-		"_timeover_word1": "Time",
-		"_timeover_word2": "Over"
+		"_TIMEOVER_WORD1": "TIME",
+		"_TIMEOVER_WORD2": "OVER"
 	}
 }
