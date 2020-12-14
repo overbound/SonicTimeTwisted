@@ -232,6 +232,12 @@
 		
 		"_zonename_GGZ_A": "Galacnik",
 		"_zonename_GGZ_B": "Gauntlet",
-		"_zonename_GGZ_C": "Zone"
+		"_zonename_GGZ_C": "Zone",
+		
+		"_gameover_word1": "Game",
+		"_gameover_word2": "Over",
+		
+		"_timeover_word1": "Time",
+		"_timeover_word2": "Over"
 	}
 }

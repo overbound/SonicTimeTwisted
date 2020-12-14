@@ -164,8 +164,17 @@ case -1: // fade in
           <argument>
             <kind>1</kind>
             <string>/// Draw "GAME OVER"
-draw_sprite(sprGameOver, 0, view_xview[view_current]+(view_wview[view_current]/2)-40-max(alarm[0]*16, 0), view_yview[view_current]+view_hview[view_current]/2)
-draw_sprite(sprGameOver, 1, view_xview[view_current]+(view_wview[view_current]/2)+40+max(alarm[0]*16, 0), view_yview[view_current]+view_hview[view_current]/2)
+draw_set_font(objResources.fontTitleSmallest);
+// draw the first word
+draw_set_valign(fa_middle);
+draw_set_halign(fa_right);
+draw_text_color(view_xview[view_current]+(view_wview[view_current]/2)-4-max(alarm[0]*16, 0), view_yview[view_current]+view_hview[view_current]/2, string_upper(tr('_gameover_word1')), c_ltgray, c_ltgray, c_white, c_white, 1);
+// draw the second row
+draw_set_halign(fa_left);
+draw_text_color(view_xview[view_current]+(view_wview[view_current]/2)+4+max(alarm[0]*16, 0), view_yview[view_current]+view_hview[view_current]/2, string_upper(tr('_gameover_word2')), c_ltgray, c_ltgray, c_white, c_white, 1);
+draw_set_halign(fa_left);
+draw_set_valign(fa_top);
+draw_set_font(objResources.fontHud);
 // fill screen with black
 draw_set_color(c_black);
 draw_set_alpha(image_alpha);

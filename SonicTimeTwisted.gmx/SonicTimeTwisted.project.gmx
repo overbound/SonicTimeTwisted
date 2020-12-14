@@ -1713,7 +1713,6 @@
           <sprite>sprites\sprShieldIconAct</sprite>
           <sprite>sprites\sprShieldIconSS</sprite>
         </sprites>
-        <sprite>sprites\sprGameOver</sprite>
         <sprite>sprites\sprHud</sprite>
         <sprite>sprites\sprLives</sprite>
         <sprite>sprites\sprLivesAlt</sprite>
