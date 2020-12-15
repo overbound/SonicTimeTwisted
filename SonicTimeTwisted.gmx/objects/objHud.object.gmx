@@ -59,7 +59,6 @@ pauseState = 0;
 controlState = 0;
 shouldExit = false;
 axis = -1;
-inputFlash = 0;
 white = 0;
 timeOffset = 0;
 timer = 0;
@@ -96,10 +95,6 @@ if(is_touchscreen)
 if objProgram.paused {
     if allowInput &amp;&amp; menu.state != 0 {
         // allow the menu object to handle everything
-        if(menu.state == 0)
-        {
-            menu_fn_open_menu(menu_part_zone_items, false, other.is_touchscreen);
-        }
         with(menu) event_user(2);
     }
 }
@@ -236,30 +231,6 @@ if objProgram.paused {
 if objProgram.inputManager.pressingGamepad == -1 {
     allowInput = true;
 }
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// flash for key mapper
-if inputFlash &lt; 1
-    inputFlash += .25;
-    else inputFlash = 0;
 </string>
           </argument>
         </arguments>
