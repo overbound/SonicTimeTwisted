@@ -15,7 +15,7 @@ switch(argument0)
         break;
     case 4:
     case -1:
-        menu_fn_exit_submenu(menu_part_touchscreen_items, 6);
+        menu_fn_exit_submenu(menu_part_touchscreenss_items, 2);
         break;
     case -2:
         switch(items[cursor, 1])

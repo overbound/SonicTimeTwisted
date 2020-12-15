@@ -69,7 +69,7 @@ if(allow_skipping)
    event_user(0);
 }
 sync_is_touchscreen();
-if(is_fallback_touchscreen)
+if(is_touchscreen)
 {
     startText = tr('_startText_MO');
 }
@@ -82,7 +82,7 @@ menu = instance_create(x,y,objMenu);
 menu.default_state = 1;
 
 // Names of the original team behind the game.
-// The menu is hardcoded to only include 6 names, and should remain this way
+// The crawl is hardcoded to only include 6 names, and should remain this way
 names = false;
 names[0] = tr('Bryce Stock (Overbound)');
 names[1] = tr('Hinchy');

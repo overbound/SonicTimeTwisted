@@ -7,9 +7,8 @@ menu_fn_add_option(tr("Opacity"), 3, 1, "");
 menu_fn_add_option(tr("Dead zone"), 9, 1, "");
 menu_fn_add_option(tr("Special stage controls"), 4);
 menu_fn_add_option(tr("Final zone controls"), 5, 1, "");
-menu_fn_add_option(tr("Configure gyroscope"), 6);
-menu_fn_add_option(tr("Configure vibrations"), 7);
-menu_fn_add_option(tr("_options_menu_Back"), 8);
+menu_fn_add_option(tr("Configure vibrations"), 6);
+menu_fn_add_option(tr("_options_menu_Back"), 7);
 
 button_width = 360;
 

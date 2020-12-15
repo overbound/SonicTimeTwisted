@@ -7,6 +7,9 @@ switch(argument0)
         menu_fn_open_slider_window(1, tr('Dead zone (%)'), round(objProgram.inputManager.vkdeadzoness*100), 5, 95);
         break;
     case 2:
+        menu_fn_goto_submenu(menu_part_gyroscope_items);
+        break;
+    case 3:
     case -1:
         menu_fn_exit_submenu(menu_part_touchscreen_items, 4);
         break;

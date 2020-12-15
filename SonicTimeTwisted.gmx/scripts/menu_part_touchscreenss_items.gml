@@ -2,7 +2,8 @@ items = false;
 menu_fn_add_title(tr("Special stage controls"));
 menu_fn_add_option(tr("_options_menu_Input_Method"), 0, 1, "");
 menu_fn_add_option(tr("Dead zone"), 1, 1, "");
-menu_fn_add_option(tr("_options_menu_Back"), 2);
+menu_fn_add_option(tr("Configure gyroscope"), 2);
+menu_fn_add_option(tr("_options_menu_Back"), 3);
 
 button_width = 360;
 
