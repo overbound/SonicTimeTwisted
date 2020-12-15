@@ -98,7 +98,7 @@ if objProgram.paused {
         // allow the menu object to handle everything
         if(menu.state == 0)
         {
-            menu_fn_open_menu(menu_part_zone_items);
+            menu_fn_open_menu(menu_part_zone_items, false, other.is_touchscreen);
         }
         with(menu) event_user(2);
     }
@@ -228,7 +228,7 @@ if objProgram.paused {
         // allow the menu object to handle everything
         if(menu.state == 0)
         {
-            with(menu) menu_fn_open_menu(menu_part_zone_items);
+            with(menu) menu_fn_open_menu(menu_part_zone_items, false, other.is_touchscreen);
         }
         with(menu) event_user(0);
     }

@@ -277,7 +277,7 @@ if objProgram.paused {
         // allow the menu object to handle everything
         if(menu.state == 0)
         {
-            with(menu) menu_fn_open_menu(menu_part_zone_items, true);
+            with(menu) menu_fn_open_menu(menu_part_zone_items, true, other.is_touchscreen);
         }
     }
     

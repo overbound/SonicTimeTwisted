@@ -1,4 +1,4 @@
-/// detect whether a touchscreen or a physical device is used in a menu and dynamically switch to it
+/// detect whether a touchscreen or a physical device is used in a screen and dynamically switch to it
 if(is_touchscreen)
 {
     // button/axis presased? - switch to device

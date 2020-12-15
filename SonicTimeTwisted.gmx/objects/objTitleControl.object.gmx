@@ -120,6 +120,7 @@ disclaimer_y = disclaimer_title_y + disclaimer_title_height + 4;
 github_y = disclaimer_title_y + disclaimer_height + text_skip;;
 
 draw_set_font(objResources.fontHud);
+menu_is_touchscreen = false;
 </string>
           </argument>
         </arguments>
@@ -452,6 +453,7 @@ if name &gt; 2 &amp;&amp; name &lt; 9 {
 {
     if(device_mouse_check_button_pressed(0, mb_left))
     {
+        menu_is_touchscreen = true;
         state = 3;
     }
 }
@@ -459,6 +461,7 @@ if(!is_touchscreen)
 {
     if(input_check_pressed(cSTART) || input_check_pressed(cA) || input_check_pressed(cB) || input_check_pressed(cC))
     {
+        menu_is_touchscreen = false;
         state = 3;
     }
 }
@@ -573,7 +576,7 @@ if(pauseState == 0)
         // allow the menu object to handle everything
         if(menu.state == 0 &amp;&amp; !instance_exists(objTransition))
         {
-            with(menu) menu_fn_open_menu(menu_part_title_items);
+            with(menu) menu_fn_open_menu(menu_part_title_items, false, other.menu_is_touchscreen);
         }
         
         with(menu) event_user(0);
@@ -590,10 +593,18 @@ if(pauseState == 3)
         {
             do_start = (levelSelect &lt; 6 &amp;&amp; device_mouse_check_button_pressed(0, mb_left))
                 || (levelSelect &gt;= 6 &amp;&amp; level_select_max_presses &lt; 2 &amp;&amp; device_mouse_check_button_released(0, mb_left));
+            if(do_start)
+            {
+                menu_is_touchscreen = true;
+            }
         }
         if(!is_touchscreen)
         {
             do_start = input_check_pressed(cSTART);
+            if(do_start)
+            {
+                menu_is_touchscreen = false;
+            }
         }
         if do_start {
             pauseState=0;
@@ -760,7 +771,7 @@ if(menu.state == 0)
                     if(!instance_exists(objTransition))
                     {
                         pauseState = 0;
-                        with(menu) menu_fn_open_menu(menu_part_levelselect_char_items);
+                        with(menu) menu_fn_open_menu(menu_part_levelselect_char_items, false, true);
                     }
                 }
             }
@@ -841,7 +852,7 @@ if(menu.state == 0)
                     // allow the menu object to handle everything
                 if(!instance_exists(objTransition))
                 {
-                    with(menu) menu_fn_open_menu(menu_part_levelselect_char_items);
+                    with(menu) menu_fn_open_menu(menu_part_levelselect_char_items, false, false);
                 }
                 
                 with(menu) event_user(0);

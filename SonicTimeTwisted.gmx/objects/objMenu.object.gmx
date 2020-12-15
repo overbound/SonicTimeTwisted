@@ -5,7 +5,7 @@
   <visible>0</visible>
   <depth>-1028</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>self</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,8 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>sync_is_touchscreen();
-menu_fn_init();
+            <string>menu_fn_init();
 </string>
           </argument>
         </arguments>
@@ -199,17 +198,20 @@ menu_fn_step_begin();
           <argument>
             <kind>1</kind>
             <string>/// step
-var prev_is_touchscreen = is_touchscreen;
-script_execute(switch_script);
-if(is_touchscreen != prev_is_touchscreen)
+if(switch_script != input_method_dummy_script)
 {
-    if(is_touchscreen &amp;&amp; cursor &gt;= 0)
+    var prev_is_touchscreen = is_touchscreen;
+    script_execute(switch_script);
+    if(is_touchscreen != prev_is_touchscreen)
     {
-        cursor = -1;
-    }
-    if((!is_touchscreen) &amp;&amp; cursor &lt; 0)
-    {
-        cursor = 0;
+        if(is_touchscreen &amp;&amp; cursor &gt;= 0)
+        {
+            cursor = -1;
+        }
+        if((!is_touchscreen) &amp;&amp; cursor &lt; 0)
+        {
+            cursor = 0;
+        }
     }
 }
 menu_fn_step();

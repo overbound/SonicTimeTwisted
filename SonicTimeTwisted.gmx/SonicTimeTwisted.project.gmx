@@ -3275,6 +3275,7 @@
           <script>scripts\input_method_init_smartphone.gml</script>
           <script>scripts\input_method_keyboard.gml</script>
           <script>scripts\input_method_smartphone_switch.gml</script>
+          <script>scripts\input_method_smartphone_switch_menu.gml</script>
           <script>scripts\set_smartphone_controls_enabled.gml</script>
         </scripts>
         <scripts name="Loading">

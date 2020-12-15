@@ -35,7 +35,16 @@ cancel = false;
 cancel_prev = false;
 cancel_press = false;
 
-sync_is_touchscreen();
+previous_input_state = objProgram.inputManager.state;
+// if the device is touchscreen-compatible, enable the switch
+if(objProgram.inputManager.is_fallback_touchscreen)
+{
+    switch_script = input_method_smartphone_switch_menu;
+}
+else
+{
+    switch_script = input_method_dummy_script;
+}
 
 draw_offset_x = 0;
 draw_offset_y = 0;

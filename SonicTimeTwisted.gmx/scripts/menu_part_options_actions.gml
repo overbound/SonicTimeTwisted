@@ -57,12 +57,21 @@ switch(argument0)
             case 0:
                 // TOUCHSCREEN -> EXTERNAL DEVICE
                 android_set_input_mode(1);
-                set_input_method(INPUT_OS_SPECIFIC_1, false);
                 break;
             case 1:
                 // EXTERNAL DEVICE -> TOUCHSCREEN
                 android_set_input_mode(0);
+                break;
+        }
+        // checking this again after setting: on devices other than Android (eg testing on Windows) the value remains at 0
+        // so the rest of the game should know
+        switch(android_get_input_mode())
+        {
+            case 0:
                 set_input_method(INPUT_TOUCHSCREEN, false);
+                break;
+            case 1:
+                set_input_method(INPUT_OS_SPECIFIC_1, false);
                 break;
         }
         break;
