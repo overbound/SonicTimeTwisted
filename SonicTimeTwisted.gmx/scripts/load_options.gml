@@ -20,6 +20,7 @@ if (stt_file_exists(file)) {
         {
             input_method = input_method_fallback;
         }
+        set_input_method(input_method, false);
         
         rumble_enabled = ini_read_real('input', 'rumble', false);
         
