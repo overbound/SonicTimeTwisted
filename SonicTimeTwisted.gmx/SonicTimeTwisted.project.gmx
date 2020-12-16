@@ -4489,6 +4489,7 @@
         <object>objects\objTitleCardFFZ</object>
         <object>objects\objTitleCardSSZ</object>
         <object>objects\objTransition</object>
+        <object>objects\objTransitionDisabledControls</object>
         <object>objects\objTTZ2Transition</object>
       </objects>
       <objects name="Save Screen">
