@@ -1,8 +1,11 @@
 /*
 void PlayerBumperCollision()
-*/
+*/    
+
 var d, a;
 if (!onGround) exit;
+// rumble
+rumble(RUMBLE_EVENT_BUMPER);
 d = point_distance(xprevious, yprevious, other.x, other.y);
 if (d < 8)
 {
@@ -23,6 +26,4 @@ bounce_direction = a;
 move_speed = 4;
 if !audio_is_playing(sndBumper)
     audio_play_sound(sndBumper,0,0);
-    
-// rumble
-rumble(RUMBLE_EVENT_BUMPER);
+

@@ -13,5 +13,7 @@ if landed
 }
 // sound
 audio_play_sound(sndBoost, 1, 0);
+// rumble
+rumble(RUMBLE_EVENT_SPRING);
 // hard collision found
 return false;

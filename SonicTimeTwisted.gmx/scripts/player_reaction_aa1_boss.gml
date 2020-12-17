@@ -47,5 +47,7 @@ if argument0.life>0
 }
 // sound
 audio_play_sound(sndBossHit, 1, 0);
+// rumble
+rumble(RUMBLE_EVENT_HIT_ROBOT);
 // hard collision found
 return true;

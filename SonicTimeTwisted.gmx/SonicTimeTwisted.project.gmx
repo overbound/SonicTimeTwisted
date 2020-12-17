@@ -3307,7 +3307,6 @@
             <script>scripts\rumble_short_mid_double.gml</script>
             <script>scripts\rumble_short_strong_and_mid.gml</script>
             <script>scripts\rumble_short_strongest.gml</script>
-            <script>scripts\rumble_ss_item_get.gml</script>
             <script>scripts\rumble_hurt_robot.gml</script>
             <script>scripts\rumble_act1_spin_signpost.gml</script>
             <script>scripts\rumble_act2_break_capsule.gml</script>
@@ -5195,7 +5194,7 @@
     <constant name="RUMBLE_EVENT_BREAK_MONITOR">3</constant>
     <constant name="RUMBLE_EVENT_BREAK_ROBOT">4</constant>
     <constant name="RUMBLE_EVENT_SS_ITEM_GET">5</constant>
-    <constant name="RUMBLE_EVENT_HURT_ROBOT">6</constant>
+    <constant name="RUMBLE_EVENT_HIT_ROBOT">6</constant>
     <constant name="RUMBLE_EVENT_ACT1_SPIN_SIGNPOST">7</constant>
     <constant name="RUMBLE_EVENT_ACT2_BREAK_CAPSULE">8</constant>
     <constant name="RUMBLE_EVENT_GROUND_SHAKE">9</constant>

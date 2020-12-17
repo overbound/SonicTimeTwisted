@@ -21,5 +21,7 @@ with argument0 {
     image_speed = .5;
     alarm[4]=60;
 }
+// rumble
+rumble(RUMBLE_EVENT_BUMPER);
 // hard collision found
 return true;

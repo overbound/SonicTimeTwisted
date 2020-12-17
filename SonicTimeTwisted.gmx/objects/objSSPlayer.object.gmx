@@ -608,6 +608,7 @@ switch other.image_index
      default: player_get_lives(1);
  }
 with other instance_destroy();
+rumble(RUMBLE_EVENT_SS_ITEM_GET);
 </string>
           </argument>
         </arguments>
@@ -660,7 +661,8 @@ break;
 }
 
 move_speed=12;
-    
+// rumble
+rumble(RUMBLE_EVENT_SPRING);
     
 </string>
           </argument>

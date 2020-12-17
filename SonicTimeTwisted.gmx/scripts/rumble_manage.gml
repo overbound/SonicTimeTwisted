@@ -13,9 +13,9 @@ switch(argument0)
         script = rumble_short_strong;
         break;
     case RUMBLE_EVENT_SS_ITEM_GET:
-        script = rumble_ss_item_get;
+        script = rumble_short_weakest;
         break;
-    case RUMBLE_EVENT_HURT_ROBOT:
+    case RUMBLE_EVENT_HIT_ROBOT:
         script = rumble_short_strong_double;
         break;
     case RUMBLE_EVENT_ACT1_SPIN_SIGNPOST:
