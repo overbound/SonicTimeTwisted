@@ -91,6 +91,11 @@
 		
 		"_options_menu_keymap_press": "Press \"%0\"",
 		
+		"_options_menu_sound_title": "Sound Settings",
+		"_options_menu_sound_Master_Volume": "Master Volume",
+		"_options_menu_sound_SFX_Volume": "Sound Effects Volume",
+		"_options_menu_sound_Music_Volume": "Music Volume",
+		
 		"_buttonname_Up": "Up",
 		"_buttonname_Down": "Down",
 		"_buttonname_Left": "Left",
