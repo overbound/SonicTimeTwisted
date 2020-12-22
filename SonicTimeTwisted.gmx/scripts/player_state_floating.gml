@@ -24,4 +24,5 @@
         if hit_floor  while collision_box(offset_x, offset_y, mask_rotation mod 180, hit_floor) {x += sine[angle]; y += cosine[angle];}
     hit_floor = player_collision_floor(offset_y);
         if hit_floor  while collision_box(offset_x, offset_y, mask_rotation mod 180, hit_floor) {x += sine[angle]; y -= cosine[angle];}
-        
+// rumble
+rumble(rumble_short_weakest);

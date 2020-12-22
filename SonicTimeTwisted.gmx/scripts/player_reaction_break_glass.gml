@@ -22,4 +22,6 @@ if argument0.image_index == 0 {
             image_xscale = -1;
          speed = abs(other.xspeed);
     }
+    // rumble
+    rumble(rumble_short_mid);
 }

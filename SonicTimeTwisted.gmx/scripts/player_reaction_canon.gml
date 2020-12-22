@@ -20,5 +20,7 @@ yspeed=0;
  
 // character values
 if character_id==3 glide_falling = false;
+// rumble
+rumble(rumble_short_weak);
 // hard collision found
 return true;

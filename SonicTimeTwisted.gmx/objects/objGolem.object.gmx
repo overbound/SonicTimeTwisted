@@ -519,6 +519,8 @@ if (timer) {
                                 causeQuake = false;
                                 screen_shake();
                                 audio_play_sound(sndGolumnLand, 4,0);
+                                // rumble
+                                rumble(rumble_short_strong);
                                 
                             }
                             if (plat_speed != 0)

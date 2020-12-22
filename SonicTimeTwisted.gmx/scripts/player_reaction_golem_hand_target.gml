@@ -27,7 +27,14 @@ if (spinning or state==player_state_glide or state==player_state_glide_slide) &&
         with argument0 {
             hit = sign(x-other.x);
             if (hit == 0) 
+            {
                 hit = other.facing;
+            }
+            else
+            {
+                // rumble
+                rumble(rumble_short_strong_double);            
+            }
         }
     return true;
 } else {

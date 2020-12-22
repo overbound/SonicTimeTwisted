@@ -192,7 +192,11 @@ visible = 1;
             with player {
                 // movement and collision
                 if x &lt; other.x &amp;&amp; x+96 &gt; other.x
-                xspeed -= 1;
+                {
+                    // rumble
+                    rumble(rumble_short_weakest);
+                    xspeed -= 1;
+                }
             }
         }
         
