@@ -155,6 +155,11 @@
 		"_options_menu_InputLabel_Gamepad": "Gamepad",
 		"_options_menu_InputLabel_Keyboard": "Teclado",
 		"_options_menu_InputLabel_BTUSB_device": "Gamepad BT/USB",
+		
+		"_options_menu_sound_title": "Sound Settings",
+		"_options_menu_sound_Master_Volume": "Master Volume",
+		"_options_menu_sound_SFX_Volume": "Sound Effects Volume",
+		"_options_menu_sound_Music_Volume": "Music Volume",
 
 		"_buttonname_Up": "Cima",
 		"_buttonname_Down": "Baixo",
