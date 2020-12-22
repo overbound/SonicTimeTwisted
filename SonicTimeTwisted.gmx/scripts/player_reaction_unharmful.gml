@@ -6,5 +6,5 @@ audio_play_sound(sndHurt,1,0);
 player_is_hurt(sign(image_xscale*-1));//argument0
 // state changed
 // rumble
-rumble(RUMBLE_EVENT_HURT_SHIELDS);
+rumble(rumble_short_strongest);
 return true;

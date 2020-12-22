@@ -65,6 +65,6 @@ with argument0 {
 audio_play_sound(sndBossHit, 1, 0);
 audio_play_sound(sndGalanikHit, 1, 0);
 // rumble
-rumble(RUMBLE_EVENT_HIT_ROBOT);
+rumble(rumble_short_strong_double);
 // hard collision found
 return true;

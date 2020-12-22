@@ -37,4 +37,4 @@ if not input_check(cUP)
 // charging
 peelout_charge += 1;
 //rumble
-rumble(RUMBLE_EVENT_SPINDASH);
+rumble(rumble_short_weakest);

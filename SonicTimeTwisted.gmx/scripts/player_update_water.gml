@@ -25,8 +25,9 @@ for (i=0; i<total_locals; i+=1)
     // splash sound
     audio_play_sound(sndSplash, 0, 0); 
     // cancel drowning music    
-    if player_id==0 {audio_stop_sound(bgmDrowning);}
-    
+    if player_id==0 {audio_stop_sound(bgmDrowning);}    
+    // rumble
+    rumble(rumble_short_mid);
     // done
     break;
 }

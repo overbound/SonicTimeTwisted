@@ -5,7 +5,7 @@ void PlayerBumperCollision()
 var d, a;
 if (!onGround) exit;
 // rumble
-rumble(RUMBLE_EVENT_BUMPER);
+rumble(rumble_short_strong);
 d = point_distance(xprevious, yprevious, other.x, other.y);
 if (d < 8)
 {

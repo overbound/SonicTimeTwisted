@@ -3948,6 +3948,7 @@
             <script>scripts\player_state_hurt.gml</script>
             <script>scripts\player_state_look.gml</script>
             <script>scripts\player_state_object.gml</script>
+            <script>scripts\player_state_object_with_rumble.gml</script>
             <script>scripts\player_state_path.gml</script>
             <script>scripts\player_state_reset.gml</script>
             <script>scripts\player_state_roll.gml</script>
@@ -5124,7 +5125,7 @@
       </rooms>
     </rooms>
   </rooms>
-  <constants number="112">
+  <constants number="86">
     <constant name="VERSION">"v1.1.0-dev"</constant>
     <constant name="GAMEPAD_POV_Y">7</constant>
     <constant name="GAMEPAD_POV_X">6</constant>
@@ -5188,36 +5189,10 @@
     <constant name="aPP1">'&amp;*(kjda'</constant>
     <constant name="aPP2">'A:Lfda'</constant>
     <constant name="aMM1">'^&amp;*(jkl'</constant>
-    <constant name="RUMBLE_EVENT_PRESS_BUTTON">0</constant>
-    <constant name="RUMBLE_EVENT_UNUSED_1">1</constant>
-    <constant name="RUMBLE_EVENT_GIANT_RING">2</constant>
-    <constant name="RUMBLE_EVENT_BREAK_MONITOR">3</constant>
-    <constant name="RUMBLE_EVENT_BREAK_ROBOT">4</constant>
-    <constant name="RUMBLE_EVENT_SS_ITEM_GET">5</constant>
-    <constant name="RUMBLE_EVENT_HIT_ROBOT">6</constant>
-    <constant name="RUMBLE_EVENT_ACT1_SPIN_SIGNPOST">7</constant>
-    <constant name="RUMBLE_EVENT_ACT2_BREAK_CAPSULE">8</constant>
-    <constant name="RUMBLE_EVENT_GROUND_SHAKE">9</constant>
-    <constant name="RUMBLE_EVENT_SPINDASH">10</constant>
-    <constant name="RUMBLE_EVENT_LAMPPOST">11</constant>
-    <constant name="RUMBLE_EVENT_SPRING">12</constant>
-    <constant name="RUMBLE_EVENT_BUMPER">13</constant>
-    <constant name="RUMBLE_EVENT_CONTROLLED_BY_OBJECT">14</constant>
-    <constant name="RUMBLE_EVENT_BREAKABLE_BLOCK">15</constant>
     <constant name="RUMBLE_START_TIME">0</constant>
     <constant name="RUMBLE_END_TIME">1</constant>
     <constant name="RUMBLE_FORCE">2</constant>
-    <constant name="RUMBLE_FORCE_OVERRIDE">4</constant>
-    <constant name="RUMBLE_EVENT_HURT_SHIELDS">16</constant>
-    <constant name="RUMBLE_EVENT_HURT_RINGS">17</constant>
-    <constant name="RUMBLE_EVENT_DIE">18</constant>
-    <constant name="RUMBLE_EVENT_TAILS_FLY">19</constant>
-    <constant name="RUMBLE_EVENT_KNUCKLES_CLIMB">20</constant>
-    <constant name="RUMBLE_EVENT_KNUCKLES_FALL">21</constant>
-    <constant name="RUMBLE_EVENT_SONIC_SHIELD">22</constant>
-    <constant name="RUMBLE_EVENT_EMERALD_GET">23</constant>
-    <constant name="RUMBLE_EVENT_BREAK_BLOCK">24</constant>
-    <constant name="RUMBLE_EVENT_SHAKE_ONCE">25</constant>
+    <constant name="RUMBLE_APPEND_MODE">4</constant>
     <constant name="DEVICE_TYPE_COMPUTER">1</constant>
     <constant name="DEVICE_TYPE_SMARTPHONE">2</constant>
     <constant name="DEVICE_TYPE_CONSOLE">4</constant>

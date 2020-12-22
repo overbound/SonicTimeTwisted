@@ -11,6 +11,6 @@ objProgram.spawn_time = objLevel.timer;
 // sound
 audio_play_sound(sndLampPost, 1,0);
 // rumble
-rumble(RUMBLE_EVENT_LAMPPOST);
+rumble(rumble_short_mid_double);
 // not a hard collision
 return false;

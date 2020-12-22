@@ -42,6 +42,6 @@ with argument0 instance_destroy();
 // sound
 audio_play_sound(sndPop, 1, 0);
 // rumble
-rumble(RUMBLE_EVENT_BREAK_ROBOT);
+rumble(rumble_short_strong);
 // hard collision found
 return true;

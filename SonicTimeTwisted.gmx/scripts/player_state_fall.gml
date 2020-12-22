@@ -48,7 +48,7 @@ if landed
             if relative_angle>=45 and relative_angle<=315 {if (xspeed != 0) return player_is_running(); else return player_is_standing();} else
             {
                 audio_play_sound(sndGlideLand, 1, 0);
-                rumble(RUMBLE_EVENT_KNUCKLES_FALL);
+                rumble(rumble_short_strong);
                 return player_is_glide_standing();
             }
         }

@@ -10,4 +10,4 @@ y = floor(y);
 // sound
 audio_play_sound(sndGrab, 0, 0);
 //rumble
-rumble(RUMBLE_EVENT_KNUCKLES_CLIMB);
+rumble(rumble_short_mid);

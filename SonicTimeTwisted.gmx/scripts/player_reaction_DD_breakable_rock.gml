@@ -21,7 +21,7 @@ if spinning || character_id == 3 {
             rock3.direction = 60;
             
             audio_play_sound(sndRockSmash,1,0);
-            rumble(RUMBLE_EVENT_BREAK_BLOCK);
+            rumble(rumble_short_strong);
             instance_destroy();
         }   
     

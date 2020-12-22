@@ -608,7 +608,7 @@ switch other.image_index
      default: player_get_lives(1);
  }
 with other instance_destroy();
-rumble(RUMBLE_EVENT_SS_ITEM_GET);
+rumble(rumble_short_weakest);
 </string>
           </argument>
         </arguments>
@@ -662,7 +662,7 @@ break;
 
 move_speed=12;
 // rumble
-rumble(RUMBLE_EVENT_SPRING);
+rumble(rumble_short_strong_and_mid);
     
 </string>
           </argument>

@@ -22,6 +22,6 @@ with argument0 {
     alarm[4]=60;
 }
 // rumble
-rumble(RUMBLE_EVENT_BUMPER);
+rumble(rumble_short_strong);
 // hard collision found
 return true;

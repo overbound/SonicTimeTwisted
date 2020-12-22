@@ -33,7 +33,7 @@ if underwater and yspeed>=0 timeline_speed = 0.5; else timeline_speed = 1;
 if underwater {if audio_is_playing(reserved_sound) audio_stop_sound(reserved_sound);} else
 {
 // rumble
-rumble(RUMBLE_EVENT_TAILS_FLY);
+rumble(rumble_short_weakest);
 if not alarm[0] {if not audio_is_playing(sndFlightEnd) {audio_stop_sound(reserved_sound); reserved_sound = audio_play_sound(sndFlightEnd, 1, 0);}} else
 if not audio_is_playing(sndFlight) {audio_stop_sound(reserved_sound); reserved_sound = audio_play_sound(sndFlight, 1, 0);}
 }

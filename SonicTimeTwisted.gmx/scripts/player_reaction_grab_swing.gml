@@ -25,5 +25,7 @@ x=argument0.x;
 y=argument0.y;
 image_angle = 0;
 xspeed = 0;
+// rumble
+rumble(rumble_short_mid);
 // hard collision found
 return true;

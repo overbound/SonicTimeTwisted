@@ -15,6 +15,6 @@ if landed
 audio_play_sound(sndBoost, 0, 0);
 set_input_enabled(false);
 // rumble
-rumble(RUMBLE_EVENT_SPRING);
+rumble(rumble_short_strong_and_mid);
 // hard collision found
 return false;

@@ -64,5 +64,5 @@ with (local_id)
 }
 
 audio_play_sound(sndEnterSpecialStage, 1, false);
-rumble(RUMBLE_EVENT_GIANT_RING);
+rumble(rumble_short_mid);
 return false; // 'soft' collision

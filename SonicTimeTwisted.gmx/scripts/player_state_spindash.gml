@@ -41,4 +41,4 @@ if input_check_pressed(cACTION) and spindash_charge<8
 // atrophy
 if spindash_charge>0 spindash_charge *= spindash_friction;
 //rumble
-rumble(RUMBLE_EVENT_SPINDASH);
+rumble(rumble_short_weakest);

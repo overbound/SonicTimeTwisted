@@ -59,5 +59,7 @@ if argument0.life>0
 // sound
 if !audio_is_playing(sndBossHit)
     audio_play_sound(sndBossHit, 1, 0);
+// rumble
+rumble(rumble_short_strong_double);
 // hard collision found
 return true;

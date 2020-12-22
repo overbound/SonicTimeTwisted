@@ -46,6 +46,6 @@ if argument0.life>0
 // sound
 audio_play_sound(sndBossHit, 0, 0);
 // rumble
-rumble(RUMBLE_EVENT_HIT_ROBOT);
+rumble(rumble_short_strong_double);
 // hard collision found
 return true;

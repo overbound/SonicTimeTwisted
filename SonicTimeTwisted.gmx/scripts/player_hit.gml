@@ -12,7 +12,7 @@ if shield
     audio_play_sound(argument1, 0,0);
     
     // rumble
-    rumble(RUMBLE_EVENT_HURT_SHIELDS);
+    rumble(rumble_short_strongest);
 }
 else
 // drop rings, if any
@@ -24,7 +24,7 @@ if objGameData.rings[0]>0
     audio_play_sound(sndRingLoss,0,0);
     
     // rumble
-    rumble(RUMBLE_EVENT_HURT_RINGS);
+    rumble(rumble_long_decreasing);
 }
 else
 {

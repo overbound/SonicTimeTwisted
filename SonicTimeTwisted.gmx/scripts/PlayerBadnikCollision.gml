@@ -8,7 +8,7 @@ if z < zground+32{//32 {
         zspeed =4;
         with argument0 { instance_destroy();}
         audio_play_sound(sndPop,0,0);
-        rumble(RUMBLE_EVENT_BREAK_ROBOT);
+        rumble(rumble_short_strong);
     
     }
 else if jumping==false  && invincible == 0{

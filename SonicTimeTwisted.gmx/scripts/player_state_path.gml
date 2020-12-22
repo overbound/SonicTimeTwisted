@@ -6,7 +6,7 @@ var ringHandle = place_meeting(x,y,objRing);
 if ringHandle player_get_rings(1);
 player_update_water();
 // rumble
-rumble(RUMBLE_EVENT_CONTROLLED_BY_OBJECT);
+rumble(rumble_short_weakest);
 if underwater
     underwater_count = 1800;
 /* AUTHOR NOTE: Check the end of path event for more ... */

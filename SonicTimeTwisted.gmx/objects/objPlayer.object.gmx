@@ -428,6 +428,12 @@ if xtable &gt; 0 {
     var path_xspeed = ds_list_find_value(xtable, offset)-ds_list_find_value(xtable, offset-1);
     var path_yspeed = ds_list_find_value(ytable, offset)-ds_list_find_value(ytable, offset-1);
 
+    // rumble if leaving tube
+    if(state == player_state_path)
+    {
+        rumble(rumble_short_mid);
+    }
+    
     // states and flags
     state = player_state_fall;
     

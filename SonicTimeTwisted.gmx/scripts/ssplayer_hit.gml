@@ -19,4 +19,4 @@ else{  // lose rings
 }
 rings=0;
 // rumble
-rumble(RUMBLE_EVENT_HURT_RINGS);
+rumble(rumble_long_decreasing);

@@ -83,7 +83,7 @@ with objLevel.player[0] {
     y = other.y-36;
     image_index = 0;
     // rumble while standing on place
-    rumble(RUMBLE_EVENT_CONTROLLED_BY_OBJECT);
+    rumble(rumble_short_weakest);
     break;
     
     case 1:

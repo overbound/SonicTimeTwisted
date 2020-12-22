@@ -27,7 +27,7 @@ if argument0.counter[player_id]<10
     instance_create(argument0.x, argument0.y, objScorePopup);
 }
 // rumble
-rumble(RUMBLE_EVENT_BUMPER);
+rumble(rumble_short_strong);
 // sound
 audio_play_sound(sndBumper, 1, 0);
 // hard collision found

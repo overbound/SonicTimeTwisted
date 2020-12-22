@@ -23,7 +23,7 @@ y = argument0.bbox_bottom-offset_y;
 animation_new = "wrap_post";
 timeline_speed = 1;
 // states and flags
-state = player_state_object;
+state = player_state_object_with_rumble;
 // movement and collision
 facing = sign(xspeed);
 xspeed = 0;

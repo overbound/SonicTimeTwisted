@@ -49,6 +49,6 @@ with argument0 instance_destroy();
 //play_jingle(bgmClear,false);
 audio_play_sound(sndBreakGlass, 2, 0);
 // rumble
-rumble(RUMBLE_EVENT_ACT2_BREAK_CAPSULE);
+rumble(rumble_act2_break_capsule);
 // not a hard collision
 return false;

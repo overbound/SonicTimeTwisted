@@ -4,12 +4,25 @@ if(!is_array(rumble_data))
 {
     exit;
 }
-if(rumble_data[0, RUMBLE_FORCE_OVERRIDE])
+/**
+* RUMBLE_APPEND_MODE:
+* 0 - append
+* 1 - replace
+* 2 - append if queue empty, exit otherwise
+*/
+switch(rumble_data[0, RUMBLE_APPEND_MODE])
 {
-    while(!ds_queue_empty(rumble_queue))
-    {
-        ds_queue_dequeue(rumble_queue);
-    }
+    case 1:
+        while(!ds_queue_empty(rumble_queue))
+        {
+            ds_queue_dequeue(rumble_queue);
+        };
+        break;
+    case 2:
+        if(!ds_queue_empty(rumble_queue))
+        {
+            exit;
+        }
 }
 var rumble_length = ds_queue_size(rumble_queue);
 // calculate target effect length

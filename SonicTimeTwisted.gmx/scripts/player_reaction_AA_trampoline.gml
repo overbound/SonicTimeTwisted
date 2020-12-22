@@ -14,7 +14,7 @@ animation_new = "spin";
 timeline_speed = 0.2;
 image_angle = 0;
 // states and flags
-state = player_state_object;
+state = player_state_object_with_rumble;
 spinning = true;
 jumping = false;
 jump_action = true;
@@ -27,7 +27,7 @@ yspeed = 4;
 player_in_air();
 
 // rumble
-rumble(RUMBLE_EVENT_BUMPER);
+rumble(rumble_short_strong);
 // character values
 if character_id==3 glide_falling = false;
 // hard collision found
