@@ -30,5 +30,7 @@ if (yspeed >= 0) or (state != player_state_fall)
 animation_new = "float";
 timeline_speed = 0.2;
 image_angle = 0;
+// rumble
+rumble(rumble_short_weakest);
 // not a hard collision
 return false;

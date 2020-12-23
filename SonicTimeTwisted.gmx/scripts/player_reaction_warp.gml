@@ -11,7 +11,7 @@ animation_new = "warp";
 timeline_speed = 1;
 player_in_air();
 // states and flags
-state = player_state_object;
+state = player_state_object_with_rumble;
 spinning = false;
 jumping = false;
 jump_action = false;

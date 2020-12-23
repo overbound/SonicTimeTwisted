@@ -8,7 +8,7 @@ animation_new = "spin";
 timeline_speed = 0.2;
 image_angle = 0;
 // states and flags
-state = player_state_object;
+state = player_state_object_with_rumble;
 spinning = true;
 jumping = false;
 jump_action = true;

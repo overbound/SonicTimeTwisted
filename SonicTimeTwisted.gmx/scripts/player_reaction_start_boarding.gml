@@ -12,3 +12,5 @@ with argument0
 // animate
 animation_new = "boarding";
 timeline_speed = 1;
+// rumble
+rumble(rumble_short_weak);
