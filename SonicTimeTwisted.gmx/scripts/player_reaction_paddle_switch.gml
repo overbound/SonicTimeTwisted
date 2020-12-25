@@ -15,6 +15,8 @@ if !audio_is_playing(sndAADropBumper) {
         audio_play_sound(sndAADropBumper,1,0);
     
     }
+// rumble
+rumble(rumble_short_strong);
 // animate
 animation_new = "spin";
 timeline_speed = 1/max(5-abs(xspeed), 1);

@@ -30,5 +30,7 @@ audio_play_sound(sndGetAir, 1, 0);
 if audio_is_playing(bgmDrowning) {
     play_previous(objMusic.priorityMusicState, objMusic.previousPosition);
 }
+// rumble
+rumble(rumble_short_weak);
 // hard collision occured
 return true;

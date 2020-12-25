@@ -41,3 +41,5 @@ for (i=0; i<4; i+=1)
 }
 // sound
 audio_play_sound(sndDoubleJump, 0, 0);
+// rumble
+rumble(rumble_short_mid);

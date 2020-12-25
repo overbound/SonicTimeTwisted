@@ -38,4 +38,6 @@ if (bbox_bottom < argument0.y && argument0.top == false) || (bbox_top > argument
             alarm[1] = 2;
         }
     }
+    // rumble
+    rumble(rumble_short_strong);
 }

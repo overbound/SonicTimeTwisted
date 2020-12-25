@@ -246,7 +246,7 @@ if shake {
         
         view_xview = clamp(view_xview[view_id] + amountx, left, right - view_wview[view_id]);
         view_yview = clamp(view_yview[view_id] + amounty, top, bottom - view_hview[view_id]);
-        rumble(rumble_instant_strong);
+        rumble(rumble_ground_shake);
     shake=false;
 }
 </string>

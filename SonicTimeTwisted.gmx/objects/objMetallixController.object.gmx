@@ -175,6 +175,9 @@ case 4:
     flashOffset+=16;
     if (image_alpha&lt;1.5) {
         image_alpha += fadeSpeed;
+        if(!objProgram.in_past) {
+            screen_shake();
+        }
     } else {
         if !objProgram.in_past {
             state=5;

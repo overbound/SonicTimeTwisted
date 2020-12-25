@@ -1,8 +1,7 @@
+/// rumble(rumble_script)
 /**
-Main method, to be used in other classes
-
-arguments:
-0 - event
+Main method, to be used in other objects.
+Delegates to relevant scripts depending on whether rumble is enabled or not
 */
 with(objProgram.inputManager)
 {

@@ -51,5 +51,7 @@ with argument0.parentId {
 }
 // sound
 audio_play_sound(sndBossHit, 1, 0);
+// rumble
+rumble(rumble_short_strong_double);
 // hard collision found
 return true;

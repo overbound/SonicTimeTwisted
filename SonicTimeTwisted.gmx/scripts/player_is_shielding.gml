@@ -14,3 +14,5 @@ instashield = instance_create(x, y, objInstaShield);
 instashield.player_id = id;
 // sound
 audio_play_sound(sndInstaShield, 0, 0);
+// rumble
+rumble(rumble_short_weak);

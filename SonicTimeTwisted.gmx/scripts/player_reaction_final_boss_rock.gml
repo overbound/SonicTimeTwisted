@@ -27,3 +27,5 @@ if alarm[0] == -1 {
     xspeed -= 4.5;
     alarm[0]=10;
 }
+// rumble
+rumble(rumble_short_strong);

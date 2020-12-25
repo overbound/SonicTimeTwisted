@@ -14,3 +14,5 @@ if invulnerable<6 invulnerable = 6;
 for (i=0; i<360; i+=30) with instance_create(x, y, objShieldIceAttack) {image_angle = i; direction = i; speed = 4;}
 // sound
 audio_play_sound(sndIceShot, 0, 0);
+// rumble
+rumble(rumble_short_mid);

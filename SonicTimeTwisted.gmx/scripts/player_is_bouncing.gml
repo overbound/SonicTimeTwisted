@@ -18,5 +18,7 @@ player_in_air();
 shield.timeline_index = animShieldBubbleActionEnd;
 shield.timeline_loop = false;
 shield.timeline_position = 0;
+// rumble
+rumble(rumble_short_mid);
 // sound
 audio_play_sound(sndBounce, 0, 0);

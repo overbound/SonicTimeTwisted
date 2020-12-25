@@ -48,5 +48,7 @@ if (yspeed >= 0) or (state != player_state_fall)
     // set air state
     player_in_air();
 }
+// rumble
+rumble(rumble_short_weakest);
 // not a hard collision
 return false;

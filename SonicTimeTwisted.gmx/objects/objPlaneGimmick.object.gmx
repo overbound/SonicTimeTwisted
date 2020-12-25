@@ -251,15 +251,21 @@ remove = 0;
           <argument>
             <kind>1</kind>
             <string>/// Plane Motion
- with objPlayer {
-if other.x -4 &gt; x
-    other.x += xspeed;
-if other.x +14 &lt; x
-    other.x += xspeed;    
-
-if landed == false
-if other.y &lt; y
-other.y +=1;
+with objPlayer {
+    if other.x -4 &gt; x
+        other.x += xspeed;
+    if other.x +14 &lt; x
+        other.x += xspeed;    
+    
+    if landed == false
+    {
+        if other.y &lt; y
+            other.y +=1;
+    }
+    else
+    {
+        rumble(rumble_short_weakest);
+    }
 }
 //Rebound  
 /*if rebound {

@@ -161,7 +161,7 @@ player_id.y = lengthdir_y(radius,angle_new) + y;
         }
         
         //check for other states
-        if state != player_state_object {
+        if state != player_state_object_with_rumble {
         
             other.active = false;
             other.allow_collision = false;

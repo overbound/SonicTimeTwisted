@@ -16,3 +16,5 @@ if landed return player_is_running();
 if wall_direction!=0 or player_collision_ceiling(offset_y+5) return player_is_falling();
 // fall if no longer in wind shield or time is up
 if shield==noone or shield_type!=5 or not alarm[0] return player_is_falling();
+//rumble
+rumble(rumble_short_weakest);

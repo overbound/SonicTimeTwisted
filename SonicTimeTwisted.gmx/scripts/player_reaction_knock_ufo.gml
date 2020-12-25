@@ -43,5 +43,7 @@ with argument0 {
 }
 // sound
 audio_play_sound(sndUFOHit, 0, 0);
+// rumble
+rumble(rumble_short_mid);
 // hard collision found
 return true;
