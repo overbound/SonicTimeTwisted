@@ -1,7 +1,6 @@
 var hint = instance_create(0, 0, objInputHelp);
 hint.hint = tr("Tilt to turn");
 
-pressingGamepad = -1;
 switch(vksize)
 {
     case 0:

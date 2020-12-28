@@ -2,7 +2,6 @@
 if(smartphone_controls_enabled)
 {
     input_method_smartphone_common();
-    pressingGamepad = -1;
     // jump button
     if(!objScreen.paused)
     {

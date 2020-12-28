@@ -28,9 +28,8 @@
             <string>/// Initialize input device
 image_speed = 0;
 var i;
-// input flags - outside of this object, use set_input_enabled to change this flag
+// input flag - outside of this object, use set_input_enabled to change this flag
 flag_player_input = true;
-pressingGamepad = -1;
 // computer controls
 computer_input_setup();
 // input id

@@ -1,4 +1,3 @@
-pressingGamepad = -1;
 switch(vksize)
 {
     case 0:

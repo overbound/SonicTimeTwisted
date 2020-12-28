@@ -57,7 +57,6 @@ pauseState = 3;
 controlState = 0;
 axis = "";
 screenAlpha = 0;
-allowInput = true;
 gamepadSupport = true;
 logoAlpha = 4;
 
@@ -572,15 +571,13 @@ if(!is_touchscreen)
             <string>/// Start Menu
 if(pauseState == 0)
 {
-    if allowInput {
-        // allow the menu object to handle everything
-        if(menu.state == 0 &amp;&amp; !instance_exists(objTransition))
-        {
-            with(menu) menu_fn_open_menu(menu_part_title_items, false, other.menu_is_touchscreen);
-        }
-        
-        with(menu) event_user(0);
+    // allow the menu object to handle everything
+    if(menu.state == 0 &amp;&amp; !instance_exists(objTransition))
+    {
+        with(menu) menu_fn_open_menu(menu_part_title_items, false, other.menu_is_touchscreen);
     }
+    
+    with(menu) event_user(0);
 }
 else
 if(pauseState == 3)
@@ -618,9 +615,6 @@ if pauseState != 3 {
     if screenAlpha &lt; .75 {
         screenAlpha+=.025;
     }
-}
-if objProgram.inputManager.pressingGamepad == -1 {
-    allowInput = true;
 }
     
 </string>
@@ -847,16 +841,14 @@ if(menu.state == 0)
         break;
         case 6:
             if input_check(cA) &amp;&amp; input_check(cSTART) {
-                //transition_to(objFadeWhite, charselect, 10);
-                if allowInput {
-                    // allow the menu object to handle everything
+                // allow the menu object to handle everything
                 if(!instance_exists(objTransition))
                 {
                     with(menu) menu_fn_open_menu(menu_part_levelselect_char_items, false, false);
                 }
                 
                 with(menu) event_user(0);
-                }
+                
             } else if input_check_pressed(cRIGHT) || input_check_pressed(cUP) || input_check_pressed(cDOWN) || input_check_pressed(cB) || input_check_pressed(cC){
                 levelSelect = 0;
             }

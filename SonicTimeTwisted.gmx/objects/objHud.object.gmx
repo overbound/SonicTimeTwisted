@@ -93,7 +93,7 @@ if(is_touchscreen)
             <kind>1</kind>
             <string>/// pause menu end step
 if objProgram.paused {
-    if allowInput &amp;&amp; menu.state != 0 {
+    if menu.state != 0 {
         // allow the menu object to handle everything
         with(menu) event_user(2);
     }
@@ -191,7 +191,7 @@ if instance_exists(objLevel) {
             <kind>1</kind>
             <string>/// pause menu begin step
 if objProgram.paused {
-    if allowInput &amp;&amp; menu.state != 0 {
+    if menu.state != 0 {
         with(menu) event_user(1);
     }
 }
@@ -219,17 +219,12 @@ if objProgram.paused {
             <kind>1</kind>
             <string>/// Pause Menu
 if objProgram.paused {
-    if allowInput {
-        // allow the menu object to handle everything
-        if(menu.state == 0)
-        {
-            with(menu) menu_fn_open_menu(menu_part_zone_items, false, other.is_touchscreen);
-        }
-        with(menu) event_user(0);
+    // allow the menu object to handle everything
+    if(menu.state == 0)
+    {
+        with(menu) menu_fn_open_menu(menu_part_zone_items, false, other.is_touchscreen);
     }
-}
-if objProgram.inputManager.pressingGamepad == -1 {
-    allowInput = true;
+    with(menu) event_user(0);
 }
 </string>
           </argument>
@@ -252,7 +247,6 @@ if objProgram.inputManager.pressingGamepad == -1 {
           <argument>
             <kind>1</kind>
             <string>/// fade black for pause
-// it used to be white, hence the variable name
 if objProgram.paused {
     if white &lt; 0.5
         white+=.125;

@@ -1,4 +1,3 @@
-pressingGamepad = -1;
 if((DEVICE_INFO & DEVICE_TYPE_SMARTPHONE) && (DEVICE_INFO & DEVICE_OS_ANDROID))
 {
     input_method_init_physical();

@@ -94,7 +94,7 @@ if(is_touchscreen)
             <kind>1</kind>
             <string>/// pause menu end step
 if objProgram.paused || menu.menu_type == 2 {
-    if allowInput &amp;&amp; menu.state != 0 {
+    if menu.state != 0 {
         with(menu) event_user(2);
     }
 }
@@ -186,7 +186,7 @@ time_stamp = minutes+"'"+seconds+'"'+milliseconds;
             <kind>1</kind>
             <string>/// pause menu begin step
 if objProgram.paused || menu.menu_type == 2 {
-    if allowInput &amp;&amp; menu.state != 0 {
+    if menu.state != 0 {
         with(menu) event_user(1);
     }
 }
@@ -273,22 +273,15 @@ if objProgram.paused {
         objProgram.paused = false;
         game_pause(objProgram.paused);
     }
-    if allowInput {
-        // allow the menu object to handle everything
-        if(menu.state == 0)
-        {
-            with(menu) menu_fn_open_menu(menu_part_zone_items, true, other.is_touchscreen);
-        }
-    }
-    
+    // allow the menu object to handle everything
+    if(menu.state == 0)
+    {
+        with(menu) menu_fn_open_menu(menu_part_zone_items, true, other.is_touchscreen);
+    }  
 }
 if(menu.state != 0)
 {
     with(menu) event_user(0);
-}
-
-if objProgram.inputManager.pressingGamepad == -1 {
-    allowInput = true;
 }
     
 </string>

@@ -5,7 +5,6 @@ with objProgram.inputManager {
         for (var axis = gp_axislh; axis <= gp_axisrv; ++axis) {
             value = gamepad_axis_value(device, axis);
             if (abs(value) > 0.5) {
-                pressingGamepad = axis;
                 if (sign(value) == -1) {
                     result = "-" + string(axis);
                 } else {
