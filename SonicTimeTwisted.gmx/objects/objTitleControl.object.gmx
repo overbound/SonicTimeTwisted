@@ -714,62 +714,66 @@ if(menu.state == 0)
         }
         else
         {
-            if(name == 12 &amp;&amp; levelSelect == 6)
+            if (name == 12 &amp;&amp; state &gt;= 2)
             {
-                var levelSelectPresses = 0;
-                if (device_mouse_check_button(0, mb_left))
+                if(levelSelect == 6)
                 {
-                    levelSelectPresses++;
-                }
-                if (device_mouse_check_button(1, mb_left))
-                {
-                    levelSelectPresses++;
-                }
-                if (device_mouse_check_button(2, mb_left))
-                {
-                    levelSelectPresses++;
-                }
-                if (device_mouse_check_button(3, mb_left))
-                {
-                    levelSelectPresses++;
-                }
-                if (device_mouse_check_button(4, mb_left))
-                {
-                    levelSelectPresses++;
-                }
-                level_select_max_presses = max(level_select_max_presses, levelSelectPresses);
-                // detect whether we are currently releasing the last "mouse button"
-                var levelSelectReleases = 0;
-                if (device_mouse_check_button_released(0, mb_left))
-                {
-                    levelSelectReleases++;
-                }
-                if (device_mouse_check_button_released(1, mb_left))
-                {
-                    levelSelectReleases++;
-                }
-                if (device_mouse_check_button_released(2, mb_left))
-                {
-                    levelSelectReleases++;
-                }
-                if (device_mouse_check_button_released(3, mb_left))
-                {
-                    levelSelectReleases++;
-                }
-                if (device_mouse_check_button_released(4, mb_left))
-                {
-                    levelSelectReleases++;
-                }
-                if(level_select_max_presses &gt;= 2 &amp;&amp; levelSelectPresses == 0 &amp;&amp; levelSelectReleases == 1)
-                {
-                    if(!instance_exists(objTransition))
+                    var levelSelectPresses = 0;
+                    if (device_mouse_check_button(0, mb_left))
                     {
-                        pauseState = 0;
-                        with(menu) menu_fn_open_menu(menu_part_levelselect_char_items, false, true);
+                        levelSelectPresses++;
+                    }
+                    if (device_mouse_check_button(1, mb_left))
+                    {
+                        levelSelectPresses++;
+                    }
+                    if (device_mouse_check_button(2, mb_left))
+                    {
+                        levelSelectPresses++;
+                    }
+                    if (device_mouse_check_button(3, mb_left))
+                    {
+                        levelSelectPresses++;
+                    }
+                    if (device_mouse_check_button(4, mb_left))
+                    {
+                        levelSelectPresses++;
+                    }
+                    level_select_max_presses = max(level_select_max_presses, levelSelectPresses);
+                    // detect whether we are currently releasing the last "mouse button"
+                    var levelSelectReleases = 0;
+                    if (device_mouse_check_button_released(0, mb_left))
+                    {
+                        levelSelectReleases++;
+                    }
+                    if (device_mouse_check_button_released(1, mb_left))
+                    {
+                        levelSelectReleases++;
+                    }
+                    if (device_mouse_check_button_released(2, mb_left))
+                    {
+                        levelSelectReleases++;
+                    }
+                    if (device_mouse_check_button_released(3, mb_left))
+                    {
+                        levelSelectReleases++;
+                    }
+                    if (device_mouse_check_button_released(4, mb_left))
+                    {
+                        levelSelectReleases++;
+                    }
+                    if(level_select_max_presses &gt;= 2 &amp;&amp; levelSelectPresses == 0 &amp;&amp; levelSelectReleases == 1)
+                    {
+                        if(!instance_exists(objTransition))
+                        {
+                            pauseState = 0;
+                            with(menu) menu_fn_open_menu(menu_part_levelselect_char_items, false, true);
+                        }
                     }
                 }
             }
         }
+        
         // erase/reset options by holding three fingers on screen at once while the names scroll
         if(name &lt; 9)
         {
@@ -840,17 +844,20 @@ if(menu.state == 0)
             }
         break;
         case 6:
-            if input_check(cA) &amp;&amp; input_check(cSTART) {
-                // allow the menu object to handle everything
-                if(!instance_exists(objTransition))
-                {
-                    with(menu) menu_fn_open_menu(menu_part_levelselect_char_items, false, false);
+            if (state &gt;= 2 &amp;&amp; name == 12)
+            {
+                if input_check(cA) &amp;&amp; input_check(cSTART) {
+                    // allow the menu object to handle everything
+                    if(!instance_exists(objTransition))
+                    {
+                        with(menu) menu_fn_open_menu(menu_part_levelselect_char_items, false, false);
+                    }
+                    
+                    with(menu) event_user(0);
+                    
+                } else if input_check_pressed(cRIGHT) || input_check_pressed(cUP) || input_check_pressed(cDOWN) || input_check_pressed(cB) || input_check_pressed(cC){
+                    levelSelect = 0;
                 }
-                
-                with(menu) event_user(0);
-                
-            } else if input_check_pressed(cRIGHT) || input_check_pressed(cUP) || input_check_pressed(cDOWN) || input_check_pressed(cB) || input_check_pressed(cC){
-                levelSelect = 0;
             }
         break;
         }
