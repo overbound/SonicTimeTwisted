@@ -142,6 +142,7 @@ visible=true;
           <argument>
             <kind>1</kind>
             <string>/// If objInputHelp is present, display the hint it contains
+instance_activate_object(objInputHelp);
 with(objInputHelp)
 {
     visible = true;

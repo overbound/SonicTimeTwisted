@@ -31,26 +31,6 @@ duration = 120;
 active = false;
 
 in3d = instance_exists(objSSMessages);
-
-var do_start = true;
-// due to how GMS processes multiple conditions, they are separated
-if(instance_exists(objTitlecard))
-{
-    do_start = false;
-}
-if(instance_exists(objSSMessages))
-{
-    if(objSSMessages.title_word &lt; 4)
-    {
-        do_start = false;
-    }
-}
-if(do_start)
-{
-    visible = true;
-    active = true;
-}
-
 hint = "placeholder";
 </string>
           </argument>
@@ -76,7 +56,7 @@ hint = "placeholder";
             <kind>1</kind>
             <string>if(active)
 {
-    if(!objScreen.paused)
+    if(!objProgram.paused)
     {
         duration--;
         if(duration == 0)
@@ -114,21 +94,23 @@ hint = "placeholder";
     draw_set_font(objResources.fontHud);
     if (in3d)
     {
+        d3d_set_projection_ortho(0, 0, view_wport, view_hport, 0);
         draw_text_colour(
             view_wview[view_current] div 2,
             view_hview[view_current] div 2,
-            hint, c_yellow, c_yellow, c_white, c_white, 1
+            hint, c_ltgray, c_ltgray, c_white, c_white, 1
         );
     }
     else
     {
         draw_text_colour(
-            view_xview[view_current] + view_wview[view_current] div 2,
-            view_yview[view_current] + view_hview[view_current] div 2,
-            hint, c_yellow, c_yellow, c_white, c_white, 1
+            view_xview[view_current] + (view_wview[view_current] div 2),
+            view_yview[view_current] +( view_hview[view_current] div 2),
+            hint, c_ltgray, c_ltgray, c_white, c_white, 1
         );
     }
-    
+    draw_set_halign(fa_left);
+    draw_set_valign(fa_top);
 }
 </string>
           </argument>
