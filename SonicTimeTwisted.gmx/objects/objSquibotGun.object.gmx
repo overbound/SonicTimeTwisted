@@ -443,6 +443,7 @@ if alarm[0] &lt; 45 {
     draw_self();
     draw_boss_hit_blend();
 } else draw_self();
+
 </string>
           </argument>
         </arguments>

@@ -1,5 +1,6 @@
 objProgram.inputManager.flag_player_input = argument0;
 
+/*
 if(argument0)
 {
     show_debug_message("Controls ENABLED");
@@ -8,7 +9,7 @@ else
 {
     show_debug_message("Controls DISABLED");
 }
-
+*/
 // if touchscreen controls are active - do not enable them in menu
 if(instance_exists(objMenu))
 {

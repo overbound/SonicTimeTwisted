@@ -29,3 +29,4 @@ alarm[0] = 102;
 if (path_index>-1) path_end();
 stop_all_music(false, false);
 rumble(rumble_verylong_strong);
+set_input_enabled(false);

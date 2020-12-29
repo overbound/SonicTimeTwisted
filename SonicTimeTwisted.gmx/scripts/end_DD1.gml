@@ -1,5 +1,6 @@
 //end_DD1
 stop_all_music(false);
+set_input_enabled(true);
 with objLevel.player[0] {
     // states and flags
     state = player_state_stand;
