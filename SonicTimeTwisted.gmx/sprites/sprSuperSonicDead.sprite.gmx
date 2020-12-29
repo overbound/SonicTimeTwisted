@@ -30,5 +30,7 @@
   <frames>
     <frame index="0">images\sprSuperSonicDead_0.png</frame>
     <frame index="1">images\sprSuperSonicDead_1.png</frame>
+    <frame index="2">images\sprSuperSonicDead_2.png</frame>
+    <frame index="3">images\sprSuperSonicDead_3.png</frame>
   </frames>
 </sprite>

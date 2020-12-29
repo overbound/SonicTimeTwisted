@@ -54,7 +54,7 @@
     </event>
   </entry>
   <entry>
-    <step>6</step>
+    <step>12</step>
     <event>
       <action>
         <libid>1</libid>
@@ -83,7 +83,7 @@
     </event>
   </entry>
   <entry>
-    <step>12</step>
+    <step>24</step>
     <event>
       <action>
         <libid>1</libid>
@@ -112,7 +112,7 @@
     </event>
   </entry>
   <entry>
-    <step>18</step>
+    <step>36</step>
     <event>
       <action>
         <libid>1</libid>
@@ -141,7 +141,7 @@
     </event>
   </entry>
   <entry>
-    <step>24</step>
+    <step>48</step>
     <event>
       <action>
         <libid>1</libid>
@@ -170,7 +170,7 @@
     </event>
   </entry>
   <entry>
-    <step>30</step>
+    <step>60</step>
     <event>
       <action>
         <libid>1</libid>
@@ -199,7 +199,7 @@
     </event>
   </entry>
   <entry>
-    <step>36</step>
+    <step>72</step>
     <event>
       <action>
         <libid>1</libid>
@@ -228,7 +228,7 @@
     </event>
   </entry>
   <entry>
-    <step>42</step>
+    <step>84</step>
     <event>
       <action>
         <libid>1</libid>
@@ -257,7 +257,7 @@
     </event>
   </entry>
   <entry>
-    <step>48</step>
+    <step>96</step>
     <event>
       <action>
         <libid>1</libid>
@@ -286,36 +286,7 @@
     </event>
   </entry>
   <entry>
-    <step>54</step>
-    <event>
-      <action>
-        <libid>1</libid>
-        <id>611</id>
-        <kind>6</kind>
-        <userelative>-1</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>image_index</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>1</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-  </entry>
-  <entry>
-    <step>61</step>
+    <step>107</step>
     <event>
       <action>
         <libid>1</libid>

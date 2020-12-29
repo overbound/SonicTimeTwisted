@@ -8,9 +8,9 @@
   <sepmasks>0</sepmasks>
   <bboxmode>0</bboxmode>
   <bbox_left>0</bbox_left>
-  <bbox_right>34</bbox_right>
+  <bbox_right>35</bbox_right>
   <bbox_top>0</bbox_top>
-  <bbox_bottom>36</bbox_bottom>
+  <bbox_bottom>35</bbox_bottom>
   <HTile>0</HTile>
   <VTile>0</VTile>
   <TextureGroups>
@@ -25,12 +25,13 @@
     <TextureGroup8>0</TextureGroup8>
   </TextureGroups>
   <For3D>0</For3D>
-  <width>35</width>
-  <height>37</height>
+  <width>36</width>
+  <height>36</height>
   <frames>
     <frame index="0">images\sprSonicSSJump_0.png</frame>
     <frame index="1">images\sprSonicSSJump_1.png</frame>
     <frame index="2">images\sprSonicSSJump_2.png</frame>
     <frame index="3">images\sprSonicSSJump_3.png</frame>
+    <frame index="4">images\sprSonicSSJump_4.png</frame>
   </frames>
 </sprite>
