@@ -1,7 +1,7 @@
 if(state == 1)
 {
     timer++;
-    if(timer >= 130)
+    if(timer >= 70)
     {
         timer = 0;
         state++;
