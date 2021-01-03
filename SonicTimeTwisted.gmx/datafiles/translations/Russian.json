@@ -2,6 +2,8 @@
 	"info": {
 		"intname": "ru",
 		"friendlyname": "Russian (Русский)",
+		"creditsname": "Russian",
+		"authors": "Nik#Alex Khayrullin",
 		
 		"top_hud_offset": 16,
 

@@ -2,6 +2,8 @@
 	"info": {
 		"intname": "en",
 		"friendlyname": "English",
+		"creditsname": "",
+		"authors": "",
 		
 		"top_hud_offset": 0
 	},

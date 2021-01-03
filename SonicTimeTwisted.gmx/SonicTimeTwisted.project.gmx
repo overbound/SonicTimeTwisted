@@ -3566,6 +3566,8 @@
         <script>scripts\tr_load_font.gml</script>
         <script>scripts\tr_load_fonts.gml</script>
         <script>scripts\tr_get_lang_friendlyname.gml</script>
+        <script>scripts\tr_get_lang_creditsname.gml</script>
+        <script>scripts\tr_get_lang_authors.gml</script>
         <script>scripts\tr_reload_all.gml</script>
         <script>scripts\tr_readd_builtin_fonts.gml</script>
         <script>scripts\tr_export_builtin_fonts.gml</script>

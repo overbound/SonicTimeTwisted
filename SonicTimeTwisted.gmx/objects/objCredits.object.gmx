@@ -28,98 +28,119 @@
             <string>rolled = false;
 lines = false;
 
-lines[0, 0] = tr("ORIGINAL TEAM");
+lines[0, 0] = "SONIC TIME TWISTED";
 
-lines[1, 0] = tr("Game by");
-lines[1, 1] = tr('Bryce Stock (Overbound)');
+lines[1, 0] = "ORIGINAL TEAM";
 
-lines[2, 0] = tr("Programmed by");
-lines[2, 1] = tr('Bryce Stock (Overbound)');
-lines[2, 2] = tr('Devin Reeves (Mercury)');
-lines[2, 3] = tr('Joevan Salmon-Johnson (VectorSatyr)');
+lines[2, 0] = "Game by";
+lines[2, 1] = 'Bryce Stock (Overbound)';
 
-lines[3, 0] = tr("Game Art by");
-lines[3, 1] = tr('Bryce Stock (Overbound)');
-lines[3, 2] = tr('Dee Liteyears');
+lines[3, 0] = "Programmed by";
+lines[3, 1] = 'Bryce Stock (Overbound)';
+lines[3, 2] = 'Devin Reeves (Mercury)';
+lines[3, 3] = 'Joevan Salmon-Johnson (VectorSatyr)';
 
-lines[4, 0] = tr("Music by");
-lines[4, 1] = tr('Hinchy');
+lines[4, 0] = "Game Art by";
+lines[4, 1] = 'Bryce Stock (Overbound)';
+lines[4, 2] = 'Dee Liteyears';
 
-lines[5, 0] = tr("Level Design by");
-lines[5, 1] = tr('Bryce Stock (Overbound)');
-lines[5, 2] = tr('Shane (Sparks)');
+lines[5, 0] = "Music by";
+lines[5, 1] = 'Hinchy';
 
-lines[6, 0] = tr("Concepts from");
-lines[6, 1] = tr('Bryce Stock (Overbound)');
-lines[6, 2] = tr('Debra Ann');
-lines[6, 3] = tr('Devin Reeves (Mercury)');
-lines[6, 4] = tr('Hinchy');
-lines[6, 5] = tr('Joevan Salmon-Johnson (VectorSatyr)');
-lines[6, 6] = tr('Jonathan Rose (Dimension Warped)');
-lines[6, 7] = tr('Shane (Sparks)');
-lines[6, 8] = tr('Tommy C');
+lines[6, 0] = "Level Design by";
+lines[6, 1] = 'Bryce Stock (Overbound)';
+lines[6, 2] = 'Shane (Sparks)';
 
-lines[7, 0] = tr("Additional Programming by");
-lines[7, 1] = tr('Jonathan Rose (Dimension Warped)');
-lines[7, 2] = tr('Hector Barreiro (Damizean)');
-lines[7, 3] = tr('Will (Polar Exelion)');
+lines[7, 0] = "Concepts from";
+lines[7, 1] = 'Bryce Stock (Overbound)';
+lines[7, 2] = 'Debra Ann';
+lines[7, 3] = 'Devin Reeves (Mercury)';
+lines[7, 4] = 'Hinchy';
+lines[7, 5] = 'Joevan Salmon-Johnson (VectorSatyr)';
+lines[7, 6] = 'Jonathan Rose (Dimension Warped)';
+lines[7, 7] = 'Shane (Sparks)';
+lines[7, 8] = 'Tommy C';
 
-lines[8, 0] = tr("Additional Music by");
-lines[8, 1] = tr('Andy Tunstall');
-lines[8, 2] = tr('Christopher Wright (LarkSS)');
-lines[8, 3] = tr('Jameson Sutton');
-lines[8, 4] = tr('Joshua Kruszyna (EXShad)');
+lines[8, 0] = "Additional Programming by";
+lines[8, 1] = 'Jonathan Rose (Dimension Warped)';
+lines[8, 2] = 'Hector Barreiro (Damizean)';
+lines[8, 3] = 'Will (Polar Exelion)';
 
-lines[9, 0] = tr("Additional Art by");
-lines[9, 1] = tr('Andrew75');
-lines[9, 2] = tr('Andy Tunstall');
-lines[9, 3] = tr('Apricity');
-lines[9, 4] = tr('BlazefireLP');
-lines[9, 5] = tr('Devin Reeves (Mercury)');
-lines[9, 6] = tr('GameNerd Advance');
-lines[9, 7] = tr('Hyper Emerson');
-lines[9, 8] = tr('Kamon62');
-lines[9, 9] = tr('Pepijn Ryngaert (Gardow)');
-lines[9, 10] = tr('Shane (Sparks)');
-lines[9, 11] = tr('SonicGenesis89');
-lines[9, 12] = tr('Stephen DiDuro (Strife)');
-lines[9, 13] = tr('Stevingesus');
-lines[9, 14] = tr('Vexer');
+lines[9, 0] = "Additional Music by";
+lines[9, 1] = 'Andy Tunstall';
+lines[9, 2] = 'Christopher Wright (LarkSS)';
+lines[9, 3] = 'Jameson Sutton';
+lines[9, 4] = 'Joshua Kruszyna (EXShad)';
 
-lines[10, 0] = tr("Resources from");
-lines[10, 1] = tr('Sonic Fan Games HQ');
-lines[10, 2] = tr('Sonic Retro');
-lines[10, 3] = tr('The Spriters Resource');
-lines[10, 4] = tr('The Mystical Forest Zone');
-lines[10, 5] = tr('Toei Animation');
+lines[10, 0] = "Additional Art by";
+lines[10, 1] = 'Andrew75';
+lines[10, 2] = 'Andy Tunstall';
+lines[10, 3] = 'Apricity';
+lines[10, 4] = 'BlazefireLP';
+lines[10, 5] = 'Devin Reeves (Mercury)';
+lines[10, 6] = 'GameNerd Advance';
+lines[10, 7] = 'Hyper Emerson';
+lines[10, 8] = 'Kamon62';
+lines[10, 9] = 'Pepijn Ryngaert (Gardow)';
+lines[10, 10] = 'Shane (Sparks)';
+lines[10, 11] = 'SonicGenesis89';
+lines[10, 12] = 'Sabrina DiDuro (Strife)';
+lines[10, 13] = 'Stevingesus';
+lines[10, 14] = 'Vexer';
 
-lines[11, 0] = tr("Special Thanks");
-lines[11, 1] = tr('Damizean');
-lines[11, 2] = tr('Ricardo Elso');
-lines[11, 3] = tr('Rael');
-lines[11, 4] = tr('Flare');
-lines[11, 5] = tr('Shard');
-lines[11, 6] = tr('Icuurd8b42');
-lines[11, 7] = tr('Chimpo');
-lines[11, 8] = tr('RogueYoshi');
-lines[11, 9] = tr('TheouAegis');
-lines[11, 10] = tr('Sega Scourge');
-lines[11, 11] = tr('Slingerland');
-lines[11, 12] = tr('Andrew75');
-lines[11, 13] = tr('SuperBliz');
-lines[11, 14] = tr('Debra Ann');
-lines[11, 15] = tr('Joe Pierce');
-lines[11, 16] = tr('Noah Copeland');
+lines[11, 0] = "Resources from";
+lines[11, 1] = 'Sonic Fan Games HQ';
+lines[11, 2] = 'Sonic Retro';
+lines[11, 3] = 'The Spriters Resource';
+lines[11, 4] = 'The Mystical Forest Zone';
+lines[11, 5] = 'Toei Animation';
 
-lines[12, 0] = tr("CONTRIBUTORS");
+lines[12, 0] = "Special Thanks";
+lines[12, 1] = 'Damizean';
+lines[12, 2] = 'Ricardo Elso';
+lines[12, 3] = 'Rael';
+lines[12, 4] = 'Flare';
+lines[12, 5] = 'Shard';
+lines[12, 6] = 'Icuurd8b42';
+lines[12, 7] = 'Chimpo';
+lines[12, 8] = 'RogueYoshi';
+lines[12, 9] = 'TheouAegis';
+lines[12, 10] = 'Sega Scourge';
+lines[12, 11] = 'Slingerland';
+lines[12, 12] = 'Andrew75';
+lines[12, 13] = 'SuperBliz';
+lines[12, 14] = 'Debra Ann';
+lines[12, 15] = 'Joe Pierce';
+lines[12, 16] = 'Noah Copeland';
 
-lines[13, 0] = tr("Additional Programming by");
-lines[13, 1] = tr('Alex Khayrullin');
-lines[13, 2] = tr('Nik');
+lines[13, 0] = "CONTRIBUTORS";
 
-lines[14, 0] = tr("Additional Art by");
-lines[14, 1] = tr('Alex Khayrullin');
-lines[14, 2] = tr('bennascar');
+lines[14, 0] = "Additional Programming by";
+lines[14, 1] = 'Alex Khayrullin';
+lines[14, 2] = 'Nik';
+
+lines[15, 0] = "Additional Art by";
+lines[15, 1] = 'Alex Khayrullin';
+lines[15, 2] = 'bennascar';
+
+// Inject localization author(s)
+var langname = tr_get_lang_creditsname();
+if(langname != "")
+{
+    var authors = string_explode('#', tr_get_lang_authors());
+    if(array_length_1d(authors) &gt;= 1)
+    {
+        if(authors[0] != "")
+        {
+            lines[16, 0] = "LOCALIZATION";
+            lines[17, 0] = langname;
+            for(var i = 0 ; i &lt; array_length_1d(authors); i++)
+            {
+                lines[17, i+1] = authors[i];
+            }
+        }
+    }
+}
 
 // the array above is designed to be easy to edit, now we're converting it to the format we'll actually use
 event_user(0);

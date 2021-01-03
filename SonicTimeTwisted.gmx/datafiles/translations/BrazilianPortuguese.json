@@ -2,6 +2,8 @@
 "info": {
         "intname": "pt-br",
 		"friendlyname":"Português Brasileiro",
+		"creditsname": "Brasilian Portuguese",
+		"authors": "Romulo Santos",
 
 		"top_hud_offset": 10,
 		
