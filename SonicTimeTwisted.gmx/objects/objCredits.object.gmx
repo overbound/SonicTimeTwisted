@@ -194,7 +194,7 @@ break;
 case 12:
     draw_text_color(view_xview+160,view_yview+6,'ADDITIONAL ART BY',c_white,c_white,c_yellow,c_yellow,image_alpha);
     draw_text_color(view_xview+160, view_yview+28, '"SONICGENESIS89"',c_white,c_white,c_yellow,c_yellow,image_alpha);
-    draw_text_color(view_xview+160, view_yview+42, 'STEPHEN DIDURO "STRIFE"',c_white,c_white,c_yellow,c_yellow,image_alpha);
+    draw_text_color(view_xview+160, view_yview+42, 'SABRINA DIDURO "STRIFE"',c_white,c_white,c_yellow,c_yellow,image_alpha);
     draw_text_color(view_xview+160, view_yview+56, '"STEVINGESUS"',c_white,c_white,c_yellow,c_yellow,image_alpha);
     draw_text_color(view_xview+160, view_yview+70, '"VEXER"',c_white,c_white,c_yellow,c_yellow,image_alpha);
 break;
