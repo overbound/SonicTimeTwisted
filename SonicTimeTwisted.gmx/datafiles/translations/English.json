@@ -244,7 +244,8 @@
 		"_GAMEOVER_WORD1": "GAME",
 		"_GAMEOVER_WORD2": "OVER",
 		
-		"_TIMEOVER_WORD1": "TIME",
-		"_TIMEOVER_WORD2": "OVER"
+		"_bad_ending_text": "Try again!##Collect all the Chaos Emeralds#and Time Stones!",
+		"_good_ending_text": "Sonic, Tails, and Knuckles continued the fight#to liberate Mobius from Robotnik's creations#until no more robots remained.##Thank you for playing!"
+		
 	}
 }

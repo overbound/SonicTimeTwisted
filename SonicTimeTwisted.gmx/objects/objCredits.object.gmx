@@ -165,14 +165,15 @@ for(var i = 0; i &lt; 7; i++)
     displayed_label_is_only_title[i] = false;
 }
 
-// in the first released version, the credits lasted for 4200 seconds
+// in the first released version, the credits lasted for 4200 steps
 alarm_delay = round(4200/lines_count);
 // should be a multiple of 18, otherwise credits will visibly skip pixels
 alarm_delay = round(alarm_delay/18)*18;
-
-alarm[0] = alarm_delay;
 // add an empty screen
 lines_count += array_length_1d(displayed_label);
+// the first line will be delayed, in order to make the pauses at the beginning and the 
+// end match as much as possible
+alarm[0] = alarm_delay + (4200 - lines_count * alarm_delay);
 // the length of the credits is 4200 frames, or 70 seconds
 </string>
           </argument>
