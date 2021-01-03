@@ -1,5 +1,4 @@
 //end_VV1
-set_input_enabled(true);
 with objVV1BossBroken {
     state = 1;
 }

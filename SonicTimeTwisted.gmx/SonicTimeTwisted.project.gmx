@@ -3755,6 +3755,7 @@
             <script>scripts\player_reaction_switch.gml</script>
             <script>scripts\player_reaction_time_post.gml</script>
             <script>scripts\player_reaction_unharmful.gml</script>
+            <script>scripts\player_reaction_unharmful_enable_controls.gml</script>
             <script>scripts\player_reaction_water.gml</script>
             <script>scripts\player_reaction_water_run_off.gml</script>
             <script>scripts\player_reaction_water_run_on.gml</script>
