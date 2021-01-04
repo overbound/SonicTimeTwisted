@@ -15,7 +15,7 @@ case -2:
 // destroy object
 with argument0 instance_destroy();
 // sound
-audio_play_sound(sndBreak, 2, 0);
+play_sfx(sndBreak, 2);
 // rumble
 rumble(rumble_short_strong);
 // hard collision found

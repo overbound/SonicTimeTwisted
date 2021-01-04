@@ -14,4 +14,6 @@ with objMusic {
     musicEffect = song;
     state = 6;
     currentMusic = audio_play_sound(musicEffect,20,false);
+    audio_sound_gain(currentMusic, objMusic.bgmGain, 0);
+    // because effects stop currentMusic, they should respect the BGM gain.
 }

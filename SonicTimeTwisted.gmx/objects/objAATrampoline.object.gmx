@@ -119,7 +119,7 @@ else
             xspeed = other.force_x;
             yspeed = other.force_y; 
             // sound
-            audio_play_sound(sndAATrampoline, 1, 0);
+            play_sfx(sndAATrampoline, 1);
         }
     }
 }

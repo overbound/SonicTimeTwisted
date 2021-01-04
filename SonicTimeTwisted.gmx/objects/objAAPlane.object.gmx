@@ -125,7 +125,7 @@ if path_position &gt; .78 &amp;&amp; state == 0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if not audio_is_playing(sndPropeller) audio_play_sound(sndPropeller, 4, 0);
+            <string>if not audio_is_playing(sndPropeller) play_sfx(sndPropeller, 4);
 </string>
           </argument>
         </arguments>

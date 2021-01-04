@@ -29,8 +29,6 @@
 image_speed = 0;
 /* AUTHOR NOTE: save data and global game values (eg. chaos emeralds) go here! */
 timeout = true;
-volume_sound =  1;
-volume_music = 0.5;
 // characters
 character_id[0] = -1;
 character_id[1] = 0;

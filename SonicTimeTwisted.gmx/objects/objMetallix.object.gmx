@@ -70,7 +70,7 @@ remove=0;
             <string>var xran =random(200)-100;
 var yran =random(60)-20;
 instance_create(x+xran+40,y+yran,objExplosionCluster);
-audio_play_sound(sndBombExplosion,1,false);
+play_sfx(sndBombExplosion, 1);
 with objMetallixPlatform {
     instance_destroy();
 }
@@ -102,7 +102,7 @@ with objMetallixController state = 4;
 var yran =random(40)-30;
 instance_create(x+xran+40,y+yran,objExplosionCluster);
 if explosionLoop == 1 or explosionLoop == 8 or explosionLoop == 16 or explosionLoop == 24
-    audio_play_sound(sndBombExplosion,1,false);
+    play_sfx(sndBombExplosion, 1);
 if explosionLoop &gt; 25 {
     alarm[3]=4;
     if objProgram.in_past == false {
@@ -210,7 +210,7 @@ if instance_exists(objLevel.player[0]) {
     if alarm[0] == -1 { 
         state = 2;
         laser.state=1;
-        audio_play_sound(sndEggWalkerFire,1,false);
+        play_sfx(sndEggWalkerFire, 1);
     }
 }
 break;
@@ -232,7 +232,7 @@ break;
 case 3: // move w/ laser left
      screen_shake();
      if !audio_is_playing(sndQuake)
-        audio_play_sound(sndQuake,12,false);
+        play_sfx(sndQuake, 12);
     x-=2;
     if instance_exists(objLevel.player[0]) {
         if x &lt; objLevel.player[0].camera.left + 64{
@@ -245,7 +245,7 @@ case 4: // move w/ laser right
     
      screen_shake();
      if !audio_is_playing(sndQuake)
-        audio_play_sound(sndQuake,12,false);
+        play_sfx(sndQuake, 12);
     
     if instance_exists(objLevel.player[0]) {
         if x &gt; objLevel.player[0].camera.right - 64{
@@ -293,7 +293,7 @@ break;
 case 9:
  screen_shake();
  if !audio_is_playing(sndQuake)
-    audio_play_sound(sndQuake,12,false);
+    play_sfx(sndQuake, 12);
     if (objScreen.image_index mod 20 == 0) {
         
         instance_create(objMetallixController.x,objMetallixController.y,objUFOAttackDD);
@@ -302,7 +302,7 @@ case 9:
     
     if alarm[0]==0 {
         state=1;
-        audio_play_sound(sndEggWalkerCharge,1,false);
+        play_sfx(sndEggWalkerCharge, 1);
         alarm[0] = 150;
     }
 break;
@@ -337,7 +337,7 @@ break;
 if state &lt;10  {
     if head.life &lt;= 0 {
         if !audio_is_playing(sndQuake) {
-            audio_play_sound(sndQuake,2,false);
+            play_sfx(sndQuake, 2);
         }
     
         with head {

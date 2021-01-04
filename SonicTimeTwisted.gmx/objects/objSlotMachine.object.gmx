@@ -110,15 +110,15 @@ win_icon=0;
             <kind>1</kind>
             <string>if win != 1 {
     slot_pos[2]=floor(slot_pos[2]);
-    audio_play_sound(sndAASlotRobotnik,4,0);
+    play_sfx(sndAASlotRobotnik, 4);
     
 }else{
     slot_pos[2]=win_icon;
     
     if win_icon != 10 {
-        audio_play_sound(sndAASlotWin,4,0);
+        play_sfx(sndAASlotWin, 4);
     }
-    else audio_play_sound(sndAASlotRobotnik,4,0);
+    else play_sfx(sndAASlotRobotnik, 4);
     
 slot_state[2]=1;
 with player_id
@@ -141,13 +141,13 @@ case 9:
 case 10:
     if not superform &amp;&amp; objGameData.rings[0] &gt; 0 
         player_hit(0, sndHurt)
-        else audio_play_sound(sndHurt,4,0);
-        ; break;
+        else play_sfx(sndHurt, 4);
+        break;
 case 11:
     if not superform &amp;&amp; objGameData.rings[0] &gt; 0 
         player_hit(0, sndHurt)
-        else audio_play_sound(sndHurt,4,0);
-break;
+        else play_sfx(sndHurt, 4);
+        break;
 }
 }
 }
@@ -249,7 +249,7 @@ else
     
     }
      if !audio_is_playing(sndAASlotSwitch)
-        audio_play_sound(sndAASlotSwitch,2,0);   
+        play_sfx(sndAASlotSwitch, 2);   
         for(i=0; i&lt; 3; i+=1;) {
             
            if slot_state[i] == 0{
@@ -285,7 +285,7 @@ else
             <string>///destroy enemies
 if player_id != noone {
     with other instance_destroy();
-    audio_play_sound(sndPop,4,0);
+    play_sfx(sndPop, 4);
 }
 </string>
           </argument>

@@ -45,7 +45,7 @@
             <kind>1</kind>
             <string>if in_view(0,128) {
     
-    audio_play_sound(sndAADropBumperReset,1,0);
+    play_sfx(sndAADropBumperReset, 1);
     
     }
 </string>
@@ -159,7 +159,7 @@ with objLevel.player[0] {
 }
 if in_view(0,128) {
     
-    audio_play_sound(sndAADropBumperReset,2,0);
+    play_sfx(sndAADropBumperReset, 2);
     
     }
 </string>

@@ -23,7 +23,7 @@ for (i=0; i<total_locals; i+=1)
     // splash particle
     part_particles_create(objLevel.particles, x, local_id.y, objResources.splash, 1);
     // splash sound
-    audio_play_sound(sndSplash, 0, 0); 
+    play_sfx(sndSplash); 
     // cancel drowning music    
     if player_id==0 {audio_stop_sound(bgmDrowning);}    
     // rumble

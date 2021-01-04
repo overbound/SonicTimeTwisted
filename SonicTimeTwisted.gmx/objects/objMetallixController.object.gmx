@@ -133,7 +133,7 @@ instance_create(view_xview[view_current]+430,view_yview[view_current]+10+random(
 switch state {
 case 0:
 if playIntroLaser == true {
-    audio_play_sound(sndEggWalkerCharge,1,false);
+    play_sfx(sndEggWalkerCharge, 1);
     playIntroLaser = false;
 }
 with objMetallix {

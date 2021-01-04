@@ -29,6 +29,6 @@ if argument0.counter[player_id]<10
 // rumble
 rumble(rumble_short_strong);
 // sound
-audio_play_sound(sndBumper, 1, 0);
+play_sfx(sndBumper, 1);
 // hard collision found
 return true;

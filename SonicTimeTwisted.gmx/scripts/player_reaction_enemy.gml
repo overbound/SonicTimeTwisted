@@ -40,7 +40,7 @@ with instance_create(argument0.x, argument0.y, objScorePopup)
 // destroy enemy
 with argument0 instance_destroy();
 // sound
-audio_play_sound(sndPop, 1, 0);
+play_sfx(sndPop, 1);
 // rumble
 rumble(rumble_short_strong);
 // hard collision found

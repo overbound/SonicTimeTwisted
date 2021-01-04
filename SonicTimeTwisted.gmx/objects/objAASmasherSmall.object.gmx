@@ -174,7 +174,7 @@ case 0: // rising
 case 1: // falling
     if y&lt;ystart {y += 8; if y&gt;=ystart {alarm[1] = 32; 
     if in_view(view_current,32)
-        audio_play_sound(sndSmash, 2, 0);}}
+        play_sfx(sndSmash, 2);}}
     break;
 }
 </string>

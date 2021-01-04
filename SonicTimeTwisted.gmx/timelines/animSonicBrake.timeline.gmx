@@ -92,7 +92,7 @@
           <argument>
             <kind>1</kind>
             <string>/// Play brake sound
-audio_play_sound(sndBrake, 0, 0);
+play_sfx(sndBrake);
 </string>
           </argument>
         </arguments>

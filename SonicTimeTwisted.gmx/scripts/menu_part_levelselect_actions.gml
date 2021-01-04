@@ -11,10 +11,10 @@ switch(argument0)
         break;
     case 6:
         // Sunken Saucer
-        sound_stop(bgmTitle);
-        sound_stop_all();
+        audio_stop_sound(bgmTitle);
+        audio_stop_all();
         stop_all_music(true);
-        audio_play_sound(sndConfirm, 0, 0);
+        play_sfx(sndConfirm);
         menu_fn_close_menu(menu_fn_levelselect_goto_act, false, 12);
         break;
     case 7:
@@ -23,10 +23,10 @@ switch(argument0)
         break;
     case 8:
         // Galacnik Gauntlet
-        sound_stop(bgmTitle);
-        sound_stop_all();
+        audio_stop_sound(bgmTitle);
+        audio_stop_all();
         stop_all_music(true);
-        audio_play_sound(sndConfirm, 0, 0);
+        play_sfx(sndConfirm);
         menu_fn_close_menu(menu_fn_levelselect_goto_act, false, 15);
         break;
     case 9:

@@ -19,4 +19,4 @@ alarm[0] = 128;
 if facing<0 shield.direction = 180; else
 shield.direction = 0;
 // sound
-audio_sound_gain(audio_play_sound(sndWindFlight, 0, 0),  objGameData.volume_sound, 0);
+audio_play_sound(sndWindFlight, 0, 0);

@@ -114,7 +114,6 @@ if (ticks &gt; 0) exit;
 if room == FF1_p || room == FF2_p {
     if not audio_is_playing(sndFireBlow)
     {
-        audio_sound_gain(sndFireBlow, objGameData.volume_sound, 0);
         audio_play_sound(sndFireBlow, 4, 0);
     }
 }

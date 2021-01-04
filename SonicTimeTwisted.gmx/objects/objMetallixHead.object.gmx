@@ -176,7 +176,7 @@ invulnerable=false;
     }
     
     // sound
-    audio_play_sound(sndBossHit, 0, 0);
+    play_sfx(sndBossHit);
 }
 </string>
           </argument>

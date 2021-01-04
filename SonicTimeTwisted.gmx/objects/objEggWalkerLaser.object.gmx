@@ -99,7 +99,7 @@ speed=0;
             <kind>1</kind>
             <string>state=1;
 alarm[11]=60;
-//audio_play_sound(sndLaserShot,0,false);
+//play_sfx(sndLaserShot);
 </string>
           </argument>
         </arguments>

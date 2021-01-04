@@ -47,7 +47,7 @@ camera.left = camera.right-view_wview[camera.view_id];
 with argument0 instance_destroy();
 // sound
 //play_jingle(bgmClear,false);
-audio_play_sound(sndBreakGlass, 2, 0);
+play_sfx(sndBreakGlass, 2);
 // rumble
 rumble(rumble_act2_break_capsule);
 // not a hard collision
