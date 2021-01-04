@@ -652,8 +652,8 @@ if(menu.state == 0)
                 if(allow_skipping &amp;&amp; name &lt; 9)
                 {
                     skip_pressed =  point_in_rectangle(device_mouse_x(0), device_mouse_y(0), 
-                        view_xview[0] + view_wview[0] - 36, view_yview[0] + 12,
-                        view_xview[0] + view_wview[0] - 12, view_yview[0] + 36);       
+                        view_xview[0] + view_wview[0] - 28, view_yview[0] + 4,
+                        view_xview[0] + view_wview[0] - 4, view_yview[0] + 28);       
                 }
                 if(skip_pressed)
                 {
@@ -1192,7 +1192,7 @@ audio_stop_all();
     {
         if(name &lt; 9 &amp;&amp; is_fallback_touchscreen)
         {
-           draw_sprite(sprTouchscreenFastForward, 0, view_xview[0] + view_wview[0] - 36, view_yview[0] + 12);
+           draw_sprite(sprTouchscreenFastForward, 0, view_xview[0] + view_wview[0] - 28, view_yview[0] + 4);
         }
     }
 }

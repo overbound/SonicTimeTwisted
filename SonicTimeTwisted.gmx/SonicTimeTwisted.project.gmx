@@ -1763,6 +1763,7 @@
         <sprite>sprites\sprTouchscreenSuperButtonBlue</sprite>
         <sprite>sprites\sprTouchscreenSuperButtonYellow</sprite>
         <sprite>sprites\sprTouchscreenFastForward</sprite>
+        <sprite>sprites\sprTouchscreenReturn</sprite>
       </sprites>
       <sprites name="Zone Title">
         <sprite>sprites\sprTitleBanner</sprite>
@@ -4488,6 +4489,7 @@
         <object>objects\objFade</object>
         <object>objects\objFadeWhite</object>
         <object>objects\objFadeWhiteFromSave</object>
+        <object>objects\objFadeWhiteFromSaveToTitle</object>
         <object>objects\objFinalEnding</object>
         <object>objects\objGameOver</object>
         <object>objects\objLevelToSS</object>

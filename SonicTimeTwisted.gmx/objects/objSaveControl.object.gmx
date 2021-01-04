@@ -1357,6 +1357,45 @@ event_user(flash_update_event);
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Manage returning to the title screen
+var cancel = false;
+if(input_check_pressed(cCANCEL))
+{
+    cancel = true;
+}
+if(is_touchscreen)
+{
+    if(mouse_check_button_pressed(mb_left))
+    {
+        cancel =  point_in_rectangle(device_mouse_x(0), device_mouse_y(0), 
+            view_xview[0] + view_wview[0] - 28, view_yview[0] + 4,
+            view_xview[0] + view_wview[0] - 4, view_yview[0] + 28);
+    }
+}
+if(cancel)
+{
+    transition_to(objFadeWhiteFromSaveToTitle, titlescreen, 24);
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="7" enumb="17">
       <action>
@@ -1603,25 +1642,25 @@ if(is_touchscreen)
     {
         case 0:
         case 7:
-            hint_top = tr("Select a save slot");
+            hint_top = tr("_save_mobile_hint_select");
             break;
         case 1:
-            hint_top = tr("Swipe up or down to select an act, tap time period to select it");
-            hint_bottom = tr("Tap slot to confirm, tap elsewhere to cancel");
+            hint_top = tr("_save_mobile_hint_act_select_top");
+            hint_bottom = tr("_save_mobile_hint_act_select_bottom");
             break;
         case 2:
-            hint_top = tr("Swipe up or down to select a character");
-            hint_bottom = tr("Tap slot to confirm, tap elsewhere to cancel");
+            hint_top = tr("_save_mobile_hint_character_select_top");
+            hint_bottom = tr("_save_mobile_hint_character_select_bottom");
             break;
         case 3:
         case 4:
-            hint_top = tr("Select a save slot to delete");
-            hint_bottom = tr("Click on Metal Sonic again to cancel");
+            hint_top = tr("_save_mobile_hint_delete_top");
+            hint_bottom = tr("_save_mobile_hint_delete_bottom");
             break;
         case 5:
         case 6:
-            hint_top = tr("Are you sure you want to delete this file?");
-            hint_bottom = tr("Tap slot to confirm, tap elsewhere to cancel");
+            hint_top = tr("_save_mobile_hint_delete_confirm_top");
+            hint_bottom = tr("_save_mobile_hint_delete_confirm_bottom");
             break;
     }
 }
@@ -1860,42 +1899,46 @@ if selectState == 4 {
     surface_set_target(hint_surface);
     draw_clear_alpha(c_black, 0);
     draw_set_halign(fa_center);
+    draw_set_valign(fa_middle);
     draw_set_font(objResources.fontMicro);
     
     if(hint_top != "")
     {
         draw_set_color(c_black);
-        draw_text(view_wview[0] div 2 - 1, 10, hint_top);
-        draw_text(view_wview[0] div 2 + 1, 10, hint_top);
-        draw_text(view_wview[0] div 2, 10 - 1, hint_top);
-        draw_text(view_wview[0] div 2, 10 + 1, hint_top);
-        draw_text(view_wview[0] div 2 - 1, 10 - 1, hint_top);
-        draw_text(view_wview[0] div 2 - 1, 10 + 1, hint_top);
-        draw_text(view_wview[0] div 2 + 1, 10 - 1, hint_top);
-        draw_text(view_wview[0] div 2 + 1, 10 + 1, hint_top);
+        draw_text(view_wview[0] div 2 - 1, 14, hint_top);
+        draw_text(view_wview[0] div 2 + 1, 14, hint_top);
+        draw_text(view_wview[0] div 2, 14 - 1, hint_top);
+        draw_text(view_wview[0] div 2, 14 + 1, hint_top);
+        draw_text(view_wview[0] div 2 - 1, 14 - 1, hint_top);
+        draw_text(view_wview[0] div 2 - 1, 14 + 1, hint_top);
+        draw_text(view_wview[0] div 2 + 1, 14 - 1, hint_top);
+        draw_text(view_wview[0] div 2 + 1, 14 + 1, hint_top);
         draw_set_color(c_white);
-        draw_text(view_wview[0] div 2, 10, hint_top);
+        draw_text(view_wview[0] div 2, 14, hint_top);
     }
     if(hint_bottom != "")
     {
         draw_set_color(c_black);
-        draw_text(view_wview[0] div 2 - 1, view_hview[0] - 22, hint_bottom);
-        draw_text(view_wview[0] div 2 + 1, view_hview[0] - 22, hint_bottom);
-        draw_text(view_wview[0] div 2, view_hview[0] - 22 - 1, hint_bottom);
-        draw_text(view_wview[0] div 2, view_hview[0] - 22 + 1, hint_bottom);
-        draw_text(view_wview[0] div 2 - 1, view_hview[0] - 22 - 1, hint_bottom);
-        draw_text(view_wview[0] div 2 - 1, view_hview[0] - 22 + 1, hint_bottom);
-        draw_text(view_wview[0] div 2 + 1, view_hview[0] - 22 - 1, hint_bottom);
-        draw_text(view_wview[0] div 2 + 1, view_hview[0] - 22 + 1, hint_bottom);
+        draw_text(view_wview[0] div 2 - 1, view_hview[0] - 18, hint_bottom);
+        draw_text(view_wview[0] div 2 + 1, view_hview[0] - 18, hint_bottom);
+        draw_text(view_wview[0] div 2, view_hview[0] - 18 - 1, hint_bottom);
+        draw_text(view_wview[0] div 2, view_hview[0] - 18 + 1, hint_bottom);
+        draw_text(view_wview[0] div 2 - 1, view_hview[0] - 18 - 1, hint_bottom);
+        draw_text(view_wview[0] div 2 - 1, view_hview[0] - 18 + 1, hint_bottom);
+        draw_text(view_wview[0] div 2 + 1, view_hview[0] - 18 - 1, hint_bottom);
+        draw_text(view_wview[0] div 2 + 1, view_hview[0] - 18 + 1, hint_bottom);
         draw_set_color(c_white);
-        draw_text(view_wview[0] div 2, view_hview[0] - 22, hint_bottom);
+        draw_text(view_wview[0] div 2, view_hview[0] - 18, hint_bottom);
     }
     
     surface_reset_target();
+    draw_set_halign(fa_left);
+    draw_set_valign(fa_top);
     hint_up_to_date = true;
 }
 draw_surface(hint_surface, view_xview[0], view_yview[0]);
 event_user(slot_draw_event);
+draw_sprite(sprTouchscreenReturn, 0, view_xview[0] + view_wview[0] - 28, view_yview[0] + 4);
 </string>
           </argument>
         </arguments>
