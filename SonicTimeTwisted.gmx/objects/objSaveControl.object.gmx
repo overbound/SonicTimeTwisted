@@ -1938,7 +1938,10 @@ if selectState == 4 {
 }
 draw_surface(hint_surface, view_xview[0], view_yview[0]);
 event_user(slot_draw_event);
-draw_sprite(sprTouchscreenReturn, 0, view_xview[0] + view_wview[0] - 28, view_yview[0] + 4);
+if(is_touchscreen)
+{
+    draw_sprite(sprTouchscreenReturn, 0, view_xview[0] + view_wview[0] - 28, view_yview[0] + 4);
+}
 </string>
           </argument>
         </arguments>
