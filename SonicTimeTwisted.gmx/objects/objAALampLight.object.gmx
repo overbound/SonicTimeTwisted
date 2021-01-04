@@ -40,8 +40,10 @@
           <argument>
             <kind>1</kind>
             <string>reaction_script = player_reaction_fire;
-image_speed = .5;
-image_alpha = .5;
+blink_speed = 2;
+min_opacity = 0.5;
+max_opacity = 1;
+blend_factor = max_opacity - min_opacity;
 </string>
           </argument>
         </arguments>
@@ -64,10 +66,9 @@ image_alpha = .5;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if objScreen.flashing_visible
-    if image_alpha = 0.75
-        image_alpha = 0.5;
-        else image_alpha = 0.75;
+            <string>var frame = 0;
+with (objScreen) frame = image_index div other.blink_speed;
+image_alpha = min_opacity + (blend_factor * (frame mod 2));
 </string>
           </argument>
         </arguments>
@@ -90,9 +91,9 @@ image_alpha = .5;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Render explosion
+            <string>/// Blend
 draw_set_blend_mode(bm_add);
-draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,c_white,image_alpha);
+draw_self();
 draw_set_blend_mode(bm_normal);
 
 </string>
