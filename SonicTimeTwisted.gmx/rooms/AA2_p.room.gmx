@@ -807,8 +807,8 @@ with objTitlecard
     <instance objName="objAASmasherSmall" x="6568" y="2016" name="inst_961C7DD8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objAASmasherSmall" x="7208" y="2016" name="inst_1303806F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objAASmasherSmall" x="3288" y="1408" name="inst_4AD873E5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objRingGiant" x="8504" y="1735" name="inst_926A2BD1" locked="0" code="tag=31;&#xA;left = 2176;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objRingGiant" x="4056" y="704" name="inst_87E2B4AB" locked="0" code="tag=30;&#xA;left = 2176;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objRingGiant" x="8504" y="1735" name="inst_926A2BD1" locked="0" code="tag=31;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objRingGiant" x="4056" y="704" name="inst_87E2B4AB" locked="0" code="tag=30;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objAABobbin" x="6098" y="1416" name="inst_F310560C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpringDiagonal" x="4496" y="1536" name="inst_F92C7470" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="270"/>
     <instance objName="objSpringDiagonal" x="4500" y="1436" name="inst_B36F235B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="270"/>
