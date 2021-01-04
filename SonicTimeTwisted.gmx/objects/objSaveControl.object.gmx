@@ -1758,6 +1758,18 @@ if selectState == 4 {
             selectState = 1;
             // Hints update
             event_user(3);
+            // if only one time period is available, switch to it
+            if ((!slots[selectCheck].visibleFuture) &amp;&amp; (slots[selectCheck].visiblePast) &amp;&amp; stageLeftRight == 1)
+            {
+                stageLeftRight = 0;
+            }
+            else
+            {
+                if ((!slots[selectCheck].visiblePast) &amp;&amp; (slots[selectCheck].visibleFuture) &amp;&amp; stageLeftRight == 0)
+                {
+                    stageLeftRight = 1;
+                }
+            }
         }
     }
     
