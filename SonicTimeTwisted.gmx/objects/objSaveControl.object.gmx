@@ -1448,6 +1448,7 @@ if selectState==5 {
             <string>/// Flash update - with flash reduction
 if (is_touchscreen &amp;&amp; selectState == 0 &amp;&amp; sprite_index == sprSaveControl) {
     flash_visibility = false;
+    flash_alpha = 0;
 }
 else
 if selectState!=5 {
