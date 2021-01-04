@@ -205,6 +205,50 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
+            <string>/// Manage returning to the title screen
+// This needs to be at the beginning, so that input_check_pressed() doesn't trigger
+// while returning to state 0
+if(selectState == 0)
+{
+    var cancel = false;
+    if(input_check_pressed(cCANCEL))
+    {
+        cancel = true;
+    }
+    if(is_touchscreen)
+    {
+        if(mouse_check_button_pressed(mb_left))
+        {
+            cancel =  point_in_rectangle(device_mouse_x(0), device_mouse_y(0), 
+                view_xview[0] + view_wview[0] - 28, view_yview[0] + 4,
+                view_xview[0] + view_wview[0] - 4, view_yview[0] + 28);
+        }
+    }
+    if(cancel)
+    {
+        transition_to(objFadeWhiteFromSaveToTitle, titlescreen, 24);
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
             <string>/// Switch input (if applies)
 var prev_is_touchscreen = is_touchscreen;
 script_execute(switch_script);
@@ -1357,45 +1401,6 @@ event_user(flash_update_event);
           </argument>
         </arguments>
       </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Manage returning to the title screen
-var cancel = false;
-if(input_check_pressed(cCANCEL))
-{
-    cancel = true;
-}
-if(is_touchscreen)
-{
-    if(mouse_check_button_pressed(mb_left))
-    {
-        cancel =  point_in_rectangle(device_mouse_x(0), device_mouse_y(0), 
-            view_xview[0] + view_wview[0] - 28, view_yview[0] + 4,
-            view_xview[0] + view_wview[0] - 4, view_yview[0] + 28);
-    }
-}
-if(cancel)
-{
-    transition_to(objFadeWhiteFromSaveToTitle, titlescreen, 24);
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
     </event>
     <event eventtype="7" enumb="17">
       <action>
@@ -1940,7 +1945,10 @@ draw_surface(hint_surface, view_xview[0], view_yview[0]);
 event_user(slot_draw_event);
 if(is_touchscreen)
 {
-    draw_sprite(sprTouchscreenReturn, 0, view_xview[0] + view_wview[0] - 28, view_yview[0] + 4);
+    if(selectState == 0)
+    {
+        draw_sprite(sprTouchscreenReturn, 0, view_xview[0] + view_wview[0] - 28, view_yview[0] + 4);
+    }
 }
 </string>
           </argument>
