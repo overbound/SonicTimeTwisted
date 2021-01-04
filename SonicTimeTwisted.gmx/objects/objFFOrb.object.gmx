@@ -146,6 +146,8 @@ for (i=0; i&lt;2; i+=1)
 }
 image_xscale=.275;
 image_yscale=.275;
+
+event_user(0);
 </string>
           </argument>
         </arguments>
@@ -257,6 +259,88 @@ for (var i = 0; i &lt; 2; i += 1)
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Handle flashing
+event_user(step_event);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="11">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// If flashing is reduced, execute a step script
+step_ffz_orb_flashing();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="10">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Initialization - can be called again if flashing is toggled in the menu
+if(objScreen.flashing_reduced)
+{
+    init_ffz_orb_flashing();
+    step_event = 1;
+    draw_script = draw_ffz_orb_reduced_flashing;
+    image_speed = 0.5;
+}
+else
+{
+    step_event = 2;
+    draw_script = draw_ffz_orb_default;
+    image_speed = 1;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="8" enumb="0">
       <action>
@@ -276,11 +360,7 @@ for (var i = 0; i &lt; 2; i += 1)
           <argument>
             <kind>1</kind>
             <string>/// Draw Orb
-draw_sprite_ext(sprFFOrbLarge,image_index,x,y,image_xscale,image_yscale,0,c_white,1);
-draw_set_blend_mode(bm_add);
-draw_sprite_ext(sprFFOrbsLargeAdd,image_index,x,y, image_xscale,image_yscale,0,c_white,.325);
-draw_sprite_ext(sprFFOrbLargeEletric,image_index,x,y,image_xscale,image_yscale,0,c_white,1);
-draw_set_blend_mode(bm_normal);
+script_execute(draw_script, 1);
 </string>
           </argument>
         </arguments>

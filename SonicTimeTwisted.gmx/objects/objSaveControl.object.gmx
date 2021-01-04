@@ -109,6 +109,8 @@ if(is_touchscreen)
 }
 hint_surface = -1;
 hint_up_to_date = false;
+flash_counter = 0;
+flash_alpha = 1;
 </string>
           </argument>
         </arguments>
@@ -1342,8 +1344,9 @@ if (is_touchscreen &amp;&amp; selectState == 0 &amp;&amp; sprite_index == sprSav
     flash_visibility = false;
 }
 else
-if selectState!=5 &amp;&amp; objScreen.frame_counter {
-    flash_visibility = !flash_visibility;
+if selectState!=5 {
+    flash_counter = (flash_counter + 1) mod 8;
+    flash_visibility = flash_counter &gt; 3;
 } else flash_visibility=true;
 </string>
           </argument>

@@ -60,7 +60,6 @@ controlState = 0;
 axis = "";
 inputFlash = 0;
 white = 0;
-timeOffset = 0;
 timer = 0;
 rings = 0;
 menu = instance_create(0,0,objMenu);
@@ -69,7 +68,7 @@ if(is_touchscreen)
 {
     hud_draw_script = draw_hud_ss_touchscreen;
 }
-
+event_user(0);
 </string>
           </argument>
         </arguments>
@@ -146,9 +145,6 @@ if objProgram.paused || menu.menu_type == 2 {
 var total_time, minutes, seconds, milliseconds;
     // total time
     total_time = min(36000-objSSLevel.timer, 36000);
-    if total_time &gt;= 36000 {
-        timeOffset = - 10;
-    }
     
     // minutes
     minutes = string(total_time div 3600);
@@ -284,6 +280,30 @@ if(menu.state != 0)
     with(menu) event_user(0);
 }
     
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="10">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Fetch the offset from the TR file
+top_hud_offset = tr_get_real_prop("top_hud_offset");
 </string>
           </argument>
         </arguments>

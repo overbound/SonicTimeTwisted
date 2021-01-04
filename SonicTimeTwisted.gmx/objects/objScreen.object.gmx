@@ -60,7 +60,6 @@ frame_counter = 0;
 Load the appropriate video mode. See the set_video_mode script for details
 **/
 video_mode = 0;
-framerate = 0; // 0 - 60fps, 1 - 30fps
 score_tally_mode = 0;
 </string>
           </argument>

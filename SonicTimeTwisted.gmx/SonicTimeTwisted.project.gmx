@@ -4052,6 +4052,12 @@
           <script>scripts\solidsSS1Future.gml</script>
         </scripts>
       </scripts>
+      <scripts name="Specific">
+        <script>scripts\draw_ffz_orb_default.gml</script>
+        <script>scripts\draw_ffz_orb_reduced_flashing.gml</script>
+        <script>scripts\init_ffz_orb_flashing.gml</script>
+        <script>scripts\step_ffz_orb_flashing.gml</script>
+      </scripts>
     </scripts>
   </scripts>
   <shaders name="shaders">

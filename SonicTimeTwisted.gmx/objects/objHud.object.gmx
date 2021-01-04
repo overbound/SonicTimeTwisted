@@ -59,8 +59,7 @@ pauseState = 0;
 controlState = 0;
 shouldExit = false;
 axis = -1;
-white = 0;
-timeOffset = 0;
+darkbg = 0;
 timer = 0;
 rings = 0;
 menu = instance_create(0,0,objMenu);
@@ -69,6 +68,7 @@ if(is_touchscreen)
 {
     hud_draw_script = draw_hud_act_touchscreen;
 }
+event_user(0);
 </string>
           </argument>
         </arguments>
@@ -123,9 +123,6 @@ var total_time, minutes, seconds, milliseconds;
 if instance_exists(objLevel) {
     // total time
     total_time = min(36000-objLevel.timer, 36000);
-    if total_time &gt;= 36000 {
-        timeOffset = - 10;
-    }
     
     // minutes
     minutes = string(total_time div 3600);
@@ -248,12 +245,36 @@ if objProgram.paused {
             <kind>1</kind>
             <string>/// fade black for pause
 if objProgram.paused {
-    if white &lt; 0.5
-        white+=.125;
-    else white = 0.5;
-} else if white &gt; 0 {
-    white-=.125;
+    if darkbg &lt; 0.5
+        darkbg+=.125;
+    else darkbg = 0.5;
+} else if darkbg &gt; 0 {
+    darkbg-=.125;
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="10">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Fetch the offset from the TR file
+top_hud_offset = tr_get_real_prop("top_hud_offset");
 </string>
           </argument>
         </arguments>
@@ -277,17 +298,22 @@ if objProgram.paused {
           <argument>
             <kind>1</kind>
             <string>/// Render HUD
+if objProgram.paused
+{
+    draw_set_alpha(darkbg)
+    draw_set_color(c_black);
+    draw_rectangle(view_xview,view_yview,view_xview+view_wview,view_yview+view_hview,false);
+    draw_set_color(c_white);
+    draw_set_alpha(image_alpha);
+    with(menu) event_user(3);
+}
+else
+{
 // The part with score/time/rings is constant among contexts and input devices...
 draw_hud_score_time_rings(objLevel.timer, objGameData.rings[view_current], view_xview[view_current], view_yview[view_current]);
 // While the shield's position depends on the context and the lives' position depends on the input device
 script_execute(hud_draw_script);
-
-draw_set_alpha(white)
-draw_set_color(c_black);
-    draw_rectangle(view_xview,view_yview,view_xview+view_wview,view_yview+view_hview,false);
-draw_set_color(c_white);
-draw_set_alpha(image_alpha);
-with(menu) event_user(3);
+}
 </string>
           </argument>
         </arguments>
