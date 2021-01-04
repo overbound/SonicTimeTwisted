@@ -344,16 +344,15 @@ if spawn_id&gt;-1
             view_xview = player[0].x-213
             view_yview = player[0].y-120
         }
-        with player[0].camera {
-        
-            bottom = other.spawn_id.bottom;
-            top = other.spawn_id.top;
-            left = other.spawn_id.left;
-            right = other.spawn_id.right;
-        
-        }
     }
     
+    with player[0].camera {
+        bottom = other.spawn_id.bottom;
+        top = other.spawn_id.top;
+        left = other.spawn_id.left;
+        right = other.spawn_id.right;
+    
+    }
     
     // run start script
     if spawn_id.start_script != noone

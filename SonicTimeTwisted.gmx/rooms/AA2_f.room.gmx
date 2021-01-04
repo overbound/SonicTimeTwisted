@@ -374,7 +374,7 @@ with objTitlecard
     <instance objName="objBlock" x="768" y="504" name="inst_913D61E5" locked="0" code="depth_mask = 1;&#xA;" scaleX="144" scaleY="1" colour="4278223103" rotation="0"/>
     <instance objName="objBoost" x="4200" y="480" name="inst_58477975" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objField" x="1888" y="512" name="inst_3556CE3E" locked="0" code="left = 832;&#xA;top = 0;&#xA;right = room_width;&#xA;bottom = room_height;" scaleX="2" scaleY="8" colour="4294967295" rotation="0"/>
-    <instance objName="objTimePost" x="4833" y="1520" name="inst_BE1B1ED1" locked="0" code="tag = 4;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objTimePost" x="4833" y="1520" name="inst_BE1B1ED1" locked="0" code="tag = 4;left = 2176;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRing" x="4864" y="1136" name="inst_B48CCA8F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRing" x="2960" y="1640" name="inst_4075795B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRing" x="2992" y="1640" name="inst_48790955" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -482,7 +482,7 @@ with objTitlecard
     <instance objName="objRing" x="5856" y="336" name="inst_684D8344" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRing" x="5888" y="336" name="inst_B127673E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRing" x="4896" y="1120" name="inst_ADB74D05" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objTimePost" x="3668" y="848" name="inst_3764ED1F" locked="0" code="tag = 2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objTimePost" x="3668" y="848" name="inst_3764ED1F" locked="0" code="tag = 2;&#xA;left = 2176;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRing" x="3088" y="1296" name="inst_599504CC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRing" x="3104" y="1296" name="inst_AF602650" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRing" x="3088" y="1312" name="inst_22FD8ABB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -704,15 +704,15 @@ with objTitlecard
     <instance objName="objBlock" x="2304" y="1720" name="inst_794D32BA" locked="0" code="climbable=true;" scaleX="64" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="2680" y="264" name="inst_4B3EA9E5" locked="0" code="climbable=true;" scaleX="1" scaleY="135" colour="4294967295" rotation="0"/>
     <instance objName="objStart" x="2304" y="240" name="inst_90A441F4" locked="0" code="tag=1;&#xA;left=2176;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objStart" x="3376" y="1648" name="inst_125C5FB3" locked="0" code="tag = 3;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objStart" x="3376" y="1648" name="inst_125C5FB3" locked="0" code="tag = 3;&#xA;left = 2176;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRing" x="4864" y="1104" name="inst_4C7113DA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRing" x="4848" y="1136" name="inst_FA13839A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRing" x="4896" y="1104" name="inst_5ED28813" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRing" x="4848" y="1120" name="inst_30F6378A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRing" x="4896" y="1136" name="inst_085DCF9A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objCurveConvex" x="7072" y="1712" name="inst_A7137EFB" locked="0" code="" scaleX="-0.666666984558105" scaleY="-0.666666984558105" colour="4294967295" rotation="0"/>
-    <instance objName="objStart" x="6304" y="1360" name="inst_3673F2AF" locked="0" code="tag = 6;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objStart" x="8064" y="368" name="inst_4C51EACE" locked="0" code="tag = 7;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objStart" x="6304" y="1360" name="inst_3673F2AF" locked="0" code="tag = 6;&#xA;left = 2176;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objStart" x="8064" y="368" name="inst_4C51EACE" locked="0" code="tag = 7;&#xA;left = 2176;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objMonitor" x="4336" y="1680" name="inst_7A916320" locked="0" code="icon=8" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="4352" y="1096" name="inst_31DAFC4A" locked="0" code="climbable=true;" scaleX="1" scaleY="27" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="4352" y="1088" name="inst_38494803" locked="0" code="" scaleX="9" scaleY="1" colour="4294967295" rotation="0"/>
@@ -749,13 +749,13 @@ with objTitlecard
     <instance objName="objSlant" x="3944" y="1040" name="inst_D56FFB1D" locked="0" code="" scaleX="-1.25" scaleY="-0.5" colour="4294967295" rotation="0"/>
     <instance objName="objSlant" x="3856" y="1168" name="inst_A48E7010" locked="0" code="" scaleX="-0.5" scaleY="1.5" colour="4294967295" rotation="0"/>
     <instance objName="objSlant" x="3888" y="1216" name="inst_9CD25EAC" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objRingGiant" x="5432" y="312" name="inst_398A9DFF" locked="0" code="tag=30;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objRingGiant" x="5432" y="312" name="inst_398A9DFF" locked="0" code="tag=30;&#xA;left = 2176;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpringRed" x="4976" y="1904" name="inst_2FBABBCB" locked="0" code="through = true;&#xA;depth = 4;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSlant" x="5272" y="640" name="inst_73043D53" locked="0" code="" scaleX="-0.774193525314331" scaleY="0.25" colour="4294967295" rotation="0"/>
     <instance objName="objSlant" x="5324" y="648" name="inst_31F3F783" locked="0" code="" scaleX="-1.67741930484772" scaleY="1.125" colour="4294967295" rotation="0"/>
     <instance objName="objSlant" x="5364" y="684" name="inst_1D2CFA10" locked="0" code="" scaleX="-1.25" scaleY="0.625" colour="4294967295" rotation="0"/>
-    <instance objName="objLampPost" x="5128" y="624" name="inst_794B9022" locked="0" code="tag=20;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objLampPost" x="5760" y="1264" name="inst_D1D965CA" locked="0" code="tag=22;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objLampPost" x="5128" y="624" name="inst_794B9022" locked="0" code="tag=20;&#xA;left=2176;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objLampPost" x="5760" y="1264" name="inst_D1D965CA" locked="0" code="tag=22;&#xA;left = 2176;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSlant" x="2752" y="256" name="inst_28839B9B" locked="0" code="depth_mask=1;" scaleX="-1" scaleY="0.375" colour="4278223103" rotation="0"/>
     <instance objName="objSlant" x="2776" y="268" name="inst_22B2F5E6" locked="0" code="depth_mask=1;" scaleX="-0.75" scaleY="0.625" colour="4278223103" rotation="0"/>
     <instance objName="objSlant" x="2800" y="288" name="inst_0EA7F597" locked="0" code="depth_mask=1;" scaleX="-0.75" scaleY="0.75" colour="4278223103" rotation="0"/>
@@ -852,7 +852,7 @@ with objTitlecard
     <instance objName="objSlant" x="7056" y="648" name="inst_CE9362F8" locked="0" code="" scaleX="-2.5" scaleY="-1.25" colour="4294967295" rotation="0"/>
     <instance objName="objSlant" x="7056" y="648" name="inst_BA536FCD" locked="0" code="" scaleX="-2.5" scaleY="-1.25" colour="4294967295" rotation="0"/>
     <instance objName="objSlant" x="6976" y="672" name="inst_D70B2A07" locked="0" code="" scaleX="-1.5" scaleY="-0.75" colour="4294967295" rotation="0"/>
-    <instance objName="objRingGiant" x="3460" y="80" name="inst_606C6DFD" locked="0" code="tag=31&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objRingGiant" x="3460" y="80" name="inst_606C6DFD" locked="0" code="tag=31&#xA;left = 2176;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objMonitor" x="4526" y="1944" name="inst_ECF02B89" locked="0" code="icon=11;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objMonitor" x="6832" y="1744" name="inst_E1F9D9DE" locked="0" code="icon=2;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objMonitor" x="6860" y="1744" name="inst_20263FCF" locked="0" code="icon=10;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -1045,7 +1045,7 @@ with objTitlecard
     <instance objName="objBlock" x="3088" y="320" name="inst_1292814E" locked="0" code="climbable=1;&#xA;" scaleX="14" scaleY="4" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="3840" y="928" name="inst_30B3929D" locked="0" code="climbable=true;" scaleX="4" scaleY="4" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="6944" y="1280" name="inst_A56FDE83" locked="0" code="climbable=true;" scaleX="10" scaleY="4" colour="4294967295" rotation="0"/>
-    <instance objName="objLampPost" x="9760" y="1264" name="inst_8647F2EB" locked="0" code="tag=23;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objLampPost" x="9760" y="1264" name="inst_8647F2EB" locked="0" code="tag=23;&#xA;left=2176;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRing" x="9828" y="1224" name="inst_5E922568" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRing" x="9848" y="1224" name="inst_B243D0D8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRing" x="9868" y="1224" name="inst_E09D8B91" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -1058,7 +1058,7 @@ with objTitlecard
     <instance objName="objAAClock" x="3780" y="268" name="inst_4707A2D6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objCurveConcave" x="5664" y="1376" name="inst_59FF2B23" locked="0" code="" scaleX="0.330000013113022" scaleY="0.333333343267441" colour="4294967295" rotation="0"/>
     <instance objName="objField" x="8704" y="0" name="inst_52603F6F" locked="0" code="reaction_script=player_reaction_clamp_speeds;&#xA;spd=16;" scaleX="81.0666656494141" scaleY="124" colour="4294967295" rotation="0"/>
-    <instance objName="objRingGiant" x="5021" y="1867" name="inst_EB2E5098" locked="0" code="tag = 33;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objRingGiant" x="5021" y="1867" name="inst_EB2E5098" locked="0" code="tag = 33;&#xA;left = 2176;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="tileAA2_F_1" x="768" y="0" w="64" h="64" xo="0" yo="512" id="10000091" name="tiled_10000091" depth="4" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
