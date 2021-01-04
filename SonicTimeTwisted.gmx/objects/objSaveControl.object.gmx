@@ -88,6 +88,8 @@ selectState = 0;
 stageLeftRight = 1;
 stageDeleteConfirmSprite = sprDeleteConfirm;
 flash_visibility = true;
+flash_alpha = 1;
+flash_counter = 0;
 
 // some touchscreen variables
 mouse_prev_x = 0;
@@ -109,8 +111,17 @@ if(is_touchscreen)
 }
 hint_surface = -1;
 hint_up_to_date = false;
-flash_counter = 0;
-flash_alpha = 1;
+
+if(objScreen.flashing_reduced)
+{
+    flash_update_event = 6;
+    slot_draw_event = 7;
+}
+else
+{
+    flash_update_event = 4;
+    slot_draw_event = 5;
+}
 </string>
           </argument>
         </arguments>
@@ -1340,13 +1351,225 @@ mouse_dx = 0;
           <argument>
             <kind>1</kind>
             <string>/// visibility flash
+event_user(flash_update_event);
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="17">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Draw slots - with flash reduction
+
+if selectState==0 || selectState==4 {
+    if (sprite_index == sprSaveDelete)
+    {
+        draw_sprite_ext(sprite_index,0,x,y,image_xscale,image_yscale,0,c_white,0.4 + (flash_alpha/2));
+        draw_set_font(objResources.fontHud);
+        draw_set_halign(fa_center);
+        draw_set_valign(fa_middle);
+        draw_text_colour(x, y - 10, tr("_save_delete"), c_red, c_red, c_white, c_white, 0.4 + (flash_alpha/2));
+        draw_set_halign(fa_left);
+        draw_set_valign(fa_top);
+    }
+    else
+    {
+        draw_sprite_ext(sprite_index,0,x,y,image_xscale,image_yscale,0,c_white,flash_alpha);
+    }
+}
+else if selectState==1{
+if slots[selectCheck].iconIndex &gt; 11
+    draw_sprite_ext(sprSelectStage,2,x,y-44,image_xscale,image_yscale,0,c_white,flash_alpha);
+    else
+    {
+        draw_sprite_ext(sprSelectStage,stageLeftRight,x,y-44,image_xscale,image_yscale,0,c_white,0.3 + (flash_alpha/2));
+        draw_sprite_ext(sprSelectStageFade,stageLeftRight,x,y-44,image_xscale,image_yscale,0,c_white,0.5);
+    }
+}
+if selectState ==2 {
+    if(selectCheck == 0)
+    {
+        draw_sprite_ext(sprCharSelect,0,x,y+24,1,1,0,c_white,flash_alpha);
+    }
+    else
+    {
+        draw_sprite_ext(sprCharSelect,0,x,y+32,1,1,0,c_white,flash_alpha);
+    }
+}
+if selectState==5 {
+    draw_sprite_ext(stageDeleteConfirmSprite,0,x,y,image_xscale,image_yscale,0,c_white,1);
+    draw_set_font(objResources.fontHud);
+    draw_set_halign(fa_center);
+    draw_set_valign(fa_middle);
+    draw_text_colour(x, y - 10, tr("_save_delete"), c_red, c_red, c_white, c_white, 1);
+    if (stageDeleteConfirmSprite == sprDeleteConfirm)
+        draw_text_colour(x, y + 10, tr("_save_delete_YesNo"), c_red, c_red, c_white, c_white, 1);
+    draw_set_halign(fa_left);
+    draw_set_valign(fa_top);
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="16">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Flash update - with flash reduction
 if (is_touchscreen &amp;&amp; selectState == 0 &amp;&amp; sprite_index == sprSaveControl) {
     flash_visibility = false;
 }
 else
 if selectState!=5 {
     flash_counter = (flash_counter + 1) mod 8;
-    flash_visibility = flash_counter &gt; 3;
+    flash_alpha = 1;
+    if(flash_counter == 4 || flash_counter == 1)
+    {
+        flash_alpha = 0.2;        
+    }
+    else
+    {
+        if(flash_counter == 5 || flash_counter == 0)
+        {
+            flash_alpha = 0.4;        
+        }
+        else
+        {
+            if(flash_counter &gt; 5)
+            {
+                flash_alpha = 0.6;
+            }
+            else
+            {
+                flash_alpha = 0;        
+            }
+        }
+    }
+    flash_visibility = flash_alpha &gt; 0;
+} else flash_visibility=true;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="15">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Draw slots - without flash reduction
+if(flash_visibility)
+{
+    if selectState==0 || selectState==4 {
+        draw_sprite_ext(sprite_index,0,x,y,image_xscale,image_yscale,0,c_white,1);
+        if (sprite_index == sprSaveDelete)
+        {
+            draw_set_font(objResources.fontHud);
+            draw_set_halign(fa_center);
+            draw_set_valign(fa_middle);
+            draw_text_colour(x, y - 10, tr("_save_delete"), c_red, c_red, c_white, c_white, 1);
+            draw_set_halign(fa_left);
+            draw_set_valign(fa_top);
+        }
+    }
+    else if selectState==1{
+    if slots[selectCheck].iconIndex &gt; 11
+        draw_sprite_ext(sprSelectStage,2,x,y-44,image_xscale,image_yscale,0,c_white,1);
+        else draw_sprite_ext(sprSelectStage,stageLeftRight,x,y-44,image_xscale,image_yscale,0,c_white,1);
+    }
+    if selectState ==2 {
+        if(selectCheck == 0)
+        {
+            draw_sprite_ext(sprCharSelect,0,x,y+24,1,1,0,c_white,1);
+        }
+        else
+        {
+            draw_sprite_ext(sprCharSelect,0,x,y+32,1,1,0,c_white,1);
+        }
+    }
+    if selectState==5 {
+        draw_sprite_ext(stageDeleteConfirmSprite,0,x,y,image_xscale,image_yscale,0,c_white,1);
+        draw_set_font(objResources.fontHud);
+        draw_set_halign(fa_center);
+        draw_set_valign(fa_middle);
+        draw_text_colour(x, y - 10, tr("_save_delete"), c_red, c_red, c_white, c_white, 1);
+        if (stageDeleteConfirmSprite == sprDeleteConfirm)
+            draw_text_colour(x, y + 10, tr("_save_delete_YesNo"), c_red, c_red, c_white, c_white, 1);
+        draw_set_halign(fa_left);
+        draw_set_valign(fa_top);
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="14">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Flash update - without flash reduction
+if (is_touchscreen &amp;&amp; selectState == 0 &amp;&amp; sprite_index == sprSaveControl) {
+    flash_visibility = false;
+}
+else
+if selectState!=5 &amp;&amp; objScreen.frame_counter {
+    flash_visibility = !flash_visibility;
 } else flash_visibility=true;
 </string>
           </argument>
@@ -1659,47 +1882,7 @@ if selectState == 4 {
     hint_up_to_date = true;
 }
 draw_surface(hint_surface, view_xview[0], view_yview[0]);
-if(flash_visibility)
-{
-    if selectState==0 || selectState==4 {
-        draw_sprite_ext(sprite_index,0,x,y,image_xscale,image_yscale,0,c_white,1);
-        if (sprite_index == sprSaveDelete)
-        {
-            draw_set_font(objResources.fontHud);
-            draw_set_halign(fa_center);
-            draw_set_valign(fa_middle);
-            draw_text_colour(x, y - 10, tr("_save_delete"), c_red, c_red, c_white, c_white, 1);
-            draw_set_halign(fa_left);
-            draw_set_valign(fa_top);
-        }
-    }
-    else if selectState==1{
-    if slots[selectCheck].iconIndex &gt; 11
-        draw_sprite_ext(sprSelectStage,2,x,y-44,image_xscale,image_yscale,0,c_white,1);
-        else draw_sprite_ext(sprSelectStage,stageLeftRight,x,y-44,image_xscale,image_yscale,0,c_white,1);
-    }
-    if selectState ==2 {
-        if(selectCheck == 0)
-        {
-            draw_sprite_ext(sprCharSelect,0,x,y+24,1,1,0,c_white,1);
-        }
-        else
-        {
-            draw_sprite_ext(sprCharSelect,0,x,y+32,1,1,0,c_white,1);
-        }
-    }
-    if selectState==5 {
-        draw_sprite_ext(stageDeleteConfirmSprite,0,x,y,image_xscale,image_yscale,0,c_white,1);
-        draw_set_font(objResources.fontHud);
-        draw_set_halign(fa_center);
-        draw_set_valign(fa_middle);
-        draw_text_colour(x, y - 10, tr("_save_delete"), c_red, c_red, c_white, c_white, 1);
-        if (stageDeleteConfirmSprite == sprDeleteConfirm)
-            draw_text_colour(x, y + 10, tr("_save_delete_YesNo"), c_red, c_red, c_white, c_white, 1);
-        draw_set_halign(fa_left);
-        draw_set_valign(fa_top);
-    }
-}
+event_user(slot_draw_event);
 </string>
           </argument>
         </arguments>

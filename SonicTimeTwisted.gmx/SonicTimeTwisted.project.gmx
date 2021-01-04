@@ -1729,6 +1729,7 @@
         <sprite>sprites\sprSaveIconsPast</sprite>
         <sprite>sprites\sprSaveSlot</sprite>
         <sprite>sprites\sprSelectStage</sprite>
+        <sprite>sprites\sprSelectStageFade</sprite>
         <sprite>sprites\sprStatic</sprite>
       </sprites>
       <sprites name="Title Screen">
