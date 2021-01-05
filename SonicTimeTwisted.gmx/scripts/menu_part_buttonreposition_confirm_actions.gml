@@ -31,8 +31,8 @@ switch(argument0)
             bar = 32;
             bsx = 200;
             bsy = 16;
-            bbx = 324;
-            bby = 88;
+            bbx = 288;
+            bby = 164;
         }
         menu_fn_exit_submenu(menu_part_touchscreen_items, 0);
         break;

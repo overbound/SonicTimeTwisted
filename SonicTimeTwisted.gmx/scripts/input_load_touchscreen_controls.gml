@@ -13,8 +13,8 @@ if(argument0) // argument0 - from INI, default values if false
     bay = ini_read_real('smartphone','bay',178);
     bsx = ini_read_real('smartphone','bsx',200);
     bsy = ini_read_real('smartphone','bsy',16);
-    bbx = ini_read_real('smartphone','bbx',324);
-    bby = ini_read_real('smartphone','bby',88);
+    bbx = ini_read_real('smartphone','bbx',288);
+    bby = ini_read_real('smartphone','bby',164);
     gyromode = ini_read_real('smartphone','gyromode',1);
     gyro_switch_on_angle_x = ini_read_real('smartphone','gyro_switch_on_angle_x',0.15);
     gyro_analog_start_x = ini_read_real('smartphone','gyro_analog_start_x',0.139626);
@@ -65,8 +65,8 @@ else
     bsy = 16;
     
     // Super button coordinates
-    bbx = 324;
-    bby = 88;
+    bbx = 288;
+    bby = 164;
     super_button_enabled = false;
     
     button_radius = 0; // derived from vksize
