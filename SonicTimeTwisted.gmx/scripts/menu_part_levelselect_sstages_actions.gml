@@ -7,10 +7,10 @@ switch(argument0)
     case 4:
     case 5:
     case 6:
-        sound_stop(bgmTitle);
-        sound_stop_all();
+        audio_stop_sound(bgmTitle);
+        audio_stop_all();
         stop_all_music(true);
-        audio_play_sound(sndConfirm, 0, 0);
+        play_sfx(sndConfirm);
         menu_fn_close_menu(menu_fn_levelselect_goto_specialstage, false, argument0);
         break;
     case 7:
@@ -20,10 +20,10 @@ switch(argument0)
     case 11:
     case 12:
     case 13:
-        sound_stop(bgmTitle);
-        sound_stop_all();
+        audio_stop_sound(bgmTitle);
+        audio_stop_all();
         stop_all_music(true);
-        audio_play_sound(sndConfirm, 0, 0);
+        play_sfx(sndConfirm);
         menu_fn_close_menu(menu_fn_levelselect_goto_specialstage, true, argument0 - 7);
         break;
     case 14:

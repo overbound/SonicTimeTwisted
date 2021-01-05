@@ -130,7 +130,6 @@ case 2: // expanding
 // sound
 if not audio_is_playing(sndIceSlip) and state &gt; 0
 {
-    audio_sound_gain(sndIceSlip, objGameData.volume_sound, 0);
     audio_play_sound(sndIceSlip, 4, 0);
 }
 </string>

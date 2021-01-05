@@ -85,8 +85,8 @@ rock_direction = 0;
             {
                 audio_stop_sound(sndSmash);
             }
-            var rock_shield_sound = audio_play_sound(sndSmash, 0, false);
-            audio_sound_gain(rock_shield_sound, 0.75, 0);
+            var rock_shield_sound = play_sfx(sndSmash);
+            audio_sound_gain(rock_shield_sound, 0.75 /* TODO: normalize 0.75 between objMusic.sfxGain? */, 0);
         }
         else if (vspeed &lt; 0 &amp;&amp; collision_line(x - 10, y - 10, x + 10, y - 10, objSolid, true, true))
         {
@@ -95,8 +95,8 @@ rock_direction = 0;
             {
                 audio_stop_sound(sndSmash);
             }
-            var rock_shield_sound = audio_play_sound(sndSmash, 0, false);
-            audio_sound_gain(rock_shield_sound, 0.75, 0);
+            var rock_shield_sound = play_sfx(sndSmash);
+            audio_sound_gain(rock_shield_sound, 0.75 /* TODO: normalize 0.75 between objMusic.sfxGain? */, 0);
         }
         if (hspeed &gt; 0 &amp;&amp; collision_line(x + 8, y - 10, x + 8, y + 5, objSolid, true, true))
         {
@@ -106,8 +106,8 @@ rock_direction = 0;
             {
                 audio_stop_sound(sndSmash);
             }
-            var rock_shield_sound = audio_play_sound(sndSmash, 0, false);
-            audio_sound_gain(rock_shield_sound, 0.75, 0);
+            var rock_shield_sound = play_sfx(sndSmash);
+            audio_sound_gain(rock_shield_sound, 0.75 /* TODO: normalize 0.75 between objMusic.sfxGain? */, 0);
         }
         else if (hspeed &lt; 0 &amp;&amp; collision_line(x - 8, y - 10, x - 8, y + 5, objSolid, true, true))
         {
@@ -117,8 +117,8 @@ rock_direction = 0;
             {
                 audio_stop_sound(sndSmash);
             }
-            var rock_shield_sound = audio_play_sound(sndSmash, 0, false);
-            audio_sound_gain(rock_shield_sound, 0.75, 0);
+            var rock_shield_sound = play_sfx(sndSmash);
+            audio_sound_gain(rock_shield_sound, 0.75 /* TODO: normalize 0.75 between objMusic.sfxGain? */, 0);
         }
     }
     else

@@ -95,7 +95,7 @@ image_speed=0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>audio_play_sound(sndBombExplosion, 1, false);
+            <string>play_sfx(sndBombExplosion, 1);
 </string>
           </argument>
         </arguments>
@@ -204,7 +204,7 @@ image_speed=0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>audio_play_sound(sndBombExplosion, 1, false);
+            <string>play_sfx(sndBombExplosion, 1);
 </string>
           </argument>
         </arguments>
@@ -285,7 +285,7 @@ image_speed=0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>audio_play_sound(sndBombExplosion, 1, false);
+            <string>play_sfx(sndBombExplosion, 1);
 with objEggWalkerGun {
     instance_destroy();
     

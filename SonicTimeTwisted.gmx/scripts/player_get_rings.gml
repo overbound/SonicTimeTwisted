@@ -1,6 +1,6 @@
 // player_get_rings(rings)
 audio_stop_sound(sndRing);
-audio_play_sound(sndRing, 1,0);
+play_sfx(sndRing, 1);
 repeat argument0
 {
     if (objGameData.rings[0]>=999) return 0;

@@ -3211,6 +3211,7 @@
         <script>scripts\play_music_intro.gml</script>
         <script>scripts\play_music_loop.gml</script>
         <script>scripts\play_previous.gml</script>
+        <script>scripts\play_sfx.gml</script>
         <script>scripts\stop_all_music.gml</script>
       </scripts>
       <scripts name="Helper">

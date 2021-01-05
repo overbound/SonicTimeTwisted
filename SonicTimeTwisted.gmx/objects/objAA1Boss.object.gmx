@@ -258,7 +258,7 @@ case 0: // just floating
     break;
 case 1: // laughing
     if !audio_is_playing(sndMetalLaugh) &amp;&amp; life &gt; 0
-        audio_play_sound(sndMetalLaugh,1,false);
+        play_sfx(sndMetalLaugh, 1);
     y = ystart+cos(offset)*4;
     offset += 0.25;
     image_index = 2;
@@ -279,7 +279,7 @@ case 2: // almost done
         image_index = 0;
         image_speed = 0.25;
         // audio
-        audio_play_sound(sndBossHit, 1, 0);
+        play_sfx(sndBossHit, 1);
     }
     break;
 case 3: // ending

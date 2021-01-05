@@ -1,10 +1,10 @@
 switch(argument0)
 {
     case 0:
-        sound_stop(bgmTitle);
-        sound_stop_all();
+        audio_stop_sound(bgmTitle);
+        audio_stop_all();
         stop_all_music(true);
-        audio_play_sound(sndConfirm, 0, 0);
+        play_sfx(sndConfirm);
         menu_fn_longconfirmation(3);
         break;
     case 1:

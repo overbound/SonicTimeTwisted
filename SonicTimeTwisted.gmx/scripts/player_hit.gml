@@ -1,4 +1,4 @@
-// player_hit()
+/// player_hit(val,hitSound)
 // abort if immune or already hit
 if invulnerable or invincibility or superform or (state==player_state_hurt) return false;
 // remove shield, if any
@@ -9,7 +9,7 @@ if shield
     shield_type = -1;
     objProgram.temp_shield = -1;
     // audio
-    audio_play_sound(argument1, 0,0);
+    play_sfx(argument1);
     
     // rumble
     rumble(rumble_short_strongest);
@@ -21,7 +21,7 @@ if objGameData.rings[0]>0
     drop_rings(objGameData.rings[0], x, y);
     objGameData.rings[0] = 0;
     // audio
-    audio_play_sound(sndRingLoss,0,0);
+    play_sfx(sndRingLoss);
     
     // rumble
     rumble(rumble_long_decreasing);
@@ -29,7 +29,7 @@ if objGameData.rings[0]>0
 else
 {
     // die if no rings or shield
-    audio_play_sound(sndHurt, 0, 0);
+    play_sfx(sndHurt);
     return player_is_dead();
 }
 // recoil

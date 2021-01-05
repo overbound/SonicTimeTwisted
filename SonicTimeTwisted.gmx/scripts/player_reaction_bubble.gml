@@ -25,7 +25,7 @@ part_particles_create(objLevel.particles, argument0.x, argument0.y, objResources
 // destroy bubble
 with argument0 instance_destroy();
 // air sound
-audio_play_sound(sndGetAir, 1, 0);
+play_sfx(sndGetAir, 1);
 // reset music
 if audio_is_playing(bgmDrowning) {
     play_previous(objMusic.priorityMusicState, objMusic.previousPosition);

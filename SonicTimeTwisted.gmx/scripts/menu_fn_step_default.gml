@@ -15,7 +15,7 @@ if(scrollable)
         
         if(is_touchscreen)
         {
-            audio_play_sound(sndBeep, 0, 0);
+            play_sfx(sndBeep);
         }
         if(scroll < scroll_target)
         {

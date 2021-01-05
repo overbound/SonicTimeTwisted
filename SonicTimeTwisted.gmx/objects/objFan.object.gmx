@@ -88,7 +88,6 @@ ticks = (ticks + 1) mod interval;
 if (ticks &gt; 0) exit;
 if not audio_is_playing(sndFireBlow)
 {
-    audio_sound_gain(sndFireBlow, objGameData.volume_sound, 0);
     audio_play_sound(sndFireBlow, 4, 0);
 }
 var x_origin = x + x_offset + random(x_range) - (1 / 2) * x_range;

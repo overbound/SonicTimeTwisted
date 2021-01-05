@@ -43,14 +43,14 @@ if(state == 2)
         }
         if(do_beep)
         {
-            audio_play_sound(sndBeep, 0, 0);
+            play_sfx(sndBeep);
         }
     }
     else
     {
         if(down_press)
         {
-            audio_play_sound(sndBeep, 0, 0);
+            play_sfx(sndBeep);
             prev_cursor = cursor;
             if(cursor == internal__button_count - 1)
             {

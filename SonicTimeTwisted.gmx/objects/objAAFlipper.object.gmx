@@ -105,7 +105,7 @@ with player_id
         //rumble
         rumble(rumble_short_strong_and_mid);
         
-        audio_play_sound(sndFlipper,1,false);
+        play_sfx(sndFlipper, 1);
     }
 }
 </string>

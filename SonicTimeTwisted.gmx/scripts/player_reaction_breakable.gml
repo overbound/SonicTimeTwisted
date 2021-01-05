@@ -16,6 +16,6 @@ jump_action = true;
 // destroy object
 with argument0 instance_destroy();
 // sound
-audio_play_sound(sndBreak, 2, 0);
+play_sfx(sndBreak, 2);
 // hard collision found
 return true;

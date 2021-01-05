@@ -1,4 +1,4 @@
-audio_play_sound(sndCancel,0,0);
+play_sfx(sndCancel);
 next_item_script = argument0;
 next_cursor = argument1;
 
