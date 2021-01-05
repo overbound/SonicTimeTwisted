@@ -10,7 +10,7 @@ switch(argument0)
         objProgram.inputManager.dpadmode = (objProgram.inputManager.dpadmode + 1) mod 2;
         break;
     case 3:
-        menu_fn_open_slider_window(3, tr('Opacity (%)'), round(objProgram.inputManager.vkalpha*100), 0, 100);
+        menu_fn_open_slider_window(3, tr("_options_menu_touchscreen_OpacitySlider"), round(objProgram.inputManager.vkalpha*100), 0, 100);
         break;
     case 4:
         menu_fn_goto_submenu(menu_part_touchscreenss_items);
@@ -26,7 +26,7 @@ switch(argument0)
         menu_fn_exit_submenu(menu_part_options_items, 6);
         break;
     case 9:
-        menu_fn_open_slider_window(9, tr('Dead zone (%)'), round(objProgram.inputManager.vkdeadzone*100), 5, 95);
+        menu_fn_open_slider_window(9, tr("_options_menu_touchscreen_DeadzoneSlider"), round(objProgram.inputManager.vkdeadzone*100), 5, 95);
         break;
     case -2:
         // left key
@@ -96,29 +96,29 @@ switch(argument0)
 
 // refresh displayed values
 
-var dpadSizeLabel = tr('Large');
+var dpadSizeLabel = tr('_options_menu_touchscreen_dpadsize_Large');
 if(objProgram.inputManager.vksize == 1)
 {
-    dpadSizeLabel = tr('Medium');
+    dpadSizeLabel = tr('_options_menu_touchscreen_dpadsize_Medium');
 }
 else
 if(objProgram.inputManager.vksize == 2)
 {
-    dpadSizeLabel = tr('Small');
+    dpadSizeLabel = tr('_options_menu_touchscreen_dpadsize_Small');
 }
 menu_fn_refresh_displayed_value(1, "< "+dpadSizeLabel+ " >");
 
-var dpadModeLabel = tr('Static');
+var dpadModeLabel = tr('_options_menu_touchscreen_dpadmode_Static');
 if(objProgram.inputManager.dpadmode)
 {
-    dpadModeLabel = tr('Dynamic');
+    dpadModeLabel = tr('_options_menu_touchscreen_dpadmode_Dynamic');
 }
 menu_fn_refresh_displayed_value(2, "< "+dpadModeLabel+ " >");
 
-var gyroGGLabel = tr('D-Pad');
+var gyroGGLabel = tr('_options_menu_touchscreen_gyrogglabel_DPad');
 if(objProgram.inputManager.gg_mode == 1)
 {
-    gyroGGLabel = tr('Point');
+    gyroGGLabel = tr('_options_menu_touchscreen_gyrogglabel_Point');
 }
 menu_fn_refresh_displayed_value(5, "< "+gyroGGLabel+ " >");
 var alphaLabel = string(round(objProgram.inputManager.vkalpha*100))+'%';

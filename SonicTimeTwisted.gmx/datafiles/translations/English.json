@@ -2,8 +2,6 @@
 	"info": {
 		"intname": "en",
 		"friendlyname": "English",
-		"creditsname": "",
-		"authors": "",
 		
 		"top_hud_offset": 0
 	},
@@ -18,6 +16,8 @@
 		"_No": "No",
 		"_On": "On",
 		"_Off": "Off",
+		"_Disabled": "Disabled",
+		"_Enabled": "Enabled",
 		"_exit_the_game": "Exit the game?",
 		"_epilepsy_title": "Epilepsy warning",
 		"_epilepsy": "A few people may experience epileptic seizures when exposed to certain light patterns or flashing lights, such as while watching TV or playing video games, even those with no history of prior seizures or epilepsy.\nIf you experience any of the following symptoms - altered vision, muscle or eye twitching, loss of awareness, disorientation, any involutary movement, or convulsions - IMMEDIATELY stop playing and consult your physician.",
@@ -61,6 +61,10 @@
 		"_levelselect_menu_A2F": "Act 2 - Future",
 		"_levelselect_menu_A2P": "Act 2 - Past",
 
+		"_levelselect_ppanic_Title": "Planetary Panic Zone",
+		"_levelselect_ppanic_Act_1": "Act 1",
+		"_levelselect_ppanic_Act_2": "Act 2",
+
 		"_splash_ASonicfangame": "A Sonic fangame by",
 		"_splash_ThisGameIsFreeware": "This game is freeware.",
 		"_splash_DoNotSell": "Do not sell!",
@@ -97,6 +101,59 @@
 		"_options_menu_sound_Master_Volume": "Master Volume",
 		"_options_menu_sound_SFX_Volume": "Sound Effects Volume",
 		"_options_menu_sound_Music_Volume": "Music Volume",
+
+		"_options_menu_touchscreen_title": "Touchscreen configuration",
+		"_options_menu_touchscreen_Reposition_buttons": "Reposition buttons",
+		"_options_menu_touchscreen_Button_size": "Button size",
+		"_options_menu_touchscreen_DPad_mode": "D-Pad mode",
+		"_options_menu_touchscreen_Opacity": "Opacity",
+		"_options_menu_touchscreen_Dead_zone": "Dead zone",
+		"_options_menu_touchscreen_Special_stage_controls": "Special stage controls",
+		"_options_menu_touchscreen_Final_zone_controls": "Final zone controls",
+		"_options_menu_touchscreen_Configure_vibrations": "Configure vibrations",
+		"_options_menu_touchscreen_OpacitySlider": "Opacity (%)",
+		"_options_menu_touchscreen_DeadzoneSlider": "Dead zone (%)",
+
+		"_options_menu_touchscreen_dpadsize_Large": "Large",
+		"_options_menu_touchscreen_dpadsize_Medium": "Medium",
+		"_options_menu_touchscreen_dpadsize_Small": "Small",
+
+		"_options_menu_touchscreen_dpadmode_Static": "Static",
+		"_options_menu_touchscreen_dpadmode_Dynamic": "Dynamic",
+
+		"_options_menu_touchscreen_gyrogglabel_DPad": "D-Pad",
+		"_options_menu_touchscreen_gyrogglabel_Point": "Point",
+
+		"_options_menu_touchscreen_buttonreposition_back": "Press Back to save or discard",
+		"_options_menu_touchscreen_buttonreposition_save": "Save",
+		"_options_menu_touchscreen_buttonreposition_discard": "Discard",
+		"_options_menu_touchscreen_buttonreposition_default": "Restore default",
+
+		"_options_menu_gyroscope_Title": "Gyroscope configuration",
+		"_options_menu_gyroscope_Mode": "Mode",
+		"_options_menu_gyroscope_Trigger_angle": "Trigger angle",
+		"_options_menu_gyroscope_Start_angle": "Start angle",
+		"_options_menu_gyroscope_End_angle": "End angle",
+		"_options_menu_gyroscope_Simulate_button": "Simulate button",
+		"_options_menu_gyroscope_Pseudo_analog": "Pseudo-analog",
+
+		"_options_menu_touchscreen_vibration_Title": "Vibrations configuration",
+		"_options_menu_touchscreen_vibration_Haptic_feedback": "Haptic feedback",
+		"_options_menu_touchscreen_vibration_Duration": "Duration",
+		"_options_menu_touchscreen_vibration_Strength": "Strength",
+		"_options_menu_touchscreen_vibration_Contextual_rumble": "Contextual rumble",
+		"_options_menu_touchscreen_vibration_Strength_Cr": "Strength",
+		"_options_menu_touchscreen_vibration_SliderDuration": "Haptic feedback duration (x/60 seconds)",
+		"_options_menu_touchscreen_vibration_SliderStrength": "Haptic feedback strength (%)",
+		"_options_menu_touchscreen_vibration_SliderStrengthCr": "Contextual rumble strength (%)",
+		"_options_menu_touchscreen_vibration_HapticsDurationFmt": "%0/60 seconds",
+
+		"_options_menu_touchscreen_sstage_Title": "Special stage controls",
+		"_options_menu_touchscreen_sstage_Dead_zone": "Dead zone",
+		"_options_menu_touchscreen_sstage_Configure_gyroscope": "Configure gyroscope",
+		"_options_menu_touchscreen_sstage_SliderDeadZone": "Dead zone (%)",
+		"_options_menu_touchscreen_sstage_DPad": "D-Pad",
+		"_options_menu_touchscreen_sstage_Gyroscope": "Gyroscope",
 		
 		"_buttonname_Up": "Up",
 		"_buttonname_Down": "Down",
@@ -152,15 +209,6 @@
 		"_save_nosave": "NO SAVE",
 		"_save_Past": "Past",
 		"_save_Future": "Future",
-		"_save_mobile_hint_select": "Select a save slot",
-		"_save_mobile_hint_act_select_top": "Swipe up or down to select an act, tap time period to select it",
-		"_save_mobile_hint_act_select_bottom": "Tap slot to confirm, tap elsewhere to cancel",
-		"_save_mobile_hint_character_select_top": "Swipe up or down to select a character",
-		"_save_mobile_hint_character_select_bottom": "Tap slot to confirm, tap elsewhere to cancel",
-		"_save_mobile_hint_delete_top": "Select a save slot to delete",
-		"_save_mobile_hint_delete_bottom": "Click on Metal Sonic again to cancel",
-		"_save_mobile_hint_delete_confirm_top": "Are you sure you want to delete this file?",
-		"_save_mobile_hint_delete_confirm_bottom": "Tap slot to confirm, tap elsewhere to cancel",
 		
 		"_ssselect_CE1": "Chaos Emerald 1",
 		"_ssselect_CE2": "Chaos Emerald 2",
@@ -253,8 +301,7 @@
 		"_GAMEOVER_WORD1": "GAME",
 		"_GAMEOVER_WORD2": "OVER",
 		
-		"_bad_ending_text": "Try again!##Collect all the Chaos Emeralds#and Time Stones!",
-		"_good_ending_text": "Sonic, Tails, and Knuckles continued the fight#to liberate Mobius from Robotnik's creations#until no more robots remained.##Thank you for playing!"
-		
+		"_TIMEOVER_WORD1": "TIME",
+		"_TIMEOVER_WORD2": "OVER"
 	}
 }

@@ -7,7 +7,7 @@ if(is_array(temporary_variable))
     draw_set_halign(fa_center);
     draw_set_font(objResources.fontHud);
     draw_set_color(c_white);
-    draw_text(200, 0, tr('Press Back to save or discard'));
+    draw_text(200, 0, tr("_options_menu_touchscreen_buttonreposition_back"));
 
     draw_sprite(dpadSprite, 0,
         temporary_variable[5, 1],

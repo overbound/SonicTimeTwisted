@@ -1,10 +1,10 @@
 items = false;
-menu_fn_add_title(tr("Vibrations configuration"));
-menu_fn_add_option(tr("Haptic feedback"), 0, 1, "");
-menu_fn_add_option(tr("Duration"), 1, 1, "");
-menu_fn_add_option(tr("Strength"), 2, 1, "");
-menu_fn_add_option(tr("Contextual rumble"), 3, 1, "");
-menu_fn_add_option(tr("Strength"), 4, 1, "");
+menu_fn_add_title(tr("_options_menu_touchscreen_vibration_Title"));
+menu_fn_add_option(tr("_options_menu_touchscreen_vibration_Haptic_feedback"), 0, 1, "");
+menu_fn_add_option(tr("_options_menu_touchscreen_vibration_Duration"), 1, 1, "");
+menu_fn_add_option(tr("_options_menu_touchscreen_vibration_Strength"), 2, 1, "");
+menu_fn_add_option(tr("_options_menu_touchscreen_vibration_Contextual_rumble"), 3, 1, "");
+menu_fn_add_option(tr("_options_menu_touchscreen_vibration_Strength_Cr"), 4, 1, "");
 menu_fn_add_option(tr("_options_menu_Back"), 5);
 
 button_width = 360;
