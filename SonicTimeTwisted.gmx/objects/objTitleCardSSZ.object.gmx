@@ -106,7 +106,7 @@ d3d_end();
           <argument>
             <kind>1</kind>
             <string>/// init_titlecard();
-init_titlecard();
+init_titlecard(true);
 </string>
           </argument>
         </arguments>

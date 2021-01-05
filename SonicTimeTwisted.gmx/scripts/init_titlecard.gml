@@ -1,7 +1,18 @@
-/// Setup title
+/// init_titlecard(check_zone_first_in_tr)
+// Setup title
 var i, j;
 // setup lengths and offsets
 draw_set_halign(fa_left);
+// Check whether the Zone comes first, but only if the current
+// instance is an actual titlecard, not Special Stage-specific one
+if(argument0)
+{
+    zone_first = tr_get_real_prop("titlecard_zone_is_first") > 0;
+}
+else
+{
+    zone_first = false;
+}
 for (i=0; i<4; i+=1)
 {
     // get length in characters
@@ -33,7 +44,6 @@ for (i=0; i<4; i+=1)
 }
 
 act_color = make_colour_rgb(255, 224, 0);
-zone_first = tr_get_real_prop("titlecard_zone_is_first") > 0;
 
 if(zone_first)
 {

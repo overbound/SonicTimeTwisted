@@ -266,7 +266,7 @@ if (banner_ox &lt; 0) banner_ox += 208;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>init_titlecard();
+            <string>init_titlecard(true);
 </string>
           </argument>
         </arguments>
