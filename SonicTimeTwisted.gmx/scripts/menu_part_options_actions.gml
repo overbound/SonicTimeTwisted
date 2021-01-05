@@ -47,11 +47,11 @@ switch(argument0)
     case 7:
         with(objTitleControl)
         {
+            event_user(1);
             state = 4;
             textAlpha = 1;
         }
         break;
-    
     case 8:
         switch(android_get_input_mode())
         {

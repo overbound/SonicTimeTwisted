@@ -3420,6 +3420,7 @@
           <script>scripts\menu_fn_calculate_width_add.gml</script>
           <script>scripts\menu_fn_calculate_width_finish.gml</script>
           <script>scripts\menu_fn_reopen.gml</script>
+          <script>scripts\menu_fn_reset_inputs.gml</script>
         </scripts>
         <scripts name="menu_parts">
           <script>scripts\menu_part_title_items.gml</script>
@@ -3429,6 +3430,7 @@
           <scripts name="options">
             <script>scripts\menu_part_options_items.gml</script>
             <script>scripts\menu_part_options_actions.gml</script>
+            <script>scripts\menu_part_options_step.gml</script>
             <script>scripts\menu_part_videooptions_items.gml</script>
             <script>scripts\menu_part_videooptions_actions.gml</script>
             <script>scripts\menu_part_keymap_items.gml</script>

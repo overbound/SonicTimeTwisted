@@ -90,35 +90,8 @@ names[3] = tr('Dee Liteyears');
 names[4] = tr('Mercury');
 names[5] = tr('Shane (Sparks)');
 
-epilepsy_title = tr("_epilepsy_title");
-epilepsy = tr("_epilepsy");
-disclaimer_title = tr("_disclaimer_title");
-disclaimer = tr("_disclaimer");
-github = tr("_github");
-
-// because of localizations, we'll need to calculate the optimum placement for
-// disclaimer titles and texts
-
-
-draw_set_font(objResources.fontHud);
-var epilepsy_title_height = string_height(epilepsy_title);
-var disclaimer_title_height = string_height(disclaimer_title);
-
-var line_length = view_wview[view_current] - 8;
-draw_set_font(objResources.fontMicro);
-var epilepsy_height = epilepsy_title_height + string_height_ext(epilepsy, 12, line_length) + 4;
-var disclaimer_height = disclaimer_title_height + string_height_ext(disclaimer, 12, line_length) + 4;
-var github_height = string_height_ext(github, 12, line_length);
-
-var text_skip = floor((view_hview[view_current] - epilepsy_height - disclaimer_height - github_height)/4);
-
-epilepsy_title_y = view_yview[view_current] + text_skip;
-epilepsy_y = epilepsy_title_y + epilepsy_title_height + 4;
-disclaimer_title_y = epilepsy_title_y + epilepsy_height + text_skip;
-disclaimer_y = disclaimer_title_y + disclaimer_title_height + 4;
-github_y = disclaimer_title_y + disclaimer_height + text_skip;;
-
-draw_set_font(objResources.fontHud);
+// initialize the disclaimer screen in a dedicated event
+event_user(1);
 menu_is_touchscreen = false;
 </string>
           </argument>
@@ -203,13 +176,62 @@ if name &gt; 2 &amp;&amp; name &lt; 9 {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(state == 3 &amp;&amp; skipping == 0)
+            <string>/// menu end step
+if(state == 3 &amp;&amp; skipping == 0)
 {
-    /// menu end step
     if menu.state != 0 {
         with(menu) event_user(2);
     }
     image_index = objScreen.image_index div 8;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// handle returning from state 4 (displaying the disclaimers when called from the options menu)
+if(state == 4)
+{
+    if(is_fallback_touchscreen)
+    {
+        if(device_mouse_check_button_pressed(0, mb_left))
+        {
+            menu_is_touchscreen = true;
+            state = 3;
+            with(menu)
+            {
+                menu_fn_reset_inputs();
+            }
+        }
+    }
+    if(!is_touchscreen)
+    {
+        if(input_check_pressed(cB))
+        {
+            play_sfx(sndCancel);
+            menu_is_touchscreen = false;
+            state = 3;
+            with(menu)
+            {
+                menu_fn_reset_inputs();
+            }
+        }
+    }
 }
 </string>
           </argument>
@@ -233,9 +255,9 @@ if name &gt; 2 &amp;&amp; name &lt; 9 {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(state == 3 &amp;&amp; skipping == 0)
+            <string>/// menu begin step
+if(state == 3 &amp;&amp; skipping == 0)
 {
-    /// menu begin step
     if menu.state != 0 {
         with(menu) event_user(1);
     }
@@ -402,7 +424,7 @@ if name &gt; 2 &amp;&amp; name &lt; 9 {
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
-        <isnot>0</isnot>
+        <isnot>-1</isnot>
         <arguments>
           <argument>
             <kind>0</kind>
@@ -417,84 +439,6 @@ if name &gt; 2 &amp;&amp; name &lt; 9 {
             <string>0</string>
           </argument>
         </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>422</id>
-        <kind>1</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>0</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if(is_fallback_touchscreen)
-{
-    if(device_mouse_check_button_pressed(0, mb_left))
-    {
-        menu_is_touchscreen = true;
-        state = 3;
-    }
-}
-if(!is_touchscreen)
-{
-    if(input_check_pressed(cSTART) || input_check_pressed(cA) || input_check_pressed(cB) || input_check_pressed(cC))
-    {
-        menu_is_touchscreen = false;
-        state = 3;
-    }
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>424</id>
-        <kind>2</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>0</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>421</id>
-        <kind>3</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>0</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
       </action>
       <action>
         <libid>1</libid>
@@ -1027,6 +971,59 @@ if(skipping &gt;= 60)
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
+      </action>
+    </event>
+    <event eventtype="7" enumb="11">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Reorganize the disclaimer screen
+// In case the locale is changed and the screen is displayed afterwards
+
+epilepsy_title = tr("_epilepsy_title");
+epilepsy = tr("_epilepsy");
+disclaimer_title = tr("_disclaimer_title");
+disclaimer = tr("_disclaimer");
+github = tr("_github");
+
+// because of localizations, we'll need to calculate the optimum placement for
+// disclaimer titles and texts
+
+draw_set_font(objResources.fontHud);
+var epilepsy_title_height = string_height(epilepsy_title);
+var disclaimer_title_height = string_height(disclaimer_title);
+
+var line_length = view_wview[view_current] - 8;
+draw_set_font(objResources.fontMicro);
+var epilepsy_height = epilepsy_title_height + string_height_ext(epilepsy, 12, line_length) + 4;
+var disclaimer_height = disclaimer_title_height + string_height_ext(disclaimer, 12, line_length) + 4;
+var github_height = string_height_ext(github, 12, line_length);
+
+var text_skip = floor((view_hview[view_current] - epilepsy_height - disclaimer_height - github_height)/4);
+
+epilepsy_title_y = text_skip;
+epilepsy_y = epilepsy_title_y + epilepsy_title_height + 4;
+disclaimer_title_y = epilepsy_title_y + epilepsy_height + text_skip;
+disclaimer_y = disclaimer_title_y + disclaimer_title_height + 4;
+github_y = disclaimer_title_y + disclaimer_height + text_skip;;
+
+draw_set_font(objResources.fontHud);
+</string>
+          </argument>
+        </arguments>
       </action>
     </event>
     <event eventtype="7" enumb="10">
