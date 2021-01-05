@@ -3,7 +3,7 @@ menu_fn_add_option(tr("_options_menu_touchscreen_buttonreposition_save"), 0);
 menu_fn_add_option(tr("_options_menu_touchscreen_buttonreposition_discard"), 1);
 menu_fn_add_option(tr("_options_menu_touchscreen_buttonreposition_default"), 2);
 
-button_width = 200;
+menu_fn_calculate_width_simple();
 
 action_script = menu_part_buttonreposition_confirm_actions;
 draw_script = menu_fn_draw_default;

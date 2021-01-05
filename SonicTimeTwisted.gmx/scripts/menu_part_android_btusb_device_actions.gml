@@ -70,14 +70,20 @@ switch(argument0)
         break;
 }
 
+// refreshing gamepad labels
+// calculating the optimal menu width at the same time - done here so that possible values are not duplicated among several scripts
+menu_fn_calculate_width_start();
+var onLabel = "< "+tr("_On")+" >";
+var offLabel = "< "+tr("_Off")+" >";
 if(android_is_double_device(0))
 {
-    menu_fn_refresh_displayed_value(1, "< "+tr("_On")+" >");
+    menu_fn_refresh_displayed_value(1, onLabel);
 }
 else
 {
-    menu_fn_refresh_displayed_value(1, "< "+tr("_Off")+" >");
+    menu_fn_refresh_displayed_value(1, offLabel);
 }
-
+menu_fn_calculate_width_add(1, false, onLabel, offLabel);
+menu_fn_calculate_width_finish();
 // preserve the cursor value - usually false for the sake of touchscreen controls
 return false;

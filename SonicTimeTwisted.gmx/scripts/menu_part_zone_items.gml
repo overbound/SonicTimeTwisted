@@ -7,7 +7,7 @@ menu_fn_add_option(tr("_zone_menu_Restart_game"), 2);
 // this means "zone menu"
 menu_type = 1;
 
-button_width = 200;
+menu_fn_calculate_width_simple();
 
 action_script = menu_part_zone_actions;
 draw_script = menu_fn_draw_default;

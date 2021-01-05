@@ -95,35 +95,54 @@ switch(argument0)
 }
 
 // refresh displayed values
+// calculating the optimal menu width at the same time - done here so that possible values are not duplicated among several scripts
+menu_fn_calculate_width_start();
 
-var dpadSizeLabel = tr('_options_menu_touchscreen_dpadsize_Large');
+var option1Label = "< "+tr('_options_menu_touchscreen_dpadsize_Large')+ " >"
+var option2Label = "< "+tr('_options_menu_touchscreen_dpadsize_Medium')+ " >"
+var option3Label = "< "+tr('_options_menu_touchscreen_dpadsize_Small')+ " >"
+
+var dpadSizeLabel = option1Label;
 if(objProgram.inputManager.vksize == 1)
 {
-    dpadSizeLabel = tr('_options_menu_touchscreen_dpadsize_Medium');
+    dpadSizeLabel = option2Label;
 }
 else
 if(objProgram.inputManager.vksize == 2)
 {
-    dpadSizeLabel = tr('_options_menu_touchscreen_dpadsize_Small');
+    dpadSizeLabel = option3Label;
 }
-menu_fn_refresh_displayed_value(1, "< "+dpadSizeLabel+ " >");
+menu_fn_refresh_displayed_value(1, dpadSizeLabel);
+menu_fn_calculate_width_add(1, false, option1Label, option2Label, option3Label);
 
-var dpadModeLabel = tr('_options_menu_touchscreen_dpadmode_Static');
+
+option1Label = "< "+tr('_options_menu_touchscreen_dpadmode_Static')+ " >"
+option2Label = "< "+tr('_options_menu_touchscreen_dpadmode_Dynamic')+ " >"
+var dpadModeLabel = option1Label;
 if(objProgram.inputManager.dpadmode)
 {
-    dpadModeLabel = tr('_options_menu_touchscreen_dpadmode_Dynamic');
+    dpadModeLabel = option2Label;
 }
-menu_fn_refresh_displayed_value(2, "< "+dpadModeLabel+ " >");
+menu_fn_refresh_displayed_value(2, dpadModeLabel);
+menu_fn_calculate_width_add(1, false, option1Label, option2Label);
 
-var gyroGGLabel = tr('_options_menu_touchscreen_gyrogglabel_DPad');
+option1Label = "< "+tr('_options_menu_touchscreen_gyrogglabel_DPad')+ " >"
+option2Label = "< "+tr('_options_menu_touchscreen_gyrogglabel_Point')+ " >"
+var gyroGGLabel = option1Label;
 if(objProgram.inputManager.gg_mode == 1)
 {
-    gyroGGLabel = tr('_options_menu_touchscreen_gyrogglabel_Point');
+    gyroGGLabel = option2Label;
 }
-menu_fn_refresh_displayed_value(5, "< "+gyroGGLabel+ " >");
+menu_fn_refresh_displayed_value(5, gyroGGLabel);
+menu_fn_calculate_width_add(5, false, option1Label, option2Label);
+
 var alphaLabel = string(round(objProgram.inputManager.vkalpha*100))+'%';
 menu_fn_refresh_displayed_value(3, alphaLabel);
 menu_fn_refresh_displayed_value(9, string(round(objProgram.inputManager.vkdeadzone*100))+'%');
 
+menu_fn_calculate_width_add(3, true, 4);
+menu_fn_calculate_width_add(9, true, 4);
+
+menu_fn_calculate_width_finish();
 // preserve the cursor value - usually false for the sake of touchscreen controls
 return false;

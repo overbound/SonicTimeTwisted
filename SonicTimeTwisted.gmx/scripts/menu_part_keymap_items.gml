@@ -12,8 +12,6 @@ menu_fn_add_option(tr("_buttonname_C"), 7, 1, "");
 menu_fn_add_option(tr("_buttonname_Start"), 8, 1, "");
 menu_fn_add_option(tr("_options_menu_Back"), 9);
 
-button_width = 300;
-
 action_script = menu_part_keymap_actions;
 draw_script = menu_fn_draw_default;
 step_script = menu_part_keymap_step;

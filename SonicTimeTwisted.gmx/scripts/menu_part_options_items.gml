@@ -46,8 +46,6 @@ menu_fn_add_option(tr("_options_menu_Localization"), 10);
 menu_fn_add_option(tr("_options_menu_sound_title"), 11);
 menu_fn_add_option(tr("_options_menu_Back"), 4);
 
-button_width = 300;
-
 action_script = menu_part_options_actions;
 draw_script = menu_fn_draw_default;
 step_script = menu_fn_step_default;

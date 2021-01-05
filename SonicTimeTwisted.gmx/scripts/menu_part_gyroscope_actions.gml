@@ -35,15 +35,30 @@ switch(argument0)
         break;
 }
 
+// refresh displayed values
+// calculating the optimal menu width at the same time - done here so that possible values are not duplicated among several scripts
+menu_fn_calculate_width_start();
+
 if(objProgram.inputManager.gyromode == 0)
 {
-    menu_fn_refresh_displayed_value(0, "< "+tr("_options_menu_gyroscope_Simulate_button")+ " >");
-    menu_fn_refresh_displayed_value(1, "< "+string(round(radtodeg(objProgram.inputManager.gyro_switch_on_angle_x)))+ " >");
+    var gyromode_label = "< "+tr("_options_menu_gyroscope_Simulate_button")+ " >";
+    menu_fn_refresh_displayed_value(0, gyromode_label);
+    menu_fn_refresh_displayed_value(1, string(round(radtodeg(objProgram.inputManager.gyro_switch_on_angle_x))));
+    
+    menu_fn_calculate_width_add(0, false, gyromode_label);
+    menu_fn_calculate_width_add(1, true, 2); // value goes up to 90, so 2 symbols max
 }
 else
 {
-    menu_fn_refresh_displayed_value(0, "< "+tr("_options_menu_gyroscope_Pseudo_analog")+ " >");
-    menu_fn_refresh_displayed_value(2, "< "+string(round(radtodeg(objProgram.inputManager.gyro_analog_start_x))) + " >");
-    menu_fn_refresh_displayed_value(3, "< "+ string(round(radtodeg(objProgram.inputManager.gyro_analog_end_x)))+ " >");
+    var gyromode_label = "< "+tr("_options_menu_gyroscope_Pseudo_analog")+ " >";
+    
+    menu_fn_refresh_displayed_value(0, gyromode_label);
+    menu_fn_refresh_displayed_value(2, string(round(radtodeg(objProgram.inputManager.gyro_analog_start_x))));
+    menu_fn_refresh_displayed_value(3, string(round(radtodeg(objProgram.inputManager.gyro_analog_end_x))));
+    
+    menu_fn_calculate_width_add(0, false, gyromode_label);
+    menu_fn_calculate_width_add(2, true, 2); // value goes up to 90, so 2 symbols max
+    menu_fn_calculate_width_add(3, true, 2); // value goes up to 90, so 2 symbols max
 }
+menu_fn_calculate_width_finish();
 return argument0 >= 1 && argument0 <= 3;

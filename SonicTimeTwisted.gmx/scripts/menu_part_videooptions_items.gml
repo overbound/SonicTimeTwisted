@@ -13,8 +13,6 @@ if (DEVICE_INFO & DEVICE_TYPE_COMPUTER)
 }
 menu_fn_add_option(tr("_options_menu_Back"), 4);
 
-button_width = 360;
-
 action_script = menu_part_videooptions_actions;
 draw_script = menu_fn_draw_default;
 step_script = menu_fn_step_default;

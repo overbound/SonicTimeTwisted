@@ -152,24 +152,6 @@ switch(argument0)
 }
 
 // refreshing gamepad labels
-if(objProgram.inputManager.rumble_configuration_script == rumble_manage)
-{
-    menu_fn_refresh_displayed_value(0, "< "+tr("_On")+" >");
-}
-else
-{
-    menu_fn_refresh_displayed_value(0, "< "+tr("_Off")+" >");
-}
-
-menu_fn_refresh_displayed_value(2, android_get_mapped_label(0, cUP));
-menu_fn_refresh_displayed_value(3, android_get_mapped_label(0, cDOWN));
-menu_fn_refresh_displayed_value(4, android_get_mapped_label(0, cLEFT));
-menu_fn_refresh_displayed_value(5, android_get_mapped_label(0, cRIGHT));
-menu_fn_refresh_displayed_value(6, android_get_mapped_label(0, cA));
-menu_fn_refresh_displayed_value(7, android_get_mapped_label(0, cB));
-menu_fn_refresh_displayed_value(8, android_get_mapped_label(0, cC));
-menu_fn_refresh_displayed_value(9, android_get_mapped_label(0, cSTART));
-
 var deviceLabel = objProgram.inputManager.device_label;
 if(string_length(deviceLabel) == 0)
 {
@@ -186,7 +168,39 @@ if(string_length(deviceLabel) == 0)
     
 }
 menu_fn_refresh_displayed_label(31, deviceLabel);
+// calculating the optimal menu width at the same time - done here so that possible values are not duplicated among several scripts
+menu_fn_calculate_width_start();
+var onLabel = "< "+tr("_On")+" >";
+var offLabel = "< "+tr("_Off")+" >";
 
+if(objProgram.inputManager.rumble_configuration_script == rumble_manage)
+{
+    menu_fn_refresh_displayed_value(0, onLabel);
+}
+else
+{
+    menu_fn_refresh_displayed_value(0, offLabel);
+}
+menu_fn_calculate_width_add(0, false, onLabel, offLabel);
 
+menu_fn_refresh_displayed_value(2, android_get_mapped_label(0, cUP));
+menu_fn_refresh_displayed_value(3, android_get_mapped_label(0, cDOWN));
+menu_fn_refresh_displayed_value(4, android_get_mapped_label(0, cLEFT));
+menu_fn_refresh_displayed_value(5, android_get_mapped_label(0, cRIGHT));
+menu_fn_refresh_displayed_value(6, android_get_mapped_label(0, cA));
+menu_fn_refresh_displayed_value(7, android_get_mapped_label(0, cB));
+menu_fn_refresh_displayed_value(8, android_get_mapped_label(0, cC));
+menu_fn_refresh_displayed_value(9, android_get_mapped_label(0, cSTART));
+
+menu_fn_calculate_width_add(2, true, 20);
+menu_fn_calculate_width_add(3, true, 20);
+menu_fn_calculate_width_add(4, true, 20);
+menu_fn_calculate_width_add(5, true, 20);
+menu_fn_calculate_width_add(6, true, 20);
+menu_fn_calculate_width_add(7, true, 20);
+menu_fn_calculate_width_add(8, true, 20);
+menu_fn_calculate_width_add(9, true, 20);
+
+menu_fn_calculate_width_finish();
 // preserve the cursor value - usually false for the sake of touchscreen controls
 return false;

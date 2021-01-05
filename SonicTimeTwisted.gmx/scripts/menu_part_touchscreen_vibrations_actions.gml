@@ -79,22 +79,41 @@ switch(argument0)
 }
 
 // refresh displayed values
-var hapticsEnabledLabel = tr('_Disabled');
-var contextEnabledLabel = tr('_Disabled');
+// calculating the optimal menu width at the same time - done here so that possible values are not duplicated among several scripts
+menu_fn_calculate_width_start();
+
+var enabledLabel = "< " + tr('_Enabled') + " >";
+var disabledLabel = "< " + tr('_Disabled') + " >";
+
+
 if(objProgram.inputManager.vibration_type & 1)
 {
-    hapticsEnabledLabel = tr('_Enabled');
+    menu_fn_refresh_displayed_value(0, enabledLabel);
+}
+else
+{
+    menu_fn_refresh_displayed_value(0, disabledLabel);
 }
 if(objProgram.inputManager.vibration_type >> 1)
 {
-    contextEnabledLabel = tr('_Enabled');
+    menu_fn_refresh_displayed_value(3, enabledLabel);
 }
-menu_fn_refresh_displayed_value(0, "< " + hapticsEnabledLabel + " >");
-menu_fn_refresh_displayed_value(3, "< " + contextEnabledLabel + " >");
+else
+{
+    menu_fn_refresh_displayed_value(3, disabledLabel);
+}
 
-menu_fn_refresh_displayed_value(1, "< " + tr_format(tr("_options_menu_touchscreen_vibration_HapticsDurationFmt"), string(objProgram.inputManager.haptics_duration)) + " >");
-menu_fn_refresh_displayed_value(2, "< " + string(objProgram.inputManager.haptics_strength) + "% >");
-menu_fn_refresh_displayed_value(4, "< " + string(round(objProgram.inputManager.rumble_strength*100)) + "% >");
+menu_fn_refresh_displayed_value(1, tr_format(tr("_options_menu_touchscreen_vibration_HapticsDurationFmt"), string(objProgram.inputManager.haptics_duration)));
+menu_fn_refresh_displayed_value(2, string(objProgram.inputManager.haptics_strength));
+menu_fn_refresh_displayed_value(4, string(round(objProgram.inputManager.rumble_strength*100)));
 
 
-// configurations
+menu_fn_calculate_width_add(0, false, enabledLabel, disabledLabel);
+menu_fn_calculate_width_add(3, false, enabledLabel, disabledLabel);
+
+menu_fn_calculate_width_add(1, false, tr_format(tr("_options_menu_touchscreen_vibration_HapticsDurationFmt"), "60"));
+menu_fn_calculate_width_add(2, true, 3); // the value is 100 max, so 3 symbols
+menu_fn_calculate_width_add(4, true, 3); // the value is 100 max, so 3 symbols
+
+menu_fn_calculate_width_finish();
+return false;

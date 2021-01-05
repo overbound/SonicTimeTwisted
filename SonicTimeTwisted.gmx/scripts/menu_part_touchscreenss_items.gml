@@ -5,8 +5,6 @@ menu_fn_add_option(tr("_options_menu_touchscreen_sstage_Dead_zone"), 1, 1, "");
 menu_fn_add_option(tr("_options_menu_touchscreen_sstage_Configure_gyroscope"), 2);
 menu_fn_add_option(tr("_options_menu_Back"), 3);
 
-button_width = 360;
-
 action_script = menu_part_touchscreenss_actions;
 draw_script = menu_part_touchscreenss_draw;
 step_script = menu_part_touchscreenss_step;

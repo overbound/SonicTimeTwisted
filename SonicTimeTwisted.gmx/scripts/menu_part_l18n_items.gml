@@ -6,8 +6,6 @@ menu_fn_add_option(tr("_loc_menu_Reload"), 1);
 //menu_fn_add_option(tr("_loc_menu_Export"), 2);
 menu_fn_add_option(tr("_options_menu_Back"), 3);
 
-button_width = 310;
-
 action_script = menu_part_l18n_actions;
 draw_script = menu_fn_draw_default;
 step_script = menu_fn_step_default;

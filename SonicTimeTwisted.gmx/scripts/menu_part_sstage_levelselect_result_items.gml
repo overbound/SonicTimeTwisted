@@ -7,7 +7,7 @@ menu_fn_add_option(tr("_zone_menu_Restart_game"), 1);
 // this means "main menu"
 menu_type = 0;
 
-button_width = 200;
+menu_fn_calculate_width_simple();
 
 action_script = menu_part_sstage_levelselect_result_actions;
 draw_script = menu_fn_draw_default;

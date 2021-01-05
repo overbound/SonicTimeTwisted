@@ -28,5 +28,13 @@ menu_fn_refresh_displayed_value(0, string(objMusic.masterGain) + "%");
 menu_fn_refresh_displayed_value(1, string(objMusic.sfxGain) + "%");
 menu_fn_refresh_displayed_value(2, string(objMusic.bgmGain) + "%");
 
+// calculating the optimal menu width
+// We know all labels go up to "100%" : 4 characters
+menu_fn_calculate_width_start();
+menu_fn_calculate_width_add(0, true, 4);
+menu_fn_calculate_width_add(1, true, 4);
+menu_fn_calculate_width_add(2, true, 4);
+menu_fn_calculate_width_finish();
+
 // preserve the cursor value - usually false for the sake of touchscreen controls
 return false;

@@ -6,8 +6,6 @@ menu_fn_add_option(tr("_options_menu_sound_SFX_Volume"), 1, 1, "");
 menu_fn_add_option(tr("_options_menu_sound_Music_Volume"), 2, 1, "");
 menu_fn_add_option(tr("_options_menu_Back"), 3);
 
-button_width = 300;
-
 action_script = menu_part_sound_actions;
 draw_script = menu_fn_draw_default;
 step_script = menu_part_sound_step;

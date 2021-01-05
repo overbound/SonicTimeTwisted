@@ -5,12 +5,14 @@ switch(state)
         break;
     case 1: // opening menu - just display the rectangle
     case 4: // closing menu - just display the rectangle
+    case 23: // reopening menu - closing animation
+    case 24: // reopening menu - opening animation
         var height_offset;
-        if(state == 1)
+        if(state == 1 || state == 24)
         {
             height_offset = round((internal__draw_menu_rect_y2 - internal__draw_menu_rect_y1) / 20 * (10 - timer));
         }
-        if(state == 4)
+        if(state == 4 || state == 23)
         {
             height_offset = round((internal__draw_menu_rect_y2 - internal__draw_menu_rect_y1) / 20 * (timer));
         }

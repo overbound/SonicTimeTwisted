@@ -1,7 +1,7 @@
 items = false;
 menu_fn_add_option(tr("_options_menu_Back"), 0);
 
-button_width = 200;
+menu_fn_calculate_width_simple();
 
 action_script = menu_part_buttonreposition_actions;
 draw_script = menu_part_buttonreposition_draw;

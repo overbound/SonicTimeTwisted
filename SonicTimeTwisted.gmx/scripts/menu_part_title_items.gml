@@ -10,7 +10,7 @@ if(DEVICE_INFO & DEVICE_TYPE_COMPUTER)
 // this means "main menu"
 menu_type = 0;
 
-button_width = 200;
+menu_fn_calculate_width_simple();
 
 action_script = menu_part_title_actions;
 draw_script = menu_fn_draw_default;

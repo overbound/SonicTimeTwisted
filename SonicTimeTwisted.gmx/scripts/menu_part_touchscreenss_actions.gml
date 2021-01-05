@@ -41,14 +41,25 @@ switch(argument0)
 }
 
 // refresh displayed values
-var gyroLabel = tr("_options_menu_touchscreen_sstage_DPad");
+// calculating the optimal menu width at the same time - done here so that possible values are not duplicated among several scripts
+menu_fn_calculate_width_start();
+
+var dpadLabel = "< "+tr("_options_menu_touchscreen_sstage_DPad")+ " >";
+var gyroLabel = "< "+tr("_options_menu_touchscreen_sstage_Gyroscope")+ " >";
 if(objProgram.inputManager.gyroinss)
 {
-    gyroLabel = tr("_options_menu_touchscreen_sstage_Gyroscope");
+    menu_fn_refresh_displayed_value(0, gyroLabel);
 }
-menu_fn_refresh_displayed_value(0, "< "+gyroLabel+ " >");
+else
+{
+    menu_fn_refresh_displayed_value(0, dpadLabel);
+}
 
 menu_fn_refresh_displayed_value(1, string(round(objProgram.inputManager.vkdeadzoness*100))+'%');
 
+
+menu_fn_calculate_width_add(0, false, gyroLabel, dpadLabel);
+menu_fn_calculate_width_add(1, true, 4); // the max value is 100%, so 4 symbols
+menu_fn_calculate_width_finish();
 // preserve the cursor value - usually false for the sake of touchscreen controls
 return false;

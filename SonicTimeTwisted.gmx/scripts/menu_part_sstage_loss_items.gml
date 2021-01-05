@@ -3,7 +3,6 @@ if(objProgram.saveSlot == -2)
     // level select
     menu_fn_add_option(tr("_specialstage_menu_Try_Again"), 0);
     menu_fn_add_option(tr("_specialstage_menu_Quit"), 1);
-    button_width = 210;
 }
 else
 {
@@ -12,8 +11,8 @@ else
         menu_fn_add_option(tr("_specialstage_menu_Try_Again_life"), 0);
     }
     menu_fn_add_option(tr("_specialstage_menu_Return_to_act"), 1);
-    button_width = 260;
 }
+menu_fn_calculate_width_simple();
 // this means "special stage defeat menu"
 menu_type = 2;
 

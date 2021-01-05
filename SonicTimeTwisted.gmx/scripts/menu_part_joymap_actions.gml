@@ -240,5 +240,19 @@ menu_fn_refresh_displayed_value(6, aLabel);
 menu_fn_refresh_displayed_value(7, bLabel);
 menu_fn_refresh_displayed_value(8, cLabel);
 menu_fn_refresh_displayed_value(9, startLabel);
+
+
+// calculating the optimal menu width at the same time - done here so that possible values are not duplicated among several scripts
+menu_fn_calculate_width_start();
+menu_fn_calculate_width_add(2, true, 20);
+menu_fn_calculate_width_add(3, true, 20);
+menu_fn_calculate_width_add(4, true, 20);
+menu_fn_calculate_width_add(5, true, 20);
+menu_fn_calculate_width_add(6, true, 20);
+menu_fn_calculate_width_add(7, true, 20);
+menu_fn_calculate_width_add(8, true, 20);
+menu_fn_calculate_width_add(9, true, 20);
+menu_fn_calculate_width_finish();
+
 // preserve the cursor value - usually false for the sake of touchscreen controls
 return false;

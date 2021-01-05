@@ -3415,6 +3415,11 @@
             <script>scripts\android_get_mapped_label.gml</script>
             <script>scripts\android_start_software_mapping.gml</script>
           </scripts>
+          <script>scripts\menu_fn_calculate_width_simple.gml</script>
+          <script>scripts\menu_fn_calculate_width_start.gml</script>
+          <script>scripts\menu_fn_calculate_width_add.gml</script>
+          <script>scripts\menu_fn_calculate_width_finish.gml</script>
+          <script>scripts\menu_fn_reopen.gml</script>
         </scripts>
         <scripts name="menu_parts">
           <script>scripts\menu_part_title_items.gml</script>

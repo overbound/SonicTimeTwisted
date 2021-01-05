@@ -257,6 +257,24 @@ switch(state)
             }
         }
         break;
+    case 23:
+        timer++;
+        if(timer >= 10)
+        {
+            timer = 0;
+            state = 24;
+            cursor = 0;
+            menu_fn_set_scripts_from_next();
+        }
+        break;
+    case 24:
+        timer++;
+        if(timer >= 10)
+        {
+            timer = 0;
+            state = 2;
+        }
+        break;
 }
 if(is_touchscreen)
 {

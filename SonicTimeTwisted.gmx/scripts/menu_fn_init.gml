@@ -125,3 +125,4 @@ internal__touch_len = 0;
 internal__touch_dir = 0;
 internal__touch_dir_changed = false;
 
+internal__calculated_width = 200;

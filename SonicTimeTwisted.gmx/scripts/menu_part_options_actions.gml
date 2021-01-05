@@ -1,4 +1,5 @@
 var prev_is_touchscreen = is_touchscreen;
+
 switch(argument0)
 {
     case 0:
@@ -206,46 +207,57 @@ switch(argument0)
 }
 
 // refresh displayed values
+// calculating the optimal menu width at the same time - done here so that possible values are not duplicated among several scripts
+menu_fn_calculate_width_start();
+
+var inputLabel1 = "< "+tr("_options_menu_InputLabel_Gamepad")+ " >";
+var inputLabel2 = "< "+tr("_options_menu_InputLabel_Keyboard")+ " >";
 
 if(objProgram.inputManager.input_method == INPUT_GAMEPAD)
 {
-    menu_fn_refresh_displayed_value(1, "< "+tr("_options_menu_InputLabel_Gamepad")+ " >");
+    menu_fn_refresh_displayed_value(1, inputLabel1);
 }
 else
 {
-    menu_fn_refresh_displayed_value(1, "< "+tr("_options_menu_InputLabel_Keyboard")+ " >");
+    menu_fn_refresh_displayed_value(1, inputLabel2);
 }
+
+menu_fn_calculate_width_add(1, false, inputLabel1, inputLabel2);
 
 if(DEVICE_INFO & DEVICE_TYPE_SMARTPHONE)
 {
-    var inputLabel = tr("_options_menu_InputLabel_Touchscreen");
     if(DEVICE_INFO & DEVICE_OS_ANDROID)
     {
+        inputLabel1 = "< "+tr("_options_menu_InputLabel_Touchscreen")+ " >";
+        inputLabel2 = "< "+tr("_options_menu_InputLabel_BTUSB_device")+ " >";
         switch(android_get_input_mode())
         {
             case 0:
-                inputLabel = tr("_options_menu_InputLabel_Touchscreen");
+                menu_fn_refresh_displayed_value(8, inputLabel1);
                 break;
             case 1:
-                inputLabel = tr("_options_menu_InputLabel_BTUSB_device");
+                menu_fn_refresh_displayed_value(8, inputLabel2);
                 break;
         }
-        menu_fn_refresh_displayed_value(8, "< "+inputLabel+ " >");
+        menu_fn_calculate_width_add(8, false, inputLabel1, inputLabel2);
     }
     else
     {
+        inputLabel1 = "< "+tr("_options_menu_InputLabel_Gamepad")+ " >";
+        inputLabel2 = "< "+tr("_options_menu_InputLabel_Keyboard")+ " >";
         switch(get_input_method())
         {
             case INPUT_GAMEPAD:
-                inputLabel = tr("_options_menu_InputLabel_Gamepad");
+                menu_fn_refresh_displayed_value(5, inputLabel1);
                 break;
             case INPUT_KEYBOARD:
-                inputLabel = tr("_options_menu_InputLabel_Keyboard");
+                menu_fn_refresh_displayed_value(5, inputLabel2);
                 break;
         }
-        menu_fn_refresh_displayed_value(5, "< "+inputLabel+ " >");
+        menu_fn_calculate_width_add(5, false, inputLabel1, inputLabel2);
     }
 }
+menu_fn_calculate_width_finish();
 is_touchscreen = prev_is_touchscreen;
 // preserve the cursor value - usually false for the sake of touchscreen controls
 return false;

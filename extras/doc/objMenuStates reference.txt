@@ -24,3 +24,5 @@ objMenu states reference
 20 - Android dual input mode window
 21 - Android dual input mode window with error message
 22 - closing Android dual input mode window
+23 - menu reloading: closing
+24 - menu reloading: reopening

@@ -68,53 +68,76 @@ switch(argument0)
 }
 
 // refresh displayed values
+// calculating the optimal menu width at the same time - done here so that possible values are not duplicated among several scripts
+menu_fn_calculate_width_start();
 
-switch(objScreen.video_mode)
+var onLabel = "< "+tr("_On")+ " >";
+var offLabel = "< "+tr("_Off")+ " >";
+
+if(DEVICE_INFO & DEVICE_TYPE_COMPUTER)
 {
-    case 0:
-        menu_fn_refresh_displayed_value(0, "< "+tr("_graphics_menu_1x")+ " >");
-        break;
-    case 1:
-        menu_fn_refresh_displayed_value(0, "< "+tr("_graphics_menu_2x")+ " >");
-        break;
-    case 2:
-        menu_fn_refresh_displayed_value(0, "< "+tr("_graphics_menu_3x")+ " >");
-        break;
-    case 3:
-        menu_fn_refresh_displayed_value(0, "< "+tr("_graphics_menu_Fs")+ " >");
-        break;
+    var gfxLabel1 = "< "+tr("_graphics_menu_1x")+ " >";
+    var gfxLabel2 = "< "+tr("_graphics_menu_2x")+ " >";
+    var gfxLabel3 = "< "+tr("_graphics_menu_3x")+ " >";
+    var gfxLabel4 = "< "+tr("_graphics_menu_Fs")+ " >";
+
+    switch(objScreen.video_mode)
+    {
+        case 0:
+            menu_fn_refresh_displayed_value(0, gfxLabel1);
+            break;
+        case 1:
+            menu_fn_refresh_displayed_value(0, gfxLabel2);
+            break;
+        case 2:
+            menu_fn_refresh_displayed_value(0, gfxLabel3);
+            break;
+        case 3:
+            menu_fn_refresh_displayed_value(0, gfxLabel4);
+            break;
+    }
+
+    if(objScreen.vsync)
+    {
+        menu_fn_refresh_displayed_value(3, onLabel);
+    }
+    else
+    {
+        menu_fn_refresh_displayed_value(3, offLabel);
+    }
+    menu_fn_calculate_width_add(0, false, gfxLabel1, gfxLabel2, gfxLabel3, gfxLabel4);
+    menu_fn_calculate_width_add(3, false, onLabel, offLabel);
 }
+
+var tallyLabel1 = "< "+tr("_graphics_menu_Randomdigits")+ " >";
+var tallyLabel2 = "< "+tr("_graphics_menu_Variablespeed")+ " >";
+var tallyLabel3 = "< "+tr("_graphics_menu_Fixedspeed")+ " >";
 
 switch(objScreen.score_tally_mode)
 {
     case 0:
-        menu_fn_refresh_displayed_value(1, "< "+tr("_graphics_menu_Randomdigits")+ " >");
+        menu_fn_refresh_displayed_value(1, tallyLabel1);
         break;
     case 1:
-        menu_fn_refresh_displayed_value(1, "< "+tr("_graphics_menu_Variablespeed")+ " >");
+        menu_fn_refresh_displayed_value(1, tallyLabel2);
         break;
     case 2:
-        menu_fn_refresh_displayed_value(1, "< "+tr("_graphics_menu_Fixedspeed")+ " >");
+        menu_fn_refresh_displayed_value(1, tallyLabel3);
         break;
 }
 
 if(objScreen.flashing_reduced)
 {
-    menu_fn_refresh_displayed_value(2, "< "+tr("_On")+ " >");
+    menu_fn_refresh_displayed_value(2, onLabel);
 }
 else
 {
-    menu_fn_refresh_displayed_value(2, "< "+tr("_Off")+ " >");
+    menu_fn_refresh_displayed_value(2, offLabel);
 }
 
-if(objScreen.vsync)
-{
-    menu_fn_refresh_displayed_value(3, "< "+tr("_On")+ " >");
-}
-else
-{
-    menu_fn_refresh_displayed_value(3, "< "+tr("_Off")+ " >");
-}
+menu_fn_calculate_width_add(1, false, tallyLabel1, tallyLabel2, tallyLabel3);
+menu_fn_calculate_width_add(2, false, onLabel, offLabel);
 
+menu_fn_calculate_width_finish();
 // preserve the cursor value - usually false for the sake of touchscreen controls
 return false;

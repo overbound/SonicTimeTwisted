@@ -1,4 +1,5 @@
-// argument0 - title
+///menu_fn_add_title(title)
+/// Adds a title to the menu
 
 var al = 0;
 if(is_array(items))
