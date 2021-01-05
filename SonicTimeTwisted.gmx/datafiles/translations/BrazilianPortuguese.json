@@ -6,6 +6,7 @@
 		"authors": "Romulo Santos",
 
 		"top_hud_offset": 10,
+		"titlecard_zone_is_first": 0,
 		
 	 "font_param": {
 			"sprFontHud": {

@@ -5,7 +5,8 @@
 		"creditsname": "",
 		"authors": "",
 		
-		"top_hud_offset": 0
+		"top_hud_offset": 0,
+		"titlecard_zone_is_first": 0
 	},
 	"comments": {
 		"1": "You can do whatever you want in this section, it will be freed from memory when loading the strings.",
