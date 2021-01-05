@@ -1,13 +1,13 @@
 items = false;
-menu_fn_add_title(tr("Touchscreen configuration"));
-menu_fn_add_option(tr("Reposition buttons"), 0);
-menu_fn_add_option(tr("Button size"), 1, 1, "");
-menu_fn_add_option(tr("D-Pad mode"), 2, 1, "");
-menu_fn_add_option(tr("Opacity"), 3, 1, "");
-menu_fn_add_option(tr("Dead zone"), 9, 1, "");
-menu_fn_add_option(tr("Special stage controls"), 4);
-menu_fn_add_option(tr("Final zone controls"), 5, 1, "");
-menu_fn_add_option(tr("Configure vibrations"), 6);
+menu_fn_add_title(tr("_options_menu_touchscreen_title"));
+menu_fn_add_option(tr("_options_menu_touchscreen_Reposition_buttons"), 0);
+menu_fn_add_option(tr("_options_menu_touchscreen_Button_size"), 1, 1, "");
+menu_fn_add_option(tr("_options_menu_touchscreen_DPad_mode"), 2, 1, "");
+menu_fn_add_option(tr("_options_menu_touchscreen_Opacity"), 3, 1, "");
+menu_fn_add_option(tr("_options_menu_touchscreen_Dead_zone"), 9, 1, "");
+menu_fn_add_option(tr("_options_menu_touchscreen_Special_stage_controls"), 4);
+menu_fn_add_option(tr("_options_menu_touchscreen_Final_zone_controls"), 5, 1, "");
+menu_fn_add_option(tr("_options_menu_touchscreen_Configure_vibrations"), 6);
 menu_fn_add_option(tr("_options_menu_Back"), 7);
 
 button_width = 360;

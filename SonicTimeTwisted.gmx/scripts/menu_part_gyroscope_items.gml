@@ -1,15 +1,15 @@
 items = false;
 
-menu_fn_add_title(tr("Gyroscope configuration"));
-menu_fn_add_option(tr("Mode"), 0, 1, "");
+menu_fn_add_title(tr("_options_menu_gyroscope_Title"));
+menu_fn_add_option(tr("_options_menu_gyroscope_Mode"), 0, 1, "");
 if(objProgram.inputManager.gyromode == 0)
 {
-    menu_fn_add_option(tr("Trigger angle"), 1, true, "");
+    menu_fn_add_option(tr("_options_menu_gyroscope_Trigger_angle"), 1, true, "");
 }
 else
 {
-    menu_fn_add_option(tr("Start angle"), 2, true, "");
-    menu_fn_add_option(tr("End angle"), 3, true, "");
+    menu_fn_add_option(tr("_options_menu_gyroscope_Start_angle"), 2, true, "");
+    menu_fn_add_option(tr("_options_menu_gyroscope_End_angle"), 3, true, "");
 }
 
 menu_fn_add_option(tr("_options_menu_Back"), 4);

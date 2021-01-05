@@ -4,7 +4,7 @@ switch(argument0)
         objProgram.inputManager.gyroinss = (objProgram.inputManager.gyroinss + 1) mod 2;
         break;
     case 1:
-        menu_fn_open_slider_window(1, tr('Dead zone (%)'), round(objProgram.inputManager.vkdeadzoness*100), 5, 95);
+        menu_fn_open_slider_window(1, tr("_options_menu_touchscreen_sstage_SliderDeadZone"), round(objProgram.inputManager.vkdeadzoness*100), 5, 95);
         break;
     case 2:
         menu_fn_goto_submenu(menu_part_gyroscope_items);
@@ -41,10 +41,10 @@ switch(argument0)
 }
 
 // refresh displayed values
-var gyroLabel = tr('D-Pad');
+var gyroLabel = tr("_options_menu_touchscreen_sstage_DPad");
 if(objProgram.inputManager.gyroinss)
 {
-    gyroLabel = tr('Gyroscope');
+    gyroLabel = tr("_options_menu_touchscreen_sstage_Gyroscope");
 }
 menu_fn_refresh_displayed_value(0, "< "+gyroLabel+ " >");
 
