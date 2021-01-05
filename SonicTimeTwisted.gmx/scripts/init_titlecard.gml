@@ -8,11 +8,23 @@ for (i=0; i<4; i+=1)
     title_length[i] = string_length(title_string[i]);
     if title_length[i]<1 continue;
     // set font
-    switch i
+    if(zone_first)
     {
-    case 2: draw_set_font(objResources.fontTitleSmall); break;
-    case 3: draw_set_font(objResources.fontTitleSmallest); break;
-    default: draw_set_font(objResources.fontTitleLarge);
+        switch i
+        {
+        case 0: draw_set_font(objResources.fontTitleSmall); break;
+        case 3: draw_set_font(objResources.fontTitleSmallest); break;
+        default: draw_set_font(objResources.fontTitleLarge);
+        }    
+    }
+    else
+    {
+        switch i
+        {
+        case 2: draw_set_font(objResources.fontTitleSmall); break;
+        case 3: draw_set_font(objResources.fontTitleSmallest); break;
+        default: draw_set_font(objResources.fontTitleLarge);
+        }
     }
     // set offset
     title_ox[i] = 298-string_width(title_string[i]);
@@ -21,3 +33,19 @@ for (i=0; i<4; i+=1)
 }
 
 act_color = make_colour_rgb(255, 224, 0);
+zone_first = tr_get_real_prop("titlecard_zone_is_first") > 0;
+
+if(zone_first)
+{
+    word2y = 90;
+    word3y = 124;
+    word1font = objResources.fontTitleSmall;
+    word3font = objResources.fontTitleLarge;
+}
+else
+{
+    word2y = 98;
+    word3y = 132;
+    word1font = objResources.fontTitleLarge;
+    word3font = objResources.fontTitleSmall;
+}

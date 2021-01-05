@@ -48,6 +48,7 @@ planet_ox = 600; //608;
 planet_oy = -600; //-416;
 banner_ox = objScreen.width + 240;
 banner_speed = 16;
+zone_first = tr_get_real_prop("titlecard_zone_is_first") &gt; 0;
 
 // title strings
 title_word = 0;
