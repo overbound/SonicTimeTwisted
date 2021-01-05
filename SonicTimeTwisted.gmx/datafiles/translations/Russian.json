@@ -215,11 +215,11 @@
 		"_options_menu_touchscreen_vibration_Haptic_feedback": "Тактильная отдача",
 		"_options_menu_touchscreen_vibration_Duration": "Длительность",
 		"_options_menu_touchscreen_vibration_Strength": "Сила",
-		"_options_menu_touchscreen_vibration_Contextual_rumble": "Contextual rumble",
+		"_options_menu_touchscreen_vibration_Contextual_rumble": "Вибрация в игре",
 		"_options_menu_touchscreen_vibration_Strength_Cr": "Сила",
 		"_options_menu_touchscreen_vibration_SliderDuration": "Длительность тактильной отдачи (x/60 секунд)",
 		"_options_menu_touchscreen_vibration_SliderStrength": "Сила тактильной отдачи (%)",
-		"_options_menu_touchscreen_vibration_SliderStrengthCr": "Contextual rumble strength (%)",
+		"_options_menu_touchscreen_vibration_SliderStrengthCr": "Сила вибрации в игре (%)",
 		"_options_menu_touchscreen_vibration_HapticsDurationFmt": "%0/60 секунд",
 
 		"_options_menu_touchscreen_sstage_Title": "Управление в последней зоне",

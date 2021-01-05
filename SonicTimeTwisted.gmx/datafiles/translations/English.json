@@ -144,11 +144,11 @@
 		"_options_menu_touchscreen_vibration_Haptic_feedback": "Haptic feedback",
 		"_options_menu_touchscreen_vibration_Duration": "Duration",
 		"_options_menu_touchscreen_vibration_Strength": "Strength",
-		"_options_menu_touchscreen_vibration_Contextual_rumble": "Contextual rumble",
+		"_options_menu_touchscreen_vibration_Contextual_rumble": "In-game rumble",
 		"_options_menu_touchscreen_vibration_Strength_Cr": "Strength",
 		"_options_menu_touchscreen_vibration_SliderDuration": "Haptic feedback duration (x/60 seconds)",
 		"_options_menu_touchscreen_vibration_SliderStrength": "Haptic feedback strength (%)",
-		"_options_menu_touchscreen_vibration_SliderStrengthCr": "Contextual rumble strength (%)",
+		"_options_menu_touchscreen_vibration_SliderStrengthCr": "In-game rumble strength (%)",
 		"_options_menu_touchscreen_vibration_HapticsDurationFmt": "%0/60 seconds",
 
 		"_options_menu_touchscreen_sstage_Title": "Special stage controls",
