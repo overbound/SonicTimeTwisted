@@ -19,10 +19,10 @@ switch(argument0)
         }
         break;
     case 1:
-        menu_fn_open_slider_window(1, tr('Haptic feedback duration (x/60 seconds)'), objProgram.inputManager.haptics_duration, 0, 60);
+        menu_fn_open_slider_window(1, tr("_options_menu_touchscreen_vibration_SliderDuration"), objProgram.inputManager.haptics_duration, 0, 60);
         break;
     case 2:
-        menu_fn_open_slider_window(2, tr('Haptic feedback strength (%)'), objProgram.inputManager.haptics_strength, 0, 100);
+        menu_fn_open_slider_window(2, tr("_options_menu_touchscreen_vibration_SliderStrength"), objProgram.inputManager.haptics_strength, 0, 100);
         break;
     case 3:
         with(objProgram.inputManager)
@@ -44,7 +44,7 @@ switch(argument0)
 
         break;
     case 4:
-        menu_fn_open_slider_window(4, tr('Contextual rumble strength (%)'), round(objProgram.inputManager.rumble_strength*100), 0, 200);
+        menu_fn_open_slider_window(4, tr("_options_menu_touchscreen_vibration_SliderStrengthCr"), round(objProgram.inputManager.rumble_strength*100), 0, 200);
         break;
     case 5:
     case -1:
@@ -79,20 +79,20 @@ switch(argument0)
 }
 
 // refresh displayed values
-var hapticsEnabledLabel = tr('Disabled');
-var contextEnabledLabel = tr('Disabled');
+var hapticsEnabledLabel = tr('_Disabled');
+var contextEnabledLabel = tr('_Disabled');
 if(objProgram.inputManager.vibration_type & 1)
 {
-    hapticsEnabledLabel = tr('Enabled');
+    hapticsEnabledLabel = tr('_Enabled');
 }
 if(objProgram.inputManager.vibration_type >> 1)
 {
-    contextEnabledLabel = tr('Enabled');
+    contextEnabledLabel = tr('_Enabled');
 }
 menu_fn_refresh_displayed_value(0, "< " + hapticsEnabledLabel + " >");
 menu_fn_refresh_displayed_value(3, "< " + contextEnabledLabel + " >");
 
-menu_fn_refresh_displayed_value(1, "< " + string(objProgram.inputManager.haptics_duration) + '/60 ' + tr('seconds') + " >");
+menu_fn_refresh_displayed_value(1, "< " + tr_format(tr("_options_menu_touchscreen_vibration_HapticsDurationFmt"), string(objProgram.inputManager.haptics_duration)) + " >");
 menu_fn_refresh_displayed_value(2, "< " + string(objProgram.inputManager.haptics_strength) + "% >");
 menu_fn_refresh_displayed_value(4, "< " + string(round(objProgram.inputManager.rumble_strength*100)) + "% >");
 
