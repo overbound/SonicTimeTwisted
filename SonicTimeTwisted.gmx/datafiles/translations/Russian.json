@@ -2,8 +2,11 @@
 	"info": {
 		"intname": "ru",
 		"friendlyname": "Russian (Русский)",
+		"creditsname": "Russian",
+		"authors": "Alex Khayrullin\nNik",
 		
 		"top_hud_offset": 16,
+		"scorecard_swap_fonts": 0,
 
 		"font_param": {
 			"sprFontHud": {
@@ -262,13 +265,13 @@
 		"_HUD_SHIELD": "ЩИТ",
 		
 		"_charname_0": "СОНИК",
-		"_charname_1": "ТЭЙЛС",
+		"_charname_1": "ТЕЙЛЗ",
 		"_charname_2": "НАКЛЗ",
 		"_charname_0_lc": "Соника",
-		"_charname_1_lc": "Тэйлса",
+		"_charname_1_lc": "Тейлза",
 		"_charname_2_lc": "Наклза",
 		"_charname_0_altnoun": "Соником",
-		"_charname_1_altnoun": "Тэйлсом",
+		"_charname_1_altnoun": "Тейлзом",
 		"_charname_2_altnoun": "Наклзом",
 		
 		"_save_delete": "УДАЛИТЬ",
@@ -276,21 +279,30 @@
 		"_save_nosave": "НЕ СОХР.",
 		"_save_Past": "Прошлое",
 		"_save_Future": "Будущее",
+		"_save_mobile_hint_select": "Выберите сохранение",
+		"_save_mobile_hint_act_select_top": "Проведите пальцем вверх или вниз для выбора акта,#нажмите на период времени чтобы его выбрать",
+		"_save_mobile_hint_act_select_bottom": "Нажмите на ячейку для подтверждения, нажмите вне ячейки для отмены",
+		"_save_mobile_hint_character_select_top": "Проведите пальцем вверх или вниз для выбора персонажа",
+		"_save_mobile_hint_character_select_bottom": "Нажмите на ячейку для подтверждения, нажмите вне ячейки для отмены",
+		"_save_mobile_hint_delete_top": "Выберите сохранение, которое хотите удалить",
+		"_save_mobile_hint_delete_bottom": "Выберите Метал Соника для отмены",
+		"_save_mobile_hint_delete_confirm_top": "Вы уверены, что хотите удалить это сохранение?",
+		"_save_mobile_hint_delete_confirm_bottom": "Нажмите на ячейку для подтверждения, нажмите вне ячейки для отмены",
 		
-		"_ssselect_CE1": "Изумруды хаоса 1",
-		"_ssselect_CE2": "Изумруды хаоса 2",
-		"_ssselect_CE3": "Изумруды хаоса 3",
-		"_ssselect_CE4": "Изумруды хаоса 4",
-		"_ssselect_CE5": "Изумруды хаоса 5",
-		"_ssselect_CE6": "Изумруды хаоса 6",
-		"_ssselect_CE7": "Изумруды хаоса 7",
-		"_ssselect_TS1": "Кристаллы времени 1",
-		"_ssselect_TS2": "Кристаллы времени 2",
-		"_ssselect_TS3": "Кристаллы времени 3",
-		"_ssselect_TS4": "Кристаллы времени 4",
-		"_ssselect_TS5": "Кристаллы времени 5",
-		"_ssselect_TS6": "Кристаллы времени 6",
-		"_ssselect_TS7": "Кристаллы времени 7",
+		"_ssselect_CE1": "Изумруд хаоса 1",
+		"_ssselect_CE2": "Изумруд хаоса 2",
+		"_ssselect_CE3": "Изумруд хаоса 3",
+		"_ssselect_CE4": "Изумруд хаоса 4",
+		"_ssselect_CE5": "Изумруд хаоса 5",
+		"_ssselect_CE6": "Изумруд хаоса 6",
+		"_ssselect_CE7": "Изумруд хаоса 7",
+		"_ssselect_TS1": "Кристалл времени 1",
+		"_ssselect_TS2": "Кристалл времени 2",
+		"_ssselect_TS3": "Кристалл времени 3",
+		"_ssselect_TS4": "Кристалл времени 4",
+		"_ssselect_TS5": "Кристалл времени 5",
+		"_ssselect_TS6": "Кристалл времени 6",
+		"_ssselect_TS7": "Кристалл времени 7",
 		"_ssselect_choose_another_stage": "Выбрать другой уровень",
 		
 		"_scorecard_line1": "%c ПРОШЁЛ",
@@ -368,7 +380,7 @@
 		"_GAMEOVER_WORD1": "ИГРА",
 		"_GAMEOVER_WORD2": "ОКОНЧЕНА",
 		
-		"_TIMEOVER_WORD1": "ВРЕМЯ",
-		"_TIMEOVER_WORD2": "ВЫШЛО"
+		"_bad_ending_text": "Попробуйте снова!\n\nСоберите все изумруды хаоса\nи кристаллы времени!",
+		"_good_ending_text": "Соник, Тейлз и Наклз продолжили свою борьбу за\nосвобождение Мобиуса от созданий Роботника до\nтех пор, пока роботов больше не осталось.\n\nСпасибо за игру!"
 	}
 }

@@ -2,8 +2,11 @@
 	"info": {
 		"intname": "en",
 		"friendlyname": "English",
+		"creditsname": "",
+		"authors": "",
 		
-		"top_hud_offset": 0
+		"top_hud_offset": 0,
+		"scorecard_swap_fonts": 0
 	},
 	"comments": {
 		"1": "You can do whatever you want in this section, it will be freed from memory when loading the strings.",
@@ -209,6 +212,15 @@
 		"_save_nosave": "NO SAVE",
 		"_save_Past": "Past",
 		"_save_Future": "Future",
+		"_save_mobile_hint_select": "Select a save slot",
+		"_save_mobile_hint_act_select_top": "Swipe up or down to select an act, tap time period to select it",
+		"_save_mobile_hint_act_select_bottom": "Tap slot to confirm, tap elsewhere to cancel",
+		"_save_mobile_hint_character_select_top": "Swipe up or down to select a character",
+		"_save_mobile_hint_character_select_bottom": "Tap slot to confirm, tap elsewhere to cancel",
+		"_save_mobile_hint_delete_top": "Select a save slot to delete",
+		"_save_mobile_hint_delete_bottom": "Click on Metal Sonic again to cancel",
+		"_save_mobile_hint_delete_confirm_top": "Are you sure you want to delete this file?",
+		"_save_mobile_hint_delete_confirm_bottom": "Tap slot to confirm, tap elsewhere to cancel",
 		
 		"_ssselect_CE1": "Chaos Emerald 1",
 		"_ssselect_CE2": "Chaos Emerald 2",
@@ -300,8 +312,8 @@
 		
 		"_GAMEOVER_WORD1": "GAME",
 		"_GAMEOVER_WORD2": "OVER",
-		
-		"_TIMEOVER_WORD1": "TIME",
-		"_TIMEOVER_WORD2": "OVER"
+
+		"_bad_ending_text": "Try again!\n\nCollect all the Chaos Emeralds\nand Time Stones!",
+		"_good_ending_text": "Sonic, Tails, and Knuckles continued the fight\nto liberate Mobius from Robotnik's creations\nuntil no more robots remained.\n\nThank you for playing!"
 	}
 }
