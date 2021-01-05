@@ -87,6 +87,7 @@
 		"_btusb_joymap_Device": "Device",
 		"_btusb_joymap_Device_Disabled": "Device disabled",
 		"_btusb_joymap_Device_Unknown": "Device unknown",
+		"_options_menu_BTUSB_title": "Map BlueTooth/USB device",
 		"_options_menu_BTUSB_device": "BT/USB device",
 		"_options_menu_BTUSB_device_Disconnect": "Disconnect",
 		"_options_menu_BTUSB_device_DoubleMode": "Double device mode",
@@ -314,6 +315,9 @@
 		"_GAMEOVER_WORD2": "OVER",
 
 		"_bad_ending_text": "Try again!\n\nCollect all the Chaos Emeralds\nand Time Stones!",
-		"_good_ending_text": "Sonic, Tails, and Knuckles continued the fight\nto liberate Mobius from Robotnik's creations\nuntil no more robots remained.\n\nThank you for playing!"
+		"_good_ending_text": "Sonic, Tails, and Knuckles continued the fight\nto liberate Mobius from Robotnik's creations\nuntil no more robots remained.\n\nThank you for playing!",
+		
+		"_hint_ssgyro": "Tilt to turn",
+		"_hint_ggpoint": "Point on the screen"
 	}
 }

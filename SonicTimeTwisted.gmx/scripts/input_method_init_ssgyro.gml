@@ -1,5 +1,5 @@
 var hint = instance_create(0, 0, objInputHelp);
-hint.hint = tr("Tilt to turn");
+hint.hint = tr("_hint_ssgyro");
 hint.in3d = true;
 
 switch(vksize)

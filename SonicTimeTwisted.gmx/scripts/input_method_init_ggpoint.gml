@@ -1,5 +1,5 @@
 var hint = instance_create(0, 0, objInputHelp);
-hint.hint = tr("Point on the screen");
+hint.hint = tr("_hint_ggpoint");
 hint.in3d = false;
 
 input_manage_script = input_method_ggpoint;

@@ -1,6 +1,6 @@
 items = false;
 
-menu_fn_add_title(tr("Map BlueTooth/USB device"));
+menu_fn_add_title(tr("_options_menu_BTUSB_title"));
 if(android_get_input_mode())
 {
     // Gamepad rumble does not work on android :/

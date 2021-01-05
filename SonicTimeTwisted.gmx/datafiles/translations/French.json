@@ -144,15 +144,16 @@
 		"_options_menu_Configure_Touchscreen": "Configurer l'écran tactile",
 		"_options_menu_Map_keys": "Affecter les touches du clavier",
 		"_options_menu_Map_gamepad": "Affecter les commandes de la manette",
-		"_options_menu_Map_BTUSB_device": "Affecter les commandes du périphérique BT/USB",
+		"_options_menu_Map_BTUSB_device": "Réglages du périphérique BT/USB",
 		"_options_menu_WaD": "Avertissements & mentions légales",
 		"_options_menu_Back": "< Retour",
 		"_options_menu_Remap_all": "Tout réaffecter",
-		"_options_menu_Localization": "Paramétrages régionaux",
+		"_options_menu_Localization": "Réglages de traduction",
 		"_btusb_joymap_Rumble": "Vibrations",
 		"_btusb_joymap_Device": "Périphérique",
 		"_btusb_joymap_Device_Disabled": "Périph. désactivé",
 		"_btusb_joymap_Device_Unknown": "Périph. inconnu",
+		"_options_menu_BTUSB_title": "Réglages du périphérique BT/USB",
 		"_options_menu_BTUSB_device": "Périphérique BT/USB",
 		"_options_menu_BTUSB_device_Disconnect": "Déconnecter",
 		"_options_menu_BTUSB_device_DoubleMode": "Mode double périphérique",
@@ -275,7 +276,7 @@
 		
 		"_save_delete": "SUPPR.",
 		"_save_delete_YesNo": "<Oui Non>",
-		"_save_nosave": "SNS SVG",
+		"_save_nosave": "SansSvg",
 		"_save_Past": "Passé",
 		"_save_Future": "Futur",
 		"_save_mobile_hint_select": "Sélectionnez une sauvegarde",
@@ -380,6 +381,9 @@
 		"_GAMEOVER_WORD2": "TERMINÉE",
 
 		"_bad_ending_text": "Essayez encore!\n\nCollectionnez toutes les Émeraudes du Chaos\net les Pierres du Temps!",
-		"_good_ending_text": "Sonic, Tails et Knuckles ont continué leur\ncombat pour libérer Mobius des créations de\nRobotnik, éliminant tous les robots jusqu'au\ndernier.\n\nMerci d'avoir joué!"
+		"_good_ending_text": "Sonic, Tails et Knuckles ont continué leur\ncombat pour libérer Mobius des créations de\nRobotnik, éliminant tous les robots jusqu'au\ndernier.\n\nMerci d'avoir joué!",
+		
+		"_hint_ssgyro": "Inclinez pour tourner",
+		"_hint_ggpoint": "Appuyez sur l'écran"
 	}
 }

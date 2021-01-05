@@ -2,7 +2,7 @@
 "info": {
         "intname": "pt-br",
 		"friendlyname":"Português Brasileiro",
-		"creditsname": "Brasilian Portuguese",
+		"creditsname": "Brazilian Portuguese",
 		"authors": "Romulo Santos",
 
 		"top_hud_offset": 10,
@@ -86,6 +86,8 @@
 		"_No": "Não",
 		"_On": "Ligado",
 		"_Off": "Desligado",
+		"_Disabled": "Desabilitado",
+		"_Enabled": "Habilitado",
 		"_exit_the_game": "Sair do jogo?",
 		"_epilepsy_title": "Aviso de eplepsia",
 		"_epilepsy": "Algumas pessoas podem ter ataques eplépticos quando expostas a certos padrões de luz ou luzes intermitentes, assistindo TV ou jogando videogame, mesmo aqueles sem histórico de ataques anteriores ou de eplepsia. \nSe você sentir algum dos seguintes sintomas: visão alterada, espasmos musculares ou oculares, perda de consciência, desorientação, qualquer movimento involuntário ou convulsões. Pare de jogar IMEDIATAMENTE e consulte seu médico.",
@@ -148,6 +150,7 @@
 		"_btusb_joymap_Device": "Dispositivo",
 		"_btusb_joymap_Device_Disabled": "Desabilitado",
 		"_btusb_joymap_Device_Unknown": "Dispositivo Desconhecido",
+		"_options_menu_BTUSB_title": "Mapear controle BT/USB",
 		"_options_menu_BTUSB_device": "Dispositivo BT/USB",
 		"_options_menu_BTUSB_device_Disconnect": "Desconectado",
 		"_options_menu_BTUSB_device_DoubleMode": "Controlador duplo",
@@ -158,11 +161,66 @@
 		"_options_menu_InputLabel_Gamepad": "Gamepad",
 		"_options_menu_InputLabel_Keyboard": "Teclado",
 		"_options_menu_InputLabel_BTUSB_device": "Gamepad BT/USB",
+
+		"_options_menu_keymap_press": "Pressione \"%0\"",
 		
-		"_options_menu_sound_title": "Sound Settings",
-		"_options_menu_sound_Master_Volume": "Master Volume",
-		"_options_menu_sound_SFX_Volume": "Sound Effects Volume",
-		"_options_menu_sound_Music_Volume": "Music Volume",
+		"_options_menu_sound_title": "Preferências de Áudio",
+		"_options_menu_sound_Master_Volume": "Volume Principal",
+		"_options_menu_sound_SFX_Volume": "Efeitos Sonoros",
+		"_options_menu_sound_Music_Volume": "Volume da Música",
+
+		"_options_menu_touchscreen_title": "Configurar Toques",
+		"_options_menu_touchscreen_Reposition_buttons": "Reposicionar botões",
+		"_options_menu_touchscreen_Button_size": "Tamanho dos botões",
+		"_options_menu_touchscreen_DPad_mode": "Modo do D-Pad",
+		"_options_menu_touchscreen_Opacity": "Opacidade",
+		"_options_menu_touchscreen_Dead_zone": "Zona morta",
+		"_options_menu_touchscreen_Special_stage_controls": "Controle em estagios Especiais",
+		"_options_menu_touchscreen_Final_zone_controls": "Controle na Zona Final",
+		"_options_menu_touchscreen_Configure_vibrations": "Configurar vibrações",
+		"_options_menu_touchscreen_OpacitySlider": "Opacidade (%)",
+		"_options_menu_touchscreen_DeadzoneSlider": "Zona morta (%)",
+
+		"_options_menu_touchscreen_dpadsize_Large": "Grande",
+		"_options_menu_touchscreen_dpadsize_Medium": "Médio",
+		"_options_menu_touchscreen_dpadsize_Small": "Pequeno",
+
+		"_options_menu_touchscreen_dpadmode_Static": "Estático",
+		"_options_menu_touchscreen_dpadmode_Dynamic": "Dinâmico",
+
+		"_options_menu_touchscreen_gyrogglabel_DPad": "D-Pad",
+		"_options_menu_touchscreen_gyrogglabel_Point": "Apontar",
+
+		"_options_menu_touchscreen_buttonreposition_back": "Use voltar para salvar ou descartar",
+		"_options_menu_touchscreen_buttonreposition_save": "Salvar",
+		"_options_menu_touchscreen_buttonreposition_discard": "Discartar",
+		"_options_menu_touchscreen_buttonreposition_default": "Restaurar padrão",
+
+		"_options_menu_gyroscope_Title": "Configurar Giroscópio",
+		"_options_menu_gyroscope_Mode": "Modo",
+		"_options_menu_gyroscope_Trigger_angle": "Angulo do gatilho",
+		"_options_menu_gyroscope_Start_angle": "Ângulo inicial",
+		"_options_menu_gyroscope_End_angle": "Ângulo final",
+		"_options_menu_gyroscope_Simulate_button": "Simular botão",
+		"_options_menu_gyroscope_Pseudo_analog": "Pseudo-analógico",
+
+		"_options_menu_touchscreen_vibration_Title": "Configurar vibrações",
+		"_options_menu_touchscreen_vibration_Haptic_feedback": "Feedback tátil",
+		"_options_menu_touchscreen_vibration_Duration": "Duração",
+		"_options_menu_touchscreen_vibration_Strength": "Força",
+		"_options_menu_touchscreen_vibration_Contextual_rumble": "Vibração In-game",
+		"_options_menu_touchscreen_vibration_Strength_Cr": "Força",
+		"_options_menu_touchscreen_vibration_SliderDuration": "Duração do feedback tátil (x/60 segundos)",
+		"_options_menu_touchscreen_vibration_SliderStrength": "Força do feedback tátil (%)",
+		"_options_menu_touchscreen_vibration_SliderStrengthCr": "Força da vibração In-game (%)",
+		"_options_menu_touchscreen_vibration_HapticsDurationFmt": "%0/60 segundos",
+
+		"_options_menu_touchscreen_sstage_Title": "Controle em Estágio especial",
+		"_options_menu_touchscreen_sstage_Dead_zone": "Zona morta",
+		"_options_menu_touchscreen_sstage_Configure_gyroscope": "Configurar giroscópio",
+		"_options_menu_touchscreen_sstage_SliderDeadZone": "Zona morta (%)",
+		"_options_menu_touchscreen_sstage_DPad": "D-Pad",
+		"_options_menu_touchscreen_sstage_Gyroscope": "Giroscópio",
 
 		"_buttonname_Up": "Cima",
 		"_buttonname_Down": "Baixo",
@@ -172,6 +230,10 @@
 		"_buttonname_B": "B",
 		"_buttonname_C": "C",
 		"_buttonname_Start": "Start",
+
+		"_options_menu_keymap_incomplete": "O mapeamento está incompleto. Remapeie\nos comandos ou restaure pelo padrão.",
+		"_options_menu_keymap_remap": "Remapear",
+		"_options_menu_keymap_reset": "Resetar",
 		
 		"_graphics_menu_Title": "Opções de vídeo",
 		"_graphics_menu_Screen_size": "Tamanho da tela",
@@ -214,6 +276,15 @@
 		"_save_nosave": "S/SALVAR",
 		"_save_Past": "Passado",
 		"_save_Future": "Futuro",
+		"_save_mobile_hint_select": "Escolha um slot de salvamento",
+		"_save_mobile_hint_act_select_top": "Deslize para cima ou baixo para selecionar um ato, toque em uma época para escolhê-la",
+		"_save_mobile_hint_act_select_bottom": "Toque no slot novamente para confirmar ou em outro lugar para cancelar",
+		"_save_mobile_hint_character_select_top": "Deslize para cima ou baixo para selecionar outro personagem",
+		"_save_mobile_hint_character_select_bottom": "Toque no slot novamente para confirmar ou em outro lugar para cancelar",
+		"_save_mobile_hint_delete_top": "Selecione um slot para apagar",
+		"_save_mobile_hint_delete_bottom": "Toque em Metal Sonic para cancelar",
+		"_save_mobile_hint_delete_confirm_top": "Quer mesmo apagar este arquivo?",
+		"_save_mobile_hint_delete_confirm_bottom": "Toque no slot novamente para confirmar ou em outro lugar para cancelar",
 
 		"_ssselect_CE1": "Esmeralda do Caos 1",
 		"_ssselect_CE2": "Esmeralda do Caos 2",
@@ -299,6 +370,15 @@
 		
 		"_zonename_GGZ_A": "Galacnik",
 		"_zonename_GGZ_B": "Gauntlet",
-		"_zonename_GGZ_C": "Zone"
+		"_zonename_GGZ_C": "Zone",
+
+		"_GAMEOVER_WORD1": "FIM DE",
+		"_GAMEOVER_WORD2": "JOGO",
+		
+		"_bad_ending_text": "Tente Novamente!\n\nColete todas as Esmeraldas do Caos\ne Pedras do Tempo!",
+		"_good_ending_text": "Sonic, Tails, e Knuckles continuam na luta\npara liberar Mobius das criações do Dr. Robotnik\naté que não restem mais robôs.\n\nObrigado por jogar!",
+		
+		"_hint_ssgyro": "Incline para virar",
+		"_hint_ggpoint": "Aponte para se mover"
 	}
 }
