@@ -26,7 +26,6 @@
           <argument>
             <kind>1</kind>
             <string>///Initialize
-if (!audio_group_is_loaded(audiogroup_sfx)) audio_group_load(audiogroup_sfx);
 state = 0;
 statePrevious = 0;
 // music types
@@ -144,8 +143,6 @@ case 6: // Play Effect
             <kind>1</kind>
             <string>///Synchronize sound variables with the audio system.
 audio_master_gain(masterGain / 100);
-audio_group_set_gain(audiogroup_sfx, sfxGain / 100, 0);
-audio_group_set_gain(audiogroup_default, bgmGain / 100, 0);
 //show_debug_message("objMusic: Synchronized sound volumes.");
 </string>
           </argument>
