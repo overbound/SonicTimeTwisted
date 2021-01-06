@@ -21,10 +21,10 @@
     <option_android_arch_mipsr2>True</option_android_arch_mipsr2>
     <option_android_arch_mipsr2sf>True</option_android_arch_mipsr2sf>
     <option_android_arch_x86>True</option_android_arch_x86>
-    <option_android_build_tools_version>28.0.3</option_android_build_tools_version>
+    <option_android_build_tools_version>23.0.1</option_android_build_tools_version>
     <option_android_build_version>0</option_android_build_version>
     <option_android_color_depth>1</option_android_color_depth>
-    <option_android_compile_sdk_version>28</option_android_compile_sdk_version>
+    <option_android_compile_sdk_version>23</option_android_compile_sdk_version>
     <option_android_display_name>Sonic Time Twisted</option_android_display_name>
     <option_android_facebook_app_display_name></option_android_facebook_app_display_name>
     <option_android_facebook_appid></option_android_facebook_appid>
@@ -93,8 +93,8 @@
     <option_android_sleep_margin>4</option_android_sleep_margin>
     <option_android_splash_png>Configs\AndroidSmartphone\android\splash.png</option_android_splash_png>
     <option_android_splash_time>0</option_android_splash_time>
-    <option_android_support_lib_version>28.0.0</option_android_support_lib_version>
-    <option_android_target_sdk_version>28</option_android_target_sdk_version>
+    <option_android_support_lib_version>23.0.1</option_android_support_lib_version>
+    <option_android_target_sdk_version>23</option_android_target_sdk_version>
     <option_android_texture_page>2048</option_android_texture_page>
     <option_android_use_test_ads>0</option_android_use_test_ads>
     <option_androidfire_GPU_device>0</option_androidfire_GPU_device>
@@ -228,19 +228,8 @@
     <option_androidtv_texture_page>1024</option_androidtv_texture_page>
     <option_androidtv_use_test_ads>false</option_androidtv_use_test_ads>
     <option_argumenterrors>True</option_argumenterrors>
-    <option_audioGroup10_targets>9223372036854775807</option_audioGroup10_targets>
-    <option_audioGroup11_targets>9223372036854775807</option_audioGroup11_targets>
-    <option_audioGroup12_targets>9223372036854775807</option_audioGroup12_targets>
     <option_audioGroup1_targets>9223372036854775807</option_audioGroup1_targets>
-    <option_audioGroup2_targets>123146089894126</option_audioGroup2_targets>
-    <option_audioGroup3_targets>9223372036854775807</option_audioGroup3_targets>
-    <option_audioGroup4_targets>9223372036854775807</option_audioGroup4_targets>
-    <option_audioGroup5_targets>9223372036854775807</option_audioGroup5_targets>
-    <option_audioGroup6_targets>9223372036854775807</option_audioGroup6_targets>
-    <option_audioGroup7_targets>9223372036854775807</option_audioGroup7_targets>
-    <option_audioGroup8_targets>9223372036854775807</option_audioGroup8_targets>
-    <option_audioGroup9_targets>9223372036854775807</option_audioGroup9_targets>
-    <option_audioGroupCount>13</option_audioGroupCount>
+    <option_audioGroupCount>2</option_audioGroupCount>
     <option_author> Bryce Stock</option_author>
     <option_backimage>nil</option_backimage>
     <option_borderless>False</option_borderless>
