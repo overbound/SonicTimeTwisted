@@ -86,7 +86,7 @@ else if image_index == 11 {
       }
         else if image_index == 4 &amp;&amp; !audio_is_playing(sndGroundSplit) &amp;&amp; objLevel.started{
         
-            audio_play_sound(sndGroundSplit,1,0);
+            play_sfx(sndGroundSplit,1);
         
       }
     

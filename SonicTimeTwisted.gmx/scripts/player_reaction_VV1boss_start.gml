@@ -18,7 +18,7 @@ argument0.remove = 2;
 // initialize boss
 with objVV1BossController {state = 1; alarm[0] = 120; alarm[1] = 25;}
 // audio
-audio_play_sound(sndHurt, 1, 0);
+play_sfx(sndHurt, 1);
 stop_all_music(false);
 // state changed
 return true;

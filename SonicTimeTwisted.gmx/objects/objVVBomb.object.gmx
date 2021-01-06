@@ -229,7 +229,7 @@ direction = 90;
 if abs(speed)&lt;1 {speed = 0; gravity = 0; image_speed = 0.25;}
 // sound
 audio_stop_sound(sndSlam);
-audio_play_sound(sndSlam, 4,0);
+play_sfx(sndSlam, 4);
 </string>
           </argument>
         </arguments>

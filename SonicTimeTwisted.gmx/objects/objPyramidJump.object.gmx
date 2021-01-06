@@ -59,7 +59,7 @@ if objGameData.character_id[0] == 1 {
             <string>gravity = .15;
 image_speed = .125;
 vspeed = -2;
-audio_play_sound(sndDashOfLight,0,0);
+play_sfx(sndDashOfLight,0);
 </string>
           </argument>
         </arguments>

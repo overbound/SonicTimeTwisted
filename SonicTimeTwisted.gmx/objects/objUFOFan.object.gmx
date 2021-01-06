@@ -65,7 +65,7 @@ audio = audio_emitter_create();
             <kind>1</kind>
             <string>    if !audio_is_playing(sndSSFan) &amp;&amp; objLevel.started {
     
-        audio_play_sound(sndSSFan,4,0);
+        play_sfx(sndSSFan,4);
         }
 </string>
           </argument>

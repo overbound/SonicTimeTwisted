@@ -132,7 +132,7 @@
    
     }
 if !audio_is_playing(sndMetalWooshLoop) &amp;&amp; !audio_is_playing(sndMetalWoosh) &amp;&amp; view_object[view_current] != noone
-audio_play_sound(sndMetalWooshLoop,1,0);
+play_sfx(sndMetalWooshLoop,1);
 </string>
           </argument>
         </arguments>

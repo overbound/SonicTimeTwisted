@@ -75,7 +75,7 @@ if switchCount &gt;= 4 {
     with switchButton[1] { instance_destroy(); }
     
     with objLevel.player[0] { player_reset_physics(); }
-    audio_play_sound(sndBombExplosion,false,0);
+    play_sfx(sndBombExplosion,false);
     instance_destroy();
 }
 </string>

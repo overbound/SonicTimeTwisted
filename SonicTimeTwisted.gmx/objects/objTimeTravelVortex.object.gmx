@@ -39,7 +39,7 @@ spr=sprite_index;
 xoffset=0;
 truex=x;
 truey=y;
-audio_play_sound(sndMetalAttack,10,false);
+play_sfx(sndMetalAttack,10);
 
 </string>
           </argument>

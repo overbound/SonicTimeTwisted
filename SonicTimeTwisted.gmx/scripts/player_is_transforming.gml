@@ -8,6 +8,6 @@ state = player_state_transform;
 spinning = false;
 jumping = false;
 jump_action = false;
-audio_play_sound(sndTransformSuper,0,0);
+play_sfx(sndTransformSuper,0);
 // hide shield
 with shield visible = false;

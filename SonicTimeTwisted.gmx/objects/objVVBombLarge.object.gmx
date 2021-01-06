@@ -91,7 +91,7 @@
             <kind>1</kind>
             <string>with instance_create(x,y,objExplosionCluster) {
  reaction_script=player_reaction_harmful;
- audio_play_sound(sndBombExplosion,1,false);
+ play_sfx(sndBombExplosion,1);
  }
 instance_destroy();
 </string>

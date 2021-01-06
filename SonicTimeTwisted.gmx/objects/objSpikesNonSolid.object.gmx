@@ -139,7 +139,7 @@
             <kind>1</kind>
             <string>///play sound
 //if hide == true &amp;&amp; !audio_is_playing(sndSpikeMove)
-//audio_play_sound(sndSpikeMove,0,false);
+//play_sfx(sndSpikeMove,0);
 </string>
           </argument>
         </arguments>

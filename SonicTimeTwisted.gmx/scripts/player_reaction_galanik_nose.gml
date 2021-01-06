@@ -45,7 +45,7 @@ if argument0.life>0
     if argument0.life<=0 
         with argument0 {
             event_user(0);
-            audio_play_sound(sndGalanikKnockBack,2,false);
+            play_sfx(sndGalanikKnockBack,2);
         }
 }
 with argument0.parentId {
@@ -62,8 +62,8 @@ with argument0 {
     }
 }
 // sound
-audio_play_sound(sndBossHit, 1, 0);
-audio_play_sound(sndGalanikHit, 1, 0);
+play_sfx(sndBossHit, 1);
+play_sfx(sndGalanikHit, 1);
 // rumble
 rumble(rumble_short_strong_double);
 // hard collision found

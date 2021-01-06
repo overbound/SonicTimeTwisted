@@ -19,4 +19,4 @@ alarm[0] = 128;
 if facing<0 shield.direction = 180; else
 shield.direction = 0;
 // sound
-audio_play_sound(sndWindFlight, 0, 0);
+play_sfx(sndWindFlight, 0);

@@ -5,7 +5,7 @@ if rings == 0 {
     objSSMessages.alarm[1] = 120;
     radius = 8;
     zground = 8;
-    audio_play_sound(sndHurt,0,0);
+    play_sfx(sndHurt,0);
 }
 else{  // lose rings
     var degree_step = 360/min(16,rings);
@@ -15,7 +15,7 @@ else{  // lose rings
         with instance_create(x,y,objSSRingFly) {
             direction = degree;
         }}
-    audio_play_sound(sndRingLoss,0,0);
+    play_sfx(sndRingLoss,0);
 }
 rings=0;
 // rumble

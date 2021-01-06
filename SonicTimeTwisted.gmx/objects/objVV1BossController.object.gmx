@@ -82,7 +82,7 @@ for (var i=0; i&lt;15; i+=1)
     collapse[i].remove = 2;
 }
 // sound
-audio_play_sound(sndCollapse, 10, false);
+play_sfx(sndCollapse, 10);
 </string>
           </argument>
         </arguments>

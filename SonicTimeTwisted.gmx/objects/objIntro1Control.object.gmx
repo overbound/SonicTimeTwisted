@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>state=0;
 objProgram.stop_sound = false;
-audio_play_sound(bgmIntro,3,0);
+play_sfx(bgmIntro,3);
 </string>
           </argument>
         </arguments>
@@ -50,7 +50,7 @@ audio_play_sound(bgmIntro,3,0);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>audio_play_sound(sndMetalWoosh,0,0);
+            <string>play_sfx(sndMetalWoosh,0);
 </string>
           </argument>
         </arguments>
@@ -165,7 +165,7 @@ audio_play_sound(bgmIntro,3,0);
             
         if visible == 0 {
         
-            audio_play_sound(sndTLPWarp,0,0);
+            play_sfx(sndTLPWarp,0);
             
             }
             

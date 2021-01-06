@@ -93,7 +93,7 @@ reaction_script=player_reaction_fireball;
             <string>/// sound
 if in_view(view_current,0) {
     if !audio_is_playing(sndGalacnikAttackLoop) &amp;&amp; objProgram.paused == false
-        audio_play_sound(sndGalacnikAttackLoop,2,false);
+        play_sfx(sndGalacnikAttackLoop,2);
 }
 </string>
           </argument>

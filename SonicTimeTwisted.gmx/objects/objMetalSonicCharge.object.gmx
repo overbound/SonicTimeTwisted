@@ -212,7 +212,7 @@ var time=0.1125;
 var distance=4;
 y = ystart+cos(objScreen.image_index*time)*distance;
 if !audio_is_playing(sndQuake) &amp;&amp; in_view(view_current,0){
-    audio_play_sound(sndQuake,4,0);
+    play_sfx(sndQuake,4);
 }
 </string>
           </argument>

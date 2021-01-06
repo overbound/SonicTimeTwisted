@@ -68,7 +68,7 @@ audio = audio_emitter_create();
     hspeed =-2*other.image_xscale;
     
 }
-audio_play_sound(sndSSLaser,4,0);
+play_sfx(sndSSLaser,4);
 alarm[0]=120;
 </string>
           </argument>

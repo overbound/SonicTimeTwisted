@@ -42,7 +42,7 @@ with argument0 {
     reaction_script = noone;
 }
 // sound
-audio_play_sound(sndUFOHit, 0, 0);
+play_sfx(sndUFOHit, 0);
 // rumble
 rumble(rumble_short_mid);
 // hard collision found

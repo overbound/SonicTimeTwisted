@@ -156,7 +156,7 @@ with instance_create(x, y, objRhinobot)
     facing = -1;
 }
 // sound
-audio_play_sound(sndCollapse, 4, 0);
+play_sfx(sndCollapse, 4);
 // destroy this
 instance_destroy();
 </string>

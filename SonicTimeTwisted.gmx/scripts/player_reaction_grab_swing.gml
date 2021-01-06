@@ -1,6 +1,6 @@
 //player_reaction_grab_swing(local_id)
 if argument0.active == false {
-    audio_play_sound(sndGrab,10,false);
+    play_sfx(sndGrab,10);
 }
 // give control to bubbles
 argument0.active = true;

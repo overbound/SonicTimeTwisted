@@ -70,7 +70,7 @@
         
     
     }
-    audio_play_sound(sndBreak,2,0);
+    play_sfx(sndBreak,2);
     instance_destroy();
 </string>
           </argument>

@@ -11,7 +11,7 @@ if argument0.image_speed>0 return false;
 argument0.image_index = 0;
 argument0.image_speed = 1;
 // sound
-audio_play_sound(sndSpring, 2, 0);
+play_sfx(sndSpring, 2);
 // states and flags
 state = player_state_fall;
 spinning = false;

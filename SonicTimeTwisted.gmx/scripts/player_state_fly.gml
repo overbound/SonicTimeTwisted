@@ -34,6 +34,6 @@ if underwater {if audio_is_playing(reserved_sound) audio_stop_sound(reserved_sou
 {
 // rumble
 rumble(rumble_short_weakest);
-if not alarm[0] {if not audio_is_playing(sndFlightEnd) {audio_stop_sound(reserved_sound); reserved_sound = audio_play_sound(sndFlightEnd, 1, 0);}} else
-if not audio_is_playing(sndFlight) {audio_stop_sound(reserved_sound); reserved_sound = audio_play_sound(sndFlight, 1, 0);}
+if not alarm[0] {if not audio_is_playing(sndFlightEnd) {audio_stop_sound(reserved_sound); reserved_sound = play_sfx(sndFlightEnd, 1);}} else
+if not audio_is_playing(sndFlight) {audio_stop_sound(reserved_sound); reserved_sound = play_sfx(sndFlight, 1);}
 }

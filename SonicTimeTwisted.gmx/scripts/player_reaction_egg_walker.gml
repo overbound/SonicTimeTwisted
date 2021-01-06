@@ -14,7 +14,7 @@ yspeed = -7;
 if character_id==3 glide_falling = false;
 with argument0 {
     if alarm[4]== -1 {
-        audio_play_sound(sndAADropBumper, 1, 0);
+        play_sfx(sndAADropBumper, 1);
     }
 }
 with argument0 {

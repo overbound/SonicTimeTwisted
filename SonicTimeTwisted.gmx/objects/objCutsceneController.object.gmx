@@ -33,7 +33,7 @@ with badnik[0]{ scale = .5; image_xscale = .5; image_yscale = .5; multiplier=2;}
 badnik[1]=instance_create(128,384,objBadnikCutscene);
 with badnik[1]{scale = .25; image_xscale = .25; image_yscale = .25; multiplier=4;}
 badnik[2]=instance_create(256,384,objBadnikCutscene);
-//audio_play_sound(bgmIntro,10,false);
+//play_sfx(bgmIntro,10);
 
 </string>
           </argument>
@@ -103,7 +103,7 @@ if alarm[0] == 0 {
     state = 2;
     with objTailsIntroPast {
         image_speed = 0.2;
-        audio_play_sound(sndTailsTalks,10,false);
+        play_sfx(sndTailsTalks,10);
     }
 }
 break;
@@ -149,7 +149,7 @@ case 5: // Bubble Forms
 with objSonicIntroPast { 
     if scale[0] &gt;= .5 {
         other.state = 6;
-        audio_play_sound(sndDreamBubble,10,false);
+        play_sfx(sndDreamBubble,10);
     }
 }
 break;
@@ -178,7 +178,7 @@ case 6: // move to memory cloud
     
     if alarm[0] == 0 {
         state = 7;
-        audio_play_sound(sndRobotnikDeath,10,false);
+        play_sfx(sndRobotnikDeath,10);
     }
 
 break;
@@ -202,7 +202,7 @@ case 8:
         sprite_index=sprCutExplosion;
         image_xscale = .1;
         image_yscale = .1;
-        audio_play_sound(sndDeathEggExplode,10,false);
+        play_sfx(sndDeathEggExplode,10);
     
     }
     state = 9;

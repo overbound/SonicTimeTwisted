@@ -13,7 +13,7 @@ player_reset_physics();
 // splash particle
 part_particles_create(objLevel.particles, x, argument0.y, objResources.splash, 1);
 // splash sound
-audio_play_sound(sndSplash, 3, 0);
+play_sfx(sndSplash, 3);
 // rumble
 rumble(rumble_short_mid);
 // not a hard collision

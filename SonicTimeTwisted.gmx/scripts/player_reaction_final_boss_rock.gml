@@ -17,7 +17,7 @@
         
         }
         
-        audio_play_sound(sndRockSmash,0,0);
+        play_sfx(sndRockSmash,0);
         instance_destroy();
     }
     

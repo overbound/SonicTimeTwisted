@@ -69,7 +69,7 @@ alarm[1] = 10;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>audio_play_sound(sndBombExplosion,1,false);
+            <string>play_sfx(sndBombExplosion,1);
 instance_create(x+8,y+42,objExplosionGroupNoSound);
 instance_create(x+64,y+8,objExplosionGroupNoSound);
 instance_create(x-12,y+62,objExplosionGroupNoSound);
@@ -99,7 +99,7 @@ instance_destroy();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>audio_play_sound(sndBombExplosion,1,false);
+            <string>play_sfx(sndBombExplosion,1);
 instance_create(x+48,y+22,objExplosionGroupNoSound);
 instance_create(x+14,y+18,objExplosionGroupNoSound);
 instance_create(x-52,y+32,objExplosionGroupNoSound);
@@ -133,7 +133,7 @@ alarm[3]=8;
 if active == false
     active = true;
     else active = false;
-audio_play_sound(sndFanSwitch,10,false);
+play_sfx(sndFanSwitch,10);
 </string>
           </argument>
         </arguments>
@@ -201,7 +201,7 @@ visible = 1;
         }
         
         if !audio_is_playing(sndSSFan) &amp;&amp; objLevel.started {
-            audio_play_sound(sndSSFan,4,0);
+            play_sfx(sndSSFan,4);
         }
         
     break;

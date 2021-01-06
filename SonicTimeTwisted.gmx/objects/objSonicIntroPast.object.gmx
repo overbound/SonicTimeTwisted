@@ -60,7 +60,7 @@ scale[2]=0;
 if image_speed &lt;&gt; 0 {
     if (!audio_is_playing(sndShakeHead)) {
     
-        audio_play_sound(sndShakeHead,10,false);
+        play_sfx(sndShakeHead,10);
     
     }
 }

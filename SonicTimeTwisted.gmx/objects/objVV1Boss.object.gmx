@@ -162,7 +162,7 @@ stop_all_music(false);
           <argument>
             <kind>1</kind>
             <string>instance_create(x, y, objExplosionGroupNoSound);
-audio_play_sound(sndBombExplosion,1,false);
+play_sfx(sndBombExplosion,1);
 </string>
           </argument>
         </arguments>
@@ -187,7 +187,7 @@ audio_play_sound(sndBombExplosion,1,false);
             <kind>1</kind>
             <string>/// move off screen and add explosion
 explosion = instance_create(x, y, objExplosionGroupNoSound);
-audio_play_sound(sndBombExplosion,1,false);
+play_sfx(sndBombExplosion,1);
 direction = 64;
 speed = 6;
 gravity = 0.24;
@@ -409,7 +409,7 @@ case 1: // just floating
     break;
 case 2: // laughing
     if !audio_is_playing(sndMetalLaugh)
-        audio_play_sound(sndMetalLaugh,1,false);
+        play_sfx(sndMetalLaugh,1);
     y += cos(offset)*0.5;
     offset += 0.25;
     image_index = 2;
@@ -516,7 +516,7 @@ case 4: // attacking
                     instance_create(x, y, objVV1BossFlyingPlatform);
                     y += 200;
                     // sound
-                    audio_play_sound(sndCollapse, 1, 0);
+                    play_sfx(sndCollapse, 1);
                 }
             }
         }
@@ -582,7 +582,7 @@ remove = 2;
 // particles
 with objVV1BossShield instance_destroy();
 explosion = instance_create(x, y, objExplosionGroupNoSound);
-audio_play_sound(sndBombExplosion,1,false);
+play_sfx(sndBombExplosion,1);
 // end fight
 alarm[1] = -1;
 alarm[2] = -1;

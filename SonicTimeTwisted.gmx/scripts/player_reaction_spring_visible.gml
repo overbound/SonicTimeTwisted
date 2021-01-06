@@ -21,7 +21,7 @@ if (argument1==-2) and (rotation_offset!=180) return false;
 // trigger spring
 argument0.image_index = 0;
 argument0.image_speed = 1;
-audio_play_sound(sndSpringHigh, 2, 0);
+play_sfx(sndSpringHigh, 2);
 // get spring vectors
 spring_hspeed = -sine[rotation_offset]*argument0.force;
 spring_vspeed = -cosine[rotation_offset]*argument0.force;

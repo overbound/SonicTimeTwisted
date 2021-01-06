@@ -243,7 +243,7 @@ if y &gt;= ycollision {
     if ydirection != 0 {
     
         alarm[0]=5;
-        audio_play_sound(sndScreenShake, 0,0);
+        play_sfx(sndScreenShake, 0);
         ydirection = 0;
         yspeed = -2;
         

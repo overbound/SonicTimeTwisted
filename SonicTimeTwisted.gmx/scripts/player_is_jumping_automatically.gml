@@ -34,5 +34,5 @@ player_in_air();
 // sound
 if(!fall_mode)
 {
-    audio_play_sound(sndJump, 0, 0);
+    play_sfx(sndJump, 0);
 }

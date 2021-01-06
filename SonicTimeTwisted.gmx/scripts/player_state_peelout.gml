@@ -19,7 +19,7 @@ if not input_check(cUP)
         xspeed = facing*12;
         peelout_charge = 0;
         // spindash sound
-        audio_play_sound(sndSpinDash, 1, 0);
+        play_sfx(sndSpinDash, 1);
         // run
         return player_is_running();
     }

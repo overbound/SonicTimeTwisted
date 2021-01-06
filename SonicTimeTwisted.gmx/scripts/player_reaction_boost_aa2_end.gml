@@ -12,7 +12,7 @@ if landed
     if (state == player_state_glide_slide) player_is_running();
 }
 // sound
-audio_play_sound(sndBoost, 0, 0);
+play_sfx(sndBoost, 0);
 set_input_enabled(false);
 // rumble
 rumble(rumble_short_strong_and_mid);

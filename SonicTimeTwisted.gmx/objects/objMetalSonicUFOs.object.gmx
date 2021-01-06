@@ -99,7 +99,7 @@ case 1: // move towards center
     sprite_index=sprMetalFordwardAppear;
     image_index=0;
     state=2;
-    audio_play_sound(sndMetalBolt,1,0);
+    play_sfx(sndMetalBolt,1);
 break;
 case 2:
     reaction_script=player_reaction_harmful;
@@ -119,7 +119,7 @@ case 3:
     screen_shake();
     
     if !audio_is_playing(sndQuake) {
-        audio_play_sound(sndQuake,0,0);
+        play_sfx(sndQuake,0);
     }
     if (objScreen.image_index mod 16 == 0) {
         

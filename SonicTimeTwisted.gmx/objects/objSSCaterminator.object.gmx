@@ -408,7 +408,7 @@ else if moving
     delay = (delay+1) mod 5;
     if (delay==0) {
     
-        for(i=0; i&lt;5; i++) with instance_create(x, y, objSSCaterminatorOrb) {/*depth=depth+other.i;*/ parent_id = other.id; timer = other.delay_offset; /*audio_play_sound(sndCaterminatorExtend,1,false);*/}
+        for(i=0; i&lt;5; i++) with instance_create(x, y, objSSCaterminatorOrb) {/*depth=depth+other.i;*/ parent_id = other.id; timer = other.delay_offset; /*play_sfx(sndCaterminatorExtend,1);*/}
     }
 }
 // facing

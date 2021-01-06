@@ -100,7 +100,7 @@ if(message == "")
 }
 else
 {
-    audio_play_sound(sndMetalSpeak,1,false);
+    play_sfx(sndMetalSpeak,1);
     message = string_upper(message);
     bubble_width = string_width(message) + 5;
     bubble_height = string_height(message) + 5;

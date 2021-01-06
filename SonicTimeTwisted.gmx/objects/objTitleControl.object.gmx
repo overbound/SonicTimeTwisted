@@ -152,7 +152,7 @@ if(name == 9)
     play_effect(bgmTitle, false);
 }
 if name &gt; 2 &amp;&amp; name &lt; 9 {
-    audio_play_sound(sndTock,0,0);
+    play_sfx(sndTock,0);
 }
 </string>
           </argument>
@@ -643,7 +643,7 @@ if(menu.state == 0)
                                         {
                                             if(levelSelect == 5 &amp;&amp; name == 8)
                                             {
-                                                audio_play_sound(sndRing,0,false);
+                                                play_sfx(sndRing,0);
                                                 levelSelect = 6;
                                                 level_select_max_presses = 0;
                                             }
@@ -782,7 +782,7 @@ if(menu.state == 0)
         case 5:
             if input_check_pressed(cDOWN) &amp;&amp; pauseState == 3 {
                 levelSelect +=1;
-                audio_play_sound(sndRing,0,false);
+                play_sfx(sndRing,0);
             } else if input_check_pressed(cRIGHT) || input_check_pressed(cUP) || input_check_pressed(cLEFT) {
                 levelSelect = 0;
             }

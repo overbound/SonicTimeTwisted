@@ -20,7 +20,7 @@ if input_check_released(cDOWN)
     // spindash sound
     spindash_pitch = 0;
     if audio_is_playing(reserved_sound) audio_stop_sound(reserved_sound);
-    audio_play_sound(sndSpinDash, 0, 0);
+    play_sfx(sndSpinDash, 0);
     // roll
     return player_is_rolling();
 }
@@ -34,7 +34,7 @@ if input_check_pressed(cACTION) and spindash_charge<8
     if spindash_pitch<11 spindash_pitch += 1;
     // spindash sound
     if audio_is_playing(reserved_sound) audio_stop_sound(reserved_sound);
-    reserved_sound = audio_play_sound(sndSpinRev, 0, 0);
+    reserved_sound = play_sfx(sndSpinRev, 0);
    // audio_sound_pitch(reserved_sound, 1+(spindash_pitch*0.075));
    audio_sound_pitch(reserved_sound, 1+(spindash_pitch*0.075));
 }

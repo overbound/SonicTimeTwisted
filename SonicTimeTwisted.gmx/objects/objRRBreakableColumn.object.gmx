@@ -175,7 +175,7 @@ remove=0;
 var i;
 // sound
 if !audio_is_playing(sndCollapse)
-    audio_play_sound(sndCollapse, 1, false);
+    play_sfx(sndCollapse, 1);
 // get bounds
 var width = sprite_width div 16;
 var height = sprite_height div 16;

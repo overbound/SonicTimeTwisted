@@ -217,7 +217,7 @@ objMusic.bossLoop = bgmBossLoop;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>audio_play_sound(sndBombExplosion, 1, false);
+            <string>play_sfx(sndBombExplosion, 1);
 </string>
           </argument>
         </arguments>
@@ -298,7 +298,7 @@ objMusic.bossLoop = bgmBossLoop;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>audio_play_sound(sndBombExplosion, 1, false);
+            <string>play_sfx(sndBombExplosion, 1);
 </string>
           </argument>
         </arguments>
@@ -379,7 +379,7 @@ objMusic.bossLoop = bgmBossLoop;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>audio_play_sound(sndBombExplosion, 1, false);
+            <string>play_sfx(sndBombExplosion, 1);
 </string>
           </argument>
         </arguments>
@@ -478,7 +478,7 @@ if (timer) {
             if (causeQuake and rootY &lt; floor_level) {
                 causeQuake = false;
                 screen_shake();
-                audio_play_sound(sndGolemFlying,1,0);
+                play_sfx(sndGolemFlying,1);
             }
             break;
         case "float down":
@@ -518,7 +518,7 @@ if (timer) {
                             if (causeQuake) {
                                 causeQuake = false;
                                 screen_shake();
-                                audio_play_sound(sndGolumnLand, 4,0);
+                                play_sfx(sndGolumnLand, 4);
                                 // rumble
                                 rumble(rumble_short_strong);
                                 
@@ -595,7 +595,7 @@ if (timer) {
                             offsetY = 0;
                             other.state = "grounded";
                             other.wait = other.__GroundedTime;
-                            audio_play_sound(sndGolemSlam,4,0);
+                            play_sfx(sndGolemSlam,4);
                             span = 426;
                             angle = radtodeg(arccos(max(min((posX - other.posX) / span,1),-1)));
                             with(objGolemTarget) instance_destroy();
@@ -653,7 +653,7 @@ if (timer) {
                //timer = 120;
                gravity=.125;
                timer = 60;
-               audio_play_sound(sndSealBombLaunch,3,0);
+               play_sfx(sndSealBombLaunch,3);
                   //stop_level_music();
                 //  objLevel.silence = true;
   
@@ -680,7 +680,7 @@ if (timer) {
                 image_angle = lerp_wrap(image_angle, 0, 0.1, 1, 360);
             }
             if (wait) {
-                if (wait == __RecoverTime) audio_play_sound(sndGolemRecover,4,0);
+                if (wait == __RecoverTime) play_sfx(sndGolemRecover,4);
                 wait -= 1;
             } else {
                 with(objGolemHand) {

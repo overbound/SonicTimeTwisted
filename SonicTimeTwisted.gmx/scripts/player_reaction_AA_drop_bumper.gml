@@ -13,7 +13,7 @@ if not argument0.alarm[0] && state != player_state_dead && state != player_state
     // bounce
     yspeed = min(-abs(yspeed), -8);
     // sound
-    audio_play_sound(sndAADropBumper, 2, 0);
+    play_sfx(sndAADropBumper, 2);
     
     // rumble
     rumble(rumble_short_strong);

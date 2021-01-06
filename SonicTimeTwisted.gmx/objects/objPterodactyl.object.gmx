@@ -209,7 +209,7 @@ step+=1;
 if instance_exists(objLevel.player[0]) {
     if abs(objLevel.player[0].x-x) &lt; 4 &amp;&amp; fire == false {
         
-        audio_play_sound(sndBombLaunch,10,false);
+        play_sfx(sndBombLaunch,10);
         with bomb[0] gravity=.25;
         with bomb[1] gravity=.25;
         fire=true;

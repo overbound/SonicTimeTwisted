@@ -19,7 +19,7 @@ if landed == false {
         // get crushed if applicable
         if wall_direction==0 and (hit_wall.harmful or terrain_id.harmful)
         {
-            audio_play_sound(sndHurt, 0, 0);
+            play_sfx(sndHurt, 0);
             return player_is_dead();
         }
         // execute reaction

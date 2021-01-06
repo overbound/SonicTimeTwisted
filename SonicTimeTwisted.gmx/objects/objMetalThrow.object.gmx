@@ -154,8 +154,8 @@ image_index=0;
             <kind>1</kind>
             <string>instance_create(x-6,y+4,objUFOLead);
 alarm[2]=30;
-audio_play_sound(sndMetalUFOAttack,10,false);
-audio_play_sound(sndMetalBolt,11,false);
+play_sfx(sndMetalUFOAttack,10);
+play_sfx(sndMetalBolt,11);
 audio_stop_sound(sndUFOFly);
 </string>
           </argument>
@@ -183,7 +183,7 @@ audio_stop_sound(sndUFOFly);
 image_index=0;
 image_speed=.5;
 alarm[1]=4;
-audio_play_sound(sndUFOFly,4,0);
+play_sfx(sndUFOFly,4);
 </string>
           </argument>
         </arguments>
@@ -221,7 +221,7 @@ case 0: // lock to nearest camera
     if instance_number(objMetalThrow) &gt; 2 instance_destroy();
     if in_view(view_current, 32) {
      state = 1;
-     audio_play_sound(sndUFOFly,10,true);
+     play_sfx(sndUFOFly,10,true);
     }
     break;
 case 1: // approach the camera
@@ -301,7 +301,7 @@ if image_speed != 0 &amp;&amp; image_index&gt;1{
             <string>// laugh if sprite for it is playing
 if sprite_index == sprMetalIdle &amp;&amp; image_index = 2{
     if !audio_is_playing(sndMetalLaugh)
-        audio_play_sound(sndMetalLaugh,1,false);
+        play_sfx(sndMetalLaugh,1);
 }
 </string>
           </argument>

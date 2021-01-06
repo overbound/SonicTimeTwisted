@@ -66,7 +66,7 @@ if !objProgram.in_past {
 
 
 alarm[0]=2000;
-audio_play_sound(sndUFOFly,2,0);
+play_sfx(sndUFOFly,2);
 </string>
           </argument>
         </arguments>

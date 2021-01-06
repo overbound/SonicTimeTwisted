@@ -253,7 +253,7 @@ for (var i = 0; i &lt; 2; i += 1)
     // set depth
     player_id[i].depth = -sign(z_depth[i]);
     // sound
-    if not audio_is_playing(player_id[i].reserved_sound) player_id[i].reserved_sound = audio_play_sound(sndOrbs, 4, 0);
+    if not audio_is_playing(player_id[i].reserved_sound) player_id[i].reserved_sound = play_sfx(sndOrbs, 4);
 }
 </string>
           </argument>

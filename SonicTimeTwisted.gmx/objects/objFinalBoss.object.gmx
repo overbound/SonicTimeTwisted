@@ -120,7 +120,7 @@ break;
 case 2: // HOW IS THIS STATE CHANGED TO 3??? We NEED TO A GOOD PLACE TO TUNR EYE TELL ON
 with arm {
     if timeline_position == 40 {
-        audio_play_sound(sndGalacnikAttack,2,false);
+        play_sfx(sndGalacnikAttack,2);
     }
     if timeline_position == 120 &amp;&amp; fire == 3 {
         other.eyeTell = true;
@@ -131,7 +131,7 @@ case 3: // Start To Fire
     laser[0]=instance_create(x,y,objFinalBossLaser);
     laser[1]=instance_create(x,y,objFinalBossLaser);
     
-    audio_play_sound(sndMetalLaser,2,false);
+    play_sfx(sndMetalLaser,2);
     with laser[0] {
     
         laser=0;

@@ -239,7 +239,7 @@ if input_check_pressed(cACTION) and onGround {
       jumping = true;
       zspeed = jump_force;
       onGround = false;
-      audio_play_sound(sndJump,0,0);    
+      play_sfx(sndJump,0);    
 
 }
 
@@ -600,12 +600,12 @@ if (!onGround)
             <string>if (!onGround) exit;
 switch other.image_index
  {
-     case 4: audio_play_sound(sndRockSmash,1,false); objProgram.temp_shield = other.image_index-4; break;
-     case 5: audio_play_sound(sndShieldBubble,1,false);  objProgram.temp_shield = other.image_index-4; break;
-     case 6: audio_play_sound(sndShieldLightning,1,false);  objProgram.temp_shield = other.image_index-4; break;
-     case 7: audio_play_sound(sndShieldFlame,1,false);  objProgram.temp_shield = other.image_index-4; break;
-     case 8: audio_play_sound(sndShieldIce,1,false); objProgram.temp_shield = other.image_index-4; break;
-     case 9: audio_play_sound(sndShieldWind,1,false); objProgram.temp_shield = other.image_index-4; break;
+     case 4: play_sfx(sndRockSmash,1); objProgram.temp_shield = other.image_index-4; break;
+     case 5: play_sfx(sndShieldBubble,1);  objProgram.temp_shield = other.image_index-4; break;
+     case 6: play_sfx(sndShieldLightning,1);  objProgram.temp_shield = other.image_index-4; break;
+     case 7: play_sfx(sndShieldFlame,1);  objProgram.temp_shield = other.image_index-4; break;
+     case 8: play_sfx(sndShieldIce,1); objProgram.temp_shield = other.image_index-4; break;
+     case 9: play_sfx(sndShieldWind,1); objProgram.temp_shield = other.image_index-4; break;
      default: player_get_lives(1);
  }
 with other instance_destroy();
@@ -635,7 +635,7 @@ rumble(rumble_short_weakest);
             <string>
 if (!onGround) exit;
 if other.sound == noone
-    other.sound = audio_play_sound(sndSSSpeedBoost,1,false);
+    other.sound = play_sfx(sndSSSpeedBoost,1);
     
 switch(other.image_index) {
 case 0:
@@ -895,7 +895,7 @@ rumble(rumble_short_strong_and_mid);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>audio_play_sound(sndBombExplosion,1,false);
+            <string>play_sfx(sndBombExplosion,1);
 
 with other {
     instance_create(x,y,obj3DExplosion);

@@ -9,6 +9,6 @@ gravity_force = 0.0625;
 xspeed = 0;
 yspeed = 0;
 // sound
-audio_play_sound(sndDrown, 0, 0);
+play_sfx(sndDrown, 0);
 // other
 depth = -255;

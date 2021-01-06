@@ -322,7 +322,7 @@ if instance_exists(objLevel.player[0]) {
 }
 if in_view(view_current,128) { 
 if not audio_is_playing(sndPropeller)
-    audio_play_sound(sndPropeller, 4, 0);
+    play_sfx(sndPropeller, 4);
 }
 </string>
           </argument>

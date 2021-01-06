@@ -189,7 +189,7 @@ part_particles_create(objLevel.particles, x, y, objResources.explosion1, 1);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>audio_play_sound(sndCaterminatorExtend,4,0);
+            <string>play_sfx(sndCaterminatorExtend,4);
 </string>
           </argument>
         </arguments>

@@ -32,7 +32,7 @@ image_alpha = 0;
 mode = 1;
 objLevel.cleared = true;
 alarm[0] = 27;
-audio_play_sound(bgmGameOver, 0, false);
+play_sfx(bgmGameOver, 0);
 
 word1 = tr('_GAMEOVER_WORD1');
 word2 = tr('_GAMEOVER_WORD2');

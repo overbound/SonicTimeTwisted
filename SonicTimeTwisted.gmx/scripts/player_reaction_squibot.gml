@@ -53,7 +53,7 @@ if argument0.life>0
      }else argument0.alarm[0]=15;
 }
 // sound
-audio_play_sound(sndBossHit, 1, 0);
+play_sfx(sndBossHit, 1);
 // rumble
 rumble(rumble_short_strong_double);
 // hard collision found

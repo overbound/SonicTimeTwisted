@@ -40,6 +40,6 @@ for (i=0; i<4; i+=1)
     part_particles_create(objLevel.particles, x, y, objResources.lspark, 1);
 }
 // sound
-audio_play_sound(sndDoubleJump, 0, 0);
+play_sfx(sndDoubleJump, 0);
 // rumble
 rumble(rumble_short_mid);

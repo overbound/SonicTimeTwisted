@@ -180,7 +180,7 @@ with player_id
             view_xview[camera.view_id] = clamp(x-view_wview[camera.view_id]*0.5, camera.left, camera.right-view_wview[camera.view_id]);
             view_yview[camera.view_id] = clamp(y-view_hview[camera.view_id]*0.5, camera.top, camera.bottom-view_hview[camera.view_id]);
             // sound
-            audio_play_sound(sndWarpOut, 0, 0);
+            play_sfx(sndWarpOut, 0);
         
             // warp out
             other.state = 1;

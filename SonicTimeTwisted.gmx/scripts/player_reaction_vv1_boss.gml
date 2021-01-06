@@ -44,6 +44,6 @@ if argument0.life>0
     if argument0.life<=0 with argument0 event_user(0);
 }
 // sound
-audio_play_sound(sndBossHit, 0, 0);
+play_sfx(sndBossHit, 0);
 // hard collision found
 return true;

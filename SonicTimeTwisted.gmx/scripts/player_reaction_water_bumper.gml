@@ -30,6 +30,6 @@ if landed && argument1 == 2 {
 // character values
 if character_id==3 glide_falling = false;
 if !audio_is_playing(sndWaterBumper)
-audio_play_sound(sndWaterBumper, 2, 0);
+play_sfx(sndWaterBumper, 2);
 // hard collision found
 return true;

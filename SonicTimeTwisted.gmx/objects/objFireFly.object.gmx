@@ -117,7 +117,7 @@ var yran =random(97)-60;
 instance_create(x+xran+40,y+yran,objExplosionCluster);
 explosionLoop+=1;
 if explosionLoop == 15 or explosionLoop == 7 or explosionLoop == 1 
-    audio_play_sound(sndBombExplosion,1,false);
+    play_sfx(sndBombExplosion,1);
 if explosionLoop &gt; 15 {
     speed = 6;
     direction = 120;
@@ -287,13 +287,13 @@ case 2: // firing
     if x &lt; objFireFlyBossController.x+64  &amp;&amp; x &gt; objFireFlyBossController.x+60 &amp;&amp; lightShot.state == 0{
         
         lightShot.state=1;
-        audio_play_sound(sndLaserShot,0,0);
+        play_sfx(sndLaserShot,0);
         //lightShot.x=x;
     
     } else if x &lt; objFireFlyBossController.x-64  &amp;&amp; x &gt; objFireFlyBossController.x-68 &amp;&amp; lightShot.state == 0{
 ;
         lightShot.state=1;
-        audio_play_sound(sndLaserShot,0,0);
+        play_sfx(sndLaserShot,0);
         //lightShot.x=x;
     
     }
@@ -316,17 +316,17 @@ case 4: // firing
     if x &lt; objFireFlyBossController.x+128  &amp;&amp; x &gt; objFireFlyBossController.x+124 &amp;&amp; lightShot.state == 0{
         
         lightShot.state=1;
-        audio_play_sound(sndLaserShot,0,0);
+        play_sfx(sndLaserShot,0);
     
     } else if x &lt; objFireFlyBossController.x-128  &amp;&amp; x &gt; objFireFlyBossController.x-132 &amp;&amp; lightShot.state == 0{
         
         lightShot.state=1;
-        audio_play_sound(sndLaserShot,0,0);
+        play_sfx(sndLaserShot,0);
     
     } else if x &lt; objFireFlyBossController.x+2  &amp;&amp; x &gt; objFireFlyBossController.x-2 &amp;&amp; lightShot.state == 0{
         
         lightShot.state=1;
-        audio_play_sound(sndLaserShot,0,0);
+        play_sfx(sndLaserShot,0);
     
     }
     lightShot.x=x+2;

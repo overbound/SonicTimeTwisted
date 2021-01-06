@@ -121,7 +121,7 @@ alarm[0]=180;
             <kind>1</kind>
             <string>with laser {
     state=1;
-    audio_play_sound(sndLaserShot,4,0);
+    play_sfx(sndLaserShot,4);
      
     x=gunId.x+xoffset;
     y=gunId.y+yoffset;

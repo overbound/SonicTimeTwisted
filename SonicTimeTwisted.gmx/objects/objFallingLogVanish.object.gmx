@@ -223,7 +223,7 @@ alarm[2]=100;
           <argument>
             <kind>1</kind>
             <string>active = 1;
-audio_play_sound(sndLogfall,4,0);
+play_sfx(sndLogfall,4);
 vsp=2;
 remove = 2;
 alarm[1] = 20;

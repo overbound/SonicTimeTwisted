@@ -16,11 +16,11 @@ argument0.image_index = 0;
 argument0.image_speed = 1;
 // sound
 if argument0.force == 16 {
-    audio_play_sound(sndSpringHigh, 2, 0);
+    play_sfx(sndSpringHigh, 2);
 } else if argument0.force == 8 {
-    audio_play_sound(sndSpringLow, 2, 0);
+    play_sfx(sndSpringLow, 2);
 } else {
-    audio_play_sound(sndSpring, 2, 0);
+    play_sfx(sndSpring, 2);
 }
 if underwater && argument0.force >= 10 {
 argument0.force *=0.5;

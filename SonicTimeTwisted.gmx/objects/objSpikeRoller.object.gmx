@@ -131,7 +131,7 @@ else
                 // get crushed if applicable
                 if wall_direction==0 and (hit_wall.harmful or terrain_id.harmful)
                 {
-                    audio_play_sound(sndHurt, 4, 0);
+                    play_sfx(sndHurt, 4);
                     player_is_dead();
                     other.player_id=noone;
                 }

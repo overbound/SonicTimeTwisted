@@ -63,6 +63,6 @@ with (local_id)
     image_speed = 1.5;
 }
 
-audio_play_sound(sndEnterSpecialStage, 1, false);
+play_sfx(sndEnterSpecialStage, 1);
 rumble(rumble_short_mid);
 return false; // 'soft' collision

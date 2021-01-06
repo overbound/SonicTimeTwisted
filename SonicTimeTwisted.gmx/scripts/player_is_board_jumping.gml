@@ -18,4 +18,4 @@ yspeed = -(sine[relative_angle]*ground_speed)-(cosine[relative_angle]*jump_const
 // set air state
 player_in_air();
 // sound
-audio_play_sound(sndJump, 0, 0);
+play_sfx(sndJump, 0);
