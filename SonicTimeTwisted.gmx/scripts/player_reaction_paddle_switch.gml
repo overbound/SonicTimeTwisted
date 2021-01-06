@@ -12,7 +12,7 @@ if abs(yspeed) < 6 {
 // move outside
 while collision_box(offset_x, offset_y, (mask_rotation mod 180), argument0) {/*x += sign(xspeed);*/ y += sign(yspeed);}
 if !audio_is_playing(sndAADropBumper) {
-        audio_play_sound(sndAADropBumper,1,0);
+        play_sfx(sndAADropBumper,1);
     
     }
 // rumble

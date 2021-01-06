@@ -129,7 +129,7 @@ reaction_script = noone;
             <kind>1</kind>
             <string>if objGalanik.state &lt; 4 {
     state = 0;
-    audio_play_sound(sndMetalLaser,10,true);
+    play_sfx(sndMetalLaser,10,true);
     visible = true;
 }
 </string>

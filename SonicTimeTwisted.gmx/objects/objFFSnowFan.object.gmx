@@ -114,7 +114,7 @@ if (ticks &gt; 0) exit;
 if room == FF1_p || room == FF2_p {
     if not audio_is_playing(sndFireBlow)
     {
-        audio_play_sound(sndFireBlow, 4, 0);
+        play_sfx(sndFireBlow, 4);
     }
 }
 var x_origin = x + x_offset + random(x_range) - (1 / 2) * x_range;

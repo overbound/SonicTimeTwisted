@@ -171,7 +171,7 @@ case "exiting":
         {
             with (objGalanik)
             {
-                audio_play_sound(sndQuake, 10, 0);
+                play_sfx(sndQuake, 10);
                 state = 5;
             }
             instance_destroy();
@@ -223,7 +223,7 @@ if (instance_exists(fireball))
 }
 fireball = instance_create(x, y, objGalanikFireball);
 fireball.platformId = target;
-audio_play_sound(sndGalacnikAttack, 2, false);
+play_sfx(sndGalacnikAttack, 2);
 state = "waiting";
 </string>
           </argument>

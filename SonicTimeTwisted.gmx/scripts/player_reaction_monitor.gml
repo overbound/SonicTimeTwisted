@@ -45,7 +45,7 @@ else
         if input_check(cACTION) yspeed = -yspeed; else yspeed = max(-jump_release, -yspeed);
     }
     // sound
-    audio_play_sound(sndPop, 1, 0);
+    play_sfx(sndPop, 1);
     
     // rumble
     rumble(rumble_short_strong);

@@ -433,7 +433,7 @@ case 3: // apply scores
     {
         // sound
         audio_stop_sound(sndBeep);
-        //audio_play_sound(sndChing, 0, false);
+        //play_sfx(sndChing, 0);
         // finished
         state += 1;
         alarm[3] = 220;
@@ -450,7 +450,7 @@ case 3: // apply scores
         {
             // sound
             audio_stop_sound(sndBeep);
-            audio_play_sound(sndBeep, 0, false);
+            play_sfx(sndBeep, 0);
         }
         // refresh values to display
         if(objScreen.score_tally_mode == 0)

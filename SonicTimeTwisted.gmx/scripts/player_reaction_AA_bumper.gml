@@ -31,7 +31,7 @@ if argument0.counter[player_id]<10
     instance_create(argument0.x, argument0.y, objScorePopup);
 }
 // sound
-audio_play_sound(sndAADropBumper, 4, 0);
+play_sfx(sndAADropBumper, 4);
 // rumble
 rumble(rumble_short_strong);
 // hard collision found

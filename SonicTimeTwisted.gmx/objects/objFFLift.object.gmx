@@ -104,7 +104,7 @@ if (lift_position &lt; 0) {lift_position = 0; lift_speed = 0;}
 if abs(lift_position - lift_click_position) &gt; 60
 {
     lift_click_position += 60 * sign(lift_position - lift_click_position);
-    audio_play_sound(sndLiftClick, 2, 0);
+    play_sfx(sndLiftClick, 2);
 }
 // update absolute position
 x = floor(xstart + lift_position * lift_facing);

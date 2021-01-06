@@ -12,7 +12,7 @@ if landed
     if (state == player_state_glide_slide) player_is_running();
 }
 // sound
-audio_play_sound(sndBoost, 1, 0);
+play_sfx(sndBoost, 1);
 // rumble
 rumble(rumble_short_strong_and_mid);
 // hard collision found

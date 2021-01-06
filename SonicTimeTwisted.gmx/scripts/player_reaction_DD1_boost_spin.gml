@@ -13,7 +13,7 @@ if landed
 }
 // sound
 if !audio_is_playing(sndSpin) {
-    audio_play_sound(sndSpin, 1, 0);
+    play_sfx(sndSpin, 1);
 }
 //with argument0 instance_destroy();
 player_is_rolling()

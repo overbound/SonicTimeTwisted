@@ -7,7 +7,7 @@ if z < zground+32{//32 {
     
         zspeed =4;
         with argument0 { instance_destroy();}
-        audio_play_sound(sndPop,0,0);
+        play_sfx(sndPop,0);
         rumble(rumble_short_strong);
     
     }

@@ -104,7 +104,7 @@ with instance_create(x,y+4,objSpinFlame) {
     
     alarm[0]=6;
     if !audio_is_playing(sndFireBlow)
-        audio_play_sound(sndFireBlow,1,false);
+        play_sfx(sndFireBlow,1);
 </string>
           </argument>
         </arguments>

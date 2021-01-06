@@ -284,7 +284,7 @@ instance_create(x,y,obj3DExplosion);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//audio_play_sound(sndCaterminatorExtend,1,0);
+            <string>//play_sfx(sndCaterminatorExtend,1);
 </string>
           </argument>
         </arguments>
@@ -545,7 +545,7 @@ if not alarm[1] and (speed!=0) and place_meeting(x, y, parent_id) alarm[1] = 1;
           <argument>
             <kind>1</kind>
             <string>//if reaction_script != noone {
-//   audio_play_sound(sndCaterminatorExtend,1,0);
+//   play_sfx(sndCaterminatorExtend,1);
 //}
 reaction_script = noone;
 </string>

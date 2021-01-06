@@ -76,7 +76,7 @@ if in_view(view_current,32) {
             <string>/// sound
 if in_view(view_current,0) {
     if !audio_is_playing(sndGalacnikAttackLoop) &amp;&amp; objProgram.paused == false
-        audio_play_sound(sndGalacnikAttackLoop,2,false);
+        play_sfx(sndGalacnikAttackLoop,2);
 }
 </string>
           </argument>

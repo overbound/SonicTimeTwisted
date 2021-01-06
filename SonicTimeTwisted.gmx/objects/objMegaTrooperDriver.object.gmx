@@ -95,7 +95,7 @@ image_speed=.2;
           <argument>
             <kind>1</kind>
             <string>with objMegaTrooper state = 8;
-audio_play_sound(sndQuake,0,false);
+play_sfx(sndQuake,0);
 </string>
           </argument>
         </arguments>
@@ -174,7 +174,7 @@ audio_play_sound(sndQuake,0,false);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>audio_play_sound(sndBombExplosion, 1, false);
+            <string>play_sfx(sndBombExplosion, 1);
 </string>
           </argument>
         </arguments>
@@ -311,7 +311,7 @@ audio_play_sound(sndQuake,0,false);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>audio_play_sound(sndBombExplosion, 1, false);
+            <string>play_sfx(sndBombExplosion, 1);
 </string>
           </argument>
         </arguments>
@@ -454,7 +454,7 @@ audio_play_sound(sndQuake,0,false);
 }
 instance_create(x,y,objMegaTrooperMoleDeath);
 visible = false;
-audio_play_sound(sndBombExplosion, 1, false);
+play_sfx(sndBombExplosion, 1);
 </string>
           </argument>
         </arguments>

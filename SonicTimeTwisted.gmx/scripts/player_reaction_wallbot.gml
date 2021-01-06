@@ -47,6 +47,6 @@ if argument0.life>0
     }
 }
 // sound
-audio_play_sound(sndBossHit, 2, 0);
+play_sfx(sndBossHit, 2);
 // hard collision found
 return true;

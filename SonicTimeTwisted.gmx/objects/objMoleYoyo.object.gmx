@@ -447,8 +447,8 @@ arm_angle = (pi * 0.25) * cos(yoyo_timer) - (pi / 6);
 var previous_yoyo_length = yoyo_length;
 yoyo_length = max(52 * sin(yoyo_timer), 0);
 // audio
-if (previous_yoyo_length == 0) and yoyo_length &gt; 0 audio_play_sound(sndYoyoThrow, 4, 0);
-if previous_yoyo_length &gt; 0 and (yoyo_length == 0) audio_play_sound(sndYoyoCatch, 4, 0);
+if (previous_yoyo_length == 0) and yoyo_length &gt; 0 play_sfx(sndYoyoThrow, 4);
+if previous_yoyo_length &gt; 0 and (yoyo_length == 0) play_sfx(sndYoyoCatch, 4);
 // determine angle
 yoyo_angle = arm_angle / 1.5;
 line_point_x = x - (facing * 10) + (facing * 25 * cos(arm_angle));

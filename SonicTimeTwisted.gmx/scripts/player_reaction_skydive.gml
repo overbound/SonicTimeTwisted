@@ -34,7 +34,7 @@ animation_new = "float";
     player_in_air();
     
     // sound
-    audio_play_sound(sndJump, false, 0);
+    play_sfx(sndJump, false);
 }*/
 // fall if not already falling
 if (yspeed >= 0) or (state != player_state_fall)

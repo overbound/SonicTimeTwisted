@@ -47,7 +47,7 @@ if landed
         {
             if relative_angle>=45 and relative_angle<=315 {if (xspeed != 0) return player_is_running(); else return player_is_standing();} else
             {
-                audio_play_sound(sndGlideLand, 1, 0);
+                play_sfx(sndGlideLand, 1);
                 rumble(rumble_short_strong);
                 return player_is_glide_standing();
             }
@@ -80,7 +80,7 @@ if jump_action
             spinning = true;
     
             // sound
-            audio_play_sound(sndSpinDash, 0, 0);
+            play_sfx(sndSpinDash, 0);
         }
         else
         // check character id

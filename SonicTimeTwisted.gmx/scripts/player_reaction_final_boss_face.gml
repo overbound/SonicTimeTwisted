@@ -50,7 +50,7 @@ with argument0.parentId {
     alarm[11] = 30;
 }
 // sound
-audio_play_sound(sndBossHit, 1, 0);
+play_sfx(sndBossHit, 1);
 // rumble
 rumble(rumble_short_strong_double);
 // hard collision found

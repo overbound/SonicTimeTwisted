@@ -124,7 +124,7 @@ instance_create(view_xview[view_current]+430,view_yview[view_current]+10+random(
           <argument>
             <kind>1</kind>
             <string>image_speed = 0.5;
-audio_play_sound(sndMetalShock, 0, false);
+play_sfx(sndMetalShock, 0);
 alarm[0] = 135;
 </string>
           </argument>
@@ -195,7 +195,7 @@ case 3: // Init Laugh
         image_speed = 0;
         state=4;
         alarm[1] = 120;
-        audio_play_sound(sndMetalLaugh,1,true);
+        play_sfx(sndMetalLaugh,1,true);
     }
     
 break;
@@ -204,7 +204,7 @@ case 4: //  Laughing
     offset += 0.25;
     if alarm[1]==0 {
         state=5;
-        audio_play_sound(sndExplosionGeneral,2,false);
+        play_sfx(sndExplosionGeneral,2);
     }
     
 break;
@@ -243,7 +243,7 @@ break;
             <kind>1</kind>
             <string>/// sound
 if !audio_is_playing(sndQuake) &amp;&amp; state &gt; 0 {
-    audio_play_sound(sndQuake,10,0);
+    play_sfx(sndQuake,10);
 }
 </string>
           </argument>

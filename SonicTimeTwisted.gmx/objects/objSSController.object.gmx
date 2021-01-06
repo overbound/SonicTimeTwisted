@@ -225,7 +225,7 @@ timeline_running=true;
         
             //screen_shake();
             
-            if !audio_is_playing(sndScreenShake) { audio_play_sound(sndScreenShake, 0,0); }
+            if !audio_is_playing(sndScreenShake) { play_sfx(sndScreenShake, 0); }
         }
         
     break;
@@ -234,7 +234,7 @@ timeline_running=true;
     
         if flashAlpha == .25 {
         
-            audio_play_sound(sndSSBlast, 0,0);
+            play_sfx(sndSSBlast, 0);
         
         }     
     

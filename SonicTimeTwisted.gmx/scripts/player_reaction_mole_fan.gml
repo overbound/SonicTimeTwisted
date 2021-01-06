@@ -44,7 +44,7 @@ if argument0.life>0
     if argument0.life<=0 
     with argument0 {
        if audio_is_playing(sndBombExplosion)
-        audio_play_sound(sndBombExplosion,1,false);
+        play_sfx(sndBombExplosion,1);
        instance_create(x,y,objExplosionGroupNoSound)
        instance_create(x+24,y+10,objExplosionGroupNoSound)
        instance_create(x-12,y+32,objExplosionGroupNoSound)
@@ -58,7 +58,7 @@ if argument0.life>0
 }
 // sound
 if !audio_is_playing(sndBossHit)
-    audio_play_sound(sndBossHit, 1, 0);
+    play_sfx(sndBossHit, 1);
 // rumble
 rumble(rumble_short_strong_double);
 // hard collision found

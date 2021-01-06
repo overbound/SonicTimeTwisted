@@ -115,7 +115,7 @@ with instance_create(x-20,y,objSmallRock) {
 with instance_create(x,y+32,objSmallRock) {
     direction = 240;
 }
-audio_play_sound(sndRockSmash,2,0);
+play_sfx(sndRockSmash,2);
 instance_destroy();
 
 </string>

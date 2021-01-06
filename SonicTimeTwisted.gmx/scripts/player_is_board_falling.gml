@@ -21,4 +21,4 @@ xspeed = cosine[relative_angle]*xspeed;
 // set air state
 player_in_air();
 // sound
-//audio_play_sound(sndJump, 0, 0);
+//play_sfx(sndJump, 0);

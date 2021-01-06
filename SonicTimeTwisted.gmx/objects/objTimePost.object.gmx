@@ -202,8 +202,8 @@ with player_id
         // camera
         camera.alarm[0] = 128;
         // audio
-        if objProgram.in_past audio_play_sound(sndChantFuture, 1, false); else
-        audio_play_sound(sndChantPast, 1, false);
+        if objProgram.in_past play_sfx(sndChantFuture, 1); else
+        play_sfx(sndChantPast, 1);
         // time travel
         player_is_exiting();
         exit;

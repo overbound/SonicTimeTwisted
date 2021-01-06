@@ -9,7 +9,7 @@ argument0.timeline_loop = true;
 objProgram.spawn_tag = argument0.tag;
 objProgram.spawn_time = objLevel.timer;
 // sound
-audio_play_sound(sndLampPost, 1,0);
+play_sfx(sndLampPost, 1);
 // rumble
 rumble(rumble_short_mid_double);
 // not a hard collision

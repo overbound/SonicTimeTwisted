@@ -184,11 +184,11 @@ if !opening exit;
         { 
             // decrease scale to normal
             title_scale[title_word, title_pos[title_word]] = max(title_scale[title_word, title_pos[title_word]]-title_speed, 1);
-            if title_word &lt; 3 &amp;&amp; title_scale[title_word, title_pos[title_word]] == 1 audio_play_sound(sndDingOpen, 1, false);
+            if title_word &lt; 3 &amp;&amp; title_scale[title_word, title_pos[title_word]] == 1 play_sfx(sndDingOpen, 1);
             else if title_word == 3 &amp;&amp; title_scale[title_word, title_pos[title_word]] == 1 {
             
                 // Start Race
-                audio_play_sound(sndDingEnd, 1, false);
+                play_sfx(sndDingEnd, 1);
                 
                 if (!global.special_level_music_played) {
                     if (audio_is_playing(objMusic.musicIntro) == false &amp;&amp; audio_is_playing(objMusic.musicLoop) == false) {

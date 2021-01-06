@@ -98,7 +98,7 @@ if life &lt;= 0 {
         camera.bottom = view_yview+view_hview;
     
     }
-    audio_play_sound(sndGalanikDeathScreech,0,false);
+    play_sfx(sndGalanikDeathScreech,0);
     instance_create(x,y,objFinalEnding);
     instance_destroy();
    

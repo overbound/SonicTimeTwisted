@@ -43,7 +43,7 @@
 explodeOffset = 0;
 state = 0;
 image_alpha = 1;
-//audio_play_sound(sndSSEndExplosion,12,false);
+//play_sfx(sndSSEndExplosion,12);
 screen_y = 0;
 screenshot = -1;
 </string>

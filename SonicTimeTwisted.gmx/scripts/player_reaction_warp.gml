@@ -17,6 +17,6 @@ jumping = false;
 jump_action = false;
 rolling_jump = false;
 // sound
-audio_play_sound(sndWarpIn, 1, 0);
+play_sfx(sndWarpIn, 1);
 // hard collision found
 return true;

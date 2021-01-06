@@ -49,7 +49,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>audio_play_sound(sndDashOfLight,10,false);
+            <string>play_sfx(sndDashOfLight,10);
 </string>
           </argument>
         </arguments>

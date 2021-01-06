@@ -59,7 +59,7 @@ case 0:
     if offset &lt;= 0 {
         offset = 0;
         state = 1;
-        audio_play_sound(sndGalanikLaugh,1,false);
+        play_sfx(sndGalanikLaugh,1);
     }
 break;
 case 1:

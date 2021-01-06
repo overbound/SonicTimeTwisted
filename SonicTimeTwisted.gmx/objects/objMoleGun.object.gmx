@@ -427,7 +427,7 @@ case 2: // aiming
     gun_angle = arm_angle;
     break;
 case 3: // firing
-    if not audio_is_playing(sndFireBlow) audio_play_sound(sndFireBlow, 3,0);
+    if not audio_is_playing(sndFireBlow) play_sfx(sndFireBlow, 3);
     if (timer == 120)
     {
         state = 0

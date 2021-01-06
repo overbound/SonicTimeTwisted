@@ -22,7 +22,7 @@ if character_id==3 glide_falling = false;
 if underwater && shield_type != 1
     underwater_count = 1800;
 // sound
-audio_play_sound(sndSpin, 1, 0);
+play_sfx(sndSpin, 1);
 // reset music
 if audio_is_playing(bgmDrowning) {
     stop_all_music(true);

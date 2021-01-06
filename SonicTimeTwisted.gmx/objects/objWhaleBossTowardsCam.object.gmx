@@ -84,7 +84,7 @@ case 0: // Move forward
         instance_create(objTTBossController.x,objTTBossController.y-192,objHarmfulBlock);
         instance_create(objTTBossController.x+112,objTTBossController.y-192,objHarmfulBlock);
         instance_create(objTTBossController.x+224,objTTBossController.y-192,objHarmfulBlock);
-        audio_play_sound(sndBreak,0,0);
+        play_sfx(sndBreak,0);
     }
 break;
 case 1: // Move back
@@ -112,7 +112,7 @@ case 2: // Move Forward
         instance_create(objTTBossController.x+145,objTTBossController.y-192,objHarmfulBlock);
         instance_create(objTTBossController.x+290,objTTBossController.y-192,objHarmfulBlock);
         state=3;
-        audio_play_sound(sndBreak,0,0);
+        play_sfx(sndBreak,0);
     }
 break;
 case 3: // Move back
@@ -142,7 +142,7 @@ case 4: // Move Forward
         instance_create(objTTBossController.x+160,objTTBossController.y-192,objHarmfulBlock);
         instance_create(objTTBossController.x+260,objTTBossController.y-192,objHarmfulBlock);
         state = 5;
-        audio_play_sound(sndBreak,0,0);
+        play_sfx(sndBreak,0);
     }
 break;
 case 5:

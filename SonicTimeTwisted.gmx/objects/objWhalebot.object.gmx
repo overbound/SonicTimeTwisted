@@ -256,7 +256,7 @@ if (turning != 0)
 if sprite_index == sprWhalebotPast &amp;&amp; objLevel.started == true{
     
     if !audio_is_playing(sndPropeller)
-    audio_play_sound(sndPropeller,4,0);
+    play_sfx(sndPropeller,4);
     
     }
     

@@ -54,6 +54,6 @@ if argument0.life>0
      argument0.alarm[0] = 15;
 }
 // sound
-audio_play_sound(sndBossHit, 0, 0);
+play_sfx(sndBossHit, 0);
 // hard collision found
 return true;

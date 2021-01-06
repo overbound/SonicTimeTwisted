@@ -24,4 +24,4 @@ shield.timeline_position = 0;
 // rumble
 rumble(rumble_short_mid);
 // sound
-audio_play_sound(sndFlameDash, 0, 0);
+play_sfx(sndFlameDash, 0);

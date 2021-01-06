@@ -55,7 +55,7 @@ argument0.timeline_running = true;
 // sound
 //stop_level_music();
 with objLevel silence = true;
-audio_play_sound(sndSignPost, 3, 0);
+play_sfx(sndSignPost, 3);
 // rumble
 rumble(rumble_act1_spin_signpost);
 // not a hard collision

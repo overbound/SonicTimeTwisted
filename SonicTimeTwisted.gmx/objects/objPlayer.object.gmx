@@ -304,9 +304,9 @@ if underwater and shield_type!=1 and !objProgram.cutscene
     underwater_count -= 1;
     switch underwater_count
     {
-        case 1440: case 1140: case 840: audio_play_sound(sndDrownTimer, 0, 0); break;
+        case 1440: case 1140: case 840: play_sfx(sndDrownTimer, 0); break;
         case 660: case 550: case 440: case 330: case 220: case 110:
-            audio_play_sound(sndDrownWarning, 0, 0);
+            play_sfx(sndDrownWarning, 0);
             waterCountTime = 100;
             waterCountDigit = (underwater_count / 110) - 1;
             waterCountAlpha = 0;
@@ -371,7 +371,7 @@ default: // normal activity
     /*if objGameData.timeout and objLevel.timer_enabled and not (objLevel.cleared or objLevel.timer)
     {
         objProgram.spawn_time = 36000;
-        audio_play_sound(sndHurt, 0, 0);
+        play_sfx(sndHurt, 0);
         player_is_dead();
     }*/
 

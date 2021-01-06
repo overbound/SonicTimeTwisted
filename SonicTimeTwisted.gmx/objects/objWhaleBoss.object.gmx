@@ -106,7 +106,7 @@ gravity=.25;
 var yran =random(60)-20;
 instance_create(x+xran+40,y+yran,objExplosionCluster);
 if explosionLoop == 1 or explosionLoop == 8 or explosionLoop == 16 or explosionLoop == 24
-    audio_play_sound(sndBombExplosion,1,false);
+    play_sfx(sndBombExplosion,1);
 if explosionLoop &gt; 24 {
     alarm[2]=4;
 } else {
@@ -235,7 +235,7 @@ case 1: // Jump start left
     sprite_index = sprWhaleBossJump;
     jaw.sprite_index=sprWhaleBossJaw;
     state = 2;
-    audio_play_sound(sndWaterBumper,1,false);
+    play_sfx(sndWaterBumper,1);
     with objLevel.player[0] {
         other.x = objTTBossController.x + 500; //500
         other.y = objTTBossController.y + 340; //320
@@ -257,7 +257,7 @@ case 3: // Start Move Right
     direction=0;
     sprite_index = sprWhaleBoss;
     image_xscale = -1;
-    audio_play_sound(sndWaterBumper,1,false);
+    play_sfx(sndWaterBumper,1);
 break;
 case 4: // Move Right
     x+=8;
@@ -276,7 +276,7 @@ case 5: // Start Move Left
     direction=0;
     sprite_index = sprWhaleBoss;
     image_xscale = 1;
-    audio_play_sound(sndWaterBumper,1,false);
+    play_sfx(sndWaterBumper,1);
 break;
 case 6: // Move Left
     x-=8;
@@ -297,7 +297,7 @@ case 8: // Jump start Left
     state = 9;
     image_xscale = 1;
     image_yscale = 1;
-    audio_play_sound(sndWaterBumper,1,false);
+    play_sfx(sndWaterBumper,1);
     with objLevel.player[0] {
     other.x = objTTBossController.x + 380; //500
     other.y = objTTBossController.y + 320; //340
@@ -318,7 +318,7 @@ case 10: // Jump start Right
     state = 11;
     image_xscale = 1;
     image_yscale = 1;
-    audio_play_sound(sndWaterBumper,1,false);
+    play_sfx(sndWaterBumper,1);
     jaw.sprite_index=sprWhaleBossJawInvert
     with objLevel.player[0] {
     other.x = objTTBossController.x - 380; //500
@@ -339,7 +339,7 @@ case 12:
     gravity=0;
     speed=0;
     if !audio_is_playing(sndSplash)
-        audio_play_sound(sndSplash,4,0);
+        play_sfx(sndSplash,4);
     with objLevel.player[0].camera right=10368;
     state=13;
     

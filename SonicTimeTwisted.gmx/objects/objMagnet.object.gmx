@@ -125,7 +125,7 @@ if start == true &amp;&amp; visible == true &amp;&amp; right &lt; 128 {
 if start == true {
     if !audio_is_playing(sndSSUFOMagnet) &amp;&amp; objLevel.started{
     
-        audio_play_sound(sndSSUFOMagnet,3,0);
+        play_sfx(sndSSUFOMagnet,3);
         }
 }
 if image_blend == c_white {

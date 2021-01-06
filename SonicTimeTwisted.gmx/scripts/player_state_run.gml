@@ -155,7 +155,7 @@ if input_check_pressed(cACTION) and not player_collision_ceiling(offset_y+5) ret
 // rolling (ignore if holding forward/backward)
 if (input_check(cDOWN) && input_axis_x() == 0 && abs(xspeed) >= roll_threshold) && terrain_id != objPlaneGimmick
 {
-    audio_play_sound(sndSpin, 0,0);
+    play_sfx(sndSpin, 0);
     return player_is_rolling();
 }
 // animate

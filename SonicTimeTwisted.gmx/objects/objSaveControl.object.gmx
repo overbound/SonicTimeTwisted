@@ -331,7 +331,7 @@ if selectState == 0 || selectState == 4 {
         if input_check_pressed(cLEFT) {
             xSpeed=-1;
             selectCheck -=1;
-            audio_play_sound(sndBeep,10,false);
+            play_sfx(sndBeep,10);
         }
     }
     
@@ -339,7 +339,7 @@ if selectState == 0 || selectState == 4 {
         if input_check_pressed(cRIGHT) {
             xSpeed=1;
             selectCheck +=1;
-            audio_play_sound(sndBeep,10,false);
+            play_sfx(sndBeep,10);
         }
     }
 }
@@ -356,13 +356,13 @@ else if selectState == 5 {
         // Delete slot - same code handles button press &amp; smartphone click
         event_user(2);
         sprite_index = sprSaveControl;
-        audio_play_sound(sndHurt, 0, 0);
+        play_sfx(sndHurt, 0);
         selectState = 0;
         
     }
     if input_check_pressed(cRIGHT) {
         sprite_index = sprSaveControl;
-        audio_play_sound(sndCancel, 0, 0);
+        play_sfx(sndCancel, 0);
         selectState =0;    
     
     }   
@@ -437,7 +437,7 @@ if xSpeed == 0 {
             if input_check_pressed(cB) {
                 other.selectState = 0;
                 allowLevelStart = false;
-                audio_play_sound(sndCancel, 0, 0);
+                play_sfx(sndCancel, 0);
             }
             if input_check_released(cA) || input_check_pressed(cSTART) {
                 allowLevelStart = true;
@@ -934,7 +934,7 @@ if(drag_registered)
             {
                 characterSelect = 1;
             }
-            audio_play_sound(sndBeep, 0, 0);
+            play_sfx(sndBeep, 0);
         }
     }
     if (y_drag &gt; 8)
@@ -945,7 +945,7 @@ if(drag_registered)
             {
                 characterSelect = CHARS_COUNT;
             }
-            audio_play_sound(sndBeep, 0, 0);
+            play_sfx(sndBeep, 0);
         }
     }
 }
@@ -961,7 +961,7 @@ if(tap_registered)
     {
         // create new save file - same code handles button press &amp; smartphone click
         event_user(1);
-        audio_play_sound(sndBeep, 0, 0);
+        play_sfx(sndBeep, 0);
     }
     else
     {
@@ -977,7 +977,7 @@ else
 }
 if(cancelled)
 {
-    audio_play_sound(sndCancel, 0, 0);
+    play_sfx(sndCancel, 0);
     selectState = 0;
     slots[selectCheck].allowLevelStart = false;
     // Hints update
@@ -1083,14 +1083,14 @@ if(tap_registered)
     {
         event_user(2);
         sprite_index = sprSaveControl;
-        audio_play_sound(sndHurt, 0, 0);
+        play_sfx(sndHurt, 0);
         selectState = 0;
         // Hints update
         event_user(3);
     }
     else
     {
-        audio_play_sound(sndCancel, 0, 0);
+        play_sfx(sndCancel, 0);
         sprite_index = sprSaveControl;
         selectState = 0;
         // Hints update
@@ -1252,7 +1252,7 @@ if(tap_registered)
     var clicked_on = instance_position(mouse_x, mouse_y, objSaveSlot);
     if(clicked_on != noone)
     {
-        audio_play_sound(sndBeep, 0, 0);
+        play_sfx(sndBeep, 0);
         selectCheck = clicked_on.position;
         x = clicked_on.x;
         event_user(0);
@@ -1262,7 +1262,7 @@ if(tap_registered)
         clicked_on = instance_position(mouse_x, mouse_y, objNoSaveSlot);
         if(clicked_on != noone)
         {
-            audio_play_sound(sndBeep, 0, 0);
+            play_sfx(sndBeep, 0);
             selectCheck = clicked_on.position;
             x = clicked_on.x;
             event_user(0);
@@ -1272,7 +1272,7 @@ if(tap_registered)
             clicked_on = instance_position(mouse_x, mouse_y, objDeleteSlot);
             if(clicked_on != noone)
             {
-                audio_play_sound(sndBeep, 0, 0);
+                play_sfx(sndBeep, 0);
                 selectCheck = clicked_on.position;
                 x = clicked_on.x;
                 event_user(0);

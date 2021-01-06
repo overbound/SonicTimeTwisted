@@ -139,7 +139,7 @@ vspeed = 0;
 gravity = 0;
 // sound
 audio_stop_sound(sndSpikeLand);
-audio_play_sound(sndSpikeLand, 4,0);
+play_sfx(sndSpikeLand, 4);
 // flicker out
 alarm[0] = 80;
 </string>
@@ -176,7 +176,7 @@ vspeed = 0;
 gravity = 0;
 // sound
 audio_stop_sound(sndSpikeLand);
-audio_play_sound(sndSpikeLand, 4, 0);
+play_sfx(sndSpikeLand, 4);
 // flicker out
 alarm[0] = 80;
 </string>

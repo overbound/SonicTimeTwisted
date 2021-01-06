@@ -52,4 +52,4 @@ facing = sign(terrain_id.slide);
     }
 // sound
 if !audio_is_playing(sndSnowBoarding)
-    audio_play_sound(sndSnowBoarding,10,false);
+    play_sfx(sndSnowBoarding,10);

@@ -165,7 +165,7 @@ case -1: // fade in
 }
 
 if !audio_is_playing(sndQuake) {
-    audio_play_sound(sndQuake,10,false);
+    play_sfx(sndQuake,10);
 }
 with objCamera {
     top=0;

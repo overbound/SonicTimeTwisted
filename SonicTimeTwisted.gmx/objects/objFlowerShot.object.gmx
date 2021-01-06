@@ -262,7 +262,7 @@ with instance_create(x+12, y+8, objShieldIceBlockDebris) {depth = other.depth-1;
           <argument>
             <kind>1</kind>
             <string>if in_view(view_current,0) {
-    audio_play_sound(sndBombLaunch,4,0);
+    play_sfx(sndBombLaunch,4);
     
     with instance_create(x,y-20,objFireball) {
     direction = 120;

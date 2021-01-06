@@ -383,7 +383,7 @@ case 2:
     
     if fire_debris == 0 {
     with instance_create(x+16,y+6,objOstrichDibris) {
-        audio_play_sound(sndRockSmash,5,0);
+        play_sfx(sndRockSmash,5);
         sprite_index = sprOstrichDebris;
         image_index = 1;
         image_speed = 0;

@@ -300,7 +300,7 @@ if shot[shot_number]&gt;0
     shot[shot_number] -= 1;
     if not shot[shot_number]
     {
-        audio_play_sound(sndSaucerShoot,4,0);
+        play_sfx(sndSaucerShoot,4);
         // fire shot
         instance_create(x-4, y+8, objSauceroidFire);
         // animate
@@ -343,7 +343,7 @@ case 3: // move out
     break;
 }
 if in_view(camera.view_id, 32) &amp;&amp; !audio_is_playing(sndSaucerHover)
-audio_play_sound(sndSaucerHover,1,0);
+play_sfx(sndSaucerHover,1);
 </string>
           </argument>
         </arguments>

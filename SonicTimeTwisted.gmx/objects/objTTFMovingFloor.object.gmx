@@ -201,7 +201,7 @@ if move == true {
         y=floor(ycord);
         
         if !audio_is_playing(sndQuake)
-            audio_play_sound(sndQuake,12,true);
+            play_sfx(sndQuake,12,true);
     } else {
         
         y=704;

@@ -76,7 +76,7 @@ if shot &lt; 2 {
     shot = 0;
     alarm[0]=300;
 }
-audio_play_sound(sndBombLaunch,1,false);
+play_sfx(sndBombLaunch,1);
 </string>
           </argument>
         </arguments>

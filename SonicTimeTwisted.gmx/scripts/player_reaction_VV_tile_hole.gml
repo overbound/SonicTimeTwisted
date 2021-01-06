@@ -8,14 +8,14 @@ if (path_index != -1)
     argument0.image_index = character_id - 1;
 }
 // sound
-audio_play_sound(sndBreak, 2, 0);
+play_sfx(sndBreak, 2);
 // clear timer
 underwater = false;
 underwater_count = -1;
 // modify stats
 player_reset_physics();
 // splash sound
-audio_play_sound(sndSplash, 1, 0); 
+play_sfx(sndSplash, 1); 
 // cancel drowning music
     if player_id==0 { 
  //               stop_music_drowning();

@@ -90,7 +90,7 @@ gun_id=0;
           <argument>
             <kind>1</kind>
             <string>state=1;
-audio_play_sound(sndLaserShot,4,0);
+play_sfx(sndLaserShot,4);
 </string>
           </argument>
         </arguments>

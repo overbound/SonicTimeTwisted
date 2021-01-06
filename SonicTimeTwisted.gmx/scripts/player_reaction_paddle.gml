@@ -18,7 +18,7 @@ if (bbox_bottom < argument0.y && argument0.top == false) || (bbox_top > argument
     
     if !audio_is_playing(sndAADropBumper) {
     
-            audio_play_sound(sndAADropBumper,1,0);
+            play_sfx(sndAADropBumper,1);
         
         }
     
