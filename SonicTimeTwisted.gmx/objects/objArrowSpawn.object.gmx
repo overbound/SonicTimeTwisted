@@ -42,7 +42,6 @@
             <string>image_index=0;
 image_speed=0;
 alarm[0]=40;
-audio = audio_emitter_create();
 </string>
           </argument>
         </arguments>
@@ -87,7 +86,7 @@ audio = audio_emitter_create();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if in_view(self, 0) &amp;&amp; alarm[0] == -1 {
+            <string>if in_view(0, 0) &amp;&amp; alarm[0] == -1 {
     alarm[0] = 250;
 }
 if alarm[0] == 240 {
@@ -99,7 +98,7 @@ if alarm[0] == 10 {
 else if alarm[0] == 0 {
     instance_create(x,y-4,objArrowParent);
     if objProgram.in_past == false
-        audio_play_sound(sndLaserShot,4,0);
+        play_sfx(sndLaserShot,4);
 }
 </string>
           </argument>
