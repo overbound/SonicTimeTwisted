@@ -33,6 +33,7 @@ if (_soundLoop != true && _soundLoop != false) {
 }
 
 var _soundInstance = audio_play_sound(_soundAssetIndex, _soundPriority, _soundLoop);
-audio_sound_gain(_soundInstance, objMusic.sfxGain / 100, 0);
+var _myVolume = sfx_special_volume(_soundAssetIndex) * (objMusic.sfxGain / 100);
+audio_sound_gain(_soundInstance, _myVolume, 0);
 
 return _soundInstance;

@@ -3708,6 +3708,7 @@
         <script>scripts\play_sfx.gml</script>
         <script>scripts\play_sfx_at.gml</script>
         <script>scripts\stop_all_music.gml</script>
+        <script>scripts\sfx_special_volume.gml</script>
       </scripts>
       <scripts name="Helper">
         <script>scripts\string_explode.gml</script>
@@ -5732,10 +5733,6 @@
   <help>
     <rtf>help.rtf</rtf>
   </help>
-  <audiogroups name="audiogroups">
-    <audiogroup name="audiogroup_default"/>
-    <audiogroup name="audiogroup_sfx"/>
-  </audiogroups>
   <TutorialState>
     <IsTutorial>0</IsTutorial>
     <TutorialName></TutorialName>
