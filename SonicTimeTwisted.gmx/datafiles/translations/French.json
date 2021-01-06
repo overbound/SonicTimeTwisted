@@ -140,16 +140,16 @@
 		"_splash_DoNotSell": "Ne pas commercialiser!",
 
 		"_options_menu_Title": "Options",
-		"_options_menu_Video": "Options vidéo",
+		"_options_menu_Video": "Paramètres vidéo",
 		"_options_menu_Input_Method": "Périphérique d'entrée",
-		"_options_menu_Configure_Touchscreen": "Configurer l'écran tactile",
-		"_options_menu_Map_keys": "Affecter les touches du clavier",
-		"_options_menu_Map_gamepad": "Affecter les commandes de la manette",
-		"_options_menu_Map_BTUSB_device": "Réglages du périphérique BT/USB",
+		"_options_menu_Configure_Touchscreen": "Paramètres de l'écran tactile",
+		"_options_menu_Map_keys": "Paramètres du clavier",
+		"_options_menu_Map_gamepad": "Paramètres de la manette",
+		"_options_menu_Map_BTUSB_device": "Paramètres du périphérique BT/USB",
 		"_options_menu_WaD": "Avertissements & mentions légales",
 		"_options_menu_Back": "< Retour",
 		"_options_menu_Remap_all": "Tout réaffecter",
-		"_options_menu_Localization": "Réglages de traduction",
+		"_options_menu_Localization": "Paramètres de localisation",
 		"_btusb_joymap_Rumble": "Vibrations",
 		"_btusb_joymap_Device": "Périphérique",
 		"_btusb_joymap_Device_Disabled": "Périph. désactivé",
@@ -164,16 +164,16 @@
 		"_options_menu_InputLabel_Touchscreen": "Écran tactile",
 		"_options_menu_InputLabel_Gamepad": "Manette",
 		"_options_menu_InputLabel_Keyboard": "Clavier",
-		"_options_menu_InputLabel_BTUSB_device": "Périphérique BT/USB",
+		"_options_menu_InputLabel_BTUSB_device": "Périph. BT/USB",
 		
 		"_options_menu_keymap_press": "Appuyez sur \"%0\"",
 		
-		"_options_menu_sound_title": "Configuration du son",
+		"_options_menu_sound_title": "Paramètres audio",
 		"_options_menu_sound_Master_Volume": "Volume principal",
 		"_options_menu_sound_SFX_Volume": "Volume des effets sonores",
 		"_options_menu_sound_Music_Volume": "Volume de la musique",
 
-		"_options_menu_touchscreen_title": "Configuration de l'écran tactile",
+		"_options_menu_touchscreen_title": "Paramètres de l'écran tactile",
 		"_options_menu_touchscreen_Reposition_buttons": "Repositionner les boutons",
 		"_options_menu_touchscreen_Button_size": "Taille des boutons",
 		"_options_menu_touchscreen_DPad_mode": "Mode de croix directionnelle",
@@ -181,7 +181,7 @@
 		"_options_menu_touchscreen_Dead_zone": "Zone morte",
 		"_options_menu_touchscreen_Special_stage_controls": "Contrôles du niveau spécial",
 		"_options_menu_touchscreen_Final_zone_controls": "Contrôles du dernier niveau",
-		"_options_menu_touchscreen_Configure_vibrations": "Configurer les vibrations",
+		"_options_menu_touchscreen_Configure_vibrations": "Paramètres des vibrations",
 		"_options_menu_touchscreen_OpacitySlider": "Opacité (%)",
 		"_options_menu_touchscreen_DeadzoneSlider": "Zone morte (%)",
 
@@ -192,15 +192,15 @@
 		"_options_menu_touchscreen_dpadmode_Static": "Statique",
 		"_options_menu_touchscreen_dpadmode_Dynamic": "Dynamique",
 
-		"_options_menu_touchscreen_gyrogglabel_DPad": "Croix directionnelle",
-		"_options_menu_touchscreen_gyrogglabel_Point": "Appui sur écran",
+		"_options_menu_touchscreen_gyrogglabel_DPad": "Croix dir.",
+		"_options_menu_touchscreen_gyrogglabel_Point": "Appuis",
 
 		"_options_menu_touchscreen_buttonreposition_back": "Appuyez sur retour pour appliquer ou annuler",
 		"_options_menu_touchscreen_buttonreposition_save": "Appliquer",
 		"_options_menu_touchscreen_buttonreposition_discard": "Annuler",
 		"_options_menu_touchscreen_buttonreposition_default": "Restaurer la configuration par défaut",
 
-		"_options_menu_gyroscope_Title": "Configuration du gyroscope",
+		"_options_menu_gyroscope_Title": "Paramètres du gyroscope",
 		"_options_menu_gyroscope_Mode": "Mode",
 		"_options_menu_gyroscope_Trigger_angle": "Angle de déclenchement",
 		"_options_menu_gyroscope_Start_angle": "Angle de début",
@@ -208,7 +208,7 @@
 		"_options_menu_gyroscope_Simulate_button": "Simulation de boutons",
 		"_options_menu_gyroscope_Pseudo_analog": "Pseudo-analogique",
 
-		"_options_menu_touchscreen_vibration_Title": "Configuration des vibrations",
+		"_options_menu_touchscreen_vibration_Title": "Paramètres des vibrations",
 		"_options_menu_touchscreen_vibration_Haptic_feedback": "Retour tactile",
 		"_options_menu_touchscreen_vibration_Duration": "Durée",
 		"_options_menu_touchscreen_vibration_Strength": "Puissance",
@@ -221,9 +221,9 @@
 
 		"_options_menu_touchscreen_sstage_Title": "Contrôles du niveau spécial",
 		"_options_menu_touchscreen_sstage_Dead_zone": "Zone morte",
-		"_options_menu_touchscreen_sstage_Configure_gyroscope": "Configurer le gyroscope",
+		"_options_menu_touchscreen_sstage_Configure_gyroscope": "Paramètres du gyroscope",
 		"_options_menu_touchscreen_sstage_SliderDeadZone": "Zone morte (%)",
-		"_options_menu_touchscreen_sstage_DPad": "Croix directionnelle",
+		"_options_menu_touchscreen_sstage_DPad": "Croix dir.",
 		"_options_menu_touchscreen_sstage_Gyroscope": "Gyroscope",
 		
 		"_buttonname_Up": "Haut",
@@ -235,11 +235,11 @@
 		"_buttonname_C": "C",
 		"_buttonname_Start": "Start",
 		
-		"_options_menu_keymap_incomplete": "Affectations incomplètes. Affectez toutes\ntoutes les commandes ou passez sur les paramétrages par défaut.",
+		"_options_menu_keymap_incomplete": "Affectations incomplètes. Réaffectez toutes les\ncommandes ou passez sur les paramétrages par défaut.",
 		"_options_menu_keymap_remap": "Réaffecter",
 		"_options_menu_keymap_reset": "Par défaut",
 		
-		"_graphics_menu_Title": "Options vidéo",
+		"_graphics_menu_Title": "Paramètres vidéo",
 		"_graphics_menu_Screen_size": "Taille de l'écran",
 		"_graphics_menu_Stm": "Décomptes",
 		"_graphics_menu_Fr": "Réduction des clignotements",
@@ -266,7 +266,7 @@
 		
 		"_charname_0": "SONIC",
 		"_charname_1": "TAILS",
-		"_charname_2": "K.l'E",
+		"_charname_2": "K.l'É",
 		"_charname_2_wide": "KNUCKLES",
 		"_charname_0_lc": "Sonic",
 		"_charname_1_lc": "Tails",
@@ -277,7 +277,7 @@
 		
 		"_save_delete": "SUPPR.",
 		"_save_delete_YesNo": "<Oui Non>",
-		"_save_nosave": "SansSvg",
+		"_save_nosave": "S/SAUV.",
 		"_save_Past": "Passé",
 		"_save_Future": "Futur",
 		"_save_mobile_hint_select": "Sélectionnez une sauvegarde",
@@ -381,7 +381,7 @@
 		"_GAMEOVER_WORD1": "PARTIE",
 		"_GAMEOVER_WORD2": "TERMINÉE",
 
-		"_bad_ending_text": "Essayez encore!\n\nCollectionnez toutes les Émeraudes du Chaos\net les Pierres du Temps!",
+		"_bad_ending_text": "Essayez encore!\n\nCollectionnez toutes les Émeraudes du chaos\net les Pierres du temps!",
 		"_good_ending_text": "Sonic, Tails et Knuckles ont continué leur\ncombat pour libérer Mobius des créations de\nRobotnik, éliminant tous les robots jusqu'au\ndernier.\n\nMerci d'avoir joué!",
 		
 		"_hint_ssgyro": "Inclinez pour tourner",
