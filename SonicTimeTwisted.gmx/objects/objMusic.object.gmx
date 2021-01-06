@@ -110,7 +110,7 @@ case 6: // Play Effect
            if audio_is_playing(musicEffect) == false &amp;&amp; levelHandle.cleared == false {
                 if statePrevious == 5 {
                     if audio_is_playing(musicJingle) {
-                        audio_sound_gain(musicJingle, objMusic.bgmGain, 200);
+                        audio_sound_gain(musicJingle, objMusic.bgmGain / 100, 200);
                         state = 5;
                         break;
                     } else play_previous(priorityMusicState,previousPosition)

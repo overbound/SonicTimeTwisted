@@ -188,7 +188,7 @@
             <string>/// Generate pieces
 var i;
 // sound
-audio_play_sound_at(sndCollapse, x+sprite_width*0.5, y+sprite_height*0.5, 0, 100, 300, 1, false, 0);
+play_sfx_at(sndCollapse, x+sprite_width*0.5, y+sprite_height*0.5, 0, 100, 300, 1, false, 0);
 // get bounds
 var width = sprite_width div 16;
 var height = sprite_height div 16;

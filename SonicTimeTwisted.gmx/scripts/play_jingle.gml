@@ -12,11 +12,11 @@ with objMusic {
         previousPosition = 0;
     } else if state == 5 {
         currentMusic=audio_play_sound(musicJingle,20,false);
-        audio_sound_gain(currentMusic, objMusic.bgmGain, 200);
+        audio_sound_gain(currentMusic, objMusic.bgmGain / 100, 200);
       } else {
         stop_all_music(resume);
         currentMusic=audio_play_sound(musicJingle,20,false);
-        audio_sound_gain(currentMusic, objMusic.bgmGain, 200);
+        audio_sound_gain(currentMusic, objMusic.bgmGain / 100, 200);
         state = 5;
     }
 }
