@@ -3,7 +3,8 @@
 		"intname": "en",
 		"friendlyname": "English",
 		"creditsname": "",
-		"authors": "",
+		"authors_main": "",
+		"authors_contrib": "",
 		
 		"top_hud_offset": 0,
 		"titlecard_zone_is_first": 0
@@ -12,7 +13,8 @@
 		"1": "You can do whatever you want in this section, it will be freed from memory when loading the strings.",
 		"2": "No bugs, only pugs.",
 		"3": "Never fear, the hedgehog is here.",
-		"4": "Original English text by Overbound btw!"
+		"4": "Original English text by Overbound btw!",
+		"5": "No need for authors in the info, since it's not exactly a localization, so no need to include this in the credits"
 	},
 	"data": {
 		"_Yes": "Yes",

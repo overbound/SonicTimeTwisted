@@ -3,7 +3,8 @@
 		"intname": "fr",
 		"friendlyname": "French (Français)",
 		"creditsname": "French",
-		"authors": "Alex Khayrullin",
+		"authors_main": "Alex Khayrullin",
+		"authors_contrib": "",
 		
 		"top_hud_offset": 16,
 		"titlecard_zone_is_first": 1,

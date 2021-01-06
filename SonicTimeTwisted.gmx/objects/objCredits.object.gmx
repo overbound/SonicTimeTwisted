@@ -127,16 +127,62 @@ lines[15, 2] = 'bennascar';
 var langname = tr_get_lang_creditsname();
 if(langname != "")
 {
-    var authors = string_explode('#', tr_get_lang_authors());
-    if(array_length_1d(authors) &gt;= 1)
+    var authors_main = tr_get_lang_authors(true);
+    var authors_contrib = tr_get_lang_authors(false);
+    
+    var include_authors_main  = string_length(authors_main) &gt; 0;
+    var include_authors_contrib  = string_length(authors_contrib) &gt; 0;
+    
+    var section_cursor = 16;
+    if(include_authors_main || include_authors_contrib)
     {
-        if(authors[0] != "")
+        lines[section_cursor, 0] = "LOCALIZATION";
+        section_cursor++;
+        lines[section_cursor, 0] = langname;
+        var name_cursor = 1;
+        var names;
+        if(include_authors_main)
         {
-            lines[16, 0] = "LOCALIZATION";
-            lines[17, 0] = langname;
-            for(var i = 0 ; i &lt; array_length_1d(authors); i++)
+            names = string_explode(chr(10), authors_main);
+            if(include_authors_contrib)
             {
-                lines[17, i+1] = authors[i];
+                section_cursor++;
+                if(array_length_1d(names) == 1)
+                {
+                    lines[section_cursor, 0] = "Main author";                
+                }
+                else
+                {
+                    lines[section_cursor, 0] = "Main authors";
+                }
+                name_cursor=1;
+            }
+            for(var i = 0 ; i &lt; array_length_1d(names); i++)
+            {
+                lines[section_cursor, name_cursor] = names[i];
+                name_cursor++;
+            }
+        }
+        if(include_authors_contrib)
+        {
+            names = string_explode(chr(10), authors_contrib);
+            if(include_authors_main)
+            {
+                section_cursor++;
+                if(array_length_1d(names) == 1)
+                {
+                    lines[section_cursor, 0] = "Contributor";                
+                }
+                else
+                {
+                    lines[section_cursor, 0] = "Contributors";
+                }
+                name_cursor=1;
+            }
+            for(var i = 0 ; i &lt; array_length_1d(names); i++)
+            {
+                lines[section_cursor, name_cursor] = names[i];
+                name_cursor++;
             }
         }
     }
@@ -173,7 +219,8 @@ alarm_delay = round(alarm_delay/18)*18;
 lines_count += array_length_1d(displayed_label);
 // the first line will be delayed, in order to make the pauses at the beginning and the 
 // end match as much as possible
-alarm[0] = alarm_delay + (4200 - lines_count * alarm_delay);
+// use max() in case the resulting value runs close to being negative, which depends on the number of items
+alarm[0] = alarm_delay + max(0, (4200 - lines_count * alarm_delay));
 // the length of the credits is 4200 frames, or 70 seconds
 </string>
           </argument>

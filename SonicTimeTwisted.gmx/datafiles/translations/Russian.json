@@ -3,7 +3,8 @@
 		"intname": "ru",
 		"friendlyname": "Russian (Русский)",
 		"creditsname": "Russian",
-		"authors": "Alex Khayrullin\nNik",
+		"authors_main": "Nik",
+		"authors_contrib": "Alex Khayrullin",
 		
 		"top_hud_offset": 16,
 		"titlecard_zone_is_first": 1,
