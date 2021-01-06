@@ -10,6 +10,7 @@ if(smartphone_controls_enabled)
         joyy = dpady;
         current_dpadx = dpadx;
         current_dpady = dpady;
+        joyalpha = image_alpha;
         for(var device = 0; device <= 4; device++)
         {
             if(device_mouse_check_button(device, mb_any))
@@ -57,8 +58,9 @@ if(smartphone_controls_enabled)
                         {
                             input_state |= cDOWN;
                         }
-                    }          
-                }  
+                    }
+                    joyalpha = 1;          
+                }
                 if(super_button_enabled)
                 {
                     var is_invulnerable = false;

@@ -4,7 +4,16 @@ Don't overwrite input_init_script here, please!
 Different rooms can have different behaviors requiring different input methods.
 */
 is_touchscreen = true;
-visible = true;
+if(instance_exists(objScreen))
+{
+    visible = !(objScreen.paused);
+}
+else
+{
+    // on game start, objInput is initialized first
+    visible = false;
+}
+
 
 if(instance_exists(objLevel))
 {

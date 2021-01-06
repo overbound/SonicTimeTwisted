@@ -271,6 +271,7 @@ if closeMenu == false {
                 {
                     menu_to_use = menu_part_sstage_defeat_items;
                 }
+                set_smartphone_controls_enabled(false);
                 with(menu) menu_fn_open_menu(menu_to_use, true, other.is_touchscreen);
             }
         }

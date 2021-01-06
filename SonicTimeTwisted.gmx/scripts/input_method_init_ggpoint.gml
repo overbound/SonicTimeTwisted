@@ -30,3 +30,9 @@ if((DEVICE_INFO & DEVICE_TYPE_SMARTPHONE) && (vibration_type > 0))
         input_rumble_perform_script = rumble_perform_android_smartphone;
     }
 }
+// don't display in menus
+if(objScreen.paused)
+{
+    image_alpha = 0;
+}
+joyalpha = image_alpha;

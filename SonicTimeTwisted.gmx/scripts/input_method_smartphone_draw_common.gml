@@ -8,6 +8,7 @@ if(smartphone_controls_enabled)
         {
             image_alpha = vkalpha;
         }
+        joyalpha = image_alpha;
     }
 }
 else
@@ -19,6 +20,7 @@ else
         {
             image_alpha = 0;
         }
+        joyalpha = image_alpha;
     }
 }
 draw_sprite_ext(sprTouchscreenPauseButton, 0, bsx, bsy, 1, 1, 0, c_white, image_alpha);
