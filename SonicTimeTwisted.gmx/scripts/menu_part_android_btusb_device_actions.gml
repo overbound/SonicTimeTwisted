@@ -6,7 +6,7 @@ switch(argument0)
         break;
     case 0:
         android_disconnect_input(0);
-        menu_part_android_btusb_device_items();
+        menu_fn_reopen(menu_part_android_btusb_device_items, 0);
         break;
     case 1:
         if(objProgram.inputManager.double_device_mode)

@@ -19,12 +19,10 @@ if(state == 13 || state == 14)
     }
 }
 // update the device label if one is connected while navigating in this menu
-if(objProgram.inputManager.device_label == "")
-{
-    var currentDeviceLabel = string(android_get_device_label(0, -1));
-    if(currentDeviceLabel != "")
+if(state == 2)
+{    
+    if(menu_fn_android_gamepad_change_detect())
     {
-        objProgram.inputManager.device_label = currentDeviceLabel;
-        menu_part_android_btusb_actions(-4);
+        menu_fn_reopen(menu_part_android_btusb_items, 0);
     }
 }

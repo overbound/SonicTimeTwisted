@@ -2,14 +2,21 @@ switch(argument0)
 {
     case 10:
     case -1:
-        if(android_is_mapping_complete(0))
+        if(android_get_input_mode())
         {
-            menu_fn_exit_submenu(menu_part_options_items, 3);
+            if(android_is_mapping_complete(0))
+            {
+                menu_fn_exit_submenu(menu_part_options_items, 3);
+            }
+            else
+            {
+                menu_fn_open_confirmation_window(tr("_options_menu_keymap_incomplete"), 21, 12, false, tr("_options_menu_keymap_remap"), tr("_options_menu_keymap_reset"));
+            }
         }
         else
         {
-            menu_fn_open_confirmation_window(tr("_options_menu_keymap_incomplete"), 21, 12, false, tr("_options_menu_keymap_remap"), tr("_options_menu_keymap_reset"));
-        }        
+            menu_fn_exit_submenu(menu_part_options_items, 3);
+        }
         break;
     case 0:
         // rumble
@@ -136,15 +143,18 @@ switch(argument0)
     case -2:
     case -3:
          // press left or right
-         if(items[cursor, 1] == 0)
+         if(array_length_2d(items, cursor) > 1)
          {
-             if(objProgram.inputManager.rumble_configuration_script == rumble_manage)
+             if(items[cursor, 1] == 0)
              {
-                 objProgram.inputManager.rumble_configuration_script = input_method_dummy_script;
-             }
-             else
-             {
-                 objProgram.inputManager.rumble_configuration_script = rumble_manage;
+                 if(objProgram.inputManager.rumble_configuration_script == rumble_manage)
+                 {
+                     objProgram.inputManager.rumble_configuration_script = input_method_dummy_script;
+                 }
+                 else
+                 {
+                     objProgram.inputManager.rumble_configuration_script = rumble_manage;
+                 }
              }
          }
          break;

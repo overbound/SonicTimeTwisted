@@ -30,6 +30,9 @@ step_script = menu_part_android_btusb_device_step;
 keys_script = menu_fn_keys_default;
 touchscreen_script = menu_fn_touchscreen_default;
 
+// refresh android gamepad label on load
+menu_fn_android_gamepad_change_detect();
+
 // run this to refresh displayed existing values
 // -4 is an action that does not exist
 menu_part_android_btusb_device_actions(-4);

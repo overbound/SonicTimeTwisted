@@ -3941,6 +3941,7 @@
                 <script>scripts\menu_part_android_btusb_device_items.gml</script>
                 <script>scripts\menu_part_android_btusb_device_actions.gml</script>
                 <script>scripts\menu_part_android_btusb_device_step.gml</script>
+                <script>scripts\menu_fn_android_gamepad_change_detect.gml</script>
               </scripts>
               <script>scripts\menu_part_touchscreen_items.gml</script>
               <script>scripts\menu_part_touchscreen_actions.gml</script>
