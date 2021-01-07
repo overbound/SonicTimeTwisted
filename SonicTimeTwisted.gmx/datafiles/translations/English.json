@@ -256,6 +256,7 @@
 		"_ss_scorecard_SUPER": "SUPER %c",
 		"_ss_scorecard_CAN_NOW_BECOME": "%c CAN NOW BECOME",
 		"_ss_scorecard_JUMP_AND_HOLD": "Jump and hold A and B",
+		"_ss_scorecard_JUMP_AND_HOLD_TOUCHSCREEN": "Jump and hold S",
 		"_ss_scorecard_TO_TURN_INTO": "to turn into Super %c",
 		
 		"_ss_intro_Race": "Race",

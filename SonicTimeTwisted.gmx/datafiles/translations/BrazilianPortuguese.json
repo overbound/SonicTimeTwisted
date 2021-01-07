@@ -316,8 +316,9 @@
 		"_ss_scorecard_GOT_A": "%c COLETOU UMA",
 		"_ss_scorecard_SUPER": "SUPER %c",
 		"_ss_scorecard_CAN_NOW_BECOME": "%c AGORA PODE",
-		"_ss_scorecard_JUMP_AND_HOLD": "Segure A e no ar aperte B",
-		"_ss_scorecard_TO_TURN_INTO": "Se transformar em Super %c",
+		"_ss_scorecard_JUMP_AND_HOLD": "Pule e segure A e B",
+		"_ss_scorecard_JUMP_AND_HOLD_TOUCHSCREEN": "Pule e segure S",
+		"_ss_scorecard_TO_TURN_INTO": "para se transformar em Super %c",
 		"_ss_intro_Race": "Corrida vs",
 		"_ss_intro_Metal_Sonic": "Metal Sonic",
 

@@ -133,7 +133,14 @@ super_title_line1 = string_replace(tr("_ss_scorecard_CAN_NOW_BECOME"), "%c", nam
 super_title_line2 = string_replace(tr("_ss_scorecard_SUPER"), "%c", name_tag_altnoun);
 super_title_line1_player_overlay = name_tag;
 super_title_line2_player_overlay = string_replace(tr("_ss_scorecard_SUPER"), "%c", name_tag_altnoun);
-ss_instructions1 = string_replace(tr("_ss_scorecard_JUMP_AND_HOLD"), "%c", name_tag_lc);
+if(objProgram.inputManager.is_touchscreen)
+{
+    ss_instructions1 = string_replace(tr("_ss_scorecard_JUMP_AND_HOLD_TOUCHSCREEN"), "%c", name_tag_lc);
+}
+else
+{
+    ss_instructions1 = string_replace(tr("_ss_scorecard_JUMP_AND_HOLD"), "%c", name_tag_lc);
+}
 ss_instructions2 = string_replace(tr("_ss_scorecard_TO_TURN_INTO"), "%c", name_tag_lc);
 next_message = false;
 score_ox1 = score_ox;
