@@ -128,18 +128,12 @@ with objSSCamera {
     <instance objName="objSSRing" x="3192" y="592" name="inst_F22B46C4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSSRing" x="3168" y="600" name="inst_B6453874" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSSRing" x="3184" y="568" name="inst_27FAE440" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSSRing" x="2330" y="1372" name="inst_4173F4CE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSSRing" x="2328" y="1348" name="inst_2ACA21B3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSSRing" x="2326" y="1324" name="inst_66629C25" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSSRing" x="2324" y="1300" name="inst_AA3EB725" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSSRing" x="2322" y="1276" name="inst_A47CB09E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSSRing" x="2320" y="1252" name="inst_6ED78293" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSSRing" x="1592" y="1072" name="inst_6ED78293" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSSRing" x="1332" y="448" name="inst_3A65CD10" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSSRing" x="1332" y="424" name="inst_8B76A75E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSSRing" x="1356" y="424" name="inst_AD9DD226" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSSRing" x="1356" y="448" name="inst_6F70FFDE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSSRing" x="2344" y="1252" name="inst_4B8B452A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSSRing" x="2346" y="1276" name="inst_BF83817A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSSRing" x="2384" y="1752" name="inst_4B8B452A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSSRing" x="2388" y="1788" name="inst_E0BA55E1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSSRing" x="2396" y="1820" name="inst_D8E8833F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSSRing" x="2412" y="1852" name="inst_6EF5E8E9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -229,7 +223,7 @@ with objSSCamera {
     <instance objName="objSSCaterminator" x="2600" y="2544" name="inst_EC73CD98" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSSCaterminator" x="2944" y="2608" name="inst_97E04040" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSSCaterminator" x="1728" y="2224" name="inst_885B29B9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSSCaterminator" x="2136" y="768" name="inst_C3B98226" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSSCaterminator" x="2180" y="796" name="inst_C3B98226" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSSCaterminator" x="1704" y="3696" name="inst_E4EF6676" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSSCaterminator" x="1600" y="2928" name="inst_BA4F971D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSSCaterminator" x="1560" y="3528" name="inst_59D75D4C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -240,18 +234,9 @@ with objSSCamera {
     <instance objName="objSSSpikeBall" x="3580" y="5016" name="inst_94330BE2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSSSpikeBall" x="3180" y="3976" name="inst_17A12A70" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSSSpikeBall" x="3184" y="3644" name="inst_564B628B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSSSpikeBall" x="2264" y="1476" name="inst_2CD2FA7B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSSSpikeBall" x="2300" y="1784" name="inst_2D98313D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSSSpikeBall" x="2504" y="1760" name="inst_627299F3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSSSpikeBall" x="2296" y="1520" name="inst_C738349A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSSSpikeBall" x="2296" y="296" name="inst_75EEC9DA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSSSpikeBall" x="2232" y="1032" name="inst_047444C9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSSSpikeBall" x="2240" y="816" name="inst_324A3579" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSSSpikeBall" x="2024" y="148" name="inst_ADDCE16C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSSSpikeBall" x="2448" y="1460" name="inst_978B3881" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSSSpikeBall" x="2272" y="1224" name="inst_B36FF484" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSSSpikeBall" x="2356" y="968" name="inst_100953AF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSSSpikeBall" x="2400" y="1200" name="inst_BE29CF33" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSSSpikeBall" x="2960" y="1976" name="inst_02DED427" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSSSpikeBall" x="3232" y="1112" name="inst_66542A84" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSSSpikeBall" x="3032" y="1412" name="inst_4DEEDB43" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -276,10 +261,6 @@ with objSSCamera {
     <instance objName="objSSRing" x="1624" y="976" name="inst_CF348486" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSSRing" x="1608" y="1024" name="inst_F1D545ED" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSSRing" x="1600" y="1048" name="inst_B1D39A7C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSSRing" x="2354" y="1372" name="inst_926B885C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSSRing" x="2352" y="1348" name="inst_95F32BE9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSSRing" x="2350" y="1324" name="inst_76C6F84F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSSRing" x="2348" y="1300" name="inst_EEC00F5A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSSBumper" x="1744" y="840" name="inst_B6F5B385" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSSBumper" x="3200" y="1424" name="inst_9E4FCA7A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSSBumper" x="3028" y="1800" name="inst_B3A831DF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -347,12 +328,11 @@ with objSSCamera {
     <instance objName="objAA1Boss" x="-1772" y="8264" name="inst_3C0DDD06" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSSSpikeBall" x="1552" y="1724" name="inst_19883D48" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSSSpikeBall" x="1424" y="3196" name="inst_5F7C100A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSSCaterminator" x="2260" y="924" name="inst_F4164EF8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSSCaterminator" x="2312" y="1116" name="inst_6038F805" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSSCaterminator" x="2368" y="1552" name="inst_A9E74503" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSSCaterminator" x="2248" y="912" name="inst_F4164EF8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSSCaterminator" x="2320" y="1100" name="inst_6038F805" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSSCaterminator" x="2376" y="1612" name="inst_A9E74503" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSSCaterminator" x="1428" y="1236" name="inst_D47353D8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSSCaterminator" x="1688" y="1060" name="inst_30706F25" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSSSpikeBall" x="2428" y="1512" name="inst_144C045C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSSBoost" x="2204" y="224" name="inst_16AB4775" locked="0" code="image_index = 4;" scaleX="1" scaleY="1" colour="4294967295" rotation="180"/>
     <instance objName="objSSBoost" x="928" y="720" name="inst_B2AFF59B" locked="0" code="image_index = 5;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="225"/>
     <instance objName="objSSBoost" x="3068" y="448" name="inst_B681E45B" locked="0" code="image_index = 3;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="135"/>
@@ -371,6 +351,7 @@ with objSSCamera {
     <instance objName="objSSRing" x="2932" y="1828" name="inst_6D4928AC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSSRing" x="2924" y="1852" name="inst_6AACDF06" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSSRing" x="2916" y="1876" name="inst_ABFE86D2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSSLife" x="2356" y="1416" name="inst_3BA21B06" locked="0" code="image_index = 2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
