@@ -121,7 +121,7 @@ if(left_bound &gt; right_bound)
 {
     with(objSSParent)
     {
-        if (object_index != objSSPlayer &amp;&amp; object_index != objSSMetalSonic)
+        if (object_index != objSSPlayer &amp;&amp; object_index != objSSMetalSonic &amp;&amp; object_index != objSSEnd)
         {
             var objAngle = point_direction(other.x, other.y, x, y);
             visible = objAngle &lt; right_bound || objAngle &gt; left_bound;
@@ -132,7 +132,7 @@ else
 {
     with(objSSParent)
     {
-        if (object_index != objSSPlayer &amp;&amp; object_index != objSSMetalSonic)
+        if (object_index != objSSPlayer &amp;&amp; object_index != objSSMetalSonic &amp;&amp; object_index != objSSEnd)
         {
             var objAngle = point_direction(other.x, other.y, x, y);
             visible = objAngle &gt; left_bound &amp;&amp; objAngle &lt; right_bound;
