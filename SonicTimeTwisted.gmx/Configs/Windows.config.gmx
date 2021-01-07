@@ -81,7 +81,7 @@
     <option_android_package_company>overboundstudio</option_android_package_company>
     <option_android_package_domain>com</option_android_package_domain>
     <option_android_package_product>SonicTimeTwisted</option_android_package_product>
-    <option_android_permission_flags>20</option_android_permission_flags>
+    <option_android_permission_flags>16</option_android_permission_flags>
     <option_android_pocketchange_enable>0</option_android_pocketchange_enable>
     <option_android_pocketchange_id></option_android_pocketchange_id>
     <option_android_pocketchange_test_enable>0</option_android_pocketchange_test_enable>
@@ -228,8 +228,7 @@
     <option_androidtv_texture_page>1024</option_androidtv_texture_page>
     <option_androidtv_use_test_ads>false</option_androidtv_use_test_ads>
     <option_argumenterrors>True</option_argumenterrors>
-    <option_audioGroup1_targets>9223372036854775807</option_audioGroup1_targets>
-    <option_audioGroupCount>2</option_audioGroupCount>
+    <option_audioGroupCount>1</option_audioGroupCount>
     <option_author> Bryce Stock</option_author>
     <option_backimage>nil</option_backimage>
     <option_borderless>False</option_borderless>

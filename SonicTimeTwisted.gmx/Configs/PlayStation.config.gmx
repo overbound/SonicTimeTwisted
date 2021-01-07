@@ -228,19 +228,7 @@
     <option_androidtv_texture_page>1024</option_androidtv_texture_page>
     <option_androidtv_use_test_ads>false</option_androidtv_use_test_ads>
     <option_argumenterrors>True</option_argumenterrors>
-    <option_audioGroup10_targets>9223372036854775807</option_audioGroup10_targets>
-    <option_audioGroup11_targets>9223372036854775807</option_audioGroup11_targets>
-    <option_audioGroup12_targets>9223372036854775807</option_audioGroup12_targets>
-    <option_audioGroup1_targets>9223372036854775807</option_audioGroup1_targets>
-    <option_audioGroup2_targets>123146089894126</option_audioGroup2_targets>
-    <option_audioGroup3_targets>9223372036854775807</option_audioGroup3_targets>
-    <option_audioGroup4_targets>9223372036854775807</option_audioGroup4_targets>
-    <option_audioGroup5_targets>9223372036854775807</option_audioGroup5_targets>
-    <option_audioGroup6_targets>9223372036854775807</option_audioGroup6_targets>
-    <option_audioGroup7_targets>9223372036854775807</option_audioGroup7_targets>
-    <option_audioGroup8_targets>9223372036854775807</option_audioGroup8_targets>
-    <option_audioGroup9_targets>9223372036854775807</option_audioGroup9_targets>
-    <option_audioGroupCount>13</option_audioGroupCount>
+    <option_audioGroupCount>1</option_audioGroupCount>
     <option_author> Bryce Stock</option_author>
     <option_backimage>nil</option_backimage>
     <option_borderless>False</option_borderless>

@@ -6,26 +6,26 @@
   <effects>0</effects>
   <volume>
     <volume>1</volume>
-    <volume>0.7</volume>
-    <volume>0.7</volume>
-    <volume>0.7</volume>
-    <volume>0.7</volume>
-    <volume>0.7</volume>
-    <volume>0.7</volume>
-    <volume>0.7</volume>
-    <volume>0.7</volume>
+    <volume>1</volume>
+    <volume>1</volume>
+    <volume>1</volume>
+    <volume>1</volume>
+    <volume>1</volume>
+    <volume>1</volume>
+    <volume>1</volume>
+    <volume>1</volume>
   </volume>
   <pan>0</pan>
   <bitRates>
     <bitRate>128</bitRate>
-    <bitRate>128</bitRate>
-    <bitRate>128</bitRate>
-    <bitRate>128</bitRate>
-    <bitRate>128</bitRate>
-    <bitRate>128</bitRate>
-    <bitRate>128</bitRate>
-    <bitRate>128</bitRate>
-    <bitRate>128</bitRate>
+    <bitRate>192</bitRate>
+    <bitRate>192</bitRate>
+    <bitRate>192</bitRate>
+    <bitRate>192</bitRate>
+    <bitRate>192</bitRate>
+    <bitRate>192</bitRate>
+    <bitRate>192</bitRate>
+    <bitRate>192</bitRate>
   </bitRates>
   <sampleRates>
     <sampleRate>44100</sampleRate>
@@ -40,14 +40,14 @@
   </sampleRates>
   <types>
     <type>1</type>
-    <type>1</type>
-    <type>1</type>
-    <type>1</type>
-    <type>1</type>
-    <type>1</type>
-    <type>1</type>
-    <type>1</type>
-    <type>1</type>
+    <type>0</type>
+    <type>0</type>
+    <type>0</type>
+    <type>0</type>
+    <type>0</type>
+    <type>0</type>
+    <type>0</type>
+    <type>0</type>
   </types>
   <bitDepths>
     <bitDepth>16</bitDepth>

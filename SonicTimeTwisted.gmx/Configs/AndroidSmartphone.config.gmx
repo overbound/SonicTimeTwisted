@@ -228,8 +228,7 @@
     <option_androidtv_texture_page>1024</option_androidtv_texture_page>
     <option_androidtv_use_test_ads>false</option_androidtv_use_test_ads>
     <option_argumenterrors>True</option_argumenterrors>
-    <option_audioGroup1_targets>9223372036854775807</option_audioGroup1_targets>
-    <option_audioGroupCount>2</option_audioGroupCount>
+    <option_audioGroupCount>1</option_audioGroupCount>
     <option_author> Bryce Stock</option_author>
     <option_backimage>nil</option_backimage>
     <option_borderless>False</option_borderless>

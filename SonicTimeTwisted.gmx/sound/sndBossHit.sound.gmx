@@ -6,14 +6,14 @@
   <effects>0</effects>
   <volume>
     <volume>1</volume>
-    <volume>0.57</volume>
-    <volume>0.57</volume>
-    <volume>0.57</volume>
-    <volume>0.57</volume>
-    <volume>0.57</volume>
-    <volume>0.57</volume>
-    <volume>0.57</volume>
-    <volume>0.57</volume>
+    <volume>1</volume>
+    <volume>1</volume>
+    <volume>1</volume>
+    <volume>1</volume>
+    <volume>1</volume>
+    <volume>1</volume>
+    <volume>1</volume>
+    <volume>1</volume>
   </volume>
   <pan>0</pan>
   <bitRates>
@@ -40,14 +40,14 @@
   </sampleRates>
   <types>
     <type>1</type>
-    <type>1</type>
-    <type>1</type>
-    <type>1</type>
-    <type>1</type>
-    <type>1</type>
-    <type>1</type>
-    <type>1</type>
-    <type>1</type>
+    <type>0</type>
+    <type>0</type>
+    <type>0</type>
+    <type>0</type>
+    <type>0</type>
+    <type>0</type>
+    <type>0</type>
+    <type>0</type>
   </types>
   <bitDepths>
     <bitDepth>16</bitDepth>

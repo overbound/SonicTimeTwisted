@@ -2,5 +2,5 @@
 
 var _soundInstance = audio_play_sound_at(argument0, argument1, argument2, argument3, argument4, argument5, argument6, argument7, argument8);
 var _myVolume = sfx_special_volume(argument0) * (objMusic.sfxGain / 100);
-audio_sound_gain(_soundInstance, v, 0);
+audio_sound_gain(_soundInstance, _myVolume, 0);
 return _soundInstance;
