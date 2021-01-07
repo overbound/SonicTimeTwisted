@@ -77,7 +77,7 @@ bgxrepeat = 4;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
+            <string>/// Update direction
 if instance_exists(objSSPlayer) {
     x = objSSPlayer.x - cos(degtorad(objSSPlayer.move_direction)) * distance;
     y = objSSPlayer.y + sin(degtorad(objSSPlayer.move_direction)) * distance;
@@ -89,6 +89,57 @@ if instance_exists(objSSPlayer) {
 }
 dir1 = point_direction(xto, yto, x, y) - 90;
 dir2 = d3d_point_direction(xto, yto, -zto, x, y, -z);
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Update visible objects
+var d = point_direction(x, y, xto, yto);
+var left_bound = d - 45;
+if(left_bound &lt; 0)
+{
+    left_bound = left_bound + 360;   
+}
+var right_bound = (d + 45) mod 360;
+if(left_bound &gt; right_bound)
+{
+    with(objSSParent)
+    {
+        if (object_index != objSSPlayer &amp;&amp; object_index != objSSMetalSonic)
+        {
+            var objAngle = point_direction(other.x, other.y, x, y);
+            visible = objAngle &lt; right_bound || objAngle &gt; left_bound;
+        }
+    }
+}
+else
+{
+    with(objSSParent)
+    {
+        if (object_index != objSSPlayer &amp;&amp; object_index != objSSMetalSonic)
+        {
+            var objAngle = point_direction(other.x, other.y, x, y);
+            visible = objAngle &gt; left_bound &amp;&amp; objAngle &lt; right_bound;
+        }
+    }
+}
+
 </string>
           </argument>
         </arguments>
