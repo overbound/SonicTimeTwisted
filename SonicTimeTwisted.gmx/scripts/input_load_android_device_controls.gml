@@ -3,14 +3,25 @@ var loaded = false;
 if(argument0) // argument0 - from INI, default values if false
 {
     show_debug_message("Load controls from INI");
-    var input_method = ini_read_real('input','method',-1);
-    if(input_method == INPUT_OS_SPECIFIC_1)
+    if(DEVICE_INFO & DEVICE_TYPE_SMARTPHONE)
     {
-        android_set_input_mode(1);
+        var input_method = ini_read_real('input','method',-1);
+        if(input_method == INPUT_OS_SPECIFIC_1)
+        {
+            android_set_input_mode(1);
+        }
+        else
+        {
+            android_set_input_mode(0);    
+        }
     }
     else
     {
-        android_set_input_mode(0);    
+        if(DEVICE_INFO & DEVICE_TYPE_CONSOLE)
+        {
+            android_set_input_mode(1);
+            objProgram.inputManager.input_method = INPUT_OS_SPECIFIC_1;
+        }
     }
     
     input_load_android_device_one_control(cUP, "162,12");
@@ -28,7 +39,15 @@ if(argument0) // argument0 - from INI, default values if false
 }
 else
 {
-    android_set_input_mode(0);
+    if(DEVICE_INFO & DEVICE_TYPE_CONSOLE)
+    {
+        android_set_input_mode(1);
+        objProgram.inputManager.input_method = INPUT_OS_SPECIFIC_1;
+    }
+    else
+    {
+        android_set_input_mode(0);
+    }
 }
 if(!loaded)
 {
