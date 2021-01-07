@@ -1753,8 +1753,8 @@ with objTitlecard
     <instance objName="objBlock" x="7456" y="704" name="inst_07DFE5A1" locked="0" code="" scaleX="4" scaleY="4" colour="4294967295" rotation="0"/>
     <instance objName="objCurveConcave" x="8068" y="1192" name="inst_9CEBAD32" locked="0" code="" scaleX="1.29166662693024" scaleY="1.29166662693024" colour="4294967295" rotation="0"/>
     <instance objName="objCurveConcave" x="10028" y="1064" name="inst_8C464AC9" locked="0" code="climbable=true;" scaleX="1.22105264663696" scaleY="1.26315784454346" colour="4294967295" rotation="0"/>
-    <instance objName="objMonitor" x="3185" y="1843" name="inst_B5FE6485" locked="0" code="tag = 4;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objMonitor" x="3215" y="1843" name="inst_69EFF1AB" locked="0" code="tag = 2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objMonitor" x="3185" y="1843" name="inst_B5FE6485" locked="0" code="icon = 4;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objMonitor" x="3215" y="1843" name="inst_69EFF1AB" locked="0" code="icon = 2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRing" x="5424" y="1464" name="inst_44E24826" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRing" x="5448" y="1464" name="inst_954082F3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRing" x="5472" y="1464" name="inst_712F758F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
