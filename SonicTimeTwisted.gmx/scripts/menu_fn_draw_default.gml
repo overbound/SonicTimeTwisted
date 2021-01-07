@@ -139,7 +139,6 @@ switch(state)
                             }
                         }
                     }
-                
                     draw_sprite(
                         sprMenuCursorLeft,
                         sprite_index_to_draw,
