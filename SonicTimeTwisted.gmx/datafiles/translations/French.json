@@ -306,7 +306,6 @@
 		"_ssselect_TS7": "Pierre du Temps 7",
 		"_ssselect_choose_another_stage": "Choisir un autre",
 		
-		"_scorecard_line1": "%c A TRAVERSÉ",
 		"_scorecard_line2": "L'ACTE %a",
 		"_scorecard_TIME_BONUS": "BONUS TEMPS",
 		"_scorecard_RING_BONUS": "BONUS ANNEAUX",
@@ -319,7 +318,7 @@
 		"_ss_scorecard_GOT_ALL": "%c A TOUTES LES",
 		"_ss_scorecard_GOT_A": "%c A OBTENU UNE",
 		"_ss_scorecard_SUPER": "SUPER %c",
-		"_ss_scorecard_CAN_NOW_BECOME": "%c PEUT DÉSORMAIS DEVENIR",
+		"_ss_scorecard_CAN_NOW_BECOME": "%c PEUT DEVENIR",
 		"_ss_scorecard_JUMP_AND_HOLD": "Sautez et appuyez sur A et B",
 		"_ss_scorecard_JUMP_AND_HOLD_TOUCHSCREEN": "Sautez et appuyez sur S",
 		"_ss_scorecard_TO_TURN_INTO": "pour devenir Super %c",
