@@ -169,10 +169,10 @@
 		
 		"_options_menu_keymap_press": "Нажмите \"%0\"",
 		
-		"_options_menu_sound_title": "Настройки Звука",
+		"_options_menu_sound_title": "Настройки звука",
 		"_options_menu_sound_Master_Volume": "Общая громкость",
-		"_options_menu_sound_SFX_Volume": "Громкость Звук. Эффектов",
-		"_options_menu_sound_Music_Volume": "Громкость Музыки",
+		"_options_menu_sound_SFX_Volume": "Громкость звук. эффектов",
+		"_options_menu_sound_Music_Volume": "Громкость музыки",
 		
 		"_options_menu_keymap_incomplete": "Не все кнопки назначены. Переназначьте\nвсе кнопки или сбросьте настройки.",
 		"_options_menu_keymap_remap": "Переназначить",
