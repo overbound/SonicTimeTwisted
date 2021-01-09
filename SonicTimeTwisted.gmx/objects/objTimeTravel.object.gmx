@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-1025</depth>
+  <depth>-1027</depth>
   <persistent>-1</persistent>
   <parentName>objTransition</parentName>
   <maskName>&lt;undefined&gt;</maskName>
