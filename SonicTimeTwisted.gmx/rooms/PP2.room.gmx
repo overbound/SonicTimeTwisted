@@ -297,7 +297,7 @@ with objTitlecard
     <instance objName="objRing" x="596" y="6828" name="inst_0F98FA2A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRing" x="616" y="6828" name="inst_740975EC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objLayerSet" x="1696" y="6288" name="inst_FCE04F57" locked="0" code="depth_mask=1;&#xA;" scaleX="5.25" scaleY="8" colour="4294901760" rotation="0"/>
-    <instance objName="objLevel" x="0" y="0" name="inst_4806C17B" locked="0" code="objMusic.musicIntro = bgmPP2Intro;&#xA;objMusic.musicLoop = bgmPP2Loop;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objLevel" x="0" y="0" name="inst_4806C17B" locked="0" code="objMusic.musicIntroAsset = bgmPP2Intro;&#xA;objMusic.musicLoopAsset = bgmPP2Loop;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSlant" x="1088" y="6080" name="inst_558DD3DA" locked="0" code="" scaleX="2" scaleY="-2" colour="4294967295" rotation="0"/>
     <instance objName="objSlant" x="2560" y="6080" name="inst_C60580A3" locked="0" code="" scaleX="-2" scaleY="-2" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="2496" y="5888" name="inst_1D26EF92" locked="0" code="climbable=1;&#xA;" scaleX="8" scaleY="16" colour="4294967295" rotation="0"/>

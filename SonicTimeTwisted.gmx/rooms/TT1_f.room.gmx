@@ -509,7 +509,7 @@ with objTitlecard
     <instance objName="objLayerSet" x="8584" y="2388" name="inst_0462044C" locked="0" code="depth_mask=2;" scaleX="1" scaleY="1.58333337306976" colour="4294901760" rotation="0"/>
     <instance objName="objLayerSet" x="8468" y="2504" name="inst_9640B435" locked="0" code="depth_mask=1;" scaleX="4.75" scaleY="0.333332985639572" colour="4278223103" rotation="0"/>
     <instance objName="objRingGiant" x="2960" y="320" name="inst_D203252A" locked="0" code="tag=30;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objLevel" x="0" y="0" name="inst_F7CA6240" locked="0" code="objMusic.musicIntro = bgmTTFutureIntro;&#xA;objMusic.musicLoop = bgmTTFutureLoop;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objLevel" x="0" y="0" name="inst_F7CA6240" locked="0" code="objMusic.musicIntroAsset = bgmTTFutureIntro;&#xA;objMusic.musicLoopAsset = bgmTTFutureLoop;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objLayerSet" x="5296" y="1744" name="inst_BA9E4D0A" locked="0" code="depth_mask=2;" scaleX="5" scaleY="0.333333343267441" colour="4294901760" rotation="0"/>
     <instance objName="objBlock" x="5376" y="1624" name="inst_EED2D7AC" locked="0" code="depth_mask=2;" scaleX="4" scaleY="9.14285755157471" colour="4294901760" rotation="0"/>
     <instance objName="objCurveConvexSlim" x="5216" y="1728" name="inst_9B78E46E" locked="0" code="" scaleX="1" scaleY="-1" colour="4294967295" rotation="0"/>

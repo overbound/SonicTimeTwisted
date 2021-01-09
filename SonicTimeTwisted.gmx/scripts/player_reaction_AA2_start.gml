@@ -49,7 +49,7 @@ with instance_create(0, 0, objTitlecard)
     event_perform(ev_other, ev_room_start);
     mode = 1;
 }
-play_music_intro(objMusic.musicIntro,0);
+play_music_intro(objMusic.musicIntroAsset, 0);
 // remove trigger
 with argument0 instance_destroy();
 // hard collision found

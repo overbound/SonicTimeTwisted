@@ -18,7 +18,7 @@ if (state==player_state_fly)
 }
 // only trigger on landing
 if not (landed) return false;
-play_music_intro(objMusic.musicIntro,0);
+play_music_intro(objMusic.musicIntroAsset, 0);
 // animate
 image_angle = 0;
 animation_new = "idle";

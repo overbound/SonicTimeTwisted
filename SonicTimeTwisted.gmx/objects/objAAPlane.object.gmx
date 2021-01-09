@@ -189,7 +189,7 @@ if path_position &gt; .78 &amp;&amp; state == 0
 // fade out only
 with objTitlecard mode = 3;
 set_input_enabled(false);
-//play_music_intro(objMusic.musicIntro,0);
+//play_music_intro(objMusic.musicIntroAsset,0);
 //with objLevel started = true;
 </string>
           </argument>

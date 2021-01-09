@@ -81,7 +81,7 @@ draw_total_bonus = "0";
     alarm[1] = 620;
 }
 play_boss_intro(bgmMetalSonicIntro,0);
-objMusic.bossLoop = bgmMetalSonicLoop;
+objMusic.bossLoopAsset = bgmMetalSonicLoop;
 alarm[10] = 180;
 </string>
           </argument>

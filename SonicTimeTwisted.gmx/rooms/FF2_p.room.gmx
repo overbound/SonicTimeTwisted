@@ -758,7 +758,7 @@ with objTitlecard
     <instance objName="objBoard" x="3708" y="1188" name="inst_8C467AB0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBoard" x="3796" y="1188" name="inst_A31C386F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBoard" x="3420" y="1204" name="inst_2E5F8F2B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objLevel" x="100" y="516" name="inst_C8175FB1" locked="0" code="objMusic.musicLoop = bgmFFPastLoop;&#xA;objMusic.musicIntro = bgmFFPastIntro;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objLevel" x="100" y="516" name="inst_C8175FB1" locked="0" code="objMusic.musicLoopAsset = bgmFFPastLoop;&#xA;objMusic.musicIntroAsset = bgmFFPastIntro;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="1524" y="2784" name="inst_6EA471CD" locked="0" code="" scaleX="66" scaleY="59.5" colour="4294967295" rotation="0"/>
     <instance objName="objSlant" x="1296" y="2880" name="inst_E3362F51" locked="0" code="reaction_script=player_reaction_slide;&#xA;slide=-12;&#xA;&#xA;" scaleX="0.75" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSlant" x="12336" y="1936" name="inst_282E8F5A" locked="0" code="reaction_script=player_reaction_slide;&#xA;slide=12;&#xA;&#xA;" scaleX="-1" scaleY="0.875" colour="4294967295" rotation="0"/>

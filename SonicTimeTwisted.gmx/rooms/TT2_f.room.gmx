@@ -609,7 +609,7 @@ with objTitlecard
     <instance objName="objLayerFlip" x="3108" y="896" name="inst_45BC3E60" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objLayerFlip" x="5160" y="768" name="inst_7833D0FD" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objLayerFlip" x="8296" y="1056" name="inst_05B5C941" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objLevel" x="0" y="0" name="inst_E25A3F87" locked="0" code="objMusic.musicIntro = bgmTTFutureIntro;&#xA;objMusic.musicLoop = bgmTTFutureLoop;&#xA;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objLevel" x="0" y="0" name="inst_E25A3F87" locked="0" code="objMusic.musicIntroAsset = bgmTTFutureIntro;&#xA;objMusic.musicLoopAsset = bgmTTFutureLoop;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpike" x="1552" y="1376" name="inst_AFC69344" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpike" x="1808" y="1408" name="inst_08CAB29D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="1056" y="2560" name="inst_9FF1C2E5" locked="0" code="" scaleX="12" scaleY="24" colour="4294967295" rotation="0"/>

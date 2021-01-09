@@ -192,7 +192,7 @@ if !opening exit;
                 
                 if (!global.special_level_music_played) {
                     if (audio_is_playing(objMusic.musicIntro) == false &amp;&amp; audio_is_playing(objMusic.musicLoop) == false) {
-                        play_music_intro(objMusic.musicIntro,0);
+                        play_music_intro(objMusic.musicIntroAsset,0);
                         global.special_level_music_played = true;
                     }
                 }

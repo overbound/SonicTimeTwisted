@@ -14,8 +14,8 @@
 // and we get a menu instead of a countdown
 if(objProgram.saveSlot == -2)
 {
-    play_music_intro(bgmSaveScreenIntro,0);
-    objMusic.musicLoop = bgmSaveScreenLoop;
+    play_music_intro(bgmSaveScreenIntro, 0);
+    objMusic.musicLoopAsset = bgmSaveScreenLoop;
 }</code>
   <enableViews>0</enableViews>
   <clearViewBackground>-1</clearViewBackground>

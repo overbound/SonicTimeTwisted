@@ -162,7 +162,7 @@ if reseting
         if instance_exists(objCutscene) transition_to(objFade, room, 24); 
         else {
             transition_to(objTitlecardDisolve, room, 0);
-            //play_music_intro(objMusic.musicIntro,0);
+            //play_music_intro(objMusic.musicIntroAsset,0);
         }
     }
 }
@@ -671,7 +671,7 @@ stt_save_files();
         objLevel.timer_enabled = false;
             //started = true;
     } else {
-        play_music_intro(objMusic.musicIntro,0);
+        play_music_intro(objMusic.musicIntroAsset, 0);
     }
 // create hud
 instance_create(0, 0, objHud);

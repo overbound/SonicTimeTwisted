@@ -1699,7 +1699,7 @@ with objTitlecard
     <instance objName="objBlock" x="11296" y="1472" name="inst_F34A0EC1" locked="0" code="depth_mask=2;" scaleX="2" scaleY="12" colour="4294901760" rotation="0"/>
     <instance objName="objBlock" x="11472" y="1472" name="inst_BCDB9B0E" locked="0" code="depth_mask=1;" scaleX="2" scaleY="12" colour="4278223103" rotation="0"/>
     <instance objName="objCurveConcave" x="14536" y="952" name="inst_FDEB973D" locked="0" code="" scaleX="1.25" scaleY="-1.25" colour="4294967295" rotation="0"/>
-    <instance objName="objLevel" x="32" y="0" name="inst_9284F9E4" locked="0" code="objMusic.musicIntro = bgmVVPastIntro;&#xA;objMusic.musicLoop = bgmVVPastLoop;&#xA;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objLevel" x="32" y="0" name="inst_9284F9E4" locked="0" code="objMusic.musicIntroAsset = bgmVVPastIntro;&#xA;objMusic.musicLoopAsset = bgmVVPastLoop;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objStart" x="1824" y="1600" name="inst_D6195496" locked="0" code="tag=-2;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objVV1BossController" x="16" y="0" name="inst_B3B8FF32" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSlant" x="18128" y="1440" name="inst_C983CA97" locked="0" code="angled=0;" scaleX="-2.5" scaleY="0.125" colour="4294967295" rotation="0"/>

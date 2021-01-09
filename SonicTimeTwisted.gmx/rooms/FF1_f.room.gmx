@@ -786,7 +786,7 @@ with objTitlecard
     <instance objName="objRing" x="7148" y="1892" name="inst_B4816E1B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRing" x="7148" y="1868" name="inst_5C41D20C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRing" x="7148" y="1844" name="inst_6FA4BA47" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objLevel" x="16" y="0" name="inst_A355AEB3" locked="0" code="objMusic.musicLoop = bgmFFFutureLoop;&#xA;objMusic.musicIntro = bgmFFFutureLoop;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objLevel" x="16" y="0" name="inst_A355AEB3" locked="0" code="objMusic.musicLoopAsset = bgmFFFutureLoop;&#xA;objMusic.musicIntroAsset = bgmFFFutureLoop;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objCurveConcave" x="312" y="2072" name="inst_04E156DC" locked="0" code="" scaleX="-0.583333015441895" scaleY="0.583333015441895" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="496" y="2128" name="inst_1D65ABE7" locked="0" code="" scaleX="32" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="objSlant" x="819" y="2064" name="inst_4336EB01" locked="0" code="" scaleX="2" scaleY="1" colour="4294967295" rotation="0"/>

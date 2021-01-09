@@ -69,7 +69,7 @@ reaction_script=player_reaction_unharmful;
             <kind>1</kind>
             <string>with objEggWalkerBossController {
     state=1;
-    objMusic.bossLoop=bgmBossLoop;
+    objMusic.bossLoopAsset = bgmBossLoop;
     play_boss_intro(bgmBossIntro,0);
 }
 </string>

@@ -37,6 +37,13 @@ musicJingle = noone;
 musicEffect = noone;
 previousPosition = 0;
 currentMusic = noone;
+// music asset indexes (should ONLY be used in audio_play_sound!)
+musicIntroAsset = -1;
+musicLoopAsset = -1;
+bossIntroAsset = -1;
+bossLoopAsset = -1;
+musicJingleAsset = -1;
+musicEffectAsset = -1;
 // default fall back (only musicIntro(1) or bossIntro(3))
 priorityMusicState = 1;
 
@@ -67,57 +74,67 @@ masterGain = 75;
           <argument>
             <kind>1</kind>
             <string>/// Music State
-switch state {
-case 0: // silence
-    break;
-case 1: // Play Music Intro
-    if audio_is_playing(musicIntro) == false {
-        play_music_loop(musicLoop,0);
-    }
-    break;
-case 2: // Play Music Loop
-   if audio_is_playing(musicLoop) == false  {
-        play_music_loop(musicLoop,0);
-    }
-    break;
-case 3: // Play Boss Intro
-    if audio_is_playing(bossIntro) == false  {
-        play_boss_loop(bossLoop,0);
-    }
-    break;
-case 4: // Play Boss Loop
-   if audio_is_playing(bossLoop) == false  {
-        play_boss_loop(bossLoop,0);
-    }
-    break;
-case 5: // Play Jingle
-       if audio_is_playing(musicJingle) == false {
-            if statePrevious != 5 &amp;&amp; statePrevious != 6 {
-                play_previous(statePrevious,previousPosition)
-            } 
-            else play_previous(priorityMusicState,previousPosition)
+switch (state) {
+    case 0: // silence
+        // Do nothing!
+        break;
+    case 1: // Play Music Intro
+        if (!audio_is_playing(musicIntro)) {
+            play_music_loop(musicLoopAsset, 0);
         }
-    break;
-case 6: // Play Effect
-    var levelHandle = noone;
-     if instance_exists(objLevel) {
-        levelHandle = objLevel;
-     } else if instance_exists(objSSLevel) {
-        levelHandle = objSSLevel;
-     }
-     if levelHandle { 
-           if audio_is_playing(musicEffect) == false &amp;&amp; levelHandle.cleared == false {
-                if statePrevious == 5 {
-                    if audio_is_playing(musicJingle) {
-                        audio_sound_gain(musicJingle, objMusic.bgmGain / 100, 200);
-                        state = 5;
-                        break;
-                    } else play_previous(priorityMusicState,previousPosition)
-                } else play_previous(priorityMusicState,previousPosition)
-              
+        break;
+    case 2: // Play Music Loop
+        if (!audio_is_playing(musicLoop)) {
+            play_music_loop(musicLoopAsset, 0);
+        }
+        break;
+    case 3: // Play Boss Intro
+        if (!audio_is_playing(bossIntro)) {
+            play_boss_loop(bossLoopAsset, 0);
+        }
+        break;
+    case 4: // Play Boss Loop
+        if (!audio_is_playing(bossLoop)) {
+            play_boss_loop(bossLoopAsset, 0);
+        }
+        break;
+    case 5: // Play Jingle
+        if (!audio_is_playing(musicJingle)) {
+            if (statePrevious != 5 &amp;&amp; statePrevious != 6) {
+                play_previous(statePrevious, previousPosition);
+            } 
+            else {
+                play_previous(priorityMusicState, previousPosition);
             }
-    }
-    break;
+        }
+        break;
+    case 6: // Play Effect
+        var levelHandle = noone;
+        if (instance_exists(objLevel)) {
+            levelHandle = objLevel;
+        } else if (instance_exists(objSSLevel)) {
+            levelHandle = objSSLevel;
+        }
+        
+        // Technically we should always get an existing levelHandle
+        if (instance_exists(levelHandle)) { 
+            if (!audio_is_playing(musicEffect) &amp;&amp; !levelHandle.cleared) {
+                if (statePrevious == 5) {
+                    if (audio_is_playing(musicJingle)) {
+                        audio_sound_gain(musicJingle, bgmGain / 100, 200);
+                        state = 5; // Play Jingle
+                        break;
+                    }
+                    else {
+                        play_previous(priorityMusicState, previousPosition);
+                    }
+                }
+                else {
+                    play_previous(priorityMusicState, previousPosition);
+                }
+            }
+        }
+        break;
 }
 </string>
           </argument>
@@ -143,7 +160,7 @@ case 6: // Play Effect
             <kind>1</kind>
             <string>///Synchronize sound variables with the audio system.
 audio_master_gain(masterGain / 100);
-//show_debug_message("objMusic: Synchronized sound volumes.");
+show_debug_message("objMusic: Synchronized master gain with GM.");
 </string>
           </argument>
         </arguments>

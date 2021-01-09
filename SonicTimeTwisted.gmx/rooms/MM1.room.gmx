@@ -67,7 +67,7 @@ with objTitlecard
   <instances>
     <instance objName="objFinalBoss" x="2432" y="128" name="inst_E6CE8688" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objStart" x="192" y="192" name="inst_010F18A9" locked="0" code="tag=0;&#xA;left=48;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objLevel" x="0" y="0" name="inst_2C4BF4DB" locked="0" code="objMusic.musicIntro = bgmGalanik2Intro;&#xA;objMusic.musicLoop = bgmGalanik2Loop;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objLevel" x="0" y="0" name="inst_2C4BF4DB" locked="0" code="objMusic.musicIntroAsset = bgmGalanik2Intro;&#xA;objMusic.musicLoopAsset = bgmGalanik2Loop;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objFinalBossController" x="2368" y="0" name="inst_9605E2E6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>

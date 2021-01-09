@@ -35,12 +35,12 @@ loopMusic = false;
 cleared = false
 if (!global.special_level_music_played) {
     if objProgram.in_past {
-        objMusic.musicIntro = bgmSpecialPastIntro;
-        objMusic.musicLoop = bgmSpecialPastLoop;
+        objMusic.musicIntroAsset = bgmSpecialPastIntro;
+        objMusic.musicLoopAsset = bgmSpecialPastLoop;
         }
     else {
-        objMusic.musicIntro = bgmSpecialFutureIntro;
-        objMusic.musicLoop = bgmSpecialFutureLoop;
+        objMusic.musicIntroAsset = bgmSpecialFutureIntro;
+        objMusic.musicLoopAsset = bgmSpecialFutureLoop;
     }
 }
 </string>

@@ -1115,7 +1115,7 @@ with objTitlecard
     <instance objName="objRing" x="7148" y="1892" name="inst_B4816E1B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRing" x="7148" y="1868" name="inst_5C41D20C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRing" x="7148" y="1844" name="inst_6FA4BA47" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objFFPastBack" x="0" y="0" name="inst_AC6054F3" locked="0" code="objMusic.musicLoop = bgmFFPastLoop;&#xA;objMusic.musicIntro = bgmFFPastIntro;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objFFPastBack" x="0" y="0" name="inst_AC6054F3" locked="0" code="objMusic.musicLoopAsset = bgmFFPastLoop;&#xA;objMusic.musicIntroAsset = bgmFFPastIntro;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objLevel" x="16" y="0" name="inst_A355AEB3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSlant" x="1504" y="1540" name="inst_B1C79FAC" locked="0" code="reaction_script=player_reaction_slide;&#xA;slide=-12;" scaleX="1" scaleY="0.625" colour="4294967295" rotation="0"/>
     <instance objName="objSlant" x="1484" y="1560" name="inst_F7DFEF6A" locked="0" code="reaction_script=player_reaction_slide;&#xA;slide=-12;" scaleX="0.625" scaleY="0.625" colour="4294967295" rotation="0"/>

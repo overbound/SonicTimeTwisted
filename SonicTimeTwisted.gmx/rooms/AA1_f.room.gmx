@@ -1285,7 +1285,7 @@ with objTitlecard
     <instance objName="objBlock" x="8896" y="1408" name="inst_DBF9E5A9" locked="0" code="climbable=true;" scaleX="16" scaleY="4" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="9280" y="1408" name="inst_391011BA" locked="0" code="climbable=true;" scaleX="16" scaleY="4" colour="4294967295" rotation="0"/>
     <instance objName="objAASmasherSmall" x="8928" y="1312" name="inst_AFE2F0BF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objLevel" x="0" y="0" name="inst_BC53B840" locked="0" code="objMusic.musicLoop = bgmAAFutureLoop;&#xA;objMusic.musicIntro = bgmAAFutureIntro;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objLevel" x="0" y="0" name="inst_BC53B840" locked="0" code="objMusic.musicLoopAsset = bgmAAFutureLoop;&#xA;objMusic.musicIntroAsset = bgmAAFutureIntro;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="1996" y="-384" name="inst_8DBE6292" locked="0" code="climbable=true;" scaleX="513.5" scaleY="32.5714302062988" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="6208" y="-248" name="inst_5D91D9CF" locked="0" code="climbable=true;" scaleX="461.5" scaleY="14.2857141494751" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="9728" y="-280" name="inst_E015A325" locked="0" code="climbable=true;" scaleX="267" scaleY="18.2857151031494" colour="4294967295" rotation="0"/>

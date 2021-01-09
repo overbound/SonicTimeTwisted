@@ -207,7 +207,7 @@ case 1:
         
             play_sfx(sndGalanikLaugh,1);
             play_boss_intro(bgmGalanik1Intro,0);
-            objMusic.bossLoop = bgmGalanik1Loop;
+            objMusic.bossLoopAsset = bgmGalanik1Loop;
             
             
         }

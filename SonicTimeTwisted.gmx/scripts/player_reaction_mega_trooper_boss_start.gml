@@ -5,6 +5,6 @@ instance_activate_object(objMegaTrooperController);
     camera.right = objMegaTrooperController.x+512;
     camera.bottom = 3508;
   //  play_boss_music();
-objMusic.bossLoop = bgmBossLoop;
+objMusic.bossLoopAsset = bgmBossLoop;
 play_boss_intro(bgmBossIntro, 0);
 with argument0 instance_destroy();

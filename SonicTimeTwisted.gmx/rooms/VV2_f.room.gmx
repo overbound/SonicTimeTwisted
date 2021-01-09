@@ -856,7 +856,7 @@ with objTitlecard
     <instance objName="objSlant" x="7480" y="832" name="inst_01479D22" locked="0" code="angled=0;&#xA;through=true;&#xA;" scaleX="-1.5" scaleY="0.125" colour="4294967295" rotation="0"/>
     <instance objName="objSlant" x="7472" y="960" name="inst_B1A3B667" locked="0" code="" scaleX="2" scaleY="0.125" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="7408" y="964" name="inst_E790D5E2" locked="0" code="climbable=1;&#xA;" scaleX="20" scaleY="23.5" colour="4294967295" rotation="0"/>
-    <instance objName="objLevel" x="0" y="0" name="inst_0004605A" locked="0" code="objMusic.musicIntro = bgmVVFutureIntro;&#xA;objMusic.musicLoop = bgmVVFutureLoop;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objLevel" x="0" y="0" name="inst_0004605A" locked="0" code="objMusic.musicIntroAsset = bgmVVFutureIntro;&#xA;objMusic.musicLoopAsset = bgmVVFutureLoop;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="6036" y="712" name="inst_71EC42F9" locked="0" code="through=1;" scaleX="5.7142858505249" scaleY="23" colour="4294967295" rotation="0"/>
     <instance objName="objStart" x="258" y="1556" name="inst_1AEBA317" locked="0" code="tag=0;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSlant" x="7472" y="960" name="inst_B982F78A" locked="0" code="" scaleX="-2" scaleY="0.125" colour="4294967295" rotation="0"/>

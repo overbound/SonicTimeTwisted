@@ -72,7 +72,7 @@ break;
 case 1:
     instance_activate_object(objFireFly);
     with objFireFly state=1;
-    objMusic.bossLoop = bgmBossLoop;
+    objMusic.bossLoopAsset = bgmBossLoop;
     play_boss_intro(bgmBossIntro,0);
     state=2;
 break;
