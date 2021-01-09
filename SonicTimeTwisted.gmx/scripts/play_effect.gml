@@ -5,7 +5,7 @@ with objMusic {
     if state == 5 {
         statePrevious = state;
         previousPosition = 0;
-        audio_sound_gain(musicJingle, 0, 200);
+        audio_sound_gain(currentMusic, 0, 200);
     } else if state == 6 && statePrevious == 5 { 
         audio_stop_sound(musicEffect);
     } else {
