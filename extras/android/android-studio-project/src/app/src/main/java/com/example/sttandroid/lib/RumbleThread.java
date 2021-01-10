@@ -17,7 +17,12 @@
  */
 package com.example.sttandroid.lib;
 
+import android.annotation.SuppressLint;
+import android.os.Build;
+import android.os.VibrationEffect;
 import android.os.Vibrator;
+
+import androidx.annotation.RequiresApi;
 
 /**
  * Rumble thread class, that manages vibrations.
@@ -47,7 +52,13 @@ public class RumbleThread extends Thread {
      * @param v The vibrator to manage
      */
     public RumbleThread(Vibrator v) {
-        this.v = new VibratorFacade(v);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            this.v = new VibratorFacadeWithEffects(v);
+        }
+        else {
+            this.v = new VibratorFacade(v);
+        }
         done = false;
         power = 0;
     }
@@ -59,7 +70,13 @@ public class RumbleThread extends Thread {
      * @param v1 The second vibrator to manage (secondary device)
      */
     public RumbleThread(Vibrator v0, Vibrator v1) {
-        this.v = new DoubleVibratorFacade(v0, v1);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            this.v = new DoubleVibratorFacadeWithEffects(v0, v1);
+        }
+        else {
+            this.v = new DoubleVibratorFacade(v0, v1);
+        }
+
         done = false;
         power = 0;
     }
@@ -1471,6 +1488,53 @@ public class RumbleThread extends Thread {
     }
 
     /**
+     * Reference class containing Vibration effects for newer smartphones
+     */
+    static class VibrationOneShots {
+        protected static boolean initialized;
+        protected static VibrationEffect[] vibrations;
+
+        /**
+         * Initializes vibration effects.
+         *
+         * The NewApi warning is suppressed, because by the point this method is reached, the API
+         * version has already been tested
+         */
+        @SuppressLint("NewApi")
+        public static void init() {
+            if(!VibrationOneShots.initialized)
+            {
+                VibrationOneShots.vibrations = new VibrationEffect[51];
+                VibrationOneShots.vibrations[0] = null;
+                for(int i = 1; i < 51; i++)
+                {
+                    // normally, the amplitude would differ, and not the duration,
+                    // but not all phones are compatible with varying amplitudes
+                    VibrationOneShots.vibrations[i] = VibrationEffect.createOneShot(
+                            i, VibrationEffect.DEFAULT_AMPLITUDE
+                    );
+                }
+
+                VibrationOneShots.initialized = true;
+            }
+        }
+
+        /**
+         * Vibrate using an effect.
+         * At this point, the test on the API version has been done, so it's never called on older
+         * devices, hence the suppressed warning
+         *
+         * @param v Vibrator
+         * @param power Power from 1 to 50
+         */
+        @SuppressLint("NewApi")
+        public static void vibrate(Vibrator v, int power)
+        {
+            v.vibrate(VibrationOneShots.vibrations[power]);
+        }
+    }
+
+    /**
      * Facade for one device
      */
     static class VibratorFacade {
@@ -1520,6 +1584,59 @@ public class RumbleThread extends Thread {
         public void vibrate(long power) {
             super.vibrate(power);
             vibrator1.vibrate(power);
+        }
+    }
+
+    /**
+     * Facade for one device that uses effects
+     */
+    static class VibratorFacadeWithEffects extends VibratorFacade {
+
+        /**
+         * Constructor
+         *
+         * @param v0 Vibrator to manage
+         */
+        public VibratorFacadeWithEffects(Vibrator v0) {
+            super(v0);
+            VibrationOneShots.init();
+        }
+
+        /**
+         * Set the vibration power
+         *
+         * @param power Power to use
+         */
+        public void vibrate(long power) {
+            VibrationOneShots.vibrate(vibrator0, (int) power);
+        }
+    }
+
+    /**
+     * Facade for two devices that uses effects
+     */
+    static class DoubleVibratorFacadeWithEffects extends VibratorFacadeWithEffects {
+        protected Vibrator vibrator1;
+
+        /**
+         * Constructor
+         *
+         * @param v0 First vibrator to manage
+         * @param v1 Second vibrator to manage
+         */
+        public DoubleVibratorFacadeWithEffects(Vibrator v0, Vibrator v1) {
+            super(v0);
+            vibrator1 = v1;
+        }
+
+        /**
+         * Set the vibration power
+         *
+         * @param power Power to use
+         */
+        public void vibrate(long power) {
+            super.vibrate(power);
+            VibrationOneShots.vibrate(vibrator1, (int) power);
         }
     }
 }

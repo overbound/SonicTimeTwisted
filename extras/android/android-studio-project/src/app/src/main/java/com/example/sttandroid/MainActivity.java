@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
 
     protected Thread thread;
 
-    protected boolean vibrating;
+    protected int vibrating;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
         appState = APPSTATE_IDLE;
         cursor = 0;
         thread = null;
-        vibrating = false;
+        vibrating = 0;
         updateDisplay();
 
     }
@@ -117,12 +117,12 @@ public class MainActivity extends AppCompatActivity {
                                 cursor--;
                                 if(cursor < 0)
                                 {
-                                    cursor = 2;
+                                    cursor = 3;
                                 }
                                 updateDisplay();
                                 return true;
                             case KeyEvent.KEYCODE_VOLUME_DOWN:
-                                cursor = (cursor + 1) % 3;
+                                cursor = (cursor + 1) % 4;
                                 updateDisplay();
                                 return true;
                             case KeyEvent.KEYCODE_BACK:
@@ -152,18 +152,54 @@ public class MainActivity extends AppCompatActivity {
                                         updateDisplay();
                                         return true;
                                     case 2:
-                                        if(vibrating)
+                                        switch(vibrating)
                                         {
-                                            sttAndroid.android_rumble_perform(0, 0);
-                                            vibrating = false;
-                                        }
-                                        else
-                                        {
-                                            sttAndroid.android_rumble_perform(0, 1);
-                                            vibrating = true;
+                                            case 0:
+                                                sttAndroid.android_rumble_perform(0, 0.25);
+                                                vibrating = 1;
+                                                break;
+                                            case 1:
+                                                sttAndroid.android_rumble_perform(0, 0.5);
+                                                vibrating = 2;
+                                                break;
+                                            case 2:
+                                                sttAndroid.android_rumble_perform(0, 0.75);
+                                                vibrating = 3;
+                                                break;
+                                            case 3:
+                                                sttAndroid.android_rumble_perform(0, 1);
+                                                vibrating = 4;
+                                                break;
+                                            case 4:
+                                                sttAndroid.android_rumble_perform(0, 0);
+                                                vibrating = 0;
+                                                break;
                                         }
                                         appState = MainActivity.APPSTATE_IDLE;
                                         updateDisplay();
+                                        return true;
+                                    case 3:
+                                        appState = MainActivity.APPSTATE_IDLE;
+                                        if(sttAndroid.android_has_assigned_device(0) > 0)
+                                        {
+                                            print("Device is connected");
+                                        }
+                                        else
+                                        {
+                                            print("Device is not connected");
+                                        }
+                                        sttAndroid.android_disconnect_input(0);
+                                        print("Disconnecting");
+                                        if(sttAndroid.android_has_assigned_device(0) > 0)
+                                        {
+                                            print("Device is connected");
+                                        }
+                                        else
+                                        {
+                                            print("Device is not connected");
+                                        }
+                                        updateDisplay();
+                                        return true;
                                 }
                         }
                 }
@@ -232,9 +268,9 @@ public class MainActivity extends AppCompatActivity {
         setMappingConfig(SttAndroid.cDOWN, "161,11");
         setMappingConfig(SttAndroid.cLEFT, "152,2");
         setMappingConfig(SttAndroid.cRIGHT, "151,1");
-        setMappingConfig(SttAndroid.cA, "990,-1");
-        setMappingConfig(SttAndroid.cB, "960,-1");
-        setMappingConfig(SttAndroid.cC, "970,-1");
+        setMappingConfig(SttAndroid.cA, "960,-1");
+        setMappingConfig(SttAndroid.cB, "970,-1");
+        setMappingConfig(SttAndroid.cC, "990,-1");
         setMappingConfig(SttAndroid.cSTART, "1080,1000");
 
 
@@ -449,7 +485,27 @@ public class MainActivity extends AppCompatActivity {
         sb.append(cursor == 1 ? " > " : "   ");
         sb.append("Map keys\n");
         sb.append(cursor == 2 ? " > " : "   ");
-        sb.append(vibrating ? "Stop vibrating\n" : "Vibrate\n");
+
+        switch(vibrating)
+        {
+            case 0:
+                sb.append("Vibrate at 25%\n");
+                break;
+            case 1:
+                sb.append("Vibrate at 50%\n");
+                break;
+            case 2:
+                sb.append("Vibrate at 75%\n");
+                break;
+            case 3:
+                sb.append("Vibrate at 100%\n");
+                break;
+            case 4:
+                sb.append("Stop vibrating\n");
+                break;
+        }
+        sb.append(cursor == 3 ? " > " : "   ");
+        sb.append("Disconnect\n");
 
 
 
