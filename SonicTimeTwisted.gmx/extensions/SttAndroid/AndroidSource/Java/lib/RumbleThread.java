@@ -22,8 +22,6 @@ import android.os.Build;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
 
-import androidx.annotation.RequiresApi;
-
 /**
  * Rumble thread class, that manages vibrations.
  *
