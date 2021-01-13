@@ -2,8 +2,8 @@
 // transform or de-transform?
 if argument0
 {
-    // set timer offset
-    superform = objLevel.timer;
+    // set superform counter
+    superform = 1;
     // setup animation based on character
     switch character_id
     {

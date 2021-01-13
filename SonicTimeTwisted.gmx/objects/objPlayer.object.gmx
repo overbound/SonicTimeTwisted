@@ -319,14 +319,18 @@ if underwater and shield_type!=1 and !objProgram.cutscene
 }
 
 // superform
-if superform and (superform-objLevel.timer)&gt;0
+if superform
 {
-    // subtract a ring every second
-    if not ((superform-objLevel.timer) mod 60)
+    if objLevel.stage_timer_active
     {
-        
-        objGameData.rings[0] -= 1;
-        if objGameData.rings[0]&lt;=0 player_transform(false);
+        superform++;
+        // subtract a ring every second
+        if (superform &gt;= 61)
+        {
+            superform = 1;
+            objGameData.rings[0] -= 1;
+            if objGameData.rings[0]&lt;=0 player_transform(false);
+        }
     }
 }
 </string>

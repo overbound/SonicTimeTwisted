@@ -30,6 +30,7 @@ image_speed = 0;
 // timing
 timer = 0;
 timer_enabled = false;
+stage_timer_active = false;
 reseting = 0;
 // state
 started = false;
@@ -152,7 +153,8 @@ with objPlayer {if offscreen_enabled and instance_exists(camera) and not in_view
             <string>/// Run timers
 if objProgram.paused or objProgram.lost_focus exit;
 // stage timer
-if objGameData.timeout and timer_enabled and started and !cleared and !objProgram.cutscene {if timer timer -= 1;}
+stage_timer_active = objGameData.timeout and timer_enabled and started and !cleared and !objProgram.cutscene;
+if stage_timer_active {if timer timer -= 1;}
 // reset timer
 if reseting
 {

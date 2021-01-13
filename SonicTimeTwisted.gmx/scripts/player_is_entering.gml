@@ -2,7 +2,6 @@
 if objProgram.temp_superform == true {
     player_transform(true);
     objProgram.temp_superform = false;
-    superform = objLevel.timer;
 }
 persistent = false;
 image_speed = 0;
