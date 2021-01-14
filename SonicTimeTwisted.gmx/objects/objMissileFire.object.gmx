@@ -39,7 +39,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>z=24;
+            <string>z=42;
 image_speed=1;
 direction=90;
 spr_direction=-direction;
