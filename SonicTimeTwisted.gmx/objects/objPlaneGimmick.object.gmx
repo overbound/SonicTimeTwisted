@@ -252,30 +252,26 @@ remove = 0;
             <kind>1</kind>
             <string>/// Plane Motion
 with objPlayer {
-    if other.x -4 &gt; x
-        other.x += xspeed;
-    if other.x +14 &lt; x
-        other.x += xspeed;    
+   // clamping x instead of relying on speed, otherwise the player can fly off the plane
+    other.x = clamp(other.x, x - 14, x + 4);
     
-    if landed == false
-    {
-        if other.y &lt; y
-            other.y +=1;
-    }
-    else
+    if landed
     {
         rumble(rumble_short_weakest);
     }
+   else
+   {
+      if other.y &lt; y
+      {
+         other.y +=1;
+         // emergency reposition of the plane if the player is clipping through
+         if(y &gt; other.y - 38)
+         {
+            other.y = ceil(y)+38;
+         }
+      }
+   }
 }
-//Rebound  
-/*if rebound {
-    y+=yspeed;
-    yspeed -=.1;
-    if yspeed &lt;= 0 {
-        rebound = false;
-        yspeed = 3;
-    }
-}*/
 
 y = floor(y);
 
