@@ -9,7 +9,7 @@
   <bboxmode>0</bboxmode>
   <bbox_left>0</bbox_left>
   <bbox_right>36</bbox_right>
-  <bbox_top>0</bbox_top>
+  <bbox_top>1</bbox_top>
   <bbox_bottom>31</bbox_bottom>
   <HTile>0</HTile>
   <VTile>0</VTile>
@@ -34,5 +34,6 @@
     <frame index="3">images\sprTailsRun_3.png</frame>
     <frame index="4">images\sprTailsRun_4.png</frame>
     <frame index="5">images\sprTailsRun_5.png</frame>
+    <frame index="6">images\sprTailsRun_6.png</frame>
   </frames>
 </sprite>
