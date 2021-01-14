@@ -122,7 +122,7 @@ lines[14, 2] = 'Nik';
 lines[15, 0] = "Additional Art by";
 lines[15, 1] = 'Alex Khayrullin';
 lines[15, 2] = 'bennascar';
-lines[15, 2] = 'Romulo Santos';
+lines[15, 3] = 'Romulo Santos';
 
 // Inject localization author(s)
 var langname = tr_get_lang_creditsname();
