@@ -4,6 +4,9 @@ exit;
 if state == player_state_fly {
     player_is_falling();
 }
+if state == player_state_glide {
+    player_is_falling();
+}
 with argument0 
 {
     visible = 0;
