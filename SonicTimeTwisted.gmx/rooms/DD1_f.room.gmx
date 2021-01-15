@@ -172,7 +172,7 @@ with objTitlecard
     <instance objName="objSlant" x="15044" y="1764" name="inst_535E2E94" locked="0" code="through=1;&#xA;" scaleX="-0.879999995231628" scaleY="0.375" colour="4294967295" rotation="0"/>
     <instance objName="objSlant" x="15072" y="1776" name="inst_03F6C1A7" locked="0" code="through=1;&#xA;" scaleX="-0.879999995231628" scaleY="0.5" colour="4294967295" rotation="0"/>
     <instance objName="objSlant" x="15104" y="1792" name="inst_277C8777" locked="0" code="through=1;&#xA;" scaleX="-1" scaleY="0.75" colour="4294967295" rotation="0"/>
-    <instance objName="objField" x="6976" y="576" name="inst_4A464E34" locked="0" code="reaction_script = player_reaction_xwarp;&#xA;xwarp = 6080; //5600 6400&#xA;" scaleX="149.33332824707" scaleY="4.26666688919067" colour="4294967295" rotation="0"/>
+    <instance objName="objField" x="6976" y="576" name="inst_4A464E34" locked="0" code="reaction_script = player_reaction_xwarp;&#xA;xwarp = 6080; //5600 6400" scaleX="149.33332824707" scaleY="4.26666688919067" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="8800" y="380" name="inst_0DF6CC5A" locked="0" code="climbable=true;&#xA;" scaleX="78" scaleY="145.714279174805" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="9424" y="1392" name="inst_4439D5AA" locked="0" code="climbable=true;&#xA;" scaleX="70" scaleY="17.5" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="10304" y="1168" name="inst_2C46E906" locked="0" code="climbable=true;" scaleX="12" scaleY="45.5" colour="4294967295" rotation="0"/>
@@ -265,7 +265,7 @@ with objTitlecard
     <instance objName="objSlant" x="14816" y="1856" name="inst_6069E606" locked="0" code="through=1;&#xA;" scaleX="-0.879999995231628" scaleY="0.5" colour="4294967295" rotation="0"/>
     <instance objName="objSlant" x="14848" y="1872" name="inst_32FFE884" locked="0" code="through=1;&#xA;" scaleX="-1" scaleY="0.75" colour="4294967295" rotation="0"/>
     <instance objName="objOstrich" x="6556" y="288" name="inst_2D47A4D1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPlaneStop" x="8768" y="-52" name="inst_56A9C959" locked="0" code="is_right = 1;&#xA;" scaleX="3.2380952835083" scaleY="23.0476188659668" colour="4294967295" rotation="0"/>
+    <instance objName="objPlaneStop" x="8836" y="-48" name="inst_56A9C959" locked="0" code="is_right = 1;&#xA;" scaleX="3.2380952835083" scaleY="23.0476188659668" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="2944" y="-304" name="inst_C0D32AAB" locked="0" code="climbable=true;" scaleX="12" scaleY="230" colour="4294967295" rotation="0"/>
     <instance objName="objMonitor" x="1692" y="1664" name="inst_8C9F7E2F" locked="0" code="icon=8;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpring" x="1372" y="1664" name="inst_E4BA74CC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -915,7 +915,7 @@ with objTitlecard
     <instance objName="objMonitor" x="5700" y="-16" name="inst_F3B531EF" locked="0" code="icon=2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objMonitor" x="5728" y="-16" name="inst_BD21AF78" locked="0" code="icon=2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="8696" y="-308" name="inst_8CBB1B3E" locked="0" code="climbable=1;&#xA;" scaleX="91" scaleY="30" colour="4294967295" rotation="0"/>
-    <instance objName="objPlaneStop" x="7016" y="-16" name="inst_CCBA7842" locked="0" code="" scaleX="3.09090900421143" scaleY="26.1818180084229" colour="4294967295" rotation="0"/>
+    <instance objName="objPlaneStop" x="6960" y="-16" name="inst_CCBA7842" locked="0" code="" scaleX="3.09090900421143" scaleY="26.1818180084229" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="2816" y="-340" name="inst_FF9851E6" locked="0" code="climbable=true;" scaleX="777.5" scaleY="4.5" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="768" y="-384" name="inst_DD6B38FD" locked="0" code="climbable=true;" scaleX="264.5" scaleY="10.5" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="12716" y="-580" name="inst_7A0C0922" locked="0" code="climbable=1;&#xA;" scaleX="92.5" scaleY="18" colour="4294967295" rotation="0"/>
