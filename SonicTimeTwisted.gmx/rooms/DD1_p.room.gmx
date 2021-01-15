@@ -1158,11 +1158,11 @@ with objTitlecard
     <instance objName="objBlock" x="5568" y="1056" name="inst_0F47C31D" locked="0" code="climbable=true;&#xA;" scaleX="38" scaleY="4" colour="4294967295" rotation="0"/>
     <instance objName="objField" x="13104" y="768" name="inst_8632323B" locked="0" code="reaction_script=player_reaction_change_room_demensions_destroy;&#xA;top=0;&#xA;bottom=room_height;&#xA;right=bbox_right;&#xA;left=0;&#xA;" scaleX="18.5" scaleY="35" colour="4294967295" rotation="0"/>
     <instance objName="objPlaneStop" x="10352" y="1604" name="inst_81B7B752" locked="0" code="" scaleX="2.18181824684143" scaleY="22.9090900421143" colour="4294967295" rotation="0"/>
-    <instance objName="objPlaneStop" x="11432" y="1552" name="inst_2BC8C008" locked="0" code="" scaleX="1.52380955219269" scaleY="25.1428565979004" colour="4294967295" rotation="0"/>
+    <instance objName="objPlaneStop" x="11432" y="1552" name="inst_2BC8C008" locked="0" code="is_right = 1;&#xA;" scaleX="1.52380955219269" scaleY="25.1428565979004" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="11424" y="1616" name="inst_A2D95C50" locked="0" code="climbable=true;&#xA;" scaleX="3" scaleY="3" colour="4294967295" rotation="0"/>
     <instance objName="objPlaneGimmick" x="10440" y="1928" name="inst_F0C9CD12" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBigBombBadnik" x="10896" y="1872" name="inst_B70342C7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPlaneStop" x="11264" y="1560" name="inst_00AE7114" locked="0" code="" scaleX="6.09523820877075" scaleY="1.90476191043854" colour="4294967295" rotation="0"/>
+    <instance objName="objPlaneStop" x="11264" y="1560" name="inst_00AE7114" locked="0" code="is_top = 1;&#xA;" scaleX="6.09523820877075" scaleY="1.90476191043854" colour="4294967295" rotation="0"/>
     <instance objName="objPterodactyl" x="11064" y="1784" name="inst_96E97980" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPterodactyl" x="11240" y="1976" name="inst_5DC39555" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPterodactyl" x="11352" y="1840" name="inst_6885BC8A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

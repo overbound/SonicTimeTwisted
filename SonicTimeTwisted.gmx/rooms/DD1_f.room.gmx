@@ -265,7 +265,7 @@ with objTitlecard
     <instance objName="objSlant" x="14816" y="1856" name="inst_6069E606" locked="0" code="through=1;&#xA;" scaleX="-0.879999995231628" scaleY="0.5" colour="4294967295" rotation="0"/>
     <instance objName="objSlant" x="14848" y="1872" name="inst_32FFE884" locked="0" code="through=1;&#xA;" scaleX="-1" scaleY="0.75" colour="4294967295" rotation="0"/>
     <instance objName="objOstrich" x="6556" y="288" name="inst_2D47A4D1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPlaneStop" x="8768" y="-52" name="inst_56A9C959" locked="0" code="" scaleX="3.2380952835083" scaleY="23.0476188659668" colour="4294967295" rotation="0"/>
+    <instance objName="objPlaneStop" x="8768" y="-52" name="inst_56A9C959" locked="0" code="is_right = 1;&#xA;" scaleX="3.2380952835083" scaleY="23.0476188659668" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="2944" y="-304" name="inst_C0D32AAB" locked="0" code="climbable=true;" scaleX="12" scaleY="230" colour="4294967295" rotation="0"/>
     <instance objName="objMonitor" x="1692" y="1664" name="inst_8C9F7E2F" locked="0" code="icon=8;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpring" x="1372" y="1664" name="inst_E4BA74CC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

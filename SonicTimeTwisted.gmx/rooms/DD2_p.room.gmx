@@ -1750,9 +1750,9 @@ with objTitlecard
     <instance objName="objFlowerShot" x="2016" y="1418" name="inst_41F8F513" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objStart" x="9560" y="1680" name="inst_AD450582" locked="0" code="tag = 6;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPterodactyl" x="11960" y="1696" name="inst_2486100D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPlaneStop" x="12584" y="-128" name="inst_9F12729A" locked="0" code="" scaleX="4.1904764175415" scaleY="103.272727966309" colour="4294967295" rotation="0"/>
+    <instance objName="objPlaneStop" x="12584" y="-128" name="inst_9F12729A" locked="0" code="is_right = 1;&#xA;" scaleX="4.1904764175415" scaleY="103.272727966309" colour="4294967295" rotation="0"/>
     <instance objName="objPlaneStop" x="1455" y="-32" name="inst_9AF83E69" locked="0" code="" scaleX="6.09523820877075" scaleY="57.9047622680664" colour="4294967295" rotation="0"/>
-    <instance objName="objPlaneStop" x="3288" y="-104" name="inst_96335F1D" locked="0" code="" scaleX="4.72727251052856" scaleY="59.8095245361328" colour="4294967295" rotation="0"/>
+    <instance objName="objPlaneStop" x="3288" y="-104" name="inst_96335F1D" locked="0" code="is_right = 1;&#xA;" scaleX="4.72727251052856" scaleY="59.8095245361328" colour="4294967295" rotation="0"/>
     <instance objName="objCapsule" x="16544" y="1137" name="inst_594C0A3B" locked="0" code="fake = true;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objLampPost" x="5332" y="1392" name="inst_E4095127" locked="0" code="tag=20;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objLampPost" x="1356" y="976" name="inst_CD6DD840" locked="0" code="tag=21;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
