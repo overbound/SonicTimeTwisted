@@ -1463,6 +1463,8 @@ public class RumbleThread extends Thread {
 
             } catch (InterruptedException ie) {
                 // do nothing
+            } catch (NullPointerException npe) {
+                power = 0;
             }
         }
     }
