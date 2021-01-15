@@ -397,7 +397,7 @@
     <option_linux_steam_app_id>0</option_linux_steam_app_id>
     <option_linux_sync>-1</option_linux_sync>
     <option_linux_texture_page>2048</option_linux_texture_page>
-    <option_linux_version_build>0</option_linux_version_build>
+    <option_linux_version_build>1</option_linux_version_build>
     <option_linux_version_major>1</option_linux_version_major>
     <option_linux_version_minor>1</option_linux_version_minor>
     <option_loadalpha>255</option_loadalpha>
