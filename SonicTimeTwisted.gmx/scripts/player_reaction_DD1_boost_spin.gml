@@ -16,6 +16,6 @@ if !audio_is_playing(sndSpin) {
     play_sfx(sndSpin, 1);
 }
 //with argument0 instance_destroy();
-player_is_rolling()
+player_is_rolling_automatically()
 // hard collision found
 return true;

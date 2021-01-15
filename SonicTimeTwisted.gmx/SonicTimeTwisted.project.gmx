@@ -4462,6 +4462,7 @@
             <script>scripts\player_state_path.gml</script>
             <script>scripts\player_state_reset.gml</script>
             <script>scripts\player_state_roll.gml</script>
+            <script>scripts\player_state_roll_automatically.gml</script>
             <script>scripts\player_state_run.gml</script>
             <script>scripts\player_state_slide.gml</script>
             <script>scripts\player_state_spindash.gml</script>
@@ -4515,6 +4516,7 @@
             <script>scripts\player_is_looking.gml</script>
             <script>scripts\player_is_reset.gml</script>
             <script>scripts\player_is_rolling.gml</script>
+            <script>scripts\player_is_rolling_automatically.gml</script>
             <script>scripts\player_is_running.gml</script>
             <script>scripts\player_is_spindashing.gml</script>
             <script>scripts\player_is_standing.gml</script>
