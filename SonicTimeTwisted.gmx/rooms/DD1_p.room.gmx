@@ -1007,8 +1007,8 @@ with objTitlecard
     <instance objName="objSlant" x="192" y="1824" name="inst_29A6C626" locked="0" code="angled=0;&#xA;" scaleX="1.75" scaleY="0.125" colour="4294967295" rotation="0"/>
     <instance objName="objSlant" x="320" y="1824" name="inst_FDE17694" locked="0" code="angled=0;&#xA;" scaleX="1.75" scaleY="0.125" colour="4294967295" rotation="0"/>
     <instance objName="objSlant" x="320" y="1824" name="inst_96F654BC" locked="0" code="angled=0;&#xA;" scaleX="-1.75" scaleY="0.125" colour="4294967295" rotation="0"/>
-    <instance objName="objBlock" x="0" y="1472" name="inst_871426E5" locked="0" code="through=1;&#xA;" scaleX="88" scaleY="24" colour="4294967295" rotation="0"/>
-    <instance objName="objBlock" x="512" y="1664" name="inst_4186A3BE" locked="0" code="climbable=1;" scaleX="24.5" scaleY="16" colour="4294967295" rotation="0"/>
+    <instance objName="objBlock" x="0" y="1472" name="inst_871426E5" locked="0" code="" scaleX="88" scaleY="24" colour="4294967295" rotation="0"/>
+    <instance objName="objBlock" x="512" y="1648" name="inst_4186A3BE" locked="0" code="climbable=1;" scaleX="24.5" scaleY="18" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="376" y="1824" name="inst_45A0AD97" locked="0" code="through=1;&#xA;" scaleX="3" scaleY="0.569999992847443" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="112" y="1824" name="inst_92AA025C" locked="0" code="through=1;&#xA;" scaleX="3" scaleY="0.569999992847443" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="248" y="1824" name="inst_90AD7605" locked="0" code="through=1;&#xA;" scaleX="2" scaleY="0.571428596973419" colour="4294967295" rotation="0"/>
