@@ -6,7 +6,7 @@ switch(argument0)
         {
             if(android_is_mapping_complete(0))
             {
-                menu_fn_exit_submenu(menu_part_options_items, 3);
+                menu_fn_exit_submenu(menu_part_options_items, 9);
             }
             else
             {
@@ -15,7 +15,7 @@ switch(argument0)
         }
         else
         {
-            menu_fn_exit_submenu(menu_part_options_items, 3);
+            menu_fn_exit_submenu(menu_part_options_items, 9);
         }
         break;
     case 0:
