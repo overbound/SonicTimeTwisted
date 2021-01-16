@@ -7,7 +7,7 @@
 		"authors_contrib": "",
 		
 		"top_hud_offset": 16,
-		"titlecard_zone_is_first": 1,
+		"titlecard_zone_is_first": 0,
 
 		"font_param": {
 			"sprFontHud": {
@@ -343,41 +343,41 @@
 		"_metal_sonic_voice_No_Harm": "Ne fais pas\nde mal...",
 		"_metal_sonic_voice_The_Creator": "...au\nCréateur!",
 		
-		"_zonename_AAZ_A": "",
-		"_zonename_AAZ_B": "Foire",
-		"_zonename_AAZ_C": "Festive",
+		"_zonename_AAZ_A": "Foire",
+		"_zonename_AAZ_B": "Festive",
+		"_zonename_AAZ_C": "",
 		
-		"_zonename_RRZ_A": "",
-		"_zonename_RRZ_B": "Vestiges",
-		"_zonename_RRZ_C": "Vertige",
+		"_zonename_RRZ_A": "Vestiges",
+		"_zonename_RRZ_B": "Vertige",
+		"_zonename_RRZ_C": "",
 		
-		"_zonename_FFZ_A": "",
-		"_zonename_FFZ_B": "Cryo",
-		"_zonename_FFZ_C": "Citadelle",
+		"_zonename_FFZ_A": "Cryo",
+		"_zonename_FFZ_B": "Citadelle",
+		"_zonename_FFZ_C": "",
 		
-		"_zonename_VVZ_A": "",
-		"_zonename_VVZ_B": "Jardin",
-		"_zonename_VVZ_C": "de Jade",
+		"_zonename_VVZ_A": "Jardin",
+		"_zonename_VVZ_B": "de Jade",
+		"_zonename_VVZ_C": "",
 		
-		"_zonename_DDZ_A": "",
-		"_zonename_DDZ_B": "Engin",
-		"_zonename_DDZ_C": "Errant",
+		"_zonename_DDZ_A": "Engin",
+		"_zonename_DDZ_B": "Errant",
+		"_zonename_DDZ_C": "",
 		
-		"_zonename_TTZ_A": "",
-		"_zonename_TTZ_B": "Méandres",
-		"_zonename_TTZ_C": "Marins",
+		"_zonename_TTZ_A": "Méandres",
+		"_zonename_TTZ_B": "Marins",
+		"_zonename_TTZ_C": "",
 		
-		"_zonename_SSZ_A": "",
-		"_zonename_SSZ_B": "Soucoupe",
-		"_zonename_SSZ_C": "Submergée",
+		"_zonename_SSZ_A": "Soucoupe",
+		"_zonename_SSZ_B": "Submergée",
+		"_zonename_SSZ_C": "",
 		
-		"_zonename_PPZ_A": "",
-		"_zonename_PPZ_B": "Panique",
-		"_zonename_PPZ_C": "Planétaire",
+		"_zonename_PPZ_A": "Panique",
+		"_zonename_PPZ_B": "Planétaire",
+		"_zonename_PPZ_C": "",
 		
-		"_zonename_GGZ_A": "",
-		"_zonename_GGZ_B": "Attaque",
-		"_zonename_GGZ_C": "Astrale",
+		"_zonename_GGZ_A": "Attaque",
+		"_zonename_GGZ_B": "Astrale",
+		"_zonename_GGZ_C": "",
 		
 		"_GAMEOVER_WORD1": "PARTIE",
 		"_GAMEOVER_WORD2": "TERMINÉE",

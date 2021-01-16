@@ -7,7 +7,7 @@
 		"authors_contrib": "",
 
 		"top_hud_offset": 10,
-		"titlecard_zone_is_first": 1,
+		"titlecard_zone_is_first": 0,
 		
 	 "font_param": {
 			"sprFontHud": {
@@ -338,41 +338,41 @@
 		"_metal_sonic_voice_No_Harm": "Não\nMachuque...",
 		"_metal_sonic_voice_The_Creator": "...meu\nCriador!",
 
-		"_zonename_AAZ_A": "",
-		"_zonename_AAZ_B": "Ataque",
-		"_zonename_AAZ_C": "Atrativo",
+		"_zonename_AAZ_A": "Ataque",
+		"_zonename_AAZ_B": "Atrativo",
+		"_zonename_AAZ_C": "",
 
-		"_zonename_RRZ_A": "",
-		"_zonename_RRZ_B": "Ruínas",
-		"_zonename_RRZ_C": "Raivosas",
+		"_zonename_RRZ_A": "Ruínas",
+		"_zonename_RRZ_B": "Raivosas",
+		"_zonename_RRZ_C": "",
 		
-		"_zonename_FFZ_A": "",
-		"_zonename_FFZ_B": "Fortaleza",
-		"_zonename_FFZ_C": "Fria",
+		"_zonename_FFZ_A": "Fortaleza",
+		"_zonename_FFZ_B": "Fria",
+		"_zonename_FFZ_C": "",
 
-		"_zonename_VVZ_A": "",
-		"_zonename_VVZ_B": "Vale",
-		"_zonename_VVZ_C": "Verdejante",
+		"_zonename_VVZ_A": "Vale",
+		"_zonename_VVZ_B": "Verdejante",
+		"_zonename_VVZ_C": "",
 
-		"_zonename_DDZ_A": "",
-		"_zonename_DDZ_B": "Desvio",
-		"_zonename_DDZ_C": "Devorador",
+		"_zonename_DDZ_A": "Desvio",
+		"_zonename_DDZ_B": "Devorador",
+		"_zonename_DDZ_C": "",
 
-		"_zonename_TTZ_A": "",
-		"_zonename_TTZ_B": "Marés",
-		"_zonename_TTZ_C": "Maliciosas",
+		"_zonename_TTZ_A": "Marés",
+		"_zonename_TTZ_B": "Maliciosas",
+		"_zonename_TTZ_C": "",
 
-		"_zonename_SSZ_A": "",
-		"_zonename_SSZ_B": "Objeto",
-		"_zonename_SSZ_C": "Oculto",
+		"_zonename_SSZ_A": "Objeto",
+		"_zonename_SSZ_B": "Oculto",
+		"_zonename_SSZ_C": "",
 
-		"_zonename_PPZ_A": "",
-		"_zonename_PPZ_B": "Pânico",
-		"_zonename_PPZ_C": "Planetário",
+		"_zonename_PPZ_A": "Pânico",
+		"_zonename_PPZ_B": "Planetário",
+		"_zonename_PPZ_C": "",
 
-		"_zonename_GGZ_A": "",
-		"_zonename_GGZ_B": "Catástrofe",
-		"_zonename_GGZ_C": "Cósmica",
+		"_zonename_GGZ_A": "Catástrofe",
+		"_zonename_GGZ_B": "Cósmica",
+		"_zonename_GGZ_C": "",
 
 		"_GAMEOVER_WORD1": "FIM DE",
 		"_GAMEOVER_WORD2": "JOGO",
