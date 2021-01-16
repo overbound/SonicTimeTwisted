@@ -156,7 +156,7 @@ if(
 {
     next_message = true;
 }
-next_message = true;
+
 </string>
           </argument>
         </arguments>
