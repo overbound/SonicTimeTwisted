@@ -64,11 +64,8 @@ closing = false;
 progress = 0;
 // kill states: 1 death by ring, 2 death by fallout, 3 death by loss
 kill=0;
-//shadow=instance_create(x,y,obj3DShadow);
-shadow=noone;
-//with shadow { parent = other; scale = .15;}
 invincible=0;
-
+landing_tracker = instance_create(x, y, objSSPlayerLandingTracker);
 
 </string>
           </argument>
@@ -178,6 +175,7 @@ instance_activate_object(objSSMetalSonic);
 instance_activate_object(objInput);
 instance_activate_object(objInputHelp);
 instance_activate_object(objMenu);
+instance_activate_object(objSSPlayerLandingTracker);
 instance_activate_region(x-1408,y-1408,2816,2816,true);
 //instance_activate_region(x-1536,y-1536,3072,3072,true);
 </string>
@@ -315,6 +313,19 @@ if (bump_radius &lt; max_radius)
   bump_radius = bump_radius + (max_radius - bump_radius) * 0.25;
 }
 
+with(landing_tracker)
+{
+    if(!place_meeting(x, y, objTrack))
+    {
+        other.onGround = false;
+        other.noTrack = true;
+    }
+    else
+    {
+        other.noTrack = false;
+    }
+}
+/*
 if (!instance_position(x, y, objTrack))
 {
   onGround = false;
@@ -324,6 +335,7 @@ else
 {
   noTrack = false;
 }
+*/
 
 move_direction += xaxis * -1.5;
 
@@ -387,6 +399,9 @@ view_yview = y - view_hview / 2;
 
 image_angle = move_direction;
 view_angle = 90 - move_direction;
+
+landing_tracker.x = x;
+landing_tracker.y = y;
 </string>
           </argument>
         </arguments>
@@ -411,29 +426,6 @@ view_angle = 90 - move_direction;
 depth = min(2000,distance_to_object(objSSCamera)/20);
 
 depth1= depth;
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///shadow
-
-with shadow { x = other.x; y = other.y; }
 </string>
           </argument>
         </arguments>

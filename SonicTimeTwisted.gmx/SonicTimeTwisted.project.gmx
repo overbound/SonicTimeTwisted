@@ -3205,6 +3205,7 @@
             <sprite>sprites\sprSSEmerald</sprite>
             <sprite>sprites\sprSSEnd</sprite>
             <sprite>sprites\sprSSHudGo</sprite>
+            <sprite>sprites\sprSSPlayerLandingTracker</sprite>
             <sprite>sprites\sprSSStone</sprite>
           </sprites>
           <sprites name="Tracks">
@@ -5565,6 +5566,7 @@
       <object>objects\objSSMetalSonic</object>
       <object>objects\objSSParent</object>
       <object>objects\objSSPlayer</object>
+      <object>objects\objSSPlayerLandingTracker</object>
       <object>objects\objTrack</object>
       <object>objects\Solid</object>
     </objects>
