@@ -26,7 +26,10 @@ animation_new = "idle";
 //state = player_state_standby;
 xspeed = 0;
 // setup checkpoint
-objProgram.spawn_tag = 1;
+if objProgram.in_past
+    objProgram.spawn_tag = 2222;
+else
+    objProgram.spawn_tag = 1;
 objProgram.cutscene = false;
 // start timer
 objLevel.timer_enabled = true;
