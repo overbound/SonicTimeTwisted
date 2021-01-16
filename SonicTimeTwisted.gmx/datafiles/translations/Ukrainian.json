@@ -193,7 +193,7 @@
 		"_options_menu_touchscreen_gyrogglabel_DPad": "Хрестовина",
 		"_options_menu_touchscreen_gyrogglabel_Point": "Торкання",
 
-		"_options_menu_touchscreen_buttonreposition_back": "Натисніть на Назад щоб зберегти або скасувати",
+		"_options_menu_touchscreen_buttonreposition_back": "Натисніть на Назад, щоб зберегти або скасувати",
 		"_options_menu_touchscreen_buttonreposition_save": "Зберегти",
 		"_options_menu_touchscreen_buttonreposition_discard": "Скасувати",
 		"_options_menu_touchscreen_buttonreposition_default": "За замовчуванням",
@@ -224,7 +224,7 @@
 		"_options_menu_touchscreen_sstage_DPad": "Хрестовина",
 		"_options_menu_touchscreen_sstage_Gyroscope": "Гіроскоп",
 		
-		"_buttonname_Up": "Вверх",
+		"_buttonname_Up": "Вгору",
 		"_buttonname_Down": "Вниз",
 		"_buttonname_Left": "Ліворуч",
 		"_buttonname_Right": "Праворуч",
@@ -279,14 +279,14 @@
 		"_save_Past": "Минуле",
 		"_save_Future": "Майбутнє",
 		"_save_mobile_hint_select": "Виберіть збереження",
-		"_save_mobile_hint_act_select_top": "Проводьте пальцем вверх або вниз щоб обрати акт,#Натисніть на період часу щоб його обрати",
-		"_save_mobile_hint_act_select_bottom": "Натисніть на збереження щоб підтвердити,#доторкніться до екрану поза ним щоб скасувати",
-		"_save_mobile_hint_character_select_top": "Проводьте пальцем вверх або вниз щоб обрати персонажа",
-		"_save_mobile_hint_character_select_bottom": "Натисніть на збереження щоб підтвердити,#доторкніться до екрану поза ним щоб скасувати",
+		"_save_mobile_hint_act_select_top": "Проводьте пальцем вгору або вниз, щоб обрати акт,#Натисніть на період часу, щоб його обрати",
+		"_save_mobile_hint_act_select_bottom": "Натисніть на збереження, щоб підтвердити,#доторкніться до екрану поза ним, щоб скасувати",
+		"_save_mobile_hint_character_select_top": "Проводьте пальцем вгору або вниз, щоб обрати персонажа",
+		"_save_mobile_hint_character_select_bottom": "Натисніть на збереження, щоб підтвердити,#доторкніться до екрану поза ним, щоб скасувати",
 		"_save_mobile_hint_delete_top": "Оберіть збереження, яке хочете видалити",
-		"_save_mobile_hint_delete_bottom": "Натисніть на Метал Соніка вдруге щоб скасувати",
+		"_save_mobile_hint_delete_bottom": "Натисніть на Метал Соніка вдруге, щоб скасувати",
 		"_save_mobile_hint_delete_confirm_top": "Ви впевнені, що хочете видалити це збереження?",
-		"_save_mobile_hint_delete_confirm_bottom": "Натисніть на збереження щоб підтвердити,#доторкніться до екрану поза ним щоб скасувати",
+		"_save_mobile_hint_delete_confirm_bottom": "Натисніть на збереження, щоб підтвердити,#доторкніться до екрану поза ним, щоб скасувати",
 		
 		"_ssselect_CE1": "Смарагд хаосу 1",
 		"_ssselect_CE2": "Смарагд хаосу 2",
@@ -318,8 +318,8 @@
 		"_ss_scorecard_GOT_A": "%c ОТРИМАВ",
 		"_ss_scorecard_SUPER": "СУПЕР %c",
 		"_ss_scorecard_CAN_NOW_BECOME": "%c МОЖЕ СТАТИ",
-		"_ss_scorecard_JUMP_AND_HOLD": "Під час стрибку, натисніть на A і B",
-		"_ss_scorecard_JUMP_AND_HOLD_TOUCHSCREEN": "Під час стрибку, натисніть на S",
+		"_ss_scorecard_JUMP_AND_HOLD": "Під час стрибку, натисніть на A і B,",
+		"_ss_scorecard_JUMP_AND_HOLD_TOUCHSCREEN": "Під час стрибку, натисніть на S,",
 		"_ss_scorecard_TO_TURN_INTO": "щоб перетворитися на Супер %c",
 		
 		"_ss_intro_Race": "Перегони з",
@@ -384,6 +384,6 @@
 		"_good_ending_text": "Сонік, Тейлз і Наклз продовжили свою боротьбу\nза визволення Мобіуса від створінь Роботніка\nдоти, поки жодного робота не залишилось.\n\nДякуємо за гру!",
 		
 		"_hint_ssgyro": "Повертайте гіроскопом",
-		"_hint_ggpoint": "Вказуйте напрямок руху, доторкаючись до екрану"
+		"_hint_ggpoint": "Вказуйте напрямок руху"
 	}
 }
