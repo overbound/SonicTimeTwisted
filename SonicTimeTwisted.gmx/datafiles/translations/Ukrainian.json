@@ -11,7 +11,7 @@
 
 		"font_param": {
 			"sprFontHud": {
-				"alphabet": " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~ АБВГҐДЕЄЖЗИЙІЇКЛМНОПРСТУФХЦЧШЩЬЮЯабвгґдеєжзийіїклмнопрстуфхцчшщьюя",
+				"alphabet": " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~ АБВГҐДЕЄЖЗИІЇЙКЛМНОПРСТУФХЦЧШЩЬЮЯабвгґдеєжзиіїйклмнопрстуфхцчшщьюя",
 				"removeback": 0,
 				"smooth": 0,
 				"xorig": 0,
@@ -20,7 +20,7 @@
 				"sep": 0
 			},
 			"sprFontHudMin": {
-				"alphabet": " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~ АБВГҐДЕЄЖЗИЙІЇКЛМНОПРСТУФХЦЧШЩЬЮЯабвгґдеєжзийіїклмнопрстуфхцчшщьюя",
+				"alphabet": " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~ АБВГҐДЕЄЖЗИІЇЙКЛМНОПРСТУФХЦЧШЩЬЮЯабвгґдеєжзиіїйклмнопрстуфхцчшщьюя",
 				"removeback": 0,
 				"smooth": 0,
 				"xorig": 0,
@@ -29,7 +29,7 @@
 				"sep": 0
 			},
 			"sprFontLives": {
-				"alphabet": " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~ АБВГҐДЕЄЖЗИЙІЇКЛМНОПРСТУФХЦЧШЩЬЮЯабвгґдеєжзийіїклмнопрстуфхцчшщьюя",
+				"alphabet": " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~ АБВГҐДЕЄЖЗИІЇЙКЛМНОПРСТУФХЦЧШЩЬЮЯабвгґдеєжзиіїйклмнопрстуфхцчшщьюя",
 				"removeback": 0,
 				"smooth": 0,
 				"xorig": 0,
@@ -38,7 +38,7 @@
 				"sep": 0
 			},
 			"sprFontTitleLarge": {
-				"alphabet": " 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'АБВГҐДЕЄЖЗИЙІЇКЛМНОПРСТУФХЦЧШЩЬЮЯабвгґдеєжзийіїклмнопрстуфхцчшщьюя",
+				"alphabet": " 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'АБВГҐДЕЄЖЗИІЇЙКЛМНОПРСТУФХЦЧШЩЬЮЯабвгґдеєжзиіїйклмнопрстуфхцчшщьюя",
 				"removeback": 0,
 				"smooth": 0,
 				"xorig": 0,
@@ -47,7 +47,7 @@
 				"sep": 0
 			},
 			"sprFontTitleSmall": {
-				"alphabet": " ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'АБВГҐДЕЄЖЗИЙІЇКЛМНОПРСТУФХЦЧШЩЬЮЯабвгґдеєжзийіїклмнопрстуфхцчшщьюя",
+				"alphabet": " ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'АБВГҐДЕЄЖЗИІЇЙКЛМНОПРСТУФХЦЧШЩЬЮЯабвгґдеєжзиіїйклмнопрстуфхцчшщьюя",
 				"removeback": 0,
 				"smooth": 0,
 				"xorig": 0,
@@ -56,7 +56,7 @@
 				"sep": 0
 			},
 			"sprFontTitleSmallest": {
-				"alphabet": " 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'АБВГҐДЕЄЖЗИЙІЇКЛМНОПРСТУФХЦЧШЩЬЮЯ",
+				"alphabet": " 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'АБВГҐДЕЄЖЗИІЇЙКЛМНОПРСТУФХЦЧШЩЬЮЯ",
 				"removeback": 0,
 				"smooth": 0,
 				"xorig": 0,
@@ -65,7 +65,7 @@
 				"sep": 0
 			},
 			"sprFontMicro": {
-				"alphabet": " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~ АБВГҐДЕЄЖЗИЙІЇКЛМНОПРСТУФХЦЧШЩЬЮЯабвгґдеєжзийіїклмнопрстуфхцчшщьюя",
+				"alphabet": " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~ АБВГҐДЕЄЖЗИІЇЙКЛМНОПРСТУФХЦЧШЩЬЮЯабвгґдеєжзиіїйклмнопрстуфхцчшщьюя",
 				"removeback": 0,
 				"smooth": 0,
 				"xorig": 0,
@@ -113,15 +113,15 @@
 		"_chselect_Title": "Вибір персонажу",
 		"_chselect_MainMenu": "<< Головне меню",
 		"_levelselect_menu_Level_Select": "Вибір рівня",
-		"_levelselect_menu_AAZ": "Attraction Attack Zone",
-		"_levelselect_menu_RRZ": "Raging Ruins Zone",
-		"_levelselect_menu_FFZ": "Frigid Fortress Zone",
-		"_levelselect_menu_VVZ": "Viridian Valley Zone",
-		"_levelselect_menu_DDZ": "Drifting Dynamo Zone",
-		"_levelselect_menu_TTZ": "Tidal Tubes Zone",
-		"_levelselect_menu_SSZ": "Sunken Saucer Zone",
-		"_levelselect_menu_PPZ": "Planetary Panic Zone",
-		"_levelselect_menu_GGZ": "Galacnik Gauntlet Zone",
+		"_levelselect_menu_AAZ": "Зона Яскравого Ярмарку",
+		"_levelselect_menu_RRZ": "Зона Разючих Руїн",
+		"_levelselect_menu_FFZ": "Зона Заледенілого Замку",
+		"_levelselect_menu_VVZ": "Зона Смарагдового Саду",
+		"_levelselect_menu_DDZ": "Зона Мандруючої Машини",
+		"_levelselect_menu_TTZ": "Зона Бурхливого Берега",
+		"_levelselect_menu_SSZ": "Зона Таємничої Тарілки",
+		"_levelselect_menu_PPZ": "Зона Космічної Катастрофи",
+		"_levelselect_menu_GGZ": "Зона Позаземного Поєдинку",
 		"_levelselect_menu_SST": "Особливі рівні",
 		"_levelselect_menu_Back": "Назад",
 		"_levelselect_menu_A1F": "Акт 1 - Майбутнє",
@@ -134,7 +134,7 @@
 		"_levelselect_ppanic_Act_2": "Акт 2",
 
 		"_splash_ASonicfangame": "Фан-гра про Соніка від",
-		"_splash_ThisGameIsFreeware": "Ця гра безкоштовна.",
+		"_splash_ThisGameIsFreeware": "Ця гра розповсюджується безкоштовно.",
 		"_splash_DoNotSell": "Продаж заборонено!",
 
 		"_options_menu_Title": "Опції",
@@ -269,9 +269,9 @@
 		"_charname_0_lc": "Соніка",
 		"_charname_1_lc": "Тейлза",
 		"_charname_2_lc": "Наклза",
-		"_charname_0_altnoun": "Соніка",
-		"_charname_1_altnoun": "Тейлза",
-		"_charname_2_altnoun": "Наклза",
+		"_charname_0_altnoun": "СОНІКОМ",
+		"_charname_1_altnoun": "ТЕЙЛЗОМ",
+		"_charname_2_altnoun": "НАКЛЗОМ",
 		
 		"_save_delete": "ВИДАЛ.",
 		"_save_delete_YesNo": "<Так Ні>",
@@ -308,7 +308,7 @@
 		"_scorecard_line2": "АКТ %a",
 		"_scorecard_TIME_BONUS": "БОНУС ЗА ЧАС",
 		"_scorecard_RING_BONUS": "БОНУС ЗА КІЛЬЦЯ",
-		"_scorecard_PERFECT_BONUS": "PERFECT BONUS",
+		"_scorecard_PERFECT_BONUS": "БЕЗДОГАННА ГРА",
 		"_scorecard_TOTAL": "ВСЬОГО",
 		"_ss_scorecard_TIME_STONES": "КАМЕНІ ЧАСУ",
 		"_ss_scorecard_TIME_STONE": "КАМІНЬ ЧАСУ",
@@ -317,7 +317,7 @@
 		"_ss_scorecard_GOT_ALL": "%c ОТРИМАВ ВСІ",
 		"_ss_scorecard_GOT_A": "%c ОТРИМАВ",
 		"_ss_scorecard_SUPER": "СУПЕР %c",
-		"_ss_scorecard_CAN_NOW_BECOME": "%c МОЖЕ ПЕРЕТВОРЯТИСЯ НА",
+		"_ss_scorecard_CAN_NOW_BECOME": "%c МОЖЕ СТАТИ",
 		"_ss_scorecard_JUMP_AND_HOLD": "Під час стрибку, натисніть на A і B",
 		"_ss_scorecard_JUMP_AND_HOLD_TOUCHSCREEN": "Під час стрибку, натисніть на S",
 		"_ss_scorecard_TO_TURN_INTO": "щоб перетворитися на Супер %c",
@@ -341,47 +341,47 @@
 		"_metal_sonic_voice_No_Harm": "Не чіпай...",
 		"_metal_sonic_voice_The_Creator": "...мого\nтворця!",
 		
-		"_zonename_AAZ_A": "Attraction",
-		"_zonename_AAZ_B": "Attack",
-		"_zonename_AAZ_C": "Zone",
+		"_zonename_AAZ_A": "Зона",
+		"_zonename_AAZ_B": "Яскравого",
+		"_zonename_AAZ_C": "Ярмарку",
 		
-		"_zonename_RRZ_A": "Raging",
-		"_zonename_RRZ_B": "Ruins",
-		"_zonename_RRZ_C": "Zone",
+		"_zonename_RRZ_A": "Зона",
+		"_zonename_RRZ_B": "Разючих",
+		"_zonename_RRZ_C": "Руїн",
 		
-		"_zonename_FFZ_A": "Frigid",
-		"_zonename_FFZ_B": "Fortress",
-		"_zonename_FFZ_C": "Zone",
+		"_zonename_FFZ_A": "Зона",
+		"_zonename_FFZ_B": "Заледенілого",
+		"_zonename_FFZ_C": "Замку",
 		
-		"_zonename_VVZ_A": "Viridian",
-		"_zonename_VVZ_B": "Valley",
-		"_zonename_VVZ_C": "Zone",
+		"_zonename_VVZ_A": "Зона",
+		"_zonename_VVZ_B": "Смарагдового",
+		"_zonename_VVZ_C": "Саду",
 		
-		"_zonename_DDZ_A": "Drifting",
-		"_zonename_DDZ_B": "Dynamo",
-		"_zonename_DDZ_C": "Zone",
+		"_zonename_DDZ_A": "Зона",
+		"_zonename_DDZ_B": "Мандруючої",
+		"_zonename_DDZ_C": "Машини",
 		
-		"_zonename_TTZ_A": "Tidal",
-		"_zonename_TTZ_B": "Tubes",
-		"_zonename_TTZ_C": "Zone",
+		"_zonename_TTZ_A": "Зона",
+		"_zonename_TTZ_B": "Бурхливого",
+		"_zonename_TTZ_C": "Берега",
 		
-		"_zonename_SSZ_A": "Sunken",
-		"_zonename_SSZ_B": "Saucer",
-		"_zonename_SSZ_C": "Zone",
+		"_zonename_SSZ_A": "Зона",
+		"_zonename_SSZ_B": "Таємничої",
+		"_zonename_SSZ_C": "Тарілки",
 		
-		"_zonename_PPZ_A": "Planetary",
-		"_zonename_PPZ_B": "Panic",
-		"_zonename_PPZ_C": "Zone",
+		"_zonename_PPZ_A": "Зона",
+		"_zonename_PPZ_B": "Космічної",
+		"_zonename_PPZ_C": "Катастрофи",
 		
-		"_zonename_GGZ_A": "Galacnik",
-		"_zonename_GGZ_B": "Gauntlet",
-		"_zonename_GGZ_C": "Zone",
+		"_zonename_GGZ_A": "Зона",
+		"_zonename_GGZ_B": "Позаземного",
+		"_zonename_GGZ_C": "Поєдинку",
 		
 		"_GAMEOVER_WORD1": "ГРА",
 		"_GAMEOVER_WORD2": "ЗАВЕРШЕНА",
 
-		"_bad_ending_text": "Спробуйте знову!\n\nЗберіть всі Смарагди хаосу\nі Камені часу!",
-		"_good_ending_text": "Соник, Тейлз і Наклз продовжили свою боротьбу за\nвизволення Мобіуса від створінь Роботніка доти,\nпоки жодного робота не залишилось.\n\nДякуємо за гру!",
+		"_bad_ending_text": "Спробуйте ще раз!\n\nЗберіть всі Смарагди хаосу\nі Камені часу!",
+		"_good_ending_text": "Сонік, Тейлз і Наклз продовжили свою боротьбу\nза визволення Мобіуса від створінь Роботніка\nдоти, поки жодного робота не залишилось.\n\nДякуємо за гру!",
 		
 		"_hint_ssgyro": "Повертайте гіроскопом",
 		"_hint_ggpoint": "Вказуйте напрямок руху, доторкаючись до екрану"
