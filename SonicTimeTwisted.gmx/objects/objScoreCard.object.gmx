@@ -506,19 +506,19 @@ if(!is_act_scorecard)
 }
 draw_set_font(objResources.fontHud);
 draw_set_halign(fa_left);
-draw_text_color(draw_x_offset+score_ox + score_offset1, draw_y_offset_score + 112, tr('_scorecard_TIME_BONUS'),c_white,c_white,c_yellow,c_yellow,1);
-draw_text_color(draw_x_offset+score_ox + score_offset2, draw_y_offset_score + 128, tr('_scorecard_RING_BONUS'),c_white,c_white,c_yellow,c_yellow,1);
-if perfect_bonus &gt; -1 draw_text_color(draw_x_offset+score_ox + score_offset3, draw_y_offset_score + 144, tr('_scorecard_PERFECT_BONUS'),c_white,c_white,c_yellow,c_yellow,1);
-draw_text_color(draw_x_offset+score_ox + score_offset4, draw_y_offset_score + 160, tr('_scorecard_TOTAL'),c_white,c_white,c_yellow,c_yellow,1);
+draw_text_color(round(draw_x_offset+score_ox + score_offset1), draw_y_offset_score + 112, tr('_scorecard_TIME_BONUS'),c_white,c_white,c_yellow,c_yellow,1);
+draw_text_color(round(draw_x_offset+score_ox + score_offset2), draw_y_offset_score + 128, tr('_scorecard_RING_BONUS'),c_white,c_white,c_yellow,c_yellow,1);
+if perfect_bonus &gt; -1 draw_text_color(round(draw_x_offset+score_ox + score_offset3), draw_y_offset_score + 144, tr('_scorecard_PERFECT_BONUS'),c_white,c_white,c_yellow,c_yellow,1);
+draw_text_color(round(draw_x_offset+score_ox + score_offset4), draw_y_offset_score + 160, tr('_scorecard_TOTAL'),c_white,c_white,c_yellow,c_yellow,1);
 // text
 draw_set_color(c_white);
 draw_set_alpha(image_alpha);
 draw_set_valign(fa_top);
 draw_set_halign(fa_left);
 draw_set_font(objResources.fontTitleSmallest);
-draw_text_color(draw_x_offset+title_ox1 - title_offset1, draw_y_offset_title + 56, line1,c_white,c_white,c_gray,c_gray,1);
-draw_text_color(draw_x_offset+title_ox1 - title_offset1, draw_y_offset_title + 56, name_tag,c_white,c_white,title_color,title_color,1);
-draw_text_color(draw_x_offset+title_ox2 + title_offset2, draw_y_offset_title + 74, line2,c_white,c_white,c_gray,c_gray,1);
+draw_text_color(round(draw_x_offset+title_ox1 - title_offset1), draw_y_offset_title + 56, line1,c_white,c_white,c_gray,c_gray,1);
+draw_text_color(round(draw_x_offset+title_ox1 - title_offset1), draw_y_offset_title + 56, name_tag,c_white,c_white,title_color,title_color,1);
+draw_text_color(round(draw_x_offset+title_ox2 + title_offset2), draw_y_offset_title + 74, line2,c_white,c_white,c_gray,c_gray,1);
 draw_set_halign(fa_right);
 draw_set_font(objResources.fontHud);
 draw_text(draw_x_offset + tally_ox + score_offset1, draw_y_offset_score + 112, draw_time_bonus);
