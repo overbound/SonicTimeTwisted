@@ -383,12 +383,12 @@ lines = flat_credits_content;
         if(displayed_label_is_title[i])
         {
             draw_set_font(objResources.fontHud);
-            draw_text_colour(view_xview[view_current] + center_offset, y_offset + i*18, displayed_label[i],c_white,c_white,c_yellow,c_yellow,text_alpha);
+            draw_text_colour(round(view_xview[view_current] + center_offset), round(y_offset + i*18), displayed_label[i],c_white,c_white,c_yellow,c_yellow,text_alpha);
         }
         else
         {
             draw_set_font(objResources.fontHudMin);
-            draw_text_colour(view_xview[view_current] + center_offset, y_offset + i*18, displayed_label[i],c_white,c_white,c_gray,c_gray,text_alpha);
+            draw_text_colour(round(view_xview[view_current] + center_offset), round(y_offset + i*18), displayed_label[i],c_white,c_white,c_gray,c_gray,text_alpha);
         }
     }
 }
