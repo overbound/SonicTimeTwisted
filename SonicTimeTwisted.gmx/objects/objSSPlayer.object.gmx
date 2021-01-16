@@ -325,17 +325,6 @@ with(landing_tracker)
         other.noTrack = false;
     }
 }
-/*
-if (!instance_position(x, y, objTrack))
-{
-  onGround = false;
-  noTrack = true;
-}
-else
-{
-  noTrack = false;
-}
-*/
 
 move_direction += xaxis * -1.5;
 
