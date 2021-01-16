@@ -181,7 +181,14 @@ switch(state)
         break;
     case 5:
         timer++;
-        internal__menu_slide_offset_x = timer * -40;
+        if(DEVICE_INFO & DEVICE_TYPE_SMARTPHONE)
+        {
+            internal__menu_slide_offset_x = timer * ceil(get_smartphone_screen_width()/-10);
+        }
+        else
+        {
+            internal__menu_slide_offset_x = timer * -42;
+        }
         if(timer >= 10)
         {
             timer = 0;
@@ -192,7 +199,14 @@ switch(state)
         break;
     case 6:
         timer++;
-        internal__menu_slide_offset_x = 400 + timer * -40;
+        if(DEVICE_INFO & DEVICE_TYPE_SMARTPHONE)
+        {
+            internal__menu_slide_offset_x = get_smartphone_screen_width() + timer * ceil(get_smartphone_screen_width()/-10);
+        }
+        else
+        {
+            internal__menu_slide_offset_x = objScreen.width + timer * -42;
+        }
         if(timer >= 10)
         {
             timer = 0;
@@ -203,7 +217,15 @@ switch(state)
         timer++;
         // handle the case when the user swipes back
         
-        internal__menu_slide_offset_x = max(timer * 40, internal__menu_slide_offset_x);
+        if(DEVICE_INFO & DEVICE_TYPE_SMARTPHONE)
+        {
+            internal__menu_slide_offset_x = max(timer * ceil(get_smartphone_screen_width()/10), internal__menu_slide_offset_x);
+        }
+        else
+        {
+            internal__menu_slide_offset_x = max(timer * 42, internal__menu_slide_offset_x);
+        }
+        
         if(timer >= 10)
         {
             timer = 0;
@@ -214,7 +236,14 @@ switch(state)
         break;
     case 8:
         timer++;
-        internal__menu_slide_offset_x = -400 + timer * 40;
+        if(DEVICE_INFO & DEVICE_TYPE_SMARTPHONE)
+        {
+            internal__menu_slide_offset_x = -1*get_smartphone_screen_width() + timer * ceil(get_smartphone_screen_width()/10);
+        }
+        else
+        {
+            internal__menu_slide_offset_x = -1*objScreen.width + timer * 42;
+        }
         if(timer >= 10)
         {
             timer = 0;

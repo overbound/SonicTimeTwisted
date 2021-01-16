@@ -215,6 +215,7 @@ if(state == 4)
             state = 3;
             with(menu)
             {
+                state = 2;
                 menu_fn_reset_inputs();
             }
         }
@@ -228,6 +229,7 @@ if(state == 4)
             state = 3;
             with(menu)
             {
+                state = 2;
                 menu_fn_reset_inputs();
             }
         }

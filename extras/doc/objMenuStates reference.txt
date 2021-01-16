@@ -26,3 +26,4 @@ objMenu states reference
 22 - closing Android dual input mode window
 23 - menu reloading: closing
 24 - menu reloading: reopening
+25 - disappeared (displaying disclaimers)

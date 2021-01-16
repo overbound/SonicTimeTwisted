@@ -51,6 +51,7 @@ switch(argument0)
             state = 4;
             textAlpha = 1;
         }
+        state = 25;
         break;
     case 8:
         switch(android_get_input_mode())

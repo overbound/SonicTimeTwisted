@@ -1,6 +1,7 @@
 switch(state)
 {
     case 0:
+    case 25:
         // draw nothing
         break;
     case 1: // opening menu - just display the rectangle
