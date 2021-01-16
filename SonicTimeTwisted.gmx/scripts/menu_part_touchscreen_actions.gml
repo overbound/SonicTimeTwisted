@@ -19,9 +19,6 @@ switch(argument0)
         objProgram.inputManager.gg_mode = (objProgram.inputManager.gg_mode + 1) mod 2;
         break;
     case 6:
-        menu_fn_goto_submenu(menu_part_touchscreen_vibrations_items);
-        break;
-    case 7:
     case -1:
         menu_fn_exit_submenu(menu_part_options_items, 6);
         break;

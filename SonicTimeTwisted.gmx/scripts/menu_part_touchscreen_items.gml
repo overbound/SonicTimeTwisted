@@ -7,8 +7,7 @@ menu_fn_add_option(tr("_options_menu_touchscreen_Opacity"), 3, 1, "");
 menu_fn_add_option(tr("_options_menu_touchscreen_Dead_zone"), 9, 1, "");
 menu_fn_add_option(tr("_options_menu_touchscreen_Special_stage_controls"), 4);
 menu_fn_add_option(tr("_options_menu_touchscreen_Final_zone_controls"), 5, 1, "");
-menu_fn_add_option(tr("_options_menu_touchscreen_Configure_vibrations"), 6);
-menu_fn_add_option(tr("_options_menu_Back"), 7);
+menu_fn_add_option(tr("_options_menu_Back"), 6);
 
 action_script = menu_part_touchscreen_actions;
 draw_script = menu_part_touchscreen_draw;

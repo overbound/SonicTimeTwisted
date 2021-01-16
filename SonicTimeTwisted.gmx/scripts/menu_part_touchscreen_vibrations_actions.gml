@@ -48,7 +48,7 @@ switch(argument0)
         break;
     case 5:
     case -1:
-        menu_fn_exit_submenu(menu_part_touchscreen_items, 6);
+        menu_fn_exit_submenu(menu_part_options_items, 12);
         break;
     case -2:
     case -3:

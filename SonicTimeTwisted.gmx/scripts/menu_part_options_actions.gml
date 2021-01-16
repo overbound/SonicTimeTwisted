@@ -86,6 +86,9 @@ switch(argument0)
     case 11:
          menu_fn_goto_submenu(menu_part_sound_items);
          break;
+    case 12:
+         menu_fn_goto_submenu(menu_part_touchscreen_vibrations_items);
+         break;
     case -1:
     case 4:
         save_options();
