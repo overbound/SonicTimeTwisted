@@ -45,7 +45,24 @@ view_wview[0] = width;
 view_hview[0] = height;
 view_wport[0] = width;
 view_hport[0] = height;
-display_set_gui_size(width, height);
+if(DEVICE_INFO &amp; DEVICE_TYPE_SMARTPHONE)
+{
+    var calculated_width = get_smartphone_screen_width();
+    show_debug_message("GUI: "+string(calculated_width)+" x "+string(height));
+    
+    var maxgui_xscale = display_get_width()/calculated_width;
+    var maxgui_yscale = display_get_height()/height;
+    var maxgui_xoffset = maxgui_xscale*(calculated_width - width)/2;
+    
+    display_set_gui_size(calculated_width, height);
+    display_set_gui_maximise(maxgui_xscale, maxgui_yscale, maxgui_xoffset, 0);
+}
+else
+{
+    display_set_gui_size(width, height);
+}
+
+
 
 // A simple boolean that goes from between 0 and 1 every drawn frame
 // Allows to remove some "mod" and "!boolean" calculations here and there

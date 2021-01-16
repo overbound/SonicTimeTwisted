@@ -7,7 +7,7 @@ switch(state)
             var target_percentage = -1;
             if(mouse_check_button(mb_left))
             {
-                mx = device_mouse_x_to_gui(0);
+                mx = device_mouse_x_to_gui(0) + gui_click_offset_x;
                 my = device_mouse_y_to_gui(0);
                 
                 if(mx >= internal__draw_menu_rect_x2 - margin * 2 && mx <= internal__draw_menu_rect_x2)
@@ -136,7 +136,7 @@ switch(state)
             {
                 if(scroll == round(scroll))
                 {
-                    mx = device_mouse_x_to_gui(0) - internal__draw_menu_rect_x1;
+                    mx = device_mouse_x_to_gui(0) + gui_click_offset_x - internal__draw_menu_rect_x1;
                     my = device_mouse_y_to_gui(0) - internal__draw_menu_rect_y1;
                     if(mx >= margin && mx <= margin + button_width)
                     {
@@ -152,7 +152,7 @@ switch(state)
                 }
                 else
                 {
-                    mx = device_mouse_x_to_gui(0) - internal__draw_menu_rect_x1;
+                    mx = device_mouse_x_to_gui(0) + gui_click_offset_x - internal__draw_menu_rect_x1;
                     my = device_mouse_y_to_gui(0) - internal__draw_menu_rect_y1;
                     if(mx >= margin && mx <= margin + button_width)
                     {
@@ -197,7 +197,7 @@ switch(state)
     case 10:
         if(mouse_check_button_pressed(mb_left))
         {
-            mx = device_mouse_x_to_gui(0);
+            mx = device_mouse_x_to_gui(0) + gui_click_offset_x;
             my = device_mouse_y_to_gui(0);
             
             if(mx < internal__draw_confirmation_rect_x1 || mx > internal__draw_confirmation_rect_x2 ||
@@ -239,7 +239,7 @@ switch(state)
     case 14:
         if(mouse_check_button_pressed(mb_left))
         {
-            mx = device_mouse_x_to_gui(0);
+            mx = device_mouse_x_to_gui(0) + gui_click_offset_x;
             my = device_mouse_y_to_gui(0);
             
             if(mx < internal__draw_confirmation_rect_x1 || mx > internal__draw_confirmation_rect_x2 ||
@@ -260,7 +260,7 @@ switch(state)
     case 17:
         if(mouse_check_button_pressed(mb_left))
         {
-            mx = device_mouse_x_to_gui(0);
+            mx = device_mouse_x_to_gui(0) + gui_click_offset_x;
             my = device_mouse_y_to_gui(0);
             
             if(mx < internal__draw_confirmation_rect_x1 || mx > internal__draw_confirmation_rect_x2 ||
@@ -274,7 +274,7 @@ switch(state)
             if(mouse_check_button(mb_left))
             {
                 // updating value
-                mx = device_mouse_x_to_gui(0);
+                mx = device_mouse_x_to_gui(0) + gui_click_offset_x;
                 my = device_mouse_y_to_gui(0);
                 confirmation_prev_cursor = -1;
                 if(mx >= internal__draw_confirmation_rect_x_center - 100 && mx <= internal__draw_confirmation_rect_x_center + 100)

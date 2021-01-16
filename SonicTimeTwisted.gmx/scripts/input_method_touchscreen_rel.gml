@@ -82,8 +82,9 @@ if(smartphone_controls_enabled)
                 {
                     joyx = current_dpadx;
                     joyy = current_dpady;
-                    if(current_dpadx < 0)
+                    if(current_dpady < -99)
                     {
+                        // D-pad not shown
                         current_dpadx = dpx;
                         current_dpady = dpy;
                     }
@@ -131,8 +132,8 @@ if(smartphone_controls_enabled)
         }
         if(!dpad_is_pressed)
         {
-            current_dpadx = -1;
-            current_dpady = -1;
+            current_dpadx = -100;
+            current_dpady = -100;
         }
         objProgram.inputManager.state |= input_state;
     }

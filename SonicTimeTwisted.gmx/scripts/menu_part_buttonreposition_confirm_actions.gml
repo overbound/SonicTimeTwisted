@@ -24,14 +24,17 @@ switch(argument0)
         temporary_variable = -1;
         with(objProgram.inputManager)
         {
-            dpadx = 64;
+            var screen_width = get_smartphone_screen_width();
+            var default_width = objScreen.width;
+            var margin = (screen_width - default_width)/2;
+            dpadx = 64 - margin;
             dpady = 178;
-            bax = 336;
+            bax = screen_width - 64 - margin;
             bay = 178;
             bar = 32;
-            bsx = 200;
+            bsx = screen_width/2 - margin;
             bsy = 16;
-            bbx = 288;
+            bbx = screen_width - 140 - margin;
             bby = 164;
         }
         menu_fn_exit_submenu(menu_part_touchscreen_items, 0);

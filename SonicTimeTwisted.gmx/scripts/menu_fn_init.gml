@@ -48,6 +48,7 @@ else
 
 draw_offset_x = 0;
 draw_offset_y = 0;
+gui_click_offset_x = 0;
 
 margin = 8;
 button_slot_height = 28;

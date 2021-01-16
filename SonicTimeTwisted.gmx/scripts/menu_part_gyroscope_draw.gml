@@ -50,114 +50,122 @@ with(objProgram.inputManager)
     }
 }
 
-
+var x_center;
+if(DEVICE_INFO & DEVICE_TYPE_SMARTPHONE)
+{
+    x_center = get_smartphone_screen_width()/2 - 8;
+}
+else
+{
+    x_center = objScreen.width/2 - 8;  
+}
 if(objProgram.inputManager.gyromode == 0)
 {
-    draw_sprite(sprGyroscopeTest, 0, 192, 208);
+    draw_sprite(sprGyroscopeTest, 0, x_center, 208);
     if(tilt_value < 0)
     {
-        draw_sprite(sprGyroscopeTest, 1, 176, 208);
+        draw_sprite(sprGyroscopeTest, 1, x_center - 16, 208);
     }
     else
     {
-        draw_sprite(sprGyroscopeTest, 2, 176, 208);
+        draw_sprite(sprGyroscopeTest, 2, x_center - 16, 208);
     }
     if(tilt_value > 0)
     {
-        draw_sprite(sprGyroscopeTest, 3, 208, 208);
+        draw_sprite(sprGyroscopeTest, 3, x_center + 16, 208);
     }
     else
     {
-        draw_sprite(sprGyroscopeTest, 4, 208, 208);
+        draw_sprite(sprGyroscopeTest, 4, x_center + 16, 208);
     }
 }
 else
 {
-    draw_sprite(sprGyroscopeTest, 0, 192, 208);
+    draw_sprite(sprGyroscopeTest, 0, x_center, 208);
     
     // left
     if(tilt_value <= -1)
-        draw_sprite(sprGyroscopeTest, 1, 176, 208);
+        draw_sprite(sprGyroscopeTest, 1, x_center - 16, 208);
     else
-        draw_sprite(sprGyroscopeTest, 2, 176, 208);
+        draw_sprite(sprGyroscopeTest, 2, x_center - 16, 208);
     if(tilt_value <= -2)
-        draw_sprite(sprGyroscopeTest, 1, 160, 208);
+        draw_sprite(sprGyroscopeTest, 1, x_center - 32, 208);
     else
-        draw_sprite(sprGyroscopeTest, 2, 160, 208);
+        draw_sprite(sprGyroscopeTest, 2, x_center - 32, 208);
     if(tilt_value <= -3)
-        draw_sprite(sprGyroscopeTest, 1, 144, 208);
+        draw_sprite(sprGyroscopeTest, 1, x_center - 48, 208);
     else
-        draw_sprite(sprGyroscopeTest, 2, 144, 208);
+        draw_sprite(sprGyroscopeTest, 2, x_center - 48, 208);
     if(tilt_value <= -4)
-        draw_sprite(sprGyroscopeTest, 1, 128, 208);
+        draw_sprite(sprGyroscopeTest, 1, x_center - 64, 208);
     else
-        draw_sprite(sprGyroscopeTest, 2, 128, 208);
+        draw_sprite(sprGyroscopeTest, 2, x_center - 64, 208);
     if(tilt_value <= -5)
-        draw_sprite(sprGyroscopeTest, 1, 112, 208);
+        draw_sprite(sprGyroscopeTest, 1, x_center - 80, 208);
     else
-        draw_sprite(sprGyroscopeTest, 2, 112, 208);
+        draw_sprite(sprGyroscopeTest, 2, x_center - 80, 208);
     if(tilt_value <= -6)
-        draw_sprite(sprGyroscopeTest, 1, 96, 208);
+        draw_sprite(sprGyroscopeTest, 1, x_center - 96, 208);
     else
-        draw_sprite(sprGyroscopeTest, 2, 96, 208);
+        draw_sprite(sprGyroscopeTest, 2, x_center - 96, 208);
     if(tilt_value <= -7)
-        draw_sprite(sprGyroscopeTest, 1, 80, 208);
+        draw_sprite(sprGyroscopeTest, 1, x_center - 112, 208);
     else
-        draw_sprite(sprGyroscopeTest, 2, 80, 208);
+        draw_sprite(sprGyroscopeTest, 2, x_center - 112, 208);
     if(tilt_value <= -8)
-        draw_sprite(sprGyroscopeTest, 1, 64, 208);
+        draw_sprite(sprGyroscopeTest, 1, x_center - 128, 208);
     else
-        draw_sprite(sprGyroscopeTest, 2, 64, 208);
+        draw_sprite(sprGyroscopeTest, 2, x_center - 128, 208);
     if(tilt_value <= -9)
-        draw_sprite(sprGyroscopeTest, 1, 48, 208);
+        draw_sprite(sprGyroscopeTest, 1, x_center - 144, 208);
     else
-        draw_sprite(sprGyroscopeTest, 2, 48, 208);
+        draw_sprite(sprGyroscopeTest, 2, x_center - 144, 208);
     if(tilt_value <= -10)
-        draw_sprite(sprGyroscopeTest, 1, 32, 208);
+        draw_sprite(sprGyroscopeTest, 1, x_center - 160, 208);
     else
-        draw_sprite(sprGyroscopeTest, 2, 32, 208);
+        draw_sprite(sprGyroscopeTest, 2, x_center - 160, 208);
     
     
     // right
     if(tilt_value >= 1)
-        draw_sprite(sprGyroscopeTest, 3, 208, 208);
+        draw_sprite(sprGyroscopeTest, 3, x_center + 16, 208);
     else
-        draw_sprite(sprGyroscopeTest, 4, 208, 208);
+        draw_sprite(sprGyroscopeTest, 4, x_center + 16, 208);
     if(tilt_value >= 2)
-        draw_sprite(sprGyroscopeTest, 3, 224, 208);
+        draw_sprite(sprGyroscopeTest, 3, x_center + 32, 208);
     else
-        draw_sprite(sprGyroscopeTest, 4, 224, 208);
+        draw_sprite(sprGyroscopeTest, 4, x_center + 32, 208);
     if(tilt_value >= 3)
-        draw_sprite(sprGyroscopeTest, 3, 240, 208);
+        draw_sprite(sprGyroscopeTest, 3, x_center + 48, 208);
     else
-        draw_sprite(sprGyroscopeTest, 4, 240, 208);
+        draw_sprite(sprGyroscopeTest, 4, x_center + 48, 208);
     if(tilt_value >= 4)
-        draw_sprite(sprGyroscopeTest, 3, 256, 208);
+        draw_sprite(sprGyroscopeTest, 3, x_center + 64, 208);
     else
-        draw_sprite(sprGyroscopeTest, 4, 256, 208);
+        draw_sprite(sprGyroscopeTest, 4, x_center + 64, 208);
     if(tilt_value >= 5)
-        draw_sprite(sprGyroscopeTest, 3, 272, 208);
+        draw_sprite(sprGyroscopeTest, 3, x_center + 80, 208);
     else
-        draw_sprite(sprGyroscopeTest, 4, 272, 208);
+        draw_sprite(sprGyroscopeTest, 4, x_center + 80, 208);
     if(tilt_value >= 6)
-        draw_sprite(sprGyroscopeTest, 3, 288, 208);
+        draw_sprite(sprGyroscopeTest, 3, x_center + 96, 208);
     else
-        draw_sprite(sprGyroscopeTest, 4, 288, 208);
+        draw_sprite(sprGyroscopeTest, 4, x_center + 96, 208);
     if(tilt_value >= 7)
-        draw_sprite(sprGyroscopeTest, 3, 304, 208);
+        draw_sprite(sprGyroscopeTest, 3, x_center + 112, 208);
     else
-        draw_sprite(sprGyroscopeTest, 4, 304, 208);
+        draw_sprite(sprGyroscopeTest, 4, x_center + 112, 208);
     if(tilt_value >= 8)
-        draw_sprite(sprGyroscopeTest, 3, 320, 208);
+        draw_sprite(sprGyroscopeTest, 3, x_center + 128, 208);
     else
-        draw_sprite(sprGyroscopeTest, 4, 320, 208);
+        draw_sprite(sprGyroscopeTest, 4, x_center + 128, 208);
     if(tilt_value >= 9)
-        draw_sprite(sprGyroscopeTest, 3, 336, 208);
+        draw_sprite(sprGyroscopeTest, 3, x_center + 144, 208);
     else
-        draw_sprite(sprGyroscopeTest, 4, 336, 208);
+        draw_sprite(sprGyroscopeTest, 4, x_center + 144, 208);
     if(tilt_value >= 10)
-        draw_sprite(sprGyroscopeTest, 3, 352, 208);
+        draw_sprite(sprGyroscopeTest, 3, x_center + 160, 208);
     else
-        draw_sprite(sprGyroscopeTest, 4, 352, 208);
+        draw_sprite(sprGyroscopeTest, 4, x_center + 160, 208);
 }
 

@@ -5,6 +5,10 @@ script_execute(item_script);
 // recalculate coordinates of an open menu
 internal__button_count = array_height_2d(items);
 var view_width = view_wview[view_current];
+if(DEVICE_INFO & DEVICE_TYPE_SMARTPHONE)
+{
+    view_width = get_smartphone_screen_width();
+}
 var view_height = view_hview[view_current];
 
 internal__draw_menu_buttons_offset_x = (view_width - button_width)/2;

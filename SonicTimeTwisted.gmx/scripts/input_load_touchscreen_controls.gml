@@ -1,4 +1,5 @@
 // touchscreen inputs
+var screen_width = get_smartphone_screen_width();
 if(argument0) // argument0 - from INI, default values if false
 {
     dpadmode = ini_read_real('smartphone','dpadmode',0);
@@ -9,11 +10,11 @@ if(argument0) // argument0 - from INI, default values if false
     vksize = ini_read_real('smartphone','vksize',0);
     dpadx = ini_read_real('smartphone','dpadx',64);
     dpady = ini_read_real('smartphone','dpady',178);
-    bax = ini_read_real('smartphone','bax',364);
+    bax = ini_read_real('smartphone','bax',screen_width - 64);
     bay = ini_read_real('smartphone','bay',178);
-    bsx = ini_read_real('smartphone','bsx',200);
+    bsx = ini_read_real('smartphone','bsx',screen_width/2);
     bsy = ini_read_real('smartphone','bsy',16);
-    bbx = ini_read_real('smartphone','bbx',288);
+    bbx = ini_read_real('smartphone','bbx',screen_width - 140);
     bby = ini_read_real('smartphone','bby',164);
     gyromode = ini_read_real('smartphone','gyromode',1);
     gyro_switch_on_angle_x = ini_read_real('smartphone','gyro_switch_on_angle_x',0.15);
@@ -54,18 +55,18 @@ else
     dpad_jumpbutton_sprite = sprTouchscreenButtonBig;
     
     // A button coordinates
-    bax = 364;
+    bax = screen_width - 64;
     bay = 178;
     
     // direction pad & A button radius
     bar = 32;
     
     // Start button coordinates
-    bsx = 200;
+    bsx = screen_width/2;
     bsy = 16;
     
     // Super button coordinates
-    bbx = 288;
+    bbx = screen_width - 140;
     bby = 164;
     super_button_enabled = false;
     

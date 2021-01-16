@@ -39,8 +39,8 @@ if(state == 2 || state == 3)
         // detect the pressed button
         if(internal__touch_len < 4)
         {
-            mx = mouse_x - internal__draw_menu_rect_x1 - view_xview[view_current];
-            my = mouse_y - internal__draw_menu_rect_y1 - view_yview[view_current];
+            mx = device_mouse_x_to_gui(0) + gui_click_offset_x - internal__draw_menu_rect_x1;
+            my = device_mouse_y_to_gui(0) - internal__draw_menu_rect_y1;
             if(mx >= margin && mx <= margin + button_width)
             {
                 if(my >= margin)
