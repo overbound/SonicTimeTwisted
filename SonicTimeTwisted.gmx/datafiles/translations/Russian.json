@@ -272,9 +272,9 @@
 		"_charname_0_lc": "Соника",
 		"_charname_1_lc": "Тейлза",
 		"_charname_2_lc": "Наклза",
-		"_charname_0_altnoun": "Соником",
-		"_charname_1_altnoun": "Тейлзом",
-		"_charname_2_altnoun": "Наклзом",
+		"_charname_0_altnoun": "СОНИКОМ",
+		"_charname_1_altnoun": "ТЕЙЛЗОМ",
+		"_charname_2_altnoun": "НАКЛЗОМ",
 		
 		"_save_delete": "УДАЛИТЬ",
 		"_save_delete_YesNo": "<Да Нет>",
