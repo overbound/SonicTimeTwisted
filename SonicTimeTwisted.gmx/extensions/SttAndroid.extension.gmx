@@ -46,7 +46,7 @@
       <CopyToMask>9223372036854775807</CopyToMask>
     </Config>
     <Config name="Linux">
-      <CopyToMask>9223372036854775807</CopyToMask>
+      <CopyToMask>2097160</CopyToMask>
     </Config>
     <Config name="PlayStation">
       <CopyToMask>9223372036854775807</CopyToMask>
@@ -87,7 +87,7 @@
           <CopyToMask>9223372036854775807</CopyToMask>
         </Config>
         <Config name="Linux">
-          <CopyToMask>9223372036854775807</CopyToMask>
+          <CopyToMask>2097160</CopyToMask>
         </Config>
         <Config name="PlayStation">
           <CopyToMask>9223372036854775807</CopyToMask>
