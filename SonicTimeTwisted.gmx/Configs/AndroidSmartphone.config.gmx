@@ -22,7 +22,7 @@
     <option_android_arch_mipsr2sf>True</option_android_arch_mipsr2sf>
     <option_android_arch_x86>True</option_android_arch_x86>
     <option_android_build_tools_version>23.0.1</option_android_build_tools_version>
-    <option_android_build_version>0</option_android_build_version>
+    <option_android_build_version>1</option_android_build_version>
     <option_android_color_depth>1</option_android_color_depth>
     <option_android_compile_sdk_version>27</option_android_compile_sdk_version>
     <option_android_display_name>Sonic Time Twisted</option_android_display_name>

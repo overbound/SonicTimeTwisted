@@ -22,9 +22,9 @@
     <option_android_arch_mipsr2sf>True</option_android_arch_mipsr2sf>
     <option_android_arch_x86>True</option_android_arch_x86>
     <option_android_build_tools_version>23.0.1</option_android_build_tools_version>
-    <option_android_build_version>0</option_android_build_version>
+    <option_android_build_version>1</option_android_build_version>
     <option_android_color_depth>0</option_android_color_depth>
-    <option_android_compile_sdk_version>23</option_android_compile_sdk_version>
+    <option_android_compile_sdk_version>27</option_android_compile_sdk_version>
     <option_android_display_name>Sonic Time Twisted</option_android_display_name>
     <option_android_facebook_app_display_name></option_android_facebook_app_display_name>
     <option_android_facebook_appid></option_android_facebook_appid>
@@ -94,7 +94,7 @@
     <option_android_splash_png>Configs\AndroidConsole\android\splash.png</option_android_splash_png>
     <option_android_splash_time>0</option_android_splash_time>
     <option_android_support_lib_version>23.1.1</option_android_support_lib_version>
-    <option_android_target_sdk_version>19</option_android_target_sdk_version>
+    <option_android_target_sdk_version>27</option_android_target_sdk_version>
     <option_android_texture_page>2048</option_android_texture_page>
     <option_android_use_test_ads>0</option_android_use_test_ads>
     <option_androidfire_GPU_device>0</option_androidfire_GPU_device>
