@@ -1,4 +1,6 @@
 // player_is_gliding()
+// is the player boarding
+if animation == "boarding" exit;
 // animate
 animation_new = "glide";
 timeline_speed = 1;

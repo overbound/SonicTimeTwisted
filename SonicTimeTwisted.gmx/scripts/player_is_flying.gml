@@ -1,4 +1,6 @@
 // player_is_flying()
+// is the player boarding
+if animation == "boarding" exit;
 // animate
 if underwater animation_new = "swim"; else animation_new = "flight";
 timeline_speed = 1;
