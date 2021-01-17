@@ -12,6 +12,7 @@ if(DEVICE_INFO & DEVICE_TYPE_SMARTPHONE)
     if (DEVICE_INFO & DEVICE_OS_ANDROID)
     {
         menu_fn_add_option(tr("_options_menu_Input_Method"), 8, true, "");
+        menu_fn_add_option(tr("_options_menu_touchscreen_Configure_vibrations"), 12);
     }
     else
     {
@@ -31,7 +32,6 @@ else
        if(DEVICE_INFO & DEVICE_OS_ANDROID)
        {
             menu_fn_add_option(tr("_options_menu_Map_BTUSB_device"), 9);
-            menu_fn_add_option(tr("_options_menu_touchscreen_Configure_vibrations"), 12);
        }
        else
        {
