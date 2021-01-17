@@ -34,22 +34,22 @@
       <CopyToMask>2097160</CopyToMask>
     </Config>
     <Config name="AndroidConsole">
-      <CopyToMask>9223372036854775807</CopyToMask>
+      <CopyToMask>2097160</CopyToMask>
     </Config>
     <Config name="MacOS">
-      <CopyToMask>9223372036854775807</CopyToMask>
+      <CopyToMask>2097160</CopyToMask>
     </Config>
     <Config name="iPhone">
-      <CopyToMask>9223372036854775807</CopyToMask>
+      <CopyToMask>2097160</CopyToMask>
     </Config>
     <Config name="AppleTV">
-      <CopyToMask>9223372036854775807</CopyToMask>
+      <CopyToMask>2097160</CopyToMask>
     </Config>
     <Config name="Linux">
       <CopyToMask>2097160</CopyToMask>
     </Config>
     <Config name="PlayStation">
-      <CopyToMask>9223372036854775807</CopyToMask>
+      <CopyToMask>2097160</CopyToMask>
     </Config>
   </ConfigOptions>
   <androidPermissions>
@@ -75,22 +75,22 @@
           <CopyToMask>2097160</CopyToMask>
         </Config>
         <Config name="AndroidConsole">
-          <CopyToMask>9223372036854775807</CopyToMask>
+          <CopyToMask>2097160</CopyToMask>
         </Config>
         <Config name="MacOS">
-          <CopyToMask>9223372036854775807</CopyToMask>
+          <CopyToMask>2097160</CopyToMask>
         </Config>
         <Config name="iPhone">
-          <CopyToMask>9223372036854775807</CopyToMask>
+          <CopyToMask>2097160</CopyToMask>
         </Config>
         <Config name="AppleTV">
-          <CopyToMask>9223372036854775807</CopyToMask>
+          <CopyToMask>2097160</CopyToMask>
         </Config>
         <Config name="Linux">
           <CopyToMask>2097160</CopyToMask>
         </Config>
         <Config name="PlayStation">
-          <CopyToMask>9223372036854775807</CopyToMask>
+          <CopyToMask>2097160</CopyToMask>
         </Config>
       </ConfigOptions>
       <ProxyFiles/>
