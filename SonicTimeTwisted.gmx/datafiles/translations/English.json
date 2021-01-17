@@ -103,10 +103,10 @@
 		
 		"_options_menu_keymap_press": "Press \"%0\"",
 		
-		"_options_menu_sound_title": "Sound Settings",
-		"_options_menu_sound_Master_Volume": "Master Volume",
-		"_options_menu_sound_SFX_Volume": "Sound Effects Volume",
-		"_options_menu_sound_Music_Volume": "Music Volume",
+		"_options_menu_sound_title": "Sound settings",
+		"_options_menu_sound_Master_Volume": "Master volume",
+		"_options_menu_sound_SFX_Volume": "Sound effects volume",
+		"_options_menu_sound_Music_Volume": "Music volume",
 
 		"_options_menu_touchscreen_title": "Touchscreen configuration",
 		"_options_menu_touchscreen_Reposition_buttons": "Reposition buttons",
