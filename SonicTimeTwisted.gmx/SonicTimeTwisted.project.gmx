@@ -11,7 +11,7 @@
     <Config>Configs\Linux</Config>
     <Config>Configs\PlayStation</Config>
   </Configs>
-  <datafiles number="99" name="datafiles">
+  <datafiles number="100" name="datafiles">
     <datafile>
       <name>translations.txt</name>
       <exists>-1</exists>
@@ -53,7 +53,7 @@
       </ConfigOptions>
       <filename>translations.txt</filename>
     </datafile>
-    <datafiles number="99" name="translations">
+    <datafiles number="100" name="translations">
       <datafile>
         <name>German.json</name>
         <exists>-1</exists>
@@ -177,7 +177,7 @@
         </ConfigOptions>
         <filename>Russian.json</filename>
       </datafile>
-      <datafiles number="99" name="Russian">
+      <datafiles number="100" name="Russian">
         <datafile>
           <name>sprFontHud.png</name>
           <exists>-1</exists>
@@ -548,7 +548,7 @@
           <filename>sprPastPost.png</filename>
         </datafile>
       </datafiles>
-      <datafiles number="99" name="German">
+      <datafiles number="100" name="German">
         <datafile>
           <name>sprFontLives.png</name>
           <exists>-1</exists>
@@ -878,7 +878,7 @@
         </ConfigOptions>
         <filename>BrazilianPortuguese.json</filename>
       </datafile>
-      <datafiles number="99" name="BrazilianPortuguese">
+      <datafiles number="100" name="BrazilianPortuguese">
         <datafile>
           <name>sprFontHud.png</name>
           <exists>-1</exists>
@@ -1290,7 +1290,7 @@
         </ConfigOptions>
         <filename>French.json</filename>
       </datafile>
-      <datafiles number="99" name="French">
+      <datafiles number="100" name="French">
         <datafile>
           <name>sprFontHud.png</name>
           <exists>-1</exists>
@@ -1661,7 +1661,7 @@
           <filename>sprPastPost.png</filename>
         </datafile>
       </datafiles>
-      <datafiles number="99" name="Ukrainian">
+      <datafiles number="100" name="Ukrainian">
         <datafile>
           <name>sprFontHud.png</name>
           <exists>-1</exists>
@@ -2074,8 +2074,8 @@
         <filename>Ukrainian.json</filename>
       </datafile>
     </datafiles>
-    <datafiles number="99" name="android">
-      <datafiles number="99" name="gamepad">
+    <datafiles number="100" name="android">
+      <datafiles number="100" name="gamepad">
         <datafile>
           <name>045e_02fd_xbox_wireless_controller.csv</name>
           <exists>-1</exists>
@@ -2242,6 +2242,47 @@
         </datafile>
       </datafiles>
     </datafiles>
+    <datafile>
+      <name>gamecontrollerdb.txt</name>
+      <exists>-1</exists>
+      <size>251661</size>
+      <exportAction>2</exportAction>
+      <exportDir></exportDir>
+      <overwrite>0</overwrite>
+      <freeData>-1</freeData>
+      <removeEnd>0</removeEnd>
+      <store>0</store>
+      <ConfigOptions>
+        <Config name="Default">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+        <Config name="Windows">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+        <Config name="AndroidSmartphone">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+        <Config name="AndroidConsole">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+        <Config name="MacOS">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+        <Config name="iPhone">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+        <Config name="AppleTV">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+        <Config name="Linux">
+          <CopyToMask>134217856</CopyToMask>
+        </Config>
+        <Config name="PlayStation">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+      </ConfigOptions>
+      <filename>gamecontrollerdb.txt</filename>
+    </datafile>
   </datafiles>
   <NewExtensions>
     <extension index="0">extensions\SttAndroid</extension>
