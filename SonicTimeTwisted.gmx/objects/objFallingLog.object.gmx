@@ -159,7 +159,7 @@
           <argument>
             <kind>1</kind>
             <string>active = 1;
-audio_play_sound(sndLogfall, 4, 0);
+play_sfx(sndLogfall, 4);
 vsp=2;
 remove = 2;
 </string>
@@ -186,7 +186,6 @@ remove = 2;
             <kind>1</kind>
             <string>///
 if active &lt; 2 &amp;&amp; active != 0{
-
     y+=random(2)-1;
     x+=random(2)-1;
     
@@ -203,7 +202,6 @@ if active == 2 {
         }
     else*/
         y +=vsp*1.2;
-
 }
 </string>
           </argument>

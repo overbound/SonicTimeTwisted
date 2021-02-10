@@ -120,10 +120,8 @@ for (var i=0; i&lt;3; i+=1)
           <argument>
             <kind>1</kind>
             <string>/// Swing platforms
-
 // calculate angle
 angle = angle_wrap(angle+1);
-
 // apply angle
 for (var i=0; i&lt;3; i+=1)
 {

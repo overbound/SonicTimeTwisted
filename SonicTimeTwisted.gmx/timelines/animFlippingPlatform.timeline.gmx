@@ -45,7 +45,7 @@
             <kind>1</kind>
             <string>if in_view(0,128) {
     
-    audio_play_sound(sndAADropBumperReset,1,0);
+    play_sfx(sndAADropBumperReset, 1);
     
     }
 </string>
@@ -97,7 +97,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>layer=3;
+            <string>depth_mask=3;
 reaction_script=noone;
 </string>
           </argument>
@@ -148,8 +148,7 @@ reaction_script=noone;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>layer=4;
-
+            <string>depth_mask=4;
 with objLevel.player[0] {
         
         if (terrain_id == other.id &amp;&amp; landed) {
@@ -158,10 +157,9 @@ with objLevel.player[0] {
         
         }
 }
-
 if in_view(0,128) {
     
-    audio_play_sound(sndAADropBumperReset,2,0);
+    play_sfx(sndAADropBumperReset, 2);
     
     }
 </string>

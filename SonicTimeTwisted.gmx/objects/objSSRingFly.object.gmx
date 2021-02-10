@@ -42,12 +42,10 @@
             <string>speed = 5;
 zspeed = 4;
 timer=256;
-
 tex = sprite_get_texture(sprite_index, 0);
 radius = 8;
 z = 20;
 image_speed = 0.125;
-
 </string>
           </argument>
         </arguments>
@@ -117,11 +115,7 @@ z +=zspeed;
 timer-=1;
 
 if timer &lt; 60 {
-
-    if visible == true
-        visible = false;
-        else
-            visible = true;
+    visible = !visible;
 }
 
 if timer &lt;= 0 {
@@ -149,7 +143,6 @@ if timer &lt;= 0 {
             <kind>1</kind>
             <string>/// set depth
 depth = min(2000,distance_to_object(objSSCamera)/20);
-
 depth1= depth;
 </string>
           </argument>
@@ -198,12 +191,10 @@ depth1= depth;
             <kind>1</kind>
             <string>draw_shadow(8);
 draw_billboard(8, 8);
-
 if instance_exists(objSSPlayer)
     if depth == objSSPlayer.depth {
         visible = false;
     } else visible = true;
-
 </string>
           </argument>
         </arguments>

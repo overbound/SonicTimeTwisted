@@ -40,10 +40,8 @@
           <argument>
             <kind>1</kind>
             <string>/// Initialize
-
 // emitter
 //instance_create(x, y - 48, objFFSnowEmitter);
-
 // covering
 with instance_create(x, y, objSnowBlowerVTop)
 {

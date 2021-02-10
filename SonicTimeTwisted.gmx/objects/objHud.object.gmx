@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>-1026</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>objInputMethodDependant</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,13 +25,33 @@
         <arguments>
           <argument>
             <kind>1</kind>
+            <string>/// Inherit event
+event_inherited();
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
             <string>/// Initialize HUD
 image_speed = 0;
-
 // character id(s)
 character_id[0] = max(objGameData.character_id[0]-1, 0);
 character_id[1] = max(objGameData.character_id[1]-1, 0);
-
 // time stamp
 time_stamp = "";
 pauseOffset = 0;
@@ -39,9 +59,16 @@ pauseState = 0;
 controlState = 0;
 shouldExit = false;
 axis = -1;
-inputFlash = 0;
-white = 0;
-timeOffset = 0;
+darkbg = 0;
+timer = 0;
+rings = 0;
+menu = instance_create(0,0,objMenu);
+hud_draw_script = draw_hud_act_default;
+if(is_touchscreen)
+{
+    hud_draw_script = draw_hud_act_touchscreen;
+}
+event_user(0);
 </string>
           </argument>
         </arguments>
@@ -64,15 +91,38 @@ timeOffset = 0;
         <arguments>
           <argument>
             <kind>1</kind>
+            <string>/// pause menu end step
+if objProgram.paused {
+    if menu.state != 0 {
+        // allow the menu object to handle everything
+        with(menu) event_user(2);
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
             <string>/// Update timer string
 var total_time, minutes, seconds, milliseconds;
-
 if instance_exists(objLevel) {
     // total time
     total_time = min(36000-objLevel.timer, 36000);
-    if total_time &gt;= 36000 {
-        timeOffset = - 10;
-    }
     
     // minutes
     minutes = string(total_time div 3600);
@@ -88,9 +138,8 @@ if instance_exists(objLevel) {
     milliseconds = string(milliseconds);
     
     // update time stamp
-    time_stamp = minutes+" "+seconds+" "+milliseconds;
+    time_stamp = minutes+"'"+seconds+'"'+milliseconds;
 }
-
 </string>
           </argument>
         </arguments>
@@ -120,6 +169,34 @@ if instance_exists(objLevel) {
         </arguments>
       </action>
     </event>
+    <event eventtype="3" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// pause menu begin step
+if objProgram.paused {
+    if menu.state != 0 {
+        with(menu) event_user(1);
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
@@ -138,244 +215,14 @@ if instance_exists(objLevel) {
           <argument>
             <kind>1</kind>
             <string>/// Pause Menu
-
 if objProgram.paused {
-    switch pauseState {
-    case 0:
-    if allowInput == true {
-        if input_check_pressed(cUP) {
-            if pauseOffset &gt; 0 {
-                pauseOffset -=16;
-            }
-        }
-        
-        if input_check_pressed(cDOWN) {
-            if pauseOffset &lt; 48 {
-                pauseOffset +=16;
-            }
-        }
-        
-        if input_check_pressed(cACTION) {
-            switch pauseOffset {
-                case 0: //Unpause
-                    objProgram.paused = false;
-                    game_pause(objProgram.paused);
-                break;
-                case 16: // Controls
-                    pauseState = 1;
-                break;
-                case 32: // Window Size
-                    pauseState = 2;
-                break;
-                case 48: // exit
-                    pauseState = 3;
-                break;
-            
-            }
-        }
+    // allow the menu object to handle everything
+    if(menu.state == 0)
+    {
+        with(menu) menu_fn_open_menu(menu_part_zone_items, false, other.is_touchscreen);
     }
-    break;
-    
-    case 1: // Map Controls
-           if allowInput == true {
-            if controlState == 0 {
-                    if keyboard_check_pressed(vk_anykey) {
-                       save_control_map_keyboard("up",keyboard_lastkey);
-                       controlState+=1;
-                    } else { 
-                        var padButton = input_any_gamepad_button()
-                        if padButton { 
-                            save_control_map_gamepad("up",padButton);
-                            controlState+=1;
-                        }
-                        
-                        if axis == "" {
-                            axis = input_any_gamepad_axis();
-                        }
-                        if axis != "" {
-                            if input_any_gamepad_axis() == "" {
-                                save_control_map_gamepad("up",axis);
-                                axis = "";
-                                controlState+=1;
-                            }
-                        }
-                    }
-            } else if controlState == 1 {
-                    if keyboard_check_pressed(vk_anykey) {
-                       save_control_map_keyboard("down",keyboard_lastkey);
-                        controlState+=1;
-                    } else { 
-                        var padButton = input_any_gamepad_button()
-                        if padButton { 
-                            save_control_map_gamepad("down",padButton);
-                            controlState+=1;
-                        }
-                        
-                        if axis == "" {
-                            axis = input_any_gamepad_axis();
-                        }
-                        if axis != "" {
-                            if input_any_gamepad_axis() == "" {
-                                save_control_map_gamepad("down",axis);
-                                axis = "";
-                                controlState+=1;
-                            }
-                        }
-                    }
-            } else if controlState == 2 {
-                    if keyboard_check_pressed(vk_anykey){
-                       save_control_map_keyboard("left",keyboard_lastkey);
-                       controlState+=1;
-                    } else { 
-                        var padButton = input_any_gamepad_button()
-                        if padButton { 
-                            save_control_map_gamepad("left",padButton);
-                            controlState+=1;
-                        }
-                        
-                        if axis == "" {
-                            axis = input_any_gamepad_axis();
-                        }
-                        if axis != "" {
-                            if input_any_gamepad_axis() == "" {
-                                save_control_map_gamepad("left",axis);
-                                axis = "";
-                                controlState+=1;
-                            }
-                        }
-                    }
-            } else if controlState == 3 {
-                    if keyboard_check_pressed(vk_anykey) {
-                      save_control_map_keyboard("right",keyboard_lastkey);
-                      controlState+=1;
-                    } else { 
-                        var padButton = input_any_gamepad_button()
-                        if padButton { 
-                            save_control_map_gamepad("right",padButton);
-                            controlState+=1;
-                        }
-                        
-                        if axis == "" {
-                            axis = input_any_gamepad_axis();
-                        }
-                        if axis != "" {
-                            if input_any_gamepad_axis() == "" {
-                                save_control_map_gamepad("right",axis);
-                                axis = "";
-                                controlState+=1;
-                            }
-                        }
-                    }
-            } else if controlState == 4 {
-                    if keyboard_check_pressed(vk_anykey) {
-                        save_control_map_keyboard("a",keyboard_lastkey);
-                        controlState+=1;
-                    } else { 
-                        var padButton = input_any_gamepad_button()
-                        if padButton != -1 { 
-                            save_control_map_gamepad("a",padButton);
-                            controlState+=1;
-                        }
-                    }
-            } else if controlState == 5 {
-                    if keyboard_check_pressed(vk_anykey) {
-                        save_control_map_keyboard("b",keyboard_lastkey);
-                        controlState+=1;
-                    } else { 
-                        var padButton = input_any_gamepad_button()
-                        if padButton != -1 { 
-                            save_control_map_gamepad("b",padButton);
-                            controlState+=1;
-                        }
-                    }
-            } else if controlState == 6 {
-                    if keyboard_check_pressed(vk_anykey) {
-                        save_control_map_keyboard("c",keyboard_lastkey);
-                        controlState+=1;
-                    } else { 
-                        var padButton = input_any_gamepad_button()
-                        if padButton != -1 { 
-                            save_control_map_gamepad("c",padButton);
-                            controlState+=1;
-                        }
-                    }
-            } else if controlState == 7 {
-                    if keyboard_check_pressed(vk_anykey) {
-                        save_control_map_keyboard("start",keyboard_lastkey);
-                        controlState=0;
-                        pauseState = 0;
-                        with objInput input_load();
-                    } else { 
-                        var padButton = input_any_gamepad_button()
-                        if padButton != -1 { 
-                            save_control_map_gamepad("start",padButton);
-                            controlState=0;
-                            pauseState = 0;
-                            allowInput = false;
-                            with objInput input_load();
-                        }
-                    }
-            }
-        }
-        
-    break;
-    
-    case 2: // Set Window Size
-    if input_check_released(cLEFT) {
-        with objScreen {
-            if window_state &gt; 1 {
-                window_state -= 1;
-                if window_state != 3 {
-                    window_scale -=1;
-                }
-                window_set_fullscreen(false);
-                window_set_size(width * window_scale, height * window_scale);
-                alarm[0]=1;
-            }
-        }
-    }
-    if input_check_released(cRIGHT) {
-        with objScreen {
-            if window_state &lt; 4 {
-                window_state += 1;
-                window_scale = window_state
-                if window_state == 4 {
-                    window_scale = 3;
-                }
-                window_set_size(width * window_scale, height * window_scale);
-                alarm[0]=1;
-                if window_state == 4 {
-                    window_set_fullscreen(true);        
-                }
-            }
-        }
-    } 
-    if input_check_pressed(cACTION) {
-        pauseState = 0;
-    }
-    break;
-    
-    case 3:
-    if input_check_pressed(cLEFT) {
-       shouldExit = false;
-    }
-    if input_check_pressed(cRIGHT) {
-        shouldExit = true;
-    } 
-    if input_check_pressed(cACTION) {
-        if shouldExit
-         game_restart();
-         else pauseState = 0;
-    }
-    break;
-    }
+    with(menu) event_user(0);
 }
-
-        
-        if objInput.pressingGamepad == -1 {
-            allowInput = true;
-        }
-    
 </string>
           </argument>
         </arguments>
@@ -396,14 +243,20 @@ if objProgram.paused {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// flash for key mapper
-if inputFlash &lt; 1
-    inputFlash += .25;
-    else inputFlash = 0;
+            <string>/// fade black for pause
+if objProgram.paused {
+    if darkbg &lt; 0.5
+        darkbg+=.125;
+    else darkbg = 0.5;
+} else if darkbg &gt; 0 {
+    darkbg-=.125;
+}
 </string>
           </argument>
         </arguments>
       </action>
+    </event>
+    <event eventtype="7" enumb="10">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -420,15 +273,32 @@ if inputFlash &lt; 1
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// fade white for pause
-
-if objProgram.paused {
-    if white &lt; 0.5
-        white+=.125;
-    else white = 0.5;
-} else if white &gt; 0 {
-    white-=.125;
-}
+            <string>/// Fetch the offset from the TR file
+top_hud_offset = tr_get_real_prop("top_hud_offset");
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="64">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// draw menu
+with(menu) event_user(3);
 </string>
           </argument>
         </arguments>
@@ -452,101 +322,20 @@ if objProgram.paused {
           <argument>
             <kind>1</kind>
             <string>/// Render HUD
-
-// lives setpiece
-draw_sprite(sprLives, character_id[view_current], view_xview[view_current]+16, view_yview[view_current]+view_hview-24);
-
-// Hud Graphic
-if not objScreen.split_screen draw_sprite(sprHud, 0, view_xview[view_current]+14, view_yview[view_current]+9);
-draw_sprite(sprHud, 1+(image_index mod 2)*(objLevel.timer&lt;3600), view_xview[view_current]+14, view_yview[view_current]+25-(16*objScreen.split_screen));
-draw_sprite(sprHud, 3+(image_index mod 2)*(not objGameData.rings[view_current]), view_xview[view_current]+14, view_yview[view_current]+41-(16*objScreen.split_screen));
-
-// lives string
-draw_set_color(c_white);
-draw_set_alpha(image_alpha);
-draw_set_valign(fa_top);
-draw_set_halign(fa_right);
-draw_set_font(objResources.fontLives);
-draw_text(view_xview[view_current]+94, view_yview[view_current]+view_hview[view_current]-12, objGameData.player_lives[view_current]);
-
-// score / time / rings string
-draw_set_font(objResources.fontHud);
-if not objScreen.split_screen draw_text(view_xview[view_current]+112, view_yview[view_current]+8, objGameData.player_score[view_current]);
-draw_text(view_xview[view_current]+88, view_yview[view_current]+40-(16*objScreen.split_screen), objGameData.rings[view_current]);
-draw_set_halign(fa_left);
-draw_text(view_xview[view_current]+56+timeOffset, view_yview[view_current]+24-(16*objScreen.split_screen), time_stamp);
-
-
-// TODO Remove FPS
-//draw_text(view_xview[view_current]+400,view_yview[view_current]+24, fps);
-
-//white bg for pause
-draw_set_alpha(white)
+if objProgram.paused
+{
+    draw_set_alpha(darkbg)
+    draw_set_color(c_black);
     draw_rectangle(view_xview,view_yview,view_xview+view_wview,view_yview+view_hview,false);
-draw_set_alpha(image_alpha);
-draw_set_halign(fa_center);
-if objProgram.paused {
-    var viewSize = "FULLSCREEN"
-    draw_text_color(view_xview[view_current]+213, view_yview[view_current]+107, "CONTINUE",c_white,c_white,c_yellow,c_yellow,1);
-    if pauseState != 1 draw_text_color(view_xview[view_current]+213, view_yview[view_current]+123, "MAP KEYS OR GAMEPAD",c_white,c_white,c_yellow,c_yellow,1);
-    if pauseState != 2 draw_text_color(view_xview[view_current]+213, view_yview[view_current]+139, "SCREEN SIZE",c_white,c_white,c_yellow,c_yellow,1);
-    if pauseState != 3 draw_text_color(view_xview[view_current]+213, view_yview[view_current]+155, "RESTART GAME",c_white,c_white,c_yellow,c_yellow,1);
-    draw_sprite_ext(sprLevelSelect,image_index,view_xview[view_current]+213, view_yview[view_current]+113+pauseOffset,1,1,0,c_white,1);
+    draw_set_color(c_white);
+    draw_set_alpha(image_alpha);
 }
-
-if pauseState == 1 &amp;&amp; inputFlash &lt;= .5 { // set controls
-    switch controlState {
-        case 0:
-            draw_text_color(view_xview[view_current]+213, view_yview[view_current]+123, "UP",c_white,c_white,c_yellow,c_yellow,1);
-        break;
-        case 1:
-            draw_text_color(view_xview[view_current]+213, view_yview[view_current]+123, "DOWN",c_white,c_white,c_yellow,c_yellow,1);
-        break;
-        case 2:
-            draw_text_color(view_xview[view_current]+213, view_yview[view_current]+123, "LEFT",c_white,c_white,c_yellow,c_yellow,1);
-        break;
-        case 3:
-            draw_text_color(view_xview[view_current]+213, view_yview[view_current]+123, "RIGHT",c_white,c_white,c_yellow,c_yellow,1);
-        break;
-        case 4:
-            draw_text_color(view_xview[view_current]+213, view_yview[view_current]+123, "A",c_white,c_white,c_yellow,c_yellow,1);
-        break;
-        case 5:
-            draw_text_color(view_xview[view_current]+213, view_yview[view_current]+123, "B",c_white,c_white,c_yellow,c_yellow,1);
-        break;
-        case 6:
-            draw_text_color(view_xview[view_current]+213, view_yview[view_current]+123, "C",c_white,c_white,c_yellow,c_yellow,1);
-        break;
-        case 7:
-            draw_text_color(view_xview[view_current]+213, view_yview[view_current]+123, "START",c_white,c_white,c_yellow,c_yellow,1);
-        break;
-    }
-}
-
-if pauseState == 2 &amp;&amp; inputFlash &lt;= .5 {
-
-    switch objScreen.window_state {
-        case 1:
-            draw_text_color(view_xview[view_current]+213, view_yview[view_current]+139, "WINDOW",c_white,c_white,c_yellow,c_yellow,1);
-        break;
-        case 2:
-            draw_text_color(view_xview[view_current]+213, view_yview[view_current]+139, "WINDOW 2X",c_white,c_white,c_yellow,c_yellow,1);
-        break;
-        case 3:
-            draw_text_color(view_xview[view_current]+213, view_yview[view_current]+139, "WINDOW 3X",c_white,c_white,c_yellow,c_yellow,1);
-        break;
-        case 4:
-            draw_text_color(view_xview[view_current]+213, view_yview[view_current]+139, "FULLSCREEN",c_white,c_white,c_yellow,c_yellow,1);
-        break;
-    }
-}
-
-if pauseState == 3 &amp;&amp; inputFlash &lt;= .5 {
-    if shouldExit {
-        draw_text_color(view_xview[view_current]+213, view_yview[view_current]+155, "CONFIRM?",c_white,c_white,c_yellow,c_yellow,1);
-    } else {
-        draw_text_color(view_xview[view_current]+213, view_yview[view_current]+155, "CANCEL",c_white,c_white,c_yellow,c_yellow,1);
-    }
+else
+{
+// The part with score/time/rings is constant among contexts and input devices...
+draw_hud_score_time_rings(objLevel.timer, objGameData.rings[view_current], view_xview[view_current], view_yview[view_current]);
+// While the shield's position depends on the context and the lives' position depends on the input device
+script_execute(hud_draw_script);
 }
 </string>
           </argument>

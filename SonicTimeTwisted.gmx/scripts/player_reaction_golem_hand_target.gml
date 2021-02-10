@@ -4,14 +4,11 @@ if invulnerable || state==player_state_hurt || state==player_state_dead  || argu
         argument0.alarm[0] = 25;
     return false;
 }
-
 if collision_rectangle(argument0.bbox_left, argument0.bbox_bottom-4, argument0.bbox_right, argument0.bbox_bottom, self, true, false)  { //&& argument0.y > argument0.yprevious
-
     player_hit(facing*-1, sndHurt);
     argument0.alarm[0] = 25;
     return true;
 } 
-
 if (spinning or state==player_state_glide or state==player_state_glide_slide) && argument0.hit == 0
 {
     xspeed = -xspeed;
@@ -30,11 +27,17 @@ if (spinning or state==player_state_glide or state==player_state_glide_slide) &&
         with argument0 {
             hit = sign(x-other.x);
             if (hit == 0) 
+            {
                 hit = other.facing;
+            }
+            else
+            {
+                // rumble
+                rumble(rumble_short_strong_double);            
+            }
         }
     return true;
 } else {
-
     player_hit(facing*-1, sndHurt);
     argument0.alarm[0] = 25;
     

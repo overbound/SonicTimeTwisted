@@ -138,14 +138,11 @@
           <argument>
             <kind>1</kind>
             <string>/// Swing platform
-
 // calculate angle
 angle = angle_wrap(270+cosine[objScreen.image_index mod 360]*length);
-
 // apply angle
 x = xstart+floor(cosine[angle]*136);
 y = ystart-floor(sine[angle]*136);
-
 </string>
           </argument>
         </arguments>
@@ -171,7 +168,6 @@ y = ystart-floor(sine[angle]*136);
             <string>/// Render chain links
 var i;
 for (i=0; i&lt;9; i+=1) draw_sprite(sprChainLink, 0, xstart+cosine[angle]*(i*16), ystart-sine[angle]*(i*16));
-
 draw_sprite(sprAASwingFrame, 0, xstart, ystart);
 </string>
           </argument>

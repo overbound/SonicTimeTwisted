@@ -3,11 +3,9 @@ with instance_create(0, 0, objParallax)
 {
     // general
     tiled = argument0;
-
     // background elements
     sprite_index = argument1;
     image_speed = argument2;
-
     // speed
     hspeed = argument3;
     vspeed = argument4;
@@ -19,7 +17,6 @@ with instance_create(0, 0, objParallax)
     absolute_y = argument8;
     separation_x = argument9;
     separation_y = argument10;
-
     // done
     return id;
 }

@@ -246,6 +246,7 @@ image_xscale = player_id.facing;
 switch player_id.state
 {
 case player_state_fall:
+case player_state_fall_automatically:
     // rotate to movement direction if spinning
     if (player_id.animation!="spin") image_angle = player_id.angle; else
     if image_xscale image_angle = point_direction(0, 0, player_id.xspeed, player_id.yspeed); else
@@ -316,7 +317,7 @@ with instance_create(other.x, other.y, objScorePopup)
 with other instance_destroy();
 
 // sound
-audio_play_sound(sndPop, 0, 0);
+play_sfx(sndPop, 0);
 </string>
           </argument>
         </arguments>
@@ -348,7 +349,7 @@ if other.reaction_script == noone exit;
 if other.invulnerable exit;
 
 if not audio_is_playing(sndBossHit)
-    audio_play_sound(sndBossHit,1,false);
+    play_sfx(sndBossHit,1);
 
 with other {
 if alarm[0] == -1 {
@@ -367,7 +368,7 @@ if alarm[0] == -1 {
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="objMoleFan">
+    <event eventtype="4" ename="objSquibot">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -391,7 +392,6 @@ if sprite_index!=sprTailsEffect4 exit;
 // abort if cannot damage
 if other.invulnerable exit;
 
-var pid = player_id;
 with other {
     if life&gt;0 &amp;&amp; alarm[0] == -1
     {
@@ -401,22 +401,14 @@ with other {
         if life&lt;=0 {
         
            instance_create(x,y,objExplosionGroup)
-           instance_create(x+24,y+10,objExplosionGroup)
-           instance_create(x-12,y+32,objExplosionGroup)
-           instance_create(x,y,objExplosionGroup)
-           instance_create(x-32,y-64,objExplosionGroup)
-           instance_create(x+24,y-24,objExplosionGroup)
-           alarm[2]=8;
+           instance_create(x+10,y+10,objExplosionGroup)
+           instance_create(x-12,y+10,objExplosionGroup)
+           alarm[11]=8;
            reaction_script=noone;
            player_add_score(500);
-           
-           
     
-         } else alarm[0]=15;
+         }else alarm[0]=15;
     }
-    
-    // sound
-    audio_play_sound(sndBossHit, 1, 0);
 }
 </string>
           </argument>
@@ -472,53 +464,6 @@ with other {
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="objSquibot">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>// abort if not actually flying
-if player_id.state!=player_state_fly or player_id.underwater exit;
-if sprite_index!=sprTailsEffect4 exit;
-
-// abort if cannot damage
-if other.invulnerable exit;
-
-with other {
-    if life&gt;0 &amp;&amp; alarm[0] == -1
-    {
-        life -= 1;
-        invulnerable=true;
-        
-        if life&lt;=0 {
-        
-           instance_create(x,y,objExplosionGroup)
-           instance_create(x+10,y+10,objExplosionGroup)
-           instance_create(x-12,y+10,objExplosionGroup)
-           alarm[11]=8;
-           reaction_script=noone;
-           player_add_score(500);
-    
-         }else alarm[0]=15;
-    }
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="4" ename="objBigBombBadnik">
       <action>
         <libid>1</libid>
@@ -562,7 +507,106 @@ with other {
     }
 
 // sound
-audio_play_sound(sndBossHit, 2, 0);
+play_sfx(sndBossHit, 2);
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="objMoleFan">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>// abort if not actually flying
+if player_id.state!=player_state_fly or player_id.underwater exit;
+if sprite_index!=sprTailsEffect4 exit;
+
+// abort if cannot damage
+if other.invulnerable exit;
+
+var pid = player_id;
+with other {
+    if life&gt;0 &amp;&amp; alarm[0] == -1
+    {
+        life -= 1;
+        invulnerable=true;
+        
+        if life&lt;=0 {
+        
+           instance_create(x,y,objExplosionGroup)
+           instance_create(x+24,y+10,objExplosionGroup)
+           instance_create(x-12,y+32,objExplosionGroup)
+           instance_create(x,y,objExplosionGroup)
+           instance_create(x-32,y-64,objExplosionGroup)
+           instance_create(x+24,y-24,objExplosionGroup)
+           alarm[2]=8;
+           reaction_script=noone;
+           player_add_score(500);
+           
+           
+    
+         } else alarm[0]=15;
+    }
+    
+    // sound
+    play_sfx(sndBossHit, 1);
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="objFireFlyLight">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// player_reaction_fire_fly_light(local_id)
+var bonus_score;
+
+// ignore if already hit
+if other.alarm[0] exit;
+
+// hit boss
+other.alarm[0] = 30;
+objFireFly.graphic.alarm[2] = 30;
+if other.life&gt;0
+{
+    other.life -= 1;
+    if other.life&lt;=0 {
+        with other event_user(0);
+        objFireFly.graphic.image_index = 1;
+    }
+}
+
+// sound
+play_sfx(sndBossHit, 0);
 
 </string>
           </argument>
@@ -632,12 +676,12 @@ if alarm[0] == -1 {
         if life&gt;0
         {
             life -= 1;
-            audio_play_sound(sndBossHit, 2, 0);
-            audio_play_sound(sndGalanikHit, 1, 0);
+            play_sfx(sndBossHit, 2);
+            play_sfx(sndGalanikHit, 1);
             state = 4;
             if life&lt;=0 {
                 event_user(0);
-                audio_play_sound(sndGalanikKnockBack,2,false);
+                play_sfx(sndGalanikKnockBack,2);
                 event_user(0);
             }
         }
@@ -647,49 +691,6 @@ if alarm[0] == -1 {
             alarm[11] = 30;
         }
 }
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="objFireFlyLight">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// player_reaction_fire_fly_light(local_id)
-var bonus_score;
-
-// ignore if already hit
-if other.alarm[0] exit;
-
-// hit boss
-other.alarm[0] = 30;
-objFireFly.graphic.alarm[2] = 30;
-if other.life&gt;0
-{
-    other.life -= 1;
-    if other.life&lt;=0 {
-        with other event_user(0);
-        objFireFly.graphic.image_index = 1;
-    }
-}
-
-// sound
-audio_play_sound(sndBossHit, 0, 0);
 
 </string>
           </argument>

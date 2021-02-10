@@ -40,7 +40,6 @@
           <argument>
             <kind>1</kind>
             <string>reaction_script=player_reaction_switch_button;
-
 audio = audio_emitter_create();
 </string>
           </argument>
@@ -65,14 +64,10 @@ audio = audio_emitter_create();
           <argument>
             <kind>1</kind>
             <string>with parentId.controller {
-
     switchCount+=1;
-
 }
-
 instance_create(x,y,objSmokePuff);
-
-audio_play_sound(sndBombLaunch,4,0);
+play_sfx(sndBombLaunch,4);
 </string>
           </argument>
         </arguments>

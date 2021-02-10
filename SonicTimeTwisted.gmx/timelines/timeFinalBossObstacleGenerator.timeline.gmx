@@ -20,14 +20,12 @@
           <argument>
             <kind>1</kind>
             <string>/// Create 6 Rings &amp; Rock
-
 instance_create(xorgin-16,yorgin-8,objRingFinalBoss)
 instance_create(xorgin,yorgin-8,objRingFinalBoss)
 instance_create(xorgin+16,yorgin-8,objRingFinalBoss)
 instance_create(xorgin-16,yorgin+8,objRingFinalBoss)
 instance_create(xorgin,yorgin+8,objRingFinalBoss)
 instance_create(xorgin+16,yorgin+8,objRingFinalBoss)
-
 instance_create(xorgin+192,yorgin,objLargeRockFinalBoss)
 </string>
           </argument>
@@ -55,16 +53,13 @@ instance_create(xorgin+192,yorgin,objLargeRockFinalBoss)
           <argument>
             <kind>1</kind>
             <string>/// Create 6 Rings
-
 instance_create(xorgin-16,yorgin+80,objRingFinalBoss)
 instance_create(xorgin,yorgin+80,objRingFinalBoss)
 instance_create(xorgin+16,yorgin+80,objRingFinalBoss)
 instance_create(xorgin-16,yorgin+96,objRingFinalBoss)
 instance_create(xorgin,yorgin+96,objRingFinalBoss)
 instance_create(xorgin+16,yorgin+96,objRingFinalBoss)
-
 instance_create(xorgin+144,yorgin+88,objLargeRockFinalBoss)
-
 
 instance_create(xorgin-16,yorgin-80,objRingFinalBoss)
 instance_create(xorgin,yorgin-80,objRingFinalBoss)
@@ -72,7 +67,6 @@ instance_create(xorgin+16,yorgin-80,objRingFinalBoss)
 instance_create(xorgin-16,yorgin-96,objRingFinalBoss)
 instance_create(xorgin,yorgin-96,objRingFinalBoss)
 instance_create(xorgin+16,yorgin-96,objRingFinalBoss)
-
 instance_create(xorgin+144,yorgin-88,objLargeRockFinalBoss)
 </string>
           </argument>
@@ -100,16 +94,13 @@ instance_create(xorgin+144,yorgin-88,objLargeRockFinalBoss)
           <argument>
             <kind>1</kind>
             <string>/// Create 6 Rings &amp; Orb
-
 instance_create(xorgin-16,yorgin-8,objRingFinalBoss)
 instance_create(xorgin,yorgin-8,objRingFinalBoss)
 instance_create(xorgin+16,yorgin-8,objRingFinalBoss)
 instance_create(xorgin-16,yorgin+8,objRingFinalBoss)
 instance_create(xorgin,yorgin+8,objRingFinalBoss)
 instance_create(xorgin+16,yorgin+8,objRingFinalBoss)
-
 instance_create(xorgin-144,yorgin,objFinalBossFireBallStatic)
-
 </string>
           </argument>
         </arguments>
@@ -136,13 +127,10 @@ instance_create(xorgin-144,yorgin,objFinalBossFireBallStatic)
           <argument>
             <kind>1</kind>
             <string>/// Create 4 Orbs
-
 instance_create(xorgin,yorgin-72,objFinalBossFireBallStatic)
 instance_create(xorgin,yorgin-156,objFinalBossFireBallStatic)
-
 instance_create(xorgin,yorgin+72,objFinalBossFireBallStatic)
 instance_create(xorgin,yorgin+156,objFinalBossFireBallStatic)
-
 </string>
           </argument>
         </arguments>
@@ -169,13 +157,11 @@ instance_create(xorgin,yorgin+156,objFinalBossFireBallStatic)
           <argument>
             <kind>1</kind>
             <string>/// Create 10 rings
-
 instance_create(xorgin,yorgin-8,objRingFinalBoss)
 instance_create(xorgin+16,yorgin-8,objRingFinalBoss)
 instance_create(xorgin+32,yorgin-8,objRingFinalBoss)
 instance_create(xorgin+48,yorgin-8,objRingFinalBoss)
 instance_create(xorgin+64,yorgin-8,objRingFinalBoss)
-
 instance_create(xorgin,yorgin+8,objRingFinalBoss)
 instance_create(xorgin+16,yorgin+8,objRingFinalBoss)
 instance_create(xorgin+32,yorgin+8,objRingFinalBoss)
@@ -207,12 +193,9 @@ instance_create(xorgin+64,yorgin+8,objRingFinalBoss)
           <argument>
             <kind>1</kind>
             <string>/// Create 6 Rocks
-
 instance_create(xorgin+160,yorgin-96,objLargeRockFinalBoss);
 instance_create(xorgin-80,yorgin-96,objLargeRockFinalBoss);
-
 instance_create(xorgin+32,yorgin,objLargeRockFinalBoss);
-
 instance_create(xorgin+160,yorgin+96,objLargeRockFinalBoss);
 instance_create(xorgin-80,yorgin+96,objLargeRockFinalBoss);
 </string>
@@ -241,11 +224,9 @@ instance_create(xorgin-80,yorgin+96,objLargeRockFinalBoss);
           <argument>
             <kind>1</kind>
             <string>/// Create 3 Orbs
-
 instance_create(xorgin,yorgin-156,objFinalBossFireBallStatic)
 instance_create(xorgin,yorgin,objFinalBossFireBallStatic)
 instance_create(xorgin,yorgin+156,objFinalBossFireBallStatic)
-
 
 </string>
           </argument>
@@ -273,21 +254,17 @@ instance_create(xorgin,yorgin+156,objFinalBossFireBallStatic)
           <argument>
             <kind>1</kind>
             <string>/// Create 10 rings &amp; Rocks
-
 instance_create(xorgin,yorgin-8,objRingFinalBoss)
 instance_create(xorgin+16,yorgin-8,objRingFinalBoss)
 instance_create(xorgin+32,yorgin-8,objRingFinalBoss)
 instance_create(xorgin+48,yorgin-8,objRingFinalBoss)
 instance_create(xorgin+64,yorgin-8,objRingFinalBoss)
-
 instance_create(xorgin,yorgin+8,objRingFinalBoss)
 instance_create(xorgin+16,yorgin+8,objRingFinalBoss)
 instance_create(xorgin+32,yorgin+8,objRingFinalBoss)
 instance_create(xorgin+48,yorgin+8,objRingFinalBoss)
 instance_create(xorgin+64,yorgin+8,objRingFinalBoss)
-
 instance_create(xorgin+40,yorgin-80,objLargeRockFinalBoss);
-
 instance_create(xorgin+40,yorgin+80,objLargeRockFinalBoss);
 </string>
           </argument>

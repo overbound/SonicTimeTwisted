@@ -44,10 +44,8 @@ image_xscale=0;
 image_yscale=0;
 yspeed=1;
 yreal=y;
-
 x=view_xview+view_wview*.5;
 y=view_yview+view_hview*.5+16;
-
 </string>
           </argument>
         </arguments>
@@ -71,9 +69,7 @@ y=view_yview+view_hview*.5+16;
           <argument>
             <kind>1</kind>
             <string>switch state {
-
 case 0: // Move forward
-
     image_xscale+=.006;
     image_yscale+=.006;
     
@@ -88,13 +84,10 @@ case 0: // Move forward
         instance_create(objTTBossController.x,objTTBossController.y-192,objHarmfulBlock);
         instance_create(objTTBossController.x+112,objTTBossController.y-192,objHarmfulBlock);
         instance_create(objTTBossController.x+224,objTTBossController.y-192,objHarmfulBlock);
-        audio_play_sound(sndBreak,0,0);
+        play_sfx(sndBreak,0);
     }
-
 break;
-
 case 1: // Move back
-
     image_xscale-=.00375;
     image_yscale-=.00375;
     screen_shake();
@@ -104,11 +97,8 @@ case 1: // Move back
     if y &lt; view_yview+192 {
         state=2;   
     }
-
 break;
-
 case 2: // Move Forward
-
     image_xscale+=.006;
     image_yscale+=.006;
     
@@ -122,13 +112,10 @@ case 2: // Move Forward
         instance_create(objTTBossController.x+145,objTTBossController.y-192,objHarmfulBlock);
         instance_create(objTTBossController.x+290,objTTBossController.y-192,objHarmfulBlock);
         state=3;
-        audio_play_sound(sndBreak,0,0);
+        play_sfx(sndBreak,0);
     }
-
 break;
-
 case 3: // Move back
-
     image_xscale-=.00375;
     image_yscale-=.00375;
     screen_shake();
@@ -138,11 +125,8 @@ case 3: // Move back
         state=4;
         screen_shake();
     }
-
 break;
-
 case 4: // Move Forward
-
     image_xscale+=.006;
     image_yscale+=.006;
     
@@ -158,11 +142,9 @@ case 4: // Move Forward
         instance_create(objTTBossController.x+160,objTTBossController.y-192,objHarmfulBlock);
         instance_create(objTTBossController.x+260,objTTBossController.y-192,objHarmfulBlock);
         state = 5;
-        audio_play_sound(sndBreak,0,0);
+        play_sfx(sndBreak,0);
     }
-
 break;
-
 case 5:
     screen_shake();
     if y &gt; view_yview+260 {
@@ -170,19 +152,14 @@ case 5:
         state=6;
     }
     
-
 break;
-
 case 6:
-
     x=view_xview+view_wview*.5;
     y=view_yview+view_hview*.5+16;
     image_xscale=0;
     image_yscale=0;
-
 break;
 }
-
     yreal+=yspeed;
     y=floor(yreal);
     

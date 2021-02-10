@@ -131,7 +131,6 @@ if objProgram.in_past
     image_index=1;
 }
 
-
 //with instance_create(x,y+16, objExampleBreakableDebris) {hspeed = -2; vspeed = -2; sprite_index = other.debris;}
 </string>
           </argument>

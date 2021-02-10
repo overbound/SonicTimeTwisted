@@ -67,26 +67,20 @@
             <kind>1</kind>
             <string>/// Render background
 var seperatex, seperatey, leftx, lefty, rightx, righty, centerx, centery;
-
 // get draw coordinates
 var floorx = x+floor(view_xview[view_current]*relative_x)+absolute_x;
 var floory = y+floor(view_yview[view_current]*relative_y)+absolute_y;
-
 // get separation
 seperatex = sprite_width + separation_x;
 seperatey = sprite_height + separation_y;
-
 centerx= view_xview[view_current] + view_wview[view_current] ;
-
 // get boundaries
 leftx = ((floorx - view_xview[view_current]) mod seperatex) - seperatex;
 rightx = view_xview[view_current] + view_wview[view_current] + seperatex;
-
 // draw tiled
 for (centerx=leftx; centerx&lt;=rightx; centerx+=seperatex){
     draw_sprite_ext(sprite_index, image_index, centerx, floory, image_xscale, image_yscale, image_angle, image_blend, image_alpha);//cx
 }
-
 /* Render
 var lx = ((((view_xview[view_current] * relative_x) div 1) - view_xview[view_current]) mod sprite_width) - sprite_width;
 var rx = view_wview[view_current] + sprite_width;

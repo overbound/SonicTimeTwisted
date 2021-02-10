@@ -114,13 +114,11 @@
           <argument>
             <kind>1</kind>
             <string>/// Release powerup
-
 // broken stand
 with instance_create(x, y, objMonitorBroken) {
     image_yscale = other.image_yscale;
     icon = other.icon;
 }
-
 // explosion
 part_particles_create(objLevel.particles, x, y, objResources.explosion1, 1);
 </string>
@@ -146,10 +144,8 @@ part_particles_create(objLevel.particles, x, y, objResources.explosion1, 1);
           <argument>
             <kind>1</kind>
             <string>/// Handle landing
-
 // vertical limit only
 if abs(vspeed)&gt;0 while place_meeting(x, y, other) y -= sign(vspeed);
-
 // stop falling
 if place_meeting(x, y+image_yscale, other) {vspeed = 0; gravity = 0;}
 </string>
@@ -175,12 +171,10 @@ if place_meeting(x, y+image_yscale, other) {vspeed = 0; gravity = 0;}
           <argument>
             <kind>1</kind>
             <string>/// Draw monitor
-
 // monitor
 draw_sprite_ext(sprite_index, objScreen.image_index div 4, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
-
 // icon
-if (objScreen.image_index mod 4)&lt;3
+if (objScreen.frame_counter != 0)
 {
     // draw player face if applicable
     if icon&gt;10 draw_sprite(sprIcon, 10+objGameData.character_id[view_current], x, y-image_yscale*2); else

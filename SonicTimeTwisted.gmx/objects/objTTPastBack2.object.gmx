@@ -41,23 +41,16 @@
             <kind>1</kind>
             <string>/// Initialize background
 var i;
-
 // defaults
 relative_y = .9;
 absolute_y = 200;//room_height-(room_height*relative_y);
 scale_limit = 3;
-
 with instance_create(x,y,objTTPastShip) {
-
     absolute_y = 140; //100
-
 }
-
 stars1= parallax_create(1, backTTFStars1, 0, 0, 320, 224, 0, 0, 1, relative_y, 0, -48, 0, 0);
 stars2= parallax_create(1, backTTFStars2, 0, 0, 320, 224, 0, 0, 1, relative_y, 0, -48, 0, 0);
-
 parallax_create(1, backTTPSky, 0, 0, 32, 220, 0, 0, 1, relative_y, 0, -20, 0, 0);
-
 // ocean
 for (i=0; i&lt;20; i+=1)
 {
@@ -67,9 +60,7 @@ for (i=0; i&lt;20; i+=1)
  
 water = instance_create(0,1036,objWater);
 with water { image_xscale = room_width/16; image_yscale = 128; scale = 128; remove = 0; can_run = true; }
-
 seaback=parallax_create(1, backTPFSea, 0, 0, 426, 640, 0, 0, 1, relative_y, 0, 200, 0, 0);
-
 // Small Ships
 with instance_create(x,y,objTTPastShipMedium) {
 // offsets
@@ -115,12 +106,9 @@ separation_y = 0;
 hspeed=-0.07;
 depth = 21;
 }
-
 // horizon
 horizon = parallax_create_sprite(1, sprWaterHorizon, .25, 0, 0, 0, 0, 0, water.y, 0, 0);
 horizon.depth = water.depth-1;
-
-
 
 </string>
           </argument>
@@ -165,11 +153,9 @@ horizon.depth = water.depth-1;
         absolute_y=other.water.y;
         }
 
-
 //star flash
 stars1.image_alpha = 0.5+abs(cos(degtorad(objScreen.image_index*2.4)))*0.5;
 stars2.image_alpha = 0.5+abs(sin(degtorad(objScreen.image_index*2.4)))*0.5;
-
 if instance_exists(objLevel.player[0]) {
     if objLevel.player[0].underwater == true {
         seaback.depth=20;
@@ -217,12 +203,10 @@ if instance_exists(objLevel.player[0]) {
             <string>/// Scale water strips
 if not view_visible[view_current] exit;
 var offset, scale, i;
-
 // get scale based on offset
 offset = floor(view_yview[view_current]*relative_y)+absolute_y;
 scale = 1;
 with water scale = median((y-offset)/160, -other.scale_limit, other.scale_limit);
-
 // apply scale
 for (i=0; i&lt;20; i+=1)
 {
@@ -230,7 +214,6 @@ for (i=0; i&lt;20; i+=1)
     strip[i].absolute_y = absolute_y+(i*8)*scale;
     with strip[i] event_perform(ev_draw, 0);
 }
-
 
 </string>
           </argument>

@@ -102,7 +102,6 @@
           <argument>
             <kind>1</kind>
             <string>/// Spike behavior
-
 // search for players
 if not alarm[0] and (gravity==0) with objPlayer if x+34&gt;other.x and x-32&lt;other.x {other.remove = 0; other.gravity = 0.32; break;}
 
@@ -131,21 +130,16 @@ visible = 1-(alarm[0] mod 2);
           <argument>
             <kind>1</kind>
             <string>/// Handle landing
-
 // abort if we're not actually falling
 if alarm[0] or (gravity==0) exit;
-
 // vertical limit only
 while place_meeting(x, y, other) y -= 1;
-
 // stop falling
 vspeed = 0;
 gravity = 0;
-
 // sound
 audio_stop_sound(sndSpikeLand);
-audio_play_sound(sndSpikeLand, 4,0);
-
+play_sfx(sndSpikeLand, 4);
 // flicker out
 alarm[0] = 80;
 </string>
@@ -171,24 +165,18 @@ alarm[0] = 80;
           <argument>
             <kind>1</kind>
             <string>/// Handle landing
-
 // abort if we're not actually falling
 if alarm[0] or (gravity==0) exit;
-
 // quicksand only
 if (other.reaction_script!=player_reaction_quicksand) exit;
-
 // vertical limit only
 while place_meeting(x, y, other) y -= 1;
-
 // stop falling
 vspeed = 0;
 gravity = 0;
-
 // sound
 audio_stop_sound(sndSpikeLand);
-audio_play_sound(sndSpikeLand, 4, 0);
-
+play_sfx(sndSpikeLand, 4);
 // flicker out
 alarm[0] = 80;
 </string>

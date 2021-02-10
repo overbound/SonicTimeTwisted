@@ -90,9 +90,7 @@ flame_index = 0;
             <string>x = parentId.x;
 y = parentId.y;
 
-
 if life &lt;= 0 {
-
     with objLevel.player[0] {
         camera.left = view_xview;
         camera.top = view_yview;
@@ -100,10 +98,9 @@ if life &lt;= 0 {
         camera.bottom = view_yview+view_hview;
     
     }
-    audio_play_sound(sndGalanikDeathScreech,0,false);
+    play_sfx(sndGalanikDeathScreech,0);
     instance_create(x,y,objFinalEnding);
     instance_destroy();
-
    
 }
 </string>
@@ -128,11 +125,9 @@ if life &lt;= 0 {
             <kind>1</kind>
             <string>/// animate eye fire
 flame_index += .25;
-
 if flame_index  == 4 {
     flame_index = 0;
 }
-
 </string>
           </argument>
         </arguments>
@@ -156,28 +151,13 @@ if flame_index  == 4 {
           <argument>
             <kind>1</kind>
             <string>draw_set_color(c_white);
-if alarm[0] mod 2
-{
-    draw_set_blend_mode_ext(10, 1);
-    draw_rectangle(bbox_left, bbox_top, bbox_right, bbox_bottom, false);
-    draw_set_blend_mode(bm_normal);
-    
-}
+draw_boss_hit_blend();
 draw_self();
-if alarm[0] mod 2
-{
-    draw_set_blend_mode_ext(10, 1);
-    draw_rectangle(bbox_left, bbox_top, bbox_right, bbox_bottom, false);
-    draw_set_blend_mode(bm_normal);
-    
-}
-
+draw_boss_hit_blend();
 if objFinalBoss.eyeTell == true {
     draw_sprite_ext(sprGalanikEyeTell,floor(flame_index),x-10,y+20,1,1,0,c_white,.65);
     draw_sprite_ext(sprGalanikEyeTell,floor(flame_index),x+10,y+20,1,1,0,c_white,.65);
 }
-
-
 
 </string>
           </argument>

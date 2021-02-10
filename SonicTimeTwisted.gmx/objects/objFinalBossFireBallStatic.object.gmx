@@ -48,13 +48,9 @@ direction=180;
 remove=0;
 reaction_script=player_reaction_fireball;
 lighting_index=0;
-
 if in_view(view_current,32) {
-
     instance_destroy();
-
 }
-
 </string>
           </argument>
         </arguments>
@@ -80,7 +76,7 @@ if in_view(view_current,32) {
             <string>/// sound
 if in_view(view_current,0) {
     if !audio_is_playing(sndGalacnikAttackLoop) &amp;&amp; objProgram.paused == false
-        audio_play_sound(sndGalacnikAttackLoop,2,false);
+        play_sfx(sndGalacnikAttackLoop,2);
 }
 </string>
           </argument>
@@ -103,7 +99,6 @@ if in_view(view_current,0) {
           <argument>
             <kind>1</kind>
             <string>/// animate lighting
-
 if lighting_index &gt; 4 {
     lighting_index=0;
 } else lighting_index +=.25;
@@ -146,7 +141,6 @@ if lighting_index &gt; 4 {
           <argument>
             <kind>1</kind>
             <string>/// Render Fireball
-
 draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,0,c_white,1);
 draw_set_blend_mode(bm_add);
 draw_sprite_ext(sprGalanikFireBallAdd,image_index,x,y,image_xscale*1.2,image_yscale*1.2,0,c_white,0.5);

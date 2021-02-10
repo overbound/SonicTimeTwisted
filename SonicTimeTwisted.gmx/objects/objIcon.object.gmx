@@ -154,16 +154,13 @@
           <argument>
             <kind>1</kind>
             <string>/// Redeem powerup
-
 // cut speed
 vspeed = 0;
-
 // get player id
 with player_id
 {
     // abort if dead
     if (state==player_state_dead) break;
-
     // get item type
     switch other.image_index
     {
@@ -179,7 +176,6 @@ with player_id
         default: player_get_lives(1);
     }
 }
-
 // done
 player_id = noone;
 alarm[1] = 32;

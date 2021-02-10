@@ -25,30 +25,6 @@
       </action>
       <action>
         <libid>1</libid>
-        <id>611</id>
-        <kind>6</kind>
-        <userelative>-1</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>through</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>true</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
         <id>603</id>
         <kind>7</kind>
         <userelative>0</userelative>
@@ -63,11 +39,12 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>ysp = 1.5;
-remove=0;
-ypos=y;
-
-alarm[0]=2000;
+            <string>/// Initialize
+remove = 0;
+through = true;
+yPosition = ystart;
+ySpeed = 1.5;
+alarm[0] = 2000;
 </string>
           </argument>
         </arguments>
@@ -90,7 +67,8 @@ alarm[0]=2000;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>instance_destroy();
+            <string>/// Exit
+instance_destroy();
 </string>
           </argument>
         </arguments>
@@ -113,9 +91,62 @@ alarm[0]=2000;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-ypos+=ysp;
-y=floor(ypos);
+            <string>/// Fall
+yPosition += ySpeed;
+y = floor(yPosition);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="10">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Generate debris
+var debrisWidth = 16;
+var debrisHeight = 16;
+
+var columns = sprite_width div debrisWidth;
+var rows = sprite_height div debrisHeight;
+
+var i;
+for (var j = 0; j &lt; rows; ++j)
+{
+    for (i = 0; i &lt; columns; ++i)
+    {
+        with (instance_create(x + i * debrisWidth, y + j * debrisHeight, objBreakableRockBits))
+        {
+            sprite_index = sprGalanikPlatformBroken;
+            image_index = j * columns + i;
+            if (image_xscale &gt; 0)
+            {
+                alarm[0] = ((columns - i) * 2) + (((rows - j) - 1) * 5);
+            }
+            else if (image_xscale &lt; 0)
+            {
+                alarm[0] = (i * 2) + (((rows - j) - 1) * 5);
+            }
+        }
+    }
+}
+
+play_sfx_at(sndCollapse, x + sprite_width * 0.5, y + sprite_height * 0.5, 0, 100, 300, 1, false, 0);
+
+instance_destroy();
 
 </string>
           </argument>

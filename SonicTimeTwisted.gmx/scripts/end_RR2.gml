@@ -1,7 +1,6 @@
 //end_AA1
-
+set_input_enabled(true);
 with objLevel.player[0] {
-
     // states and flags
     state = player_state_stand;
     spinning = false;
@@ -15,7 +14,5 @@ with objLevel.player[0] {
         instance_create(x-8,y-16,objFallHat)
     }
 
-
 }
-
 with objLevel { silence = 1; }

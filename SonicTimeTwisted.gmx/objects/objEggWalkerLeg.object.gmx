@@ -92,7 +92,6 @@ step +=1;
           <argument>
             <kind>1</kind>
             <string>draw_self();
-
 //draw_text(x,y-264,image_angle);
 </string>
           </argument>

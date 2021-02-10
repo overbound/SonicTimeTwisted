@@ -26,8 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>image_speed = .25;
-
-audio_play_sound(sndGalacnikExplosion,1,false);
+play_sfx(sndGalacnikExplosion,1);
 </string>
           </argument>
         </arguments>
@@ -51,7 +50,6 @@ audio_play_sound(sndGalacnikExplosion,1,false);
           <argument>
             <kind>1</kind>
             <string>if image_index == 5 {
-
     with objGalanikFloat {
         instance_create(x-16,y+4,objGalacnikHandPart);
         instance_create(x+10,y+52,objGalacnikFootPart);

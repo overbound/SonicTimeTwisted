@@ -45,11 +45,9 @@ remove=0;
 instance_create(x+256,y,objTTFMovingFloorChild)
 instance_create(x+512,y,objTTFMovingFloorChild)
 instance_create(x+768,y,objTTFMovingFloorChild)
-
 ycord=y;
 pattern=0;
 count=0;
-
 
 yspeed = .5;
 </string>
@@ -82,7 +80,6 @@ with (instance_create(x, y-5, objBubble))
     offset = choose(0, 180);
     vspeed= -1;
 }
-
 // continue spawning
 count -= 1;
 if count alarm[3] = 16;
@@ -115,7 +112,6 @@ with instance_create(x, y-5, objBubble)
     offset = choose(0, 180);
     vspeed= -1;
 }
-
 // continue spawning
 count -= 1;
 if count alarm[2] = 16;
@@ -148,7 +144,6 @@ with instance_create(x, y-5, objBubble)
     offset = choose(0, 180);
     vspeed= -1;
 }
-
 // continue spawning
 count -= 1;
 if count alarm[1] = 16;
@@ -199,22 +194,19 @@ with instance_create(x, y-5, objBubble) {size = 5; offset = choose(0, 180); vspe
           <argument>
             <kind>1</kind>
             <string>/// Move
-
 if move == true {
-
     if ystart &lt; y +1472 {
     
         ycord -= yspeed;
         y=floor(ycord);
         
         if !audio_is_playing(sndQuake)
-            audio_play_sound(sndQuake,12,true);
+            play_sfx(sndQuake,12,true);
     } else {
         
         y=704;
         audio_stop_sound(sndQuake);
     }
-
 }
 </string>
           </argument>
@@ -238,25 +230,20 @@ if move == true {
             <kind>1</kind>
             <string>/// Spawn bubbles
 var type;
-
 // abort if not in water
 if not place_meeting(x, y, objWater) {
 visble = false;
 exit;
 }
-
 // abort if too soon
 if objScreen.image_index mod 240 exit;
-
 // get a pattern different from the last
 do type = irandom(3); until (type!=pattern);
 pattern = type;
-
 // set bubble amount based on pattern
 if (pattern==1) count = 3; else
 if (pattern==2) count = choose(5, 6);
 if (pattern==3) count = 2;
-
 // start pattern
 alarm[pattern] = 10;
 </string>
@@ -280,7 +267,6 @@ alarm[pattern] = 10;
           <argument>
             <kind>1</kind>
             <string>/// Shake Screen
-
 if move {
     with objLevel.player[0] {
         if state != player_state_dead 

@@ -87,10 +87,8 @@
           <argument>
             <kind>1</kind>
             <string>with sensor {
-
     x = other.x;
     y = other.y;
-
 }
 </string>
           </argument>

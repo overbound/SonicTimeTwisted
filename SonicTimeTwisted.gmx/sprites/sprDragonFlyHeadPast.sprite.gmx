@@ -15,10 +15,18 @@
   <VTile>0</VTile>
   <TextureGroups>
     <TextureGroup0>0</TextureGroup0>
+    <TextureGroup1>0</TextureGroup1>
+    <TextureGroup2>0</TextureGroup2>
+    <TextureGroup3>0</TextureGroup3>
+    <TextureGroup4>0</TextureGroup4>
+    <TextureGroup5>0</TextureGroup5>
+    <TextureGroup6>0</TextureGroup6>
+    <TextureGroup7>0</TextureGroup7>
+    <TextureGroup8>0</TextureGroup8>
   </TextureGroups>
   <For3D>0</For3D>
   <width>32</width>
-  <height>30</height>
+  <height>27</height>
   <frames>
     <frame index="0">images\sprDragonFlyHeadPast_0.png</frame>
     <frame index="1">images\sprDragonFlyHeadPast_1.png</frame>

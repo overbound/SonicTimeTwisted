@@ -111,7 +111,7 @@
           <argument>
             <kind>1</kind>
             <string>/// Reset SFX
-audio_play_sound(sndAADropBumperReset, 2, 0);
+play_sfx(sndAADropBumperReset, 2);
 </string>
           </argument>
         </arguments>

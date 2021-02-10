@@ -43,23 +43,17 @@
 player_id = noone;
 allow_collision = true;
 reaction_script = player_reaction_slot_machine;
-
 instance_create(x,y,objSlotMachineSolidMask);
-
 //slot variables
 slot_pos[0]=0;
 slot_pos[1]=0;
 slot_pos[2]=0;
-
 slot_state[0]=0;
 slot_state[1]=0;
 slot_state[2]=0;
-
 win=0;
 win_icon=0;
-
 audio = audio_emitter_create();
-
 </string>
           </argument>
         </arguments>
@@ -83,16 +77,13 @@ audio = audio_emitter_create();
           <argument>
             <kind>1</kind>
             <string>allow_collision = true;
-
 //slot variables
 slot_pos[0]=0;
 slot_pos[1]=0;
 slot_pos[2]=0;
-
 slot_state[0]=0;
 slot_state[1]=0;
 slot_state[2]=0;
-
 win=0;
 win_icon=0;
 </string>
@@ -118,24 +109,20 @@ win_icon=0;
           <argument>
             <kind>1</kind>
             <string>if win != 1 {
-
     slot_pos[2]=floor(slot_pos[2]);
-    audio_play_sound(sndAASlotRobotnik,4,0);
+    play_sfx(sndAASlotRobotnik, 4);
     
 }else{
-
     slot_pos[2]=win_icon;
     
     if win_icon != 10 {
-        audio_play_sound(sndAASlotWin,4,0);
+        play_sfx(sndAASlotWin, 4);
     }
-    else audio_play_sound(sndAASlotRobotnik,4,0);
+    else play_sfx(sndAASlotRobotnik, 4);
     
 slot_state[2]=1;
-
 with player_id
 {
-
         
 //set result
 if other.win_icon &lt;= 6 {
@@ -145,40 +132,29 @@ if other.win_icon &lt;= 6 {
     
 }else
 switch other.win_icon {
-
 case 7:
     player_get_rings(50); break;
-
 case 8:
     if not superform {superspeed = 1200; player_reset_physics(); play_jingle(bgmSpeedUp, true); } break;
-
 case 9:
     if not superform player_get_invincibility(); break;
-
 case 10:
     if not superform &amp;&amp; objGameData.rings[0] &gt; 0 
         player_hit(0, sndHurt)
-        else audio_play_sound(sndHurt,4,0);
-        ; break;
-
+        else play_sfx(sndHurt, 4);
+        break;
 case 11:
     if not superform &amp;&amp; objGameData.rings[0] &gt; 0 
         player_hit(0, sndHurt)
-        else audio_play_sound(sndHurt,4,0);
-break;
-
+        else play_sfx(sndHurt, 4);
+        break;
 }
-
 }
-
 }
-
 with player_id { player_is_falling(); }
-
 player_id = noone;
 active = false;
 alarm[11]=20;
-
 </string>
           </argument>
         </arguments>
@@ -233,9 +209,7 @@ slot_state[1]=1;
     slot_pos[0]=floor(slot_pos[0]);
 }else
     slot_pos[0]=win_icon;
-
 slot_state[0]=1;
-
 </string>
           </argument>
         </arguments>
@@ -266,7 +240,6 @@ if not active
 }
 else
 {
-
     
     with player_id {
     
@@ -276,7 +249,7 @@ else
     
     }
      if !audio_is_playing(sndAASlotSwitch)
-        audio_play_sound(sndAASlotSwitch,2,0);   
+        play_sfx(sndAASlotSwitch, 2);   
         for(i=0; i&lt; 3; i+=1;) {
             
            if slot_state[i] == 0{
@@ -312,7 +285,7 @@ else
             <string>///destroy enemies
 if player_id != noone {
     with other instance_destroy();
-    audio_play_sound(sndPop,4,0);
+    play_sfx(sndPop, 4);
 }
 </string>
           </argument>
@@ -337,7 +310,6 @@ if player_id != noone {
           <argument>
             <kind>1</kind>
             <string>draw_self();
-
 draw_sprite(sprSlotIcon,slot_pos[0],x-48,y-64);
 draw_sprite(sprSlotIcon,slot_pos[1],x,y-64);
 draw_sprite(sprSlotIcon,slot_pos[2],x+48,y-64);

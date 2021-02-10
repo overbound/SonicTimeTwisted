@@ -12,26 +12,21 @@
   <showcolour>-1</showcolour>
   <code>// initialize level settings
 // initialize level settings
-
 with objLevel {
-
     bg = instance_create(x,y,objRRPBack);
     act = 1;
     musicLoop = bgmRRPastLoop;
     musicIntro = bgmRRPastIntro;
     flower = sprFlowerRR;
-
 }
-
 objProgram.in_past=true;
-
 // setup titlecard
 with objTitlecard
 {
-    title_string[0] = "Raging";
-    title_string[1] = "Ruins";
-    title_string[2] = "Zone";
-    title_string[3] = "ACT1 PAST";
+    title_string[0] = tr("_zonename_RRZ_A");
+    title_string[1] = tr("_zonename_RRZ_B");
+    title_string[2] = tr("_zonename_RRZ_C");
+    title_string[3] = tr("_ACT1_PAST");
 }</code>
   <enableViews>0</enableViews>
   <clearViewBackground>-1</clearViewBackground>
@@ -627,9 +622,9 @@ with objTitlecard
     <instance objName="objBlock" x="7328" y="197" name="inst_5B3538B0" locked="0" code="" scaleX="4" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="7616" y="197" name="inst_BAAEA5C9" locked="0" code="" scaleX="4" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="objLayerFlip" x="7496" y="64" name="inst_336C8875" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objLayerSet" x="7316" y="212" name="inst_2B3667C5" locked="0" code="layer=2;&#xA;" scaleX="2.5" scaleY="2.25" colour="4278223103" rotation="0"/>
-    <instance objName="objLayerSet" x="7620" y="212" name="inst_17A95323" locked="0" code="layer=1;&#xA;" scaleX="2.5" scaleY="2.25" colour="4294901760" rotation="0"/>
-    <instance objName="objLayerSet" x="3044" y="692" name="inst_2E02800A" locked="0" code="layer=1;&#xA;" scaleX="2.5" scaleY="2.25" colour="4294901760" rotation="0"/>
+    <instance objName="objLayerSet" x="7316" y="212" name="inst_2B3667C5" locked="0" code="depth_mask=2;&#xA;" scaleX="2.5" scaleY="2.25" colour="4278223103" rotation="0"/>
+    <instance objName="objLayerSet" x="7620" y="212" name="inst_17A95323" locked="0" code="depth_mask=1;&#xA;" scaleX="2.5" scaleY="2.25" colour="4294901760" rotation="0"/>
+    <instance objName="objLayerSet" x="3044" y="692" name="inst_2E02800A" locked="0" code="depth_mask=1;&#xA;" scaleX="2.5" scaleY="2.25" colour="4294901760" rotation="0"/>
     <instance objName="objCurveConvexSlim" x="3072" y="512" name="inst_AF7A69F3" locked="0" code="" scaleX="-1.73000001907349" scaleY="1.72631573677063" colour="4294967295" rotation="0"/>
     <instance objName="objLayerFlip" x="2920" y="540" name="inst_4C06A774" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="2752" y="676" name="inst_23FF103A" locked="0" code="" scaleX="4" scaleY="2" colour="4294967295" rotation="0"/>
@@ -846,17 +841,17 @@ with objTitlecard
     <instance objName="objRRBreakableColumn" x="10560" y="352" name="inst_F0E5BBC2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRRBreakableColumn" x="10592" y="352" name="inst_E89E01F6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpringRed" x="10736" y="136" name="inst_B2F1B87A" locked="0" code="depth=10;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="180"/>
-    <instance objName="objCurveConcaveSlim" x="7480" y="188" name="inst_43B4B2A3" locked="0" code="layer=2;" scaleX="1.42999994754791" scaleY="1.42999994754791" colour="4278223103" rotation="0"/>
+    <instance objName="objCurveConcaveSlim" x="7480" y="188" name="inst_43B4B2A3" locked="0" code="depth_mask=2;" scaleX="1.42999994754791" scaleY="1.42999994754791" colour="4278223103" rotation="0"/>
     <instance objName="objCurveConcaveSlim" x="7480" y="200" name="inst_112E28C9" locked="0" code="" scaleX="1.42999994754791" scaleY="-1.42999994754791" colour="4294967295" rotation="0"/>
-    <instance objName="objCurveConcaveSlim" x="7496" y="188" name="inst_FA61CBD1" locked="0" code="layer=1;" scaleX="-1.42999994754791" scaleY="1.42999994754791" colour="4294901760" rotation="0"/>
+    <instance objName="objCurveConcaveSlim" x="7496" y="188" name="inst_FA61CBD1" locked="0" code="depth_mask=1;" scaleX="-1.42999994754791" scaleY="1.42999994754791" colour="4294901760" rotation="0"/>
     <instance objName="objCurveConcaveSlim" x="7496" y="200" name="inst_102F4516" locked="0" code="" scaleX="-1.42999994754791" scaleY="-1.42999994754791" colour="4294967295" rotation="0"/>
     <instance objName="objCurveConcaveSlim" x="2920" y="676" name="inst_DDDFEEA1" locked="0" code="" scaleX="-1.42999994754791" scaleY="-1.42999994754791" colour="4294967295" rotation="0"/>
     <instance objName="objCurveConcaveSlim" x="2904" y="676" name="inst_A0560132" locked="0" code="" scaleX="1.42999994754791" scaleY="-1.42999994754791" colour="4294967295" rotation="0"/>
-    <instance objName="objCurveConcaveSlim" x="2904" y="668" name="inst_499540BA" locked="0" code="layer=2;" scaleX="1.42999994754791" scaleY="1.42999994754791" colour="4278223103" rotation="0"/>
-    <instance objName="objCurveConcaveSlim" x="2920" y="668" name="inst_C493096B" locked="0" code="layer=1;" scaleX="-1.42999994754791" scaleY="1.42999994754791" colour="4294901760" rotation="0"/>
+    <instance objName="objCurveConcaveSlim" x="2904" y="668" name="inst_499540BA" locked="0" code="depth_mask=2;" scaleX="1.42999994754791" scaleY="1.42999994754791" colour="4278223103" rotation="0"/>
+    <instance objName="objCurveConcaveSlim" x="2920" y="668" name="inst_C493096B" locked="0" code="depth_mask=1;" scaleX="-1.42999994754791" scaleY="1.42999994754791" colour="4294901760" rotation="0"/>
     <instance objName="objBlock" x="6912" y="1212" name="inst_DFE7035B" locked="0" code="climbable=1;&#xA;" scaleX="8" scaleY="8.5" colour="4294967295" rotation="0"/>
     <instance objName="objCurveConvexSlim" x="2752" y="512" name="inst_321F5466" locked="0" code="" scaleX="1.72631573677063" scaleY="1.72631573677063" colour="4294967295" rotation="0"/>
-    <instance objName="objLayerSet" x="2744" y="692" name="inst_F52D9B04" locked="0" code="layer=2;&#xA;" scaleX="2.5" scaleY="2.25" colour="4278223103" rotation="0"/>
+    <instance objName="objLayerSet" x="2744" y="692" name="inst_F52D9B04" locked="0" code="depth_mask=2;&#xA;" scaleX="2.5" scaleY="2.25" colour="4278223103" rotation="0"/>
     <instance objName="objSpike" x="7024" y="1184" name="inst_1291EB21" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRoboRex" x="5324" y="1180" name="inst_EC52E48F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpike" x="1072" y="992" name="inst_6350C9F3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -944,13 +939,13 @@ with objTitlecard
     <instance objName="objBlock" x="11520" y="-200" name="inst_DDCBF004" locked="0" code="climbable=1;&#xA;&#xA;" scaleX="48" scaleY="57.1428565979004" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="11648" y="768" name="inst_39E9CBA0" locked="0" code="climbable=1;&#xA;&#xA;" scaleX="8" scaleY="16" colour="4294967295" rotation="0"/>
     <instance objName="objSlant" x="11872" y="1032" name="inst_9B0D3A93" locked="0" code="" scaleX="1" scaleY="0.5" colour="4294967295" rotation="0"/>
-    <instance objName="objSlant" x="14464" y="748" name="inst_C5466125" locked="0" code="through=1;&#xA;layer=1;&#xA;" scaleX="-1.125" scaleY="0.875" colour="4294901760" rotation="0"/>
-    <instance objName="objSlant" x="14428" y="716" name="inst_77CFDA01" locked="0" code="through=1;&#xA;layer=1;&#xA;" scaleX="-1.125" scaleY="1" colour="4294901760" rotation="0"/>
-    <instance objName="objSlant" x="14392" y="684" name="inst_077AD263" locked="0" code="through=1;&#xA;layer=1;&#xA;" scaleX="-1.125" scaleY="1" colour="4294901760" rotation="0"/>
-    <instance objName="objSlant" x="14356" y="652" name="inst_DCD9CC4C" locked="0" code="through=1;&#xA;layer=1;&#xA;" scaleX="-1.125" scaleY="1" colour="4294901760" rotation="0"/>
+    <instance objName="objSlant" x="14464" y="748" name="inst_C5466125" locked="0" code="through=1;&#xA;depth_mask=1;&#xA;" scaleX="-1.125" scaleY="0.875" colour="4294901760" rotation="0"/>
+    <instance objName="objSlant" x="14428" y="716" name="inst_77CFDA01" locked="0" code="through=1;&#xA;depth_mask=1;&#xA;" scaleX="-1.125" scaleY="1" colour="4294901760" rotation="0"/>
+    <instance objName="objSlant" x="14392" y="684" name="inst_077AD263" locked="0" code="through=1;&#xA;depth_mask=1;&#xA;" scaleX="-1.125" scaleY="1" colour="4294901760" rotation="0"/>
+    <instance objName="objSlant" x="14356" y="652" name="inst_DCD9CC4C" locked="0" code="through=1;&#xA;depth_mask=1;&#xA;" scaleX="-1.125" scaleY="1" colour="4294901760" rotation="0"/>
     <instance objName="objSlant" x="12084" y="876" name="inst_A32A5943" locked="0" code="" scaleX="0.5" scaleY="0.25" colour="4294967295" rotation="0"/>
-    <instance objName="objSlant" x="14284" y="612" name="inst_955ECF5F" locked="0" code="through=1;&#xA;layer=1;" scaleX="-1.125" scaleY="0.5" colour="4294901760" rotation="0"/>
-    <instance objName="objSlant" x="14320" y="628" name="inst_0ADC3FF8" locked="0" code="through=1;&#xA;layer=1;&#xA;" scaleX="-1.125" scaleY="0.75" colour="4294901760" rotation="0"/>
+    <instance objName="objSlant" x="14284" y="612" name="inst_955ECF5F" locked="0" code="through=1;&#xA;depth_mask=1;" scaleX="-1.125" scaleY="0.5" colour="4294901760" rotation="0"/>
+    <instance objName="objSlant" x="14320" y="628" name="inst_0ADC3FF8" locked="0" code="through=1;&#xA;depth_mask=1;&#xA;" scaleX="-1.125" scaleY="0.75" colour="4294901760" rotation="0"/>
     <instance objName="objBlock" x="11584" y="1056" name="inst_8F669C1F" locked="0" code="climbable=1;" scaleX="47.5" scaleY="4" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="11548" y="1024" name="inst_86A96E4D" locked="0" code="climbable=1;" scaleX="12.5714282989502" scaleY="4" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="11136" y="548" name="inst_5E0B103D" locked="0" code="climbable=1;" scaleX="16" scaleY="43.5" colour="4294967295" rotation="0"/>
@@ -1019,7 +1014,7 @@ with objTitlecard
     <instance objName="objSlant" x="14284" y="768" name="inst_5384E7F5" locked="0" code="angled=0;&#xA;" scaleX="1.625" scaleY="0.125" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="14008" y="804" name="inst_A4E29BF0" locked="0" code="climbable=1;" scaleX="2.28571438789368" scaleY="0.5" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="11628" y="1184" name="inst_3ED2EDE9" locked="0" code="climbable=1;" scaleX="4" scaleY="5.7142858505249" colour="4294967295" rotation="0"/>
-    <instance objName="objSlant" x="14248" y="608" name="inst_51037B85" locked="0" code="through=1;&#xA;layer=1;&#xA;" scaleX="-0.875" scaleY="0.125" colour="4294967295" rotation="0"/>
+    <instance objName="objSlant" x="14248" y="608" name="inst_51037B85" locked="0" code="through=1;&#xA;depth_mask=1;&#xA;" scaleX="-0.875" scaleY="0.125" colour="4294967295" rotation="0"/>
     <instance objName="objSlant" x="11576" y="1184" name="inst_DA56D30F" locked="0" code="through=1;&#xA;" scaleX="1.625" scaleY="0.25" colour="4294967295" rotation="0"/>
     <instance objName="objSlant" x="11524" y="1192" name="inst_1226AB6E" locked="0" code="through=1;&#xA;" scaleX="1.625" scaleY="0.25" colour="4294967295" rotation="0"/>
     <instance objName="objSlant" x="11476" y="1200" name="inst_4E7474C7" locked="0" code="through=1;&#xA;" scaleX="1.5" scaleY="0.25" colour="4294967295" rotation="0"/>
@@ -1229,9 +1224,9 @@ with objTitlecard
     <instance objName="objSlant" x="14080" y="556" name="inst_D3B9F1D5" locked="0" code="through=1;&#xA;" scaleX="-1.125" scaleY="0.875" colour="4294967295" rotation="0"/>
     <instance objName="objSlant" x="14112" y="584" name="inst_AFAF3B16" locked="0" code="through=1;&#xA;" scaleX="-1" scaleY="0.5" colour="4294967295" rotation="0"/>
     <instance objName="objSlant" x="14144" y="600" name="inst_90D93A06" locked="0" code="through=1;&#xA;" scaleX="-1" scaleY="0.25" colour="4294967295" rotation="0"/>
-    <instance objName="objBlock" x="14136" y="608" name="inst_12F4FDFE" locked="0" code="through=1;&#xA;layer=1;;&#xA;" scaleX="10.5" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objLayerSet" x="13796" y="228" name="inst_B5BC88A2" locked="0" code="layer=1;&#xA;" scaleX="1.75" scaleY="4.41666650772095" colour="4294901760" rotation="0"/>
-    <instance objName="objLayerSet" x="13840" y="620" name="inst_D1A9E852" locked="0" code="layer=2;&#xA;" scaleX="6" scaleY="4.75" colour="4278223103" rotation="0"/>
+    <instance objName="objBlock" x="14136" y="608" name="inst_12F4FDFE" locked="0" code="through=1;&#xA;depth_mask=1;;&#xA;" scaleX="10.5" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objLayerSet" x="13796" y="228" name="inst_B5BC88A2" locked="0" code="depth_mask=1;&#xA;" scaleX="1.75" scaleY="4.41666650772095" colour="4294901760" rotation="0"/>
+    <instance objName="objLayerSet" x="13840" y="620" name="inst_D1A9E852" locked="0" code="depth_mask=2;&#xA;" scaleX="6" scaleY="4.75" colour="4278223103" rotation="0"/>
     <instance objName="objPterodactyl" x="12852" y="160" name="inst_BDFFAA1D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objMonitor" x="12368" y="112" name="inst_ED2F96E5" locked="0" code="icon=7;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objMonitor" x="12400" y="112" name="inst_925B59DE" locked="0" code="icon=2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

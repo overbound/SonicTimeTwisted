@@ -42,11 +42,9 @@
             <string>/// Initialize
 image_speed = 0;
 offscreen_enabled = true;
-
 // state machine
 state = 0;
 frozen = false;
-
 // physics
 hspeed = 3;
 facing = 1;
@@ -54,7 +52,6 @@ wall_facing = 0;
 cliff_facing = 0;
 offset_x = (bbox_right-bbox_left)*0.5;
 offset_y = (bbox_bottom-y);
-
 // other
 speed_cap = 3;
 acceleration = 0.1;
@@ -204,11 +201,9 @@ with instance_create(x+12, y+8, objShieldIceBlockDebris) {depth = other.depth-1;
           <argument>
             <kind>1</kind>
             <string>/// Movement and collision
-
 // reset collision data
 wall_facing = 0;
 cliff_facing = 0;
-
 // wall collision
 if collision_ray(offset_x, 0, 0, objSolid)
 {
@@ -219,7 +214,6 @@ else
 {
     // upward slope
     while collision_box(offset_x, offset_y, 0, objSolid) y -= 1;
-
     // downward slope
     for (var i=0; i&lt;offset_y*2; i+=1) if collision_ray(offset_x, offset_y+1+i, 0, objSolid) break;
     if (i&lt;offset_y*2) y += i; else {x -= hspeed; cliff_facing = sign(hspeed);}
@@ -289,7 +283,6 @@ else
           <argument>
             <kind>1</kind>
             <string>/// Enemy behavoir
-
 // reverse at walls and cliffs
 if facing==wall_facing or facing==cliff_facing
 {
@@ -301,7 +294,6 @@ if facing==wall_facing or facing==cliff_facing
     image_index = 0;
     alarm[0] = 60;
 }
-
 // chase players
 if (state!=4) and instance_exists(objPlayer)
 {
@@ -320,39 +312,31 @@ if (state!=4) and instance_exists(objPlayer)
         alarm[0] = 40;
     }
 }
-
 // state machine
 switch state
 {
 case 0: // normal
     // brake after a short period
     if not alarm[0] {state = 1; image_index = 2; break;}
-
     // accelerate
     if abs(hspeed)&lt;speed_cap hspeed = max(abs(hspeed)+acceleration, speed_cap)*facing;
     break;
-
 case 1: // braking
     // turn around on complete stop
     if hspeed==0 {state = 2; facing = -facing; alarm[0] = 10; break;}
-
     // decelerate
     if abs(hspeed)&gt;0 hspeed -= min(abs(hspeed), deceleration)*sign(hspeed);
     break;
-
 case 2: // turning
     if not alarm[0] {state = 0; image_index = 0; alarm[0] = 60;}
     break;
-
 case 3: // charging
     if not alarm[0] hspeed = 5*facing; 
     break;
-
 case 4: // jumping
     if not alarm[0] and collision_box(offset_x, offset_y+1, 0, objSolid) {state = 0; vspeed = 0; gravity = 0;}
     break;
 }
-
 // animation
 if state!=1 and state!=2 image_index = (objScreen.image_index*0.5) mod 2;
 </string>
@@ -381,7 +365,6 @@ if state!=1 and state!=2 image_index = (objScreen.image_index*0.5) mod 2;
 alarm[1] = 180;
 hspeed = 0;
 frozen = true;
-
 // destroy icicle
 with other instance_destroy();
 </string>
@@ -481,13 +464,11 @@ if sprite_index&gt;-1 draw_sprite_ext(sprite_index, image_index, floor(x), floor
           <argument>
             <kind>1</kind>
             <string>/// Draw collision mask
-
 // bounding box
 draw_set_color(c_lime);
 draw_set_alpha(image_alpha);
 if gravity_angle() mod 180 draw_rectangle(floor(x)-offset_y, floor(y)-offset_x, floor(x)+offset_y, floor(y)+offset_x, true); else
 draw_rectangle(floor(x)-offset_x, floor(y)-offset_y, floor(x)+offset_x, floor(y)+offset_y, true);
-
 // wall sensor
 draw_set_color(c_white);
 if gravity_angle() mod 180 draw_line(floor(x), floor(y)-offset_x, floor(x), floor(y)+offset_x); else
@@ -542,10 +523,8 @@ draw_set_alpha(1);
           <argument>
             <kind>1</kind>
             <string>/// Render ice block
-
 // get offset from time
 var offset = (-1+(((90-alarm[1]) div 4) mod 2)*2)*(alarm[1]&lt;45);
-
 // draw ice block
 draw_sprite(sprShieldIceBlock, 0, x+offset, y);
 </string>

@@ -91,7 +91,7 @@
             <kind>1</kind>
             <string>with instance_create(x,y,objExplosionCluster) {
  reaction_script=player_reaction_harmful;
- audio_play_sound(sndBombExplosion,1,false);
+ play_sfx(sndBombExplosion,1);
  }
 instance_destroy();
 </string>
@@ -127,7 +127,6 @@ else
     // pulsate
     image_xscale = 1+sin(alarm[0]*0.333)*0.2;
     image_yscale = image_xscale;
-
     // flash
     image_blend = make_color_rgb(255, 72+(183*(alarm[0] mod 2)), 255*(alarm[0] mod 2));
 }

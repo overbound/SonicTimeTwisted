@@ -144,10 +144,10 @@ for (i=0; i&lt;2; i+=1)
     z_pos[i] = 0;
     z_depth[i] = 0;
 }
-
 image_xscale=.275;
 image_yscale=.275;
 
+event_user(0);
 </string>
           </argument>
         </arguments>
@@ -219,38 +219,30 @@ for (var i = 0; i &lt; 2; i += 1)
 {
     // ignore if not attached
     if player_id[i] &lt; 0 continue;
-
     // orbit around orb
     z_pos[i] = (z_pos[i] + rotation_speed) mod 360;
     z_depth[i] = -sine[(z_pos[i] + 90) mod 360];
-
     // set position
     player_id[i].x = x + offset * (cosine[angle[i]] * sine[z_pos[i]]);
     player_id[i].y = y - offset * (sine[angle[i]] * sine[z_pos[i]]);
-
     // jumping
     if input_check_pressed(cACTION)
     {
         // prevent player from re-attaching
         alarm[i] = 32;
-
         // movement and collision
         player_id[i].xspeed = -force * (cosine[angle[i]] * z_depth[i]);
         player_id[i].yspeed = force * (sine[angle[i]] * z_depth[i]);
-
         // states and flags
         player_id[i].state = player_state_fall;
         player_id[i].state_reset = true;
-
         // other
         player_id[i].depth = 0;
         audio_stop_sound(player_id[i].reserved_sound);
-
         // done
         player_id[i] = noone;
         continue;
     }
-
     // adjust direction
     var keySpd = 2;
     if object_index = objFFOrbLarge
@@ -258,12 +250,92 @@ for (var i = 0; i &lt; 2; i += 1)
         
     if input_check(cLEFT) {angle[i] = (angle[i] + keySpd) mod 360;}
     if input_check(cRIGHT) {angle[i] = angle_wrap(angle[i] - keySpd);}
-
     // set depth
     player_id[i].depth = -sign(z_depth[i]);
-
     // sound
-    if not audio_is_playing(player_id[i].reserved_sound) player_id[i].reserved_sound = audio_play_sound(sndOrbs, 4, 0);
+    if not audio_is_playing(player_id[i].reserved_sound) player_id[i].reserved_sound = play_sfx(sndOrbs, 4);
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Handle flashing
+event_user(step_event);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="11">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// If flashing is reduced, execute a step script
+step_ffz_orb_flashing();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="10">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Initialization - can be called again if flashing is toggled in the menu
+if(objScreen.flashing_reduced)
+{
+    init_ffz_orb_flashing();
+    step_event = 1;
+    draw_script = draw_ffz_orb_reduced_flashing;
+    image_speed = 0.5;
+}
+else
+{
+    step_event = 2;
+    draw_script = draw_ffz_orb_default;
+    image_speed = 1;
 }
 </string>
           </argument>
@@ -288,12 +360,7 @@ for (var i = 0; i &lt; 2; i += 1)
           <argument>
             <kind>1</kind>
             <string>/// Draw Orb
-draw_sprite_ext(sprFFOrbLarge,image_index,x,y,image_xscale,image_yscale,0,c_white,1);
-draw_set_blend_mode(bm_add);
-draw_sprite_ext(sprFFOrbsLargeAdd,image_index,x,y, image_xscale,image_yscale,0,c_white,.325);
-draw_sprite_ext(sprFFOrbLargeEletric,image_index,x,y,image_xscale,image_yscale,0,c_white,1);
-draw_set_blend_mode(bm_normal);
-
+script_execute(draw_script, 1);
 </string>
           </argument>
         </arguments>

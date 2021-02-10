@@ -26,6 +26,33 @@
           <argument>
             <kind>1</kind>
             <string>state = 0;
+image_alpha = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(state &gt; 0)
+{
+    image_alpha = min(1, image_alpha + 0.05);
+}
 </string>
           </argument>
         </arguments>
@@ -48,20 +75,22 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>        draw_set_font(objResources.fontHud);
-        draw_set_halign(fa_center);
+            <string>draw_set_font(objResources.fontHud);
+draw_set_halign(fa_center);
+draw_set_valign(fa_middle);
+draw_set_alpha(image_alpha);
 switch state {
     case 1:
-        draw_text(view_xview[view_current]+213, view_yview[view_current]+107, "TRY AGAIN");
-        draw_text(view_xview[view_current]+213, view_yview[view_current]+123, "COLLECT ALL THE CHAOS EMERALDS AND TIME STONES");
+        draw_text(view_xview[view_current]+213, view_yview[view_current]+120, tr("_bad_ending_text"));
     break;
     case 2:
-        draw_text(view_xview[view_current]+213, view_yview[view_current]+26, "SONIC TAILS AND KNUCKLES CONTINUED THE FIGHT");
-        draw_text(view_xview[view_current]+213, view_yview[view_current]+38, "TO LIBERATE MOBIUS FROM ROBOTNIK'S CREATIONS");
-        draw_text(view_xview[view_current]+213, view_yview[view_current]+54, "UNTIL NO MORE ROBOTS REMAINED");
-        draw_text(view_xview[view_current]+213, view_yview[view_current]+78, "THANK YOU FOR PLAYING");
+        draw_text(view_xview[view_current]+213, view_yview[view_current]+48, tr("_good_ending_text"));
     break;
 }
+draw_set_alpha(1);
+draw_set_halign(fa_left);
+draw_set_valign(fa_top);
+
 </string>
           </argument>
         </arguments>

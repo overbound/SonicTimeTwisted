@@ -26,6 +26,38 @@
           <argument>
             <kind>1</kind>
             <string>image_speed=.125;
+position=-1;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Draw the sprite + text.
+
+draw_self();
+draw_set_font(objResources.fontHud);
+draw_set_halign(fa_center);
+draw_set_valign(fa_middle);
+draw_text_colour(x, y - 10, tr("_save_delete"), c_red, c_red, c_white, c_white, 1);
+draw_set_halign(fa_left);
+draw_set_valign(fa_top);
 </string>
           </argument>
         </arguments>

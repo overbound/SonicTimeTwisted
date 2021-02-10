@@ -1,5 +1,7 @@
 //delete_settings
-if file_exists(working_directory+"\settings.ini") {
-    file_delete(working_directory+"\settings.ini");
+if stt_file_exists("settings.ini") {
+    stt_file_delete("settings.ini");
+    stt_save_files();
 }
-with objInput input_load();
+
+with objProgram.inputManager input_load();

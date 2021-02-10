@@ -42,11 +42,9 @@
             <string>state=0;
 allow_collision = false;
 remove=0;
-
 // Setup audio
 audio = audio_emitter_create();
 //audio_emitter_falloff(audio_emitter, objScreen.width*0.125, objScreen.width*0.25, 1);
-
 
 </string>
           </argument>
@@ -72,42 +70,38 @@ audio = audio_emitter_create();
             <kind>1</kind>
             <string>/// Handle state
 
-
+if (objProgram.inputManager.flag_player_input)
+{
+    set_input_enabled(false);
+}
 with objLevel.player[0] {
-    
     switch other.state {
     
     case 0: //stand on plane
-    flag_player_input = false;
     objLevel.started = false;
     x = other.x+4;
     y = other.y-36;
     image_index = 0;
+    // rumble while standing on place
+    rumble(rumble_short_weakest);
     break;
     
     case 1:
-    player_is_jumping();
+    player_is_jumping_automatically();
     other.state = 2;
     started = false;
     objField.xx = x;
     break;
-
     }
-
     //switch sprite if tails
     if character_id == 2 or character_id == 3 {
         other.sprite_index = sprSonicPlane;
     }
-
 }
-
-
 
 if path_position &gt; .78 &amp;&amp; state == 0
     state = 1;
     
-
-
 
 </string>
           </argument>
@@ -131,7 +125,7 @@ if path_position &gt; .78 &amp;&amp; state == 0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if not audio_is_playing(sndPropeller) audio_play_sound(sndPropeller, 4, 0);
+            <string>if not audio_is_playing(sndPropeller) play_sfx(sndPropeller, 4);
 </string>
           </argument>
         </arguments>
@@ -194,7 +188,7 @@ if path_position &gt; .78 &amp;&amp; state == 0
             <string>if objProgram.spawn_tag != 0 { instance_destroy(); exit; }
 // fade out only
 with objTitlecard mode = 3;
-with objInput flag_player_input = false;
+set_input_enabled(false);
 //play_music_intro(objMusic.musicIntro,0);
 //with objLevel started = true;
 </string>

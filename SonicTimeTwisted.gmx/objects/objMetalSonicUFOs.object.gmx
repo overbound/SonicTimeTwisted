@@ -46,7 +46,6 @@ remove=0;
 reaction_sprite=noone;
 image_index=0;
 image_alpha=0;
-
 </string>
           </argument>
         </arguments>
@@ -93,22 +92,15 @@ image_alpha=0;
           <argument>
             <kind>1</kind>
             <string>switch state {
-
 case 0: // do nothing
-
     image_alpha=0;
-
 break;
-
 case 1: // move towards center
-
     sprite_index=sprMetalFordwardAppear;
     image_index=0;
     state=2;
-    audio_play_sound(sndMetalBolt,1,0);
-
+    play_sfx(sndMetalBolt,1);
 break;
-
 case 2:
     reaction_script=player_reaction_harmful;
     image_alpha +=.025;
@@ -122,17 +114,13 @@ case 2:
         image_speed =0;
         alarm[0]=320;
     }
-
 break;
-
 case 3:
-
     screen_shake();
     
     if !audio_is_playing(sndQuake) {
-        audio_play_sound(sndQuake,0,0);
+        play_sfx(sndQuake,0);
     }
-
     if (objScreen.image_index mod 16 == 0) {
         
         instance_create(objFireFlyBossController.x,objFireFlyBossController.y,objUFOAttack);
@@ -148,9 +136,7 @@ case 3:
     }
     
 break;
-
 case 4:
-
     image_alpha -=.05;
     reaction_script=noone;
     if image_alpha &lt;= 0 {
@@ -159,11 +145,7 @@ case 4:
     
     }
     
-
 break;
-
-
-
 
 
 }
@@ -190,14 +172,11 @@ break;
           <argument>
             <kind>1</kind>
             <string>draw_self();
-
 if sprite_index == sprMetalForward &amp;&amp; objScreen.image_index mod 2 == 0 {
-
     draw_sprite_ext(sprMetaForwardShield,0,x,y,1,1,0,c_white,.25);
     draw_set_blend_mode(bm_add);
     draw_sprite_ext(sprMetaForwardShieldAdd,0,x,y,1,1,0,c_white,.5);
     draw_set_blend_mode(bm_normal);
-
 }
 </string>
           </argument>

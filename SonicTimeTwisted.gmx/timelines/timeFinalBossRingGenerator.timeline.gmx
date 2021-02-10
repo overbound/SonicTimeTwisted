@@ -20,14 +20,12 @@
           <argument>
             <kind>1</kind>
             <string>/// Create 6 Rings
-
 instance_create(xorgin-16,yorgin-8,objRingFinalBoss)
 instance_create(xorgin,yorgin-8,objRingFinalBoss)
 instance_create(xorgin+16,yorgin-8,objRingFinalBoss)
 instance_create(xorgin-16,yorgin+8,objRingFinalBoss)
 instance_create(xorgin,yorgin+8,objRingFinalBoss)
 instance_create(xorgin+16,yorgin+8,objRingFinalBoss)
-
 </string>
           </argument>
         </arguments>
@@ -54,7 +52,6 @@ instance_create(xorgin+16,yorgin+8,objRingFinalBoss)
           <argument>
             <kind>1</kind>
             <string>/// Create 6 Rings
-
 instance_create(xringorigin-16,yorgin+80,objRingFinalBoss);
 instance_create(xringorigin,yorgin+80,objRingFinalBoss);
 instance_create(xringorigin+16,yorgin+80,objRingFinalBoss);
@@ -87,11 +84,9 @@ instance_create(xringorigin+16,yorgin+96,objRingFinalBoss);
           <argument>
             <kind>1</kind>
             <string>/// Create 3 Rings
-
 instance_create(xringorigin-16,yorgin-128,objRingFinalBoss)
 instance_create(xringorigin,yorgin-128,objRingFinalBoss)
 instance_create(xringorigin+16,yorgin-128,objRingFinalBoss)
-
 </string>
           </argument>
         </arguments>
@@ -118,7 +113,6 @@ instance_create(xringorigin+16,yorgin-128,objRingFinalBoss)
           <argument>
             <kind>1</kind>
             <string>/// Create 3 Rings
-
 instance_create(xringorigin-16,yorgin+128,objRingFinalBoss)
 instance_create(xringorigin,yorgin+128,objRingFinalBoss)
 instance_create(xringorigin+16,yorgin+128,objRingFinalBoss)
@@ -148,13 +142,11 @@ instance_create(xringorigin+16,yorgin+128,objRingFinalBoss)
           <argument>
             <kind>1</kind>
             <string>/// Create 5 rings
-
 instance_create(xringorigin,yorgin-32,objRingFinalBoss)
 instance_create(xringorigin+16,yorgin-32,objRingFinalBoss)
 instance_create(xringorigin+32,yorgin-32,objRingFinalBoss)
 instance_create(xringorigin+48,yorgin-32,objRingFinalBoss)
 instance_create(xringorigin+64,yorgin-32,objRingFinalBoss)
-
 </string>
           </argument>
         </arguments>

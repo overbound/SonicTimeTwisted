@@ -1,6 +1,4 @@
 //save_level(room)
-
-
  switch room {
         
         case AA1_f:
@@ -115,10 +113,5 @@
         room_string = aMM1;
         break;
     }
-
-var filename = save_file_name(objProgram.saveSlot);
-ini_open(filename);
-ini_write_string(LEVELS, room_string, base64_encode(string(1)));
-ini_close();
-
-
+    
+save_data_write(LEVELS, room_string, 1);

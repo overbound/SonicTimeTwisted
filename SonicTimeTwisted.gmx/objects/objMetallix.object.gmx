@@ -70,15 +70,11 @@ remove=0;
             <string>var xran =random(200)-100;
 var yran =random(60)-20;
 instance_create(x+xran+40,y+yran,objExplosionCluster);
-audio_play_sound(sndBombExplosion,1,false);
-
+play_sfx(sndBombExplosion, 1);
 with objMetallixPlatform {
-
     instance_destroy();
 }
-
 with objMetallixController state = 4;
-
 
 </string>
           </argument>
@@ -105,9 +101,8 @@ with objMetallixController state = 4;
             <string>var xran =random(200)-100;
 var yran =random(40)-30;
 instance_create(x+xran+40,y+yran,objExplosionCluster);
-
 if explosionLoop == 1 or explosionLoop == 8 or explosionLoop == 16 or explosionLoop == 24
-    audio_play_sound(sndBombExplosion,1,false);
+    play_sfx(sndBombExplosion, 1);
 if explosionLoop &gt; 25 {
     alarm[3]=4;
     if objProgram.in_past == false {
@@ -118,7 +113,6 @@ if explosionLoop &gt; 25 {
     alarm[2]=5;
     explosionLoop++;
 }
-
 </string>
           </argument>
         </arguments>
@@ -169,7 +163,6 @@ if instance_exists(laser) {
     laser.x=x;
     laser.y=y+60;
 }
-
 if instance_exists(head) &amp;&amp; state &lt; 10{
     head.x=x;
     head.y=y+headOffset;
@@ -197,20 +190,13 @@ if instance_exists(head) &amp;&amp; state &lt; 10{
           <argument>
             <kind>1</kind>
             <string>/// State Machine
-
 switch state {
-
 case 0:
-
     alarm[0] = 150;
     
-
 break;
-
 case 1: // target player
-
 if instance_exists(objLevel.player[0]) {
-
     if x &gt; objLevel.player[0].x+2 {
     
         x-=2;
@@ -224,14 +210,11 @@ if instance_exists(objLevel.player[0]) {
     if alarm[0] == -1 { 
         state = 2;
         laser.state=1;
-        audio_play_sound(sndEggWalkerFire,1,false);
+        play_sfx(sndEggWalkerFire, 1);
     }
 }
-
 break;
-
 case 2: // fire
-
     if laser.state == 2 {
     if instance_exists(objLevel.player[0]) {
         if x &gt; objLevel.player[0].x {
@@ -245,31 +228,24 @@ case 2: // fire
         }
     }
     }
-
 break;
-
 case 3: // move w/ laser left
-
      screen_shake();
      if !audio_is_playing(sndQuake)
-        audio_play_sound(sndQuake,12,false);
-
+        play_sfx(sndQuake, 12);
     x-=2;
     if instance_exists(objLevel.player[0]) {
         if x &lt; objLevel.player[0].camera.left + 64{
             state = 5;
         }
     }
-
 break;
-
 case 4: // move w/ laser right
-
     x+=2;
     
      screen_shake();
      if !audio_is_playing(sndQuake)
-        audio_play_sound(sndQuake,12,false);
+        play_sfx(sndQuake, 12);
     
     if instance_exists(objLevel.player[0]) {
         if x &gt; objLevel.player[0].camera.right - 64{
@@ -277,28 +253,18 @@ case 4: // move w/ laser right
         }
     }
 break;
-
 case 5:
-
 
     laser.state = 3;
     state=6;
 
-
 break;
-
 case 6:
-
 if laser.state == 0 {
-
     state=7;
-
 }
-
 break;
-
 case 7: // move back to center, wait
-
     if x &gt; objMetallixController.x+2 {
     
         x-=2;
@@ -316,24 +282,18 @@ case 7: // move back to center, wait
         state = 8;
     } 
 break;
-
 case 8:
-
     if alarm[0] == 0 {
     
         state=9;
         alarm[0] = 300;
     
     }
-
 break;
-
 case 9:
-
  screen_shake();
  if !audio_is_playing(sndQuake)
-    audio_play_sound(sndQuake,12,false);
-
+    play_sfx(sndQuake, 12);
     if (objScreen.image_index mod 20 == 0) {
         
         instance_create(objMetallixController.x,objMetallixController.y,objUFOAttackDD);
@@ -342,19 +302,16 @@ case 9:
     
     if alarm[0]==0 {
         state=1;
-        audio_play_sound(sndEggWalkerCharge,1,false);
+        play_sfx(sndEggWalkerCharge, 1);
         alarm[0] = 150;
     }
-
 break;
-
 case 10:
     if y &lt; view_yview + (view_hview*0.5)-32 {
         y+=2;
     }
     image_angle+=20;
 break;
-
 }
 </string>
           </argument>
@@ -380,7 +337,7 @@ break;
 if state &lt;10  {
     if head.life &lt;= 0 {
         if !audio_is_playing(sndQuake) {
-            audio_play_sound(sndQuake,2,false);
+            play_sfx(sndQuake, 2);
         }
     
         with head {

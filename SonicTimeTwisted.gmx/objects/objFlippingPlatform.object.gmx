@@ -41,13 +41,11 @@
             <kind>1</kind>
             <string>image_speed=0;
 through=true;
-layer=4;
+depth_mask=4;
 remove=0;
-
 timeline_index = animFlippingPlatform;
 timeline_running = true;
 timeline_loop=true;
-
 </string>
           </argument>
         </arguments>
@@ -71,24 +69,19 @@ timeline_loop=true;
           <argument>
             <kind>1</kind>
             <string>/*if floor(objScreen.image_index mod 256) = 0 {
-
-    if layer == 4 { // start
-
-        layer = 3;
+    if depth_mask == 4 { // start
+        depth_mask = 3;
     
     } else { // stop
     
-        layer = 4;
-
+        depth_mask = 4;
     }
 }*/
 /*
-if layer == 4 &amp;&amp; image_index &gt; 0 {
-
+if depth_mask == 4 &amp;&amp; image_index &gt; 0 {
     image_index -=1;
 }
-else if layer == 3 &amp;&amp; image_index &lt; 2 {
-
+else if depth_mask == 3 &amp;&amp; image_index &lt; 2 {
     image_index +=1;
 }*/
 </string>

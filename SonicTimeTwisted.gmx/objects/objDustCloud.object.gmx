@@ -123,7 +123,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>audio_play_sound(sndMetalLaunch,0,0);
+            <string>play_sfx(sndMetalLaunch,0);
 </string>
           </argument>
         </arguments>

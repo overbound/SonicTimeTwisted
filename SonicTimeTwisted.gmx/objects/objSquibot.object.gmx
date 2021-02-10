@@ -44,7 +44,6 @@ life=3;
 image_index=0;
 image_speed=0;
 invulnerable=false;
-
 if image_xscale == 1 {
     gun=instance_create(x+30,y-40,objSquibotGun);
     remove=1;
@@ -62,7 +61,6 @@ if image_xscale == 1 {
         yoffset=-40;
     }
     
-
 }
 </string>
           </argument>
@@ -128,11 +126,9 @@ with gun instance_destroy();
             <kind>1</kind>
             <string>invulnerable=false;
 visible = 1;
-
 if image_index == 0
 image_index=1;
 else image_index = 2;
-
 
 </string>
           </argument>
@@ -157,11 +153,9 @@ else image_index = 2;
           <argument>
             <kind>1</kind>
             <string>with gun {
-
     x = other.x+xoffset;
     y = other.y+yoffset;
 }
-
 </string>
           </argument>
         </arguments>
@@ -185,12 +179,7 @@ else image_index = 2;
           <argument>
             <kind>1</kind>
             <string>if invulnerable &amp;&amp; life &gt; 0 {
-
-    if visible==true 
-        visible = false;
-        else
-            visible = true;
-
+    visible = !visible;
 }
 
 x=xstart+cos(objScreen.image_index/128)*16; 

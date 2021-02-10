@@ -227,14 +227,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-    if visible == true
-        visible = false;
-        else visible = true;
-
-        if vspeed &lt; -4 {
-            vspeed = -4;
-            }    
+            <string>visible = !visible;
+if vspeed &lt; -4 {
+    vspeed = -4;
+}    
 </string>
           </argument>
         </arguments>

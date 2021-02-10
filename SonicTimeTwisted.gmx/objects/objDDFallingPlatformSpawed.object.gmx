@@ -160,7 +160,6 @@
           <argument>
             <kind>1</kind>
             <string>///Sprite and Sprite parts
-
 if objProgram.in_past == true {
         sprite_parts = sprDDBreakPiecesPast;
         image_index = 1;
@@ -244,7 +243,7 @@ if objProgram.in_past == true {
             <string>y=ystart;
 x=xstart;
 alarm[3] = 80;
-layer=3;
+depth_mask=3;
 </string>
           </argument>
         </arguments>
@@ -269,14 +268,11 @@ layer=3;
             <kind>1</kind>
             <string>/// Generate pieces
 var i;
-
 // sound
-audio_play_sound_at(sndCollapse, x+sprite_width*0.5, y+sprite_height*0.5, 0, 100, 300, 1, false, 0);
-
+play_sfx_at(sndCollapse, x+sprite_width*0.5, y+sprite_height*0.5, 0, 100, 300, 1, false, 0);
 // get bounds
 var width = sprite_width div 16;
 var height = sprite_height div 16;
-
 show_debug_message(sprite_get_name(sprite_parts));
 // go through rows
 for (var j=0; j&lt;height; j+=1)
@@ -290,7 +286,6 @@ for (var j=0; j&lt;height; j+=1)
             // setup sprite
             sprite_index = other.sprite_parts;
             image_index = j*width+i;
-
             // set delay on drop
             if image_xscale&gt;0 alarm[0] = ((width-i)*other.ox)+(((height-j)-1)*other.oy); else
             if image_xscale&lt;0 alarm[0] = (i*other.ox)+(((height-j)-1)*other.oy);
@@ -321,7 +316,6 @@ for (var j=0; j&lt;height; j+=1)
 instance_destroy();
 with parent alarm[0]=360;
 
-
 </string>
           </argument>
         </arguments>
@@ -345,11 +339,7 @@ with parent alarm[0]=360;
           <argument>
             <kind>1</kind>
             <string>if alarm[3] != -1 &amp;&amp; objScreen.image_index mod 2 == 0 {
-
-    if visible 
-        visible = false;
-        else visible = true;
-
+    visible = !visible;
 } else visible = 1;
 </string>
           </argument>

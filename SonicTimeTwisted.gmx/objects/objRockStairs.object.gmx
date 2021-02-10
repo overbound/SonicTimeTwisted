@@ -42,7 +42,6 @@
             <string>fall=false;
 reaction_script=noone;
 yreal=y;
-
 if image_xscale == 1 {
     block[0] = instance_create(x,y+1,objBlock)
     
@@ -99,7 +98,6 @@ if image_xscale == 1 {
         
     }
 }
-
 else {
     block[0] = instance_create(x-64,y+1,objBlock)
     
@@ -179,27 +177,19 @@ else {
           <argument>
             <kind>1</kind>
             <string>if fall {
-
     if ystart+256 &gt; y {
     
         yreal +=0.5;
     
     } else yreal = ystart+256
-
 }
 y=floor(yreal);
-
 for( i = 0; i &lt; 4; i+=1 ) {
-
 with block[i] {
-
     x = other.x+xoffset;
     y = other.y+yoffset;
-
 }
-
 }
-
 
 </string>
           </argument>

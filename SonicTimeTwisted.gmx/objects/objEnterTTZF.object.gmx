@@ -41,8 +41,6 @@
             <kind>1</kind>
             <string>fadeSpeed=0.01;
 
-
-
 </string>
           </argument>
         </arguments>
@@ -66,16 +64,12 @@
           <argument>
             <kind>1</kind>
             <string>/// Get transition mode
-
     if image_alpha&lt;=0 { 
         with objLevel started = true;
         //with objProgram cutscene = true;
         instance_destroy(); 
     }
-
     image_alpha -= fadeSpeed;
-
-
 
 </string>
           </argument>

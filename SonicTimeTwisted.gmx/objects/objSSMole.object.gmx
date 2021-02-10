@@ -67,19 +67,16 @@ shot=0;
           <argument>
             <kind>1</kind>
             <string>with instance_create(x,y,objSSMoleMissile) {
-
     direction=other.direction;
-
 }
 if shot &lt; 2 {
     shot+=1;
     alarm[0]=30;
 } else {
-
     shot = 0;
     alarm[0]=300;
 }
-audio_play_sound(sndBombLaunch,1,false);
+play_sfx(sndBombLaunch,1);
 </string>
           </argument>
         </arguments>
@@ -105,7 +102,6 @@ audio_play_sound(sndBombLaunch,1,false);
             <string>spr_direction = -direction;
 change_sprite_direction_int_frames(8);
 
-
 </string>
           </argument>
         </arguments>
@@ -129,7 +125,28 @@ change_sprite_direction_int_frames(8);
             <string>/// set depth
 depth = min(2000,distance_to_object(objSSCamera)/20);
 
-
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// update shadow visibility
+shadow_visible = distance_to_object(objSSCamera) &lt; 1000;
 </string>
           </argument>
         </arguments>
@@ -154,7 +171,6 @@ depth = min(2000,distance_to_object(objSSCamera)/20);
             <kind>1</kind>
             <string>draw_shadow(16);
 draw_billboard(sprite_width*.5, sprite_height*.5);
-
 </string>
           </argument>
         </arguments>

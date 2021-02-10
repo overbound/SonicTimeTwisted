@@ -95,7 +95,7 @@ image_speed=0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>audio_play_sound(sndBombExplosion, 1, false);
+            <string>play_sfx(sndBombExplosion, 1);
 </string>
           </argument>
         </arguments>
@@ -204,7 +204,7 @@ image_speed=0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>audio_play_sound(sndBombExplosion, 1, false);
+            <string>play_sfx(sndBombExplosion, 1);
 </string>
           </argument>
         </arguments>
@@ -285,22 +285,18 @@ image_speed=0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>audio_play_sound(sndBombExplosion, 1, false);
+            <string>play_sfx(sndBombExplosion, 1);
 with objEggWalkerGun {
-
     instance_destroy();
     
     }
     
 with objEggWalkerGunCover {
-
     instance_create(x,y,objExplosionGroup)
     instance_destroy();
     
 }
-
 with objEggWalkerLaser {
-
     instance_destroy();
     
     }
@@ -351,15 +347,11 @@ instance_create(x,y+10,objEggWalkerMoleDeath);
           <argument>
             <kind>1</kind>
             <string>/// Set Eggwalker Destroyed
-
 with objEggWalker {
-
     destroyed=true;
     alarm[0] = 0;
     
-
 }
-
 with objEggWalkerBossController { state = 3; }
 </string>
           </argument>
@@ -609,19 +601,9 @@ with objEggWalkerBossController { state = 3; }
             <kind>1</kind>
             <string>/// Draw Mole
 draw_set_color(c_white);
-if alarm[0] mod 2
-{
-    draw_set_blend_mode_ext(10, 1);
-    draw_rectangle(bbox_left, bbox_top, bbox_right, bbox_bottom, false);
-    draw_set_blend_mode(bm_normal);
-}
+draw_boss_hit_blend();
 draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,0,c_white,1);
-if alarm[0] mod 2
-{
-    draw_set_blend_mode_ext(10, 1);
-    draw_rectangle(bbox_left, bbox_top, bbox_right, bbox_bottom, false);
-    draw_set_blend_mode(bm_normal);
-}
+draw_boss_hit_blend();
 </string>
           </argument>
         </arguments>

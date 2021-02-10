@@ -43,20 +43,15 @@
 angle_change = 2;
 angle_warp = -15;
 scale = 1.1;
-
 sampler_index_warp = shader_get_sampler_index(NebulaShader, "warp");
-surface_warp = surface_create(256, 256);
-draw_clear_alpha(0, 0);
-surface_reset_target();
-texture_warp = surface_get_texture(surface_warp);
+surface_warp = -1;
+copy_surface = -1;
+texture_warp = pointer_null;
 whirl_angle = 0;
-
 //var relative_y;
-
 // defaults
 //surface = -1;
 //relative_y = (room_height-320)/(room_height-objScreen.height);
-
 xspeed=-5;
 xoffset=0;
 </string>
@@ -81,26 +76,7 @@ xoffset=0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>    if not surface_exists(surface_warp) {
-    surface_warp = surface_create(256,256);
-    texture_warp = surface_get_texture(surface_warp);
-}
-    
-    whirl_angle += angle_change;
-
-    var shift = -128 * scale;
-    
-    surface_set_target(surface_warp);
-    texture_set_interpolation(true);
-    d3d_transform_set_rotation_z(angle_warp);
-    d3d_transform_add_translation(128, 128, 0);
-    draw_surface_ext(surface_warp, shift, shift, scale, scale, 0, c_white, 1);
-    d3d_transform_set_identity();
-    draw_sprite_ext(WhirlSpr, 0, 128, 128, 1, 1, whirl_angle, c_white, 1);
-    texture_set_interpolation(false);
-    surface_reset_target();
-    
-
+            <string>whirl_angle += angle_change;
 </string>
           </argument>
         </arguments>
@@ -124,18 +100,29 @@ xoffset=0;
           <argument>
             <kind>1</kind>
             <string>/// Render background to surface
+var clean = false;
+var shift = -128 * scale;
 
-if not surface_exists(surface_warp){
-    sampler_index_warp = shader_get_sampler_index(NebulaShader, "warp");
-    surface_warp = surface_create(256, 256);
-    draw_clear_alpha(0, 0);
-    surface_reset_target();
+if not surface_exists(surface_warp) {
+    surface_warp = surface_create(256,256);
+    clean = true;
     texture_warp = surface_get_texture(surface_warp);
 }
 
-//draw_surface(surface_warp, 0, 0); 
-//surface_reset_target()
+if not surface_exists(copy_surface) {
+    copy_surface = surface_create(256,256);
+}
 
+surface_copy(copy_surface, 0, 0, surface_warp);
+
+surface_set_target(surface_warp);
+if (clean) draw_clear_alpha(c_black, 0);
+d3d_transform_set_rotation_z(angle_warp);
+d3d_transform_add_translation(128, 128, 0);
+draw_surface_ext(copy_surface, shift, shift, scale, scale, 0, c_white, 1);
+d3d_transform_set_identity();
+draw_sprite_ext(WhirlSpr, 0, 128, 128, 1, 1, whirl_angle, c_white, 1);
+surface_reset_target();
 
 // refresh surface
 //if not surface_exists(surface_warp) surface_warp = surface_create(512,256);
@@ -145,15 +132,11 @@ texture_set_stage(sampler_index_warp, texture_warp);
 draw_background(NebulaBkg, view_xview[view_current]-42, view_yview[view_current]-128);
 draw_background_tiled(NebulaBkg, view_xview[view_current]+xoffset, view_yview[view_current]-128)
 shader_reset();
-
-with objParallax event_perform(ev_draw, 0);
+with (objParallax) event_perform(ev_draw, 0);
 /*
 draw_surface(surface_warp, view_xview[view_current]-215, view_yview[view_current]-300);
-
 surface_reset_target()
 */
-
-
 
 </string>
           </argument>

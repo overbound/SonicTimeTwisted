@@ -25,9 +25,204 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>alarm[0] = 200;
-//name=0;
-name = 0;
+            <string>rolled = false;
+lines = false;
+
+lines[0, 0] = "SONIC TIME TWISTED";
+
+lines[1, 0] = "ORIGINAL TEAM";
+
+lines[2, 0] = "Game by";
+lines[2, 1] = 'Bryce Stock (Overbound)';
+
+lines[3, 0] = "Programmed by";
+lines[3, 1] = 'Bryce Stock (Overbound)';
+lines[3, 2] = 'Devin Reeves (Mercury)';
+lines[3, 3] = 'Joevan Salmon-Johnson (VectorSatyr)';
+
+lines[4, 0] = "Game Art by";
+lines[4, 1] = 'Bryce Stock (Overbound)';
+lines[4, 2] = 'Dee Liteyears';
+
+lines[5, 0] = "Music by";
+lines[5, 1] = 'Hinchy';
+
+lines[6, 0] = "Level Design by";
+lines[6, 1] = 'Bryce Stock (Overbound)';
+lines[6, 2] = 'Shane (Sparks)';
+
+lines[7, 0] = "Concepts from";
+lines[7, 1] = 'Bryce Stock (Overbound)';
+lines[7, 2] = 'Debra Ann';
+lines[7, 3] = 'Devin Reeves (Mercury)';
+lines[7, 4] = 'Hinchy';
+lines[7, 5] = 'Joevan Salmon-Johnson (VectorSatyr)';
+lines[7, 6] = 'Jonathan Rose (Dimension Warped)';
+lines[7, 7] = 'Shane (Sparks)';
+lines[7, 8] = 'Tommy C';
+
+lines[8, 0] = "Additional Programming by";
+lines[8, 1] = 'Jonathan Rose (Dimension Warped)';
+lines[8, 2] = 'Hector Barreiro (Damizean)';
+lines[8, 3] = 'Will (Polar Exelion)';
+
+lines[9, 0] = "Additional Music by";
+lines[9, 1] = 'Andy Tunstall';
+lines[9, 2] = 'Christopher Wright (LarkSS)';
+lines[9, 3] = 'Jameson Sutton';
+lines[9, 4] = 'Joshua Kruszyna (EXShad)';
+
+lines[10, 0] = "Additional Art by";
+lines[10, 1] = 'Andrew75';
+lines[10, 2] = 'Andy Tunstall';
+lines[10, 3] = 'Apricity';
+lines[10, 4] = 'BlazefireLP';
+lines[10, 5] = 'Devin Reeves (Mercury)';
+lines[10, 6] = 'GameNerd Advance';
+lines[10, 7] = 'Hyper Emerson';
+lines[10, 8] = 'Kamon62';
+lines[10, 9] = 'Pepijn Ryngaert (Gardow)';
+lines[10, 10] = 'Shane (Sparks)';
+lines[10, 11] = 'SonicGenesis89';
+lines[10, 12] = 'Sabrina DiDuro (Strife)';
+lines[10, 13] = 'Stevingesus';
+lines[10, 14] = 'Vexer';
+
+lines[11, 0] = "Resources from";
+lines[11, 1] = 'Sonic Fan Games HQ';
+lines[11, 2] = 'Sonic Retro';
+lines[11, 3] = 'The Spriters Resource';
+lines[11, 4] = 'The Mystical Forest Zone';
+lines[11, 5] = 'Toei Animation';
+
+lines[12, 0] = "Special Thanks";
+lines[12, 1] = 'Damizean';
+lines[12, 2] = 'Ricardo Elso';
+lines[12, 3] = 'Rael';
+lines[12, 4] = 'Flare';
+lines[12, 5] = 'Shard';
+lines[12, 6] = 'Icuurd8b42';
+lines[12, 7] = 'Chimpo';
+lines[12, 8] = 'RogueYoshi';
+lines[12, 9] = 'TheouAegis';
+lines[12, 10] = 'Sega Scourge';
+lines[12, 11] = 'Slingerland';
+lines[12, 12] = 'Andrew75';
+lines[12, 13] = 'SuperBliz';
+lines[12, 14] = 'Debra Ann';
+lines[12, 15] = 'Joe Pierce';
+lines[12, 16] = 'Noah Copeland';
+
+lines[13, 0] = "CONTRIBUTORS";
+
+lines[14, 0] = "Additional Programming by";
+lines[14, 1] = 'Alex Khayrullin';
+lines[14, 2] = 'Nik';
+
+lines[15, 0] = "Additional Art by";
+lines[15, 1] = 'Alex Khayrullin';
+lines[15, 2] = 'bennascar';
+lines[15, 3] = 'Romulo Santos';
+
+// Inject localization author(s)
+var langname = tr_get_lang_creditsname();
+if(langname != "")
+{
+    var authors_main = tr_get_lang_authors(true);
+    var authors_contrib = tr_get_lang_authors(false);
+    
+    var include_authors_main  = string_length(authors_main) &gt; 0;
+    var include_authors_contrib  = string_length(authors_contrib) &gt; 0;
+    
+    var section_cursor = 16;
+    if(include_authors_main || include_authors_contrib)
+    {
+        lines[section_cursor, 0] = "LOCALIZATION";
+        section_cursor++;
+        lines[section_cursor, 0] = langname;
+        var name_cursor = 1;
+        var names;
+        if(include_authors_main)
+        {
+            names = string_explode(chr(10), authors_main);
+            if(include_authors_contrib)
+            {
+                section_cursor++;
+                if(array_length_1d(names) == 1)
+                {
+                    lines[section_cursor, 0] = "Main author";                
+                }
+                else
+                {
+                    lines[section_cursor, 0] = "Main authors";
+                }
+                name_cursor=1;
+            }
+            for(var i = 0 ; i &lt; array_length_1d(names); i++)
+            {
+                lines[section_cursor, name_cursor] = names[i];
+                name_cursor++;
+            }
+        }
+        if(include_authors_contrib)
+        {
+            names = string_explode(chr(10), authors_contrib);
+            if(include_authors_main)
+            {
+                section_cursor++;
+                if(array_length_1d(names) == 1)
+                {
+                    lines[section_cursor, 0] = "Contributor";                
+                }
+                else
+                {
+                    lines[section_cursor, 0] = "Contributors";
+                }
+                name_cursor=1;
+            }
+            for(var i = 0 ; i &lt; array_length_1d(names); i++)
+            {
+                lines[section_cursor, name_cursor] = names[i];
+                name_cursor++;
+            }
+        }
+    }
+}
+
+// the array above is designed to be easy to edit, now we're converting it to the format we'll actually use
+event_user(0);
+
+// calculating the speed and width of the credits
+// We're cheating a bit: we know that a letter with the standard font is 9 pixels wide
+var width = 0;
+lines_count = array_length_1d(lines)+ 8;
+for(var i = 0; i &lt; array_length_1d(lines); i++)
+{
+    width = max(width, 1+8*string_length(lines[i]));
+}
+center_offset = (width div 2);
+cursor = 0;
+displayed_label = false;
+displayed_label_is_title = false;
+displayed_label_is_only_title = false;
+for(var i = 0; i &lt; 7; i++)
+{
+    displayed_label[i] = '';
+    displayed_label_is_title[i] = false;
+    displayed_label_is_only_title[i] = false;
+}
+
+// in the first released version, the credits lasted for 4200 steps
+alarm_delay = round(4200/lines_count);
+// should be a multiple of 18, otherwise credits will visibly skip pixels
+alarm_delay = round(alarm_delay/18)*18;
+// add an empty screen
+lines_count += array_length_1d(displayed_label);
+// the first line will be delayed, in order to make the pauses at the beginning and the 
+// end match as much as possible
+// use max() in case the resulting value runs close to being negative, which depends on the number of items
+alarm[0] = alarm_delay + max(0, (4200 - lines_count * alarm_delay));
+// the length of the credits is 4200 frames, or 70 seconds
 </string>
           </argument>
         </arguments>
@@ -50,14 +245,53 @@ name = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>name+=1;
-alarm[0]=300;
+            <string>/// updating the displayed part of the credits
+if(cursor &lt; lines_count)
+{
+    for(var i = 0; i &lt; 6; i++)
+    {
+        displayed_label[i] = displayed_label[i+1];
+        displayed_label_is_title[i] = displayed_label_is_title[i+1];
+    }
+    var new_row_value = '';
+    if(cursor &lt; array_length_1d(lines))
+    {
+        if(cursor &lt; array_length_1d(lines))
+        {
+            new_row_value = lines[cursor];
+        }
+        else
+        {
+            new_row_value = '';
+        }
+        
+    }
+    
+    if((string_copy(new_row_value, 1, 3) == '***') &amp;&amp;
+        (string_copy(new_row_value, string_length(new_row_value) - 2, 3) == '***')
+    )
+    {
+        new_row_value = string_copy(new_row_value, 4, string_length(new_row_value) - 6);
+        displayed_label_is_title[6] = true;
+    }
+    else
+    {
+        displayed_label_is_title[6] = false;
+    }
+    displayed_label[6] = new_row_value;
+    cursor++;
+    alarm[0] = alarm_delay;
+}
+else
+{
+    rolled = true;
+}
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="0">
+    <event eventtype="7" enumb="10">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -74,15 +308,41 @@ alarm[0]=300;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if alarm[0] &gt; 250 {
-    if image_alpha &lt; 1 {
-        image_alpha+=.05;
+            <string>/// reorganizing the array - called in Create event
+var flat_credits_content = false;
+
+var first = true;
+var row_is_title = true;
+var index = 0;
+
+for(var i = 0; i &lt; array_height_2d(lines); i++)
+{
+    if(!first)
+    {
+        flat_credits_content[index] = '';
+        index++;
     }
-} else if alarm[0] &lt; 51 {
-    if image_alpha &gt; 0 {
-        image_alpha-=.05;
+    else
+    {
+        first = false;
+    }
+    row_is_title = true;
+    for(var j = 0; j &lt; array_length_2d(lines, i); j++)
+    {
+        if(row_is_title)
+        {
+            flat_credits_content[index] = '***'+lines[i,j]+'***';
+            index++;
+            row_is_title = false;
+        }
+        else
+        {
+            flat_credits_content[index] = lines[i,j];
+            index++;
+        }
     }
 }
+lines = flat_credits_content;
 </string>
           </argument>
         </arguments>
@@ -105,119 +365,33 @@ alarm[0]=300;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>// setup
-draw_set_color(c_white);
-draw_set_valign(fa_top);
-draw_set_halign(fa_center);
-draw_set_font(objResources.fontHud);
-
-switch name {
-case 1:
-    draw_text_color(view_xview+160,view_yview+6,'GAME BY',c_white,c_white,c_yellow,c_yellow,image_alpha);
-    draw_text_color(view_xview+160,view_yview+28,'BRYCE STOCK "OVERBOUND"',c_white,c_white,c_yellow,c_yellow,image_alpha);
-break;
-
-case 2:
-    draw_text_color(view_xview+160,view_yview+6,'PROGRAMMED BY',c_white,c_white,c_yellow,c_yellow,image_alpha);
-    draw_text_color(view_xview+160,view_yview+28,'BRYCE STOCK "OVERBOUND"',c_white,c_white,c_yellow,c_yellow,image_alpha);
-    draw_text_color(view_xview+160,view_yview+42,'DEVIN REEVES "MERCURY"',c_white,c_white,c_yellow,c_yellow,image_alpha);
-    draw_text_color(view_xview+160,view_yview+56,'JOEVAN SALMON-JOHNSON "VECTORSATYR"',c_white,c_white,c_yellow,c_yellow,image_alpha);
-break;
-
-case 3:
-    draw_text_color(view_xview+160,view_yview+6,'GAME ART BY',c_white,c_white,c_yellow,c_yellow,image_alpha);
-    draw_text_color(view_xview+160,view_yview+28,'BRYCE STOCK "OVERBOUND"',c_white,c_white,c_yellow,c_yellow,image_alpha);
-    draw_text_color(view_xview+160,view_yview+42,'DEE LITEYEARS',c_white,c_white,c_yellow,c_yellow,image_alpha);
-break;
-
-case 4:
-    draw_text_color(view_xview+160,view_yview+6,'MUSIC BY',c_white,c_white,c_yellow,c_yellow,image_alpha);
-    draw_text_color(view_xview+160, view_yview+28, 'HINCHY',c_white,c_white,c_yellow,c_yellow,image_alpha);
-break;
-
-case 5:
-    draw_text_color(view_xview+160,view_yview+6,'LEVEL DESIGN',c_white,c_white,c_yellow,c_yellow,image_alpha);
-    draw_text_color(view_xview+160,view_yview+28,'BRYCE STOCK "OVERBOUND"',c_white,c_white,c_yellow,c_yellow,image_alpha);
-    draw_text_color(view_xview+160,view_yview+42,'SHANE "SPARKS"',c_white,c_white,c_yellow,c_yellow,image_alpha);
+            <string>if(!rolled)
+{
+    draw_set_color(c_white);
+    draw_set_valign(fa_top);
+    draw_set_halign(fa_center);
+    draw_set_font(objResources.fontHud);
     
-break;
-
-case 6:
-    draw_text_color(view_xview+160,view_yview+6,'CONCEPTS FROM',c_white,c_white,c_yellow,c_yellow,image_alpha);
-    draw_text_color(view_xview+160,view_yview+28,'BRYCE STOCK "OVERBOUND"',c_white,c_white,c_yellow,c_yellow,image_alpha);
-    draw_text_color(view_xview+160, view_yview+42, 'DEBRA ANN',c_white,c_white,c_yellow,c_yellow,image_alpha);
-    draw_text_color(view_xview+160,view_yview+56,'DEVIN REEVES "MERCURY"',c_white,c_white,c_yellow,c_yellow,image_alpha);
-    draw_text_color(view_xview+160, view_yview+70, 'HINCHY',c_white,c_white,c_yellow,c_yellow,image_alpha);
-    draw_text_color(view_xview+160,view_yview+84,'JOEVAN SALMON-JOHNSON "VECTORSATYR"',c_white,c_white,c_yellow,c_yellow,image_alpha);
-break;
-
-case 7:
-    draw_text_color(view_xview+160,view_yview+6,'CONCEPTS FROM',c_white,c_white,c_yellow,c_yellow,image_alpha);
-    draw_text_color(view_xview+160,view_yview+28,'JONATHAN ROSE "DIMENSION WARPED"',c_white,c_white,c_yellow,c_yellow,image_alpha);
-    draw_text_color(view_xview+160,view_yview+42,'SHANE "SPARKS"',c_white,c_white,c_yellow,c_yellow,image_alpha);
-    draw_text_color(view_xview+160, view_yview+56, '"TOMMY C"',c_white,c_white,c_yellow,c_yellow,image_alpha);
-break;
-
-case 8:
-    draw_text_color(view_xview+160,view_yview+6,'ADDITIONAL PROGRAMMING',c_white,c_white,c_yellow,c_yellow,image_alpha);
-    draw_text_color(view_xview+160,view_yview+28,'JONATHAN ROSE "DIMENSION WARPED"',c_white,c_white,c_yellow,c_yellow,image_alpha);
-    draw_text_color(view_xview+160,view_yview+42,'HECTOR BARREIRO "DAMIZEAN"',c_white,c_white,c_yellow,c_yellow,image_alpha);
-    draw_text_color(view_xview+160,view_yview+56,'WILL "POLAR EXELION"',c_white,c_white,c_yellow,c_yellow,image_alpha);
-break;
-
-case 9:
-    draw_text_color(view_xview+160,view_yview+6,'ADDITIONAL MUSIC BY',c_white,c_white,c_yellow,c_yellow,image_alpha);
-    draw_text_color(view_xview+160, view_yview+28, 'ANDY TUNSTALL',c_white,c_white,c_yellow,c_yellow,image_alpha);
-    draw_text_color(view_xview+160, view_yview+42, 'CHRISTOPHER WRIGHT "LARKSS"',c_white,c_white,c_yellow,c_yellow,image_alpha);
-    draw_text_color(view_xview+160, view_yview+56, 'JAMESON SUTTON',c_white,c_white,c_yellow,c_yellow,image_alpha);
-    draw_text_color(view_xview+160, view_yview+70, 'JOSHUA KRUSZYNA "EXSHAD"',c_white,c_white,c_yellow,c_yellow,image_alpha);
-break;
-
-case 10:
-    draw_text_color(view_xview+160,view_yview+6,'ADDITIONAL ART BY',c_white,c_white,c_yellow,c_yellow,image_alpha);
-    draw_text_color(view_xview+160, view_yview+28, '"ANDREW75"',c_white,c_white,c_yellow,c_yellow,image_alpha);
-    draw_text_color(view_xview+160, view_yview+42, 'ANDY TUNSTALL',c_white,c_white,c_yellow,c_yellow,image_alpha);
-    draw_text_color(view_xview+160,view_yview+56,'"APRICITY"',c_white,c_white,c_yellow,c_yellow,image_alpha);
-    draw_text_color(view_xview+160, view_yview+70, '"BLAZEFIRELP"',c_white,c_white,c_yellow,c_yellow,image_alpha);
-    draw_text_color(view_xview+160, view_yview+84, 'DEVIN REEVES "MERCURY"',c_white,c_white,c_yellow,c_yellow,image_alpha);
-break;
-
-case 11:
-    draw_text_color(view_xview+160,view_yview+6,'ADDITIONAL ART BY',c_white,c_white,c_yellow,c_yellow,image_alpha);
-    draw_text_color(view_xview+160, view_yview+28, '"GAMENERD ADVANCE"',c_white,c_white,c_yellow,c_yellow,image_alpha);
-    draw_text_color(view_xview+160, view_yview+42, '"HYPER EMERSON"',c_white,c_white,c_yellow,c_yellow,image_alpha);
-    draw_text_color(view_xview+160, view_yview+56, '"KAMON62"',c_white,c_white,c_yellow,c_yellow,image_alpha);
-    draw_text_color(view_xview+160, view_yview+70, 'PEPIJN RYNGAERT "GARDOW"',c_white,c_white,c_yellow,c_yellow,image_alpha);
-    draw_text_color(view_xview+160,view_yview+84,'SHANE "SPARKS"',c_white,c_white,c_yellow,c_yellow,image_alpha);
-break;
-
-case 12:
-    draw_text_color(view_xview+160,view_yview+6,'ADDITIONAL ART BY',c_white,c_white,c_yellow,c_yellow,image_alpha);
-    draw_text_color(view_xview+160, view_yview+28, '"SONICGENESIS89"',c_white,c_white,c_yellow,c_yellow,image_alpha);
-    draw_text_color(view_xview+160, view_yview+42, 'SABRINA DIDURO "STRIFE"',c_white,c_white,c_yellow,c_yellow,image_alpha);
-    draw_text_color(view_xview+160, view_yview+56, '"STEVINGESUS"',c_white,c_white,c_yellow,c_yellow,image_alpha);
-    draw_text_color(view_xview+160, view_yview+70, '"VEXER"',c_white,c_white,c_yellow,c_yellow,image_alpha);
-break;
-
-case 13:
-    draw_text_color(view_xview+160,view_yview+6,'RESOURCES FROM',c_white,c_white,c_yellow,c_yellow,image_alpha);
-    draw_text_color(view_xview+160, view_yview+28, 'SONIC FAN GAMES HQ',c_white,c_white,c_yellow,c_yellow,image_alpha);
-    draw_text_color(view_xview+160, view_yview+42, 'SONIC RETRO',c_white,c_white,c_yellow,c_yellow,image_alpha);
-    draw_text_color(view_xview+160, view_yview+56, 'THE SPRITERS RESOURCE',c_white,c_white,c_yellow,c_yellow,image_alpha);
-    draw_text_color(view_xview+160, view_yview+70, 'THE MYSTICAL FOREST ZONE',c_white,c_white,c_yellow,c_yellow,image_alpha);
-    draw_text_color(view_xview+160, view_yview+84, 'TOEI ANIMATION',c_white,c_white,c_yellow,c_yellow,image_alpha);
-break;
-
-case 14:
-    draw_text_color(view_xview+160,view_yview+6,'SPECIAL THANKS',c_white,c_white,c_yellow,c_yellow,image_alpha);
-    draw_text_color(view_xview+160, view_yview+28, 'DAMIZEAN, RICARDO ELSO, RAEL',c_white,c_white,c_yellow,c_yellow,image_alpha);
-    draw_text_color(view_xview+160, view_yview+42, 'FLARE, SHARD, ICUURD8B42, CHIMPO',c_white,c_white,c_yellow,c_yellow,image_alpha);
-    draw_text_color(view_xview+160, view_yview+56, 'ROGUEYOSHI, THEOUAEGIS, SEGA SCOURGE',c_white,c_white,c_yellow,c_yellow,image_alpha);
-    draw_text_color(view_xview+160, view_yview+70, 'SLINGERLAND, ANDREW75, SUPERBLIZ',c_white,c_white,c_yellow,c_yellow,image_alpha);
-    draw_text_color(view_xview+160, view_yview+84, 'DEBRA ANN, JOE PIERCE NOAH COPELAND',c_white,c_white,c_yellow,c_yellow,image_alpha); 
-break;
+    var y_offset = view_yview[view_current] - 18 + (18 * alarm[0] / alarm_delay);
+    for(var i = 0; i &lt; 7; i++)
+    {
+        var text_alpha = 1;
+        if(i == 6)
+        {
+            text_alpha = (alarm_delay - alarm[0]) / alarm_delay;
+        }
+        if(displayed_label_is_title[i])
+        {
+            draw_set_font(objResources.fontHud);
+            draw_text_colour(round(view_xview[view_current] + center_offset), round(y_offset + i*18), displayed_label[i],c_white,c_white,c_yellow,c_yellow,text_alpha);
+        }
+        else
+        {
+            draw_set_font(objResources.fontHudMin);
+            draw_text_colour(round(view_xview[view_current] + center_offset), round(y_offset + i*18), displayed_label[i],c_white,c_white,c_gray,c_gray,text_alpha);
+        }
+    }
 }
-
 </string>
           </argument>
         </arguments>

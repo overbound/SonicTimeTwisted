@@ -44,7 +44,6 @@ count = 0;
 speed = 6;
 direction = 215;
 
-
 </string>
           </argument>
         </arguments>
@@ -69,7 +68,6 @@ direction = 215;
             <kind>1</kind>
             <string>
 if count == 4 {
-
     with instance_create(x-8+random(16),y-8+random(16),objSmokePuff) {
     
         vspeed =0;
@@ -78,16 +76,13 @@ if count == 4 {
     
     count = 0;
 } else if count == 2 {
-
     with instance_create(x-8+random(16),y-8+random(16),objSmokePuff) {
     
         vspeed =0;
     
     }
     
-
 }
-
 count++;
 </string>
           </argument>
@@ -112,24 +107,16 @@ count++;
           <argument>
             <kind>1</kind>
             <string>with instance_create(x+20,y,objSmallRock) {
-
     direction = 0;
-
 }
 with instance_create(x-20,y,objSmallRock) {
-
     direction = 120;
-
 }
 with instance_create(x,y+32,objSmallRock) {
-
     direction = 240;
-
 }
-
-audio_play_sound(sndRockSmash,2,0);
+play_sfx(sndRockSmash,2);
 instance_destroy();
-
 
 </string>
           </argument>

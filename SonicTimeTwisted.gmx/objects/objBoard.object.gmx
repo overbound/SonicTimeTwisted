@@ -103,7 +103,6 @@
           <argument>
             <kind>1</kind>
             <string>reaction_script=player_reaction_start_boarding;
-
 </string>
           </argument>
         </arguments>

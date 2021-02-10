@@ -41,29 +41,24 @@
             <kind>1</kind>
             <string>/// Initialize
 image_speed = 0;
-
 // properties
 left = 0;
 top = 0;
 right = room_width;
 bottom = room_height;
 ground_mode = true;
-
 // panning
 offset_x = 0;
 offset_y = 0;
 panning_hspeed = 0;
 panning_vspeed = 0;
-
 // setup view
 view_id = instance_number(objCamera) - 1;
 view_xview[view_id] = clamp(x-view_wview[view_id]*0.5, left, right-view_wview[view_id]);
 view_yview[view_id] = clamp(y-view_hview[view_id]*0.5, top, bottom-view_hview[view_id]);
-
 screenShake=false;
 view_xorigin=view_xview;
 view_yorigin=view_yview;
-
 xSpeed = 0;
 shake=false;
 </string>
@@ -173,28 +168,22 @@ view_yorigin=view_yview;
             <kind>1</kind>
             <string>/// Update camera position
 var ox, oy, view_yspeed;
-
 // define center offset
 ox = x-(view_xview[view_id]+view_wview[view_id]*0.5);
 oy = y-(view_yview[view_id]+view_hview[view_id]*0.5);
-
 if room == MM1 {
     ox +=88;
 } 
-
 // apply panning offsets camera cord reletive to center
 ox += (offset_x*sine[gravity_direction])+(offset_y*cosine[gravity_direction]);
 oy += (offset_x*cosine[gravity_direction])-(offset_y*sine[gravity_direction]);
-
 // define borders
 if abs(ox)&gt;8 ox -= 8*sign(ox); else ox = 0;
 if not ground_mode {if abs(oy)&gt;32 oy -= 32*sign(oy); else oy = 0;}
-
 // limit speed
 view_yspeed = min(6+abs(y-yprevious), 22);
 if abs(ox)&gt;22 ox = 22*sign(ox);
 if abs(oy)&gt;view_yspeed oy = view_yspeed*sign(oy);
-
 // horizontal movement
 if panning_hspeed&gt;0
 {
@@ -209,7 +198,6 @@ else
     if ox&lt;0 and view_xview[view_id]&gt;=left view_xview[view_id] = max(view_xview[view_id]+ox, left);
     if ox&gt;0 and view_xview[view_id]+view_wview[view_id]&lt;=right view_xview[view_id] = min(view_xview[view_id]+ox, right-view_wview[view_id]);
 }
-
 // vertical movement
 if panning_vspeed&gt;0
 {
@@ -224,7 +212,6 @@ else
     if oy&lt;0 and view_yview[view_id]&gt;=top view_yview[view_id] = max(view_yview[view_id]+oy, top);
     if oy&gt;0 and view_yview[view_id]+view_hview[view_id]&lt;=bottom view_yview[view_id] = min(view_yview[view_id]+oy, bottom-view_hview[view_id]);
 }
-
 
 // calculate xspeed only for reference
 xSpeed = x - xprevious;
@@ -249,7 +236,6 @@ xSpeed = x - xprevious;
           <argument>
             <kind>1</kind>
             <string>/// Screen Shake
-
 if shake {
     var amountx=-4+round(random(8)); 
     while ( view_xview[view_id] + amountx &gt; right|| view_xview[view_id] + amountx &lt; left) { amountx=-4+round(random(8)); }
@@ -260,9 +246,9 @@ if shake {
         
         view_xview = clamp(view_xview[view_id] + amountx, left, right - view_wview[view_id]);
         view_yview = clamp(view_yview[view_id] + amounty, top, bottom - view_hview[view_id]);
+        rumble(rumble_ground_shake);
     shake=false;
 }
-
 </string>
           </argument>
         </arguments>

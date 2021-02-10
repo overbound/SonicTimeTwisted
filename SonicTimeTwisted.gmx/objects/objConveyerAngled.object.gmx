@@ -40,7 +40,6 @@
           <argument>
             <kind>1</kind>
             <string>visible=1;
-
 </string>
           </argument>
         </arguments>
@@ -130,14 +129,10 @@
           <argument>
             <kind>1</kind>
             <string>if image_xscale = -1 {
-
     angle=158;
     image_speed = .5;
-
 }
-
 else {
-
     angle=22;
     image_speed = -.5;
     

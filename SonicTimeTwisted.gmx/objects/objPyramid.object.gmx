@@ -27,9 +27,7 @@
             <kind>1</kind>
             <string>state=0;
 lights = false;
-
 image_speed = 0;
-
 if objGameData.character_id[0] == 1 {
     image_index = 0;
 } else if objGameData.character_id[0] == 2 {
@@ -45,9 +43,9 @@ if objGameData.character_id[0] == 1 {
     <event eventtype="2" enumb="1">
       <action>
         <libid>1</libid>
-        <id>611</id>
-        <kind>6</kind>
-        <userelative>-1</userelative>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
         <isquestion>0</isquestion>
         <useapplyto>-1</useapplyto>
         <exetype>2</exetype>
@@ -59,11 +57,8 @@ if objGameData.character_id[0] == 1 {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>state</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>2</string>
+            <string>state = 2;
+</string>
           </argument>
         </arguments>
       </action>
@@ -71,9 +66,9 @@ if objGameData.character_id[0] == 1 {
     <event eventtype="2" enumb="0">
       <action>
         <libid>1</libid>
-        <id>611</id>
-        <kind>6</kind>
-        <userelative>-1</userelative>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
         <isquestion>0</isquestion>
         <useapplyto>-1</useapplyto>
         <exetype>2</exetype>
@@ -85,11 +80,8 @@ if objGameData.character_id[0] == 1 {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>state</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>1</string>
+            <string>state = 1;
+</string>
           </argument>
         </arguments>
       </action>
@@ -119,11 +111,10 @@ if objGameData.character_id[0] == 1 {
             view_yview[view_current] -=8;
         else {
             view_yview[view_current] = 0;
-            state = .5;
+            state = -1;
             alarm[0]=20;
             }
     break;
-
     case 1://rotation frames
     
         visible = false;
@@ -134,7 +125,7 @@ if objGameData.character_id[0] == 1 {
         if image_index &gt;= 7 {
             image_index = 7;
             image_speed = 0;
-            other.state = 1.5;
+            other.state = -1;
             other.alarm[1] = 100;
             instance_create(x+227,y+59,objPyramidJump)
             background_hspeed[0] = 0;
@@ -155,8 +146,6 @@ if objGameData.character_id[0] == 1 {
            
 }
 
-
-
 //make lights flash
 if lights == true
     lights = false;
@@ -165,22 +154,6 @@ if lights == true
 </string>
           </argument>
         </arguments>
-      </action>
-    </event>
-    <event eventtype="5" enumb="113">
-      <action>
-        <libid>1</libid>
-        <id>331</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_restart_game</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
       </action>
     </event>
   </events>

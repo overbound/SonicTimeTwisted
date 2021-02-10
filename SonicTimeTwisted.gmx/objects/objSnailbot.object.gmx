@@ -42,7 +42,6 @@
             <string>hsp = 0;    
 Dir = -1;
 span = 80;
-
 image_speed = .15;
 alarm[1] = 10;
 </string>
@@ -224,12 +223,9 @@ image_xscale = Dir;
             <kind>1</kind>
             <string>if(Dir = -1)
 hsp = -1
-
 if(Dir = 1)
 hsp = +1
-
 x += hsp
-
 
 if x &gt; xstart + span || x &lt; xstart -span
     Dir*=-1;
@@ -272,7 +268,6 @@ if x &gt; xstart + span || x &lt; xstart -span
             <string>/// Freeze enemy
 alarm[0] = 180;
 frozen = true;
-
 // destroy icicle
 with other instance_destroy();
 </string>
@@ -347,10 +342,8 @@ with other instance_destroy();
           <argument>
             <kind>1</kind>
             <string>/// Render ice block
-
 // get offset from time
 var offset = (-1+(((90-alarm[1]) div 4) mod 2)*2)*(alarm[1]&lt;45);
-
 // draw ice block
 draw_sprite(sprShieldIceBlock, 0, x+offset, y);
 </string>

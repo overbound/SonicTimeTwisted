@@ -75,7 +75,6 @@ radius = 0;
           <argument>
             <kind>1</kind>
             <string>switch state {
-
 case 0:
     with objLittlePlanetPiece1 {
         move_towards_point(other.x,other.y,2);
@@ -90,7 +89,6 @@ case 0:
         state = 1;
     }
 break;
-
 case 1:
     with objLittlePlanetPiece1 {
         move_towards_point(other.x,other.y,.05);
@@ -110,7 +108,6 @@ case 1:
     image_alpha +=.0125;
     radius +=2;
 break;
-
 case 2:
     image_alpha +=.0125;
     radius +=2;
@@ -118,11 +115,9 @@ case 2:
         state = 3;
     }
 break;
-
 case 3:
     image_alpha -=.025;
 break;
-
 }
 </string>
           </argument>

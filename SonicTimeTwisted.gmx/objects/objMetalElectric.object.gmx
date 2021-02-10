@@ -76,7 +76,6 @@ audioLoop = 0;
           <argument>
             <kind>1</kind>
             <string>if in_view(view_current,0) &amp;&amp; blackFade == 0{
-
     // flash
     if alarm[0] == -1 {
         if image_alpha &amp;&amp; image_index == 1 {
@@ -85,7 +84,7 @@ audioLoop = 0;
         
         if image_alpha {
             image_alpha = 0;
-            audio_play_sound(sndMetalShock,1,false);
+            play_sfx(sndMetalShock,1);
         } else {
             image_alpha = 1;
             image_index += 1;
@@ -123,14 +122,12 @@ audioLoop = 0;
 draw_set_color(c_black);
 draw_rectangle(view_xview,view_yview,view_xview+view_wview,view_yview+view_hview,false);
 draw_set_color(c_white);
-
 draw_sprite_ext(sprite_index,image_index,x,y,1,1,0,c_white,image_alpha);
 draw_set_alpha(1);
 draw_sprite_ext(sprMetalEyesEnding,0,202,2873,1,1,0,c_white,eyeFade);
 draw_set_blend_mode(bm_add);
 draw_sprite_ext(sprMetalEyesAddEnding,0,202,2873,1,1,0,c_white,eyeFade);
 draw_set_blend_mode(bm_normal);
-
 
 </string>
           </argument>

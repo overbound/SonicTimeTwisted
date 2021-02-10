@@ -163,6 +163,7 @@
     sprite_index = sprSonicPlane;
 }
 remove = 0;
+through = 1;
 </string>
           </argument>
         </arguments>
@@ -251,36 +252,28 @@ remove = 0;
           <argument>
             <kind>1</kind>
             <string>/// Plane Motion
-
- with objPlayer {
-
-if other.x -4 &gt; x
-    other.x += xspeed;
-
-if other.x +14 &lt; x
-    other.x += xspeed;    
-
-
-
-if landed == false
-if other.y &lt; y
-other.y +=1;
+with objPlayer {
+   // clamping x instead of relying on speed, otherwise the player can fly off the plane
+   other.x = clamp(other.x, x - 14, x + 4);
+   if landed
+   {
+       rumble(rumble_short_weakest);
+   }
+   else
+   {
+      if other.y &lt; y
+      {
+         other.y +=1;
+         // emergency reposition of the plane if the player is clipping through
+         if(y &gt; other.y - 38)
+         {
+            other.y = ceil(y)+38;
+         }
+      }
+   }
 }
 
-//Rebound  
-/*if rebound {
-
-    y+=yspeed;
-    yspeed -=.1;
-    if yspeed &lt;= 0 {
-        rebound = false;
-        yspeed = 3;
-    }
-}*/
-
-
 y = floor(y);
-
 
 </string>
           </argument>
@@ -323,10 +316,9 @@ if instance_exists(objLevel.player[0]) {
         y = ystart;
     }
 }
-
 if in_view(view_current,128) { 
 if not audio_is_playing(sndPropeller)
-    audio_play_sound(sndPropeller, 4, 0);
+    play_sfx(sndPropeller, 4);
 }
 </string>
           </argument>
@@ -426,13 +418,9 @@ with objPlayer {
           <argument>
             <kind>1</kind>
             <string>/// check allowCollision
-
 if !place_meeting(x,y,objPlaneStop) {
-
     allowCollision = true;
-
 }
-
 </string>
           </argument>
         </arguments>
@@ -470,18 +458,40 @@ if !place_meeting(x,y,objPlaneStop) {
           <argument>
             <kind>1</kind>
             <string>if allowCollision == true {
-
     active = false;
     allowCollision = false;
-
 }
-
 if !in_view(view_current,150) &amp;&amp; active == false {
-
     y = other.y+other.sprite_height*.75;
-
 }
-
+//push the plane out of the object, otherwise it becomes posssible for it to cross it
+if(other.is_top)
+{
+    y = ceil(y);
+    while(place_meeting(x, y, other))
+    {
+        y++;
+    }
+}
+else
+{
+    if(other.is_right)
+    {
+        x = floor(x);
+        while(place_meeting(x, y, other))
+        {
+            x--;
+        }
+    }
+    else
+    {
+        x = ceil(x);
+        while(place_meeting(x, y, other))
+        {
+            x++;
+        }
+    }
+}
 </string>
           </argument>
         </arguments>

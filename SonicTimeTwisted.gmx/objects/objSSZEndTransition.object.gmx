@@ -45,7 +45,6 @@ explodeOffset = 0;
 state = 0;
 alarm[0]=20;
 image_alpha = 0;
-
 x = view_xview+view_wview*0.5;
 y = view_yview+view_hview*0.5;
     
@@ -76,7 +75,6 @@ y-=10;
 timeline_index=animExplosionCluster;
 timeline_position=0;
 timeline_running=true;
-
 state = 1;
 </string>
           </argument>
@@ -107,7 +105,6 @@ timeline_index=animExplosionCluster;
 timeline_position=0;
 timeline_running=true;
 
-
 </string>
           </argument>
         </arguments>
@@ -137,7 +134,6 @@ timeline_index=animExplosionCluster;
 timeline_position=0;
 timeline_running=true;
 
-
 </string>
           </argument>
         </arguments>
@@ -166,7 +162,6 @@ alarm[2]=32;
 timeline_index=animExplosionCluster;
 timeline_position=0;
 timeline_running=true;
-
 </string>
           </argument>
         </arguments>
@@ -195,7 +190,6 @@ x-=32;
 timeline_index=animExplosionCluster;
 timeline_position=0;
 timeline_running=true;
-
 </string>
           </argument>
         </arguments>
@@ -246,7 +240,7 @@ timeline_running=true;
         
         } else {
             if image_alpha == 0 {
-                audio_play_sound(sndSSEndExplosion,12,false);
+                play_sfx(sndSSEndExplosion,12);
             }
             image_alpha +=.025;
             explodeOffset+=8;
@@ -261,10 +255,10 @@ timeline_running=true;
                 // setup titlecard
             with instance_create(0, 0, objTitlecard)
             {
-                title_string[0] = "Planetary";
-                title_string[1] = "Panic";
-                title_string[2] = "Zone";
-                title_string[3] = "ACT1";
+                title_string[0] = tr("_zonename_PPZ_A");
+                title_string[1] = tr("_zonename_PPZ_B");
+                title_string[2] = tr("_zonename_PPZ_C");
+                title_string[3] = tr("_ACT1");
                 event_perform(ev_other, ev_room_start);
                 mode = 1;
             }

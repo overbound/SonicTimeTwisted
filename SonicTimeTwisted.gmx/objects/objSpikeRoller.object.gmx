@@ -49,9 +49,7 @@ mode=1;
 remove=0;
 time=0.03125;
 distance=64;
-
 audio = audio_emitter_create();
-
 
 </string>
           </argument>
@@ -117,7 +115,6 @@ else
             // update underwater state
             player_update_water();
             
-
             
             // non-solid object collision
             player_collision_object();
@@ -126,34 +123,28 @@ else
             
             // wall collision
             hit_wall = player_collision_wall(offset_wall);
-
             // handle wall collision
             if hit_wall
             {
             // eject
                 wall_direction = player_wall_eject(hit_wall);
-
                 // get crushed if applicable
                 if wall_direction==0 and (hit_wall.harmful or terrain_id.harmful)
                 {
-                    audio_play_sound(sndHurt, 4, 0);
+                    play_sfx(sndHurt, 4);
                     player_is_dead();
                     other.player_id=noone;
                 }
-
             // execute reaction
-            if player_get_reaction(hit_wall, wall_direction) return false;
-
+            if player_get_reaction(hit_wall, wall_direction) exit;
             // if moving towards wall
             if wall_direction!=0 and sign(xspeed)==wall_direction
             {
                 // cut speed
                 xspeed = 0;
-
                 // push against wall
                 if facing==wall_direction player_wall_push(hit_wall, wall_direction);
                 }
-
             other.active = false;
             other.allow_collision = true;
             other.alarm[0] = 20; 
@@ -181,7 +172,6 @@ else
         
         }
 }
-
 </string>
           </argument>
         </arguments>
@@ -236,7 +226,6 @@ case 2: x = floor(xstart+sin(objScreen.image_index*time)*distance); break;
 case 3: y = floor(ystart+cos((objScreen.image_index)*time)*distance); break;
 case 4: y = floor(ystart+sin(objScreen.image_index*time)*distance); break;
 }
-
 </string>
           </argument>
         </arguments>

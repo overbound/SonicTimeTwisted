@@ -138,19 +138,14 @@ vspeed = -1;
           <argument>
             <kind>1</kind>
             <string>if y &lt; ystart-40 {
-
     vspeed = 1;
-
 }
-
 if vspeed == 1 &amp;&amp; y &gt; ystart {
        
     with ostrichHandle state = 3;
     destroy=false;
     instance_destroy();
-
 }
-
 if fire_debris == 0 {
     with instance_create(x,ystart+6,objOstrichDibris) {
     
@@ -161,7 +156,6 @@ if fire_debris == 0 {
         speed = 2;
         gravity= .15;
         remove=2;
-
     }
     
     with instance_create(x,ystart+6,objOstrichDibris) {
@@ -173,7 +167,6 @@ if fire_debris == 0 {
         speed = 2;
         gravity= .15;
         remove=2;
-
     }
     }
     

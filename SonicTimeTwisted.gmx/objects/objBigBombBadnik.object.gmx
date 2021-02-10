@@ -114,12 +114,7 @@ if life&lt;=0
           <argument>
             <kind>1</kind>
             <string>if invulnerable &amp;&amp; life &gt; 0 {
-
-    if visible==true 
-        visible = false;
-        else
-            visible = true;
-
+    visible = !visible;
 }
 
 if timeline_position &gt; 100 {

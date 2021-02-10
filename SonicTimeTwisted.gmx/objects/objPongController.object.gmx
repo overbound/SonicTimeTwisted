@@ -29,17 +29,11 @@
 paddle[1]=instance_create(x,y-352,objPaddleTop);
 paddle[0].parent = self;
 paddle[1].parent = self;
-
 switchButton[0]=instance_create(x-64,y,objPaddleSwitch);
-
 with switchButton[0] { controller = other.id; }
-
 switchButton[1]=instance_create(x+64,y,objPaddleSwitch);
-
 with switchButton[1] { controller = other.id; }
-
 switchCount = 0;
-
 audio = audio_emitter_create();
 </string>
           </argument>
@@ -68,22 +62,20 @@ audio = audio_emitter_create();
 if objLevel.player[0].x &gt; x &amp;&amp; gravity_force &lt;&gt; 0 {
     
   with paddle[0] alarm[0] = 4;
-
 }*/
-
 if switchCount &gt;= 4 {
-
+    
+    instance_activate_object(paddle[0]);
+    instance_activate_object(paddle[1]);
+    instance_activate_object(switchButton[0]);
+    instance_activate_object(switchButton[1]);
     with paddle[0] { instance_destroy(); }
-
     with paddle[1] { instance_destroy(); }
-
     with switchButton[0] { instance_destroy(); }
-
     with switchButton[1] { instance_destroy(); }
     
     with objLevel.player[0] { player_reset_physics(); }
-
-    audio_play_sound(sndBombExplosion,false,0);
+    play_sfx(sndBombExplosion,false);
     instance_destroy();
 }
 </string>

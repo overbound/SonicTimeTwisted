@@ -1,5 +1,4 @@
 //player_reaction_paddle
-
 if (bbox_bottom < argument0.y && argument0.top == false) || (bbox_top > argument0.y && argument0.top == true) {
     gravity_force = 0;
     jump_action = false;
@@ -19,7 +18,7 @@ if (bbox_bottom < argument0.y && argument0.top == false) || (bbox_top > argument
     
     if !audio_is_playing(sndAADropBumper) {
     
-            audio_play_sound(sndAADropBumper,1,0);
+            play_sfx(sndAADropBumper,1);
         
         }
     
@@ -39,4 +38,6 @@ if (bbox_bottom < argument0.y && argument0.top == false) || (bbox_top > argument
             alarm[1] = 2;
         }
     }
+    // rumble
+    rumble(rumble_short_strong);
 }

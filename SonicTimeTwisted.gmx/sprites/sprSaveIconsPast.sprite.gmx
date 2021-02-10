@@ -15,9 +15,17 @@
   <VTile>0</VTile>
   <TextureGroups>
     <TextureGroup0>28</TextureGroup0>
+    <TextureGroup1>28</TextureGroup1>
+    <TextureGroup2>28</TextureGroup2>
+    <TextureGroup3>28</TextureGroup3>
+    <TextureGroup4>28</TextureGroup4>
+    <TextureGroup5>28</TextureGroup5>
+    <TextureGroup6>28</TextureGroup6>
+    <TextureGroup7>28</TextureGroup7>
+    <TextureGroup8>28</TextureGroup8>
   </TextureGroups>
   <For3D>0</For3D>
-  <width>84</width>
+  <width>60</width>
   <height>60</height>
   <frames>
     <frame index="0">images\sprSaveIconsPast_0.png</frame>
@@ -32,7 +40,5 @@
     <frame index="9">images\sprSaveIconsPast_9.png</frame>
     <frame index="10">images\sprSaveIconsPast_10.png</frame>
     <frame index="11">images\sprSaveIconsPast_11.png</frame>
-    <frame index="12">images\sprSaveIconsPast_12.png</frame>
-    <frame index="13">images\sprSaveIconsPast_13.png</frame>
   </frames>
 </sprite>

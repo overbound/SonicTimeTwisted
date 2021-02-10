@@ -42,18 +42,15 @@
             <string>/// Initialize
 image_speed = 0;
 var i;
-
 // state machine
 state = 0;
 move_platforms = false;
-
 // boundaries
 left = 17552; //17552;36
 right = left+objScreen.width;
 top = 1268;
 bottom = top+objScreen.height;
 height = 1440;
-
 </string>
           </argument>
         </arguments>
@@ -77,7 +74,6 @@ height = 1440;
           <argument>
             <kind>1</kind>
             <string>/// Collapse
-
 // setup collapsing floor
 for (var i=0; i&lt;15; i+=1)
 {
@@ -85,9 +81,8 @@ for (var i=0; i&lt;15; i+=1)
     collapse[i].gravity = 0.02734375+((i mod 2)*0.02734375); //0.109375+((i mod 2)*0.109375);
     collapse[i].remove = 2;
 }
-
 // sound
-audio_play_sound(sndCollapse, 10, false);
+play_sfx(sndCollapse, 10);
 </string>
           </argument>
         </arguments>
@@ -111,13 +106,10 @@ audio_play_sound(sndCollapse, 10, false);
           <argument>
             <kind>1</kind>
             <string>/// Start boss
-
 // start moving
 move_platforms = true;
-
 objMusic.bossLoop = bgmMetalSonicLoop;
 play_boss_intro(bgmMetalSonicIntro,0);
-
 // add boss
 instance_create(0, 0, objVV1Boss);
 </string>

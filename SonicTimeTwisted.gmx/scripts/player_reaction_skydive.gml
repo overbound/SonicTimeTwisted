@@ -1,18 +1,13 @@
 // player_reaction_skydive(local_id)
-
 // player_reaction_fan(local_id)
-
 if state == player_state_climb || landed return false;
 // enable the fan
 argument0.enabled = true;
-
 // cancel jumping
 rolling_jump = false;
 jumping = false;
-
 if yspeed > 0.1
 yspeed-=.05*yspeed;
-
 animation_new = "float";
 /*if input_check_pressed(cACTION) {
     // player_is_jumping()
@@ -39,9 +34,8 @@ animation_new = "float";
     player_in_air();
     
     // sound
-    audio_play_sound(sndJump, false, 0);
+    play_sfx(sndJump, false);
 }*/
-
 // fall if not already falling
 if (yspeed >= 0) or (state != player_state_fall)
 {
@@ -51,10 +45,10 @@ if (yspeed >= 0) or (state != player_state_fall)
     spinning = false;
     rolling_jump = false;
     jump_action = false;
-
     // set air state
     player_in_air();
 }
-
+// rumble
+rumble(rumble_short_weakest);
 // not a hard collision
 return false;

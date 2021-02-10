@@ -42,17 +42,14 @@
             <string>/// Initialize
 image_speed = 0;
 offscreen_enabled = true;
-
 // states and flags
 state = 0;
 bouncing = false;
-
 // other
 turning = -1;
 turning_point = x;
 timer = 16;
 flash_color = make_color_rgb(255, 72, 0);
-
 // orbs
 for (var i=0; i&lt;3; i+=1) {orb[i] = instance_create(x, y, objCaterkillerOrb); orb[i].parent_id = id; orb[i].depth = other.depth+1+i;}
 orb[0].offset = 10;
@@ -348,7 +345,6 @@ if timer {timer -= 1; if not timer {state = (state+1) mod 2; timer = 16;}}
             <kind>1</kind>
             <string>/// Enemy behavior
 var i;
-
 // state machine
 switch state
 {
@@ -356,19 +352,15 @@ case 0: // upward
     y -= 0.5;
     orb[1].y -= 0.5;
     break;
-
 case 1: // downward
     y += 0.5;
     orb[1].y += 0.5;
     break;
 }
-
 // horizontal movement
 x += image_xscale;
-
 // do the wurm!
 for (i=0; i&lt;3; i+=1) orb[i].offset += (i*0.5)*(-1+2*state);
-
 // turning around
 switch turning
 {
@@ -383,7 +375,6 @@ case -1: // turn left
         }
     }
     break;
-
 case 1: // turn right
     for (i=0; i&lt;3; i+=1)
     {
@@ -395,10 +386,8 @@ case 1: // turn right
         }
     }
     break;
-
 default: // not turning
     for (i=0; i&lt;3; i+=1) {orb[i].x = x-orb[i].offset*sign(image_xscale); orb[i].image_xscale = image_xscale;}
-
     // turn at cliffside
     if not place_meeting(x+4*sign(image_xscale), y+12, objSolid)
     {
@@ -472,7 +461,6 @@ image_blend = c_white;
 alarm[1] = 180;
 hspeed = 0;
 frozen = true;
-
 // destroy icicle
 with other instance_destroy();
 </string>
@@ -621,10 +609,8 @@ with other instance_destroy();
           <argument>
             <kind>1</kind>
             <string>/// Render ice block
-
 // get offset from time
 var offset = (-1+(((90-alarm[1]) div 4) mod 2)*2)*(alarm[1]&lt;45);
-
 // draw ice block
 draw_sprite(sprShieldIceBlock, 0, x+offset, y);
 </string>

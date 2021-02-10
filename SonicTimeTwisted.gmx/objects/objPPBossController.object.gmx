@@ -64,7 +64,6 @@
           <argument>
             <kind>1</kind>
             <string>// Remember to change state -1 to something like 100 due to GM switch statement bug
-
 state = -1;
 instance_create(x,y-80,objMetalDamage);
 playerId = noone;
@@ -95,32 +94,23 @@ ground = 2304;
 var xos = random(426); //426
 var i = 0;
 var yof=580;
-
 //if objGameData.character_id[0] == 3 yof =288;
-
 do {
-
     instance_create(x-300+xos+(128*i),y-yof,objBossPlatform); //340
     i+=1;
     
 } until (instanceCount &lt; i)
-
 alarm[0]=32//+random(16); //40
-
 /*var instanceCount = random(2);
 var xos = random(426); //426
 var i = 0;
 var yof=640;
-
 if objGameData.character_id[0] == 3 yof =288;
-
 do{
-
     instance_create(x-300+xos+(128*i),y-yof,objBossPlatform); //340
     i+=1;
     
 } until (instanceCount &lt; i)
-
 alarm[0]=16+random(16); //40*/
 </string>
           </argument>
@@ -145,17 +135,13 @@ alarm[0]=16+random(16); //40*/
           <argument>
             <kind>1</kind>
             <string>
-
 switch state {
-
 case 0:
-
     if alarm[0] == -1 {
     
         alarm[0] = 540;
     
     }
-
     if objLevel.player[0].camera.bottom &lt; view_yview[view_current] + view_hview[view_current] {
     
         view_yview[view_current] -=2;
@@ -192,11 +178,8 @@ case 0:
     with objPPBossFloor alarm[0]=120;
     
     }
-
 break;
-
 case 1:
-
     with playerId {
         
             x = other.x;
@@ -211,19 +194,18 @@ case 1:
                     animation_new = "idle";
                     timeline_speed = 1;
                     image_angle = 0;
-
                 }
     }
     
     with objGalanik {
     
         if other.alarm[0] == 400 {
-            audio_play_sound(sndBreak,10,0);
+            play_sfx(sndBreak,10);
         }
     
         if other.alarm[0] == 40 {
         
-            audio_play_sound(sndGalanikLaugh,1,false);
+            play_sfx(sndGalanikLaugh,1);
             play_boss_intro(bgmGalanik1Intro,0);
             objMusic.bossLoop = bgmGalanik1Loop;
             
@@ -231,7 +213,7 @@ case 1:
         }
         
         if alarm[0] == 0 {
-            audio_play_sound(sndQuake,10,0);
+            play_sfx(sndQuake,10);
         }
     
        if alarm[0] &lt;= 0 {
@@ -249,9 +231,7 @@ case 1:
         }
      }
 break;
-
 case 2:
-
     with playerId {
         player_is_falling();
     }
@@ -259,12 +239,9 @@ case 2:
     state = 3;
     
 break;
-
 case 3:
-
 break;
 }
-
 
 </string>
           </argument>

@@ -11,6 +11,20 @@
     <event eventtype="0" enumb="0">
       <action>
         <libid>1</libid>
+        <id>604</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_inherited</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
+      <action>
+        <libid>1</libid>
         <id>603</id>
         <kind>7</kind>
         <userelative>0</userelative>
@@ -50,11 +64,8 @@ closing = false;
 progress = 0;
 // kill states: 1 death by ring, 2 death by fallout, 3 death by loss
 kill=0;
-//shadow=instance_create(x,y,obj3DShadow);
-shadow=noone;
-//with shadow { parent = other; scale = .15;}
 invincible=0;
-
+landing_tracker = instance_create(x, y, objSSPlayerLandingTracker);
 
 </string>
           </argument>
@@ -123,9 +134,7 @@ switch objGameData.character_id[0] {
 if invincible &gt; 0 {
 invincible -=1
 
-if visible == 1 
-    visible = false;
-else visible = 1;
+visible = !visible;
 
 }
 else visible = true;
@@ -151,8 +160,8 @@ else visible = true;
             <kind>1</kind>
             <string>/// region activation
 instance_deactivate_all(true);
-instance_activate_object(objSSLevel);
 instance_activate_object(objProgram);
+instance_activate_object(objSSLevel);
 instance_activate_object(objGameData);
 instance_activate_object(objResources);
 instance_activate_object(objMusic);
@@ -164,6 +173,9 @@ instance_activate_object(objTransition);
 instance_activate_object(objTrack);
 instance_activate_object(objSSMetalSonic);
 instance_activate_object(objInput);
+instance_activate_object(objInputHelp);
+instance_activate_object(objMenu);
+instance_activate_object(objSSPlayerLandingTracker);
 instance_activate_region(x-1408,y-1408,2816,2816,true);
 //instance_activate_region(x-1536,y-1536,3072,3072,true);
 </string>
@@ -239,7 +251,7 @@ if input_check_pressed(cACTION) and onGround {
       jumping = true;
       zspeed = jump_force;
       onGround = false;
-      audio_play_sound(sndJump,0,0);    
+      play_sfx(sndJump,0);    
 
 }
 
@@ -301,14 +313,17 @@ if (bump_radius &lt; max_radius)
   bump_radius = bump_radius + (max_radius - bump_radius) * 0.25;
 }
 
-if (!instance_position(x, y, objTrack))
+with(landing_tracker)
 {
-  onGround = false;
-  noTrack = true;
-}
-else
-{
-  noTrack = false;
+    if(!place_meeting(x, y, objTrack))
+    {
+        other.onGround = false;
+        other.noTrack = true;
+    }
+    else
+    {
+        other.noTrack = false;
+    }
 }
 
 move_direction += xaxis * -1.5;
@@ -373,6 +388,9 @@ view_yview = y - view_hview / 2;
 
 image_angle = move_direction;
 view_angle = 90 - move_direction;
+
+landing_tracker.x = x;
+landing_tracker.y = y;
 </string>
           </argument>
         </arguments>
@@ -397,29 +415,6 @@ view_angle = 90 - move_direction;
 depth = min(2000,distance_to_object(objSSCamera)/20);
 
 depth1= depth;
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///shadow
-
-with shadow { x = other.x; y = other.y; }
 </string>
           </argument>
         </arguments>
@@ -538,94 +533,6 @@ if (!onGround)
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="objSSBoost">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>
-if (!onGround) exit;
-if other.sound == noone
-    other.sound = audio_play_sound(sndSSSpeedBoost,1,false);
-    
-switch(other.image_index) {
-case 0:
-move_direction = 0;
-break;
-case 1:
-move_direction = 45;
-break;
-case 2:
-move_direction = 90;
-break;
-case 3:
-move_direction = 135;
-break;
-case 4:
-move_direction = 180
-break;
-case 5:
-move_direction = 225;
-break;
-case 6:
-move_direction = 270;
-break;
-}
-
-move_speed=12;
-    
-    
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="objSSLife">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if (!onGround) exit;
-switch other.image_index
- {
-     case 4: audio_play_sound(sndRockSmash,1,false); objProgram.temp_shield = other.image_index-4; break;
-     case 5: audio_play_sound(sndShieldBubble,1,false);  objProgram.temp_shield = other.image_index-4; break;
-     case 6: audio_play_sound(sndShieldLightning,1,false);  objProgram.temp_shield = other.image_index-4; break;
-     case 7: audio_play_sound(sndShieldFlame,1,false);  objProgram.temp_shield = other.image_index-4; break;
-     case 8: audio_play_sound(sndShieldIce,1,false); objProgram.temp_shield = other.image_index-4; break;
-     case 9: audio_play_sound(sndShieldWind,1,false); objProgram.temp_shield = other.image_index-4; break;
-     default: player_get_lives(1);
- }
-with other instance_destroy();
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="4" ename="objSSMetalSonic">
       <action>
         <libid>1</libid>
@@ -668,7 +575,104 @@ with other instance_destroy();
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="objSSLargeSpike">
+    <event eventtype="4" ename="objSSLife">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (!onGround) exit;
+switch other.image_index
+ {
+     case 2:
+         play_sfx(sndRing, 0);
+         rings +=10;
+         if (rings mod 100 &lt;= 9) {
+             player_get_lives(1);
+         }
+         break;
+     case 4: play_sfx(sndRockSmash,1); objProgram.temp_shield = other.image_index-4; break;
+     case 5: play_sfx(sndShieldBubble,1);  objProgram.temp_shield = other.image_index-4; break;
+     case 6: play_sfx(sndShieldLightning,1);  objProgram.temp_shield = other.image_index-4; break;
+     case 7: play_sfx(sndShieldFlame,1);  objProgram.temp_shield = other.image_index-4; break;
+     case 8: play_sfx(sndShieldIce,1); objProgram.temp_shield = other.image_index-4; break;
+     case 9: play_sfx(sndShieldWind,1); objProgram.temp_shield = other.image_index-4; break;
+     default: player_get_lives(1);
+ }
+with other instance_destroy();
+rumble(rumble_short_weakest);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="objSSBoost">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>
+if (!onGround) exit;
+if other.sound == noone
+    other.sound = play_sfx(sndSSSpeedBoost,1);
+    
+switch(other.image_index) {
+case 0:
+move_direction = 0;
+break;
+case 1:
+move_direction = 45;
+break;
+case 2:
+move_direction = 90;
+break;
+case 3:
+move_direction = 135;
+break;
+case 4:
+move_direction = 180
+break;
+case 5:
+move_direction = 225;
+break;
+case 6:
+move_direction = 270;
+break;
+}
+
+move_speed=12;
+// rumble
+rumble(rumble_short_strong_and_mid);
+    
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="objSSRingFly">
       <action>
         <libid>1</libid>
         <id>601</id>
@@ -685,7 +689,49 @@ with other instance_destroy();
         <arguments>
           <argument>
             <kind>9</kind>
-            <script>PlayerHarmfulCollision</script>
+            <script>PlayerRingCollision</script>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>other</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="objSSRing">
+      <action>
+        <libid>1</libid>
+        <id>601</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_execute_script</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>9</kind>
+            <script>PlayerRingCollision</script>
           </argument>
           <argument>
             <kind>0</kind>
@@ -794,90 +840,6 @@ with other instance_destroy();
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="objSSRingFly">
-      <action>
-        <libid>1</libid>
-        <id>601</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_execute_script</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>9</kind>
-            <script>PlayerRingCollision</script>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>other</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string></string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string></string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string></string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string></string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="objSSRing">
-      <action>
-        <libid>1</libid>
-        <id>601</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_execute_script</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>9</kind>
-            <script>PlayerRingCollision</script>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>other</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string></string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string></string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string></string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string></string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="4" ename="objSSMoleMissile">
       <action>
         <libid>1</libid>
@@ -935,7 +897,7 @@ with other instance_destroy();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>audio_play_sound(sndBombExplosion,1,false);
+            <string>play_sfx(sndBombExplosion,1);
 
 with other {
     instance_create(x,y,obj3DExplosion);
@@ -992,73 +954,6 @@ with other {
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="objPPBackEarth">
-      <action>
-        <libid>1</libid>
-        <id>601</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_execute_script</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>9</kind>
-            <script>PlayerHarmfulCollision</script>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>other</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string></string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string></string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string></string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string></string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if (onGround) {
-
-    with other instance_destroy();
-
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="4" ename="objField">
       <action>
         <libid>1</libid>
@@ -1106,8 +1001,8 @@ if z &gt;= 24 {
          image_speed = .25;  
          }  
         save_emeralds();
-        save_big_ring() 
-        instance_create(x,y,objSSScoreCard);
+        save_big_ring();
+        stt_save_files();
         
     } else {
         with objSSMessages { closing=1; }

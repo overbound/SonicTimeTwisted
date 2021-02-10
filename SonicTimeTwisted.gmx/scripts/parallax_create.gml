@@ -3,7 +3,6 @@ with instance_create(0, 0, objParallax)
 {
     // general
     tiled = argument0;
-
     // background elements
     back = argument1;
     left = argument2;
@@ -22,7 +21,6 @@ with instance_create(0, 0, objParallax)
     absolute_y = argument11;
     separation_x = argument12;
     separation_y = argument13;
-
     // done
     return id;
 }

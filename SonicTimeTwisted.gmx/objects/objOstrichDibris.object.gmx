@@ -25,9 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if visible == 1
-    visible = 0
-    else visible = 1;
+            <string>visible = !visible;
 </string>
           </argument>
         </arguments>

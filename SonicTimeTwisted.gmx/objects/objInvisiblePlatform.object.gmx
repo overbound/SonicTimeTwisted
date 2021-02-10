@@ -90,11 +90,8 @@ appear = 2;
           <argument>
             <kind>1</kind>
             <string>if appear== true {
-    
-    if visible == true
-        visible = false;
-        else visible = true;
-        }
+    visible = !visible;
+}
 </string>
           </argument>
         </arguments>

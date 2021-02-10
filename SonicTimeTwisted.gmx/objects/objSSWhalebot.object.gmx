@@ -70,7 +70,6 @@ speed = 4;
             <string>spr_direction = -direction;
 change_sprite_direction_int_frames(8);
 
-
 </string>
           </argument>
         </arguments>
@@ -94,7 +93,6 @@ change_sprite_direction_int_frames(8);
             <string>/// set depth
 depth = min(2000,distance_to_object(objSSCamera)/20);
 
-
 </string>
           </argument>
         </arguments>
@@ -117,20 +115,35 @@ depth = min(2000,distance_to_object(objSSCamera)/20);
             <kind>1</kind>
             <string>/// Scale image
 
-
 if image_index == 1 || image_index == 3 || image_index == 5 || image_index == 7 {
-
     xoffset=.375; 
-
 }   else if image_index == 2 || floor(image_index) == 6 {
-
         xoffset=.5;
-
 }   else if image_index == 0 || floor(image_index) = 4 {
-
         xoffset=.25;
-
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// update shadow visibility
+shadow_visible = distance_to_object(objSSCamera) &lt; 1000;
 </string>
           </argument>
         </arguments>
@@ -156,7 +169,6 @@ if image_index == 1 || image_index == 3 || image_index == 5 || image_index == 7 
             <string>draw_shadow(16);
 //draw_billboard(sprite_width*xoffset, sprite_height*.45);
 draw_billboard(sprite_width*0.65, sprite_height*0.65);
-
 </string>
           </argument>
         </arguments>

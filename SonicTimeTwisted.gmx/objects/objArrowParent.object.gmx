@@ -44,11 +44,8 @@ child=instance_create(x,y,objArrowChild);
 hspeed=3;
 remove=2;
 step=0;
-
 if objProgram.in_past == false {
-
     sprite_index=sprRRLaser;
-
 }
 </string>
           </argument>
@@ -96,11 +93,7 @@ if objProgram.in_past == false {
           <argument>
             <kind>1</kind>
             <string>if objProgram.in_past == false {
-
-    if visible == true
-        visible = false;
-    else visible = true;
-
+    visible = !visible;
 }
 </string>
           </argument>
@@ -123,13 +116,9 @@ if objProgram.in_past == false {
           <argument>
             <kind>1</kind>
             <string>y=ystart+cos(step/8)*8;
-
 with child {
-
     y=ystart+sin(other.step/8)*8;
-
 }
-
 step+=1;
 </string>
           </argument>

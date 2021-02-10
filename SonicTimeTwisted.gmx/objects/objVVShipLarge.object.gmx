@@ -67,7 +67,6 @@
             <kind>1</kind>
             <string>/// float in water
 y = floor(height+cos(objScreen.image_index*0.015625)*16);
-
 </string>
           </argument>
         </arguments>

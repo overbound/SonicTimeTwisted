@@ -42,11 +42,9 @@
             <string>/// Initialize
 reaction_script = player_reaction_AA_target;
 remove = 0;
-
 // swing values
 angle = 0;
 turn_direction = 0;
-
 // swing platform
 target_id = instance_create(x, y, objSolid);
 target_id.sprite_index = sprAASwing;
@@ -101,6 +99,31 @@ target_id.through = true;
         <arguments>
           <argument>
             <kind>1</kind>
+            <string>/// Manage deactivated objects
+if(!instance_exists(target_id))
+{
+    instance_activate_object(target_id);
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
             <string>/// Swing platform
 switch turn_direction
 {
@@ -108,16 +131,13 @@ case 1: // right
     if angle&lt;180 angle += 2; else
     if not alarm[0] alarm[0] = 120;
     break;
-
 case -1: // left
     angle = angle_wrap(angle-2);
     if (angle&lt;345) turn_direction = 0;
     break;
-
 default: // reset
     if (angle!=0) angle = angle_wrap(angle+2*sign(angle_distance(angle, 0)));
 }
-
 // apply angle
 x = xstart+floor(sine[angle]*72);
 y = ystart+floor(cosine[angle]*72);

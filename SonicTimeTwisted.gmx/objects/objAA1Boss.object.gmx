@@ -44,14 +44,11 @@ image_xscale = -1;
 image_speed = 0;
 remove = 2;
 life = 4;
-
 // states and flags
 state = 0;
 offset = 0;
 firing = false;
-
 reaction_script = player_reaction_aa1_boss;
-
 </string>
           </argument>
         </arguments>
@@ -103,17 +100,14 @@ reaction_script = player_reaction_aa1_boss;
           <argument>
             <kind>1</kind>
             <string>/// End routine
-
 // stop background auto-scrolling
 with objAA1BossFloorBack speed = 0;
-
 with objAA1BossController{
     // stop moving platforms
     plat[0].hspeed = 0;
     plat[0].remove = 2;
     plat[1].hspeed = 0;
     plat[1].remove = 2;
-
     // start moving camera
     state = 1;
 }
@@ -121,7 +115,6 @@ with objAA1BossController{
 hspeed = 6;
 vspeed = 3;
 state = 2;
-
 
 </string>
           </argument>
@@ -263,15 +256,13 @@ case 0: // just floating
     offset += 0.0625;
     image_index = 0;
     break;
-
 case 1: // laughing
     if !audio_is_playing(sndMetalLaugh) &amp;&amp; life &gt; 0
-        audio_play_sound(sndMetalLaugh,1,false);
+        play_sfx(sndMetalLaugh, 1);
     y = ystart+cos(offset)*4;
     offset += 0.25;
     image_index = 2;
     break;
-
 case 2: // almost done
     image_index = 0;
     if place_meeting(x, y, objSolid)
@@ -280,28 +271,22 @@ case 2: // almost done
         reaction_script = -1;
         remove = 2;
         state = 4;
-
         // movement
         gravity = 0.21875;
         hspeed = -4;
-
         // animate
         sprite_index = sprMetalCrash;
         image_index = 0;
         image_speed = 0.25;
-
         // audio
-        audio_play_sound(sndBossHit, 1, 0);
+        play_sfx(sndBossHit, 1);
     }
     break;
-
 case 3: // ending
-
     if (image_index==1) image_speed = 0;
     image_angle += 32;
     break;
 }
-
 if life&lt;=0 event_user(0);
 </string>
           </argument>
@@ -326,10 +311,8 @@ if life&lt;=0 event_user(0);
           <argument>
             <kind>1</kind>
             <string>/// Boss defeated
-
 // stop boss routine
 with objAA1BossController timeline_running = false;
-
 // only continue if we're not firing
 if state==0 /*and not (firing)*/
 {    
@@ -347,9 +330,7 @@ if state==0 /*and not (firing)*/
     vspeed = 3;
     state = 2;
     // start moving camera
-
 }
-
 
 </string>
           </argument>
@@ -375,20 +356,10 @@ if state==0 /*and not (firing)*/
             <kind>1</kind>
             <string>/// Draw Metal Sonic
 draw_set_color(c_white);
-if alarm[0] mod 2
-{
-    draw_set_blend_mode_ext(10, 1);
-    draw_rectangle(bbox_left, bbox_top, bbox_right, bbox_bottom, false);
-    draw_set_blend_mode(bm_normal);
-}
+draw_boss_hit_blend();
 draw_self();
 if firing draw_sprite(sprMetalFiring, (objScreen.image_index div 2) mod 2, x, y);
-if alarm[0] mod 2
-{
-    draw_set_blend_mode_ext(10, 1);
-    draw_rectangle(bbox_left, bbox_top, bbox_right, bbox_bottom, false);
-    draw_set_blend_mode(bm_normal);
-}
+draw_boss_hit_blend();
 </string>
           </argument>
         </arguments>

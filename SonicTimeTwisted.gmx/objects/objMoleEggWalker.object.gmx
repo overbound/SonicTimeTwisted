@@ -68,7 +68,6 @@ reaction_script=player_reaction_unharmful;
           <argument>
             <kind>1</kind>
             <string>with objEggWalkerBossController {
-
     state=1;
     objMusic.bossLoop=bgmBossLoop;
     play_boss_intro(bgmBossIntro,0);
@@ -148,7 +147,7 @@ image_xscale = 1;
 draw_bubble =false;
 alarm[2]=80;
 remove=0;
-audio_play_sound(sndMoleJump,2,false);
+play_sfx(sndMoleJump, 2);
 </string>
           </argument>
         </arguments>
@@ -173,7 +172,7 @@ audio_play_sound(sndMoleJump,2,false);
             <kind>1</kind>
             <string>draw_bubble = true;
 alarm[1]=100;
-audio_play_sound(sndMoleAltert,1,false);
+play_sfx(sndMoleAltert, 1);
 </string>
           </argument>
         </arguments>
@@ -198,11 +197,8 @@ audio_play_sound(sndMoleAltert,1,false);
             <kind>1</kind>
             <string>draw_self();
 
-
 if draw_bubble == true {
-
     draw_sprite(sprSignShock,0,x-24,y-32);
-
 }
 </string>
           </argument>

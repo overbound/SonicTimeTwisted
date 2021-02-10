@@ -1,5 +1,4 @@
 //player_reaction_start_dd1
-
 if objProgram.temp_xview_offset!=0 {
     xspeed=objProgram.temp_xspeed;
     yspeed=objProgram.temp_yspeed;
@@ -14,16 +13,13 @@ if objProgram.temp_xview_offset!=0 {
 }
 with objLevel started = true;
 with objTitlecard mode = 3;
-
 if !landed {
     xspeed = 0;
     yspeed-=.05;
 } else {
-
    // animate
     image_angle = 0;
     animation_new = "idle";
-
     // states and flags
     state = player_state_standby;
     jump_action = false;
@@ -34,21 +30,18 @@ if !landed {
     
     // movement and collision
     xspeed = 0;
-
     // setup titlecard
     with instance_create(0, 0, objTitlecard)
     {
-        title_string[0] = "Tidal";
-        title_string[1] = "Tubes";
-        title_string[2] = "Zone";
+        title_string[0] = tr("_zonename_TTZ_A");
+        title_string[1] = tr("_zonename_TTZ_B");
+        title_string[2] = tr("_zonename_TTZ_C");
         if objProgram.in_past {
-            title_string[3] = "ACT1 PAST";
-        } else title_string[3] = "ACT1 FUTURE";
+            title_string[3] = tr("_ACT1_PAST");
+        } else title_string[3] = tr("_ACT1_FUTURE");
         event_perform(ev_other, ev_room_start);
         mode = 1;
     }
-
     with argument0 instance_destroy();
 }
-
 

@@ -41,16 +41,13 @@
             <kind>1</kind>
             <string>/// Initialize
 var i;
-
 // properties
 spacing = 2;
 angle = 0;
 angle2 = 0;
 flip = false;
-
 // initialize
 for (i=0; i&lt;3; i+=1) {px[i] = floor(x); py[i] = floor(y);}
-
 // start timer
 alarm[0] = 1200;
 </string>
@@ -77,10 +74,8 @@ alarm[0] = 1200;
             <kind>1</kind>
             <string>/// Clear invincibility
 player_id.invincibility = noone;
-
 // reveal shield
 with player_id.shield visible = true;
-
 // clean up
 instance_destroy();
 </string>
@@ -121,10 +116,8 @@ instance_destroy();
             <kind>1</kind>
             <string>/// Update position
 var size, i, offset;
-
 if !instance_exists(player_id) { instance_destroy(); }
     size = ds_list_size(player_id.xtable);
-
 if size &gt; 0 {
     // adjust sparks
     
@@ -145,7 +138,6 @@ if size &gt; 0 {
     // animation
     flip = !flip;
 }
-
 </string>
           </argument>
         </arguments>
@@ -170,21 +162,17 @@ if size &gt; 0 {
             <kind>1</kind>
             <string>/// Draw invincibility sparks
 var c, s;
-
 // fourth circle
 c = cosine[angle2]*16;
 s = sine[angle2]*16;
 draw_sprite(sprMutekiSpark4, image_index, px[2]+c, py[2]-s);
 draw_sprite(sprMutekiSpark4, image_index+5, px[2]-c, py[2]+s);
-
 // third circle
 draw_sprite(sprMutekiSpark3, image_index, px[1]-s, py[1]-c);
 draw_sprite(sprMutekiSpark3, image_index+6, px[1]+s, py[1]+c);
-
 // second circle
 draw_sprite(sprMutekiSpark2, image_index, px[0]+c, py[0]-s);
 draw_sprite(sprMutekiSpark2, image_index+7, px[0]-c, py[0]+s);
-
 // first circle
 c = cosine[angle]*16;
 s = sine[angle]*16;

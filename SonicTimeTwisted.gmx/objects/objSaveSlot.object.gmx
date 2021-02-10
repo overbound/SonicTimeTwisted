@@ -28,6 +28,7 @@
             <string>/// initialize values
 iconIndex=0;
 slotNumber=-1;
+position=-1;
 lastPastLevel=0;
 lastFutureLevel=0;
 alarm[0]=1;
@@ -36,7 +37,6 @@ visiblePast=0;
 staticIndex=0;
 allowLevelStart=false;
 characterSelect=1;
-
 currentStone = 0;
 currentEmerald = 0;
 </string>
@@ -62,48 +62,45 @@ currentEmerald = 0;
           <argument>
             <kind>1</kind>
             <string>/// Choose Icon
-
-ini_open(save_file_name(slotNumber));
-futureLevels[0]=real(base64_decode(ini_read_string(LEVELS, aAA1_f, false)));
-futureLevels[1]=real(base64_decode(ini_read_string(LEVELS, aAA2_f, false)));
-futureLevels[2]=real(base64_decode(ini_read_string(LEVELS, aRR1_f, false)));
-futureLevels[3]=real(base64_decode(ini_read_string(LEVELS, aRR2_f, false)));
-futureLevels[4]=real(base64_decode(ini_read_string(LEVELS, aFF1_f, false)));
-futureLevels[5]=real(base64_decode(ini_read_string(LEVELS, aFF2_f, false)));
-futureLevels[6]=real(base64_decode(ini_read_string(LEVELS, aVV1_f, false)));
-futureLevels[7]=real(base64_decode(ini_read_string(LEVELS, aVV2_f, false)));
-futureLevels[8]=real(base64_decode(ini_read_string(LEVELS, aDD1_f, false)));
-futureLevels[9]=real(base64_decode(ini_read_string(LEVELS, aDD2_f, false)));
-futureLevels[10]=real(base64_decode(ini_read_string(LEVELS, aTT1_f, false)));
-futureLevels[11]=real(base64_decode(ini_read_string(LEVELS, aTT2_f, false)));
-futureLevels[12]=real(base64_decode(ini_read_string(LEVELS, aSS1, false)));
-futureLevels[13]=real(base64_decode(ini_read_string(LEVELS, aPP1, false)));
-futureLevels[14]=real(base64_decode(ini_read_string(LEVELS, aPP2, false)));
-futureLevels[15]=real(base64_decode(ini_read_string(LEVELS, aMM1, false)));
-
-pastLevels[0]=real(base64_decode(ini_read_string(LEVELS, aAA1_p, false)));
-pastLevels[1]=real(base64_decode(ini_read_string(LEVELS, aAA2_p, false)));
-pastLevels[2]=real(base64_decode(ini_read_string(LEVELS, aRR1_p, false)));
-pastLevels[3]=real(base64_decode(ini_read_string(LEVELS, aRR2_p, false)));
-pastLevels[4]=real(base64_decode(ini_read_string(LEVELS, aFF1_p, false)));
-pastLevels[5]=real(base64_decode(ini_read_string(LEVELS, aFF2_p, false)));
-pastLevels[6]=real(base64_decode(ini_read_string(LEVELS, aVV1_p, false)));
-pastLevels[7]=real(base64_decode(ini_read_string(LEVELS, aVV2_p, false)));
-pastLevels[8]=real(base64_decode(ini_read_string(LEVELS, aDD1_p, false)));
-pastLevels[9]=real(base64_decode(ini_read_string(LEVELS, aDD2_p, false)));
-pastLevels[10]=real(base64_decode(ini_read_string(LEVELS, aTT1_p, false)));
-pastLevels[11]=real(base64_decode(ini_read_string(LEVELS, aTT2_p, false)));
+var _b64false = base64_encode(string(false));
+stt_ini_open(save_file_name(slotNumber));
+futureLevels[0]=real(base64_decode(ini_read_string(LEVELS, aAA1_f, _b64false)));
+futureLevels[1]=real(base64_decode(ini_read_string(LEVELS, aAA2_f, _b64false)));
+futureLevels[2]=real(base64_decode(ini_read_string(LEVELS, aRR1_f, _b64false)));
+futureLevels[3]=real(base64_decode(ini_read_string(LEVELS, aRR2_f, _b64false)));
+futureLevels[4]=real(base64_decode(ini_read_string(LEVELS, aFF1_f, _b64false)));
+futureLevels[5]=real(base64_decode(ini_read_string(LEVELS, aFF2_f, _b64false)));
+futureLevels[6]=real(base64_decode(ini_read_string(LEVELS, aVV1_f, _b64false)));
+futureLevels[7]=real(base64_decode(ini_read_string(LEVELS, aVV2_f, _b64false)));
+futureLevels[8]=real(base64_decode(ini_read_string(LEVELS, aDD1_f, _b64false)));
+futureLevels[9]=real(base64_decode(ini_read_string(LEVELS, aDD2_f, _b64false)));
+futureLevels[10]=real(base64_decode(ini_read_string(LEVELS, aTT1_f, _b64false)));
+futureLevels[11]=real(base64_decode(ini_read_string(LEVELS, aTT2_f, _b64false)));
+futureLevels[12]=real(base64_decode(ini_read_string(LEVELS, aSS1, _b64false)));
+futureLevels[13]=real(base64_decode(ini_read_string(LEVELS, aPP1, _b64false)));
+futureLevels[14]=real(base64_decode(ini_read_string(LEVELS, aPP2, _b64false)));
+futureLevels[15]=real(base64_decode(ini_read_string(LEVELS, aMM1, _b64false)));
+pastLevels[0]=real(base64_decode(ini_read_string(LEVELS, aAA1_p, _b64false)));
+pastLevels[1]=real(base64_decode(ini_read_string(LEVELS, aAA2_p, _b64false)));
+pastLevels[2]=real(base64_decode(ini_read_string(LEVELS, aRR1_p, _b64false)));
+pastLevels[3]=real(base64_decode(ini_read_string(LEVELS, aRR2_p, _b64false)));
+pastLevels[4]=real(base64_decode(ini_read_string(LEVELS, aFF1_p, _b64false)));
+pastLevels[5]=real(base64_decode(ini_read_string(LEVELS, aFF2_p, _b64false)));
+pastLevels[6]=real(base64_decode(ini_read_string(LEVELS, aVV1_p, _b64false)));
+pastLevels[7]=real(base64_decode(ini_read_string(LEVELS, aVV2_p, _b64false)));
+pastLevels[8]=real(base64_decode(ini_read_string(LEVELS, aDD1_p, _b64false)));
+pastLevels[9]=real(base64_decode(ini_read_string(LEVELS, aDD2_p, _b64false)));
+pastLevels[10]=real(base64_decode(ini_read_string(LEVELS, aTT1_p, _b64false)));
+pastLevels[11]=real(base64_decode(ini_read_string(LEVELS, aTT2_p, _b64false)));
 pastLevels[12]=false;
 pastLevels[13]=false;
 pastLevels[14]=false;
 pastLevels[15]=false;
 characterSelect=real(base64_decode(ini_read_string(STATS, CHARACTER, base64_encode(string(1)))));
-currentStone = real(base64_decode(ini_read_string(EMERALDS, PAST,0)));
-currentEmerald = real(base64_decode(ini_read_string(EMERALDS, FUTURE,0)));
-ini_close();
-
+currentStone = real(base64_decode(ini_read_string(EMERALDS, PAST, _b64false)));
+currentEmerald = real(base64_decode(ini_read_string(EMERALDS, FUTURE, _b64false)));
+stt_ini_close();
 for(i=0; i &lt; 16; i++) {
-
     if pastLevels[i] == true {
         
         lastPastLevel=i;
@@ -115,17 +112,13 @@ for(i=0; i &lt; 16; i++) {
         lastFutureLevel=i;
     
     } 
-
 }
 show_debug_message("Last FUTURE" + string(lastFutureLevel));
-
 if lastPastLevel &gt; lastFutureLevel {
     iconIndex = lastPastLevel;
 }
 else iconIndex = lastFutureLevel;
-
 lastIndex = iconIndex;
-
 if pastLevels[iconIndex] == true {
      visiblePast=1;
  }
@@ -136,6 +129,50 @@ if pastLevels[iconIndex] == true {
      visibleFuture=1;
  }
  else if futureLevels[iconIndex] == false  visibleFuture = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="10">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Start game
+
+if (other.stageLeftRight == 1 &amp;&amp; visibleFuture == 1) or (other.stageLeftRight == 0 &amp;&amp; visiblePast == 1) {
+    if other.stageLeftRight == 0
+    objProgram.in_past = true;
+    else objProgram.in_past = false;
+
+    objGameData.character_id[0] = characterSelect;
+    objProgram.saveSlot=other.slots[other.selectCheck].slotNumber;
+    if(objProgram.saveSlot &lt; 0)
+    {
+        ds_map_clear(objProgram.no_save_data);
+    }
+    load_emeralds();
+    load_lives();
+    if iconIndex &gt; 0 {
+        level_goto_from_save(iconIndex + 1)
+    }
+    else {
+        level_goto_from_save(iconIndex)
+    }
+} 
 </string>
           </argument>
         </arguments>
@@ -160,18 +197,21 @@ if pastLevels[iconIndex] == true {
             <kind>1</kind>
             <string>
 draw_sprite_ext(sprite_index,0,x,y,image_xscale,image_yscale,0,c_white,1);
+draw_set_font(objResources.fontMicro);
+draw_set_halign(fa_center);
+draw_set_valign(fa_middle);
+draw_text_colour(x - 19, y - 19, tr("_save_Past"), c_white, c_white, c_white, c_white, 1);
+draw_text_colour(x + 18, y - 19, tr("_save_Future"), c_white, c_white, c_white, c_white, 1);
+draw_set_halign(fa_left);
+draw_set_valign(fa_top);
+
 draw_sprite_ext(sprStatic,floor(staticIndex),x,y-57,1,1,0,c_white,1);
 draw_sprite_ext(sprSaveIconsFuture,iconIndex,x,y-57,image_xscale,image_yscale,0,c_white,visibleFuture);
 draw_sprite_ext(sprSaveIconsPast,iconIndex,x,y-57,image_xscale,image_yscale,0,c_white,visiblePast);
-
 staticIndex+=.5;
-
 if staticIndex &gt;= 5 {
-
     staticIndex=0;
-
 }
-
 if characterSelect == 3 {
     draw_sprite_ext(sprKnucklesLevelEnd,8,x,y+46,1,1,0,c_white,1);
 } else if characterSelect == 2 {
@@ -179,7 +219,6 @@ if characterSelect == 3 {
 } else {
     draw_sprite_ext(sprSonicLevelEnd,1,x,y+44,1,1,0,c_white,1);
 }
-
 if currentStone &gt; 0 {
     draw_sprite_ext(sprSSStone,0,x-7,y+7,.35,.35,0,c_white,1);
 } else draw_sprite_ext(sprSSStone,0,x-7,y+7,.35,.35,0,c_black,.5);
@@ -201,7 +240,6 @@ if currentStone &gt; 5 {
 if currentStone &gt; 6 {
     draw_sprite_ext(sprSSStone,6,x-7,y+70,.35,.35,0,c_white,1);
 } else draw_sprite_ext(sprSSStone,6,x-7,y+70,.35,.35,0,c_black,.5);
-
 if currentEmerald &gt; 0 {
     draw_sprite_ext(sprSSEmerald,0,x+7,y+8,.3,.3,0,c_white,1);
 } else draw_sprite_ext(sprSSEmerald,0,x+7,y+8,.3,.3,0,c_black,.5);

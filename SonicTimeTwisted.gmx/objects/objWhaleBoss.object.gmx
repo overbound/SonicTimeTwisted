@@ -53,7 +53,6 @@ with fin { parentId = other; }
 smalljumpoffset=0;
 draw_direction=direction;
 explosionLoop=0;
-
 </string>
           </argument>
         </arguments>
@@ -81,8 +80,6 @@ var yran =random(60)-20;
 instance_create(x+xran+40,y+yran,objExplosionCluster);
 gravity=.25;
 
-
-
 </string>
           </argument>
         </arguments>
@@ -108,19 +105,15 @@ gravity=.25;
             <string>var xran =random(200)-100;
 var yran =random(60)-20;
 instance_create(x+xran+40,y+yran,objExplosionCluster);
-
 if explosionLoop == 1 or explosionLoop == 8 or explosionLoop == 16 or explosionLoop == 24
-    audio_play_sound(sndBombExplosion,1,false);
-
+    play_sfx(sndBombExplosion,1);
 if explosionLoop &gt; 24 {
     alarm[2]=4;
 } else {
     alarm[0]=5;
     explosionLoop++;
 }
-
 if explosionLoop== 8 {
-
     gravity=.25;
     
     with jaw {
@@ -132,7 +125,6 @@ if explosionLoop== 8 {
     
     }
 }
-
 </string>
           </argument>
         </arguments>
@@ -184,26 +176,20 @@ alarm[1]=4;
             <string>/// track jaw/fin
 if !instance_exists(jaw) exit;
 if !instance_exists(fin) exit;
-
 if jaw.life &gt; 0 {
     jaw.x=x;
     jaw.y=y;
     jaw.image_angle=floor(direction);
 }
-
 if instance_exists(objWhaleFin) {
     fin.x=x;
     fin.y=y;
     fin.image_angle=floor(direction);
     fin.image_xscale=image_xscale;
-
 if sprite_index == sprWhaleBossJump {
-
  fin.sprite_index = sprWhaleBossFinJump;
-
 }
 }
-
 </string>
           </argument>
         </arguments>
@@ -231,11 +217,8 @@ if sprite_index == sprWhaleBossJump {
         exit;
     }
 
-
 switch state {
-
 case 0: // Stop
-
     with objLevel.player[0] {
     
         if x+other.jumpoffset &gt; other.x &amp;&amp; x &lt; other.x {
@@ -244,38 +227,29 @@ case 0: // Stop
         
         }
     }
-
 break;
-
 case 1: // Jump start left
-
     remove=0;
     direction = 278; // 278
     speed = -6.5;
     sprite_index = sprWhaleBossJump;
     jaw.sprite_index=sprWhaleBossJaw;
     state = 2;
-    audio_play_sound(sndWaterBumper,1,false);
+    play_sfx(sndWaterBumper,1);
     with objLevel.player[0] {
         other.x = objTTBossController.x + 500; //500
         other.y = objTTBossController.y + 340; //320
     }
-
 break;
-
 case 2: // Jump Left
-
     direction +=.75;
-
     if y &gt; objTTBossController.y + sprite_height+256{
     
         state = 3;
     
     }
 break;
-
 case 3: // Start Move Right
-
     x = objTTBossController.x - 500;
     y = objTTBossController.y + 94;
     state = 4;
@@ -283,12 +257,9 @@ case 3: // Start Move Right
     direction=0;
     sprite_index = sprWhaleBoss;
     image_xscale = -1;
-    audio_play_sound(sndWaterBumper,1,false);
-
+    play_sfx(sndWaterBumper,1);
 break;
-
 case 4: // Move Right
-
     x+=8;
     
     if x &gt; objTTBossController.x + 500 {
@@ -296,11 +267,8 @@ case 4: // Move Right
         state = 5;
     
     }
-
 break;
-
 case 5: // Start Move Left
-
     x = objTTBossController.x + 500;
     y = objTTBossController.y + 94;
     state = 6;
@@ -308,12 +276,9 @@ case 5: // Start Move Left
     direction=0;
     sprite_index = sprWhaleBoss;
     image_xscale = 1;
-    audio_play_sound(sndWaterBumper,1,false);
-
+    play_sfx(sndWaterBumper,1);
 break;
-
 case 6: // Move Left
-
     x-=8;
     
     if x &lt; objTTBossController.x - 500 {
@@ -321,89 +286,70 @@ case 6: // Move Left
         state = 7;
         instance_create(view_xview+view_wview*.5,view_yview+view_hview*.5+16,objWhaleBossTowardsCam);
     }
-
 break;
-
 case 7:
     // Do nothing wait for head on attack to end...
 break;
-
 case 8: // Jump start Left
-
     direction = 278; // 278
     speed = -6.5;
     sprite_index = sprWhaleBossJump;
     state = 9;
     image_xscale = 1;
     image_yscale = 1;
-    audio_play_sound(sndWaterBumper,1,false);
+    play_sfx(sndWaterBumper,1);
     with objLevel.player[0] {
     other.x = objTTBossController.x + 380; //500
     other.y = objTTBossController.y + 320; //340
     }
-
 break;
-
 case 9: // Jump Left
-
     direction +=1;
-
     if y &gt; objTTBossController.y + sprite_height+256{
     
         state = 10;
     
     }
 break;
-
 case 10: // Jump start Right
-
     direction = 262; // 278
     speed = -6.5;
     sprite_index = sprWhaleBossJumpInvert;
     state = 11;
     image_xscale = 1;
     image_yscale = 1;
-    audio_play_sound(sndWaterBumper,1,false);
+    play_sfx(sndWaterBumper,1);
     jaw.sprite_index=sprWhaleBossJawInvert
     with objLevel.player[0] {
     other.x = objTTBossController.x - 380; //500
     other.y = objTTBossController.y + 320; //340
     }
-
 break;
-
 case 11: // Jump Right
-
     direction -=1;
-
     if y &gt; objTTBossController.y + sprite_height+256{
     
         state = 1;
     
     }
 break;
-
 case 12:
-
     if y &gt; 1164{
     
     gravity=0;
     speed=0;
     if !audio_is_playing(sndSplash)
-        audio_play_sound(sndSplash,4,0);
+        play_sfx(sndSplash,4);
     with objLevel.player[0].camera right=10368;
     state=13;
     
 }
  //  with objLevel { stop_level_music() }
-
 break;
-
 case 13:
     gravity=0;
     
 break;
-
 }
 </string>
           </argument>
@@ -427,7 +373,6 @@ break;
             <kind>1</kind>
             <string>/// check if should destroy
 if jaw.life &lt;= 0 &amp;&amp; state &lt;12 {
-
     with jaw reaction_script=noone;
     with fin instance_destroy();
     alarm[1]=10;
@@ -438,7 +383,6 @@ if jaw.life &lt;= 0 &amp;&amp; state &lt;12 {
     } else sprite_index=sprWhaleBossDamage;
     
     stop_all_music(false);
-
 } else if state &lt;12 draw_direction=direction;
 </string>
           </argument>

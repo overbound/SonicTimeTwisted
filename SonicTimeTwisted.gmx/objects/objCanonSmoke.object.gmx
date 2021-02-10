@@ -43,7 +43,6 @@
 image_speed=.25;
 image_alpha=.5;
 remove=2;
-
 </string>
           </argument>
         </arguments>
@@ -70,7 +69,6 @@ remove=2;
 vspeed -=.025;
 image_xscale +=.025;
 image_yscale +=.025;
-
 if image_index == 5 {
     instance_destroy();
     }

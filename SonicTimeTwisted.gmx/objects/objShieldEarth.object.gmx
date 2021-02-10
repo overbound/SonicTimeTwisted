@@ -45,10 +45,8 @@ left.shield = id;
 right = instance_create(x, y, objShieldEarth_Rock);
 right.image_index = 1;
 right.shield = id;
-
 rock_alternate = 1;
 rock_direction = 0;
-
 left_x = 0;
 left_y = 0;
 left.x = x;
@@ -175,7 +173,6 @@ if (objProgram.paused)
 {
     exit;
 }
-
 if (!instance_exists(left))
 {
     left = instance_create(x, y, objShieldEarth_Rock);
@@ -188,7 +185,6 @@ if (!instance_exists(right))
     right.image_index = 1;
     right.shield = id;
 }
-
 if (left.shot == false)
 {
     left_x = left_x + (lengthdir_x(28, rock_direction) - left_x) * 0.5;
@@ -209,7 +205,6 @@ if (right.broken)
     right.x = (right.x + (right_x - right.x) * 0.1 );
     right.y = (right.y + (right_y - right.y) * 0.1 );
 }
-
 if (instance_exists(left))
 {
     if (left.shot == false)
@@ -228,7 +223,6 @@ if (instance_exists(right))
         right.depth = 1 * sign(right_y);
     }
 }
-
 rock_direction -= 4;
 while (rock_direction &gt;= 360)
 {

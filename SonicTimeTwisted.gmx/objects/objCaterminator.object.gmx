@@ -342,7 +342,6 @@ if waiting {waiting -= 1; if not waiting image_speed = 0;}
           <argument>
             <kind>1</kind>
             <string>/// Enemy behavior
-
 // move towards closest player
 if not (moving or waiting)
 {
@@ -353,9 +352,8 @@ else if moving
 {
     // delay body movement
     delay = (delay+1) mod 5;
-    if (delay==0) repeat (5) with instance_create(x, y, objCaterminatorOrb) {parent_id = other.id; timer = other.delay_offset; audio_play_sound(sndCaterminatorExtend,4,0);}
+    if (delay==0) repeat (5) with instance_create(x, y, objCaterminatorOrb) {parent_id = other.id; timer = other.delay_offset; play_sfx(sndCaterminatorExtend,4);}
 }
-
 // facing
 if hspeed&lt;0 image_xscale = -1;
 if hspeed&gt;0 image_xscale = 1;
@@ -385,7 +383,6 @@ if hspeed&gt;0 image_xscale = 1;
 alarm[0] = 180;
 speed = 0;
 frozen = true;
-
 // destroy icicle
 with other instance_destroy();
 </string>
@@ -453,10 +450,8 @@ with other instance_destroy();
           <argument>
             <kind>1</kind>
             <string>/// Render ice block
-
 // get offset from time
 var offset = (-1+(((90-alarm[0]) div 4) mod 2)*2)*(alarm[0]&lt;45);
-
 // draw ice block
 draw_sprite(sprShieldIceBlock, 0, x+offset, y);
 </string>

@@ -65,11 +65,8 @@ remove=0;
             <kind>1</kind>
             <string>//check if platform is out of view (or should be)
 if poll_id.bbox_bottom +64 &lt; y {
-
     instance_destroy();
-
 }
-
 
 y+=2;
 </string>

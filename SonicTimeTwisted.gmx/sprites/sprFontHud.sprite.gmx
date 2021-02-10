@@ -15,6 +15,14 @@
   <VTile>0</VTile>
   <TextureGroups>
     <TextureGroup0>0</TextureGroup0>
+    <TextureGroup1>0</TextureGroup1>
+    <TextureGroup2>0</TextureGroup2>
+    <TextureGroup3>0</TextureGroup3>
+    <TextureGroup4>0</TextureGroup4>
+    <TextureGroup5>0</TextureGroup5>
+    <TextureGroup6>0</TextureGroup6>
+    <TextureGroup7>0</TextureGroup7>
+    <TextureGroup8>0</TextureGroup8>
   </TextureGroups>
   <For3D>0</For3D>
   <width>9</width>
@@ -109,5 +117,11 @@
     <frame index="86">images\sprFontHud_86.png</frame>
     <frame index="87">images\sprFontHud_87.png</frame>
     <frame index="88">images\sprFontHud_88.png</frame>
+    <frame index="89">images\sprFontHud_89.png</frame>
+    <frame index="90">images\sprFontHud_90.png</frame>
+    <frame index="91">images\sprFontHud_91.png</frame>
+    <frame index="92">images\sprFontHud_92.png</frame>
+    <frame index="93">images\sprFontHud_93.png</frame>
+    <frame index="94">images\sprFontHud_94.png</frame>
   </frames>
 </sprite>

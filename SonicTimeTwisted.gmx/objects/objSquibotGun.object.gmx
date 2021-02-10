@@ -41,7 +41,6 @@
             <kind>1</kind>
             <string>state = -1;
 
-
 </string>
           </argument>
         </arguments>
@@ -90,14 +89,12 @@ instance_create(x,y,objExplosionGroup)
             <kind>1</kind>
             <string>
 with laser {
-
 state = 0;
 x=gunId.x+xoffset;
 y=gunId.y+yoffset;
 image_xscale=1;
 visible = false;
 speed=0;
-
 }
 alarm[0]=180;
 </string>
@@ -124,7 +121,7 @@ alarm[0]=180;
             <kind>1</kind>
             <string>with laser {
     state=1;
-    audio_play_sound(sndLaserShot,4,0);
+    play_sfx(sndLaserShot,4);
      
     x=gunId.x+xoffset;
     y=gunId.y+yoffset;
@@ -133,7 +130,6 @@ alarm[0]=180;
         y+=image_angle/12;
     } else
         y+=angle_wrap(image_angle+180)/12;
-
 }
 alarm[1]=15;
 </string>
@@ -159,7 +155,6 @@ alarm[1]=15;
           <argument>
             <kind>1</kind>
             <string>/// Initialized
-
 if state == -1 {
 state = 0;
 if parentId.image_xscale == 1    
@@ -270,11 +265,8 @@ else
           <argument>
             <kind>1</kind>
             <string>/// Points Left
-
 with objPlayer { 
-
-    var testDir = point_direction(other.parentId.x, other.parentId.y-64, x, y);
-
+    var testDir = point_direction(other.x + other.laser.xoffset, other.y + other.laser.yoffset, x, y);
     if testDir &lt; 310 &amp;&amp; testDir  &gt; 150
         other.angleCanon = testDir; 
         else other.angleCanon = 180;
@@ -292,9 +284,7 @@ if alarm[0] &gt; 30 || alarm[0] == -1 {
             image_angle -=1;
          
          } else image_angle = angleCanon;
-
 }
-
         laserAngle=image_angle;
         
         with cover {
@@ -305,9 +295,7 @@ if alarm[0] &gt; 30 || alarm[0] == -1 {
                 
             }
         
-
     
-
 </string>
           </argument>
         </arguments>
@@ -371,19 +359,14 @@ if alarm[0] &gt; 30 || alarm[0] == -1 {
           <argument>
             <kind>1</kind>
             <string>/// Points Right
-
 with objPlayer { 
-
-    var testDir = angle_wrap(point_direction(other.parentId.x, other.parentId.y-64,x,y));
-
+    var testDir = point_direction(other.x + other.laser.xoffset, other.y + other.laser.yoffset, x, y);
     if testDir &gt; 230 || testDir &lt; 30
         other.angleCanon = testDir; 
         else other.angleCanon = 0;
     
 }
-
 image_angle = angle_wrap(image_angle);
-
 if alarm[0] &gt; 30 || alarm[0] == -1 {
     
          if angleCanon &gt; image_angle &amp;&amp; angleCanon &lt; 30 {
@@ -405,7 +388,6 @@ if alarm[0] &gt; 30 || alarm[0] == -1 {
          }
          else image_angle = angleCanon;
 
-
 } 
         laserAngle=image_angle;
         
@@ -417,9 +399,7 @@ if alarm[0] &gt; 30 || alarm[0] == -1 {
                 
             }
         
-
     
-
 </string>
           </argument>
         </arguments>
@@ -458,21 +438,10 @@ if alarm[0] &gt; 30 || alarm[0] == -1 {
             <kind>1</kind>
             <string>/// Draw flash
 draw_set_color(c_white);
-
 if alarm[0] &lt; 45 {
-    if alarm[0] mod 2
-    {
-        draw_set_blend_mode_ext(10, 1);
-        draw_rectangle(bbox_left, bbox_top, bbox_right, bbox_bottom, false);
-        draw_set_blend_mode(bm_normal);
-    }
+    draw_boss_hit_blend();
     draw_self();
-    if alarm[0] mod 2
-    {
-        draw_set_blend_mode_ext(10, 1);
-        draw_rectangle(bbox_left, bbox_top, bbox_right, bbox_bottom, false);
-        draw_set_blend_mode(bm_normal);
-    }
+    draw_boss_hit_blend();
 } else draw_self();
 
 </string>

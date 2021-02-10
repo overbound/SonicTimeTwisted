@@ -41,7 +41,6 @@
             <kind>1</kind>
             <string>remove=2;
 image_speed=0;
-
 gravity_direction=270;
 gavity=.25;
 speed=6;

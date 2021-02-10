@@ -11,24 +11,10 @@
     <event eventtype="0" enumb="0">
       <action>
         <libid>1</libid>
-        <id>604</id>
-        <kind>0</kind>
+        <id>603</id>
+        <kind>7</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_inherited</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>611</id>
-        <kind>6</kind>
-        <userelative>-1</userelative>
-        <isquestion>0</isquestion>
         <useapplyto>-1</useapplyto>
         <exetype>2</exetype>
         <functionname></functionname>
@@ -39,134 +25,25 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>0.04167</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>611</id>
-        <kind>6</kind>
-        <userelative>-1</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>image_alpha</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>0</string>
+            <string>/// Initialize
+event_inherited();
+image_speed = 0.04167;
+image_alpha = 0;
+mode = 1;
+objLevel.cleared = true;
+alarm[0] = 27;
+play_sfx(bgmGameOver, 0);
+
+word1 = tr('_GAMEOVER_WORD1');
+word2 = tr('_GAMEOVER_WORD2');
+x_center = view_wview[view_current]/2 + 8 * (string_length(word1) - string_length(word2));
+
+</string>
           </argument>
         </arguments>
       </action>
-      <action>
-        <libid>1</libid>
-        <id>611</id>
-        <kind>6</kind>
-        <userelative>-1</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>mode</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>1</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>611</id>
-        <kind>6</kind>
-        <userelative>-1</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>objLevel.cleared</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>true</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>301</id>
-        <kind>0</kind>
-        <userelative>-1</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_set_alarm</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>0</kind>
-            <string>26</string>
-          </argument>
-          <argument>
-            <kind>4</kind>
-            <string>0</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>211</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_sound</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>6</kind>
-            <sound>bgmGameOver</sound>
-          </argument>
-          <argument>
-            <kind>3</kind>
-            <string>0</string>
-          </argument>
-        </arguments>
-      </action>
+    </event>
+    <event eventtype="1" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -183,35 +60,19 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///stop_level_music();
-//audio_play_sound(bgmGameOver,0,false);
+            <string>///Restart the game
+game_restart();
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="1" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>331</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_restart_game</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-      </action>
-    </event>
     <event eventtype="2" enumb="1">
       <action>
         <libid>1</libid>
-        <id>611</id>
-        <kind>6</kind>
-        <userelative>-1</userelative>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
         <isquestion>0</isquestion>
         <useapplyto>-1</useapplyto>
         <exetype>2</exetype>
@@ -223,11 +84,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>mode</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>-1</string>
+            <string>mode = -1;
+</string>
           </argument>
         </arguments>
       </action>
@@ -235,25 +93,22 @@
     <event eventtype="2" enumb="0">
       <action>
         <libid>1</libid>
-        <id>301</id>
-        <kind>0</kind>
-        <userelative>-1</userelative>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
         <isquestion>0</isquestion>
         <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_set_alarm</functionname>
+        <exetype>2</exetype>
+        <functionname></functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
-            <kind>0</kind>
-            <string>660</string>
-          </argument>
-          <argument>
-            <kind>4</kind>
-            <string>1</string>
+            <kind>1</kind>
+            <string>alarm[1] = 659;
+</string>
           </argument>
         </arguments>
       </action>
@@ -281,10 +136,10 @@ switch mode
 case 1: // fade out
     if not alarm[0] and alarm[1] and input_check_pressed(cSTART) mode = -1;
     break;
-
 case -1: // fade in
     if image_alpha&gt;=1 {
         save_lives(3);
+        stt_save_files();
         instance_destroy(); 
         break;
     }
@@ -314,9 +169,17 @@ case -1: // fade in
           <argument>
             <kind>1</kind>
             <string>/// Draw "GAME OVER"
-draw_sprite(sprGameOver, 0, view_xview[view_current]+(view_wview[view_current]/2)-40-max(alarm[0]*16, 0), view_yview[view_current]+view_hview[view_current]/2)
-draw_sprite(sprGameOver, 1, view_xview[view_current]+(view_wview[view_current]/2)+40+max(alarm[0]*16, 0), view_yview[view_current]+view_hview[view_current]/2)
-
+draw_set_font(objResources.fontTitleSmallest);
+// draw the first word
+draw_set_valign(fa_middle);
+draw_set_halign(fa_right);
+draw_text_color(view_xview[view_current]+x_center-8-max(alarm[0]*16, 0), view_yview[view_current]+view_hview[view_current]/2, word1, c_ltgray, c_ltgray, c_white, c_white, 1);
+// draw the second row
+draw_set_halign(fa_left);
+draw_text_color(view_xview[view_current]+x_center+8+max(alarm[0]*16, 0), view_yview[view_current]+view_hview[view_current]/2, word2, c_ltgray, c_ltgray, c_white, c_white, 1);
+draw_set_halign(fa_left);
+draw_set_valign(fa_top);
+draw_set_font(objResources.fontHud);
 // fill screen with black
 draw_set_color(c_black);
 draw_set_alpha(image_alpha);

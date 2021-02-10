@@ -533,7 +533,7 @@
           <argument>
             <kind>1</kind>
             <string>image_index = 4;
-audio_play_sound(sndSealBombLaunch, 2, 0);
+play_sfx(sndSealBombLaunch, 2);
 </string>
           </argument>
         </arguments>
@@ -694,7 +694,7 @@ instance_create(x,y,objSmallBomb);
           <argument>
             <kind>1</kind>
             <string>image_index = 4;
-audio_play_sound(sndSealBombLaunch, 2, 0);
+play_sfx(sndSealBombLaunch, 2);
 </string>
           </argument>
         </arguments>

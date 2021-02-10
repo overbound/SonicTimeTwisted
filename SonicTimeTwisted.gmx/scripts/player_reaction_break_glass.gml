@@ -1,8 +1,7 @@
 //player_reaction_break_glass(local_id)
-
 if argument0.image_index == 0 {
     with argument0 {  
-            audio_play_sound(sndBreakGlass,1,0);
+            play_sfx(sndBreakGlass,1);
             image_index = 1;
     }
     with instance_create(argument0.x,argument0.y,objGlassBreak) {
@@ -23,4 +22,6 @@ if argument0.image_index == 0 {
             image_xscale = -1;
          speed = abs(other.xspeed);
     }
+    // rumble
+    rumble(rumble_short_mid);
 }

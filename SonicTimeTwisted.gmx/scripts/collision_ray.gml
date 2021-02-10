@@ -1,11 +1,18 @@
-// collision_ray(ox, oy, rotation, index)
-var x1, y1, x2, y2;
+/// collision_ray(ox, oy, rotation, obj)
+var ox = argument0;
+var oy = argument1;
+var rotation = argument2;
+var obj = argument3;
 
-// setup collision rect
-x1 = floor(x)-(cosine[argument2]*argument0)+(sine[argument2]*argument1);
-y1 = floor(y)+(sine[argument2]*argument0)+(cosine[argument2]*argument1);
-x2 = floor(x)+(cosine[argument2]*argument0)+(sine[argument2]*argument1);
-y2 = floor(y)-(sine[argument2]*argument0)+(cosine[argument2]*argument1);
+var x_int = floor(x);
+var y_int = floor(y);
 
-// return collision
-return collision_line(x1, y1, x2, y2, argument3, true, true);
+var s = sine[rotation];
+var c = cosine[rotation];
+
+var x1 = x_int - (c * ox) + (s * oy);
+var y1 = y_int + (s * ox) + (c * oy);
+var x2 = x_int + (c * ox) + (s * oy);
+var y2 = y_int - (s * ox) + (c * oy);
+
+return collision_line(x1, y1, x2, y2, obj, true, true);

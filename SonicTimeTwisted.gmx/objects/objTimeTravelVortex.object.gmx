@@ -26,50 +26,20 @@
           <argument>
             <kind>1</kind>
             <string>/// Setup Shader
-/*
-TIME TRAVEL EFFECT
-This effect is achieved by drawing an animation (in this case, a scaled sprite) to a surface.
-This results in a white on transparent image on the surface. When the surface is drawn with the TimeTravelShader applied,
-the white pixels will be replaced with a texture that makes it look like the SCD time travel effect.
-*/
-
-// send some information to the shader; the shader has to be set for this to work
-// (I don't know if this can be screwed up by using other shaders; if so, this info might have to be sent in the draw event...)
-shader_set(TimeTravelShader);
-// send: the scaling of the sparkly SCD texture so it will repeat enough times to not be stretched
-shader_set_uniform_f(shader_get_uniform(TimeTravelShader, "scl"), 426 / background_get_width(tt_texture), 240 / background_get_height(tt_texture));
-// send: the texture index of the sparkly SCD texture
-texture_set_stage(shader_get_sampler_index(TimeTravelShader, "mask"), background_get_texture(tt_texture));
-// send: the texture index of the the gradient used to cycle the colours
-texture_set_stage(shader_get_sampler_index(TimeTravelShader, "grad"), background_get_texture(tt_gradient));
-shader_reset();
-
-// create a surface the size of the screen to draw the effect on
-tt_surface = surface_create(426, 240);
+timetravel_shader_init(426, 240);
 
 // I've included two types of "zipper animation" - see step event
 type = false;
 // the image index of the animated sprite that will be drawn to the texture
 image_index = 0;
 image_speed = 0;
-
-// the amount to shift the gradient to cycle the colours; starts at 0
-// it's also used to slide the texture horizontally to give it some motion, but you could use a 2nd value
-// if the speeds need to be tweaked
-shift = 0;
-
-// the parameter handle to be used to send the shift amount to the shader later in the draw event
-param_shift = shader_get_uniform(TimeTravelShader, "shift");
-
 image_xscale=0;
 image_yscale=0;
 spr=sprite_index;
 xoffset=0;
 truex=x;
 truey=y;
-
-audio_play_sound(sndMetalAttack,10,false);
-
+play_sfx(sndMetalAttack,10);
 
 </string>
           </argument>
@@ -93,8 +63,39 @@ audio_play_sound(sndMetalAttack,10,false);
         <arguments>
           <argument>
             <kind>1</kind>
+            <string>// increase the shift amount; this will cycle the colours
+shift += 0.01;
+if image_xscale &lt; 1 {
+    image_xscale+=0.0208;
+    image_yscale+=0.0208;
+   truex-=2.5;
+   // truey-=5;
+}
+y=truey;
+x=truex;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
             <string>/// Render Background Elements
-
 draw_sprite(sprTitleFog,0,304,1960);
 </string>
           </argument>
@@ -120,65 +121,18 @@ draw_sprite(sprTitleFog,0,304,1960);
 if not surface_exists(tt_surface) tt_surface = surface_create(426, 240);
 surface_set_target(tt_surface);
 // clear the surface
-draw_clear_alpha(0, 0);
+draw_clear_alpha(c_black, 0);
 // draw the sprite mirrored on the y axis to create the zipper shape
 //draw_sprite_ext(spr, floor(image_index), xoffset, 0, 1, 1, 0, c_white, 1);
 draw_sprite_ext(spr, floor(image_index), 0, 1, 1, 1, 0, c_white, 1);
 // reset the drawing target to the screen
 surface_reset_target();
 
-// increase the shift amount; this will cycle the colours
-shift += 0.01;
-
-if image_xscale &lt; 1 {
-    image_xscale+=0.0208;
-    image_yscale+=0.0208;
-   truex-=2.5;
-   // truey-=5;
-}
-
-y=truey;
-x=truex;
-
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="8" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>// draw a dummy background for the effect to cover
-//draw_background_ext(zonebkg, 0, 0, 2, 2, 0, c_white, 1);
-// turn on the time travel effect shader
-// refresh surface
-//surface_set_target(tt_surface);
-shader_set(TimeTravelShader);
-// send the shift amount (for colour cycling) to the shader
-shader_set_uniform_f(param_shift, shift);
-// draw the surface with the zipper animation on it
-draw_surface_ext(tt_surface, x, y, image_xscale, image_yscale, 0, c_white, 1);
-// turn off the shader
-shader_reset();
+timetravel_shader_draw(426, 240, x, y);
 
 // draw the surface again below, without the shader
 // so you can see the untextured animation
-draw_surface(tt_surface, 0,512);
+if (surface_exists(tt_surface)) draw_surface(tt_surface, 0,512);
 </string>
           </argument>
         </arguments>

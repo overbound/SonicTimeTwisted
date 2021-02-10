@@ -37,7 +37,6 @@ threeDee = true;
 d3d_start();
 d3d_set_culling(1)
 d3d_set_hidden(1)
-
 draw_set_alpha_test(true);
 draw_set_alpha_test_ref_value(10);
 /*
@@ -50,14 +49,11 @@ distance = 192;
 fov = 60;
 zf = 60;
 zt = 60;
-
 xto = 0;
 yto = 0;
 zto = 0;
-
 dir1 = 0;
 dir2 = 0
-
 bgxrepeat = 4;
 </string>
           </argument>
@@ -81,7 +77,7 @@ bgxrepeat = 4;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
+            <string>/// Update direction
 if instance_exists(objSSPlayer) {
     x = objSSPlayer.x - cos(degtorad(objSSPlayer.move_direction)) * distance;
     y = objSSPlayer.y + sin(degtorad(objSSPlayer.move_direction)) * distance;
@@ -91,9 +87,58 @@ if instance_exists(objSSPlayer) {
     yto = objSSPlayer.y;
     zto = objSSPlayer.z + zt;
 }
-
 dir1 = point_direction(xto, yto, x, y) - 90;
 dir2 = d3d_point_direction(xto, yto, -zto, x, y, -z);
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Update visible objects
+var d = point_direction(x, y, xto, yto);
+var left_bound = d - 45;
+if(left_bound &lt; 0)
+{
+    left_bound = left_bound + 360;   
+}
+var right_bound = (d + 45) mod 360;
+if(left_bound &gt; right_bound)
+{
+    with(objSSParent)
+    {
+        if (object_index != objSSPlayer &amp;&amp; object_index != objSSMetalSonic &amp;&amp; object_index != objSSEnd)
+        {
+            var objAngle = point_direction(other.x, other.y, x, y);
+            visible = objAngle &lt; right_bound || objAngle &gt; left_bound;
+        }
+    }
+}
+else
+{
+    with(objSSParent)
+    {
+        if (object_index != objSSPlayer &amp;&amp; object_index != objSSMetalSonic &amp;&amp; object_index != objSSEnd)
+        {
+            var objAngle = point_direction(other.x, other.y, x, y);
+            visible = objAngle &gt; left_bound &amp;&amp; objAngle &lt; right_bound;
+        }
+    }
+}
 
 </string>
           </argument>
@@ -118,11 +163,9 @@ dir2 = d3d_point_direction(xto, yto, -zto, x, y, -z);
           <argument>
             <kind>1</kind>
             <string>d3d_set_projection_ortho(0, 0, 426, 240, 0);
-
 /*d3d_set_hidden(false);
 draw_rectangle_color(0, 0, 320, 120, c_black, c_black, c_navy, c_navy, false);
 d3d_set_hidden(true);*/
-
 d3d_set_projection_ext(x, y, z, xto, yto, zto, 0, 0, 1, fov, view_wport / view_hport, 1, 24000);
 draw_set_color(c_white);
 d3d_draw_cylinder(x - 2000, y + 2000, 1600, x + 2000, y - 2000, -1000, background_get_texture(background), bgxrepeat, 1, false, 16);

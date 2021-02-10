@@ -1,1 +1,0 @@
-objProgram.cutscene = true;

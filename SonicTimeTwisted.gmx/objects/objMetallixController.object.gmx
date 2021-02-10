@@ -46,7 +46,6 @@ image_alpha=0;
 flashOffset=0;
 playIntroLaser=true;
 
-
 </string>
           </argument>
         </arguments>
@@ -73,12 +72,10 @@ playIntroLaser=true;
    reaction = player_reaction_harmful;
    reaction_script = reaction;
 }
-
 platform[0]=instance_create(x,y+100,objMetallixPlatform);
 platform[1]=instance_create(x,y+16,objMetallixPlatform);
 with platform[0] { state = 1;}
 with platform[1] { state = 2;}
-
 if objGameData.character_id[0] == 3 {
     platform[2]=instance_create(x,y+48,objMetallixPlatform);        
     with platform[2] { state = 3; }
@@ -134,10 +131,9 @@ instance_create(view_xview[view_current]+430,view_yview[view_current]+10+random(
             <kind>1</kind>
             <string>/// State machine
 switch state {
-
 case 0:
 if playIntroLaser == true {
-    audio_play_sound(sndEggWalkerCharge,1,false);
+    play_sfx(sndEggWalkerCharge, 1);
     playIntroLaser = false;
 }
 with objMetallix {
@@ -154,14 +150,11 @@ with objMetallix {
         }*/
         
 break;
-
 case 1:
     
-
     state=2;
     
 break;
-
 case 2:
     
     if objMetallix.head.life &lt; 5  {
@@ -175,16 +168,16 @@ case 2:
         state =3;
     }
 break;
-
 case 3:
-
 break;
-
 case 4:
     var fadeSpeed=.0125;
     flashOffset+=16;
     if (image_alpha&lt;1.5) {
         image_alpha += fadeSpeed;
+        if(!objProgram.in_past) {
+            screen_shake();
+        }
     } else {
         if !objProgram.in_past {
             state=5;
@@ -201,14 +194,12 @@ case 4:
         with objMetallix visible = false;
     }
 break;
-
 case 6:
     var fadeSpeed=.025;
     if (image_alpha&gt;0) {
         image_alpha -= fadeSpeed;
     } else state = 7;
 break;
-
 }
 </string>
           </argument>
@@ -231,7 +222,6 @@ break;
           <argument>
             <kind>1</kind>
             <string>/// Move Camera
-
 if instance_exists(objLevel.player[0]) &amp;&amp; state &lt; 6 {
     with objLevel.player[0] {
     
@@ -271,7 +261,6 @@ draw_set_alpha(image_alpha);
 draw_circle(objMetallix.x,objMetallix.y,flashOffset,false);
 draw_set_color(c_white);
 draw_set_alpha(1);
-
 
 </string>
           </argument>

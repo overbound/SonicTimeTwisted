@@ -41,9 +41,7 @@
             <kind>1</kind>
             <string>/// Initialize
 //hspeed = -4;
-
 alarm[2]=45;
-
 image_speed = 0;
 image_index =3;
 reaction_script = player_reaction_enemy;
@@ -74,7 +72,6 @@ turning = 0;
           <argument>
             <kind>1</kind>
             <string>image_speed = -.25;
-
 </string>
           </argument>
         </arguments>
@@ -127,7 +124,6 @@ with instance_create(x+12, y+8, objShieldIceBlockDebris) {depth = other.depth-1;
           <argument>
             <kind>1</kind>
             <string>if image_index &lt;= 1 &amp;&amp; frozen == false{
-
     image_speed = 0;
     hspeed = -2;
     
@@ -136,7 +132,6 @@ with instance_create(x+12, y+8, objShieldIceBlockDebris) {depth = other.depth-1;
         image_index = 0;
         }
         else image_index = 1;
-
 }
 </string>
           </argument>
@@ -165,7 +160,6 @@ alarm[1] = 180;
 hspeed = 0;
 image_speed = 0;
 frozen = true;
-
 // destroy icicle
 with other instance_destroy();
 </string>
@@ -233,10 +227,8 @@ with other instance_destroy();
           <argument>
             <kind>1</kind>
             <string>/// Render ice block
-
 // get offset from time
 var offset = (-1+(((90-alarm[1]) div 4) mod 2)*2)*(alarm[1]&lt;45);
-
 // draw ice block
 draw_sprite(sprShieldIceBlock, 0, x+offset, y);
 </string>

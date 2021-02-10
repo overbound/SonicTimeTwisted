@@ -47,7 +47,6 @@ invulnerable=false;
 moleImageIndex=0;
 active=false;
 alarm[1] = 10;
-
 </string>
           </argument>
         </arguments>
@@ -70,7 +69,7 @@ alarm[1] = 10;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>audio_play_sound(sndBombExplosion,1,false);
+            <string>play_sfx(sndBombExplosion,1);
 instance_create(x+8,y+42,objExplosionGroupNoSound);
 instance_create(x+64,y+8,objExplosionGroupNoSound);
 instance_create(x-12,y+62,objExplosionGroupNoSound);
@@ -100,7 +99,7 @@ instance_destroy();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>audio_play_sound(sndBombExplosion,1,false);
+            <string>play_sfx(sndBombExplosion,1);
 instance_create(x+48,y+22,objExplosionGroupNoSound);
 instance_create(x+14,y+18,objExplosionGroupNoSound);
 instance_create(x-52,y+32,objExplosionGroupNoSound);
@@ -134,7 +133,7 @@ alarm[3]=8;
 if active == false
     active = true;
     else active = false;
-audio_play_sound(sndFanSwitch,10,false);
+play_sfx(sndFanSwitch,10);
 </string>
           </argument>
         </arguments>
@@ -160,7 +159,6 @@ audio_play_sound(sndFanSwitch,10,false);
             <string>invulnerable=false;
 visible = 1;
 
-
 </string>
           </argument>
         </arguments>
@@ -184,7 +182,6 @@ visible = 1;
           <argument>
             <kind>1</kind>
             <string>switch active {
-
     case true:
     
         image_speed=.5;
@@ -195,12 +192,16 @@ visible = 1;
             with player {
                 // movement and collision
                 if x &lt; other.x &amp;&amp; x+96 &gt; other.x
-                xspeed -= 1;
+                {
+                    // rumble
+                    rumble(rumble_short_weakest);
+                    xspeed -= 1;
+                }
             }
         }
         
         if !audio_is_playing(sndSSFan) &amp;&amp; objLevel.started {
-            audio_play_sound(sndSSFan,4,0);
+            play_sfx(sndSSFan,4);
         }
         
     break;
@@ -214,7 +215,6 @@ visible = 1;
         }
         
     break;
-
 }
 </string>
           </argument>
@@ -239,22 +239,11 @@ visible = 1;
           <argument>
             <kind>1</kind>
             <string>/// Draw Fan and MOle
-
 draw_set_color(c_white);
-if alarm[0] mod 2
-{
-    draw_set_blend_mode_ext(10, 1);
-    draw_rectangle(bbox_left, bbox_top, bbox_right, bbox_bottom, false);
-    draw_set_blend_mode(bm_normal);
-}
+draw_boss_hit_blend();
 draw_self();
 draw_sprite(sprMoleSwitch,moleImageIndex,x+20,y+35);
-if alarm[0] mod 2
-{
-    draw_set_blend_mode_ext(10, 1);
-    draw_rectangle(bbox_left, bbox_top, bbox_right, bbox_bottom, false);
-    draw_set_blend_mode(bm_normal);
-}
+draw_boss_hit_blend();
 </string>
           </argument>
         </arguments>

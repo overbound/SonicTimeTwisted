@@ -42,10 +42,8 @@
             <string>/// Emitter values
 remove = 1;
 reaction_script = player_reaction_ss_magnet;
-
 // state machine
 enabled = false;
-
 // physics
 x_force = 0.25;
 y_force = -0.12;
@@ -60,13 +58,10 @@ start=false;
 x+=64;
 left=64;
 right=0;
-
 audio = audio_emitter_create();
-
 
 image_alpha = .45;
 alarm[0]=10;
-
 </string>
           </argument>
         </arguments>
@@ -90,11 +85,8 @@ alarm[0]=10;
           <argument>
             <kind>1</kind>
             <string>if right &gt; 127 {
-
     with instance_create(x+random(sprite_width),y+sprite_height,objMagnetSparkle) {parentId = other.id; }
-
 }
-
 alarm[0]=random(10)+8;
 </string>
           </argument>
@@ -119,12 +111,9 @@ alarm[0]=random(10)+8;
           <argument>
             <kind>1</kind>
             <string>if !instance_exists(objLevel.player[0]) exit;
-
 if objLevel.player[0].x &gt; x-128 &amp;&amp; objLevel.player[0].x &lt; x+128 {
-
     start=true;
 }
-
 if start == true &amp;&amp; visible == true &amp;&amp; right &lt; 128 {
         
             right+=2;
@@ -134,16 +123,12 @@ if start == true &amp;&amp; visible == true &amp;&amp; right &lt; 128 {
         }
     
 if start == true {
-
     if !audio_is_playing(sndSSUFOMagnet) &amp;&amp; objLevel.started{
     
-        audio_play_sound(sndSSUFOMagnet,3,0);
+        play_sfx(sndSSUFOMagnet,3);
         }
-
 }
-
 if image_blend == c_white {
-
     image_blend = c_blue;
     
     } else image_blend = c_white;

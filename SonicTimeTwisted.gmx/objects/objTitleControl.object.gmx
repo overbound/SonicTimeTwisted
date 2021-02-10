@@ -41,25 +41,85 @@
             <kind>1</kind>
             <string>/// Initialize
 image_speed = 0;
+// 0 - first fade in
+// 1 - screen with text (disclaimer/epilepsy)
+// 2 - fade to OGS logo
+// 3 - standard title screen behavior
+// 4 - the disclaimer screen is opened from the options screen
+state = 0;
+alarm[0] = -1;
+textAlpha = 0;
 name=0;
-alarm[0]=80;
 levelSelect = 0;
 start = false;
-
-instance_create(x,y,objTitleEffects);
-
 pauseOffset = 0;
 pauseState = 3;
 controlState = 0;
 axis = "";
-inputFlash = 0;
 screenAlpha = 0;
-
-allowInput = true;
 gamepadSupport = true;
-
 logoAlpha = 4;
 
+skipping = 0;
+// allow skipping after first launch
+allow_skipping = !objProgram.first_run;
+if(allow_skipping)
+{
+   event_user(0);
+}
+sync_is_touchscreen();
+if(is_touchscreen)
+{
+    startText = tr('_startText_MO');
+}
+else
+{
+    startText = tr('_startText_PC');
+}
+level_select_max_presses = 0;
+menu = instance_create(x,y,objMenu);
+menu.default_state = 1;
+
+// Names of the original team behind the game.
+// The crawl is hardcoded to only include 6 names, and should remain this way
+names = false;
+names[0] = tr('Bryce Stock (Overbound)');
+names[1] = tr('Hinchy');
+names[2] = tr('VectorSatyr');
+names[3] = tr('Dee Liteyears');
+names[4] = tr('Mercury');
+names[5] = tr('Shane (Sparks)');
+
+// initialize the disclaimer screen in a dedicated event
+event_user(1);
+menu_is_touchscreen = false;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// On touchscreen devices, holding three fingers on the screen during startup erases config
+// and resets the game.
+
+delete_settings();
+game_restart();
 </string>
           </argument>
         </arguments>
@@ -68,129 +128,63 @@ logoAlpha = 4;
     <event eventtype="2" enumb="0">
       <action>
         <libid>1</libid>
-        <id>611</id>
-        <kind>6</kind>
-        <userelative>-1</userelative>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
         <isquestion>0</isquestion>
         <useapplyto>-1</useapplyto>
         <exetype>2</exetype>
         <functionname></functionname>
         <codestring></codestring>
         <whoName>self</whoName>
-        <relative>-1</relative>
+        <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>name</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>1</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>612</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>-1</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_if_variable</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>0</kind>
-            <string>name</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>12</string>
-          </argument>
-          <argument>
-            <kind>4</kind>
-            <string>1</string>
+            <string>name++;
+if(name &lt; 12)
+{
+    alarm_set(0, 65);
+}
+if(name == 9)
+{
+    play_effect(bgmTitle, false);
+}
+if name &gt; 2 &amp;&amp; name &lt; 9 {
+    play_sfx(sndTock,0);
+}
+</string>
           </argument>
         </arguments>
       </action>
+    </event>
+    <event eventtype="3" enumb="2">
       <action>
         <libid>1</libid>
-        <id>301</id>
-        <kind>0</kind>
-        <userelative>-1</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_set_alarm</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>0</kind>
-            <string>65</string>
-          </argument>
-          <argument>
-            <kind>4</kind>
-            <string>0</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>612</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>-1</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_if_variable</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>0</kind>
-            <string>name</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>9</string>
-          </argument>
-          <argument>
-            <kind>4</kind>
-            <string>0</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>211</id>
-        <kind>0</kind>
+        <id>603</id>
+        <kind>7</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_sound</functionname>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
-            <kind>6</kind>
-            <sound>bgmTitle</sound>
-          </argument>
-          <argument>
-            <kind>3</kind>
-            <string>0</string>
+            <kind>1</kind>
+            <string>/// menu end step
+if(state == 3 &amp;&amp; skipping == 0)
+{
+    if menu.state != 0 {
+        with(menu) event_user(2);
+    }
+    image_index = objScreen.image_index div 8;
+}
+</string>
           </argument>
         </arguments>
       </action>
@@ -210,20 +204,48 @@ logoAlpha = 4;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if name &gt; 2 &amp;&amp; name &lt; 9 {
-    audio_play_sound(sndTock,0,0);
+            <string>/// handle returning from state 4 (displaying the disclaimers when called from the options menu)
+if(state == 4)
+{
+    if(is_fallback_touchscreen)
+    {
+        if(device_mouse_check_button_pressed(0, mb_left))
+        {
+            menu_is_touchscreen = true;
+            state = 3;
+            with(menu)
+            {
+                state = 2;
+                menu_fn_reset_inputs();
+            }
+        }
+    }
+    if(!is_touchscreen)
+    {
+        if(input_check_pressed(cB))
+        {
+            play_sfx(sndCancel);
+            menu_is_touchscreen = false;
+            state = 3;
+            with(menu)
+            {
+                state = 2;
+                menu_fn_reset_inputs();
+            }
+        }
+    }
 }
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="2">
+    <event eventtype="3" enumb="1">
       <action>
         <libid>1</libid>
-        <id>611</id>
-        <kind>6</kind>
-        <userelative>-1</userelative>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
         <isquestion>0</isquestion>
         <useapplyto>-1</useapplyto>
         <exetype>2</exetype>
@@ -235,16 +257,247 @@ logoAlpha = 4;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_index</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>objScreen.image_index div 8</string>
+            <string>/// menu begin step
+if(state == 3 &amp;&amp; skipping == 0)
+{
+    if menu.state != 0 {
+        with(menu) event_user(1);
+    }
+}
+</string>
           </argument>
         </arguments>
       </action>
     </event>
     <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>612</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>-1</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_if_variable</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>0</kind>
+            <string>state</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>3</string>
+          </argument>
+          <argument>
+            <kind>4</kind>
+            <string>1</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>422</id>
+        <kind>1</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>switch(state)
+{
+    case 0:
+        if(textAlpha &lt; 1)
+        {
+            textAlpha += 0.033;
+        }
+        if(textAlpha &gt;= 1)
+        {
+            textAlpha = 1;
+            state = 1;
+        }
+        break;
+    case 1:
+        if(is_fallback_touchscreen)
+        {
+            if(device_mouse_check_button_pressed(0, mb_left))
+            {
+                state = 2;
+            }
+        }
+        if(!is_touchscreen)
+        {
+            if(input_check_pressed(cSTART))
+            {
+                state = 2;
+            }
+        }
+        // on title screen, the alarm for deleting options file on touchscreens is disabled
+        alarm[1] = -1;
+        break;
+    case 2:
+        textAlpha -= 0.033;
+        if(textAlpha &lt;= 0)
+        {
+            // Launch the default logo + name crawl intro
+            event_user(0);
+        }
+        break;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>424</id>
+        <kind>2</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>421</id>
+        <kind>3</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>422</id>
+        <kind>1</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>612</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>-1</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_if_variable</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>-1</isnot>
+        <arguments>
+          <argument>
+            <kind>0</kind>
+            <string>state</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>4</string>
+          </argument>
+          <argument>
+            <kind>4</kind>
+            <string>0</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>422</id>
+        <kind>1</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>612</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>-1</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_if_variable</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>0</kind>
+            <string>skipping</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>0</string>
+          </argument>
+          <argument>
+            <kind>4</kind>
+            <string>0</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>422</id>
+        <kind>1</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -262,272 +515,54 @@ logoAlpha = 4;
           <argument>
             <kind>1</kind>
             <string>/// Start Menu
-    switch pauseState {
-    case 0:
-    if allowInput == true {
-            if input_check_pressed(cUP) {
-                if pauseOffset &gt; 0 {
-                    pauseOffset -=16;
-                }
-            }
-            
-            if input_check_pressed(cDOWN) {
-                if pauseOffset &lt; 64 {
-                    pauseOffset +=16;
-                }
-            }
-            
-            if input_check_pressed(cACTION) || input_check_pressed(cSTART) {
-                switch pauseOffset {
-                    case 0: // to save select
-                        transition_to(objFadeWhite, saveSelect, 10)
-                        allowInput = false;
-                    break;
-                    case 16: // Controls
-                        pauseState = 1;
-                        allowInput = false;
-                        objInput.pressingGamepad = input_any_gamepad_button();
-                        objInput.alarm[0] = 20;
-                    break;
-                    case 32: // Window Size
-                        pauseState = 2;
-                        allowInput = false;
-                    break;
-                    case 48: // Enable Gamepad
-                        pauseState = 4;
-                        allowInput = false;
-                    break;
-                    case 64: // Exit
-                        pauseState = 5;
-                        allowInput = false;
-                    break;
-                
-                }
-            
-        } 
+if(pauseState == 0)
+{
+    // allow the menu object to handle everything
+    if(menu.state == 0 &amp;&amp; !instance_exists(objTransition))
+    {
+        with(menu) menu_fn_open_menu(menu_part_title_items, false, other.menu_is_touchscreen);
+    }
+    
+    with(menu) event_user(0);
 }
-    break;
-    
-    case 1: // Map Controls
-        if allowInput == true {
-            if controlState == 0 {
-                    if keyboard_check_pressed(vk_anykey) {
-                       save_control_map_keyboard("up",keyboard_lastkey);
-                       controlState+=1;
-                    } else { 
-                        var padButton = input_any_gamepad_button()
-                        if padButton { 
-                            save_control_map_gamepad("up",padButton);
-                            controlState+=1;
-                        }
-                        
-                        if axis == "" {
-                            axis = input_any_gamepad_axis();
-                        }
-                        if axis != "" {
-                            if input_any_gamepad_axis() == "" {
-                                save_control_map_gamepad("up",axis);
-                                axis = "";
-                                controlState+=1;
-                            }
-                        }
-                    }
-            } else if controlState == 1 {
-                    if keyboard_check_pressed(vk_anykey) {
-                       save_control_map_keyboard("down",keyboard_lastkey);
-                        controlState+=1;
-                    } else { 
-                        var padButton = input_any_gamepad_button()
-                        if padButton { 
-                            save_control_map_gamepad("down",padButton);
-                            controlState+=1;
-                        }
-                        
-                        if axis == "" {
-                            axis = input_any_gamepad_axis();
-                        }
-                        if axis != "" {
-                            if input_any_gamepad_axis() == "" {
-                                save_control_map_gamepad("down",axis);
-                                axis = "";
-                                controlState+=1;
-                            }
-                        }
-                    }
-            } else if controlState == 2 {
-                    if keyboard_check_pressed(vk_anykey){
-                       save_control_map_keyboard("left",keyboard_lastkey);
-                       controlState+=1;
-                    } else { 
-                        var padButton = input_any_gamepad_button()
-                        if padButton { 
-                            save_control_map_gamepad("left",padButton);
-                            controlState+=1;
-                        }
-                        
-                        if axis == "" {
-                            axis = input_any_gamepad_axis();
-                        }
-                        if axis != "" {
-                            if input_any_gamepad_axis() == "" {
-                                save_control_map_gamepad("left",axis);
-                                axis = "";
-                                controlState+=1;
-                            }
-                        }
-                    }
-            } else if controlState == 3 {
-                    if keyboard_check_pressed(vk_anykey) {
-                      save_control_map_keyboard("right",keyboard_lastkey);
-                      controlState+=1;
-                    } else { 
-                        var padButton = input_any_gamepad_button()
-                        if padButton { 
-                            save_control_map_gamepad("right",padButton);
-                            controlState+=1;
-                        }
-                        
-                        if axis == "" {
-                            axis = input_any_gamepad_axis();
-                        }
-                        if axis != "" {
-                            if input_any_gamepad_axis() == "" {
-                                save_control_map_gamepad("right",axis);
-                                axis = "";
-                                controlState+=1;
-                            }
-                        }
-                    }
-            } else if controlState == 4 {
-                    if keyboard_check_pressed(vk_anykey) {
-                        save_control_map_keyboard("a",keyboard_lastkey);
-                        controlState+=1;
-                    } else { 
-                        var padButton = input_any_gamepad_button()
-                        if padButton != -1 { 
-                            save_control_map_gamepad("a",padButton);
-                            controlState+=1;
-                        }
-                    }
-            } else if controlState == 5 {
-                    if keyboard_check_pressed(vk_anykey) {
-                        save_control_map_keyboard("b",keyboard_lastkey);
-                        controlState+=1;
-                    } else { 
-                        var padButton = input_any_gamepad_button()
-                        if padButton != -1 { 
-                            save_control_map_gamepad("b",padButton);
-                            controlState+=1;
-                        }
-                    }
-            } else if controlState == 6 {
-                    if keyboard_check_pressed(vk_anykey) {
-                        save_control_map_keyboard("c",keyboard_lastkey);
-                        controlState+=1;
-                    } else { 
-                        var padButton = input_any_gamepad_button()
-                        if padButton != -1 { 
-                            save_control_map_gamepad("c",padButton);
-                            controlState+=1;
-                        }
-                    }
-            } else if controlState == 7 {
-                    if keyboard_check_pressed(vk_anykey) {
-                        save_control_map_keyboard("start",keyboard_lastkey);
-                        controlState=0;
-                        pauseState = 0;
-                        with objInput input_load();
-                    } else { 
-                        var padButton = input_any_gamepad_button()
-                        if padButton != -1 { 
-                            save_control_map_gamepad("start",padButton);
-                            controlState=0;
-                            pauseState = 0;
-                            allowInput = false;
-                            with objInput input_load();
-                        }
-                    }
+else
+if(pauseState == 3)
+{
+    if(start &amp;&amp; menu.state == 0)
+    {
+        var do_start = false;
+        script_execute(switch_script);
+        if(is_fallback_touchscreen)
+        {
+            do_start = (levelSelect &lt; 6 &amp;&amp; device_mouse_check_button_pressed(0, mb_left))
+                || (levelSelect &gt;= 6 &amp;&amp; level_select_max_presses &lt; 2 &amp;&amp; device_mouse_check_button_released(0, mb_left));
+            if(do_start)
+            {
+                menu_is_touchscreen = true;
             }
         }
-        
-    break;
-    
-    case 2: // Set Window Size
-    if input_check_released(cLEFT) {
-        with objScreen {
-            if window_state &gt; 1 {
-                window_state -= 1;
-                if window_state != 3 {
-                    window_scale -=1;
-                }
-                window_set_fullscreen(false);
-                window_set_size(width * window_scale, height * window_scale);
-                alarm[0]=1;
+        if(!is_touchscreen)
+        {
+            do_start = input_check_pressed(cSTART);
+            if(do_start)
+            {
+                menu_is_touchscreen = false;
             }
+        }
+        if do_start {
+            pauseState=0;
+            with objTitlescreenPlane { hsp = 0; image_speed = 0 }
+            with objTitleSonic image_speed = 0;
         }
     }
-    if input_check_released(cRIGHT) {
-        with objScreen {
-            if window_state &lt; 4 {
-                window_state += 1;
-                window_scale = window_state
-                if window_state == 4 {
-                    window_scale = 3;
-                }
-                window_set_size(width * window_scale, height * window_scale);
-                alarm[0]=1;
-                if window_state == 4 {
-                    window_set_fullscreen(true);        
-                }
-            }
-        }
-    } 
-    if input_check_pressed(cACTION) || input_check_pressed(cSTART) {
-        pauseState = 0;
-    }
-    break;
-    
-    case 3:
-        if start == true
-            if input_check_pressed(cSTART) {
-                pauseState=0;
-                with objTitlescreenPlane { hsp = 0; image_speed = 0 }
-                with objTitleSonic image_speed = 0;
-                
-            
-            }
-    break;
-    
-    case 4: //Enable Gamepad Support
-        if input_check_pressed(cLEFT) {
-            gamepadSupport = false;
-        } else if input_check_pressed(cRIGHT) {
-            gamepadSupport = true;
-        } else if input_check_pressed(cACTION) {
-            pauseState = 0;
-            objInput.gamepad_update_enabled = gamepadSupport;
-            save_gamepad_input_enabled(gamepadSupport)
-        }
-    
-    break;
-    
-    case 5:
-        game_end();
-    break;
-    }
-    
-// fade in white for menu backer    
+}
+// fade in black for menu backer    
 if pauseState != 3 {
     if screenAlpha &lt; .75 {
         screenAlpha+=.025;
     }
 }
-
-if objInput.pressingGamepad == -1 {
-    allowInput = true;
-}
     
-
 </string>
           </argument>
         </arguments>
@@ -548,57 +583,244 @@ if objInput.pressingGamepad == -1 {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Level Select Code
-
-switch(levelSelect) {
-case 0:
-    if input_check_pressed(cLEFT) {
-        levelSelect +=1;
+            <string>/// Skipping to title and Level Select Code
+if(menu.state == 0)
+{
+    if(is_fallback_touchscreen)
+    {
+        // level select touchscreen version - tap on every displayed name, then touch the title screen with two fingers
+        if(levelSelect &lt; 6)
+        {
+            if(device_mouse_check_button_pressed(0, mb_left))
+            {
+                // the skip button does not count
+                var skip_pressed = false;
+                if(allow_skipping &amp;&amp; name &lt; 9)
+                {
+                    skip_pressed =  point_in_rectangle(device_mouse_x(0), device_mouse_y(0), 
+                        view_xview[0] + view_wview[0] - 28, view_yview[0] + 4,
+                        view_xview[0] + view_wview[0] - 4, view_yview[0] + 28);       
+                }
+                if(skip_pressed)
+                {
+                    // skip to title screen
+                    if(skipping == 0)
+                    {
+                        skipping = 1;
+                    }
+                }
+                else
+                {
+                    if(name &lt; 12 &amp;&amp; (!skip_pressed))
+                    {
+                        if(levelSelect == 0 &amp;&amp; name == 3)
+                        {
+                            levelSelect = 1;
+                        }
+                        else
+                        {
+                            if(levelSelect == 1 &amp;&amp; name == 4)
+                            {
+                                levelSelect = 2;
+                            }
+                            else
+                            {
+                                if(levelSelect == 2 &amp;&amp; name == 5)
+                                {
+                                    levelSelect = 3;
+                                }
+                                else
+                                {
+                                    if(levelSelect == 3 &amp;&amp; name == 6)
+                                    {
+                                        levelSelect = 4;
+                                    }
+                                    else
+                                    {
+                                        if(levelSelect == 4 &amp;&amp; name == 7)
+                                        {
+                                            levelSelect = 5;
+                                        }
+                                        else
+                                        {
+                                            if(levelSelect == 5 &amp;&amp; name == 8)
+                                            {
+                                                play_sfx(sndRing,0);
+                                                levelSelect = 6;
+                                                level_select_max_presses = 0;
+                                            }
+                                        }                    
+                                    }
+                                }            
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        else
+        {
+            if (name == 12 &amp;&amp; state &gt;= 2)
+            {
+                if(levelSelect == 6)
+                {
+                    var levelSelectPresses = 0;
+                    if (device_mouse_check_button(0, mb_left))
+                    {
+                        levelSelectPresses++;
+                    }
+                    if (device_mouse_check_button(1, mb_left))
+                    {
+                        levelSelectPresses++;
+                    }
+                    if (device_mouse_check_button(2, mb_left))
+                    {
+                        levelSelectPresses++;
+                    }
+                    if (device_mouse_check_button(3, mb_left))
+                    {
+                        levelSelectPresses++;
+                    }
+                    if (device_mouse_check_button(4, mb_left))
+                    {
+                        levelSelectPresses++;
+                    }
+                    level_select_max_presses = max(level_select_max_presses, levelSelectPresses);
+                    // detect whether we are currently releasing the last "mouse button"
+                    var levelSelectReleases = 0;
+                    if (device_mouse_check_button_released(0, mb_left))
+                    {
+                        levelSelectReleases++;
+                    }
+                    if (device_mouse_check_button_released(1, mb_left))
+                    {
+                        levelSelectReleases++;
+                    }
+                    if (device_mouse_check_button_released(2, mb_left))
+                    {
+                        levelSelectReleases++;
+                    }
+                    if (device_mouse_check_button_released(3, mb_left))
+                    {
+                        levelSelectReleases++;
+                    }
+                    if (device_mouse_check_button_released(4, mb_left))
+                    {
+                        levelSelectReleases++;
+                    }
+                    if(level_select_max_presses &gt;= 2 &amp;&amp; levelSelectPresses == 0 &amp;&amp; levelSelectReleases == 1)
+                    {
+                        if(!instance_exists(objTransition))
+                        {
+                            pauseState = 0;
+                            with(menu) menu_fn_open_menu(menu_part_levelselect_char_items, false, true);
+                        }
+                    }
+                }
+            }
+        }
+        
+        // erase/reset options by holding three fingers on screen at once while the names scroll
+        if(name &lt; 9)
+        {
+            var devicesPressed = 0;
+            for(var i = 0; i &lt; 4; i++)
+            {
+                if(device_mouse_check_button(i, mb_left))
+                {
+                    devicesPressed++;
+                }
+            }
+            if(devicesPressed &gt;= 3)
+            {
+                if(alarm[1] &lt; 0)
+                {
+                    alarm[1] = 300;
+                }
+            }
+            else
+            {
+                alarm[1] = -1;
+            }
+        }
     }
-break;
-case 1:
-    if input_check_pressed(cLEFT) {
-        levelSelect +=1;
-    } else if input_check_pressed(cRIGHT) || input_check_pressed(cUP) || input_check_pressed(cDOWN) {
-        levelSelect = 0;
+    if(!is_touchscreen)
+    {
+        // button version - left, left, right, right, up, down, a+start
+        switch(levelSelect) {
+        case 0:
+            if input_check_pressed(cLEFT) {
+                levelSelect +=1;
+            }
+        break;
+        case 1:
+            if input_check_pressed(cLEFT) {
+                levelSelect +=1;
+            } else if input_check_pressed(cRIGHT) || input_check_pressed(cUP) || input_check_pressed(cDOWN) {
+                levelSelect = 0;
+            }
+        break;
+        case 2:
+            if input_check_pressed(cRIGHT) {
+                levelSelect +=1;
+            } else if input_check_pressed(cLEFT) || input_check_pressed(cUP) || input_check_pressed(cDOWN) {
+                levelSelect = 0;
+            }
+        break;
+        case 3:
+            if input_check_pressed(cRIGHT) {
+                levelSelect +=1;
+            } else if input_check_pressed(cLEFT) || input_check_pressed(cUP) || input_check_pressed(cDOWN) {
+                levelSelect = 0;
+            }
+        break;
+        case 4:
+            if input_check_pressed(cUP) {
+                levelSelect +=1;
+            } else if input_check_pressed(cRIGHT) || input_check_pressed(cLEFT) || input_check_pressed(cDOWN) {
+                levelSelect = 0;
+            }
+        break;
+        case 5:
+            if input_check_pressed(cDOWN) &amp;&amp; pauseState == 3 {
+                levelSelect +=1;
+                play_sfx(sndRing,0);
+            } else if input_check_pressed(cRIGHT) || input_check_pressed(cUP) || input_check_pressed(cLEFT) {
+                levelSelect = 0;
+            }
+        break;
+        case 6:
+            if (state &gt;= 2 &amp;&amp; name == 12)
+            {
+                if input_check(cA) &amp;&amp; input_check(cSTART) {
+                    // allow the menu object to handle everything
+                    if(!instance_exists(objTransition))
+                    {
+                        with(menu) menu_fn_open_menu(menu_part_levelselect_char_items, false, false);
+                    }
+                    
+                    with(menu) event_user(0);
+                    
+                } else if input_check_pressed(cRIGHT) || input_check_pressed(cUP) || input_check_pressed(cDOWN) || input_check_pressed(cB) || input_check_pressed(cC){
+                    levelSelect = 0;
+                }
+            }
+        break;
+        }
+        if(levelSelect == 0)
+        {
+            if(allow_skipping &amp;&amp; name &lt; 9)
+            {
+                if input_check(cSTART) {
+                    // skip to title screen
+                    if(skipping == 0)
+                    {
+                        skipping = 1;
+                    }
+                }
+            }
+        }
     }
-break;
-case 2:
-    if input_check_pressed(cRIGHT) {
-        levelSelect +=1;
-    } else if input_check_pressed(cLEFT) || input_check_pressed(cUP) || input_check_pressed(cDOWN) {
-        levelSelect = 0;
-    }
-break;
-case 3:
-    if input_check_pressed(cRIGHT) {
-        levelSelect +=1;
-    } else if input_check_pressed(cLEFT) || input_check_pressed(cUP) || input_check_pressed(cDOWN) {
-        levelSelect = 0;
-    }
-break;
-case 4:
-    if input_check_pressed(cUP) {
-        levelSelect +=1;
-    } else if input_check_pressed(cRIGHT) || input_check_pressed(cLEFT) || input_check_pressed(cDOWN) {
-        levelSelect = 0;
-    }
-break;
-case 5:
-    if input_check_pressed(cDOWN) &amp;&amp; pauseState == 3 {
-        levelSelect +=1;
-        audio_play_sound(sndRing,0,false);
-    } else if input_check_pressed(cRIGHT) || input_check_pressed(cUP) || input_check_pressed(cLEFT) {
-        levelSelect = 0;
-    }
-break;
-case 6:
-    if input_check(cA) &amp;&amp; input_check(cSTART) {
-        transition_to(objFadeWhite, charselect, 10)
-    } else if input_check_pressed(cRIGHT) || input_check_pressed(cUP) || input_check_pressed(cDOWN) || input_check_pressed(cB) || input_check_pressed(cC){
-        levelSelect = 0;
-    }
-break;
 }
 </string>
           </argument>
@@ -620,14 +842,230 @@ break;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// flash for key mapper and alpha control
-if inputFlash &lt; 1
-    inputFlash += .25;
-    else inputFlash = 0;
-    
-if name &lt; 3 {
-    logoAlpha -=.025;
+            <string>/// alpha control
+if(state &gt;= 3)
+{
+    if name &lt; 3 {
+        logoAlpha -=.025;
+    }
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>424</id>
+        <kind>2</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>421</id>
+        <kind>3</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>422</id>
+        <kind>1</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// manage skipping to title
+skipping++;
+if(skipping == 30)
+{
+    // the skipping itself
+    name = 12;
+    play_effect(bgmTitle, false);
+    alarm_set(0, -1);
+    with(objTitleSonic)
+    {
+        event_user(0);
+    }
+}
+if(skipping &gt;= 60)
+{
+    skipping = 0;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>424</id>
+        <kind>2</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>424</id>
+        <kind>2</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>424</id>
+        <kind>2</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
+    </event>
+    <event eventtype="7" enumb="11">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Reorganize the disclaimer screen
+// In case the locale is changed and the screen is displayed afterwards
+
+epilepsy_title = tr("_epilepsy_title");
+epilepsy = tr("_epilepsy");
+disclaimer_title = tr("_disclaimer_title");
+disclaimer = tr("_disclaimer");
+github = tr("_github");
+
+// because of localizations, we'll need to calculate the optimum placement for
+// disclaimer titles and texts
+
+draw_set_font(objResources.fontHud);
+var epilepsy_title_height = string_height(epilepsy_title);
+var disclaimer_title_height = string_height(disclaimer_title);
+
+var line_length = view_wview[view_current] - 8;
+draw_set_font(objResources.fontMicro);
+var epilepsy_height = epilepsy_title_height + string_height_ext(epilepsy, 12, line_length) + 4;
+var disclaimer_height = disclaimer_title_height + string_height_ext(disclaimer, 12, line_length) + 4;
+var github_height = string_height_ext(github, 12, line_length);
+
+var text_skip = floor((view_hview[view_current] - epilepsy_height - disclaimer_height - github_height)/4);
+
+epilepsy_title_y = text_skip;
+epilepsy_y = epilepsy_title_y + epilepsy_title_height + 4;
+disclaimer_title_y = epilepsy_title_y + epilepsy_height + text_skip;
+disclaimer_y = disclaimer_title_y + disclaimer_title_height + 4;
+github_y = disclaimer_title_y + disclaimer_height + text_skip;;
+
+draw_set_font(objResources.fontHud);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="10">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Launch the default logo + name crawl intro
+textAlpha = 0;
+state = 3;
+instance_create(x,y,objTitleEffects);
+instance_create(224, -160, objTitleSonic);
+
+with (instance_create(516, 1060, objTitleCloud0))
+{
+    image_xscale = -1;
+}
+
+with(instance_create(340, 1200, objTitleCloud1))
+{
+    image_xscale = -1;
+}
+instance_create(120, 1356, objTitleCloud0);
+with(instance_create(-208, 1492, objTitleCloud1))
+{
+    image_yscale = 1.05;
+}
+alarm[0]=80;
 </string>
           </argument>
         </arguments>
@@ -657,6 +1095,32 @@ audio_stop_all();
         </arguments>
       </action>
     </event>
+    <event eventtype="8" enumb="64">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(state &gt;= 2)
+{
+    with(menu) event_user(3);
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
@@ -674,113 +1138,133 @@ audio_stop_all();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Render Names
-
-// fade for menu
-draw_set_alpha(screenAlpha);
-draw_rectangle(view_xview,view_yview,view_xview+view_wview,view_yview+view_hview,false);
+            <string>if(state &gt;= 2)
+{
+    draw_set_font(objResources.fontHud);
     
-// setup
-draw_set_color(c_white);
-draw_set_alpha(image_alpha);
-draw_set_valign(fa_top);
-draw_set_halign(fa_center);
-draw_set_font(objResources.fontHud);
-
-// score / time / rings string
-switch name {
-case 0: case 1: case 2:
+    /// Render Names
+    // fade for menu
+    draw_set_alpha(screenAlpha);
     draw_set_color(c_black);
-    draw_set_alpha(logoAlpha);
     draw_rectangle(view_xview,view_yview,view_xview+view_wview,view_yview+view_hview,false);
-    draw_set_alpha(1);
+        
+    // setup
     draw_set_color(c_white);
-    draw_sprite_ext(sprOverboundLogo,0,view_xview[0]+213,view_yview[0]+120,1,1,0,c_white,logoAlpha);
-break;
-case 3: draw_text_color(view_xview[0]+213,view_yview[0]+120,'BRYCE STOCK "OVERBOUND"',c_white,c_white,c_yellow,c_yellow,1); break;
-case 4: draw_text_color(view_xview[0]+213, view_yview[0]+120, 'HINCHY',c_white,c_white,c_yellow,c_yellow,1) break;
-case 5: draw_text_color(view_xview[0]+213, view_yview[0]+120, 'JOEVAN SALMON-JOHNSON "VECTORSATYR"',c_white,c_white,c_yellow,c_yellow,1) break;
-case 6: draw_text_color(view_xview[0]+213, view_yview[0]+120, 'DEE LITEYEARS',c_white,c_white,c_yellow,c_yellow,1) break;
-case 7: draw_text_color(view_xview[0]+213, view_yview[0]+120, 'DEVIN REEVES "MERCURY"',c_white,c_white,c_yellow,c_yellow,1)break;
-case 8: draw_text_color(view_xview[0]+213, view_yview[0]+120, 'SHANE "SPARKS"',c_white,c_white,c_yellow,c_yellow,1) break;
-case 12: if pauseState == 3 draw_text_color(view_xview[0]+213, view_yview[0]+228, 'PRESS START',c_white,c_white,c_yellow,c_yellow,1); start=true; break;
-}
-
-draw_set_halign(fa_center);
-draw_set_color(c_yellow);
-if pauseState == 0 {
-    draw_text_color(view_xview[view_current]+213, view_yview[view_current]+75, "PLAY",c_white,c_white,c_yellow,c_yellow,1);
-    if pauseState != 1 draw_text_color(view_xview[view_current]+213, view_yview[view_current]+91, "MAP KEYS OR GAMEPAD",c_white,c_white,c_yellow,c_yellow,1);
-    if pauseState != 2 draw_text_color(view_xview[view_current]+213, view_yview[view_current]+107, "SCREEN SIZE",c_white,c_white,c_yellow,c_yellow,1);
-    if pauseState != 4 draw_text_color(view_xview[view_current]+213, view_yview[view_current]+123, "ENABLE GAMEPAD F1",c_white,c_white,c_yellow,c_yellow,1);
-    draw_text_color(view_xview[view_current]+213, view_yview[view_current]+139, "EXIT GAME",c_white,c_white,c_yellow,c_yellow,1);
+    draw_set_alpha(image_alpha);
+    draw_set_valign(fa_top);
+    draw_set_halign(fa_center);
+    draw_set_font(objResources.fontHud);
     
-    draw_sprite_ext(sprLevelSelect,image_index,view_xview[view_current]+213, view_yview[view_current]+81+pauseOffset,1,1,0,c_white,1);
-}
-
-if pauseState == 1 &amp;&amp; inputFlash &lt;= .5 { // set controls
-    switch controlState {
+    switch name {
         case 0:
-            draw_text_color(view_xview[view_current]+213, view_yview[view_current]+91, "UP",c_white,c_white,c_yellow,c_yellow,1);
-        break;
         case 1:
-            draw_text_color(view_xview[view_current]+213, view_yview[view_current]+91, "DOWN",c_white,c_white,c_yellow,c_yellow,1);
-        break;
         case 2:
-            draw_text_color(view_xview[view_current]+213, view_yview[view_current]+91, "LEFT",c_white,c_white,c_yellow,c_yellow,1);
-        break;
+            draw_set_color(c_black);
+            draw_set_alpha(logoAlpha);
+            draw_rectangle(view_xview,view_yview,view_xview+view_wview,view_yview+view_hview,false);
+            draw_set_alpha(1);
+            draw_set_color(c_white);
+            draw_sprite_ext(sprOverboundLogo,0,view_xview[0]+213,view_yview[0]+90,1,1,0,c_white,logoAlpha);
+            draw_text_color(view_xview[0]+213,view_yview[0]+15,tr('_splash_ASonicfangame'),c_white,c_white,c_teal,c_teal,logoAlpha);
+            draw_text_color(view_xview[0]+213,view_yview[0]+150,tr('_splash_ThisGameIsFreeware'),c_white,c_white,c_teal,c_teal,logoAlpha);
+            draw_text_color(view_xview[0]+213,view_yview[0]+170,tr('_splash_DoNotSell'),c_white,c_white,c_red,c_red,logoAlpha);
+            break;
         case 3:
-            draw_text_color(view_xview[view_current]+213, view_yview[view_current]+91, "RIGHT",c_white,c_white,c_yellow,c_yellow,1);
-        break;
         case 4:
-            draw_text_color(view_xview[view_current]+213, view_yview[view_current]+91, "A",c_white,c_white,c_yellow,c_yellow,1);
-        break;
         case 5:
-            draw_text_color(view_xview[view_current]+213, view_yview[view_current]+91, "B",c_white,c_white,c_yellow,c_yellow,1);
-        break;
         case 6:
-            draw_text_color(view_xview[view_current]+213, view_yview[view_current]+91, "C",c_white,c_white,c_yellow,c_yellow,1);
-        break;
         case 7:
-            draw_text_color(view_xview[view_current]+213, view_yview[view_current]+91, "START",c_white,c_white,c_yellow,c_yellow,1);
-        break;
+        case 8:
+            var yshift = 120;
+            if(alarm[0] &gt;= 60)
+            {
+                yshift = yshift + 27 + (alarm[0] - 60) * 32;
+            }
+            else
+            if(alarm[0] &gt; 5)
+            {
+                yshift = yshift - 27 + alarm[0] - 5;
+            }
+            else
+            {
+                yshift = yshift - 27 - (5 - alarm[0]) * 32;            
+            }
+            draw_text_color(view_xview[0]+213,view_yview[0]+yshift,names[name - 3],c_white,c_white,c_yellow,c_yellow,1);
+            break;
+        case 12:
+            if pauseState == 3 draw_text_color(view_xview[0]+213, view_yview[0]+228, startText,c_white,c_white,c_yellow,c_yellow,1); start=true; break;
     }
+    draw_set_halign(fa_center);
+    draw_set_color(c_white);
+    if(skipping &gt; 0)
+    {
+        if(skipping &lt;= 30)
+        {
+            draw_set_alpha(skipping/30);
+        }
+        else
+        {
+            draw_set_alpha((60 - skipping)/30);    
+        }
+        draw_rectangle(view_xview[0], view_yview[0], view_xview[0] + view_wview[0], view_yview[0] + view_hview[0], false);
+        draw_set_alpha(1);
+    }
+    if(allow_skipping)
+    {
+        if(name &lt; 9 &amp;&amp; is_fallback_touchscreen)
+        {
+           draw_sprite(sprTouchscreenFastForward, 0, view_xview[0] + view_wview[0] - 28, view_yview[0] + 4);
+        }
+    }
+}
+if(state &lt;= 2 || state == 4)
+{
+    if(state == 0 || state == 4)
+    {
+        draw_set_alpha(1);
+    }
+    else
+    {
+        draw_set_alpha(textAlpha);
+    }
+    draw_set_color(c_black);
+    draw_rectangle(view_xview,view_yview,view_xview+view_wview,view_yview+view_hview,false);
+    draw_set_color(c_white);
+    draw_set_alpha(textAlpha);
     
-
-}
-
-if pauseState == 2 &amp;&amp; inputFlash &lt;= .5 {
-
-    switch objScreen.window_state {
-    case 1:
-        draw_text_color(view_xview[view_current]+213, view_yview[view_current]+107, "WINDOW",c_white,c_white,c_yellow,c_yellow,1);
-    break;
-    case 2:
-        draw_text_color(view_xview[view_current]+213, view_yview[view_current]+107, "WINDOW 2X",c_white,c_white,c_yellow,c_yellow,1);
-    break;
-    case 3:
-        draw_text_color(view_xview[view_current]+213, view_yview[view_current]+107, "WINDOW 3X",c_white,c_white,c_yellow,c_yellow,1);
-    break;
-    case 4:
-        draw_text_color(view_xview[view_current]+213, view_yview[view_current]+107, "FULLSCREEN",c_white,c_white,c_yellow,c_yellow,1);
-    break;
+    var text_origin = view_wview[view_current]/2;
+    var line_length = view_wview[view_current] - 8;
     
-    }
+    draw_set_halign(fa_center);
+    
+    draw_set_font(objResources.fontHud);
+    draw_text_colour(text_origin, view_yview[view_current] + epilepsy_title_y, epilepsy_title, c_red, c_red, c_white, c_white, textAlpha);
+    draw_set_font(objResources.fontMicro);
+    draw_text_ext_colour(text_origin, view_yview[view_current] + epilepsy_y, epilepsy, 12, line_length, c_ltgray, c_ltgray, c_white, c_white, textAlpha);
+    
+    
+    draw_set_font(objResources.fontHud);
+    draw_text_colour(text_origin, view_yview[view_current] + disclaimer_title_y, disclaimer_title, c_red, c_red, c_white, c_white, textAlpha);
+    draw_set_font(objResources.fontMicro);
+    draw_text_ext_colour(text_origin, view_yview[view_current] + disclaimer_y, disclaimer, 12, line_length, c_ltgray, c_ltgray, c_white, c_white, textAlpha);
+    draw_text_ext_colour(text_origin, view_yview[view_current] + github_y, github, 12, line_length, c_blue, c_blue, c_white, c_white, textAlpha);
+    draw_set_alpha(1);   
 }
-
-if pauseState == 4 &amp;&amp; inputFlash &lt;= .5 {
-
-    switch gamepadSupport {
-    case false:
-        draw_text_color(view_xview[view_current]+213, view_yview[view_current]+123, "GAMEPAD DISABLED",c_white,c_white,c_yellow,c_yellow,1);
-    break;
-    case true:
-        draw_text_color(view_xview[view_current]+213, view_yview[view_current]+123, "GAMEPAD ENABLED",c_white,c_white,c_yellow,c_yellow,1);
-    break;
-    }
+/// version number
+if(menu.state &gt; 0)
+{
+    draw_set_font(objResources.fontLives);
+    draw_set_halign(fa_right);
+    draw_set_valign(fa_bottom);
+    draw_text(
+        view_xview[view_current] + view_wview[view_current],
+        view_yview[view_current] + view_hview[view_current],
+        VERSION
+    );
+    draw_set_halign(fa_left);
+    draw_set_valign(fa_top);
+    
 }
-draw_set_color(c_white);
-
 </string>
           </argument>
         </arguments>

@@ -1,0 +1,29 @@
+objMenu states reference
+
+0 - closed
+1 - menu opening
+2 - menu open
+3 - menu open and confirmation cursor is flashing
+4 - menu closing
+5 - menu sliding right: sliding out
+6 - menu sliding right: sliding in
+7 - menu sliding left: sliding out
+8 - menu sliding left: sliding in
+
+9 - opening Yes/No confirmation window
+10 - Yes/No confirmation window
+11 - closing Yes/No confirmation window
+12 - opening key mapping window
+13 - key mapping window
+14 - key mapping window with error message
+15 - closing key mapping window
+16 - opening slider window
+17 - slider window
+18 - closing slider window
+19 - opening Android dual input mode window
+20 - Android dual input mode window
+21 - Android dual input mode window with error message
+22 - closing Android dual input mode window
+23 - menu reloading: closing
+24 - menu reloading: reopening
+25 - disappeared (displaying disclaimers)

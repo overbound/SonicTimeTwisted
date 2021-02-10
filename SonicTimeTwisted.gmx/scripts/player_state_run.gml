@@ -1,6 +1,5 @@
 // player_state_run()
 var motion_direction = input_axis_x();
-
 // if flag for reversing motion direction is set (used by vertical corkscrew gimmick, etc.)
 if (reverse_control)
 {
@@ -9,7 +8,6 @@ if (reverse_control)
     else
         motion_direction *= -1; // else reverse motion direction
 }
-
 // ground motion
 if motion_direction!=0
 {
@@ -21,7 +19,6 @@ if motion_direction!=0
         {
             // braking
             if abs(xspeed)>brake_threshold and mask_rotation==gravity_angle() {animation_new = "brake"; timeline_speed = 1;}
-
             // decelerate and reverse directio
             
             xspeed += deceleration*motion_direction;
@@ -43,7 +40,6 @@ else
     // decelerate
     xspeed -= min(abs(xspeed), ground_friction)*sign(xspeed);
 }
-
 // gimmicks
 if (gimmick_id != noone)
 {
@@ -129,7 +125,6 @@ if (gimmick_id != noone)
             }
              
             break;
-
     }
     
     gimmick_id = noone;
@@ -138,13 +133,10 @@ else
 {
     angle3D = 0;
 }
-
 // update position
 if not player_movement_ground() return false;
-
 // falling
 if not landed return player_is_falling();
-
 // slide if moving too slow
 if abs(xspeed)<slide_threshold and relative_angle>=45 and relative_angle<=315
 {
@@ -153,24 +145,19 @@ if abs(xspeed)<slide_threshold and relative_angle>=45 and relative_angle<=315
     if not sliding sliding = 32;
 }
 
-
 // slope factor
 if abs(xspeed)>speed_cap xspeed -= player_slope_factor(slope_friction_cap, ground_friction); else
 xspeed -= player_slope_factor(slope_friction, ground_friction);
-
 // standing
 if motion_direction==0 and xspeed==0 return player_is_standing();
-
 // jumping
 if input_check_pressed(cACTION) and not player_collision_ceiling(offset_y+5) return player_is_jumping();
-
 // rolling (ignore if holding forward/backward)
 if (input_check(cDOWN) && input_axis_x() == 0 && abs(xspeed) >= roll_threshold) && terrain_id != objPlaneGimmick
 {
-    audio_play_sound(sndSpin, 0,0);
+    play_sfx(sndSpin, 0);
     return player_is_rolling();
 }
-
 // animate
 if not ((animation_new=="push" and facing==motion_direction) or (animation_new=="brake" and facing!=motion_direction) or angle3D != 0)
 {
@@ -181,6 +168,5 @@ if not ((animation_new=="push" and facing==motion_direction) or (animation_new==
     timeline_speed = 1/max(8-abs(xspeed), 1);
 }
 image_angle = angle;
-
 // set facing
 if motion_direction!=0 and sign(xspeed)==motion_direction facing = motion_direction;

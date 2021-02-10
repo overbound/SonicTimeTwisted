@@ -205,7 +205,7 @@
           </argument>
           <argument>
             <kind>0</kind>
-            <string>!visible</string>
+            <string>objScreen.flashing_visible</string>
           </argument>
         </arguments>
       </action>

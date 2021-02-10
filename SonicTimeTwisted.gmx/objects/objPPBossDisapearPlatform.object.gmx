@@ -66,7 +66,6 @@
             <string>ysp = 1;
 remove=0;
 ypos=y;
-
 alarm[0]=800;
 alarm[1]=920;
 flash = false;
@@ -135,13 +134,7 @@ flash = false;
           <argument>
             <kind>1</kind>
             <string>if flash {
-
-    if visible == true {
-    
-        visible = false;
-        
-    } else visible = true;
-
+    visible = !visible;
 }
 </string>
           </argument>

@@ -808,7 +808,7 @@ image_index=0;
 if destroyed exit;
 if !audio_is_playing(sndEggWalkerFire) {
         
-    audio_play_sound(sndEggWalkerFire,2,false);
+    play_sfx(sndEggWalkerFire, 2);
         
 }
 for(i = 0; i &lt; 2; i+=1){
@@ -846,7 +846,7 @@ alarm[1]=400;
 if destroyed exit;
 
 alarm[2]=150;
-audio_play_sound(sndEggWalkerCharge,2,false);
+play_sfx(sndEggWalkerCharge, 2);
 
 with objLevel.player[0] {
 if !(camera.left &gt; other.x+128 &amp;&amp; other.image_xscale == 1  &amp;&amp; objEggWalkerBossController.state &gt; 1) &amp;&amp; !(camera.right &lt; other.x-128 &amp;&amp; other.image_xscale == -1 &amp;&amp; objEggWalkerBossController.state &gt; 1 ){
@@ -1018,7 +1018,7 @@ with frontRightLeg[1] {
         stop = true;
         allowStop = false;
         if objEggWalkerBossController.state == 1 || objEggWalkerBossController.state == 2
-            audio_play_sound(sndEggWalkerStomp,1,false);
+            play_sfx(sndEggWalkerStomp, 1);
 
     }
 
@@ -1250,7 +1250,7 @@ with frontRightLeg[1] {
         stop = true;
         allowStop = false;
         if objEggWalkerBossController.state == 1 || objEggWalkerBossController.state == 2
-            audio_play_sound(sndEggWalkerStomp,1,false);
+            play_sfx(sndEggWalkerStomp, 1);
     }
 }
 

@@ -43,7 +43,6 @@
 radius = 8;
 z = 20;
 image_speed = 0;
-
 </string>
           </argument>
         </arguments>

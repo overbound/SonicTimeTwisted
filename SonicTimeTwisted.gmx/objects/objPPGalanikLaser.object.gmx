@@ -40,30 +40,24 @@
           <argument>
             <kind>1</kind>
             <string>x2=x;
-
 xOffset1Left=-6;
 xOffset1Right=6;
 xOffset2Left=0;
 xOffset2Right=0;
-
 xOffset2LeftMax=0;
 xOffset2RightMax=0;
-
 yoffset =0;//10
 platformId=noone;
 createFlame=true;
 laser=0;
-
 xOriginOffset=0;
 yOriginOffset=-10;
 state =1000;
-
 
 alarm[0] = 200;
 alarm[1] = 320;
 remove=0;
 visible = false;
-
 reaction_script = noone;
 </string>
           </argument>
@@ -135,7 +129,7 @@ reaction_script = noone;
             <kind>1</kind>
             <string>if objGalanik.state &lt; 4 {
     state = 0;
-    audio_play_sound(sndMetalLaser,10,true);
+    play_sfx(sndMetalLaser,10,true);
     visible = true;
 }
 </string>
@@ -161,9 +155,7 @@ reaction_script = noone;
           <argument>
             <kind>1</kind>
             <string>/// State
-
 switch state {
-
 case 0: // Start Firing
     with objGalanik {
         other.x=x+other.xOriginOffset;
@@ -227,9 +219,7 @@ case 0: // Start Firing
     }
     
 break;
-
 case 1: // End Firing
-
     with objGalanik {
         other.x=x+other.xOriginOffset;
         other.y=y+other.yOriginOffset;
@@ -255,17 +245,14 @@ case 1: // End Firing
     }
 break;
 }
-
 if instance_exists(platformId) {
     if laser == 0
         image_angle = point_direction(x,y,platformId.x+32,platformId.y)+90
     else image_angle = point_direction(x,y,platformId.bbox_right-32,platformId.y)+90
     
 }
-
 if state &lt; 2 
     reaction_script = player_reaction_harmful;
-
 </string>
           </argument>
         </arguments>
@@ -288,9 +275,7 @@ if state &lt; 2
             <kind>1</kind>
             <string>/// Flash Visiblity
 if state &lt; 1000
-    if visible 
-        visible = false;
-        else visible = true;
+    visible = !visible;
 </string>
           </argument>
         </arguments>
@@ -324,7 +309,6 @@ draw_vertex(floor(x2+xOffset2Right), floor(y+yoffset));
 draw_primitive_end();
 draw_set_color(c_white);
 draw_set_alpha(1);
-
 //draw_self();
 </string>
           </argument>

@@ -65,7 +65,7 @@ alarm[0] = 10;
           <argument>
             <kind>1</kind>
             <string>mode = 1;
-screenshot = background_create_from_surface(application_surface, 0, 0, objScreen.width, objScreen.height, 0, 0);
+screenshot = sprite_create_from_surface(application_surface, 0, 0, objScreen.width, objScreen.height, 0, 0, 0, 0);
 room_goto(next_room);
 </string>
           </argument>
@@ -93,7 +93,6 @@ room_goto(next_room);
 switch mode
 {
 case 0:
-
 //wait
     
 break;
@@ -103,16 +102,13 @@ case 1:
     }
     image_alpha -= .0125;
     break;
-
 case 2:
-
     with objLevel { 
         started = true; 
         timer_enabled = true;
     }
     instance_destroy();
     break;
-
 }
 </string>
           </argument>
@@ -136,10 +132,10 @@ case 2:
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if screenshot &gt; -1 
+            <string>if sprite_exists(screenshot)
 {
     //draw_enable_alphablend(false);
-    draw_background_stretched_ext(screenshot, view_xview[view_current], view_yview[view_current], objScreen.width, objScreen.height, c_white, image_alpha);
+    draw_sprite_stretched_ext(screenshot, 0, view_xview[view_current], view_yview[view_current], objScreen.width, objScreen.height, c_white, image_alpha);
     //draw_enable_alphablend(true);
 }
 </string>

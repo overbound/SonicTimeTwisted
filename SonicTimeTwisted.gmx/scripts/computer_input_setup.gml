@@ -6,7 +6,6 @@ computer_cA = false;
 computer_cB = false;
 computer_cC = false;
 computer_cSTART = false;
-
 computer_pressed_cUP = false;
 computer_pressed_cDOWN = false;
 computer_pressed_cLEFT = false;

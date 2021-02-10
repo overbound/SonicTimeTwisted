@@ -87,7 +87,6 @@ moveUp=false;
           <argument>
             <kind>1</kind>
             <string>if ystart &lt; y &amp;&amp; moveUp == true {
-
     y -=1;
 } else moveUp = false;
 </string>

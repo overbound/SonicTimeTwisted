@@ -42,7 +42,6 @@
             <string>/// Initialize
 image_speed = .25;
 offscreen_enabled = true;
-
 // states and flags
 state = 0;
 bouncing = false;
@@ -52,7 +51,6 @@ turning = 0;
 turning_point = 0;
 timer = 16;
 flash_color = make_color_rgb(255, 72, 0);
-
 // segments
 for (var i=0; i&lt;3; i+=1) {
 segment[i] = instance_create(x, y-2, objDragonFlySegment);
@@ -63,14 +61,11 @@ bomboffset =4;
 bomb = instance_create(x,y+bomboffset,objDragonFlyBomb);
 bomb.depth = depth +1;
 }
-
 }
 segment[0].offset = 14;
 segment[1].offset = 28;
 segment[2].offset = 42;
-
 player_reaction_script = player_reaction_catakiller;
-
 if objProgram.in_past
     sprite_index = sprDragonFlyHeadPast;
 </string>
@@ -335,7 +330,6 @@ if timer {timer -= 1; if not timer {state = (state+1) mod 2; timer = 16;}}
             <kind>1</kind>
             <string>/// Enemy behavior
 var i, ox, offset=0;
-
 for (i=0; i&lt;3; i+=1){
     if i == 1
         segment[i].y = segment[i].ystart+cos(objScreen.image_index/24)*4;
@@ -343,10 +337,8 @@ for (i=0; i&lt;3; i+=1){
         segment[i].y = segment[i].ystart+sin(objScreen.image_index/24)*4;
 }
 y = ystart+cos(objScreen.image_index/24)*8;
-
 // horizontal movement
 x += image_xscale;
-
 
 // turning around
 switch turning
@@ -362,7 +354,6 @@ case -1: // turn left
         }
     }
     break;
-
 case 1: // turn right
     for (i=0; i&lt;3; i+=1)
     {
@@ -374,24 +365,19 @@ case 1: // turn right
         }
     }
     break;
-
 default: // not turning
     for (i=0; i&lt;3; i+=1) {segment[i].x = x-segment[i].offset*sign(image_xscale); segment[i].image_xscale = image_xscale;}
 }
 // check x distance from player
 with instance_nearest(x, y, objPlayer) other.offset = x - other.x;
-
 // turn around if too far
 if abs(offset) &gt; 96 and (image_xscale != sign(offset)) and (turning == 0)
 {
-
     image_xscale = -image_xscale;
     turning = sign(image_xscale);
     turning_point = x;
     
 }
-
-
 
 </string>
           </argument>
@@ -419,7 +405,6 @@ if abs(offset) &gt; 96 and (image_xscale != sign(offset)) and (turning == 0)
 alarm[1] = 180;
 hspeed = 0;
 frozen = true;
-
 // destroy icicle
 with other instance_destroy();
 </string>
@@ -541,10 +526,8 @@ with other instance_destroy();
           <argument>
             <kind>1</kind>
             <string>/// Render ice block
-
 // get offset from time
 var offset = (-1+(((90-alarm[1]) div 4) mod 2)*2)*(alarm[1]&lt;45);
-
 // draw ice block
 draw_sprite(sprShieldIceBlock, 0, x+offset, y);
 </string>

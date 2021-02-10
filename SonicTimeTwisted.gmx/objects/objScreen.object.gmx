@@ -28,6 +28,7 @@
             <string>/// Screen settings
 width = 426;
 height = 240;
+vsync = true; // enabled by default.
 window_mode = 1;
 window_scale = 2;
 window_state = 2;
@@ -35,6 +36,7 @@ split_screen = false;
 paused = false;
 screenshot = -1; // for pausing
 scanlines = false;
+flashing_reduced = 1;
 default_image_speed = 1;
 alarm[0] = 2;
 view_enabled = true;
@@ -43,23 +45,39 @@ view_wview[0] = width;
 view_hview[0] = height;
 view_wport[0] = width;
 view_hport[0] = height;
-
-// sync window properties
-if window_get_fullscreen() window_mode = 2; else
-if window_get_width() &gt; width or window_get_height() &gt; height { window_mode = 1; window_scale = 2 } else
-if (window_get_width() != width * window_scale) or (window_get_height() != height * window_scale) window_set_size(width * window_scale, height * window_scale);
-surface_resize(application_surface, width, height);
-
-// os properties
-/*fullscreen_enabled = false;
-switch os_type
+if(DEVICE_INFO &amp; DEVICE_TYPE_SMARTPHONE)
 {
-case os_windows:
-case os_macosx:
-    if (os_browser != browser_not_a_browser) break;
-    fullscreen_enabled = true;
-    break;
-}*/
+    var calculated_width = get_smartphone_screen_width();
+    show_debug_message("GUI: "+string(calculated_width)+" x "+string(height));
+    
+    var maxgui_xscale = display_get_width()/calculated_width;
+    var maxgui_yscale = display_get_height()/height;
+    var maxgui_xoffset = maxgui_xscale*(calculated_width - width)/2;
+    
+    display_set_gui_size(calculated_width, height);
+    display_set_gui_maximise(maxgui_xscale, maxgui_yscale, maxgui_xoffset, 0);
+}
+else
+{
+    display_set_gui_size(width, height);
+}
+
+
+
+// A simple boolean that goes from between 0 and 1 every drawn frame
+// Allows to remove some "mod" and "!boolean" calculations here and there
+// while displaying flashing objects.
+flashing_visible = false;
+
+// A lot of flashing objects rely on objScreen.image_index mod 4
+// This variable will replace the calls to that property, but
+// only when the conditioned code is purely visual
+frame_counter = 0;
+/**
+Load the appropriate video mode. See the set_video_mode script for details
+**/
+video_mode = 0;
+score_tally_mode = 0;
 </string>
           </argument>
         </arguments>
@@ -107,7 +125,88 @@ window_center();
           <argument>
             <kind>1</kind>
             <string>/// Unpause
-if not paused and screenshot &gt; -1 { background_delete(screenshot); screenshot = -1; }
+if not paused and sprite_exists(screenshot) { sprite_delete(screenshot); }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="12">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///toggle vertical sync.
+vsync = !vsync;
+apply_video_settings();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="11">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Scroll through screen modes - backwards
+video_mode = (video_mode - 1);
+if(video_mode &lt; 0)
+{
+    video_mode = 3;
+}
+apply_video_settings();
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="10">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Scroll through screen modes - forwards
+video_mode = (video_mode + 1) mod 4;
+apply_video_settings();
+save_options();
 </string>
           </argument>
         </arguments>
@@ -131,7 +230,7 @@ if not paused and screenshot &gt; -1 { background_delete(screenshot); screenshot
           <argument>
             <kind>1</kind>
             <string>/// Clean up
-if screenshot &gt; -1 { background_delete(screenshot); screenshot = -1; }
+if sprite_exists(screenshot) { sprite_delete(screenshot); }
 </string>
           </argument>
         </arguments>
@@ -172,6 +271,31 @@ for (var i = 0; i &lt; 2; i += 1)
         </arguments>
       </action>
     </event>
+    <event eventtype="8" enumb="72">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// manage flashing
+flashing_visible = !flashing_visible;
+frame_counter = (frame_counter + 1) mod 4;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
@@ -190,15 +314,15 @@ for (var i = 0; i &lt; 2; i += 1)
           <argument>
             <kind>1</kind>
             <string>/// Screenshot and scanlines
-if screenshot &gt; -1 &amp;&amp; !instance_exists(objSSHud)
+if sprite_exists(screenshot) &amp;&amp; !instance_exists(objSSHud)
 {
     draw_enable_alphablend(false);
-    draw_background_stretched_ext(screenshot, view_xview[view_current], view_yview[view_current], width, height, c_white, 1);
+    draw_sprite_stretched_ext(screenshot, 0, view_xview[view_current], view_yview[view_current], width, height, c_white, 1);
     draw_enable_alphablend(true);
 }
 else if scanlines
 {
-    draw_background_stretched(backScanlines, 0, 0, room_width, 480);
+    // draw the screenshot with a scanline shader?
 }
 </string>
           </argument>
@@ -222,39 +346,33 @@ else if scanlines
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Toggle fullscreen
-///Change Window Size
-switch window_state {
-
-    case 1:
-        window_scale = 2;
-        window_state = 2;
-    break;
-    
-    case 2:
-        window_scale = 3;
-        window_state = 3;
-    break;
-    
-    case 3:
-        window_scale = 3;
-        window_state = 4;
-        window_set_fullscreen(true);
-    break;
-    
-    case 4:
-        window_scale = 1;
-        window_state = 1;
-        window_set_fullscreen(false);
-    break;
+            <string>event_user(0);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="112">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(debug_mode)
+{
+    show_debug_overlay(true);
 }
-
-window_set_size(width * window_scale, height * window_scale);
-
-// The window must wait a step to center...
-alarm[0]=1;
-
-
 </string>
           </argument>
         </arguments>

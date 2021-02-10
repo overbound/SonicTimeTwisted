@@ -122,18 +122,15 @@ case 1: // contracting
     x += 2 * sign(image_xscale);
     if abs(x - xstart) &gt; 256 {state = 0; alarm[0] = 60;}
     break;
-
 case 2: // expanding
     x -= 2 * sign(image_xscale);
     if (x == xstart) {state = 0; remove = 1;} 
     break;
 }
-
 // sound
 if not audio_is_playing(sndIceSlip) and state &gt; 0
 {
-    audio_sound_gain(sndIceSlip, objGameData.volume_sound, 0);
-    audio_play_sound(sndIceSlip, 4, 0);
+    play_sfx(sndIceSlip, 4);
 }
 </string>
           </argument>

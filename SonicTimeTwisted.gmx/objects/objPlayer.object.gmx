@@ -75,7 +75,7 @@ terrain_list = ds_list_create();
 wall_direction = 0;
 xspeed = 0;
 yspeed = 0;
-layer = 1;
+depth_mask = 1;
 facing = 1;
 cliff = 0;
 angle3D = 0;
@@ -154,14 +154,15 @@ audio = audio_emitter_create();
 reserved_sound = -1;
 shield_type = -1;
 
+wave = noone;
+
 sprite_y_offset = 0;
 
 waterCountAlpha = 0;
 waterCountTime = 0;
 waterCountDigit = 0;
 
-with objInput flag_player_input = true;
-
+set_input_enabled(true);
 </string>
           </argument>
         </arguments>
@@ -194,7 +195,7 @@ audio_emitter_free(audio);
 if (character_id==2) with tails_effect instance_destroy();
 
 // Remove id
-objLevel.player[player_id] = noone;
+with (objLevel) player[other.player_id] = noone;
 </string>
           </argument>
         </arguments>
@@ -303,9 +304,9 @@ if underwater and shield_type!=1 and !objProgram.cutscene
     underwater_count -= 1;
     switch underwater_count
     {
-        case 1440: case 1140: case 840: audio_play_sound(sndDrownTimer, 0, 0); break;
+        case 1440: case 1140: case 840: play_sfx(sndDrownTimer, 0); break;
         case 660: case 550: case 440: case 330: case 220: case 110:
-            audio_play_sound(sndDrownWarning, 0, 0);
+            play_sfx(sndDrownWarning, 0);
             waterCountTime = 100;
             waterCountDigit = (underwater_count / 110) - 1;
             waterCountAlpha = 0;
@@ -318,14 +319,18 @@ if underwater and shield_type!=1 and !objProgram.cutscene
 }
 
 // superform
-if superform and (superform-objLevel.timer)&gt;0
+if superform
 {
-    // subtract a ring every second
-    if not ((superform-objLevel.timer) mod 60)
+    if objLevel.stage_timer_active
     {
-        
-        objGameData.rings[0] -= 1;
-        if objGameData.rings[0]&lt;=0 player_transform(false);
+        superform++;
+        // subtract a ring every second
+        if (superform &gt;= 61)
+        {
+            superform = 1;
+            objGameData.rings[0] -= 1;
+            if objGameData.rings[0]&lt;=0 player_transform(false);
+        }
     }
 }
 </string>
@@ -370,7 +375,7 @@ default: // normal activity
     /*if objGameData.timeout and objLevel.timer_enabled and not (objLevel.cleared or objLevel.timer)
     {
         objProgram.spawn_time = 36000;
-        audio_play_sound(sndHurt, 0, 0);
+        play_sfx(sndHurt, 0);
         player_is_dead();
     }*/
 
@@ -427,6 +432,12 @@ if xtable &gt; 0 {
     var path_xspeed = ds_list_find_value(xtable, offset)-ds_list_find_value(xtable, offset-1);
     var path_yspeed = ds_list_find_value(ytable, offset)-ds_list_find_value(ytable, offset-1);
 
+    // rumble if leaving tube
+    if(state == player_state_path)
+    {
+        rumble(rumble_short_mid);
+    }
+    
     // states and flags
     state = player_state_fall;
     
@@ -497,7 +508,7 @@ ds_list_destroy(ytable);
 audio_emitter_free(audio);
 
 // Remove id
-with objLevel{ player[other.player_id] = noone; }
+with (objLevel) player[other.player_id] = noone;
 </string>
           </argument>
         </arguments>

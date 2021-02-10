@@ -1,9 +1,7 @@
 //toward(from,to,increment)
-
 var from = argument0;
 var to = argument1;
 var increment = argument2;
-
     if (to > from)
     {
         from += increment;

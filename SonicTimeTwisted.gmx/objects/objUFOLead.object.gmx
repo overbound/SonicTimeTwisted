@@ -29,12 +29,10 @@
 distance=0;
 remove=2;
 xCameraOffset=0;
-
 UFO[1] = instance_create(lengthdir_x(x-distance,angle),lengthdir_y(y-distance,angle),objUFO); UFO[1].offset=0; UFO[1].leadId=id;
 UFO[2] = instance_create(lengthdir_x(x-distance,angle+60),lengthdir_y(y-distance,angle+90),objUFO); UFO[2].offset=90; UFO[2].leadId=id;
 UFO[3] = instance_create(lengthdir_x(x-distance,angle+120),lengthdir_y(y-distance,angle+180),objUFO); UFO[3].offset=180; UFO[3].leadId=id;
 UFO[4] = instance_create(lengthdir_x(x-distance,angle+180),lengthdir_y(y-distance,angle+270),objUFO); UFO[4].offset=270; UFO[4].leadId=id;
-
 
 </string>
           </argument>
@@ -87,9 +85,7 @@ with UFO[4] instance_destroy();
             <string>
 if instance_exists(objLevel.player[0])
 with objLevel.player[0].camera {
-
     other.xCameraOffset=xSpeed*0.5;
-
     }
     
     UFO[1].x=x+lengthdir_x(distance,angle+UFO[1].offset);
@@ -101,16 +97,13 @@ with objLevel.player[0].camera {
     UFO[4].x=x+lengthdir_x(distance,angle+UFO[4].offset);
     UFO[4].y=y+lengthdir_y(distance,angle+UFO[4].offset);
 
-
     angle+=6;
-
     if distance &lt; 24
         distance+=2;
         else {
                 speed = 4;
                 direction=225;
         }
-
         x+=xCameraOffset;
 </string>
           </argument>

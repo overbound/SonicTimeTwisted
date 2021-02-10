@@ -1,11 +1,9 @@
 /// player_transform(flag?)
-
 // transform or de-transform?
 if argument0
 {
-    // set timer offset
-    superform = objLevel.timer;
-
+    // set superform counter
+    superform = 1;
     // setup animation based on character
     switch character_id
     {
@@ -18,10 +16,8 @@ else
 {
     // clear states
     superform = -1;
-
     // reveal shield
     with shield visible = true;
-
     // setup animation based on character
     switch character_id
     {
@@ -31,6 +27,5 @@ else
         break;
     }
 }
-
 // reset physics
 player_reset_physics();

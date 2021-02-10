@@ -1,28 +1,30 @@
 // player_collision_floor(offset)
-var total_locals, i, j, local_id;
 
-// initialize
-total_locals = ds_list_size(terrain_list);
+var offset = argument0;
 
-// scan rectangle within offset
-for (i=0; i<argument0; i+=1)
+var result = noone;
+var total = ds_list_size(terrain_list);
+var n, local_id;
+
+for (var oy = 0; oy < offset; ++oy)
 {
-    // evaluate all locals
-    for (j=0; j<total_locals; j+=1)
+    for (n = 0; n < total; ++n)
     {
-        // get local id
-        local_id = ds_list_find_value(terrain_list, j);
-
-        // continue if no collision
-        if not collision_ray(offset_x, i, mask_rotation, local_id) continue;
-
-        // continue if passing through wall sensor
-        if local_id.through and collision_ray(offset_x, 0, mask_rotation, local_id) continue;
-
-        // confirm matching local
-        return local_id;
+        local_id = terrain_list[| n];
+        if (collision_box_lower(offset_x, oy, mask_rotation, local_id))
+        {
+            if (not (local_id.through and 
+                collision_ray(offset_x, 0, mask_rotation, local_id)))
+            {
+                result = local_id;
+                break;
+            }
+        }
+    }
+    if (result != noone)
+    {
+        break;
     }
 }
 
-// no collision
-return noone;
+return result;

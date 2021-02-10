@@ -90,7 +90,6 @@
             <string>playerFacing=objLevel.player[0].facing;
 fadeSpeed=0.0085;
 alarm[0]=125;
-
 snowSystem =part_system_create();
 snowColor=make_color_rgb(81,161,243);
 snow = part_type_create(); 
@@ -106,7 +105,6 @@ part_type_gravity(snow, 0.20, 240);
 part_type_orientation(snow, 0, 0, 0, 0, 1);
 part_type_blend(snow, 1);
 part_type_life(snow, 90, 90);
-
 
 if objProgram.in_past 
     next_room = FF1_p;
@@ -174,7 +172,6 @@ case 1: // fade out
     if (image_alpha&lt;1)
         image_alpha += fadeSpeed;
     break;
-
 case -1: // fade in
     if image_alpha&lt;=0 { 
     //if !instance_exists(objTitleCardFFZ)
@@ -186,7 +183,6 @@ case -1: // fade in
     image_alpha -= fadeSpeed;
     break;
 }
-
 //if objScreen.image_index mod 4 {
     part_particles_create(snowSystem, view_xview+random(600), view_yview, snow, 1);
     part_particles_create(snowSystem, view_xview+random(600), view_yview, snow, 1);
@@ -196,8 +192,31 @@ case -1: // fade in
     part_particles_create(snowSystem, view_xview+random(600), view_yview, snow, 1);
     part_particles_create(snowSystem, view_xview+random(600), view_yview, snow, 1);
     part_particles_create(snowSystem, view_xview+random(600), view_yview, snow, 1);
-
 //}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="3">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>part_system_destroy(snowSystem);
+part_type_destroy(snow);
 </string>
           </argument>
         </arguments>

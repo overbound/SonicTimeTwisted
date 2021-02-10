@@ -112,11 +112,8 @@
           <argument>
             <kind>1</kind>
             <string>///set image_index based on time period
-
 if objProgram.in_past == false {
-
     image_index = 0;
-
 } else image_index =1;
 </string>
           </argument>

@@ -42,6 +42,8 @@
             <string>alarm[0]=100;
 draw=0;
 destroy=false;
+text_blink = false;
+voice = instance_create(x+12,ystart-16, objMetalSonicVoice)
 </string>
           </argument>
         </arguments>
@@ -82,9 +84,35 @@ destroy=false;
             <kind>1</kind>
             <string>draw += 1;
 alarm[0] = 80;
-
-if draw &gt; 0 and draw &lt; 4
-    audio_play_sound(sndMetalSpeak,1,false);
+switch(draw)
+{
+    case 1:
+        with(voice)
+        {
+            message = tr('_metal_sonic_voice_Stop');
+            event_user(0);
+        }
+        break;
+    case 2:
+        with(voice)
+        {
+            message = tr('_metal_sonic_voice_No_Harm');
+            event_user(0);
+        }
+        break;
+    case 3:
+        with(voice)
+        {
+            message = tr('_metal_sonic_voice_The_Creator');
+            event_user(0);
+        }
+        break;
+    case 4:
+        with(voice)
+        {
+            instance_destroy();
+        }
+}
 </string>
           </argument>
         </arguments>
@@ -108,63 +136,15 @@ if draw &gt; 0 and draw &lt; 4
           <argument>
             <kind>1</kind>
             <string>// Destroyed
-
 if destroy {
-
     image_angle +=10;
     if alarm[1] == -1 {
     
         alarm[1]= 120;
     
     }
-
 } else {
-
      y = ystart+cos(objScreen.image_index/16)*2;
-
-
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="8" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>draw_self();
-
-switch draw {
-
-case 0:
-
-break;
-
-case 1:
-    draw_sprite_ext(sprMetalStopVoice,0,x+12,ystart-16,1,1,0,c_white,1);
-break;
-
-case 2:
-    draw_sprite_ext(sprMetalNoHarmVoice,0,x+12,ystart-16,1,1,0,c_white,1);
-break;
-
-case 3:
-    draw_sprite_ext(sprMetalTheCreatorVoice,0,x+12,ystart-16,1,1,0,c_white,1);
-break;
 
 }
 </string>

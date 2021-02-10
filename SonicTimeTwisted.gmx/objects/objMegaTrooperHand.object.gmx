@@ -69,7 +69,6 @@ ycollision = 3448;
 yorigin=3330;
     
 
-
 </string>
           </argument>
         </arguments>
@@ -217,7 +216,6 @@ yorigin=3330;
           <argument>
             <kind>1</kind>
             <string>if objMegaTrooper.state &gt;= 7 exit;
-
 if ydirection == 1 {
             
     yspeed+=.25;
@@ -227,7 +225,6 @@ if ydirection == 1 {
 else if ydirection == -1 {
     
 if y &gt; yorigin {
-
         yspeed-=.05;
         yoffset += yspeed;
         
@@ -240,16 +237,13 @@ if y &gt; yorigin {
     }
             
 }
-
 // check for collision
 //ycollision +=cos(objScreen.image_index/16)*.25;
-
 if y &gt;= ycollision {
-
     if ydirection != 0 {
     
         alarm[0]=5;
-        audio_play_sound(sndScreenShake, 0,0);
+        play_sfx(sndScreenShake, 0);
         ydirection = 0;
         yspeed = -2;
         
@@ -258,7 +252,6 @@ if y &gt;= ycollision {
     screen_shake();
     
 }
-
 </string>
           </argument>
         </arguments>

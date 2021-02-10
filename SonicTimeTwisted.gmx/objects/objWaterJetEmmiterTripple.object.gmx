@@ -66,7 +66,6 @@ handle = noone;
           <argument>
             <kind>1</kind>
             <string>instance_create(x,y,objWaterJetTripple)
-
 alarm[0]=420;
 </string>
           </argument>

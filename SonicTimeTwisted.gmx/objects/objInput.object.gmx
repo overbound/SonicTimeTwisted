@@ -28,39 +28,80 @@
             <string>/// Initialize input device
 image_speed = 0;
 var i;
-
-// input flags
+// input flag - outside of this object, use set_input_enabled to change this flag
 flag_player_input = true;
-pressingGamepad = -1;
-
 // computer controls
 computer_input_setup();
-
 // input id
 device_id = instance_number(objInput)-1;
-
 // input state
 state = 0;
+previous_state = 0;
 state_press = 0;
 state_release = 0;
-
 // axes
 x_axis = 0;
 y_axis = 0;
-badAxis = 0;
-pad = -1;
+pad = 0;
+paddesc = "unknown";
+padcount = gamepad_get_device_count();
+for (i = padcount - 1; i &gt; -1; i--) padarray[i] = false;
 button_count = 0;
 axis_count = 0;
-
+// references gamepad mappings in order for handling main/backup mappings
+gamepad_mapping_count = 0;
 // input stream
 stream = -1;
 stream_size = $FF;
+// touchscreen initialization
+is_touchscreen = false;
+is_fallback_touchscreen = false;
 
-input_load();
-fix_bad_gamepad_axis();
+// rumble/haptics
+rumble_queue = ds_queue_create();
+rumble_configuration_script = input_method_dummy_script;
+rumble_enabled = false;
 
-gamepad_update_enabled = true;
-load_gamepad_support()
+// input devices management
+input_init_script = input_method_dummy_script;
+input_manage_script = input_method_dummy_script;
+input_rumble_trigger_script = input_method_dummy_script;
+input_rumble_manage_script = input_method_dummy_script;
+input_rumble_perform_script = input_method_dummy_script;
+input_draw_script = input_method_dummy_script;
+input_init_script_fallback = input_method_dummy_script;
+input_manage_script_fallback = input_method_dummy_script;
+input_draw_script_fallback = input_method_dummy_script;
+input_method = 0;
+input_method_fallback = 0;
+use_fallback = false;
+
+smartphone_controls_enabled = false;
+// initialize touchscreen-specific controls without copy-pasting everything, there are a lot of variables
+input_load_touchscreen_controls(false);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="1" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>ds_queue_destroy(rumble_queue);
 </string>
           </argument>
         </arguments>
@@ -128,84 +169,44 @@ load_gamepad_support()
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Get device state
-var buffer, i, a;
+            <string>/// Update states
 
 // clear states
-buffer = state;
+previous_state = state;
 state = 0;
 state_press = 0;
 state_release = 0;
 
-/*
-if objScreen.image_index mod 8 == 0
-    gamepad_update();*/
-
-
-// keys
-for (i = 0; i &lt; key_count; i++)
-    if (keyboard_check(key[i])) state |= key_control[i];
-
-if(gamepad_update_enabled) {    
-    // buttons
-    for (i = 0; i &lt; button_count; i++)
-        if (gamepad_button_check(pad, button[i])) state |= button_control[i];
-        //if (gamepad_button_check(button_gamepad[i], button[i])) state |= button_control[i];
-        // if (gamepad_button(pad, button[i])) state |= button_control[i];
-    
-    // axes
-    for (i = 0; i &lt; axis_count; i++)
-        if (gamepad_axis_value(pad, axis[i]) * axis_direction[i] &gt; axis_deadzone[i]) state |= axis_control[i];
-        //if (gamepad_axis_value(axis_gamepad[i], axis[i]) * axis_direction[i] &gt; axis_deadzone[i]) state |= axis_control[i];
-        // if (gamepad_axis(pad, axis[i]) * axis_direction[i] &gt; axis_deadzone[i]) state |= axis_control[i];
+script_execute(input_manage_script);
+if(use_fallback)
+{
+    // only in menus
+    script_execute(input_manage_script_fallback);
 }
-    
+
+// default "back" button - ESC on PC, Back on smartphones
+// calls the menu, guaranteed to be available on every platform
+if(keyboard_check(DEVICE_BACK_BUTTON))
+{
+    state |= cBACK;
+}
 // axes
 x_axis = 0;
 if (state &amp; cLEFT &amp;&amp; flag_player_input) || (computer_cLEFT &amp;&amp; !flag_player_input) x_axis -= 1;
 if (state &amp; cRIGHT &amp;&amp; flag_player_input) || (computer_cRIGHT &amp;&amp; !flag_player_input) x_axis += 1;
-
 y_axis = 0;
 if (state &amp; cUP &amp;&amp; flag_player_input) || (computer_cUP &amp;&amp; !flag_player_input) y_axis -= 1;
 if (state &amp; cDOWN &amp;&amp; flag_player_input) || (computer_cDOWN &amp;&amp; !flag_player_input) y_axis += 1;
 
 // pressing and releasing
-state_press = (state &amp; buffer) ^ state;
-state_release = (state &amp; buffer) ^ buffer;
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Check for Pressing
+state_press = (state &amp; previous_state) ^ state;
+state_release = (state &amp; previous_state) ^ previous_state;
 
-if pressingGamepad != -1 {
-    if !gamepad_button_check(pad,pressingGamepad) &amp;&amp; !gamepad_axis_value(pad,pressingGamepad) {
-        pressingGamepad = -1;
-    }
-}
+/// Manage rumble/haptic
+script_execute(input_rumble_manage_script);
+script_execute(input_rumble_perform_script);
 
-/*
-if pressingGamepad != -1 {
-    if !gamepad_button(0,pressingGamepad) &amp;&amp; alarm[0] == -1  {
-        pressingGamepad = -1;
-    }
-}*/
+previous_state = state;
 </string>
           </argument>
         </arguments>
@@ -232,16 +233,31 @@ if pressingGamepad != -1 {
 switch (async_load[?"event_type"]) {
 case "gamepad discovered":
     var index = async_load[?"pad_index"];
-    if (pad == -1) {
-        pad = index;
-    }
+    pad = index;
+    paddesc = string_lower(gamepad_get_description(pad));
+    padarray[pad] = true;
+    show_debug_message('Slot: ' + string(pad));
+    show_debug_message('Model: ' + gamepad_get_description(pad));
+    
     break;
-
 case "gamepad lost":
     var index = async_load[?"pad_index"];
+    padarray[pad] = false;
+    
+    show_debug_message('Lost pad at slot ' + string(pad));
+    
     if (pad == index) {
-        pad = -1;
+        for (var i = 0; i &lt; padcount; i++) {
+            if (padarray[i]) {
+                pad = i;
+                paddesc = string_lower(gamepad_get_description(pad));
+                break;
+            }
+        }
     }
+    
+    pad = 0; // set slot to 0, if we didn't break out of the loop.
+    
     break;
 }
 </string>
@@ -267,8 +283,8 @@ case "gamepad lost":
           <argument>
             <kind>1</kind>
             <string>/// Delete input stream
-if stream ds_list_destroy(stream);
-stream = -1;
+if (ds_exists(stream, ds_type_list)) ds_list_destroy(stream);
+//if (ds_exists(rumble_queue, ds_type_queue)) ds_queue_destroy(rumble_queue);
 computer_input_reset_state();
 </string>
           </argument>
@@ -293,14 +309,12 @@ computer_input_reset_state();
           <argument>
             <kind>1</kind>
             <string>/// Create input stream
+reinit_input_method();
 stream = ds_list_create();
-
 </string>
           </argument>
         </arguments>
       </action>
-    </event>
-    <event eventtype="9" enumb="112">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -317,8 +331,61 @@ stream = ds_list_create();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>gamepad_update_enabled = !gamepad_update_enabled;
-save_gamepad_input_enabled(gamepad_update_enabled);
+            <string>/// Rerun input init script: necessary for smartphone, transparent for PC
+script_execute(input_init_script);
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Enable fallback controls unconditionally on certain maps: title screen, save screen
+switch(room)
+{
+    case titlescreen:
+    case saveSelect:
+        use_fallback = true;
+        break;
+    default:
+        use_fallback = false;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="64">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>script_execute(input_draw_script);
 </string>
           </argument>
         </arguments>

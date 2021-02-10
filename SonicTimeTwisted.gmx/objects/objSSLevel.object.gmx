@@ -27,14 +27,12 @@
             <kind>1</kind>
             <string>hud=instance_create(x,y,objSSHud);
 messages=instance_create(x,y,objSSMessages);
-
 total_rings = instance_number(objSSRing);
 timer_enabled = true;
 timer = 36000;
 started = false;
 loopMusic = false;
 cleared = false
-
 if (!global.special_level_music_played) {
     if objProgram.in_past {
         objMusic.musicIntro = bgmSpecialPastIntro;
@@ -45,7 +43,6 @@ if (!global.special_level_music_played) {
         objMusic.musicLoop = bgmSpecialFutureLoop;
     }
 }
-
 </string>
           </argument>
         </arguments>
@@ -71,9 +68,7 @@ if (!global.special_level_music_played) {
             <string>with objSSPlayer { 
 if started == false
     instance_activate_region(x-512, y-512, 512, 512, true);
-
 }
-
 
 </string>
           </argument>
@@ -97,7 +92,7 @@ if started == false
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if timer_enabled {if timer timer -= 1;}
+            <string>if timer_enabled &amp;&amp; started {if timer timer -= 1;}
 </string>
           </argument>
         </arguments>
@@ -120,9 +115,17 @@ if started == false
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>// Pause
-/// Pausing
-if started and not instance_exists(objTransition) and input_check_pressed(cSTART) {objProgram.paused = not objProgram.paused; game_pause(objProgram.paused);}
+            <string>/// Pausing
+
+// Since GMS analyzes ALL conditions joined by &amp;&amp;, one of them is exported to another if(), the one that has the least chances to succeed to every frame
+if(input_check_pressed(cPAUSE))
+{
+    if(started &amp;&amp; (!instance_exists(objTransition)) &amp;&amp; (!objProgram.paused) &amp;&amp; hud.menu.state == 0)
+    {
+        objProgram.paused = !objProgram.paused;
+        game_pause(objProgram.paused);
+    }
+}
 </string>
           </argument>
         </arguments>

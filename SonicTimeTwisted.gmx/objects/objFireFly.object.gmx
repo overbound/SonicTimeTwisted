@@ -49,10 +49,8 @@ state=0;
 remove=0;
 explosionLoop = 0;
 image_speed=0;
-
 blackAlpha=0;
 graphic = instance_create(x,y,objFireFlyGraphic);
-
 blackX[0]=0;
 blackY[0]=0;
 blackX[1]=0;
@@ -61,7 +59,6 @@ blackX[2]=0;
 blackY[2]=0;
 blackX[3]=0;
 blackY[3]=0;
-
 blackScaleX[0]=0;
 blackScaleY[0]=0;
 blackScaleX[1]=0;
@@ -70,7 +67,6 @@ blackScaleX[2]=0;
 blackScaleY[2]=0;
 blackScaleX[3]=0;
 blackScaleY[3]=0;
-
 </string>
           </argument>
         </arguments>
@@ -120,24 +116,17 @@ blackScaleY[3]=0;
 var yran =random(97)-60;
 instance_create(x+xran+40,y+yran,objExplosionCluster);
 explosionLoop+=1;
-
 if explosionLoop == 15 or explosionLoop == 7 or explosionLoop == 1 
-    audio_play_sound(sndBombExplosion,1,false);
-
+    play_sfx(sndBombExplosion,1);
 if explosionLoop &gt; 15 {
-
     speed = 6;
     direction = 120;
     instance_create(objFireFlyBossController.x-256,objFireFlyBossController.y+64,objMetalSonicFlyOff);
     
     with objFireFlyBossController.block instance_destroy();
-
     with objLevel.player[0].camera {
-
         right=objCapsule.x+320;
-
     }
-
 } else alarm[1]=4;
 </string>
           </argument>
@@ -186,7 +175,6 @@ if explosionLoop &gt; 15 {
             <kind>1</kind>
             <string>/// check if should destroy
 if light.life &lt;= 0 &amp;&amp; state &lt; 12 {
-
     with light reaction_script=noone;
     with lightShot instance_destroy();
     alarm[1]=10;
@@ -194,7 +182,6 @@ if light.life &lt;= 0 &amp;&amp; state &lt; 12 {
     speed=0;
     image_index=1;
     stop_all_music(false);
-
 }
 </string>
           </argument>
@@ -218,29 +205,23 @@ if light.life &lt;= 0 &amp;&amp; state &lt; 12 {
             <kind>1</kind>
             <string>/// Calculate Rectangel Cordnates and alpha
 if state &gt;= 7 {
-
 var viewOffset=8;
-
 blackX[0]=view_xview-viewOffset;
 blackY[0]=view_yview-viewOffset;
 blackScaleX[0]=x-view_xview-110+viewOffset;
 blackScaleY[0]=y-view_yview+110+viewOffset;
-
 blackX[1]=blackX[0]+blackScaleX[0];
 blackY[1]=blackY[0];
 blackScaleX[1]=view_xview+view_wview-blackX[1]+viewOffset;
 blackScaleY[1]=y-view_yview-110+viewOffset;
-
 blackX[2]=x+110-viewOffset;
 blackY[2]=y-110-viewOffset;
 blackScaleX[2]=view_xview+view_wview-blackX[2]+viewOffset;
 blackScaleY[2]=view_yview+view_hview+viewOffset;
-
 blackX[3]=view_xview-viewOffset;
 blackY[3]=y+110;
 blackScaleX[3]=view_xview+view_wview-blackX[3]+viewOffset;
 blackScaleY[3]=view_yview+view_hview-blackY[3]+viewOffset;
-
 }
 </string>
           </argument>
@@ -263,13 +244,10 @@ blackScaleY[3]=view_yview+view_hview-blackY[3]+viewOffset;
           <argument>
             <kind>1</kind>
             <string>/// children x,y
-
 light.x=x;
 light.y=y;
-
 graphic.x=x;
 graphic.y=y;
-
 </string>
           </argument>
         </arguments>
@@ -295,33 +273,27 @@ graphic.y=y;
             <string>/// State Machine
 if objLevel.cleared exit;
 switch state {
-
 case 0:
 
-
 break;
-
 case 1: // start firing 
-
     y=objFireFlyBossController.y+74;
     x=objFireFlyBossController.x+384;
     state=2;
     lightShot.x=x-2;
     
 break;
-
 case 2: // firing
-
     if x &lt; objFireFlyBossController.x+64  &amp;&amp; x &gt; objFireFlyBossController.x+60 &amp;&amp; lightShot.state == 0{
         
         lightShot.state=1;
-        audio_play_sound(sndLaserShot,0,0);
+        play_sfx(sndLaserShot,0);
         //lightShot.x=x;
     
     } else if x &lt; objFireFlyBossController.x-64  &amp;&amp; x &gt; objFireFlyBossController.x-68 &amp;&amp; lightShot.state == 0{
 ;
         lightShot.state=1;
-        audio_play_sound(sndLaserShot,0,0);
+        play_sfx(sndLaserShot,0);
         //lightShot.x=x;
     
     }
@@ -334,34 +306,29 @@ case 2: // firing
         state=3;
     
     }
-
 break;
-
 case 3: // start firing 
     x=objFireFlyBossController.x-384;
     state=4;
     lightShot.x=x+2;
 break;
-
 case 4: // firing
-
     if x &lt; objFireFlyBossController.x+128  &amp;&amp; x &gt; objFireFlyBossController.x+124 &amp;&amp; lightShot.state == 0{
         
         lightShot.state=1;
-        audio_play_sound(sndLaserShot,0,0);
+        play_sfx(sndLaserShot,0);
     
     } else if x &lt; objFireFlyBossController.x-128  &amp;&amp; x &gt; objFireFlyBossController.x-132 &amp;&amp; lightShot.state == 0{
         
         lightShot.state=1;
-        audio_play_sound(sndLaserShot,0,0);
+        play_sfx(sndLaserShot,0);
     
     } else if x &lt; objFireFlyBossController.x+2  &amp;&amp; x &gt; objFireFlyBossController.x-2 &amp;&amp; lightShot.state == 0{
         
         lightShot.state=1;
-        audio_play_sound(sndLaserShot,0,0);
+        play_sfx(sndLaserShot,0);
     
     }
-
     lightShot.x=x+2;
     x+=2;
     if x &gt;= objFireFlyBossController.x+384 {
@@ -369,22 +336,15 @@ case 4: // firing
         state=5;
     
     }
-
 break;
-
 case 5:
-
     instance_create(objFireFlyBossController.x,objFireFlyBossController.y+64,objMetalSonicUFOs);
     state = 6;
     
 break;
-
 case 6:
-
 break;
-
 case 7:
-
     blackAlpha+=.0125;
     if blackAlpha &gt;=1 {
         state=8;
@@ -397,9 +357,7 @@ case 7:
     }
     
 break;
-
 case 8: // move to center
-
     x-=4;
     if x &lt;= objFireFlyBossController.x {
         if instance_exists(objLevel.player[0]) {
@@ -410,34 +368,23 @@ case 8: // move to center
         with objFireFly.light visible = true;
         alarm[0]=50;
     }
-
 break;
-
 case 9: // move toward player
-
     if alarm[0] == 0 {
         alarm[0]=200;
         state = 10;
     }
     
 break;
-
 case 10:
-
 if alarm[0] == 0 {
-
     state=11;
     speed =0;
     direction=0;
-
 }
-
 break;
-
 case 11:
-
     blackAlpha-=.0125;
-
     if blackAlpha &lt;= 0 {
         blackAlpha = 0;
         state=1;
@@ -446,19 +393,13 @@ case 11:
             visible = false;
         }
     }
-
 break;
-
 case 12:
-
 break;
-
 case 13:
-
     image_angle+=15;
     
 break;
-
 }
 </string>
           </argument>
@@ -488,7 +429,6 @@ if state &gt;= 7 &amp;&amp; state &lt; 12 {
     draw_set_blend_mode( bm_subtract );
          draw_sprite_ext(sprFireFlyLightMask,0,x,y,1,1,0,c_white,blackAlpha);
     draw_set_blend_mode( bm_normal ); 
-
     draw_sprite_ext(sprBlack,0,blackX[0],blackY[0],blackScaleX[0],blackScaleY[0],0,c_white, blackAlpha);
     draw_sprite_ext(sprBlack,0,blackX[1],blackY[1],blackScaleX[1],blackScaleY[1],0,c_white, blackAlpha);
     draw_sprite_ext(sprBlack,0,blackX[2],blackY[2],blackScaleX[2],blackScaleY[2],0,c_white, blackAlpha);

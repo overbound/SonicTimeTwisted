@@ -315,7 +315,7 @@ with objSSCamera {
     <instance objName="objSSBumper" x="2840" y="5752" name="inst_FC653A42" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSSBumper" x="2840" y="5792" name="inst_2AAB3692" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSSLife" x="2208" y="5208" name="inst_FBEDC1C4" locked="0" code="image_index = 4;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSSLife" x="2360" y="6400" name="inst_7F0F69FA" locked="0" code="image_inex = 7;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSSLife" x="2360" y="6400" name="inst_7F0F69FA" locked="0" code="image_index = 7;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSSLife" x="3928" y="1480" name="inst_16470186" locked="0" code="image_index = 11;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSSRing" x="2488" y="352" name="inst_B13F1EB0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSSRing" x="2520" y="360" name="inst_B532BE7E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

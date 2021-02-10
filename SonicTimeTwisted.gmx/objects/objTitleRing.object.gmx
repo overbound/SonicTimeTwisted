@@ -94,9 +94,7 @@
           <argument>
             <kind>1</kind>
             <string>objTitleRingOverlay.y = y;
-
 if movement==1 {
-
     if y &gt; ystart + 8 {
         gravity = -.5;
         movement=2;
@@ -114,7 +112,6 @@ if movement==1 {
             gravity=0;
             }
             
-
             
 </string>
           </argument>

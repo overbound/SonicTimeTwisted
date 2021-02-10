@@ -21,9 +21,8 @@
             <kind>1</kind>
             <string>/// Create explosion
 with instance_create(x-2, y+5, objVVBombExplosion) depth = other.depth-1;
-
 // sound
-//audio_play_sound(sndBombExplosion, 0, false);
+//play_sfx(sndBombExplosion);
 </string>
           </argument>
         </arguments>

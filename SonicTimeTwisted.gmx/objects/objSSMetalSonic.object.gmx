@@ -97,7 +97,6 @@ exitDirection=90;
 spr_direction = -direction;
 change_sprite_direction_int_frames(8);
 
-
 </string>
           </argument>
         </arguments>
@@ -119,11 +118,8 @@ change_sprite_direction_int_frames(8);
           <argument>
             <kind>1</kind>
             <string>/// set depth
-
 depth = min(2000,distance_to_object(objSSCamera)/20);
-
 depth1= depth;
-
 if instance_exists(objSSLevel)
     if objSSLevel.started &amp;&amp; started == false {
         path_start(path,7.85,path_action_stop,true);
@@ -154,7 +150,6 @@ if instance_exists(objSSPlayer)
     if objSSPlayer.closing==false {
         PlayerUpdateRacerProgress();
     }
-
 </string>
           </argument>
         </arguments>
@@ -176,7 +171,6 @@ if instance_exists(objSSPlayer)
           <argument>
             <kind>1</kind>
             <string>/// Speed rubberband
-
 if started == 1
     with objSSPlayer {
     
@@ -220,7 +214,6 @@ if started == 2 {
         }
     }
 }
-
 </string>
           </argument>
         </arguments>
@@ -269,7 +262,6 @@ started=2;
             <kind>1</kind>
             <string>draw_shadow(16);
 draw_billboard(sprite_width*0.65, sprite_height*0.65);
-
 </string>
           </argument>
         </arguments>

@@ -6,19 +6,18 @@ with objMusic {
     musicJingle = song;
     
     if state == 6 {
-        audio_play_sound(musicJingle,20,false);
-        audio_sound_gain(musicJingle, 0, 0);
+        currentMusic=audio_play_sound(musicJingle,20,false);
+        audio_sound_gain(currentMusic, 0, 0);
         statePrevious = 5;
         previousPosition = 0;
     } else if state == 5 {
         currentMusic=audio_play_sound(musicJingle,20,false);
-        audio_sound_gain(musicJingle, 1, 200);
+        audio_sound_gain(currentMusic, objMusic.bgmGain / 100, 200);
       } else {
         stop_all_music(resume);
         currentMusic=audio_play_sound(musicJingle,20,false);
-        audio_sound_gain(musicJingle, 1, 200);
+        audio_sound_gain(currentMusic, objMusic.bgmGain / 100, 200);
         state = 5;
     }
 }
-
 

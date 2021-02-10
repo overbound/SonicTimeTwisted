@@ -41,17 +41,14 @@
             <kind>1</kind>
             <string>/// Initialize
 image_speed = 0;
-
 // general
 tiled = 0;
-
 // background elements
 back = -1;
 left = 0;
 top = 0;
 width = 0;
 height = 0;
-
 // offsets
 relative_x = 1;
 relative_y = 1;
@@ -59,6 +56,36 @@ absolute_x = 0;
 absolute_y = 0;
 separation_x = 0;
 separation_y = 0;
+// surface to draw to
+s = -1;
+surface_width = -1;
+surface_height = -1;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="1" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(surface_exists(s))
+{
+    surface_free(s);
+}
 </string>
           </argument>
         </arguments>
@@ -306,26 +333,55 @@ separation_y = 0;
           <argument>
             <kind>1</kind>
             <string>/// Render background
-
 // abort if nothing to draw
 if back&lt;0 and sprite_index&lt;0 exit;
 var sx, sy, lx, ly, rx, ry, cx, cy;
-
 // get draw coordinates
 var fx = x+floor(view_xview[view_current]*relative_x)+absolute_x;
 var fy = y+floor(view_yview[view_current]*relative_y)+absolute_y;
-
 // get separation
 if back&gt;-1 {sx = width+separation_x; sy = height+separation_y;} else
 {sx = sprite_width+separation_x; sy = sprite_height+separation_y;}
-
 // get boundaries
 if (tiled&amp;1) lx = view_xview[view_current]+((fx-view_xview[view_current]) mod sx)-sx; else lx = fx;
 if (tiled&amp;2) ly = view_yview[view_current]+((fy-view_yview[view_current]) mod sy)-sy; else ly = fy;
 if (tiled&amp;1) rx = view_xview[view_current]+view_wview[view_current]+sx; else rx = fx;
 if (tiled&amp;2) ry = view_yview[view_current]+view_hview[view_current]+sy; else ry = fy;
+if(!surface_exists(s))
+{
+    // if the tile width/height haven't been calculated yet (initialized at -1), calculate them
+    // for performances' sake, the GMS documentation states surfaces should have dimensions
+    // that are powers of 2
+    if(surface_width == -1)
+    {
+        var dest_surface_width = view_wview[0];
+        var tmp_surface_size = 1;
+        while(tmp_surface_size &lt; dest_surface_width)
+        {
+            tmp_surface_size *= 2;
+        }
+        var dest_surface_height = view_hview[0];
+        surface_width = tmp_surface_size;
+        tmp_surface_size = 1;
+        while(tmp_surface_size &lt; dest_surface_height)
+        {
+            tmp_surface_size *= 2;
+        }
+        surface_height = tmp_surface_size;
+    }
+    // create the surface
+    s = surface_create(surface_width, surface_height);
+}
 
-// draw tiled
+// draw tiled on surface
+/*
+surface_set_target(s);
+draw_clear_alpha(c_black, 0);
+lx -= view_xview[view_current];
+rx -= view_xview[view_current];
+ly -= view_yview[view_current];
+ry -= view_yview[view_current];
+*/
 for (cy=ly; cy&lt;=ry; cy+=sy)
 {
     for (cx=lx; cx&lt;=rx; cx+=sx)
@@ -334,6 +390,11 @@ for (cy=ly; cy&lt;=ry; cy+=sy)
         draw_sprite_ext(sprite_index, image_index, floor(cx), cy, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
     }
 }
+/*
+surface_reset_target();
+// draw surface
+draw_surface(s, view_xview[view_current], view_yview[view_current]);
+*/
 </string>
           </argument>
         </arguments>

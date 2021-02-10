@@ -28,16 +28,12 @@
             <string>shot = false;
 broken = false;
 penalty_shot = false;
-
 broken_value_max = 300;
 broken_value = 0;
 broken_offset = 0;
-
 penalty_timer_max = 90;
 penalty_timer = 0;
-
 bounce_health = 3;
-
 image_speed = 0;
 shield = noone;
 rock_direction = 0;
@@ -89,8 +85,8 @@ rock_direction = 0;
             {
                 audio_stop_sound(sndSmash);
             }
-            var rock_shield_sound = audio_play_sound(sndSmash, 0, false);
-            audio_sound_gain(rock_shield_sound, 0.75, 0);
+            var rock_shield_sound = play_sfx(sndSmash);
+            audio_sound_gain(rock_shield_sound, 0.75 /* TODO: normalize 0.75 between objMusic.sfxGain? */, 0);
         }
         else if (vspeed &lt; 0 &amp;&amp; collision_line(x - 10, y - 10, x + 10, y - 10, objSolid, true, true))
         {
@@ -99,8 +95,8 @@ rock_direction = 0;
             {
                 audio_stop_sound(sndSmash);
             }
-            var rock_shield_sound = audio_play_sound(sndSmash, 0, false);
-            audio_sound_gain(rock_shield_sound, 0.75, 0);
+            var rock_shield_sound = play_sfx(sndSmash);
+            audio_sound_gain(rock_shield_sound, 0.75 /* TODO: normalize 0.75 between objMusic.sfxGain? */, 0);
         }
         if (hspeed &gt; 0 &amp;&amp; collision_line(x + 8, y - 10, x + 8, y + 5, objSolid, true, true))
         {
@@ -110,8 +106,8 @@ rock_direction = 0;
             {
                 audio_stop_sound(sndSmash);
             }
-            var rock_shield_sound = audio_play_sound(sndSmash, 0, false);
-            audio_sound_gain(rock_shield_sound, 0.75, 0);
+            var rock_shield_sound = play_sfx(sndSmash);
+            audio_sound_gain(rock_shield_sound, 0.75 /* TODO: normalize 0.75 between objMusic.sfxGain? */, 0);
         }
         else if (hspeed &lt; 0 &amp;&amp; collision_line(x - 8, y - 10, x - 8, y + 5, objSolid, true, true))
         {
@@ -121,8 +117,8 @@ rock_direction = 0;
             {
                 audio_stop_sound(sndSmash);
             }
-            var rock_shield_sound = audio_play_sound(sndSmash, 0, false);
-            audio_sound_gain(rock_shield_sound, 0.75, 0);
+            var rock_shield_sound = play_sfx(sndSmash);
+            audio_sound_gain(rock_shield_sound, 0.75 /* TODO: normalize 0.75 between objMusic.sfxGain? */, 0);
         }
     }
     else
@@ -133,7 +129,6 @@ rock_direction = 0;
     
     image_angle +=15;
 }
-
 if (penalty_shot)
 {
     penalty_timer--;
@@ -143,7 +138,6 @@ if (penalty_shot)
     }
     else exit;
 }
-
 if (broken)
 {
     broken_value--;
@@ -180,14 +174,12 @@ if (broken)
           <argument>
             <kind>1</kind>
             <string>/// Destroy enemy if flying
-
 // abort if cannot damage
 if other.invulnerable exit;
 if !shot exit;
 if !instance_exists(objLevel.player[0]) {
     exit;
 }
-
 bounce_health = 1;
 // scoring
 var bonus_score;
@@ -202,12 +194,10 @@ with instance_create(other.x, other.y, objScorePopup)
     if objLevel.player[0].chain_multiplier&gt;1 image_index = 2; else
     image_index = 1;
 }
-
 // destroy enemy
 with other instance_destroy();
-
 // sound
-audio_play_sound(sndPop, 0, 0);
+play_sfx(sndPop, 0);
 </string>
           </argument>
         </arguments>
@@ -231,7 +221,6 @@ audio_play_sound(sndPop, 0, 0);
           <argument>
             <kind>1</kind>
             <string>// abort if not actually flying
-
 // abort if cannot damage
 if other.invulnerable || other.life &lt; 1 exit;
 if !instance_exists(objLevel.player[0]) {
@@ -256,7 +245,7 @@ if alarm[0] == -1 {
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="objMoleFan">
+    <event eventtype="4" ename="objSquibot">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -276,11 +265,10 @@ if alarm[0] == -1 {
             <string>// abort if cannot damage
 if other.invulnerable exit;
 if !shot exit;
+bounce_health = 1;
 if !instance_exists(objLevel.player[0]) {
     exit;
 }
-bounce_health = 1;
-
 with other {
     if life&gt;0 &amp;&amp; alarm[0] == -1
     {
@@ -290,20 +278,14 @@ with other {
         if life&lt;=0 {
         
            instance_create(x,y,objExplosionGroup)
-           instance_create(x+24,y+10,objExplosionGroup)
-           instance_create(x-12,y+32,objExplosionGroup)
-           instance_create(x,y,objExplosionGroup)
-           instance_create(x-32,y-64,objExplosionGroup)
-           instance_create(x+24,y-24,objExplosionGroup)
-           alarm[2]=8;
+           instance_create(x+10,y+10,objExplosionGroup)
+           instance_create(x-12,y+10,objExplosionGroup)
+           alarm[11]=8;
            reaction_script=noone;
            player_add_score(500);
-           
-         } else alarm[0]=15;
-    }
     
-    // sound
-    audio_play_sound(sndBossHit, 1, 0);
+         }else alarm[0]=15;
+    }
 }
 </string>
           </argument>
@@ -359,53 +341,6 @@ with other {
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="objSquibot">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>// abort if cannot damage
-if other.invulnerable exit;
-if !shot exit;
-bounce_health = 1;
-if !instance_exists(objLevel.player[0]) {
-    exit;
-}
-with other {
-    if life&gt;0 &amp;&amp; alarm[0] == -1
-    {
-        life -= 1;
-        invulnerable=true;
-        
-        if life&lt;=0 {
-        
-           instance_create(x,y,objExplosionGroup)
-           instance_create(x+10,y+10,objExplosionGroup)
-           instance_create(x-12,y+10,objExplosionGroup)
-           alarm[11]=8;
-           reaction_script=noone;
-           player_add_score(500);
-    
-         }else alarm[0]=15;
-    }
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="4" ename="objBigBombBadnik">
       <action>
         <libid>1</libid>
@@ -447,8 +382,101 @@ with other {
     }
 
 // sound
-audio_play_sound(sndBossHit, 2, 0);
+play_sfx(sndBossHit, 2);
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="objMoleFan">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>// abort if cannot damage
+if other.invulnerable exit;
+if !shot exit;
+if !instance_exists(objLevel.player[0]) {
+    exit;
+}
+bounce_health = 1;
+
+with other {
+    if life&gt;0 &amp;&amp; alarm[0] == -1
+    {
+        life -= 1;
+        invulnerable=true;
+        
+        if life&lt;=0 {
+        
+           instance_create(x,y,objExplosionGroup)
+           instance_create(x+24,y+10,objExplosionGroup)
+           instance_create(x-12,y+32,objExplosionGroup)
+           instance_create(x,y,objExplosionGroup)
+           instance_create(x-32,y-64,objExplosionGroup)
+           instance_create(x+24,y-24,objExplosionGroup)
+           alarm[2]=8;
+           reaction_script=noone;
+           player_add_score(500);
+           
+         } else alarm[0]=15;
+    }
+    
+    // sound
+    play_sfx(sndBossHit, 1);
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="objFireFlyLight">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// player_reaction_fire_fly_light(local_id)
+var bonus_score;
+// ignore if already hit
+if other.alarm[0] exit;
+// hit boss
+other.alarm[0] = 30;
+objFireFly.graphic.alarm[2] = 30;
+if other.life&gt;0
+{
+    other.life -= 1;
+    if other.life&lt;=0 {
+        with other event_user(0);
+        objFireFly.graphic.image_index = 1;
+    }
+}
+// sound
+play_sfx(sndBossHit, 0);
 </string>
           </argument>
         </arguments>
@@ -517,14 +545,14 @@ if alarm[0] == -1 {
         // hit boss
         alarm[0] = 30;
         state = 4;
-        audio_play_sound(sndBossHit, 2, 0);
-        audio_play_sound(sndGalanikHit, 1, 0);
+        play_sfx(sndBossHit, 2);
+        play_sfx(sndGalanikHit, 1);
         if life&gt;0
         {
             life -= 1;
             if life&lt;=0 
             event_user(0);
-            audio_play_sound(sndGalanikKnockBack,2,false);
+            play_sfx(sndGalanikKnockBack,2);
             event_user(0);
         }
     }
@@ -533,50 +561,6 @@ if alarm[0] == -1 {
             alarm[11] = 30;
         }
 }
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="objFireFlyLight">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// player_reaction_fire_fly_light(local_id)
-var bonus_score;
-
-// ignore if already hit
-if other.alarm[0] exit;
-
-// hit boss
-other.alarm[0] = 30;
-objFireFly.graphic.alarm[2] = 30;
-if other.life&gt;0
-{
-    other.life -= 1;
-    if other.life&lt;=0 {
-        with other event_user(0);
-        objFireFly.graphic.image_index = 1;
-    }
-}
-
-// sound
-audio_play_sound(sndBossHit, 0, 0);
-
 </string>
           </argument>
         </arguments>
@@ -602,12 +586,10 @@ audio_play_sound(sndBossHit, 0, 0);
             <string>if instance_exists(shield) {
     rock_direction = shield.rock_direction;
 }
-
 if (penalty_shot)
 {
     exit;
 }
-
 if (broken == false)
 {
     draw_sprite(sprShieldEarth_Rock2, image_index, x, y);

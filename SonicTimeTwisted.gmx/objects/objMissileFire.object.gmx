@@ -39,11 +39,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>z=24;
+            <string>z=42;
 image_speed=1;
 direction=90;
 spr_direction=-direction;
-
 </string>
           </argument>
         </arguments>
@@ -69,7 +68,6 @@ spr_direction=-direction;
             <string>/// set depth
 depth = min(2000,distance_to_object(objSSCamera)/20);
 
-
 </string>
           </argument>
         </arguments>
@@ -92,7 +90,7 @@ depth = min(2000,distance_to_object(objSSCamera)/20);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_shadow(16);
+            <string>// draw_shadow(16);
 draw_billboard(sprite_width*0.5, sprite_height*0.5);
 </string>
           </argument>

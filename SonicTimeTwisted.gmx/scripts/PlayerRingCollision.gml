@@ -1,16 +1,11 @@
 /*
-
 void PlayerRingCollision()
-
 */
-
 var d, a;
-
 if (!onGround) || argument0.alarm[0] != -1 exit;
-
     rings +=1;
     audio_stop_sound(sndRing);
-    audio_play_sound(sndRing, 0, 0);
+    play_sfx(sndRing, 0);
     
     with argument0 {
     
@@ -25,5 +20,4 @@ if (!onGround) || argument0.alarm[0] != -1 exit;
     if not (rings mod 100) {
         player_get_lives(1);
     }
-    
     

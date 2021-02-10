@@ -99,7 +99,6 @@
             <kind>1</kind>
             <string>/// Reset timer and create debris
 if player_id.underwater player_id.underwater_count = 1800;
-
 // Generate bubbles
 // ...
 </string>
@@ -125,12 +124,16 @@ if player_id.underwater player_id.underwater_count = 1800;
           <argument>
             <kind>1</kind>
             <string>/// Render shield
-
 // base
-if sprite_index==sprShieldBubble and (objScreen.image_index mod 2) draw_sprite_ext(sprite_index, (objScreen.image_index div 12) mod 2, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha); else
-
-// surrounding wave
-draw_self();
+if sprite_index==sprShieldBubble and (objScreen.flashing_visible) // this one is simply faster than frame_counter mod 2 :)
+{
+    draw_sprite_ext(sprite_index, (objScreen.image_index div 12) mod 2, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
+}
+else
+{
+    // surrounding wave
+    draw_self();
+}
 </string>
           </argument>
         </arguments>

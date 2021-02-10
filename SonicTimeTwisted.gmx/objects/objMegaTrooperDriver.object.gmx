@@ -95,7 +95,7 @@ image_speed=.2;
           <argument>
             <kind>1</kind>
             <string>with objMegaTrooper state = 8;
-audio_play_sound(sndQuake,0,false);
+play_sfx(sndQuake,0);
 </string>
           </argument>
         </arguments>
@@ -174,7 +174,7 @@ audio_play_sound(sndQuake,0,false);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>audio_play_sound(sndBombExplosion, 1, false);
+            <string>play_sfx(sndBombExplosion, 1);
 </string>
           </argument>
         </arguments>
@@ -311,7 +311,7 @@ audio_play_sound(sndQuake,0,false);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>audio_play_sound(sndBombExplosion, 1, false);
+            <string>play_sfx(sndBombExplosion, 1);
 </string>
           </argument>
         </arguments>
@@ -449,14 +449,12 @@ audio_play_sound(sndQuake,0,false);
           <argument>
             <kind>1</kind>
             <string>with objMegaTrooper {
-
     state=7;
     alarm[0] = 45;
-
 }
 instance_create(x,y,objMegaTrooperMoleDeath);
 visible = false;
-audio_play_sound(sndBombExplosion, 1, false);
+play_sfx(sndBombExplosion, 1);
 </string>
           </argument>
         </arguments>
@@ -726,19 +724,9 @@ audio_play_sound(sndBombExplosion, 1, false);
             <kind>1</kind>
             <string>/// Draw Mole
 draw_set_color(c_white);
-if alarm[0] mod 2
-{
-    draw_set_blend_mode_ext(10, 1);
-    draw_rectangle(bbox_left, bbox_top, bbox_right, bbox_bottom, false);
-    draw_set_blend_mode(bm_normal);
-}
+draw_boss_hit_blend();
 draw_self();
-if alarm[0] mod 2
-{
-    draw_set_blend_mode_ext(10, 1);
-    draw_rectangle(bbox_left, bbox_top, bbox_right, bbox_bottom, false);
-    draw_set_blend_mode(bm_normal);
-}
+draw_boss_hit_blend();
 </string>
           </argument>
         </arguments>

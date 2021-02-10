@@ -49,12 +49,10 @@ frozen=false;
 step=0;
 fire=false;
 remove = 1;
-
 bomb[0]=instance_create(x,y,objPterodactylBomb);
 bomb[1]=instance_create(x,y,objPterodactylBomb);
 bomb[0].depth = -1;
 bomb[1].depth = 1;
-
 
 </string>
           </argument>
@@ -146,7 +144,6 @@ with instance_create(x+12, y+8, objShieldIceBlockDebris) {depth = other.depth-1;
           <argument>
             <kind>1</kind>
             <string>if fire == false {
-
     with bomb[0] {
         x=other.x+8;
         y=other.y;
@@ -209,17 +206,15 @@ with instance_create(x+12, y+8, objShieldIceBlockDebris) {depth = other.depth-1;
             <kind>1</kind>
             <string>y=floor(ystart+cos(step/32)*16);
 step+=1;
-
 if instance_exists(objLevel.player[0]) {
     if abs(objLevel.player[0].x-x) &lt; 4 &amp;&amp; fire == false {
         
-        audio_play_sound(sndBombLaunch,10,false);
+        play_sfx(sndBombLaunch,10);
         with bomb[0] gravity=.25;
         with bomb[1] gravity=.25;
         fire=true;
     }
 }
-
 </string>
           </argument>
         </arguments>
@@ -246,7 +241,6 @@ if instance_exists(objLevel.player[0]) {
 alarm[1] = 180;
 hspeed = 0;
 frozen = true;
-
 // destroy icicle
 with other instance_destroy();
 </string>
@@ -273,9 +267,7 @@ with other instance_destroy();
             <kind>1</kind>
             <string>
 if objProgram.in_past == false {
-
     sprite_index=sprVultureBot;
-
 }
 </string>
           </argument>
@@ -342,10 +334,8 @@ if objProgram.in_past == false {
           <argument>
             <kind>1</kind>
             <string>/// Render ice block
-
 // get offset from time
 var offset = (-1+(((90-alarm[1]) div 4) mod 2)*2)*(alarm[1]&lt;45);
-
 // draw ice block
 draw_sprite(sprShieldIceBlock, 0, x+offset, y);
 </string>

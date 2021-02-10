@@ -1,12 +1,10 @@
 // minlerp(from, to, amount, minimum)
-
 var from = argument0;
 var to = argument1;
 var amount = argument2;
 var minimum = argument3;
 {
     var increment = (to - from) * amount;
-
     if (to > from)
     {
         if (increment < minimum)

@@ -3,9 +3,9 @@
   <type>0</type>
   <xorig>16</xorig>
   <yorigin>17</yorigin>
-  <colkind>0</colkind>
+  <colkind>1</colkind>
   <coltolerance>0</coltolerance>
-  <sepmasks>-1</sepmasks>
+  <sepmasks>0</sepmasks>
   <bboxmode>0</bboxmode>
   <bbox_left>0</bbox_left>
   <bbox_right>29</bbox_right>
@@ -15,6 +15,14 @@
   <VTile>0</VTile>
   <TextureGroups>
     <TextureGroup0>0</TextureGroup0>
+    <TextureGroup1>0</TextureGroup1>
+    <TextureGroup2>0</TextureGroup2>
+    <TextureGroup3>0</TextureGroup3>
+    <TextureGroup4>0</TextureGroup4>
+    <TextureGroup5>0</TextureGroup5>
+    <TextureGroup6>0</TextureGroup6>
+    <TextureGroup7>0</TextureGroup7>
+    <TextureGroup8>0</TextureGroup8>
   </TextureGroups>
   <For3D>0</For3D>
   <width>30</width>

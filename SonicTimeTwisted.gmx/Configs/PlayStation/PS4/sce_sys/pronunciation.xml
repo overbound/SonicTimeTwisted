@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<gamePackage>
+  <language id="00" modified="0">
+    <speechRecognitionWords>
+      <text display="1">Sonic Time Twisted</text>
+      <pronunciation>s o n i k ___ t a j m ___ t w i s t e d</pronunciation>
+    </speechRecognitionWords>
+  </language>
+  <language id="01" modified="0">
+    <speechRecognitionWords>
+      <text display="1">Sonic Time Twisted</text>
+      <pronunciation>s ao n ih k ___ t ay m ___ t w ih s t ax d</pronunciation>
+    </speechRecognitionWords>
+    <speechRecognitionWords>
+      <text display="1">Sonic Time Twisted</text>
+      <pronunciation>s ao n ih k ___ t ay m ___ t w ih s t ih d</pronunciation>
+    </speechRecognitionWords>
+  </language>
+  <language id="02" modified="0">
+    <speechRecognitionWords>
+      <text display="1">Sonic Time Twisted</text>
+      <pronunciation>s oN i k ___ t a j m ___ t w i s t d</pronunciation>
+    </speechRecognitionWords>
+    <speechRecognitionWords>
+      <text display="1">Sonic Time Twisted</text>
+      <pronunciation>s oN i k ___ t a j m ___ t w i z t E d</pronunciation>
+    </speechRecognitionWords>
+  </language>
+  <language id="03" modified="0">
+    <speechRecognitionWords>
+      <text display="1">Sonic Time Twisted</text>
+      <pronunciation>s o n i k ___ t i m e ___ a w i s t e D</pronunciation>
+    </speechRecognitionWords>
+    <speechRecognitionWords>
+      <text display="1">Sonic Time Twisted</text>
+      <pronunciation>s o n i k ___ t a j m ___ t w i s t a d</pronunciation>
+    </speechRecognitionWords>
+  </language>
+  <language id="04" modified="0">
+    <speechRecognitionWords>
+      <text display="1">Sonic Time Twisted</text>
+      <pronunciation>z o n i k ___ t i m ae ___ t v i s t ae t</pronunciation>
+    </speechRecognitionWords>
+    <speechRecognitionWords>
+      <text display="1">Sonic Time Twisted</text>
+      <pronunciation>z o n i k ___ t i m ae ___ t v i s t e t</pronunciation>
+    </speechRecognitionWords>
+  </language>
+  <language id="05" modified="0">
+    <speechRecognitionWords>
+      <text display="1">Sonic Time Twisted</text>
+      <pronunciation>s o n i k ___ t i m e ___ t w a i s t e d</pronunciation>
+    </speechRecognitionWords>
+    <speechRecognitionWords>
+      <text display="1">Sonic Time Twisted</text>
+      <pronunciation>s o n i k ___ t i m e ___ t u i s t e d</pronunciation>
+    </speechRecognitionWords>
+  </language>
+  <language id="08" modified="0">
+    <speechRecognitionWords>
+      <text display="1">Sonic Time Twisted</text>
+      <pronunciation>s o n ih k ___ t a j m ___ t u ih s t ae d</pronunciation>
+    </speechRecognitionWords>
+  </language>
+  <language id="16" modified="0">
+    <speechRecognitionWords>
+      <text display="1">Sonic Time Twisted</text>
+      <pronunciation>s o n iy k ___ t iy m e ___ t f j s t e t</pronunciation>
+    </speechRecognitionWords>
+    <speechRecognitionWords>
+      <text display="1">Sonic Time Twisted</text>
+      <pronunciation>s o n iy k ___ t iy m e ___ t v iy s t e t</pronunciation>
+    </speechRecognitionWords>
+  </language>
+  <language id="18" modified="0">
+    <speechRecognitionWords>
+      <text display="1">Sonic Time Twisted</text>
+      <pronunciation>s ao n ih k ___ t ay m ___ t w ih s t ih d</pronunciation>
+    </speechRecognitionWords>
+    <speechRecognitionWords>
+      <text display="1">Sonic Time Twisted</text>
+      <pronunciation>s ao n ih k ___ t ay m ___ t w ih s t ax d</pronunciation>
+    </speechRecognitionWords>
+  </language>
+</gamePackage>
