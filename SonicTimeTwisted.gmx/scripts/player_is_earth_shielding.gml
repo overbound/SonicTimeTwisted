@@ -63,6 +63,8 @@ if ((left_rock.shot == false && left_rock.broken == false) || (right_rock.shot =
         {
             which_rock.hspeed = (6 * h_firing) + xspeed / 2;
         }
+        xspeed -= which_rock.hspeed;
+        yspeed -= 2;
         which_rock.vspeed = -2;
         which_rock.gravity = 0.21875;
         //which_rock.vspeed = 8 * v_firing;
