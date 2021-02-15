@@ -319,20 +319,32 @@ for (var i = 0; i &lt; 4096; i++)
     
     if (ds_exists(i, ds_type_map))
     {
-        //ds_map_destroy(i);
+        ds_map_destroy(i);
         show_debug_message("Freed DS Map " + string(i));
     }
     
     if (ds_exists(i, ds_type_list))
     {
-        ds_map_destroy(i);
+        ds_list_destroy(i);
         show_debug_message("Freed DS List " + string(i));
     }
     
     if (ds_exists(i, ds_type_queue))
     {
-        ds_map_destroy(i);
+        ds_queue_destroy(i);
         show_debug_message("Freed DS Queue " + string(i));
+    }
+    
+    if (ds_exists(i, ds_type_grid))
+    {
+        ds_grid_destroy(i);
+        show_debug_message("Freed DS Grid " + string(i));
+    }
+    
+    if (ds_exists(i, ds_type_stack))
+    {
+        ds_stack_destroy(i);
+        show_debug_message("Freed DS Stack " + string(i));
     }
     
     if (part_system_exists(i))

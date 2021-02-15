@@ -40,7 +40,6 @@
           <argument>
             <kind>1</kind>
             <string>reaction_script=player_reaction_switch_button;
-audio = audio_emitter_create();
 </string>
           </argument>
         </arguments>

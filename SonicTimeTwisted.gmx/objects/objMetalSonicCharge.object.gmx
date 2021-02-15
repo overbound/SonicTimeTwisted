@@ -49,7 +49,6 @@ shieldVisible=false;
 flashOffset=0;
 explosionAlpha=0;
 stateLoop=0;
-audio = audio_emitter_create();
 </string>
           </argument>
         </arguments>

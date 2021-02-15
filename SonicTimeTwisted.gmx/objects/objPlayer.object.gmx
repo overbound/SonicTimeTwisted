@@ -150,7 +150,6 @@ ytable = ds_list_create();
 xprev=x;
 
 // sound
-audio = audio_emitter_create();
 reserved_sound = -1;
 shield_type = -1;
 
@@ -189,7 +188,6 @@ set_input_enabled(true);
 ds_list_destroy(terrain_list);
 ds_list_destroy(xtable);
 ds_list_destroy(ytable);
-audio_emitter_free(audio);
 
 // Remove tails' tails
 if (character_id==2) with tails_effect instance_destroy();
@@ -396,9 +394,6 @@ default: // normal activity
     // reset vertical panning
     if (state!=player_state_look) and (state!=player_state_crouch) camera.offset_y -= 2*sign(camera.offset_y);
 
-    // update emitter position
-    audio_emitter_position(audio, floor(x), floor(y), 0);
-
     // update listener
     if (player_id==0) audio_listener_position(camera.x, camera.y, 0);
 }
@@ -505,7 +500,6 @@ if xtable &gt; 0 {
 ds_list_destroy(terrain_list);
 ds_list_destroy(xtable);
 ds_list_destroy(ytable);
-audio_emitter_free(audio);
 
 // Remove id
 with (objLevel) player[other.player_id] = noone;

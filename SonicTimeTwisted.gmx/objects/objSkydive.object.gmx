@@ -58,7 +58,6 @@ velocity = 7;
 // timing
 ticks = 1;
 interval = 25;
-audio = audio_emitter_create();
 </string>
           </argument>
         </arguments>

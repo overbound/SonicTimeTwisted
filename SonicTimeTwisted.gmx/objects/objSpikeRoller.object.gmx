@@ -49,8 +49,6 @@ mode=1;
 remove=0;
 time=0.03125;
 distance=64;
-audio = audio_emitter_create();
-
 </string>
           </argument>
         </arguments>

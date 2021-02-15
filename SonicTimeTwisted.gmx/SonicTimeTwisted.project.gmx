@@ -4486,6 +4486,9 @@
           <script>scripts\level_goto_vv1.gml</script>
           <script>scripts\level_time_travel.gml</script>
         </scripts>
+        <scripts name="Debug">
+          <script>scripts\print_mem_usage.gml</script>
+        </scripts>
       </scripts>
       <scripts name="Save">
         <script>scripts\create_new_save.gml</script>

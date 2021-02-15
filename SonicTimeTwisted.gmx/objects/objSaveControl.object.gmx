@@ -144,10 +144,8 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(surface_exists(hint_surface))
-{
-    surface_free(hint_surface);
-}
+            <string>/// Clean up
+if (surface_exists(hint_surface)) surface_free(hint_surface);
 </string>
           </argument>
         </arguments>
@@ -1872,7 +1870,9 @@ if selectState == 4 {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>stop_all_music(false);
+            <string>/// Clean up
+if (surface_exists(hint_surface)) surface_free(hint_surface);
+stop_all_music(false);
 </string>
           </argument>
         </arguments>
