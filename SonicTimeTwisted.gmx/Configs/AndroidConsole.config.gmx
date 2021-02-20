@@ -433,7 +433,7 @@
     <option_noborder>false</option_noborder>
     <option_nobuttons>false</option_nobuttons>
     <option_noscreensaver>true</option_noscreensaver>
-    <option_ouya_packaging>-1</option_ouya_packaging>
+    <option_ouya_packaging>0</option_ouya_packaging>
     <option_priority>0</option_priority>
     <option_ps3_build_version>0</option_ps3_build_version>
     <option_ps3_interpolate>-1</option_ps3_interpolate>
