@@ -5455,6 +5455,7 @@
         <object>objects\objFadeWhite</object>
         <object>objects\objFadeWhiteFromSave</object>
         <object>objects\objFadeWhiteFromSaveToTitle</object>
+        <object>objects\objFadeWhiteFromLevelToTitle</object>
         <object>objects\objFinalEnding</object>
         <object>objects\objGameOver</object>
         <object>objects\objLevelToSS</object>
@@ -6103,8 +6104,8 @@
       </rooms>
     </rooms>
   </rooms>
-  <constants number="86">
-    <constant name="VERSION">"v1.1.1"</constant>
+  <constants number="88">
+    <constant name="VERSION">"v1.1.2"</constant>
     <constant name="GAMEPAD_POV_Y">7</constant>
     <constant name="GAMEPAD_POV_X">6</constant>
     <constant name="GAMEPAD_AXIS_V">5</constant>
@@ -6190,6 +6191,8 @@
     <constant name="INPUT_OS_SPECIFIC_1">3</constant>
     <constant name="DEVICE_HAS_TOUCHSCREEN">0</constant>
     <constant name="DEVICE_SUPPORTS_FILE_FIND">1</constant>
+    <constant name="sine">global._sine_lookup</constant>
+    <constant name="cosine">global._cosine_lookup</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>

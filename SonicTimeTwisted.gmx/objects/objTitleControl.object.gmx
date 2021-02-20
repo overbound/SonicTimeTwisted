@@ -145,7 +145,7 @@ game_restart();
             <string>name++;
 if(name &lt; 12)
 {
-    alarm_set(0, 65);
+    alarm[0] = 65;
 }
 if(name == 9)
 {
@@ -918,7 +918,7 @@ if(skipping == 30)
     // the skipping itself
     name = 12;
     play_effect(bgmTitle, false);
-    alarm_set(0, -1);
+    alarm[0] = -1;
     with(objTitleSonic)
     {
         event_user(0);

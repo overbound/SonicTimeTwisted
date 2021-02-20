@@ -44,6 +44,7 @@ paused = false;
 lost_focus = false;
 check_room = 0;
 // controllers
+instance_create(0, 0, objScreen);
 inputManager = instance_create(0, 0, objInput);
 with(inputManager)
 {
@@ -99,8 +100,7 @@ no_save_data = ds_map_create();
 // randomize seed
 randomize();
 // create geometric tables
-globalvar sine, cosine;
-for (var i=0; i&lt;360; i+=1)
+for (var i = 360; i &gt; -1; i--)
 {
     sine[i] = sin(degtorad(i));
     cosine[i] = cos(degtorad(i));
@@ -108,7 +108,6 @@ for (var i=0; i&lt;360; i+=1)
 // start critical processes
 instance_create(0, 0, objGameData);
 instance_create(0, 0, objMusic);
-instance_create(0, 0, objScreen);
 tr_init();
 instance_create(0, 0, objResources);
 // start critical processes
@@ -425,26 +424,28 @@ surface_resize(application_surface, width, height);
 audio_stop_all();
 d3d_end();
 
-if (DEVICE_INFO &amp; DEVICE_OS_PLAYSTATION)
-{
-    for (var _k = ds_map_find_first(storage_buffers);
-         ds_map_exists(storage_buffers, _k);
-         _k = ds_map_find_next(storage_buffers, _k))
-    {
-        var _v = storage_buffers[? _k];
-        if (buffer_exists(_v)) buffer_delete(_v);
+if (DEVICE_INFO &amp; DEVICE_OS_PLAYSTATION) {
+    if (ds_exists(storage_buffers, ds_type_map)) {
+        for (var _k = ds_map_find_first(storage_buffers);
+             ds_map_exists(storage_buffers, _k);
+             _k = ds_map_find_next(storage_buffers, _k)) {
+            var _v = storage_buffers[? _k];
+            if (buffer_exists(_v)) buffer_delete(_v);
+        }
+        ds_map_destroy(storage_buffers);
     }
     
-    ds_map_destroy(storage_buffers);
-    ds_map_destroy(storage_map);
+    if (ds_exists(storage_map, ds_type_map)) {
+        ds_map_destroy(storage_map);
+    }
 }
 
-ds_map_destroy(no_save_data);
-ds_list_destroy(future_list);
-ds_list_destroy(past_list);
-ds_list_destroy(special_future_list);
-ds_list_destroy(special_past_list);
-ds_priority_destroy(music_queue);
+if (ds_exists(no_save_data, ds_type_map)) ds_map_destroy(no_save_data);
+if (ds_exists(future_list, ds_type_list)) ds_list_destroy(future_list);
+if (ds_exists(past_list, ds_type_list)) ds_list_destroy(past_list);
+if (ds_exists(special_future_list, ds_type_list)) ds_list_destroy(special_future_list);
+if (ds_exists(special_past_list, ds_type_list)) ds_list_destroy(special_past_list);
+if (ds_exists(music_queue, ds_type_priority)) ds_priority_destroy(music_queue);
 
 // free arrays.
 sine = 0;

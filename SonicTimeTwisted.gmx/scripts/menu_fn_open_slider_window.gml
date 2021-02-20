@@ -11,6 +11,10 @@ confirmation_no_action = argument3; // used as minimum instead
 confirmation_yes_action = argument4; // used as maximum instead
 
 var view_width = view_wview[view_current];
+if(DEVICE_INFO & DEVICE_TYPE_SMARTPHONE)
+{
+    view_width = get_smartphone_screen_width();
+}
 var view_height = view_hview[view_current];
 
 draw_set_font(objResources.fontHudMin);

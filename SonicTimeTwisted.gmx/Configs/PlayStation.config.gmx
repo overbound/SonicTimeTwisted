@@ -894,7 +894,7 @@
     <constants number="4">
       <constant name="DEVICE_INFO">DEVICE_TYPE_CONSOLE | DEVICE_OS_PLAYSTATION</constant>
       <constant name="DEVICE_HAS_TOUCHSCREEN">0</constant>
-      <constant name="VERSION">"v1.1.0-dev-PS"</constant>
+      <constant name="VERSION">"v1.1.2-dev-PS"</constant>
       <constant name="DEVICE_SUPPORTS_FILE_FIND">0</constant>
     </constants>
   </ConfigConstants>

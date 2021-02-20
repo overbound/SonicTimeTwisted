@@ -201,7 +201,7 @@ with objTitleRing movement = 1;
           <argument>
             <kind>1</kind>
             <string>/// called when skipping to title screen
-alarm_set(0, -1);
+alarm[0] = -1;
 sprite_index  = sprTitleSonic;
 image_speed = 0.125;
 gravity=0;
@@ -210,6 +210,7 @@ state=2;
 view_yview[0] = room_height - view_hview[0];
 y = objTitleRing.y;
 with objTitleRing movement = 1;
+show_debug_message("Skipping animation...");
 </string>
           </argument>
         </arguments>

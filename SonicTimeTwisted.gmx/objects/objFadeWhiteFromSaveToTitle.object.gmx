@@ -130,7 +130,7 @@ with(objTitleControl)
 {
     name = 12;
     play_effect(bgmTitle, false);
-    alarm_set(0, -1);
+    alarm[0] = -1;
     with(objTitleSonic)
     {
         event_user(0);
@@ -159,9 +159,8 @@ with(objTitleControl)
           <argument>
             <kind>1</kind>
             <string>/// Fill screen with white
-draw_set_color(c_white);
 draw_set_alpha(image_alpha);
-draw_rectangle(view_xview[view_current], view_yview[view_current], view_xview[view_current]+view_wview[view_current], view_yview[view_current]+view_hview[view_current], false);
+draw_rectangle_color(view_xview[view_current], view_yview[view_current], view_xview[view_current]+view_wview[view_current], view_yview[view_current]+view_hview[view_current], c_white, c_white, c_white, c_white, false);
 draw_set_alpha(1);
 </string>
           </argument>

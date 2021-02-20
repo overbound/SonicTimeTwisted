@@ -6,13 +6,8 @@ if (os_type == os_windows) _sep = "\";
 if (DEVICE_SUPPORTS_FILE_FIND)
 {
     var _fname = file_find_first("translations" + _sep + "*.json", false);
-    if (_fname == -1)
-    {
-        file_find_close();
-        return false;
-    }
     
-    while (_fname != "")
+    while (string_length(_fname) != 0)
     {
         tr_load_file("translations" + _sep + _fname);
         _fname = file_find_next();

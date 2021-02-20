@@ -1,5 +1,7 @@
 // touchscreen inputs
 var screen_width = get_smartphone_screen_width();
+var default_width = objScreen.width;
+var margin = (screen_width - default_width)/2;
 if(argument0) // argument0 - from INI, default values if false
 {
     dpadmode = ini_read_real('smartphone','dpadmode',0);
@@ -8,13 +10,13 @@ if(argument0) // argument0 - from INI, default values if false
     vkdeadzoness = ini_read_real('smartphone','vkdeadzoness',0.25);
     gyroinss = ini_read_real('smartphone','gyroinss',1);
     vksize = ini_read_real('smartphone','vksize',0);
-    dpadx = ini_read_real('smartphone','dpadx',64);
+    dpadx = ini_read_real('smartphone','dpadx',64 - margin);
     dpady = ini_read_real('smartphone','dpady',178);
-    bax = ini_read_real('smartphone','bax',screen_width - 64);
+    bax = ini_read_real('smartphone','bax',screen_width - 64 - margin);
     bay = ini_read_real('smartphone','bay',178);
-    bsx = ini_read_real('smartphone','bsx',screen_width/2);
+    bsx = ini_read_real('smartphone','bsx',screen_width/2 - margin);
     bsy = ini_read_real('smartphone','bsy',16);
-    bbx = ini_read_real('smartphone','bbx',screen_width - 140);
+    bbx = ini_read_real('smartphone','bbx',screen_width - 140 - margin);
     bby = ini_read_real('smartphone','bby',164);
     gyromode = ini_read_real('smartphone','gyromode',1);
     gyro_switch_on_angle_x = ini_read_real('smartphone','gyro_switch_on_angle_x',0.15);
@@ -38,7 +40,7 @@ else
     vkdeadzone = 0.25; // dead zone: 0.1 to 1
     
     // direction pad coordinates - saved in file
-    dpadx = 64;
+    dpadx = 64 - margin;
     dpady = 178;
     
     // direction pad current coordinates - relevant when using dynamic D-Pad
@@ -55,18 +57,18 @@ else
     dpad_jumpbutton_sprite = sprTouchscreenButtonBig;
     
     // A button coordinates
-    bax = screen_width - 64;
+    bax = screen_width - 64 - margin;
     bay = 178;
     
     // direction pad & A button radius
     bar = 32;
     
     // Start button coordinates
-    bsx = screen_width/2;
+    bsx = screen_width/2 - margin;
     bsy = 16;
     
     // Super button coordinates
-    bbx = screen_width - 140;
+    bbx = screen_width - 140 - margin;
     bby = 164;
     super_button_enabled = false;
     
