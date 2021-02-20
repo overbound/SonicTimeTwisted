@@ -80,8 +80,8 @@ draw_total_bonus = "0";
     alarm[0] = 8;
     alarm[1] = 620;
 }
-play_boss_intro(bgmMetalSonicIntro,0);
-objMusic.bossLoop = bgmMetalSonicLoop;
+set_boss_music(room);
+play_boss_intro(objMusic.bossIntroAsset, 0);
 alarm[10] = 180;
 </string>
           </argument>
@@ -401,7 +401,7 @@ case 3: // apply scores
     if not (time_bonus or rings_bonus or perfect_bonus)
     {
         // sound
-        audio_stop_sound(sndBeep);
+        stop_sound(sndBeep);
         //play_sfx(sndChing, 0);
         // finished
         state += 1;
@@ -410,7 +410,7 @@ case 3: // apply scores
     else if ((objScreen.image_index mod 4) == 0)
     {
         // sound
-        audio_stop_sound(sndBeep);
+        stop_sound(sndBeep);
         play_sfx(sndBeep, 0);
     }
     break;

@@ -11,9 +11,9 @@
   <VTile>-1</VTile>
   <TextureGroups>
     <TextureGroup0>22</TextureGroup0>
-    <TextureGroup1>0</TextureGroup1>
+    <TextureGroup1>22</TextureGroup1>
     <TextureGroup2>22</TextureGroup2>
-    <TextureGroup3>0</TextureGroup3>
+    <TextureGroup3>22</TextureGroup3>
     <TextureGroup4>0</TextureGroup4>
     <TextureGroup5>0</TextureGroup5>
     <TextureGroup6>0</TextureGroup6>

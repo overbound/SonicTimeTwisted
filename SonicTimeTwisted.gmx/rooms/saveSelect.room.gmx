@@ -10,8 +10,7 @@
   <persistent>0</persistent>
   <colour>16777215</colour>
   <showcolour>0</showcolour>
-  <code>play_music_intro(bgmSaveScreenIntro,0);
-objMusic.musicLoop = bgmSaveScreenLoop;</code>
+  <code></code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>

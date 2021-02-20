@@ -75,8 +75,8 @@ case 0:
     } else {
     
         state = 1;
-        objMusic.bossLoop = bgmBossLoop;
-        play_boss_intro(bgmBossIntro,0);
+        set_boss_music(room);
+        play_boss_intro(objMusic.bossIntroAsset, 0);
     }
 break;
 case 1:

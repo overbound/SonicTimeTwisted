@@ -4,7 +4,8 @@ switch(argument0)
         menu_fn_goto_submenu(menu_part_sstage_levelselect_sstages_items);
         break;
     case 1:
-        menu_fn_close_menu(menu_fn_restart_game);
+        menu_fn_longconfirmation(-4);
+        menu_fn_restart_game();
         break;
 }
 

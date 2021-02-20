@@ -1,27 +1,28 @@
-///play_previous(statePrevious,position);
+///play_previous(statePrevious,position)
 var sp = argument0;
-with objMusic {
-    switch sp {
-    case 0: // silence
-    
-        break;
-    case 1: // Play Music Intro
-        play_music_intro(musicIntro,argument1);
-        break;
-    case 2: // Play Music Loop
-        play_music_loop(musicLoop,argument1);
-        break;
-    case 3: // Play Boss Intro
-        play_boss_intro(bossIntro,argument1);
-        break;
-    case 4: // Play Boss Loop
-        play_boss_loop(bossLoop,argument1);
-        break;
-    case 5: // Play Jingle
-        play_jingle(musicJingle,true);
-        break;
-    case 6: // Play Effect
-        play_effect(musicEffect,true);
-        break;
+var position = argument1;
+with (objMusic) {
+    switch (sp) {
+        case MUSIC_STATE.SILENCE: // silence
+            // Do nothing.
+            break;
+        case MUSIC_STATE.MUSIC_INTRO: // Play Music Intro
+            play_music_intro(musicIntroAsset, position);
+            break;
+        case MUSIC_STATE.MUSIC_LOOP: // Play Music Loop
+            play_music_loop(musicLoopAsset, position);
+            break;
+        case MUSIC_STATE.BOSS_INTRO: // Play Boss Intro
+            play_boss_intro(bossIntroAsset, position);
+            break;
+        case MUSIC_STATE.BOSS_LOOP: // Play Boss Loop
+            play_boss_loop(bossLoopAsset, position);
+            break;
+        case MUSIC_STATE.JINGLE: // Play Jingle
+            play_jingle(musicJingleAsset, true);
+            break;
+        case MUSIC_STATE.EFFECT: // Play Effect
+            play_effect(musicEffectAsset, true);
+            break;
     }
 }

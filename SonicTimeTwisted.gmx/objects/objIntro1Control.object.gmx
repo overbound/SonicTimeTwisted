@@ -26,7 +26,6 @@
           <argument>
             <kind>1</kind>
             <string>state=0;
-objProgram.stop_sound = false;
 play_sfx(bgmIntro,3);
 </string>
           </argument>

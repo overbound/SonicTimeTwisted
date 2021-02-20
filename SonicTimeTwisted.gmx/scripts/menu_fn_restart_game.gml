@@ -1,3 +1,6 @@
 
-transition_to(objFadeWhiteFromLevelToTitle, titlescreen, 24);
-print_mem_usage();
+if (!instance_exists(objFadeWhiteFromLevelToTitle))
+{
+    transition_to(objFadeWhiteFromLevelToTitle, titlescreen, 24);
+    print_mem_usage();
+}

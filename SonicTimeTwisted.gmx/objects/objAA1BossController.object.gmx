@@ -60,8 +60,8 @@ with objParallax instance_destroy();
 if objProgram.in_past
     instance_create(0, 0, objAAPastBack);
 else instance_create(0, 0, objAAFutureBack);
-audio_stop_sound(bgmMetalSonicIntro);
-audio_stop_sound(bgmMetalSonicLoop);
+stop_sound(bgmMetalSonicIntro);
+stop_sound(bgmMetalSonicLoop);
 remove=0;
 </string>
           </argument>
@@ -296,9 +296,8 @@ plat[1] = instance_create(512, 320, objAA1BossFloor);
 plat[1].hspeed = -4.5;
 plat[1].image_xscale = -1;
 // boss theme
-objMusic.bossLoop = bgmMetalSonicLoop;
-objMusic.bossIntro = bgmMetalSonicIntro;
-play_boss_intro(objMusic.bossIntro,0);
+set_boss_music(room);
+play_boss_intro(objMusic.bossIntroAsset, 0);
 // replace background
 with objAAFutureBack instance_destroy();
 with objParallax instance_destroy();

@@ -215,7 +215,7 @@ case 5: // flash intro
     flashOffset+=6;
     image_alpha +=.025;
     if flashOffset &gt;= 352 {
-        audio_stop_sound(sndMetalLaugh);
+        stop_sound(sndMetalLaugh);
         level_goto_next();
         state=6;
     }

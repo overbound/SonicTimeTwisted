@@ -11,23 +11,14 @@
   <colour>0</colour>
   <showcolour>-1</showcolour>
   <code>// initialize level settings
-// initialize level settings
 with objLevel {
     bg = instance_create(x,y,objRRFBack);
     act = 2;
-    musicLoop = bgmRRFutureLoop;
-    musicIntro = bgmRRFutureIntro;
     flower = sprFlowerRR;
 }
 objProgram.in_past=false;
 // setup titlecard
-with objTitlecard
-{
-    title_string[0] = tr("_zonename_RRZ_A");
-    title_string[1] = tr("_zonename_RRZ_B");
-    title_string[2] = tr("_zonename_RRZ_C");
-    title_string[3] = tr("_ACT2_FUTURE");
-}</code>
+get_titlecard_array(room);</code>
   <enableViews>0</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>
@@ -158,7 +149,7 @@ with objTitlecard
     <instance objName="objCurveConvexSlim" x="2880" y="1280" name="inst_AF7A69F3" locked="0" code="" scaleX="-1.73000001907349" scaleY="1.72631573677063" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="2560" y="1444" name="inst_23FF103A" locked="0" code="" scaleX="4" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="2848" y="1444" name="inst_4BAEB610" locked="0" code="" scaleX="4" scaleY="2" colour="4294967295" rotation="0"/>
-    <instance objName="objLevel" x="0" y="0" name="inst_A936EE5E" locked="0" code="objMusic.musicLoop = bgmRRFutureLoop;&#xA;objMusic.musicIntro = bgmRRFutureIntro;&#xA;objMusic.bossLoop = bgmBossLoop;&#xA;objMusic.bossIntro = bgmBossIntro;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objLevel" x="0" y="0" name="inst_A936EE5E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRing" x="420" y="680" name="inst_6AFC15EC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRing" x="440" y="680" name="inst_D7F7EF46" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRing" x="400" y="680" name="inst_5C3287A6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

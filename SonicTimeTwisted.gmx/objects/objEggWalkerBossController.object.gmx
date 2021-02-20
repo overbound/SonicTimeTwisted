@@ -121,7 +121,6 @@ break;
 // Shift Camera Right
 case 1:
 // 
-//play_boss_music();
 
 if(view_yview[0]+view_hview[0] &gt; objLevel.player[0].camera.bottom){
     view_yview[view_current]-=2;

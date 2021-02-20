@@ -135,8 +135,8 @@ else
           <argument>
             <kind>1</kind>
             <string>/// start boss music
-play_boss_intro(bgmBossIntro,0);
-objMusic.bossLoop = bgmBossLoop;
+set_boss_music(room);
+play_boss_intro(objMusic.bossIntroAsset, 0);
 </string>
           </argument>
         </arguments>

@@ -122,6 +122,13 @@ menu = instance_create(x, y, objMenu);
 ss_instructions_override = false;
 ss_instructions1 = "";
 ss_instructions2 = "";
+// if we're playing this using the level select, then a different BGM plays
+// and we get a menu instead of a countdown
+if(objProgram.saveSlot == -2)
+{
+    set_zone_music(room);
+    play_music_intro(objMusic.musicIntroAsset, 0);
+}
 </string>
           </argument>
         </arguments>

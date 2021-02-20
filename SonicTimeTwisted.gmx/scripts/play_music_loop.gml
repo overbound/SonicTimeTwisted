@@ -2,10 +2,11 @@
 var song = argument0;
 var position = argument1;
 stop_all_music(false);
-with objMusic {
-    musicLoop = song;
-    currentMusic = audio_play_sound(musicLoop,20,false);
-    audio_sound_gain(currentMusic, objMusic.bgmGain / 100, 0);
-    audio_sound_set_track_position(currentMusic, position);
-    state = 2;
+with (objMusic) {
+    musicLoopAsset = song;
+    musicLoop = audio_play_sound(musicLoopAsset, 20, false);
+    audio_sound_gain(musicLoop, bgmGain / 100, 0);
+    audio_sound_set_track_position(musicLoop, position);
+    state = MUSIC_STATE.MUSIC_LOOP;
+    currentMusic = musicLoop;
 }

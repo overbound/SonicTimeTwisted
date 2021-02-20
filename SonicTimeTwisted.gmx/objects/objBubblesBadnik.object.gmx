@@ -197,7 +197,7 @@ if bubble_id.visible {
     
     }else {
     y=ystart;
-    audio_stop_sound(sndBubblesShake);
+    stop_sound(sndBubblesShake);
     }
 </string>
           </argument>

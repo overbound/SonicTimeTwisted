@@ -191,11 +191,14 @@ if !opening exit;
                 play_sfx(sndDingEnd, 1);
                 
                 if (!global.special_level_music_played) {
-                    if (audio_is_playing(objMusic.musicIntro) == false &amp;&amp; audio_is_playing(objMusic.musicLoop) == false) {
-                        play_music_intro(objMusic.musicIntro,0);
-                        global.special_level_music_played = true;
+                    with (objMusic) {
+                        if (!audio_is_playing(musicIntro) &amp;&amp; !audio_is_playing(musicLoop)) {
+                            play_music_intro(musicIntroAsset, 0);
+                            global.special_level_music_played = true;
+                        }
                     }
                 }
+                
                 alarm[0] = 25;
                 flash=true;
                 with objSSLevel { started = true; }

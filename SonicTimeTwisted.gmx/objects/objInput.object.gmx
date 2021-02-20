@@ -101,7 +101,10 @@ input_load_touchscreen_controls(false);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>ds_queue_destroy(rumble_queue);
+            <string>/// Clean up
+if (ds_exists(stream, ds_type_list)) ds_list_destroy(stream);
+if (ds_exists(rumble_queue, ds_type_queue)) ds_queue_destroy(rumble_queue);
+computer_input_reset_state();
 </string>
           </argument>
         </arguments>
@@ -242,21 +245,33 @@ case "gamepad discovered":
     break;
 case "gamepad lost":
     var index = async_load[?"pad_index"];
+    var found = false;
     padarray[pad] = false;
     
     show_debug_message('Lost pad at slot ' + string(pad));
     
     if (pad == index) {
+        // Search for a connected gamepad so we can switch to it.
         for (var i = 0; i &lt; padcount; i++) {
             if (padarray[i]) {
                 pad = i;
                 paddesc = string_lower(gamepad_get_description(pad));
+                found = true;
                 break;
             }
         }
+        
+        // That disconnected gamepad was the last.
+        if (!found) {
+            show_debug_message("All gamepads are disconnected!");
+            /*
+                A hint for those who want to port STT to Switch,
+                here you can invoke the joycon applet,
+                look at this, all controllers are disconnected, gameplay cannot progress any further,
+                by N's regulations you must ask the player to connect at least one controller.
+            */
+        }
     }
-    
-    pad = 0; // set slot to 0, if we didn't break out of the loop.
     
     break;
 }
@@ -284,7 +299,6 @@ case "gamepad lost":
             <kind>1</kind>
             <string>/// Delete input stream
 if (ds_exists(stream, ds_type_list)) ds_list_destroy(stream);
-//if (ds_exists(rumble_queue, ds_type_queue)) ds_queue_destroy(rumble_queue);
 computer_input_reset_state();
 </string>
           </argument>

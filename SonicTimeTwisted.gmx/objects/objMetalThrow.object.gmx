@@ -156,7 +156,7 @@ image_index=0;
 alarm[2]=30;
 play_sfx(sndMetalUFOAttack,10);
 play_sfx(sndMetalBolt,11);
-audio_stop_sound(sndUFOFly);
+stop_sound(sndUFOFly);
 </string>
           </argument>
         </arguments>

@@ -2,11 +2,12 @@
 var song = argument0;
 var position = argument1;
 stop_all_music(false);
-with objMusic {
-    bossIntro = song;
-    currentMusic = audio_play_sound(bossIntro,20,false);
-    audio_sound_gain(currentMusic, objMusic.bgmGain / 100, 0);
-    audio_sound_set_track_position(currentMusic, position);
-    state = 3;
+with (objMusic) {
+    bossIntroAsset = song;
+    bossIntro = audio_play_sound(bossIntroAsset, 20, false);
+    audio_sound_gain(bossIntro, bgmGain / 100, 0);
+    audio_sound_set_track_position(bossIntro, position);
+    state = MUSIC_STATE.BOSS_INTRO;
     priorityMusicState = state;
+    currentMusic = bossIntro;
 }

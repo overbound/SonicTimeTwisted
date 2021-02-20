@@ -17,13 +17,7 @@ objLevel.flower = sprFlowerPP;
 with objLevel bg = instance_create(x,y,objPPBackground);
 objProgram.in_past=false;
 // setup titlecard
-with objTitlecard
-{
-    title_string[0] = tr("_zonename_PPZ_A");
-    title_string[1] = tr("_zonename_PPZ_B");
-    title_string[2] = tr("_zonename_PPZ_C");
-    title_string[3] = tr("_ACT1");
-}</code>
+get_titlecard_array(room);</code>
   <enableViews>0</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>
@@ -326,7 +320,7 @@ with objTitlecard
     <instance objName="objBlock" x="3392" y="1824" name="inst_1EB0D3B9" locked="0" code="through=1;&#xA;" scaleX="32" scaleY="1.5" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="3712" y="1792" name="inst_3E10FCFF" locked="0" code="through=1;&#xA;" scaleX="32" scaleY="1.5" colour="4294967295" rotation="0"/>
     <instance objName="objLava" x="1088" y="2976" name="inst_6C55AE89" locked="0" code="" scaleX="2" scaleY="2" colour="4294967295" rotation="0"/>
-    <instance objName="objLevel" x="0" y="0" name="inst_17E4CB83" locked="0" code="objMusic.musicIntro = bgmPP1Intro;&#xA;objMusic.musicLoop = bgmPP1Loop;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objLevel" x="0" y="0" name="inst_17E4CB83" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objLavaCrack" x="2688" y="128" name="inst_2FE9682F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSlant" x="512" y="1472" name="inst_11077CEA" locked="0" code="" scaleX="-2" scaleY="-2" colour="4294967295" rotation="0"/>
     <instance objName="objSlant" x="256" y="1536" name="inst_797098FE" locked="0" code="" scaleX="-2" scaleY="-2" colour="4294967295" rotation="0"/>

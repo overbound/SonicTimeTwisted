@@ -81,7 +81,7 @@ reaction_script = noone;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>audio_stop_sound(sndMetalLaser);
+            <string>stop_sound(sndMetalLaser);
 </string>
           </argument>
         </arguments>

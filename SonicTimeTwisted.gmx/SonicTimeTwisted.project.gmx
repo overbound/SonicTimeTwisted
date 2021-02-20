@@ -4161,8 +4161,11 @@
         <script>scripts\play_previous.gml</script>
         <script>scripts\play_sfx.gml</script>
         <script>scripts\play_sfx_at.gml</script>
+        <script>scripts\stop_sound.gml</script>
         <script>scripts\stop_all_music.gml</script>
         <script>scripts\sfx_special_volume.gml</script>
+        <script>scripts\set_zone_music.gml</script>
+        <script>scripts\set_boss_music.gml</script>
       </scripts>
       <scripts name="Helper">
         <script>scripts\string_explode.gml</script>
@@ -4572,6 +4575,7 @@
       <scripts name="Titlecard">
         <script>scripts\init_titlecard.gml</script>
         <script>scripts\render_titlecard.gml</script>
+        <script>scripts\get_titlecard_array.gml</script>
       </scripts>
     </scripts>
     <scripts name="Scene Objects">
@@ -6104,7 +6108,7 @@
       </rooms>
     </rooms>
   </rooms>
-  <constants number="88">
+  <constants number="89">
     <constant name="VERSION">"v1.1.2"</constant>
     <constant name="GAMEPAD_POV_Y">7</constant>
     <constant name="GAMEPAD_POV_X">6</constant>
@@ -6182,7 +6186,8 @@
     <constant name="DEVICE_OS_IOS">128</constant>
     <constant name="DEVICE_OS_ANDROID">256</constant>
     <constant name="DEVICE_OS_PLAYSTATION">512</constant>
-    <constant name="DEVICE_OS_UNKNOWN">1024</constant>
+    <constant name="DEVICE_OS_SWITCH">1024</constant>
+    <constant name="DEVICE_OS_UNKNOWN">2048</constant>
     <constant name="DEVICE_INFO">DEVICE_TYPE_UNKNOWN | DEVICE_OS_UNKNOWN</constant>
     <constant name="DEVICE_BACK_BUTTON">vk_escape</constant>
     <constant name="INPUT_KEYBOARD">0</constant>

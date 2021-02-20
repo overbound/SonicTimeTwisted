@@ -11,7 +11,7 @@ switch(argument0)
         break;
     case 6:
         // Sunken Saucer
-        audio_stop_sound(bgmTitle);
+        stop_sound(bgmTitle);
         audio_stop_all();
         stop_all_music(true);
         play_sfx(sndConfirm);
@@ -23,7 +23,7 @@ switch(argument0)
         break;
     case 8:
         // Galacnik Gauntlet
-        audio_stop_sound(bgmTitle);
+        stop_sound(bgmTitle);
         audio_stop_all();
         stop_all_music(true);
         play_sfx(sndConfirm);

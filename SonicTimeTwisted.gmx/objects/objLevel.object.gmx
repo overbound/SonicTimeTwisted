@@ -164,7 +164,7 @@ if reseting
         if instance_exists(objCutscene) transition_to(objFade, room, 24); 
         else {
             transition_to(objTitlecardDisolve, room, 0);
-            //play_music_intro(objMusic.musicIntro,0);
+            //play_music_intro(objMusic.musicIntroAsset,0);
         }
     }
 }
@@ -667,13 +667,14 @@ with player[0] {
             <string>/// save level and play music
 save_level();
 stt_save_files();
+set_zone_music(room);
     // if cutscene, let cutscene take over
     if objProgram.cutscene
     {
         objLevel.timer_enabled = false;
             //started = true;
     } else {
-        play_music_intro(objMusic.musicIntro,0);
+        play_music_intro(objMusic.musicIntroAsset,0);
     }
 // create hud
 instance_create(0, 0, objHud);

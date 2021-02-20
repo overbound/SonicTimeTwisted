@@ -1,19 +1,22 @@
 ///play_effect(song, resume)
 var song = argument0;
 var resume = argument1;
-with objMusic {
-    if state == 5 {
+with (objMusic) {
+    if (state == MUSIC_STATE.JINGLE) {
         statePrevious = state;
         previousPosition = 0;
-        audio_sound_gain(currentMusic, 0, 200);
-    } else if state == 6 && statePrevious == 5 { 
-        audio_stop_sound(musicEffect);
+        audio_sound_gain(musicJingle, 0, 200);
+    } else if (state == MUSIC_STATE.JINGLE && statePrevious == MUSIC_STATE.EFFECT) { 
+        stop_sound(musicEffect);
+        musicEffect = -1;
     } else {
         stop_all_music(resume);
     }
-    musicEffect = song;
-    state = 6;
-    currentMusic = audio_play_sound(musicEffect,20,false);
-    audio_sound_gain(currentMusic, objMusic.bgmGain / 100, 0);
+    
+    musicEffectAsset = song;
+    musicEffect = audio_play_sound(musicEffectAsset, 20, false);
+    audio_sound_gain(musicEffect, bgmGain / 100, 0);
     // because effects stop currentMusic, they should respect the BGM gain.
+    state = MUSIC_STATE.EFFECT;
+    currentMusic = musicEffect;
 }

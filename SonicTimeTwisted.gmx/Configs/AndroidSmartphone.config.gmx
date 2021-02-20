@@ -20,7 +20,7 @@
     <option_android_arch_mips>False</option_android_arch_mips>
     <option_android_arch_mipsr2>True</option_android_arch_mipsr2>
     <option_android_arch_mipsr2sf>True</option_android_arch_mipsr2sf>
-    <option_android_arch_x86>True</option_android_arch_x86>
+    <option_android_arch_x86>False</option_android_arch_x86>
     <option_android_build_tools_version>28.0.3</option_android_build_tools_version>
     <option_android_build_version>2</option_android_build_version>
     <option_android_color_depth>1</option_android_color_depth>
@@ -525,22 +525,22 @@
     <option_textureGroup15_parent>&lt;none&gt;</option_textureGroup15_parent>
     <option_textureGroup15_scaled>0</option_textureGroup15_scaled>
     <option_textureGroup15_targets>9223372036854775807</option_textureGroup15_targets>
-    <option_textureGroup16_border>2</option_textureGroup16_border>
+    <option_textureGroup16_border>0</option_textureGroup16_border>
     <option_textureGroup16_nocropping>0</option_textureGroup16_nocropping>
     <option_textureGroup16_parent>&lt;none&gt;</option_textureGroup16_parent>
     <option_textureGroup16_scaled>0</option_textureGroup16_scaled>
     <option_textureGroup16_targets>9223372036854775807</option_textureGroup16_targets>
-    <option_textureGroup17_border>2</option_textureGroup17_border>
+    <option_textureGroup17_border>0</option_textureGroup17_border>
     <option_textureGroup17_nocropping>0</option_textureGroup17_nocropping>
     <option_textureGroup17_parent>&lt;none&gt;</option_textureGroup17_parent>
     <option_textureGroup17_scaled>0</option_textureGroup17_scaled>
     <option_textureGroup17_targets>9223372036854775807</option_textureGroup17_targets>
-    <option_textureGroup18_border>2</option_textureGroup18_border>
+    <option_textureGroup18_border>0</option_textureGroup18_border>
     <option_textureGroup18_nocropping>0</option_textureGroup18_nocropping>
     <option_textureGroup18_parent>&lt;none&gt;</option_textureGroup18_parent>
     <option_textureGroup18_scaled>0</option_textureGroup18_scaled>
     <option_textureGroup18_targets>9223372036854775807</option_textureGroup18_targets>
-    <option_textureGroup19_border>2</option_textureGroup19_border>
+    <option_textureGroup19_border>0</option_textureGroup19_border>
     <option_textureGroup19_nocropping>0</option_textureGroup19_nocropping>
     <option_textureGroup19_parent>&lt;none&gt;</option_textureGroup19_parent>
     <option_textureGroup19_scaled>0</option_textureGroup19_scaled>
@@ -550,27 +550,27 @@
     <option_textureGroup1_parent>&lt;none&gt;</option_textureGroup1_parent>
     <option_textureGroup1_scaled>0</option_textureGroup1_scaled>
     <option_textureGroup1_targets>9223372036854775807</option_textureGroup1_targets>
-    <option_textureGroup20_border>2</option_textureGroup20_border>
+    <option_textureGroup20_border>0</option_textureGroup20_border>
     <option_textureGroup20_nocropping>0</option_textureGroup20_nocropping>
     <option_textureGroup20_parent>&lt;none&gt;</option_textureGroup20_parent>
     <option_textureGroup20_scaled>0</option_textureGroup20_scaled>
     <option_textureGroup20_targets>9223372036854775807</option_textureGroup20_targets>
-    <option_textureGroup21_border>2</option_textureGroup21_border>
+    <option_textureGroup21_border>0</option_textureGroup21_border>
     <option_textureGroup21_nocropping>0</option_textureGroup21_nocropping>
     <option_textureGroup21_parent>&lt;none&gt;</option_textureGroup21_parent>
     <option_textureGroup21_scaled>0</option_textureGroup21_scaled>
     <option_textureGroup21_targets>9223372036854775807</option_textureGroup21_targets>
-    <option_textureGroup22_border>2</option_textureGroup22_border>
+    <option_textureGroup22_border>0</option_textureGroup22_border>
     <option_textureGroup22_nocropping>0</option_textureGroup22_nocropping>
     <option_textureGroup22_parent>&lt;none&gt;</option_textureGroup22_parent>
     <option_textureGroup22_scaled>0</option_textureGroup22_scaled>
     <option_textureGroup22_targets>9223372036854775807</option_textureGroup22_targets>
-    <option_textureGroup23_border>2</option_textureGroup23_border>
+    <option_textureGroup23_border>0</option_textureGroup23_border>
     <option_textureGroup23_nocropping>0</option_textureGroup23_nocropping>
     <option_textureGroup23_parent>&lt;none&gt;</option_textureGroup23_parent>
     <option_textureGroup23_scaled>0</option_textureGroup23_scaled>
     <option_textureGroup23_targets>9223372036854775807</option_textureGroup23_targets>
-    <option_textureGroup24_border>2</option_textureGroup24_border>
+    <option_textureGroup24_border>0</option_textureGroup24_border>
     <option_textureGroup24_nocropping>0</option_textureGroup24_nocropping>
     <option_textureGroup24_parent>&lt;none&gt;</option_textureGroup24_parent>
     <option_textureGroup24_scaled>0</option_textureGroup24_scaled>
@@ -580,7 +580,7 @@
     <option_textureGroup25_parent>&lt;none&gt;</option_textureGroup25_parent>
     <option_textureGroup25_scaled>0</option_textureGroup25_scaled>
     <option_textureGroup25_targets>9223372036854775807</option_textureGroup25_targets>
-    <option_textureGroup26_border>2</option_textureGroup26_border>
+    <option_textureGroup26_border>0</option_textureGroup26_border>
     <option_textureGroup26_nocropping>0</option_textureGroup26_nocropping>
     <option_textureGroup26_parent>&lt;none&gt;</option_textureGroup26_parent>
     <option_textureGroup26_scaled>0</option_textureGroup26_scaled>
