@@ -20,9 +20,9 @@
     <option_android_arch_mips>False</option_android_arch_mips>
     <option_android_arch_mipsr2>True</option_android_arch_mipsr2>
     <option_android_arch_mipsr2sf>True</option_android_arch_mipsr2sf>
-    <option_android_arch_x86>False</option_android_arch_x86>
+    <option_android_arch_x86>True</option_android_arch_x86>
     <option_android_build_tools_version>28.0.3</option_android_build_tools_version>
-    <option_android_build_version>0</option_android_build_version>
+    <option_android_build_version>2</option_android_build_version>
     <option_android_color_depth>1</option_android_color_depth>
     <option_android_compile_sdk_version>28</option_android_compile_sdk_version>
     <option_android_display_name>Sonic Time Twisted</option_android_display_name>
@@ -61,7 +61,7 @@
     <option_android_lint>0</option_android_lint>
     <option_android_major_version>1</option_android_major_version>
     <option_android_min_sdk_version>19</option_android_min_sdk_version>
-    <option_android_minor_version>2</option_android_minor_version>
+    <option_android_minor_version>1</option_android_minor_version>
     <option_android_mmedia_ads>0</option_android_mmedia_ads>
     <option_android_mobage>0</option_android_mobage>
     <option_android_mobage_appkey></option_android_mobage_appkey>
@@ -698,7 +698,7 @@
     <option_tvos_splash_png>Configs\AndroidConsole\tvos\splash.png</option_tvos_splash_png>
     <option_tvos_splash_time>0</option_tvos_splash_time>
     <option_tvos_texture_page>2048</option_tvos_texture_page>
-    <option_use_fast_collision>False</option_use_fast_collision>
+    <option_use_fast_collision>True</option_use_fast_collision>
     <option_use_new_audio>True</option_use_new_audio>
     <option_variableerrors>False</option_variableerrors>
     <option_version>1.1.0</option_version>

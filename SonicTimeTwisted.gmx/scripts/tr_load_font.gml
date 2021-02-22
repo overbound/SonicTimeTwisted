@@ -15,8 +15,7 @@ var _fname = global.TR_map[? global.TR_lang];
 _fname = _fname[? "info"];
 _fname = _fname[? "fname"];
 
-var _sep = "/";
-if (os_type == os_windows) _sep = "\";
+var _sep = get_path_sep();
 
 var _path = "translations" + _sep + _fname + _sep + _sprname + ".png"; // translations\Russian\sprFont.png
 show_debug_message("Loading spritefont " + _path);

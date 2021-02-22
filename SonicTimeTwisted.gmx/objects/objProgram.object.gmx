@@ -28,11 +28,12 @@
             <string>/// Initialize
 
 // restore VM math precision as early as possible, if it's YYC.
-if (code_is_compiled())
-{
+if (code_is_compiled()) {
     show_debug_message("YYC is enabled, expect weird behaviour.");
     math_set_epsilon(0.00001);
 }
+
+check_configuration();
 
 image_speed = 0;
 level = "";
@@ -370,9 +371,17 @@ if(!show_startup_window())
             <kind>1</kind>
             <string>apply_video_settings();
 // sync window properties
-if window_get_fullscreen() window_mode = 2; else
-if window_get_width() &gt; width or window_get_height() &gt; height { window_mode = 1; window_scale = 2 } else
-if (window_get_width() != width * window_scale) or (window_get_height() != height * window_scale) window_set_size(width * window_scale, height * window_scale);
+if (window_get_fullscreen()) {
+    window_mode = 2;
+}
+else if ((window_get_width() &gt; width) || (window_get_height() &gt; height)) {
+    window_mode = 1;
+    window_scale = 2;
+}
+else if ((window_get_width() != (width * window_scale)) || (window_get_height() != (height * window_scale))) {
+    window_set_size(width * window_scale, height * window_scale);
+}
+
 surface_resize(application_surface, width, height);
 </string>
           </argument>

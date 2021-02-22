@@ -9,6 +9,7 @@ with (objMusic) {
     } else if (state == MUSIC_STATE.JINGLE && statePrevious == MUSIC_STATE.EFFECT) { 
         stop_sound(musicEffect);
         musicEffect = -1;
+        musicEffectAsset = -1;
     } else {
         stop_all_music(resume);
     }

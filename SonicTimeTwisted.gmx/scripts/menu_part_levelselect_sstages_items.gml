@@ -15,12 +15,12 @@ menu_fn_add_option(tr("_ssselect_TS4"), 10);
 menu_fn_add_option(tr("_ssselect_TS5"), 11);
 menu_fn_add_option(tr("_ssselect_TS6"), 12);
 menu_fn_add_option(tr("_ssselect_TS7"), 13);
-menu_fn_add_option("< "+tr("_levelselect_menu_Back"), 14);
+menu_fn_add_option(tr("_levelselect_menu_Back"), 14);
 
 // this means "level select"
 menu_type = 3;
 
-button_width = 210;
+menu_fn_calculate_width_simple();
 
 action_script = menu_part_levelselect_sstages_actions;
 draw_script = menu_fn_draw_default;

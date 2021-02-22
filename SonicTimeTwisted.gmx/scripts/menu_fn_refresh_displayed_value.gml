@@ -1,3 +1,4 @@
+///menu_fn_refresh_displayed_value(action,str)
 // argument0 - ACTION number, not cursor
 // argument1 - String to display
 

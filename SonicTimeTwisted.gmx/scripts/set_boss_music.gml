@@ -35,7 +35,7 @@ with (objMusic) {
         // This room has two bosses, Metal Sonic at the start, and Walker at the end.
         case AA2_f:
         case AA2_p: {
-            if (object_index == objEggWalkerBossController) {
+            if (other.object_index == objEggWalkerBossController) {
                 bossLoopAsset = bgmBossLoop;
                 bossIntroAsset = bgmBossIntro;
                 show_debug_message("walker boss mus.");

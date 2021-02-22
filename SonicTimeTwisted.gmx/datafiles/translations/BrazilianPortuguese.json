@@ -126,11 +126,15 @@
 		"_levelselect_menu_PPZ": "Pânico Planetário",
 		"_levelselect_menu_GGZ": "Catástrofe Cósmica",
 		"_levelselect_menu_SST": "Estagio Especial",
-		"_levelselect_menu_Back": "Voltar",
+		"_levelselect_menu_Back": "< Voltar",
 		"_levelselect_menu_A1F": "Ato 1 - Futuro",
 		"_levelselect_menu_A1P": "Ato 1 - Passado",
 		"_levelselect_menu_A2F": "Ato 2 - Futuro",
 		"_levelselect_menu_A2P": "Ato 2 - Passado",
+
+		"_levelselect_ppanic_Title": "Pânico Planetário",
+		"_levelselect_ppanic_Act_1": "Ato 1",
+		"_levelselect_ppanic_Act_2": "Ato 2",
 
 		"_splash_ASonicfangame": "Um fangame de Sonic por",
 		"_splash_ThisGameIsFreeware": "Este jogo é gratuito",

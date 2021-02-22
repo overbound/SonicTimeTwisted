@@ -28,7 +28,7 @@
             <string>/// Initialize
 // state
 mode = 0;
-screenshot = sprite_create_from_surface(application_surface, 0, 0, objScreen.width, objScreen.height, 0, 0, 0, 0);
+screenshot = sprite_create_from_surface(application_surface, 0, 0, surface_get_width(application_surface), surface_get_height(application_surface), false, false, 0, 0);
 // banners
 fade_alpha = 0;
 planet_ox = 600; //608;

@@ -51,6 +51,9 @@
     <Config name="PlayStation">
       <CopyToMask>2097160</CopyToMask>
     </Config>
+    <Config name="Browser">
+      <CopyToMask>2097160</CopyToMask>
+    </Config>
   </ConfigOptions>
   <androidPermissions>
     <Permission>android.permission.VIBRATE</Permission>
@@ -90,6 +93,9 @@
           <CopyToMask>2097160</CopyToMask>
         </Config>
         <Config name="PlayStation">
+          <CopyToMask>2097160</CopyToMask>
+        </Config>
+        <Config name="Browser">
           <CopyToMask>2097160</CopyToMask>
         </Config>
       </ConfigOptions>

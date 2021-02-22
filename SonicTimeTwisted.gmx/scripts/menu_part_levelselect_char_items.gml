@@ -5,7 +5,7 @@ menu_fn_add_title(tr("_chselect_Title"));
 menu_fn_add_title("");
 menu_fn_add_title("");
 menu_fn_add_title("");
-menu_fn_add_option("< "+tr("_chselect_MainMenu"), 0);
+menu_fn_add_option(tr("_chselect_MainMenu"), 0);
 
 
 // this means "level select"

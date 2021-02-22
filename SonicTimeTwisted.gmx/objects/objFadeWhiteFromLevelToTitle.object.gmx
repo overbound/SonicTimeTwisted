@@ -28,8 +28,12 @@
             <string>///Stop all music and reset all temp values.
 event_inherited();
 objProgram.first_run = false;
+objProgram.spawn_tag = 0;
 stop_all_music(false, true);
 reset_temp_values();
+if (ds_exists(objProgram.no_save_data, ds_type_map)) {
+    ds_map_clear(objProgram.no_save_data);
+}
 </string>
           </argument>
         </arguments>
@@ -56,16 +60,16 @@ reset_temp_values();
 event_inherited(); // skip
 
 // unpause.
-with (objScreen)
-{
+with (objScreen) {
     paused = false;
     image_speed = 1;
 }
 
-with (objProgram)
-{
+with (objProgram) {
     paused = false;
 }
+
+show_debug_message("Unpaused!");
 </string>
           </argument>
         </arguments>
@@ -90,7 +94,7 @@ with (objProgram)
             <kind>1</kind>
             <string>/// Fill screen with white on the GUI layer.
 draw_set_alpha(image_alpha);
-draw_rectangle_color(0, 0, objScreen.width, objScreen.height, c_white, c_white, c_white, c_white, false);
+draw_rectangle_color(0, 0, objScreen.width, objScreen.height, image_blend, image_blend, image_blend, image_blend, false);
 draw_set_alpha(1);
 </string>
           </argument>
@@ -115,6 +119,7 @@ draw_set_alpha(1);
           <argument>
             <kind>1</kind>
             <string>///We don't want to execute this parent's event, we want to be on the GUI layer.
+// Do nothing!
 </string>
           </argument>
         </arguments>

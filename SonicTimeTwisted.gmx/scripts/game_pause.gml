@@ -12,7 +12,7 @@ else
     with (objScreen)
     {
         if (sprite_exists(screenshot)) sprite_delete(screenshot);
-        screenshot = sprite_create_from_surface(application_surface, 0, 0, width, height, 0, 0, 0, 0);
+        screenshot = sprite_create_from_surface(application_surface, 0, 0, surface_get_width(application_surface), surface_get_height(application_surface), false, false, 0, 0);
     }
     instance_deactivate_object(objSceneObject);
     audio_pause_all();

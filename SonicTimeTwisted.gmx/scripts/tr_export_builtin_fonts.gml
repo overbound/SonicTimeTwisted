@@ -3,8 +3,7 @@
 var _start = sprFontHud;
 var _end = sprFontMicro;
 
-var _sep = "/";
-if (os_type == os_windows) _sep = "\";
+var _sep = get_path_sep();
 if (!directory_exists("Export")) directory_create("Export");
 
 for (var i = _start; i <= _end; i++)
