@@ -6101,7 +6101,7 @@
     </rooms>
   </rooms>
   <constants number="86">
-    <constant name="VERSION">"v1.1.1"</constant>
+    <constant name="VERSION">"v1.1.2-dev"</constant>
     <constant name="GAMEPAD_POV_Y">7</constant>
     <constant name="GAMEPAD_POV_X">6</constant>
     <constant name="GAMEPAD_AXIS_V">5</constant>
