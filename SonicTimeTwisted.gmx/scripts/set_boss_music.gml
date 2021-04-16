@@ -9,7 +9,8 @@ with (objMusic) {
         case FF2_p:
         case VV2_f:
         case VV2_p:
-        case RR2_f: {
+        case RR2_f:
+        case RR2_p: {
             bossLoopAsset = bgmBossLoop;
             bossIntroAsset = bgmBossIntro;
             return true;
