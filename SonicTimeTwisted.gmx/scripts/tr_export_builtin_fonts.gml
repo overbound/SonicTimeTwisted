@@ -6,8 +6,7 @@ var _end = sprFontMicro;
 var _sep = get_path_sep();
 if (!directory_exists("Export")) directory_create("Export");
 
-for (var i = _start; i <= _end; i++)
-{
+for (var i = _start; i <= _end; i++) {
     var _width = sprite_get_width(i);
     var _height = sprite_get_height(i);
     var _frames = sprite_get_number(i);
@@ -23,7 +22,7 @@ for (var i = _start; i <= _end; i++)
     
     draw_clear_alpha(c_black, 0);
     // this function ignores the sprite's x/y offset, which is what we need.
-    for (var j = 0; j < sprite_get_number(i); j++)
+    for (var j = 0; j < _frames; j++)
         draw_sprite_stretched(i, j, j * _width, 0, _width, _height);
         
     surface_reset_target();

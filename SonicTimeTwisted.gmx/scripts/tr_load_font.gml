@@ -11,13 +11,7 @@ if (is_undefined(_fontparams)) return -1; // no font_param section, the translat
 _fontparams = _fontparams[? _sprname];
 if (is_undefined(_fontparams)) return -1; // no parameters specified, that's still an error.
 
-var _fname = global.TR_map[? global.TR_lang];
-_fname = _fname[? "info"];
-_fname = _fname[? "fname"];
-
-var _sep = get_path_sep();
-
-var _path = "translations" + _sep + _fname + _sep + _sprname + ".png"; // translations\Russian\sprFont.png
+var _path = tr_get_prepend() + _sprname + ".png"; // translations\Russian\sprFont.png
 show_debug_message("Loading spritefont " + _path);
 
 if (!file_exists(_path)) return -1;

@@ -4361,6 +4361,8 @@
         <script>scripts\tr_load_assets.gml</script>
         <script>scripts\tr_free.gml</script>
         <script>scripts\tr_free_localized_sprites.gml</script>
+        <script>scripts\tr_stream_loc_sound.gml</script>
+        <script>scripts\tr_get_prepend.gml</script>
       </scripts>
     </scripts>
     <scripts name="Overlays">

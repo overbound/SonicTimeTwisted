@@ -202,8 +202,24 @@ with player_id
         // camera
         camera.alarm[0] = 128;
         // audio
-        if objProgram.in_past play_sfx(sndChantFuture, 1); else
-        play_sfx(sndChantPast, 1);
+        var _chant = sndChantPast;
+        if (objProgram.in_past) {
+            _chant = sndChantFuture;
+        }
+        
+        var _locChantStream = tr_stream_loc_sound(_chant);
+        if (_locChantStream) {
+            show_debug_message("Using localized chant!");
+            with (objResources) {
+                chantAsset = _locChantStream;
+                chantInstance = play_sfx(_locChantStream, 1);
+            }
+        }
+        else {
+            show_debug_message("Using prebaked chant!");
+            play_sfx(_chant, 1);
+        }
+        
         // time travel
         player_is_exiting();
         exit;

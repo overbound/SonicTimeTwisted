@@ -44,6 +44,10 @@ fontTitleSmallest = font_add_sprite(sprFontTitleSmallest, 48, 1, 0);
 timePostPastSprite = -1;
 timePostFutureSprite = -1;
 
+// Time Chant
+chantAsset = -1;
+chantInstance = -1;
+
 // water splash
 splash = part_type_create();
 part_type_sprite(splash, sprSplash, 1, 1, 0);
@@ -229,6 +233,38 @@ ds_map_add(anim_sonic_super, "swing", animSuperSonicSwing);
 ds_map_add(anim_sonic_super, "wallrun", animSuperSonicWallRun);
 ds_map_add(anim_sonic_super, "float", animSuperSonicFloat);
 ds_map_add(anim_sonic_super, "stand_rotate", animeSuperSonicStandRotate);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Check if the chant should be stopped...
+
+if (chantAsset &amp;&amp; !audio_is_playing(chantInstance)) {
+    audio_stop_sound(chantInstance);
+    chantInstance = -1;
+    audio_destroy_stream(chantAsset);
+    chantAsset = -1;
+    show_debug_message("Localized chant stopped.");
+}
+
 </string>
           </argument>
         </arguments>
