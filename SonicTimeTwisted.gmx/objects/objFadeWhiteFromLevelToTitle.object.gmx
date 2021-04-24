@@ -34,6 +34,12 @@ reset_temp_values();
 if (ds_exists(objProgram.no_save_data, ds_type_map)) {
     ds_map_clear(objProgram.no_save_data);
 }
+
+// reset rings.
+with (objGameData) {
+    event_perform(ev_create, 0);
+}
+
 </string>
           </argument>
         </arguments>
