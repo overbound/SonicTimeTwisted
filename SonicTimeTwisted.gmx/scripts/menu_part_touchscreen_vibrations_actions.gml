@@ -11,11 +11,9 @@ switch(argument0)
             {
                 vibration_type++;
             }
-            if(input_method == INPUT_TOUCHSCREEN)
-            {
-                // reload the scripts to make sure rumble scripts work correctly
-                script_execute(input_init_script);
-            }
+            // reload the scripts to make sure rumble scripts work correctly
+            rumble_reset();
+            script_execute(input_init_script);
         }
         break;
     case 1:
@@ -35,11 +33,9 @@ switch(argument0)
             {
                 vibration_type += 2;
             }    
-            if(input_method == INPUT_TOUCHSCREEN)
-            {
-                // reload the scripts to make sure rumble scripts work correctly
-                script_execute(input_init_script);
-            }    
+            // reload the scripts to make sure rumble scripts work correctly
+            rumble_reset();
+            script_execute(input_init_script);
         }
 
         break;
@@ -75,6 +71,8 @@ switch(argument0)
                 }
                 break;
         }
+        // reload the scripts to make sure rumble scripts work correctly
+        script_execute(input_init_script);
         break;
 }
 
