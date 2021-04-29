@@ -44,6 +44,7 @@ game_mode = 1;
 paused = false;
 lost_focus = false;
 check_room = 0;
+check_cheatcode = false; // will persist across title returns.
 // controllers
 instance_create(0, 0, objScreen);
 inputManager = instance_create(0, 0, objInput);

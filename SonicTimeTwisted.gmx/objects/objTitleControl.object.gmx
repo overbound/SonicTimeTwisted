@@ -586,6 +586,8 @@ if pauseState != 3 {
             <string>/// Skipping to title and Level Select Code
 if(menu.state == 0)
 {
+    // are we restarting?
+    with (objProgram) if (check_cheatcode) other.levelSelect = 6; // here `other` is the title control object.
     if(is_fallback_touchscreen)
     {
         // level select touchscreen version - tap on every displayed name, then touch the title screen with two fingers
@@ -648,6 +650,8 @@ if(menu.state == 0)
                                                 play_sfx(sndRing,0);
                                                 levelSelect = 6;
                                                 level_select_max_presses = 0;
+                                                with (objProgram) check_cheatcode = true;
+                                                show_debug_message("Touchscreen name cheatcode entered!");
                                             }
                                         }                    
                                     }
@@ -662,6 +666,7 @@ if(menu.state == 0)
         {
             if (name == 12 &amp;&amp; state &gt;= 2)
             {
+                // touchscreen version
                 if(levelSelect == 6)
                 {
                     var levelSelectPresses = 0;
@@ -785,6 +790,8 @@ if(menu.state == 0)
             if input_check_pressed(cDOWN) &amp;&amp; pauseState == 3 {
                 levelSelect +=1;
                 play_sfx(sndRing,0);
+                with (objProgram) check_cheatcode = true;
+                show_debug_message("UUDDLRLR cheatcode entered!");
             } else if input_check_pressed(cRIGHT) || input_check_pressed(cUP) || input_check_pressed(cLEFT) {
                 levelSelect = 0;
             }
