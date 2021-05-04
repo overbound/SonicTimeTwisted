@@ -84,7 +84,6 @@ ss_time_bonus = 0;
 // music
 jingle = -1;
 music = -1;
-music_queue = ds_priority_create();
 // set up rings and lives watchers
 life_past_list = noone;
 ring_past_list = noone;
@@ -454,7 +453,6 @@ if (ds_exists(future_list, ds_type_list)) ds_list_destroy(future_list);
 if (ds_exists(past_list, ds_type_list)) ds_list_destroy(past_list);
 if (ds_exists(special_future_list, ds_type_list)) ds_list_destroy(special_future_list);
 if (ds_exists(special_past_list, ds_type_list)) ds_list_destroy(special_past_list);
-if (ds_exists(music_queue, ds_type_priority)) ds_priority_destroy(music_queue);
 
 // free arrays.
 sine = 0;

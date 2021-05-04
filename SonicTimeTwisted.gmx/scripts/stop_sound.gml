@@ -2,7 +2,10 @@
 var sndIndex = argument0;
 
 if (sndIndex < 0) {
-    show_debug_message("Tried to stop invalid sound. " + string(sndIndex));
+    if (debug_mode) {
+        show_debug_message("Tried to stop invalid sound. " + string(sndIndex));
+    }
+    
     return false;
 }
 else {
