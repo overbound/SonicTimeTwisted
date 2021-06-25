@@ -1,5 +1,5 @@
 min_api,max_api,vendor,product,other_vendor,other_product,event_device,event_type,event_code,event_value,mapped_type,mapped_code,mapped_value,comment
-,,057e,2006,,,,,,,,,,Left Joy-Con
+,29,057e,2006,,,,,,,,,,Left Joy-Con
 ,,,,,,,button,96,,button,96,,down key is A
 ,,,,,,,,97,,,97,,right key is B
 ,,,,,,,,98,,,99,,left key is X
@@ -13,7 +13,7 @@ min_api,max_api,vendor,product,other_vendor,other_product,event_device,event_typ
 ,,,,,,,,109,,,110,,Thumbstick press is MODE
 ,,,,,,,axis,15,,axis,15,,Hat X axis works as intended out-of-the-box
 ,,,,,,,,16,,,16,,Hat Y axis works as intended out-of-the-box
-,,057e,2007,,,,,,,,,,Right Joy-Con
+,29,057e,2007,,,,,,,,,,Right Joy-Con
 ,,,,,,,button,96,,button,96,,down key is A
 ,,,,,,,,97,,,97,,right key is B
 ,,,,,,,,98,,,99,,left key is X
@@ -27,27 +27,7 @@ min_api,max_api,vendor,product,other_vendor,other_product,event_device,event_typ
 ,,,,,,,,108,,,110,,Thumbstick press is MODE
 ,,,,,,,axis,15,,axis,15,,Hat X axis works as intended out-of-the-box
 ,,,,,,,,16,,,16,,Hat Y axis works as intended out-of-the-box
-,,057e,2009,,,,,,,,,,"Pro Controller - everything is standard,  can be used as reference"
-,,,,,,,button,96,,button,96,,B is A
-,,,,,,,,97,,,97,,A is B
-,,,,,,,,99,,,99,,Y is X
-,,,,,,,,100,,,100,,X is Y
-,,,,,,,,102,,,102,,L1 is L1
-,,,,,,,,103,,,103,,R1 is R1
-,,,,,,,,104,,,104,,L2 is L2
-,,,,,,,,105,,,105,,R2 is R2
-,,,,,,,,108,,,108,,Plus is START
-,,,,,,,,109,,,109,,Minus is SELECT
-,,,,,,,,106,,,106,,L3 is L3
-,,,,,,,,107,,,107,,R3 is R3
-,,,,,,,,110,,,110,,Screenshot is Mode
-,,,,,,,axis,15,,axis,15,,Hat X axis works as intended out-of-the-box
-,,,,,,,,16,,,16,,Hat Y axis works as intended out-of-the-box
-,,,,,,,,0,,,0,,X axis works as intended out-of-the-box
-,,,,,,,,1,,,1,,Y axis works as intended out-of-the-box
-,,,,,,,,11,,,11,,Right X is Z
-,,,,,,,,14,,,14,,Right Y is RZ
-,,057e,2006,057e,2007,,,,,,,,Joy-Cons
+,29,057e,2006,057e,2007,,,,,,,,Joy-Cons
 ,,,,,,0,button,98,,axis,16,-1,UP is Hat Y -1
 ,,,,,,,,97,,,16,1,DOWN is Hat Y +1
 ,,,,,,,,96,,,15,-1,LEFT is Hat X -1
