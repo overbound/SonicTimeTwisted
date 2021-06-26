@@ -160,7 +160,7 @@ if(inputState != prevInputState)
 
         if(readState &gt;= 0)
         {
-            if(android_map_input(0, readState, mappedKey))
+            if(android_map_input(0, mappedKey, readState))
             {
                 add_console_output(android_get_formatted_mapped_descriptor(0, mappedKey));
                 switch(mappedKey)
@@ -196,6 +196,8 @@ if(inputState != prevInputState)
                     case 128:
                         add_console_output("Done");
                         android_set_any_key_mode(0, false);
+                        mappedKey = 0;
+                        state = 0;
                         break;
                 }
             }
@@ -204,7 +206,7 @@ if(inputState != prevInputState)
                 add_console_output("Can't map this");
             }
         }
-            prevReadState = readState;;
+            prevReadState = readState;
     }
 }
 else
