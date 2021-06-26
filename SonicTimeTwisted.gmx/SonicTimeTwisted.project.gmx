@@ -4167,6 +4167,7 @@
             <script>scripts\rumble.gml</script>
             <script>scripts\rumble_enqueue.gml</script>
             <script>scripts\rumble_manage.gml</script>
+            <script>scripts\rumble_reset.gml</script>
           </scripts>
           <scripts name="Effects">
             <script>scripts\rumble_short_weak.gml</script>

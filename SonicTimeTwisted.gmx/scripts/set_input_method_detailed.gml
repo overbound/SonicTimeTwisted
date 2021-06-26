@@ -8,6 +8,9 @@
 
 with(objProgram.inputManager)
 {
+    // stopping all rumble before device switch or reload
+    rumble_reset();
+    
     input_init_script = argument0;
     input_manage_script = argument1;
     input_rumble_trigger_script = argument2;
