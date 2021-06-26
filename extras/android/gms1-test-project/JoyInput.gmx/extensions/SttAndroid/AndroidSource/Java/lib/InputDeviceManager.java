@@ -1271,7 +1271,15 @@ public class InputDeviceManager {
                 );
                 return true;
             } else {
-                return false;
+                if (!hardwareMappings.containsValue(eventInt)) {
+                    this.setPressState(
+                            eventInt, 0,
+                            event.getAction() == KeyEvent.ACTION_DOWN
+                    );
+                    return true;
+                } else {
+                    return false;
+                }
             }
         }
 
@@ -1432,14 +1440,23 @@ public class InputDeviceManager {
          * @param softwareMappings A map of software mapping entries
          */
         protected void updateSoftwareMappingsFromMap(Map<Integer, Integer> softwareMappings) {
+            boolean hwKeyFound;
             for (Entry<Integer, Integer> entry : softwareMappings.entrySet()) {
                 int inputCode = entry.getValue();
                 int keyCode = entry.getKey();
+                hwKeyFound = false;
                 for (Entry<Integer, Integer> hwEntry : hardwareMappings.entrySet()) {
                     if (hwEntry.getValue() == inputCode) {
                         directMappings.put(hwEntry.getKey(), keyCode);
+                        hwKeyFound = true;
                         break;
                     }
+                    if (!hwKeyFound) {
+                        hwKeyFound = inputCode == hwEntry.getKey() || inputCode == hwEntry.getValue();
+                    }
+                }
+                if(!hwKeyFound) {
+                    directMappings.put(inputCode, keyCode);
                 }
             }
         }

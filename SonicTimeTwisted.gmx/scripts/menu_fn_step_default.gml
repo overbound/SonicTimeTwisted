@@ -209,6 +209,7 @@ switch(state)
         }
         if(timer >= 10)
         {
+            internal__menu_slide_offset_x = 0;
             timer = 0;
             state = 2;
         }
@@ -246,6 +247,7 @@ switch(state)
         }
         if(timer >= 10)
         {
+            internal__menu_slide_offset_x = 0;
             timer = 0;
             state = 2;
         }

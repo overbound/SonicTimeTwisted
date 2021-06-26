@@ -11,15 +11,17 @@ if(DEVICE_INFO & DEVICE_TYPE_SMARTPHONE)
 }
 var view_height = view_hview[view_current];
 
-internal__draw_menu_buttons_offset_x = (view_width - button_width)/2;
 internal__draw_menu_buttons_offset_y = (view_height - min(internal__button_count, button_page_count)*button_slot_height)/2;
 
+internal__draw_menu_rect_x_center = view_width/2;
+internal__draw_menu_rect_y_center = view_height/2;
+
+internal__draw_menu_buttons_offset_x = internal__draw_menu_rect_x_center - (button_width/2);
 internal__draw_menu_rect_x1 = internal__draw_menu_buttons_offset_x - margin;
 internal__draw_menu_rect_x2 = internal__draw_menu_buttons_offset_x + button_width + margin;
-internal__draw_menu_rect_x_center = view_width/2;
+
 internal__draw_menu_rect_y1 = internal__draw_menu_buttons_offset_y - margin;
 internal__draw_menu_rect_y2 = internal__draw_menu_buttons_offset_y + (min(internal__button_count, button_page_count) * button_slot_height) + margin;
-internal__draw_menu_rect_y_center = view_height/2;
 
 if(argument1 == -1)
 {
@@ -55,12 +57,13 @@ if(is_touchscreen)
 scroll = 0;
 scroll_target = 0;
 scrollable = internal__button_count > button_page_count;
+
 if(scrollable)
 {
-    internal__draw_menu_buttons_offset_x = internal__draw_menu_buttons_offset_x - margin;
-    internal__draw_menu_rect_x1 = internal__draw_menu_rect_x1 - margin;
-    internal__draw_menu_rect_x2 = internal__draw_menu_rect_x2 + margin;
-    internal__draw_menu_rect_x_center = view_width/2 - margin;
+    internal__draw_menu_rect_x_center -= margin;
+    internal__draw_menu_buttons_offset_x -= margin;
+    internal__draw_menu_rect_x1 -= margin;
+    internal__draw_menu_rect_x2 += margin;
     
     scroll_max = internal__button_count - button_page_count;
     scroll_target = min(scroll_max, max(0, scroll_anchor - (button_page_count div 2)));

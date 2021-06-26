@@ -575,6 +575,7 @@ public class MainActivity extends AppCompatActivity {
         protected SttAndroid sttAndroid;
         protected int currentKey;
         protected int prevCurrentKey;
+        protected int prev_key = -1;
 
         public KeyMappingThread(MainActivity activity, SttAndroid sttAndroid)
         {
@@ -622,20 +623,21 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 int key = (int) sttAndroid.android_get_any_key(0);
-                if(key  != -1)
+                if(key  != -1 && key != this.prev_key)
                 {
-                    if(sttAndroid.android_map_input(0, key, currentKey) > 0)
+                    if(sttAndroid.android_map_input(0, currentKey, key) > 0)
                     {
+                        this.prev_key = key;
                         switch(key % 10)
                         {
                             case 0:
-                                activity.print("Mapped button: "+ Labels.getButtonLabel(key/10));
+                                activity.print("Mapped button: "+ Labels.getButtonLabel(key/10)+" ("+key+")");
                                 break;
                             case 1:
-                                activity.print("Mapped axis: +"+ Labels.getAxisLabel(key/10));
+                                activity.print("Mapped axis: +"+ Labels.getAxisLabel(key/10)+" ("+key+")");
                                 break;
                             case 2:
-                                activity.print("Mapped axis: -"+ Labels.getAxisLabel(key/10));
+                                activity.print("Mapped axis: -"+ Labels.getAxisLabel(key/10)+" ("+key+")");
                                 break;
                         }
 
@@ -653,6 +655,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
             activity.print("Done!");
+            this.prev_key = -1;
             sttAndroid.android_set_any_key_mode(0, 0);
             activity.joinThread(this, MainActivity.APPSTATE_IDLE);
         }

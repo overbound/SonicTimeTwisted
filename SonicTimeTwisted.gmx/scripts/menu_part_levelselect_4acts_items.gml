@@ -27,7 +27,7 @@ menu_fn_add_option(tr("_levelselect_menu_A1F"), 0);
 menu_fn_add_option(tr("_levelselect_menu_A1P"), 1);
 menu_fn_add_option(tr("_levelselect_menu_A2F"), 2);
 menu_fn_add_option(tr("_levelselect_menu_A2P"), 3);
-menu_fn_add_option(tr("_levelselect_menu_Back"), 4);
+menu_fn_add_option("< "+tr("_levelselect_menu_Back"), 4);
 
 // this means "level select"
 menu_type = 3;
