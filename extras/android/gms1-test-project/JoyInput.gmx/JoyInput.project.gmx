@@ -42,6 +42,7 @@
     <script>scripts\android_get_formatted_mapped_descriptor.gml</script>
     <script>scripts\string_explode.gml</script>
   </scripts>
+  <shaders name="shaders"/>
   <objects name="objects">
     <object>objects\objTester</object>
   </objects>

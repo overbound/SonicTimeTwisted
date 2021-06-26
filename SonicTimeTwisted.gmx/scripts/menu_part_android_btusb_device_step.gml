@@ -6,7 +6,7 @@ if(objProgram.inputManager.device_label == "")
     var dd_state = real(android_double_device_detecting_mode_get_state());
     if(dd_state == 0)
     {
-        var currentDeviceLabel = string(android_get_device_label(0, -1));
+        var currentDeviceLabel = string(android_get_device_label(0, 30));
         if(currentDeviceLabel != "")
         {
             objProgram.inputManager.device_label = currentDeviceLabel;

@@ -7,15 +7,18 @@ if(android_get_input_mode())
     //menu_fn_add_option(tr("_btusb_joymap_Rumble"), 0, 1, "< " + tr("_Off") + " >");
     // codes below 31 are used for mapping
     menu_fn_add_option(tr("_btusb_joymap_Device"), 31);
-    menu_fn_add_option(tr("_options_menu_Remap_all"), 1);
-    menu_fn_add_option(tr("_buttonname_Up"), 2, 1, "");
-    menu_fn_add_option(tr("_buttonname_Down"), 3, 1, "");
-    menu_fn_add_option(tr("_buttonname_Left"), 4, 1, "");
-    menu_fn_add_option(tr("_buttonname_Right"), 5, 1, "");
-    menu_fn_add_option(tr("_buttonname_A"), 6, 1, "");
-    menu_fn_add_option(tr("_buttonname_B"), 7, 1, "");
-    menu_fn_add_option(tr("_buttonname_C"), 8, 1, "");
-    menu_fn_add_option(tr("_buttonname_Start"), 9, 1, "");
+    if (string_length(objProgram.inputManager.device_label) > 0)
+    {   
+        menu_fn_add_option(tr("_options_menu_Remap_all"), 1);
+        menu_fn_add_option(tr("_buttonname_Up"), 2, 1, "");
+        menu_fn_add_option(tr("_buttonname_Down"), 3, 1, "");
+        menu_fn_add_option(tr("_buttonname_Left"), 4, 1, "");
+        menu_fn_add_option(tr("_buttonname_Right"), 5, 1, "");
+        menu_fn_add_option(tr("_buttonname_A"), 6, 1, "");
+        menu_fn_add_option(tr("_buttonname_B"), 7, 1, "");
+        menu_fn_add_option(tr("_buttonname_C"), 8, 1, "");
+        menu_fn_add_option(tr("_buttonname_Start"), 9, 1, "");
+    }
 }
 else
 {
