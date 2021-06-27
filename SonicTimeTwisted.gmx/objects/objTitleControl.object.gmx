@@ -209,7 +209,7 @@ if(state == 4)
 {
     if(is_fallback_touchscreen)
     {
-        if(device_mouse_check_button_pressed(0, mb_left))
+        if(device_mouse_check_button_released(0, mb_left))
         {
             menu_is_touchscreen = true;
             state = 3;
