@@ -100,7 +100,7 @@ with (objMusic) {
             }
             else {
                 musicLoopAsset = bgmSS1Loop;
-                musicIntroAsset = bgmSS2Intro;
+                musicIntroAsset = bgmSS1Intro;
             }
             return true;
         }
