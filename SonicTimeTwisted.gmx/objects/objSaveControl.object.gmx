@@ -227,12 +227,9 @@ if(selectState == 0)
     }
     if(cancel)
     {
-        // at this point, the options have obviously been initialized at least once,
-        // settings.ini is guaranteed to exist
-        if(objProgram.first_run)
-        {
-            objProgram.first_run = false;
-        }
+        // at this point, the options have obviously been saved at least once
+        objProgram.first_run = false;
+        
         transition_to(objFadeWhiteFromSaveToTitle, titlescreen, 24);
     }
 }
