@@ -15,7 +15,7 @@ menu_fn_add_option(tr("_ssselect_TS4"), 10);
 menu_fn_add_option(tr("_ssselect_TS5"), 11);
 menu_fn_add_option(tr("_ssselect_TS6"), 12);
 menu_fn_add_option(tr("_ssselect_TS7"), 13);
-menu_fn_add_option("< "+tr("_levelselect_menu_Back"), 14);
+menu_fn_add_option(tr("_levelselect_menu_Back"), 14);
 
 // this means "level select"
 menu_type = 3;

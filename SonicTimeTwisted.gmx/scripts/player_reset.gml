@@ -2,7 +2,7 @@
 // clear rings
 objGameData.rings[0] = 0;
 // lose a life
-if not (debug_mode or instance_exists(objCutscene)) {
+if not (/*debug_mode*/ false or instance_exists(objCutscene)) {
     objGameData.player_lives[player_id] -= 1;
     save_lives(objGameData.player_lives[player_id]);
     stt_save_files();

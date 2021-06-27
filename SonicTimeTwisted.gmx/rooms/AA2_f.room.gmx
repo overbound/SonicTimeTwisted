@@ -21,13 +21,7 @@ with objProgram{
      }
 }
 // setup titlecard
-with objTitlecard
-{
-    title_string[0] = tr("_zonename_AAZ_A");
-    title_string[1] = tr("_zonename_AAZ_B");
-    title_string[2] = tr("_zonename_AAZ_C");
-    title_string[3] = tr("_ACT2_FUTURE");
-}</code>
+get_titlecard_array(room);</code>
   <enableViews>0</enableViews>
   <clearViewBackground>0</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>
@@ -255,7 +249,7 @@ with objTitlecard
     <instance objName="objWater" x="2176" y="2248" name="inst_ACC69C40" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objAAFutureBack" x="144" y="0" name="inst_CDC56BDC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objAATargetSwing" x="4272" y="1568" name="inst_2E5AEDEF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objLevel" x="128" y="0" name="inst_F8219976" locked="0" code="objMusic.musicLoop = bgmAAFutureLoop;&#xA;objMusic.musicIntro = bgmAAFutureIntro;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objLevel" x="128" y="0" name="inst_F8219976" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objAA1BossFloor" x="896" y="512" name="inst_19E0A960" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="5760" y="480" name="inst_9B9D29FC" locked="0" code="" scaleX="96" scaleY="4" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="6528" y="400" name="inst_0306ABAC" locked="0" code="" scaleX="16" scaleY="1" colour="4294967295" rotation="0"/>

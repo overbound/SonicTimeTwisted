@@ -1,7 +1,7 @@
 switch(argument0)
 {
     case 0:
-        audio_stop_sound(bgmTitle);
+        stop_sound(bgmTitle);
         audio_stop_all();
         stop_all_music(true);
         play_sfx(sndConfirm);

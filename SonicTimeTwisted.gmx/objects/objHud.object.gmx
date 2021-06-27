@@ -92,7 +92,7 @@ event_user(0);
           <argument>
             <kind>1</kind>
             <string>/// pause menu end step
-if objProgram.paused {
+if objProgram.paused &amp;&amp; instance_exists(menu) {
     if menu.state != 0 {
         // allow the menu object to handle everything
         with(menu) event_user(2);

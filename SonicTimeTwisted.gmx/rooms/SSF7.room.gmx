@@ -325,7 +325,6 @@ with objSSCamera {
     <instance objName="objSSSpikeBall" x="2648" y="4196" name="inst_3CC7E239" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSSRing" x="3160" y="576" name="inst_4C3F8D1B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSSSpikeBall" x="3040" y="6372" name="inst_185A9DF5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objAA1Boss" x="-1772" y="8264" name="inst_3C0DDD06" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSSSpikeBall" x="1552" y="1724" name="inst_19883D48" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSSSpikeBall" x="1424" y="3196" name="inst_5F7C100A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSSCaterminator" x="2248" y="912" name="inst_F4164EF8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

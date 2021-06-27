@@ -145,7 +145,7 @@ game_restart();
             <string>name++;
 if(name &lt; 12)
 {
-    alarm_set(0, 65);
+    alarm[0] = 65;
 }
 if(name == 9)
 {
@@ -586,6 +586,8 @@ if pauseState != 3 {
             <string>/// Skipping to title and Level Select Code
 if(menu.state == 0)
 {
+    // are we restarting?
+    with (objProgram) if (check_cheatcode) other.levelSelect = 6; // here `other` is the title control object.
     if(is_fallback_touchscreen)
     {
         // level select touchscreen version - tap on every displayed name, then touch the title screen with two fingers
@@ -648,6 +650,8 @@ if(menu.state == 0)
                                                 play_sfx(sndRing,0);
                                                 levelSelect = 6;
                                                 level_select_max_presses = 0;
+                                                with (objProgram) check_cheatcode = true;
+                                                show_debug_message("Touchscreen name cheatcode entered!");
                                             }
                                         }                    
                                     }
@@ -662,6 +666,7 @@ if(menu.state == 0)
         {
             if (name == 12 &amp;&amp; state &gt;= 2)
             {
+                // touchscreen version
                 if(levelSelect == 6)
                 {
                     var levelSelectPresses = 0;
@@ -785,6 +790,8 @@ if(menu.state == 0)
             if input_check_pressed(cDOWN) &amp;&amp; pauseState == 3 {
                 levelSelect +=1;
                 play_sfx(sndRing,0);
+                with (objProgram) check_cheatcode = true;
+                show_debug_message("UUDDLRLR cheatcode entered!");
             } else if input_check_pressed(cRIGHT) || input_check_pressed(cUP) || input_check_pressed(cLEFT) {
                 levelSelect = 0;
             }
@@ -843,10 +850,10 @@ if(menu.state == 0)
           <argument>
             <kind>1</kind>
             <string>/// alpha control
-if(state &gt;= 3)
-{
-    if name &lt; 3 {
-        logoAlpha -=.025;
+if(state &gt;= 3) {
+    if (name &lt; 3) {
+        logoAlpha -= 0.025;
+        logoAlpha = clamp(logoAlpha, 0, 4);
     }
 }
 </string>
@@ -918,7 +925,7 @@ if(skipping == 30)
     // the skipping itself
     name = 12;
     play_effect(bgmTitle, false);
-    alarm_set(0, -1);
+    alarm[0] = -1;
     with(objTitleSonic)
     {
         event_user(0);
@@ -1159,15 +1166,16 @@ audio_stop_all();
         case 0:
         case 1:
         case 2:
+            var lA = clamp(logoAlpha, 0, 1);
             draw_set_color(c_black);
-            draw_set_alpha(logoAlpha);
+            draw_set_alpha(lA);
             draw_rectangle(view_xview,view_yview,view_xview+view_wview,view_yview+view_hview,false);
             draw_set_alpha(1);
             draw_set_color(c_white);
-            draw_sprite_ext(sprOverboundLogo,0,view_xview[0]+213,view_yview[0]+90,1,1,0,c_white,logoAlpha);
-            draw_text_color(view_xview[0]+213,view_yview[0]+15,tr('_splash_ASonicfangame'),c_white,c_white,c_teal,c_teal,logoAlpha);
-            draw_text_color(view_xview[0]+213,view_yview[0]+150,tr('_splash_ThisGameIsFreeware'),c_white,c_white,c_teal,c_teal,logoAlpha);
-            draw_text_color(view_xview[0]+213,view_yview[0]+170,tr('_splash_DoNotSell'),c_white,c_white,c_red,c_red,logoAlpha);
+            draw_sprite_ext(sprOverboundLogo,0,view_xview[0]+213,view_yview[0]+90,1,1,0,c_white,lA);
+            draw_text_color(view_xview[0]+213,view_yview[0]+15,tr('_splash_ASonicfangame'),c_white,c_white,c_teal,c_teal,lA);
+            draw_text_color(view_xview[0]+213,view_yview[0]+150,tr('_splash_ThisGameIsFreeware'),c_white,c_white,c_teal,c_teal,lA);
+            draw_text_color(view_xview[0]+213,view_yview[0]+170,tr('_splash_DoNotSell'),c_white,c_white,c_red,c_red,lA);
             break;
         case 3:
         case 4:

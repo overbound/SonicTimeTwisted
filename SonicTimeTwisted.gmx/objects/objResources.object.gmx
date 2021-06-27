@@ -44,6 +44,10 @@ fontTitleSmallest = font_add_sprite(sprFontTitleSmallest, 48, 1, 0);
 timePostPastSprite = -1;
 timePostFutureSprite = -1;
 
+// Time Chant
+chantAsset = -1;
+chantInstance = -1;
+
 // water splash
 splash = part_type_create();
 part_type_sprite(splash, sprSplash, 1, 1, 0);
@@ -234,6 +238,38 @@ ds_map_add(anim_sonic_super, "stand_rotate", animeSuperSonicStandRotate);
         </arguments>
       </action>
     </event>
+    <event eventtype="3" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Check if the chant should be stopped...
+
+if (chantAsset &amp;&amp; !audio_is_playing(chantInstance)) {
+    audio_stop_sound(chantInstance);
+    chantInstance = -1;
+    audio_destroy_stream(chantAsset);
+    chantAsset = -1;
+    show_debug_message("Localized chant stopped.");
+}
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="7" enumb="10">
       <action>
         <libid>1</libid>
@@ -301,9 +337,11 @@ font_delete(fontTitleLarge);
 font_delete(fontTitleSmall);
 font_delete(fontTitleSmallest);
 tr_free();
+draw_texture_flush();
 
 // free all stuff just in case.
-for (var i = 0; i &lt; 4096; i++)
+var i = 0;
+repeat (8192) // repeat loops are a little faster in VM and way faster in YYC.
 {
     if (i != application_surface &amp;&amp; surface_exists(i))
     {
@@ -319,20 +357,38 @@ for (var i = 0; i &lt; 4096; i++)
     
     if (ds_exists(i, ds_type_map))
     {
-        //ds_map_destroy(i);
+        ds_map_destroy(i);
         show_debug_message("Freed DS Map " + string(i));
     }
     
     if (ds_exists(i, ds_type_list))
     {
-        ds_map_destroy(i);
+        ds_list_destroy(i);
         show_debug_message("Freed DS List " + string(i));
     }
     
     if (ds_exists(i, ds_type_queue))
     {
-        ds_map_destroy(i);
+        ds_queue_destroy(i);
         show_debug_message("Freed DS Queue " + string(i));
+    }
+    
+    if (ds_exists(i, ds_type_grid))
+    {
+        ds_grid_destroy(i);
+        show_debug_message("Freed DS Grid " + string(i));
+    }
+    
+    if (ds_exists(i, ds_type_stack))
+    {
+        ds_stack_destroy(i);
+        show_debug_message("Freed DS Stack " + string(i));
+    }
+    
+    if (ds_exists(i, ds_type_priority))
+    {
+        ds_priority_destroy(i);
+        show_debug_message("Freed DS Priority " + string(i));
     }
     
     if (part_system_exists(i))
@@ -346,9 +402,9 @@ for (var i = 0; i &lt; 4096; i++)
         part_type_destroy(i);
         show_debug_message("Freed Particle Type " + string(i));
     }
+    
+    i++;
 }
-
-draw_texture_flush();
 </string>
           </argument>
         </arguments>

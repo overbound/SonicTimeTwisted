@@ -13,20 +13,12 @@
   <code>// initialize level settings
 with objLevel {
     act = 1;
-    musicLoop = bgmTTPastLoop;
-    musicIntro = bgmTTPastIntro;
     flower = sprFlowerTT;
 }
 
 objProgram.in_past = true;
 // setup titlecard
-with objTitlecard
-{
-    title_string[0] = tr("_zonename_TTZ_A");
-    title_string[1] = tr("_zonename_TTZ_B");
-    title_string[2] = tr("_zonename_TTZ_C");
-    title_string[3] = tr("_ACT1_PAST");
-}</code>
+get_titlecard_array(room);</code>
   <enableViews>0</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>0</clearDisplayBuffer>
@@ -232,7 +224,7 @@ with objTitlecard
     <instance objName="objCurveConvexSlim" x="5120" y="1472" name="inst_1B4DB103" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="1656" y="272" name="inst_A08B82C7" locked="0" code="" scaleX="1" scaleY="4" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="1712" y="216" name="inst_2F642F2D" locked="0" code="" scaleX="4" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objLevel" x="0" y="0" name="inst_F7CA6240" locked="0" code="objMusic.musicIntro = bgmTTPastIntro;&#xA;objMusic.musicLoop = bgmTTPastLoop;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objLevel" x="0" y="0" name="inst_F7CA6240" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objCurveConcaveSlim" x="1724" y="284" name="inst_A6977101" locked="0" code="" scaleX="-0.625" scaleY="-0.625" colour="4294967295" rotation="0"/>
     <instance objName="objCurveConvexSlim" x="10304" y="2144" name="inst_B2AF3B80" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objLayerSet" x="10312" y="2232" name="inst_57626E06" locked="0" code="depth_mask=2;" scaleX="1" scaleY="1.5" colour="4294901760" rotation="0"/>

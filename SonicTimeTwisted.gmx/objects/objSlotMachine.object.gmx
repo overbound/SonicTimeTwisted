@@ -53,7 +53,6 @@ slot_state[1]=0;
 slot_state[2]=0;
 win=0;
 win_icon=0;
-audio = audio_emitter_create();
 </string>
           </argument>
         </arguments>

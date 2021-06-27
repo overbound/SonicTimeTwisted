@@ -1,5 +1,5 @@
 // player_get_rings(rings)
-audio_stop_sound(sndRing);
+stop_sound(sndRing);
 play_sfx(sndRing, 1);
 repeat argument0
 {

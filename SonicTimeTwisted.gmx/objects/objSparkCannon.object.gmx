@@ -40,7 +40,6 @@
           <argument>
             <kind>1</kind>
             <string>alarm[0]=60;
-audio = audio_emitter_create();
 </string>
           </argument>
         </arguments>

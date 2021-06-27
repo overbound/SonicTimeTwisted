@@ -1,3 +1,4 @@
+///menu_fn_add_option(label,action,[type],[defvalue])
 // argument0 - label
 // argument1 - action number
 // argument2 - display type: 0 - string only, 1 - string with value (optional, defaults to 0)

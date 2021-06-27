@@ -1,6 +1,5 @@
 ///tr(string_id)
-// function used to translate
-// does not work yet, with some examples exceptions
+// function used to translate strings or macro expansion
 var translated = argument0;
 var data = global.TR_map[? global.TR_lang];
 if (is_undefined(data)) return "_LANG_ERROR"; // the language doesn't exist?
@@ -17,8 +16,6 @@ if (is_undefined(translated))
         var macro_end_pos = string_pos('::', translated);
         translated = string_copy(translated, macro_end_pos + 2, string_length(translated) - macro_end_pos - 1);
     }
-    
-    return translated;
 }
 
 return translated;

@@ -20,5 +20,5 @@ with instance_create(x, y, objDashSmoke)
     depth = other.depth-1;
 }
 // sound
-if audio_is_playing(reserved_sound) audio_stop_sound(reserved_sound);
+if audio_is_playing(reserved_sound) stop_sound(reserved_sound);
 play_sfx(sndSpinRev, 0);

@@ -434,7 +434,7 @@ case 3: // apply scores
     if not (time_bonus or rings_bonus or perfect_bonus)
     {
         // sound
-        audio_stop_sound(sndBeep);
+        stop_sound(sndBeep);
         //play_sfx(sndChing, 0);
         // finished
         state += 1;
@@ -451,7 +451,7 @@ case 3: // apply scores
         if ((objScreen.image_index mod 4) == 0)
         {
             // sound
-            audio_stop_sound(sndBeep);
+            stop_sound(sndBeep);
             play_sfx(sndBeep, 0);
         }
         // refresh values to display

@@ -17,13 +17,7 @@ objLevel.paddle_switches = 0;
 with objLevel bg = instance_create(x,y,objSSBack);
 objProgram.in_past=false;
 // setup titlecard
-with objTitlecard
-{
-    title_string[0] = tr("_zonename_SSZ_A");
-    title_string[1] = tr("_zonename_SSZ_B");
-    title_string[2] = tr("_zonename_SSZ_C");
-    title_string[3] = "";
-}
+get_titlecard_array(room);
 if objProgram.spawn_tag == 0 {
     objLevel.timer = 36000;
     objGameData.rings[0] = 0;
@@ -664,7 +658,7 @@ if objProgram.spawn_tag == 0 {
     <instance objName="objBlock" x="352" y="6816" name="inst_0FF459A0" locked="0" code="climbable = true;&#xA;" scaleX="4" scaleY="16" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="1248" y="3104" name="inst_BF5C7C9E" locked="0" code="climbable = true;&#xA;" scaleX="4" scaleY="16" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="1408" y="2464" name="inst_175A1C6A" locked="0" code="climbable = true;" scaleX="4" scaleY="16" colour="4294967295" rotation="0"/>
-    <instance objName="objLevel" x="0" y="0" name="inst_38C39C56" locked="0" code="if objProgram.spawn_tag = 25 {&#xA;    objMusic.musicIntro = bgmSS2Intro;&#xA;    objMusic.musicLoop = bgmSS2Loop;&#xA;} else {&#xA;    objMusic.musicIntro = bgmSS1Intro;&#xA;    objMusic.musicLoop = bgmSS1Loop;&#xA;}&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objLevel" x="0" y="0" name="inst_38C39C56" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="-4" y="1916" name="inst_E04D90C4" locked="0" code="climbable=1;&#xA;" scaleX="16.5" scaleY="100.5" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="0" y="1712" name="inst_8834130C" locked="0" code="climbable=1;&#xA;" scaleX="32" scaleY="26" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="0" y="2688" name="inst_A23B7CB4" locked="0" code="climbable=true;" scaleX="64" scaleY="80" colour="4294967295" rotation="0"/>

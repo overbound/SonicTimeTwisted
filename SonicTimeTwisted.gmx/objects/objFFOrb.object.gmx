@@ -238,7 +238,7 @@ for (var i = 0; i &lt; 2; i += 1)
         player_id[i].state_reset = true;
         // other
         player_id[i].depth = 0;
-        audio_stop_sound(player_id[i].reserved_sound);
+        stop_sound(player_id[i].reserved_sound);
         // done
         player_id[i] = noone;
         continue;

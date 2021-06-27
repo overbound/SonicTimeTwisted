@@ -59,7 +59,6 @@ velocity = 7;
 ticks = 1;
 interval = 25;
 emit=false;
-audio = audio_emitter_create();
 </string>
           </argument>
         </arguments>

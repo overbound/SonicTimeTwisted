@@ -205,7 +205,7 @@ if move == true {
     } else {
         
         y=704;
-        audio_stop_sound(sndQuake);
+        stop_sound(sndQuake);
     }
 }
 </string>

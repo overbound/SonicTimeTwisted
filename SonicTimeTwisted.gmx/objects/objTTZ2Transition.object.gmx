@@ -148,12 +148,9 @@ case -1: // fade in
     // setup titlecard
         with instance_create(0, 0, objTitlecard)
         {
-            title_string[0] = tr("_zonename_TTZ_A");
-            title_string[1] = tr("_zonename_TTZ_B");
-            title_string[2] = tr("_zonename_TTZ_C");
-            if objProgram.in_past
-                 title_string[3] = tr("_ACT2_PAST");
-            else title_string[3] = tr("_ACT2_FUTURE");
+            var rm = TT2_f;
+            if (objProgram.in_past) rm = TT2_p;
+            get_titlecard_array(rm, id);
             event_perform(ev_other, ev_room_start);
             mode = 1;
         }

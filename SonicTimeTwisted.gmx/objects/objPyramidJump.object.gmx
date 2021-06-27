@@ -83,8 +83,6 @@ play_sfx(sndDashOfLight,0);
           <argument>
             <kind>1</kind>
             <string>if y &gt; 256{
-    
-    objProgram.stop_sound = true;
     level_goto_next_transitoin(objLevelToSS);
     instance_destroy();
     

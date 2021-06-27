@@ -58,7 +58,6 @@ start=false;
 x+=64;
 left=64;
 right=0;
-audio = audio_emitter_create();
 
 image_alpha = .45;
 alarm[0]=10;

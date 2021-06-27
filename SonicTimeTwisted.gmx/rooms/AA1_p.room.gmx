@@ -16,13 +16,7 @@ objLevel.flower = sprFlowerAA;
 
 objProgram.in_past = true;
 // setup titlecard
-with objTitlecard
-{
-    title_string[0] = tr("_zonename_AAZ_A");
-    title_string[1] = tr("_zonename_AAZ_B");
-    title_string[2] = tr("_zonename_AAZ_C");
-    title_string[3] = tr("_ACT1_PAST");
-}</code>
+get_titlecard_array(room);</code>
   <enableViews>0</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>
@@ -388,7 +382,7 @@ with objTitlecard
     <instance objName="objBlock" x="10624" y="1536" name="inst_3295FC1C" locked="0" code="climbable=true&#xA;" scaleX="24" scaleY="8" colour="4294967295" rotation="0"/>
     <instance objName="objSpringRed" x="2032" y="864" name="inst_7C5F827A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objStart" x="36" y="832" name="inst_661817A9" locked="0" code="tag=0;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objLevel" x="48" y="12" name="inst_53854F2D" locked="0" code="&#xA;objMusic.musicLoop = bgmAAPastLoop;&#xA;objMusic.musicIntro = bgmAAPastIntro;&#xA;&#xA;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objLevel" x="48" y="12" name="inst_53854F2D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objAAPastBack" x="64" y="12" name="inst_853D4E62" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objCurveConcaveSlim" x="3392" y="832" name="inst_7B4F3DEF" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objCurveConcaveSlim" x="3408" y="816" name="inst_40BEC272" locked="0" code="" scaleX="-1.5" scaleY="1.5" colour="4294967295" rotation="0"/>

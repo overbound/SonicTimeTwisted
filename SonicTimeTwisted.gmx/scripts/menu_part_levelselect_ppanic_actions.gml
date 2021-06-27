@@ -1,7 +1,7 @@
 switch(argument0)
 {
     case 0:
-        audio_stop_sound(bgmTitle);
+        stop_sound(bgmTitle);
         audio_stop_all();
         stop_all_music(true);
         play_sfx(sndConfirm);
@@ -9,7 +9,7 @@ switch(argument0)
         menu_fn_close_menu(menu_fn_levelselect_goto_act, false, 13);
         break;
     case 1:
-        audio_stop_sound(bgmTitle);
+        stop_sound(bgmTitle);
         audio_stop_all();
         stop_all_music(true);
         play_sfx(sndConfirm);

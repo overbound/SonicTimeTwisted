@@ -15,13 +15,7 @@ objLevel.act = 1;
 objLevel.flower = sprFlowerVV;
 objProgram.in_past=false;
 // setup titlecard
-with objTitlecard
-{
-    title_string[0] = tr("_zonename_VVZ_A");
-    title_string[1] = tr("_zonename_VVZ_B");
-    title_string[2] = tr("_zonename_VVZ_C");
-    title_string[3] = tr("_ACT1_FUTURE");
-}</code>
+get_titlecard_array(room);</code>
   <enableViews>0</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>
@@ -1142,7 +1136,7 @@ with objTitlecard
     <instance objName="objSlant" x="9424" y="1120" name="inst_884FC2B7" locked="0" code="through=1&#xA;angled=0" scaleX="-2" scaleY="0.125" colour="4294967295" rotation="0"/>
     <instance objName="objSlant" x="9552" y="1088" name="inst_8DB0A13F" locked="0" code="through=1&#xA;angled=0" scaleX="-2" scaleY="0.125" colour="4294967295" rotation="0"/>
     <instance objName="objSlant" x="9552" y="1088" name="inst_BD41B68F" locked="0" code="through=1&#xA;angled=0" scaleX="2" scaleY="0.125" colour="4294967295" rotation="0"/>
-    <instance objName="objLevel" x="16" y="0" name="inst_B63463B9" locked="0" code="objMusic.musicIntro = bgmVVFutureIntro;&#xA;objMusic.musicLoop = bgmVVFutureLoop;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objLevel" x="16" y="0" name="inst_B63463B9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objVVBombLauncher" x="3464" y="1412" name="inst_5DE3EE83" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objMonitor" x="7232" y="660" name="inst_67CDB5C0" locked="0" code="icon=5;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWhalebot" x="13808" y="48" name="inst_290C93AA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

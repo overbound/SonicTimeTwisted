@@ -19,7 +19,7 @@
         <exetype>2</exetype>
         <functionname></functionname>
         <codestring></codestring>
-        <whoName>objCharacterFall</whoName>
+        <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
@@ -217,7 +217,7 @@ case 2:
 break;
 case 3:
     instance_create(x,y,objTextEnding);
-    if alarm[0] == - 1 {
+    if alarm[0] == -1 {
         if endType == "bad" || endType == "nostones" {
             with objTextEnding state = 1;
             with objMusic {
@@ -311,12 +311,8 @@ case 9:
     }
 break;
 case 12:
-    if input_check_pressed(cACTION) || input_check_pressed(cSTART) {
-        game_restart();
-    }
-    
-    if alarm[0] == -1 {
-        game_restart();
+    if (input_check_pressed(cACTION) || input_check_pressed(cSTART) || alarm[0] == -1) {
+        menu_fn_restart_game();
     }
 break;
 case 18: // Super Sonic intro start
@@ -424,9 +420,11 @@ break;
           <argument>
             <kind>1</kind>
             <string>/// Stop all Music if ended
-with objMusic {
-    if audio_sound_get_gain(currentMusic) &lt;= .1 
+with (objMusic) {
+    var o1 = (0.1 * (objMusic.bgmGain / 100));
+    if (audio_sound_get_gain(currentMusic) &lt;= o1) {
         stop_all_music(false);
+    }
 }
 </string>
           </argument>

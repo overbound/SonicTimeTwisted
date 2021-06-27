@@ -2,14 +2,7 @@
 
 // returns -1 if no sprite is found, because false/0 can in fact match a sprite
 
-var _fname = global.TR_map[? global.TR_lang];
-_fname = _fname[? "info"];
-_fname = _fname[? "fname"];
-
-var _sep = "/";
-if (os_type == os_windows) _sep = "\";
-
-var _path = "translations" + _sep + _fname + _sep + argument0 + ".png";
+var _path = tr_get_prepend() + argument0 + ".png";
 
 show_debug_message("Loading sprite " + _path);
 

@@ -4,7 +4,7 @@ void PlayerRingCollision()
 var d, a;
 if (!onGround) || argument0.alarm[0] != -1 exit;
     rings +=1;
-    audio_stop_sound(sndRing);
+    stop_sound(sndRing);
     play_sfx(sndRing, 0);
     
     with argument0 {

@@ -10,10 +10,8 @@ with (objResources) {
     if (font_exists(fontTitleLarge)) font_delete(fontTitleLarge);
     if (font_exists(fontTitleSmall)) font_delete(fontTitleSmall);
     if (font_exists(fontTitleSmallest)) font_delete(fontTitleSmallest);
-    for (var i = 0; i < 7; i++)
-    {
-        if (sprite_exists(global.TR_sprarr[i]))
-        {
+    for (var i = 0; i < 7; i++) {
+        if (sprite_exists(global.TR_sprarr[i])) {
             show_debug_message("Freeing spritefont " + string(global.TR_sprarr[i]));
             sprite_delete(global.TR_sprarr[i]);
             global.TR_sprarr[i] = -1;

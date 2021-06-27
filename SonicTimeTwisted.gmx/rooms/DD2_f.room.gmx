@@ -16,13 +16,7 @@ objLevel.flower = sprFlowerDD;
 objLevel.bg = instance_create(x,y,objDDFutureBackAct2);
 objProgram.in_past = false;
 // setup titlecard
-with objTitlecard
-{
-    title_string[0] = tr("_zonename_DDZ_A");
-    title_string[1] = tr("_zonename_DDZ_B");
-    title_string[2] = tr("_zonename_DDZ_C");
-    title_string[3] = tr("_ACT2_FUTURE");
-}</code>
+get_titlecard_array(room);</code>
   <enableViews>0</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>
@@ -270,7 +264,7 @@ with objTitlecard
     <instance objName="objSlant" x="1312" y="7164" name="inst_B3B6D323" locked="0" code="depth_mask=1;&#xA;" scaleX="-0.629999995231628" scaleY="0.125" colour="4294967295" rotation="0"/>
     <instance objName="objSlant" x="1376" y="7164" name="inst_F64B93D1" locked="0" code="depth_mask=1;&#xA;" scaleX="0.629999995231628" scaleY="0.125" colour="4294967295" rotation="0"/>
     <instance objName="objSlant" x="2016" y="7164" name="inst_C311A115" locked="0" code="depth_mask=1;&#xA;" scaleX="-0.629999995231628" scaleY="0.125" colour="4294967295" rotation="0"/>
-    <instance objName="objLevel" x="24" y="6996" name="inst_3E4314DF" locked="0" code="objMusic.musicIntro = bgmDDFutureIntro;&#xA;objMusic.musicLoop = bgmDDFutureLoop;&#xA;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objLevel" x="24" y="6996" name="inst_3E4314DF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objDDFutureBack" x="48" y="6996" name="inst_C5574F0C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objField" x="1804" y="5660" name="inst_8F64CC7F" locked="0" code="reaction_script=player_reaction_ddf_change_to_inside_bg;&#xA;" scaleX="143.5" scaleY="2.5" colour="4294967295" rotation="0"/>
     <instance objName="objSpringRed" x="2576" y="5360" name="inst_EED3EFBB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="270"/>

@@ -5,7 +5,7 @@
   <visible>0</visible>
   <depth>-1028</depth>
   <persistent>0</persistent>
-  <parentName>self</parentName>
+  <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -215,6 +215,31 @@ if(switch_script != input_method_dummy_script)
     }
 }
 menu_fn_step();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="5">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>// keep this as a GML script instead of a DND action.
+// That way, if the extension is replaced/updated, this won't get corrupted
+menu_fn_finalize();
 </string>
           </argument>
         </arguments>

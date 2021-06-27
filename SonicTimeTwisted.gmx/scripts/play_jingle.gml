@@ -1,23 +1,26 @@
 ///play_jingle(song, resume)
 var song = argument0;
 var resume = argument1;
-with objMusic {
-    audio_stop_sound(musicJingle);
-    musicJingle = song;
+with (objMusic) {
+    stop_sound(musicJingle);
+    musicJingle = -1;
+    musicJingleAsset = song;
     
-    if state == 6 {
-        currentMusic=audio_play_sound(musicJingle,20,false);
-        audio_sound_gain(currentMusic, 0, 0);
-        statePrevious = 5;
+    if (state == MUSIC_STATE.EFFECT) {
+        musicJingle = audio_play_sound(musicJingleAsset, 20, false);
+        audio_sound_gain(musicJingle, 0, 0);
+        statePrevious = MUSIC_STATE.JINGLE;
         previousPosition = 0;
-    } else if state == 5 {
-        currentMusic=audio_play_sound(musicJingle,20,false);
-        audio_sound_gain(currentMusic, objMusic.bgmGain / 100, 200);
-      } else {
+    } else if (state == MUSIC_STATE.JINGLE) {
+        musicJingle = audio_play_sound(musicJingleAsset, 20, false);
+        audio_sound_gain(musicJingle, bgmGain / 100, 200);
+        currentMusic = musicJingle;
+    } else {
         stop_all_music(resume);
-        currentMusic=audio_play_sound(musicJingle,20,false);
-        audio_sound_gain(currentMusic, objMusic.bgmGain / 100, 200);
-        state = 5;
+        musicJingle = audio_play_sound(musicJingleAsset, 20, false);
+        audio_sound_gain(musicJingle, bgmGain / 100, 200);
+        state = MUSIC_STATE.JINGLE;
+        currentMusic = musicJingle;
     }
 }
 

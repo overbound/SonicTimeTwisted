@@ -7,7 +7,7 @@ switch(argument0)
     case 4:
     case 5:
     case 6:
-        audio_stop_sound(bgmTitle);
+        stop_sound(bgmTitle);
         audio_stop_all();
         stop_all_music(true);
         play_sfx(sndConfirm);
@@ -20,7 +20,7 @@ switch(argument0)
     case 11:
     case 12:
     case 13:
-        audio_stop_sound(bgmTitle);
+        stop_sound(bgmTitle);
         audio_stop_all();
         stop_all_music(true);
         play_sfx(sndConfirm);

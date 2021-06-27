@@ -61,7 +61,10 @@ x_center = view_wview[view_current]/2 + 8 * (string_length(word1) - string_lengt
           <argument>
             <kind>1</kind>
             <string>///Restart the game
-game_restart();
+with (menu_fn_restart_game(c_black)) {
+    image_alpha = 1;
+    previous_flag_input = true;
+}
 </string>
           </argument>
         </arguments>

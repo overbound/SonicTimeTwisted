@@ -18,13 +18,7 @@ with objLevel {
 with objLevel bg = instance_create(x,y,objTTPastBack2);
 objProgram.in_past = true;
 // setup titlecard
-with objTitlecard
-{
-    title_string[0] = tr("_zonename_TTZ_A");
-    title_string[1] = tr("_zonename_TTZ_B");
-    title_string[2] = tr("_zonename_TTZ_C");
-    title_string[3] = tr("_ACT2_PAST");
-}</code>
+get_titlecard_array(room);</code>
   <enableViews>0</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>
@@ -434,7 +428,7 @@ with objTitlecard
     <instance objName="objBlock" x="8188" y="1012" name="inst_7989ACC2" locked="0" code="" scaleX="4" scaleY="2.75" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="8456" y="1216" name="inst_875AA918" locked="0" code="climbable=1;&#xA;" scaleX="13.5" scaleY="3.5" colour="4294967295" rotation="0"/>
     <instance objName="objStart" x="112" y="944" name="inst_2A5AB708" locked="0" code="tag=0;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objLevel" x="0" y="0" name="inst_A7E96622" locked="0" code="objMusic.musicIntro = bgmTTPastIntro;&#xA;objMusic.musicLoop = bgmTTPastLoop;&#xA;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objLevel" x="0" y="0" name="inst_A7E96622" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objCurveConcave" x="632" y="2696" name="inst_21BD8D56" locked="0" code="" scaleX="-0.579999983310699" scaleY="0.579999983310699" colour="4294967295" rotation="0"/>
     <instance objName="objSpike" x="1424" y="704" name="inst_D86DFDD8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpike" x="2160" y="1408" name="inst_031302E3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

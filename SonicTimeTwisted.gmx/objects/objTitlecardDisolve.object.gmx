@@ -28,7 +28,7 @@
             <string>/// Initialize
 // state
 mode = 0;
-screenshot = sprite_create_from_surface(application_surface, 0, 0, objScreen.width, objScreen.height, 0, 0, 0, 0);
+screenshot = sprite_create_from_surface(application_surface, 0, 0, surface_get_width(application_surface), surface_get_height(application_surface), false, false, 0, 0);
 // banners
 fade_alpha = 0;
 planet_ox = 600; //608;
@@ -70,6 +70,30 @@ remove = 0;
             <kind>1</kind>
             <string>///d3d_end();
 d3d_end();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="1" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Clean up
+if (sprite_exists(screenshot)) sprite_delete(screenshot);
 </string>
           </argument>
         </arguments>

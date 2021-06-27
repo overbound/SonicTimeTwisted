@@ -28,11 +28,12 @@
             <string>/// Initialize
 
 // restore VM math precision as early as possible, if it's YYC.
-if (code_is_compiled())
-{
+if (code_is_compiled()) {
     show_debug_message("YYC is enabled, expect weird behaviour.");
     math_set_epsilon(0.00001);
 }
+
+check_configuration();
 
 image_speed = 0;
 level = "";
@@ -43,7 +44,9 @@ game_mode = 1;
 paused = false;
 lost_focus = false;
 check_room = 0;
+check_cheatcode = false; // will persist across title returns.
 // controllers
+instance_create(0, 0, objScreen);
 inputManager = instance_create(0, 0, objInput);
 with(inputManager)
 {
@@ -75,14 +78,12 @@ temp_y=0;
 temp_x=0;
 temp_yview_offset=0;
 temp_xview_offset=0;
-stop_sound = true;
 ss_perfect_bonus = 0;
 ss_rings_bonus = 0;
 ss_time_bonus = 0;
 // music
 jingle = -1;
 music = -1;
-music_queue = ds_priority_create();
 // set up rings and lives watchers
 life_past_list = noone;
 ring_past_list = noone;
@@ -99,8 +100,7 @@ no_save_data = ds_map_create();
 // randomize seed
 randomize();
 // create geometric tables
-globalvar sine, cosine;
-for (var i=0; i&lt;360; i+=1)
+for (var i = 360; i &gt; -1; i--)
 {
     sine[i] = sin(degtorad(i));
     cosine[i] = cos(degtorad(i));
@@ -108,7 +108,6 @@ for (var i=0; i&lt;360; i+=1)
 // start critical processes
 instance_create(0, 0, objGameData);
 instance_create(0, 0, objMusic);
-instance_create(0, 0, objScreen);
 tr_init();
 instance_create(0, 0, objResources);
 // start critical processes
@@ -372,9 +371,17 @@ if(!show_startup_window())
             <kind>1</kind>
             <string>apply_video_settings();
 // sync window properties
-if window_get_fullscreen() window_mode = 2; else
-if window_get_width() &gt; width or window_get_height() &gt; height { window_mode = 1; window_scale = 2 } else
-if (window_get_width() != width * window_scale) or (window_get_height() != height * window_scale) window_set_size(width * window_scale, height * window_scale);
+if (window_get_fullscreen()) {
+    window_mode = 2;
+}
+else if ((window_get_width() &gt; width) || (window_get_height() &gt; height)) {
+    window_mode = 1;
+    window_scale = 2;
+}
+else if ((window_get_width() != (width * window_scale)) || (window_get_height() != (height * window_scale))) {
+    window_set_size(width * window_scale, height * window_scale);
+}
+
 surface_resize(application_surface, width, height);
 </string>
           </argument>
@@ -425,26 +432,27 @@ surface_resize(application_surface, width, height);
 audio_stop_all();
 d3d_end();
 
-if (DEVICE_INFO &amp; DEVICE_OS_PLAYSTATION)
-{
-    for (var _k = ds_map_find_first(storage_buffers);
-         ds_map_exists(storage_buffers, _k);
-         _k = ds_map_find_next(storage_buffers, _k))
-    {
-        var _v = storage_buffers[? _k];
-        if (buffer_exists(_v)) buffer_delete(_v);
+if (DEVICE_INFO &amp; DEVICE_OS_PLAYSTATION) {
+    if (ds_exists(storage_buffers, ds_type_map)) {
+        for (var _k = ds_map_find_first(storage_buffers);
+             ds_map_exists(storage_buffers, _k);
+             _k = ds_map_find_next(storage_buffers, _k)) {
+            var _v = storage_buffers[? _k];
+            if (buffer_exists(_v)) buffer_delete(_v);
+        }
+        ds_map_destroy(storage_buffers);
     }
     
-    ds_map_destroy(storage_buffers);
-    ds_map_destroy(storage_map);
+    if (ds_exists(storage_map, ds_type_map)) {
+        ds_map_destroy(storage_map);
+    }
 }
 
-ds_map_destroy(no_save_data);
-ds_list_destroy(future_list);
-ds_list_destroy(past_list);
-ds_list_destroy(special_future_list);
-ds_list_destroy(special_past_list);
-ds_priority_destroy(music_queue);
+if (ds_exists(no_save_data, ds_type_map)) ds_map_destroy(no_save_data);
+if (ds_exists(future_list, ds_type_list)) ds_list_destroy(future_list);
+if (ds_exists(past_list, ds_type_list)) ds_list_destroy(past_list);
+if (ds_exists(special_future_list, ds_type_list)) ds_list_destroy(special_future_list);
+if (ds_exists(special_past_list, ds_type_list)) ds_list_destroy(special_past_list);
 
 // free arrays.
 sine = 0;
@@ -522,6 +530,30 @@ if (DEVICE_INFO &amp; DEVICE_OS_PLAYSTATION)
           <argument>
             <kind>1</kind>
             <string>delete_settings();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="114">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Print current memory usage.
+print_mem_usage();
 </string>
           </argument>
         </arguments>

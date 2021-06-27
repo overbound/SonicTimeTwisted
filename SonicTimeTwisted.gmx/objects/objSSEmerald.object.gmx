@@ -116,7 +116,7 @@ if(!chime_played)
         play_jingle(sndSSTimeStone, false);
     else
         play_jingle(sndSSChaosEmerald, false);
-    alarm_set(0, 150);
+    alarm[0] = 150;
     chime_played = true;
     rumble(rumble_short_mid);
 }

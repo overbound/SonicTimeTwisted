@@ -34,7 +34,6 @@ with switchButton[0] { controller = other.id; }
 switchButton[1]=instance_create(x+64,y,objPaddleSwitch);
 with switchButton[1] { controller = other.id; }
 switchCount = 0;
-audio = audio_emitter_create();
 </string>
           </argument>
         </arguments>
