@@ -1,5 +1,8 @@
 ///menu_fn_restart_game([color])
 
+// at this point, the options have obviously been saved at least once
+objProgram.first_run = false;
+
 if (!instance_exists(objFadeWhiteFromLevelToTitle)) {
     var _color = c_white;
     if (argument_count > 0) {
