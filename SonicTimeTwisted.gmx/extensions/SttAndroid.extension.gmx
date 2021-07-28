@@ -27,9 +27,6 @@
     <Config name="Default">
       <CopyToMask>2097160</CopyToMask>
     </Config>
-    <Config name="Windows">
-      <CopyToMask>2097160</CopyToMask>
-    </Config>
     <Config name="AndroidSmartphone">
       <CopyToMask>2097160</CopyToMask>
     </Config>
@@ -37,12 +34,6 @@
       <CopyToMask>2097160</CopyToMask>
     </Config>
     <Config name="MacOS">
-      <CopyToMask>2097160</CopyToMask>
-    </Config>
-    <Config name="iPhone">
-      <CopyToMask>2097160</CopyToMask>
-    </Config>
-    <Config name="AppleTV">
       <CopyToMask>2097160</CopyToMask>
     </Config>
     <Config name="Linux">
@@ -71,9 +62,6 @@
         <Config name="Default">
           <CopyToMask>2097160</CopyToMask>
         </Config>
-        <Config name="Windows">
-          <CopyToMask>2097160</CopyToMask>
-        </Config>
         <Config name="AndroidSmartphone">
           <CopyToMask>2097160</CopyToMask>
         </Config>
@@ -81,12 +69,6 @@
           <CopyToMask>2097160</CopyToMask>
         </Config>
         <Config name="MacOS">
-          <CopyToMask>2097160</CopyToMask>
-        </Config>
-        <Config name="iPhone">
-          <CopyToMask>2097160</CopyToMask>
-        </Config>
-        <Config name="AppleTV">
           <CopyToMask>2097160</CopyToMask>
         </Config>
         <Config name="Linux">

@@ -2,12 +2,9 @@
 <assets>
   <Configs name="configs">
     <Config>Configs\Default</Config>
-    <Config>Configs\Windows</Config>
     <Config>Configs\AndroidSmartphone</Config>
     <Config>Configs\AndroidConsole</Config>
     <Config>Configs\MacOS</Config>
-    <Config>Configs\iPhone</Config>
-    <Config>Configs\AppleTV</Config>
     <Config>Configs\Linux</Config>
     <Config>Configs\PlayStation</Config>
     <Config>Configs\Browser</Config>
@@ -27,9 +24,6 @@
         <Config name="Default">
           <CopyToMask>9223372036854775807</CopyToMask>
         </Config>
-        <Config name="Windows">
-          <CopyToMask>9223372036854775807</CopyToMask>
-        </Config>
         <Config name="AndroidSmartphone">
           <CopyToMask>9223372036854775807</CopyToMask>
         </Config>
@@ -37,12 +31,6 @@
           <CopyToMask>9223372036854775807</CopyToMask>
         </Config>
         <Config name="MacOS">
-          <CopyToMask>9223372036854775807</CopyToMask>
-        </Config>
-        <Config name="iPhone">
-          <CopyToMask>9223372036854775807</CopyToMask>
-        </Config>
-        <Config name="AppleTV">
           <CopyToMask>9223372036854775807</CopyToMask>
         </Config>
         <Config name="Linux">
@@ -72,9 +60,6 @@
           <Config name="Default">
             <CopyToMask>9223372036854775807</CopyToMask>
           </Config>
-          <Config name="Windows">
-            <CopyToMask>9223372036854775807</CopyToMask>
-          </Config>
           <Config name="AndroidSmartphone">
             <CopyToMask>9223372036854775807</CopyToMask>
           </Config>
@@ -82,12 +67,6 @@
             <CopyToMask>9223372036854775807</CopyToMask>
           </Config>
           <Config name="MacOS">
-            <CopyToMask>9223372036854775807</CopyToMask>
-          </Config>
-          <Config name="iPhone">
-            <CopyToMask>9223372036854775807</CopyToMask>
-          </Config>
-          <Config name="AppleTV">
             <CopyToMask>9223372036854775807</CopyToMask>
           </Config>
           <Config name="Linux">
@@ -117,9 +96,6 @@
             <Config name="Default">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
-            <Config name="Windows">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
             <Config name="AndroidSmartphone">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
@@ -127,12 +103,6 @@
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="MacOS">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="iPhone">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="AppleTV">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="Linux">
@@ -161,9 +131,6 @@
             <Config name="Default">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
-            <Config name="Windows">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
             <Config name="AndroidSmartphone">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
@@ -171,12 +138,6 @@
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="MacOS">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="iPhone">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="AppleTV">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="Linux">
@@ -205,9 +166,6 @@
             <Config name="Default">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
-            <Config name="Windows">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
             <Config name="AndroidSmartphone">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
@@ -215,12 +173,6 @@
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="MacOS">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="iPhone">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="AppleTV">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="Linux">
@@ -249,9 +201,6 @@
             <Config name="Default">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
-            <Config name="Windows">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
             <Config name="AndroidSmartphone">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
@@ -259,12 +208,6 @@
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="MacOS">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="iPhone">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="AppleTV">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="Linux">
@@ -293,9 +236,6 @@
             <Config name="Default">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
-            <Config name="Windows">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
             <Config name="AndroidSmartphone">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
@@ -303,12 +243,6 @@
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="MacOS">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="iPhone">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="AppleTV">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="Linux">
@@ -337,9 +271,6 @@
             <Config name="Default">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
-            <Config name="Windows">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
             <Config name="AndroidSmartphone">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
@@ -347,12 +278,6 @@
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="MacOS">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="iPhone">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="AppleTV">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="Linux">
@@ -381,9 +306,6 @@
             <Config name="Default">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
-            <Config name="Windows">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
             <Config name="AndroidSmartphone">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
@@ -391,12 +313,6 @@
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="MacOS">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="iPhone">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="AppleTV">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="Linux">
@@ -425,9 +341,6 @@
             <Config name="Default">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
-            <Config name="Windows">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
             <Config name="AndroidSmartphone">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
@@ -435,12 +348,6 @@
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="MacOS">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="iPhone">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="AppleTV">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="Linux">
@@ -469,9 +376,6 @@
             <Config name="Default">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
-            <Config name="Windows">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
             <Config name="AndroidSmartphone">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
@@ -479,12 +383,6 @@
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="MacOS">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="iPhone">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="AppleTV">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="Linux">
@@ -514,9 +412,6 @@
           <Config name="Default">
             <CopyToMask>9223372036854775807</CopyToMask>
           </Config>
-          <Config name="Windows">
-            <CopyToMask>9223372036854775807</CopyToMask>
-          </Config>
           <Config name="AndroidSmartphone">
             <CopyToMask>9223372036854775807</CopyToMask>
           </Config>
@@ -524,12 +419,6 @@
             <CopyToMask>9223372036854775807</CopyToMask>
           </Config>
           <Config name="MacOS">
-            <CopyToMask>9223372036854775807</CopyToMask>
-          </Config>
-          <Config name="iPhone">
-            <CopyToMask>9223372036854775807</CopyToMask>
-          </Config>
-          <Config name="AppleTV">
             <CopyToMask>9223372036854775807</CopyToMask>
           </Config>
           <Config name="Linux">
@@ -559,9 +448,6 @@
             <Config name="Default">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
-            <Config name="Windows">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
             <Config name="AndroidSmartphone">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
@@ -569,12 +455,6 @@
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="MacOS">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="iPhone">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="AppleTV">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="Linux">
@@ -603,9 +483,6 @@
             <Config name="Default">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
-            <Config name="Windows">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
             <Config name="AndroidSmartphone">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
@@ -613,12 +490,6 @@
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="MacOS">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="iPhone">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="AppleTV">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="Linux">
@@ -647,9 +518,6 @@
             <Config name="Default">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
-            <Config name="Windows">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
             <Config name="AndroidSmartphone">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
@@ -657,12 +525,6 @@
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="MacOS">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="iPhone">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="AppleTV">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="Linux">
@@ -691,9 +553,6 @@
             <Config name="Default">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
-            <Config name="Windows">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
             <Config name="AndroidSmartphone">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
@@ -701,12 +560,6 @@
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="MacOS">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="iPhone">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="AppleTV">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="Linux">
@@ -735,9 +588,6 @@
             <Config name="Default">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
-            <Config name="Windows">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
             <Config name="AndroidSmartphone">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
@@ -745,12 +595,6 @@
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="MacOS">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="iPhone">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="AppleTV">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="Linux">
@@ -779,9 +623,6 @@
             <Config name="Default">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
-            <Config name="Windows">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
             <Config name="AndroidSmartphone">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
@@ -789,12 +630,6 @@
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="MacOS">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="iPhone">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="AppleTV">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="Linux">
@@ -823,9 +658,6 @@
             <Config name="Default">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
-            <Config name="Windows">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
             <Config name="AndroidSmartphone">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
@@ -833,12 +665,6 @@
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="MacOS">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="iPhone">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="AppleTV">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="Linux">
@@ -867,9 +693,6 @@
             <Config name="Default">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
-            <Config name="Windows">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
             <Config name="AndroidSmartphone">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
@@ -877,12 +700,6 @@
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="MacOS">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="iPhone">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="AppleTV">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="Linux">
@@ -911,9 +728,6 @@
             <Config name="Default">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
-            <Config name="Windows">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
             <Config name="AndroidSmartphone">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
@@ -921,12 +735,6 @@
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="MacOS">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="iPhone">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="AppleTV">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="Linux">
@@ -956,9 +764,6 @@
           <Config name="Default">
             <CopyToMask>9223372036854775807</CopyToMask>
           </Config>
-          <Config name="Windows">
-            <CopyToMask>9223372036854775807</CopyToMask>
-          </Config>
           <Config name="AndroidSmartphone">
             <CopyToMask>9223372036854775807</CopyToMask>
           </Config>
@@ -966,12 +771,6 @@
             <CopyToMask>9223372036854775807</CopyToMask>
           </Config>
           <Config name="MacOS">
-            <CopyToMask>9223372036854775807</CopyToMask>
-          </Config>
-          <Config name="iPhone">
-            <CopyToMask>9223372036854775807</CopyToMask>
-          </Config>
-          <Config name="AppleTV">
             <CopyToMask>9223372036854775807</CopyToMask>
           </Config>
           <Config name="Linux">
@@ -1001,9 +800,6 @@
             <Config name="Default">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
-            <Config name="Windows">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
             <Config name="AndroidSmartphone">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
@@ -1011,12 +807,6 @@
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="MacOS">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="iPhone">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="AppleTV">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="Linux">
@@ -1045,9 +835,6 @@
             <Config name="Default">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
-            <Config name="Windows">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
             <Config name="AndroidSmartphone">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
@@ -1055,12 +842,6 @@
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="MacOS">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="iPhone">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="AppleTV">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="Linux">
@@ -1089,9 +870,6 @@
             <Config name="Default">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
-            <Config name="Windows">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
             <Config name="AndroidSmartphone">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
@@ -1099,12 +877,6 @@
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="MacOS">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="iPhone">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="AppleTV">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="Linux">
@@ -1133,9 +905,6 @@
             <Config name="Default">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
-            <Config name="Windows">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
             <Config name="AndroidSmartphone">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
@@ -1143,12 +912,6 @@
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="MacOS">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="iPhone">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="AppleTV">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="Linux">
@@ -1177,9 +940,6 @@
             <Config name="Default">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
-            <Config name="Windows">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
             <Config name="AndroidSmartphone">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
@@ -1187,12 +947,6 @@
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="MacOS">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="iPhone">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="AppleTV">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="Linux">
@@ -1221,9 +975,6 @@
             <Config name="Default">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
-            <Config name="Windows">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
             <Config name="AndroidSmartphone">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
@@ -1231,12 +982,6 @@
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="MacOS">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="iPhone">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="AppleTV">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="Linux">
@@ -1265,9 +1010,6 @@
             <Config name="Default">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
-            <Config name="Windows">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
             <Config name="AndroidSmartphone">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
@@ -1275,12 +1017,6 @@
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="MacOS">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="iPhone">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="AppleTV">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="Linux">
@@ -1309,9 +1045,6 @@
             <Config name="Default">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
-            <Config name="Windows">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
             <Config name="AndroidSmartphone">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
@@ -1319,12 +1052,6 @@
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="MacOS">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="iPhone">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="AppleTV">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="Linux">
@@ -1353,9 +1080,6 @@
             <Config name="Default">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
-            <Config name="Windows">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
             <Config name="AndroidSmartphone">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
@@ -1363,12 +1087,6 @@
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="MacOS">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="iPhone">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="AppleTV">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="Linux">
@@ -1398,9 +1116,6 @@
           <Config name="Default">
             <CopyToMask>9223372036854775807</CopyToMask>
           </Config>
-          <Config name="Windows">
-            <CopyToMask>9223372036854775807</CopyToMask>
-          </Config>
           <Config name="AndroidSmartphone">
             <CopyToMask>9223372036854775807</CopyToMask>
           </Config>
@@ -1408,12 +1123,6 @@
             <CopyToMask>9223372036854775807</CopyToMask>
           </Config>
           <Config name="MacOS">
-            <CopyToMask>9223372036854775807</CopyToMask>
-          </Config>
-          <Config name="iPhone">
-            <CopyToMask>9223372036854775807</CopyToMask>
-          </Config>
-          <Config name="AppleTV">
             <CopyToMask>9223372036854775807</CopyToMask>
           </Config>
           <Config name="Linux">
@@ -1443,9 +1152,6 @@
             <Config name="Default">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
-            <Config name="Windows">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
             <Config name="AndroidSmartphone">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
@@ -1453,12 +1159,6 @@
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="MacOS">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="iPhone">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="AppleTV">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="Linux">
@@ -1487,9 +1187,6 @@
             <Config name="Default">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
-            <Config name="Windows">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
             <Config name="AndroidSmartphone">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
@@ -1497,12 +1194,6 @@
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="MacOS">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="iPhone">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="AppleTV">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="Linux">
@@ -1531,9 +1222,6 @@
             <Config name="Default">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
-            <Config name="Windows">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
             <Config name="AndroidSmartphone">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
@@ -1541,12 +1229,6 @@
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="MacOS">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="iPhone">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="AppleTV">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="Linux">
@@ -1575,9 +1257,6 @@
             <Config name="Default">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
-            <Config name="Windows">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
             <Config name="AndroidSmartphone">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
@@ -1585,12 +1264,6 @@
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="MacOS">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="iPhone">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="AppleTV">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="Linux">
@@ -1619,9 +1292,6 @@
             <Config name="Default">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
-            <Config name="Windows">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
             <Config name="AndroidSmartphone">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
@@ -1629,12 +1299,6 @@
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="MacOS">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="iPhone">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="AppleTV">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="Linux">
@@ -1663,9 +1327,6 @@
             <Config name="Default">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
-            <Config name="Windows">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
             <Config name="AndroidSmartphone">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
@@ -1673,12 +1334,6 @@
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="MacOS">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="iPhone">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="AppleTV">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="Linux">
@@ -1707,9 +1362,6 @@
             <Config name="Default">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
-            <Config name="Windows">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
             <Config name="AndroidSmartphone">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
@@ -1717,12 +1369,6 @@
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="MacOS">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="iPhone">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="AppleTV">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="Linux">
@@ -1751,9 +1397,6 @@
             <Config name="Default">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
-            <Config name="Windows">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
             <Config name="AndroidSmartphone">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
@@ -1761,12 +1404,6 @@
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="MacOS">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="iPhone">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="AppleTV">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="Linux">
@@ -1795,9 +1432,6 @@
             <Config name="Default">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
-            <Config name="Windows">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
             <Config name="AndroidSmartphone">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
@@ -1805,12 +1439,6 @@
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="MacOS">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="iPhone">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="AppleTV">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="Linux">
@@ -1840,9 +1468,6 @@
           <Config name="Default">
             <CopyToMask>9223372036854775807</CopyToMask>
           </Config>
-          <Config name="Windows">
-            <CopyToMask>9223372036854775807</CopyToMask>
-          </Config>
           <Config name="AndroidSmartphone">
             <CopyToMask>9223372036854775807</CopyToMask>
           </Config>
@@ -1850,12 +1475,6 @@
             <CopyToMask>9223372036854775807</CopyToMask>
           </Config>
           <Config name="MacOS">
-            <CopyToMask>9223372036854775807</CopyToMask>
-          </Config>
-          <Config name="iPhone">
-            <CopyToMask>9223372036854775807</CopyToMask>
-          </Config>
-          <Config name="AppleTV">
             <CopyToMask>9223372036854775807</CopyToMask>
           </Config>
           <Config name="Linux">
@@ -1887,9 +1506,6 @@
             <Config name="Default">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
-            <Config name="Windows">
-              <CopyToMask>2097160</CopyToMask>
-            </Config>
             <Config name="AndroidSmartphone">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
@@ -1897,12 +1513,6 @@
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="MacOS">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="iPhone">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="AppleTV">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="Linux">
@@ -1931,9 +1541,6 @@
             <Config name="Default">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
-            <Config name="Windows">
-              <CopyToMask>2097160</CopyToMask>
-            </Config>
             <Config name="AndroidSmartphone">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
@@ -1941,12 +1548,6 @@
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="MacOS">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="iPhone">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="AppleTV">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="Linux">
@@ -1977,9 +1578,6 @@
         <Config name="Default">
           <CopyToMask>134217856</CopyToMask>
         </Config>
-        <Config name="Windows">
-          <CopyToMask>134217856</CopyToMask>
-        </Config>
         <Config name="AndroidSmartphone">
           <CopyToMask>134217856</CopyToMask>
         </Config>
@@ -1987,12 +1585,6 @@
           <CopyToMask>134217856</CopyToMask>
         </Config>
         <Config name="MacOS">
-          <CopyToMask>134217856</CopyToMask>
-        </Config>
-        <Config name="iPhone">
-          <CopyToMask>134217856</CopyToMask>
-        </Config>
-        <Config name="AppleTV">
           <CopyToMask>134217856</CopyToMask>
         </Config>
         <Config name="Linux">
@@ -4217,7 +3809,6 @@
         </scripts>
         <scripts name="Debug">
           <script>scripts\print_mem_usage.gml</script>
-          <script>scripts\check_configuration.gml</script>
           <script>scripts\print_callstack.gml</script>
         </scripts>
       </scripts>
@@ -5919,7 +5510,7 @@
     <constant name="DEVICE_OS_SWITCH">1024</constant>
     <constant name="DEVICE_OS_BROWSER">2048</constant>
     <constant name="DEVICE_OS_UNKNOWN">4096</constant>
-    <constant name="DEVICE_INFO">DEVICE_TYPE_UNKNOWN | DEVICE_OS_UNKNOWN</constant>
+    <constant name="DEVICE_INFO">DEVICE_TYPE_COMPUTER | DEVICE_OS_WINDOWS</constant>
     <constant name="DEVICE_BACK_BUTTON">vk_escape</constant>
     <constant name="INPUT_KEYBOARD">0</constant>
     <constant name="INPUT_TOUCHSCREEN">1</constant>
