@@ -13,13 +13,10 @@
     <TextureGroup0>17</TextureGroup0>
     <TextureGroup1>17</TextureGroup1>
     <TextureGroup2>17</TextureGroup2>
-    <TextureGroup3>17</TextureGroup3>
+    <TextureGroup3>0</TextureGroup3>
     <TextureGroup4>0</TextureGroup4>
-    <TextureGroup5>0</TextureGroup5>
-    <TextureGroup6>0</TextureGroup6>
-    <TextureGroup7>0</TextureGroup7>
-    <TextureGroup8>17</TextureGroup8>
-    <TextureGroup9>17</TextureGroup9>
+    <TextureGroup5>17</TextureGroup5>
+    <TextureGroup6>17</TextureGroup6>
   </TextureGroups>
   <For3D>0</For3D>
   <width>32</width>

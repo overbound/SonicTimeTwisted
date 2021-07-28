@@ -33,8 +33,6 @@ if (code_is_compiled()) {
     math_set_epsilon(0.00001);
 }
 
-check_configuration();
-
 image_speed = 0;
 level = "";
 /* AUTHOR NOTE: This object controls all global game operations, such as the
