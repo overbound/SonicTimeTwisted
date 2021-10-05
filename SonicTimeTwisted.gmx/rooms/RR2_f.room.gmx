@@ -1391,7 +1391,6 @@ get_titlecard_array(room);</code>
     <instance objName="objMonitor" x="2768" y="1968" name="inst_810BCDE3" locked="0" code="icon=6;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="6564" y="1344" name="inst_8D30DBB3" locked="0" code="climbable=1;&#xA;" scaleX="43.5" scaleY="4" colour="4294967295" rotation="0"/>
     <instance objName="objCanon" x="6364" y="2024" name="inst_E180E051" locked="0" code="image_angle=90;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objBlock" x="15264" y="1280" name="inst_7D7F3ABB" locked="0" code="climbable=1;&#xA;depth_mask=1;&#xA;" scaleX="4" scaleY="8" colour="4294901760" rotation="0"/>
     <instance objName="objLayerSet" x="15312" y="1140" name="inst_A4943481" locked="0" code="depth_mask=1;&#xA;" scaleX="5" scaleY="8.33333301544189" colour="4294901760" rotation="0"/>
     <instance objName="objLayerSet" x="14383" y="926" name="inst_5D8F68D2" locked="0" code="depth_mask=1;&#xA;" scaleX="26.0625" scaleY="6.04166650772095" colour="4294901760" rotation="0"/>
     <instance objName="objBlock" x="14816" y="992" name="inst_885828AF" locked="0" code="climbable=1;&#xA;depth_mask=2;" scaleX="4" scaleY="4" colour="4278223103" rotation="0"/>
