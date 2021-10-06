@@ -3841,6 +3841,7 @@
       <scripts name="Video">
         <script>scripts\apply_video_settings.gml</script>
         <script>scripts\get_smartphone_screen_width.gml</script>
+        <script>scripts\get_smartphone_screen_height.gml</script>
       </scripts>
       <scripts name="I18n">
         <script>scripts\tr.gml</script>

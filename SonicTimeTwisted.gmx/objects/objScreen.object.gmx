@@ -49,13 +49,31 @@ if(DEVICE_INFO &amp; DEVICE_TYPE_SMARTPHONE)
 {
     var calculated_width = get_smartphone_screen_width();
     show_debug_message("GUI: "+string(calculated_width)+" x "+string(height));
-    
-    var maxgui_xscale = display_get_width()/calculated_width;
-    var maxgui_yscale = display_get_height()/height;
-    var maxgui_xoffset = maxgui_xscale*(calculated_width - width)/2;
-    
-    display_set_gui_size(calculated_width, height);
-    display_set_gui_maximise(maxgui_xscale, maxgui_yscale, maxgui_xoffset, 0);
+    var maxgui_xscale, maxgui_yscale;
+    if (calculated_width &gt;= width)
+    {    
+        // if the device's screen is wide enough, then this works
+        maxgui_xscale = display_get_width()/calculated_width;
+        maxgui_yscale = display_get_height()/height;
+        var maxgui_xoffset = maxgui_xscale*(calculated_width - width)/2;
+        
+        display_set_gui_size(calculated_width, height);
+        display_set_gui_maximise(maxgui_xscale, maxgui_yscale, maxgui_xoffset, 0);    
+    }
+    else
+    {
+        // if the device's screen is not wide enough, then restart everything:
+        // the width should be the fixed valuee, the height must be the recalculated instead
+        var calculated_height = get_smartphone_screen_height();
+        
+        maxgui_xscale = display_get_width()/width;
+        maxgui_yscale = display_get_height()/calculated_height;
+        var maxgui_yoffset = maxgui_yscale*(calculated_height - height)/2;
+        
+        display_set_gui_size(width, calculated_height);
+        display_set_gui_maximise(maxgui_xscale, maxgui_yscale, 0, maxgui_yoffset);    
+        
+    }
 }
 else
 {

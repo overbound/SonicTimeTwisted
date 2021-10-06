@@ -16,7 +16,7 @@ if(is_array(temporary_variable))
     }
     else
     {
-        x_test = objScreen.width;
+        x_test = objScreen.width/2;
     }
     draw_text(x_test, 0, tr("_options_menu_touchscreen_buttonreposition_back"));
 
