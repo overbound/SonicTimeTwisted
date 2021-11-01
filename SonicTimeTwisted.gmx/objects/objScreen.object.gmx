@@ -58,7 +58,10 @@ if(DEVICE_INFO &amp; DEVICE_TYPE_SMARTPHONE)
         var maxgui_xoffset = maxgui_xscale*(calculated_width - width)/2;
         
         display_set_gui_size(calculated_width, height);
-        display_set_gui_maximise(maxgui_xscale, maxgui_yscale, maxgui_xoffset, 0);    
+        display_set_gui_maximise(maxgui_xscale, maxgui_yscale, maxgui_xoffset, 0);
+        
+        gui_width = calculated_width;
+        gui_height = height;
     }
     else
     {
@@ -73,11 +76,16 @@ if(DEVICE_INFO &amp; DEVICE_TYPE_SMARTPHONE)
         display_set_gui_size(width, calculated_height);
         display_set_gui_maximise(maxgui_xscale, maxgui_yscale, 0, maxgui_yoffset);    
         
+        gui_width = width;
+        gui_height = calculated_height;
+        
     }
 }
 else
 {
     display_set_gui_size(width, height);
+    gui_width = width;
+    gui_height = height;
 }
 
 
