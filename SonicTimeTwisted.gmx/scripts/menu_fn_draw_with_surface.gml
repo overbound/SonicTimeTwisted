@@ -57,6 +57,5 @@ draw_clear_alpha(c_black, 0);
 script_execute(draw_script);
 
 surface_reset_target();
-//draw_surface(s, internal__menu_slide_offset_x - draw_offset_x, draw_offset_y);
 draw_surface(s, internal__menu_slide_offset_x - draw_offset_x, -1 * draw_offset_y);
 

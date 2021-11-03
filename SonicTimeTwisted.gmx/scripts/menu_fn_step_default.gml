@@ -183,7 +183,7 @@ switch(state)
         timer++;
         if(DEVICE_INFO & DEVICE_TYPE_SMARTPHONE)
         {
-            internal__menu_slide_offset_x = timer * ceil(get_smartphone_screen_width()/-10);
+            internal__menu_slide_offset_x = timer * ceil(objScreen.gui_width/-10);
         }
         else
         {
@@ -201,7 +201,7 @@ switch(state)
         timer++;
         if(DEVICE_INFO & DEVICE_TYPE_SMARTPHONE)
         {
-            internal__menu_slide_offset_x = get_smartphone_screen_width() + timer * ceil(get_smartphone_screen_width()/-10);
+            internal__menu_slide_offset_x = objScreen.gui_width + timer * ceil(objScreen.gui_width/-10);
         }
         else
         {
@@ -220,7 +220,7 @@ switch(state)
         
         if(DEVICE_INFO & DEVICE_TYPE_SMARTPHONE)
         {
-            internal__menu_slide_offset_x = max(timer * ceil(get_smartphone_screen_width()/10), internal__menu_slide_offset_x);
+            internal__menu_slide_offset_x = max(timer * ceil(objScreen.gui_width/10), internal__menu_slide_offset_x);
         }
         else
         {
@@ -239,7 +239,7 @@ switch(state)
         timer++;
         if(DEVICE_INFO & DEVICE_TYPE_SMARTPHONE)
         {
-            internal__menu_slide_offset_x = -1*get_smartphone_screen_width() + timer * ceil(get_smartphone_screen_width()/10);
+            internal__menu_slide_offset_x = -1*objScreen.gui_width + timer * ceil(objScreen.gui_width/10);
         }
         else
         {

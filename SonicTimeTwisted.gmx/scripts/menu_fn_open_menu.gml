@@ -18,34 +18,12 @@ if(state == 0)
             draw_absolutely = true;
         }
     }
-    /*
-    if(draw_absolutely)
-    {
-        draw_offset_x = 0;
-        draw_offset_y = 0;
-    }
-    else
-    {
-        draw_offset_x = view_xview[view_current];
-        draw_offset_y = view_yview[view_current];
-    }
-    */
     if(DEVICE_INFO & DEVICE_TYPE_SMARTPHONE)
     {
-        if (get_smartphone_screen_width() >= objScreen.width)
-        {
-            draw_offset_x = (get_smartphone_screen_width()-objScreen.width)/2;  
-            gui_click_offset_x = draw_offset_x;
-            draw_offset_y = 0;  
-            gui_click_offset_y = 0;
-        }
-        else
-        {
-            draw_offset_y = (get_smartphone_screen_height()-objScreen.height)/2;  
-            gui_click_offset_y = draw_offset_y;
-            draw_offset_x = 0;  
-            gui_click_offset_x = 0;        
-        }
+        draw_offset_x = (objScreen.gui_width-objScreen.width)/2;  
+        gui_click_offset_x = draw_offset_x;
+        draw_offset_y = (objScreen.gui_height-objScreen.height)/2;  
+        gui_click_offset_y = draw_offset_y;
     }
     else
     {

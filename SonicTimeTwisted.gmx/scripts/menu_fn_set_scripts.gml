@@ -6,22 +6,16 @@ script_execute(item_script);
 internal__button_count = array_height_2d(items);
 var view_width = view_wview[view_current];
 var view_height = view_hview[view_current];
+
 if(DEVICE_INFO & DEVICE_TYPE_SMARTPHONE)
 {
-    if (get_smartphone_screen_width() >= objScreen.width)
-    {
-        view_width = get_smartphone_screen_width();
-    }
-    else
-    {
-        view_height = get_smartphone_screen_height();
-    }
+    view_width = objScreen.gui_width;
+    view_height = objScreen.gui_height;
 }
-
 internal__draw_menu_buttons_offset_y = (view_height - min(internal__button_count, button_page_count)*button_slot_height)/2;
 
-internal__draw_menu_rect_x_center = draw_offset_x + view_width/2;
-internal__draw_menu_rect_y_center = draw_offset_y + view_height/2;
+internal__draw_menu_rect_x_center = view_width/2;
+internal__draw_menu_rect_y_center = view_height/2;
 
 internal__draw_menu_buttons_offset_x = internal__draw_menu_rect_x_center - (button_width/2);
 internal__draw_menu_rect_x1 = internal__draw_menu_buttons_offset_x - margin;
