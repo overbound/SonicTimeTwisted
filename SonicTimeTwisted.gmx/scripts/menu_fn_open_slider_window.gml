@@ -10,12 +10,8 @@ confirmation_cursor = argument2;
 confirmation_no_action = argument3; // used as minimum instead
 confirmation_yes_action = argument4; // used as maximum instead
 
-var view_width = view_wview[view_current];
-if(DEVICE_INFO & DEVICE_TYPE_SMARTPHONE)
-{
-    view_width = get_smartphone_screen_width();
-}
-var view_height = view_hview[view_current];
+var view_width = objScreen.gui_width;
+var view_height = objScreen.gui_height;
 
 draw_set_font(objResources.fontHudMin);
 internal__draw_confirmation_height = string_height_ext(confirmation_text, 0, view_width - 4*margin)*4 + 2*margin;
