@@ -24,7 +24,7 @@ switch(argument0)
         temporary_variable = -1;
         with(objProgram.inputManager)
         {
-            var screen_width = get_smartphone_screen_width();
+            var screen_width = objScreen.gui_width;
             var default_width = objScreen.width;
             var margin = (screen_width - default_width)/2;
             dpadx = 64 - margin;
