@@ -47,8 +47,25 @@ view_wport[0] = width;
 view_hport[0] = height;
 if(DEVICE_INFO &amp; DEVICE_TYPE_SMARTPHONE)
 {
-    var calculated_width = get_smartphone_screen_width();
-    show_debug_message("GUI: "+string(calculated_width)+" x "+string(height));
+    // calculating what the definition would be if the game used the entire screen
+    // first, the most common case: if the screen is of an aspect ratio larger than the game's native one
+    var calculated_width = width;
+    if(os_type == os_android)
+    {
+        if(display_get_orientation() == display_portrait
+            || display_get_orientation() == display_portrait_flipped)
+        {
+            calculated_width = round(height * (display_get_height()/display_get_width()));
+        }
+        else
+        {
+            calculated_width = round(height * (display_get_width()/display_get_height()));
+        }
+        if(calculated_width mod 2)
+        {
+            calculated_width--;
+        }
+    }
     var maxgui_xscale, maxgui_yscale;
     if (calculated_width &gt;= width)
     {    
@@ -67,7 +84,23 @@ if(DEVICE_INFO &amp; DEVICE_TYPE_SMARTPHONE)
     {
         // if the device's screen is not wide enough, then restart everything:
         // the width should be the fixed valuee, the height must be the recalculated instead
-        var calculated_height = get_smartphone_screen_height();
+        var calculated_height = height;
+        if(os_type == os_android)
+        {
+            if(display_get_orientation() == display_portrait
+                || display_get_orientation() == display_portrait_flipped)
+            {
+                calculated_height = round(426 * (display_get_width()/display_get_height()));
+            }
+            else
+            {
+                calculated_height = round(426 * (display_get_height()/display_get_width()));
+            }
+            if(calculated_height mod 2)
+            {
+                calculated_height--;
+            }
+        }
         
         maxgui_xscale = display_get_width()/width;
         maxgui_yscale = display_get_height()/calculated_height;

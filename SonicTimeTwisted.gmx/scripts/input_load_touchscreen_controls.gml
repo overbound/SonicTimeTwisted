@@ -1,5 +1,5 @@
 // touchscreen inputs
-var screen_width = get_smartphone_screen_width();
+var screen_width = objScreen.gui_width;
 var default_width = objScreen.width;
 var margin = (screen_width - default_width)/2;
 if(argument0) // argument0 - from INI, default values if false
