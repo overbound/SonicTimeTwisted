@@ -50,15 +50,7 @@ with(objProgram.inputManager)
     }
 }
 
-var x_center;
-if(DEVICE_INFO & DEVICE_TYPE_SMARTPHONE)
-{
-    x_center = get_smartphone_screen_width()/2 - 8;
-}
-else
-{
-    x_center = objScreen.width/2 - 8;  
-}
+var x_center = objScreen.gui_width/2 - 8;
 if(objProgram.inputManager.gyromode == 0)
 {
     draw_sprite(sprGyroscopeTest, 0, x_center, 208);
