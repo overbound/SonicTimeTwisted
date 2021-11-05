@@ -1,5 +1,5 @@
 // reset_temp_values
-with objProgram {
+with (objProgram) {
     temp_xspeed = 0;
     temp_yspeed = 0;
     temp_state = player_state_standby;
