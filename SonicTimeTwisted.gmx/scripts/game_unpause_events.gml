@@ -31,3 +31,8 @@ with(objMetalSonicVoice)
 {
     event_user(1);
 }
+// Special Stage title - reload countdown settings in case the language changes
+with(objSSMessages)
+{
+    event_user(0);
+}
