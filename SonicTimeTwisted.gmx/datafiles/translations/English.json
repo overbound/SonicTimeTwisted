@@ -7,7 +7,8 @@
 		"authors_contrib": "",
 		
 		"top_hud_offset": 0,
-		"titlecard_zone_is_first": 0
+		"titlecard_zone_is_first": 0,
+		"ss_start_go_is_longer": 0
 	},
 	"comments": {
 		"1": "You can do whatever you want in this section, it will be freed from memory when loading the strings.",
@@ -261,6 +262,7 @@
 		
 		"_ss_intro_Race": "Race",
 		"_ss_intro_Metal_Sonic": "Metal Sonic",
+		"_ss_intro_Go": "Go",
 		
 		"_PS_SAVING": "SAVING...",
 		"_PS_LOADING": "LOADING...",

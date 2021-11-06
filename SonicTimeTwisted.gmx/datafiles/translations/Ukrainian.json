@@ -8,6 +8,7 @@
 		
 		"top_hud_offset": 8,
 		"titlecard_zone_is_first": 1,
+		"ss_start_go_is_longer": 1,
 
 		"font_param": {
 			"sprFontHud": {
@@ -324,6 +325,7 @@
 		
 		"_ss_intro_Race": "Перегони з",
 		"_ss_intro_Metal_Sonic": "Метал Соніком",
+		"_ss_intro_Go": "Руш",
 		
 		"_PS_SAVING": "ЗБЕРЕЖЕННЯ...",
 		"_PS_LOADING": "ЗАВАНТАЖЕННЯ...",
