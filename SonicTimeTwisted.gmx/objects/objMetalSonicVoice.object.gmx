@@ -25,7 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>message = "";
+            <string>/// Init
+used_locale = global.TR_lang;
+translation_key = "";
+message = "";
 font = objResources.fontLives;
 color = make_color_rgb(0, 254, 84);
 visible = false;
@@ -75,6 +78,35 @@ event_user(0);
         </arguments>
       </action>
     </event>
+    <event eventtype="7" enumb="11">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>// Unpause callback: reload message if language changed
+if (used_locale != global.TR_lang)
+{
+    used_locale = global.TR_lang;
+    event_user(0);
+    cursor = string_length(message);
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="7" enumb="10">
       <action>
         <libid>1</libid>
@@ -92,7 +124,9 @@ event_user(0);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Call this after changing the message to display
+            <string>/// Call this after setting a translation_key for the message to display
+font = objResources.fontLives;
+message = tr(translation_key);
 draw_set_font(font);
 if(message == "")
 {
@@ -108,7 +142,6 @@ else
 }
 cursor_advance = true;
 cursor = 0;
-timer = 0;
 draw_set_font(objResources.fontHud);
 
 </string>

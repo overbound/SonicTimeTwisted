@@ -26,4 +26,8 @@ with(objFFOrbLarge)
 {
     event_user(0);
 }
-
+// SSZ/PPZ - Metal Sonic message reload if language changed
+with(objMetalSonicVoice)
+{
+    event_user(1);
+}

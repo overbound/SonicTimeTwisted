@@ -89,21 +89,21 @@ switch(draw)
     case 1:
         with(voice)
         {
-            message = tr('_metal_sonic_voice_Stop');
+            translation_key = '_metal_sonic_voice_Stop';
             event_user(0);
         }
         break;
     case 2:
         with(voice)
         {
-            message = tr('_metal_sonic_voice_No_Harm');
+            translation_key = '_metal_sonic_voice_No_Harm';
             event_user(0);
         }
         break;
     case 3:
         with(voice)
         {
-            message = tr('_metal_sonic_voice_The_Creator');
+            translation_key = '_metal_sonic_voice_The_Creator';
             event_user(0);
         }
         break;
