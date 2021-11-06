@@ -48,15 +48,6 @@ switch(state)
             main_bg_color_bottom, main_bg_color_bottom,
             false
         );
-        draw_rectangle_colour(
-            internal__draw_menu_rect_x1,
-            internal__draw_menu_rect_y1,
-            internal__draw_menu_rect_x2,
-            internal__draw_menu_rect_y2,
-            main_border_color, main_border_color,
-            main_border_color, main_border_color,
-            true
-        );
         if(scrollable)
         {
             // scrollbar
@@ -347,7 +338,15 @@ switch(state)
                 actual_index++;
             }
         }
-
+        draw_rectangle_colour(
+            internal__draw_menu_rect_x1,
+            internal__draw_menu_rect_y1,
+            internal__draw_menu_rect_x2,
+            internal__draw_menu_rect_y2,
+            main_border_color, main_border_color,
+            main_border_color, main_border_color,
+            true
+        );
         
         // everything confirmation window-related
         switch(state)

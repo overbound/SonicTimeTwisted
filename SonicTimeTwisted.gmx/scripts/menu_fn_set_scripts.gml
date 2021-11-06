@@ -18,11 +18,11 @@ internal__draw_menu_rect_x_center = view_width/2;
 internal__draw_menu_rect_y_center = view_height/2;
 
 internal__draw_menu_buttons_offset_x = internal__draw_menu_rect_x_center - (button_width/2);
-internal__draw_menu_rect_x1 = internal__draw_menu_buttons_offset_x - margin;
-internal__draw_menu_rect_x2 = internal__draw_menu_buttons_offset_x + button_width + margin;
+internal__draw_menu_rect_x1 = floor(internal__draw_menu_buttons_offset_x - margin);
+internal__draw_menu_rect_x2 = ceil(internal__draw_menu_buttons_offset_x + button_width + margin);
 
-internal__draw_menu_rect_y1 = internal__draw_menu_buttons_offset_y - margin - 2;
-internal__draw_menu_rect_y2 = internal__draw_menu_buttons_offset_y + (min(internal__button_count, button_page_count) * button_slot_height) + margin + 3;
+internal__draw_menu_rect_y1 = floor(internal__draw_menu_buttons_offset_y - margin - 2);
+internal__draw_menu_rect_y2 = ceil(internal__draw_menu_buttons_offset_y + (min(internal__button_count, button_page_count) * button_slot_height) + margin + 3);
 
 if(argument1 == -1)
 {
