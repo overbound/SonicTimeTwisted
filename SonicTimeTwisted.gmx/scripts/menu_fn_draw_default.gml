@@ -100,16 +100,16 @@ switch(state)
                         sprMenuCursorAboveLeft,
                         sprite_index_to_draw,
                         internal__draw_menu_buttons_offset_x,
-                        internal__draw_menu_buttons_offset_y + button_slot_height * -1 + 5);
+                        internal__draw_menu_buttons_offset_y + button_slot_height * -1 + 18);
                     draw_sprite_stretched(sprMenuCursorAboveMid,sprite_index_to_draw,
                         internal__draw_menu_buttons_offset_x + 18,
-                        internal__draw_menu_buttons_offset_y + button_slot_height * -1 + 5,
-                        button_width - 26,21);
+                        internal__draw_menu_buttons_offset_y + button_slot_height * -1 + 18,
+                        button_width - 26,8);
                     draw_sprite(
                         sprMenuCursorAboveRight,
                         sprite_index_to_draw,
                         internal__draw_menu_buttons_offset_x + button_width - 8,
-                        internal__draw_menu_buttons_offset_y + button_slot_height * -1 + 5);
+                        internal__draw_menu_buttons_offset_y + button_slot_height * -1 + 18);
                 }         
             }
             for(visible_index = 0; visible_index < min(internal__button_count, button_page_count); visible_index++)
@@ -231,7 +231,7 @@ switch(state)
                     draw_sprite_stretched(sprMenuCursorBelowMid,sprite_index_to_draw,
                         internal__draw_menu_buttons_offset_x + 18,
                         internal__draw_menu_buttons_offset_y + button_slot_height * visible_index + 5,
-                        button_width - 26,21);
+                        button_width - 26,7);
                     draw_sprite(
                         sprMenuCursorBelowRight,
                         sprite_index_to_draw,
