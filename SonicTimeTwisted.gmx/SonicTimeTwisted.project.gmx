@@ -2033,6 +2033,19 @@
         <sprite>sprites\sprTitleBannerLeft</sprite>
         <sprite>sprites\sprTitlePlanet</sprite>
       </sprites>
+      <sprites name="Menu">
+        <sprite>sprites\sprMenuCursorLeft</sprite>
+        <sprite>sprites\sprMenuCursorMid</sprite>
+        <sprite>sprites\sprMenuCursorRight</sprite>
+        <sprites name="Mid-scroll">
+          <sprite>sprites\sprMenuCursorAboveLeft</sprite>
+          <sprite>sprites\sprMenuCursorAboveMid</sprite>
+          <sprite>sprites\sprMenuCursorAboveRight</sprite>
+          <sprite>sprites\sprMenuCursorBelowLeft</sprite>
+          <sprite>sprites\sprMenuCursorBelowMid</sprite>
+          <sprite>sprites\sprMenuCursorBelowRight</sprite>
+        </sprites>
+      </sprites>
     </sprites>
     <sprites name="Particles">
       <sprite>sprites\sprBubblePop</sprite>
@@ -3028,15 +3041,6 @@
       </sprites>
       <sprites name="Time Travel">
         <sprite>sprites\sprTimeTravelEffect</sprite>
-      </sprites>
-    </sprites>
-    <sprites name="Extensions">
-      <sprites name="GUI">
-        <sprites name="Menu">
-          <sprite>sprites\sprMenuCursorLeft</sprite>
-          <sprite>sprites\sprMenuCursorMid</sprite>
-          <sprite>sprites\sprMenuCursorRight</sprite>
-        </sprites>
       </sprites>
     </sprites>
   </sprites>

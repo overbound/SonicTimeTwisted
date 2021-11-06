@@ -21,8 +21,8 @@ internal__draw_menu_buttons_offset_x = internal__draw_menu_rect_x_center - (butt
 internal__draw_menu_rect_x1 = internal__draw_menu_buttons_offset_x - margin;
 internal__draw_menu_rect_x2 = internal__draw_menu_buttons_offset_x + button_width + margin;
 
-internal__draw_menu_rect_y1 = internal__draw_menu_buttons_offset_y - margin;
-internal__draw_menu_rect_y2 = internal__draw_menu_buttons_offset_y + (min(internal__button_count, button_page_count) * button_slot_height) + margin;
+internal__draw_menu_rect_y1 = internal__draw_menu_buttons_offset_y - margin - 2;
+internal__draw_menu_rect_y2 = internal__draw_menu_buttons_offset_y + (min(internal__button_count, button_page_count) * button_slot_height) + margin + 3;
 
 if(argument1 == -1)
 {

@@ -16,8 +16,11 @@ if(is_touchscreen)
         // button/axis presased? - switch to device
         if(objProgram.inputManager.state != 0)
         {
-            is_touchscreen = false;
-            show_debug_message("Switch to physical device");
+            if(!(keyboard_check(DEVICE_BACK_BUTTON) && objProgram.inputManager.state == cBACK))
+            {            
+                is_touchscreen = false;
+                show_debug_message("Switch to physical device");
+            }
         }
     }
 }

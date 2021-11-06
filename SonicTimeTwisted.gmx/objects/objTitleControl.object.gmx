@@ -1259,7 +1259,7 @@ if(state &lt;= 2 || state == 4)
     draw_set_alpha(1);   
 }
 /// version number
-if(menu.state &gt; 0)
+if(menu.state &gt; 0 &amp;&amp; state != 4)
 {
     draw_set_font(objResources.fontLives);
     draw_set_halign(fa_right);

@@ -87,6 +87,31 @@ switch(state)
         {
             var visible_index = 0;
             var actual_index = scroll;
+            if (actual_index > 0)
+            {
+                if(array_length_2d(items, actual_index - 1) == 4)
+                {
+                    sprite_index_to_draw = 1;
+                    if(is_touchscreen)
+                    {
+                        sprite_index_to_draw = 0;
+                    }
+                    draw_sprite(
+                        sprMenuCursorAboveLeft,
+                        sprite_index_to_draw,
+                        internal__draw_menu_buttons_offset_x,
+                        internal__draw_menu_buttons_offset_y + button_slot_height * -1 + 5);
+                    draw_sprite_stretched(sprMenuCursorAboveMid,sprite_index_to_draw,
+                        internal__draw_menu_buttons_offset_x + 18,
+                        internal__draw_menu_buttons_offset_y + button_slot_height * -1 + 5,
+                        button_width - 26,21);
+                    draw_sprite(
+                        sprMenuCursorAboveRight,
+                        sprite_index_to_draw,
+                        internal__draw_menu_buttons_offset_x + button_width - 8,
+                        internal__draw_menu_buttons_offset_y + button_slot_height * -1 + 5);
+                }         
+            }
             for(visible_index = 0; visible_index < min(internal__button_count, button_page_count); visible_index++)
             { 
                 if(array_length_2d(items, actual_index) == 4)
@@ -189,10 +214,36 @@ switch(state)
                 }
                 actual_index++;
             }
+            if (actual_index < array_height_2d(items))
+            {
+                if(array_length_2d(items, actual_index) == 4)
+                {
+                    sprite_index_to_draw = 1;
+                    if(is_touchscreen)
+                    {
+                        sprite_index_to_draw = 0;
+                    }
+                    draw_sprite(
+                        sprMenuCursorBelowLeft,
+                        sprite_index_to_draw,
+                        internal__draw_menu_buttons_offset_x,
+                        internal__draw_menu_buttons_offset_y + button_slot_height * visible_index + 5);
+                    draw_sprite_stretched(sprMenuCursorBelowMid,sprite_index_to_draw,
+                        internal__draw_menu_buttons_offset_x + 18,
+                        internal__draw_menu_buttons_offset_y + button_slot_height * visible_index + 5,
+                        button_width - 26,21);
+                    draw_sprite(
+                        sprMenuCursorBelowRight,
+                        sprite_index_to_draw,
+                        internal__draw_menu_buttons_offset_x + button_width - 8,
+                        internal__draw_menu_buttons_offset_y + button_slot_height * visible_index + 5);
+                }         
+            }
         }
         else
         if(scroll != round(scroll))
         {
+            var sprite_index_to_draw;
             var visible_index = 0;
             var actual_index = floor(scroll);
             var internal__draw_menu_buttons_offset_y_shifted = internal__draw_menu_buttons_offset_y - (button_slot_height div 2);
@@ -200,7 +251,6 @@ switch(state)
             {
                 if(array_length_2d(items, actual_index) == 4)
                 {                   
-                    var sprite_index_to_draw;
                     var font_to_use;
                     var text_y_offset;
                     var text_color;
