@@ -547,7 +547,6 @@ with other instance_destroy();
         turning_point = x;
     }
 } else {
-    turning = -1;
     if image_xscale &gt; 0
     {
         image_xscale = -image_xscale;
