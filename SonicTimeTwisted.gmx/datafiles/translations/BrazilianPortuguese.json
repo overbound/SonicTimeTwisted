@@ -1,5 +1,5 @@
 {
-"info": {
+	"info": {
         "intname": "pt-br",
 		"friendlyname":"Português Brasileiro",
 		"creditsname": "Brazilian Portuguese",
@@ -273,9 +273,9 @@
 		"_charname_0_lc": "Sonic",
 		"_charname_1_lc": "Tails",
 		"_charname_2_lc": "Knuckles",
-		"_charname_0_altnum": "SONIC",
-		"_charname_1_altnum": "TAILS",
-		"_charname_2_altnum": "КNUCKLES",
+		"_charname_0_altnoun": "SONIC",
+		"_charname_1_altnoun": "TAILS",
+		"_charname_2_altnoun": "КNUCKLES",
 
 		"_save_delete": "APAGAR",
 		"_save_delete_YesNo": "<Sim Não>",
@@ -320,10 +320,11 @@
 		"_ss_scorecard_GOT_ALL": "%c COLETOU TODAS AS",
 		"_ss_scorecard_GOT_A": "%c COLETOU UMA",
 		"_ss_scorecard_SUPER": "SUPER %c",
-		"_ss_scorecard_CAN_NOW_BECOME": "%c AGORA PODE",
-		"_ss_scorecard_JUMP_AND_HOLD": "Pule e segure A e B",
+		"_ss_scorecard_CAN_NOW_BECOME": "%c AGORA PODE SER",
+		"_ss_scorecard_JUMP_AND_HOLD": "Pule e segure A + B",
 		"_ss_scorecard_JUMP_AND_HOLD_TOUCHSCREEN": "Pule e segure S",
 		"_ss_scorecard_TO_TURN_INTO": "para se transformar em Super %c",
+		
 		"_ss_intro_Race": "Corrida vs",
 		"_ss_intro_Metal_Sonic": "Metal Sonic",
 		"_ss_intro_Go": "Vai!",
@@ -384,7 +385,7 @@
 		"_GAMEOVER_WORD2": "JOGO",
 		
 		"_bad_ending_text": "Tente Novamente!\n\nColete todas as Esmeraldas do Caos\ne Pedras do Tempo!",
-		"_good_ending_text": "Sonic, Tails, e Knuckles continuam na luta\npara liberar Mobius das criações do Dr. Robotnik\naté que não restem mais robôs.\n\nObrigado por jogar!",
+		"_good_ending_text": "Sonic, Tails, e Knuckles seguem na luta\npara livrar Mobius das criações do Dr.Robotnik\naté que não restem mais robôs.\n\nObrigado por jogar!",
 		
 		"_hint_ssgyro": "Incline para virar",
 		"_hint_ggpoint": "Aponte para mover-se"
