@@ -540,9 +540,20 @@ with other instance_destroy();
           <argument>
             <kind>1</kind>
             <string>if x &gt; other.x {
-    turning = 1;
+    if image_xscale &lt; 0
+    {
+        image_xscale = -image_xscale;
+        turning = sign(image_xscale);
+        turning_point = x;
+    }
 } else {
     turning = -1;
+    if image_xscale &gt; 0
+    {
+        image_xscale = -image_xscale;
+        turning = sign(image_xscale);
+        turning_point = x;
+    }
 }
 </string>
           </argument>
