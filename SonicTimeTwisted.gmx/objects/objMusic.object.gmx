@@ -53,14 +53,50 @@ bossIntroAsset = -1;
 bossLoopAsset = -1;
 musicJingleAsset = -1;
 musicEffectAsset = -1;
+// previous positions
+previousPosition = 0;
+previousPositionIntro = 0;
+previousPositionLoop = 0;
+previousPositionBossIntro = 0;
+previousPositionBossLoop = 0;
+previousPositionJingle = 0;
+previousPositionEffect = 0;
 // default fall back (only musicIntro(1) or bossIntro(3))
 priorityMusicState = MUSIC_STATE.MUSIC_INTRO;
-previousPosition = 0;
 
 // volume variables.
 sfxGain = 100;
 bgmGain = 100;
 masterGain = 75;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Debug stuff...
+
+if (keyboard_check_pressed(vk_f6)) {
+    // icon box
+    player_get_lives(1);
+}
+
 </string>
           </argument>
         </arguments>
@@ -114,7 +150,7 @@ switch (state) { // MUSIC_STATE.
             if (statePrevious != MUSIC_STATE.JINGLE &amp;&amp; statePrevious != MUSIC_STATE.EFFECT) {
                 pstate = statePrevious;
             } 
-            play_previous(pstate, previousPosition);
+            play_previous(pstate);
         }
         break;
     case MUSIC_STATE.EFFECT: // Play Effect
@@ -134,11 +170,11 @@ switch (state) { // MUSIC_STATE.
                         break;
                     }
                     else {
-                        play_previous(priorityMusicState, previousPosition);
+                        play_previous(priorityMusicState);
                     }
                 }
                 else {
-                    play_previous(priorityMusicState, previousPosition);
+                    play_previous(priorityMusicState);
                 }
             }
        }

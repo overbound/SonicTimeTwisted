@@ -2,6 +2,13 @@
 var song = argument0;
 var resume = argument1;
 with (objMusic) {
+    // GitHub #126 "Jingles conflict"
+    if (state != MUSIC_STATE.JINGLE
+    &&  state != MUSIC_STATE.EFFECT) {
+        priorityMusicState = state;
+        show_debug_message("priorityMusicState = " + string(priorityMusicState));
+    }
+    
     if (state == MUSIC_STATE.JINGLE) {
         statePrevious = state;
         previousPosition = 0;
