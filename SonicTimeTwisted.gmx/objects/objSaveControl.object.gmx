@@ -1736,9 +1736,11 @@ create_new_save(slots[selectCheck].characterSelect, slots[selectCheck].slotNumbe
 slots[selectCheck].futureLevels[0]=true;
 slots[selectCheck].allowLevelStart =false;
 slots[selectCheck].visibleFuture=1;
+slots[selectCheck].visiblePast=0;
 if(slots[selectCheck].slotNumber &gt;= 0)
 {
     selectState = 1;
+    stageLeftRight = 1;
     // Hints update
     event_user(3);
 }
