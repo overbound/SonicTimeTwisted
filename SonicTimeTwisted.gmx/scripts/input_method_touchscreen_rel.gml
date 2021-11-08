@@ -6,15 +6,19 @@ if(smartphone_controls_enabled)
     if(!objScreen.paused)
     {
         var input_state = 0;
+        var dpx, dpy, p_distance;
         var dpad_is_pressed = false;
         joyalpha = image_alpha;
         for(var device = 0; device <= 4; device++)
         {
+            if (device == dpad_device_id)
+            {
+                continue;
+            }
             if(device_mouse_check_button(device, mb_any))
             {
-                var dpx = device_mouse_x_to_gui(device);
-                var dpy = device_mouse_y_to_gui(device);
-                var button_found = false;
+                dpx = device_mouse_x_to_gui(device);
+                dpy = device_mouse_y_to_gui(device);
                 
                 // jump button
                 if(point_in_circle(device_mouse_x_to_gui(device), device_mouse_y_to_gui(device),
@@ -22,7 +26,7 @@ if(smartphone_controls_enabled)
                 ))
                 {
                     input_state |= cC;
-                    button_found = true;
+                    continue;
                 }
                 // super button
                 if(super_button_enabled)
@@ -48,7 +52,7 @@ if(smartphone_controls_enabled)
                             {
                                 input_state |= cA;
                                 input_state |= cB;
-                                button_found = true;
+                                continue;
                             }
                         }
                         else
@@ -61,7 +65,7 @@ if(smartphone_controls_enabled)
                                 {
                                     input_state |= cA;
                                     input_state |= cB;
-                                    button_found = true;
+                                    continue;
                                 }
                             }
                         }
@@ -73,12 +77,11 @@ if(smartphone_controls_enabled)
                 ))
                 {
                     input_state = cSTART;
-                    button_found = true;
                     break;
                 }
                 
-                // dpad - dynamic version
-                if(!button_found)
+                // dpad init - dynamic version
+                if (dpad_device_id == noone)
                 {
                     joyx = current_dpadx;
                     joyy = current_dpady;
@@ -87,53 +90,62 @@ if(smartphone_controls_enabled)
                         // D-pad not shown
                         current_dpadx = dpx;
                         current_dpady = dpy;
+                        dpad_device_id = device;
                     }
-                    else
+                }
+            }
+        }
+        if(dpad_device_id != noone)
+        {
+            if(!device_mouse_check_button(dpad_device_id, mb_any))
+            {
+                dpad_device_id = noone;
+            }
+            else
+            {
+                dpad_is_pressed = true;
+                dpx = device_mouse_x_to_gui(dpad_device_id);
+                dpy = device_mouse_y_to_gui(dpad_device_id);
+                p_distance = point_distance(current_dpadx, current_dpady, dpx, dpy);
+                if(p_distance > 2)
+                {
+                    var d_direction = point_direction(current_dpadx, current_dpady, dpx, dpy);
+                    var d_radians = degtorad(d_direction);
+                    joyx = dpx;
+                    joyy = dpy;
+                    // draw the joystick under the thumb, but dont'd draw it completely outside of the base
+                    if(!point_in_circle(joyx, joyy, current_dpadx, current_dpady, bar))
                     {
-                        var p_distance = point_distance(current_dpadx, current_dpady, dpx, dpy);
-                        if(p_distance > 2 && p_distance <= bar * 2)
-                        {
-                            var d_direction = point_direction(current_dpadx, current_dpady, dpx, dpy);
-                            var d_radians = degtorad(d_direction);
-                            joyx = dpx;
-                            joyy = dpy;
-                            // draw the joystick under the thumb, but dont'd draw it completely outside of the base
-                            if(!point_in_circle(joyx, joyy, current_dpadx, current_dpady, bar))
-                            {
-                                joyx = current_dpadx + cos(d_radians) * bar;
-                                joyy = current_dpady - sin(d_radians) * bar;
-                            }
-                            if(p_distance > used_deadzone)
-                            {
-                                if(d_direction <= 55 || d_direction >= 305)
-                                {
-                                    input_state |= cRIGHT;
-                                }
-                                if (d_direction >= 35 && d_direction <= 145)
-                                {
-                                    input_state |= cUP;
-                                }
-                                if (d_direction >= 125 && d_direction <= 235)
-                                {
-                                    input_state |= cLEFT;
-                                }
-                                if (d_direction >= 215 && d_direction <= 325)
-                                {
-                                    input_state |= cDOWN;
-                                }
-                            }
-                            joyalpha = 1;          
-                        }
-                        
+                        joyx = current_dpadx + cos(d_radians) * bar;
+                        joyy = current_dpady - sin(d_radians) * bar;
                     }
-                    dpad_is_pressed = true;
+                    if(p_distance > used_deadzone)
+                    {
+                        if(d_direction <= 55 || d_direction >= 305)
+                        {
+                            input_state |= cRIGHT;
+                        }
+                        if (d_direction >= 35 && d_direction <= 145)
+                        {
+                            input_state |= cUP;
+                        }
+                        if (d_direction >= 125 && d_direction <= 235)
+                        {
+                            input_state |= cLEFT;
+                        }
+                        if (d_direction >= 215 && d_direction <= 325)
+                        {
+                            input_state |= cDOWN;
+                        }
+                    }
+                    joyalpha = 1;          
                 }
             }
         }
         if(!dpad_is_pressed)
         {
-            current_dpadx = -100;
-            current_dpady = -100;
+            current_dpadx = -1000;
+            current_dpady = -1000;
         }
         objProgram.inputManager.state |= input_state;
     }

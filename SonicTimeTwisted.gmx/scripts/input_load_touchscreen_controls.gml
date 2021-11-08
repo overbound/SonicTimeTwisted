@@ -105,3 +105,4 @@ else
 }
     
 used_deadzone = 10;
+dpad_device_id = noone;
