@@ -7,6 +7,10 @@ with (objMusic) {
     musicJingleAsset = song;
     
     if (state == MUSIC_STATE.EFFECT) {
+        if (statePrevious != MUSIC_STATE.EFFECT && statePrevious != MUSIC_STATE.JINGLE) {
+            queuedState = statePrevious;
+        }
+        
         musicJingle = audio_play_sound(musicJingleAsset, 20, false);
         audio_sound_gain(musicJingle, 0, 0);
         statePrevious = MUSIC_STATE.JINGLE;

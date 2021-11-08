@@ -61,6 +61,7 @@ previousPositionBossLoop = 0;
 previousPositionJingle = 0;
 previousPositionEffect = 0;
 // default fall back (only musicIntro(1) or bossIntro(3))
+queuedState = statePrevious;
 priorityMusicState = MUSIC_STATE.MUSIC_INTRO;
 
 // volume variables.
@@ -152,9 +153,14 @@ switch (state) { // MUSIC_STATE.
     case MUSIC_STATE.JINGLE: // Play Jingle
         if (!audio_is_playing(musicJingle)) {
             var pstate = priorityMusicState;
-            if (statePrevious != MUSIC_STATE.SILENCE &amp;&amp; statePrevious != MUSIC_STATE.JINGLE &amp;&amp; statePrevious != MUSIC_STATE.EFFECT) {
+            if (queuedState != MUSIC_STATE.SILENCE) {
+                pstate = queuedState;
+                queuedState = MUSIC_STATE.SILENCE;
+            }
+            else if (statePrevious != MUSIC_STATE.SILENCE &amp;&amp; statePrevious != MUSIC_STATE.JINGLE) {
                 pstate = statePrevious;
             } 
+            
             play_previous(pstate);
         }
         break;
@@ -178,9 +184,14 @@ switch (state) { // MUSIC_STATE.
                     // never ever play an effect after an effect, effects should NEVER stack.
                     // oh also guard from SILENCE states since drowning may trigger a silence state when quitting.
                     // (drowning is always supposed to restart the level OST, since resume is set to false there)
-                    if (statePrevious != MUSIC_STATE.SILENCE &amp;&amp; statePrevious != MUSIC_STATE.EFFECT) {
+                    if (queuedState != MUSIC_STATE.SILENCE) {
+                        pstate = queuedState;
+                        queuedState = MUSIC_STATE.SILENCE;
+                    }
+                    else if (statePrevious != MUSIC_STATE.SILENCE &amp;&amp; statePrevious != MUSIC_STATE.EFFECT) {
                         pstate = statePrevious;
                     }
+                    
                     play_previous(pstate);
                 }
             }

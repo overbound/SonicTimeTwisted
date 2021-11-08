@@ -3,6 +3,10 @@ var song = argument0;
 var resume = argument1;
 with (objMusic) {
     if (state == MUSIC_STATE.JINGLE) {
+        if (statePrevious != MUSIC_STATE.EFFECT && statePrevious != MUSIC_STATE.JINGLE) {
+            queuedState = statePrevious;
+        }
+        
         statePrevious = state;
         music_reset_previous_position();
         audio_sound_gain(musicJingle, 0, 200);
