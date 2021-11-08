@@ -91,7 +91,7 @@ masterGain = 75;
             <kind>1</kind>
             <string>///Debug keys
 
-/*
+
 if (keyboard_check_pressed(vk_f6)) {
     player_get_lives(1);
 }
@@ -100,7 +100,7 @@ else if (keyboard_check_pressed(vk_f7)) {
         player_get_invincibility();
     }
 }
-*/
+
 
 </string>
           </argument>
