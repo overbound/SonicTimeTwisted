@@ -168,15 +168,10 @@ switch (state) { // MUSIC_STATE.
         
         if (instance_exists(levelHandle)) { 
             if (!audio_is_playing(musicEffect) &amp;&amp; !levelHandle.cleared) {
-                if (statePrevious == MUSIC_STATE.JINGLE) {
-                    if (audio_is_playing(musicJingle)) {
-                        audio_sound_gain(musicJingle, bgmGain / 100, 200);
-                        state = MUSIC_STATE.JINGLE;
-                        break;
-                    }
-                    else {
-                        play_previous(priorityMusicState);
-                    }
+                if (statePrevious == MUSIC_STATE.JINGLE &amp;&amp; audio_is_playing(musicJingle)) {
+                    audio_sound_gain(musicJingle, bgmGain / 100, 200);
+                    state = MUSIC_STATE.JINGLE;
+                    break;
                 }
                 else {
                     var pstate = priorityMusicState;
