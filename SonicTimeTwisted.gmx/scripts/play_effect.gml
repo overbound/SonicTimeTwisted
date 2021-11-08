@@ -2,6 +2,11 @@
 var song = argument0;
 var resume = argument1;
 with (objMusic) {
+    // cancel any queued state when not supposed to resume.
+    if (!resume) {
+        queuedState = MUSIC_STATE.SILENCE;
+    }
+
     if (state == MUSIC_STATE.JINGLE) {
         if (resume && statePrevious != MUSIC_STATE.EFFECT && statePrevious != MUSIC_STATE.JINGLE) {
             queuedState = statePrevious;

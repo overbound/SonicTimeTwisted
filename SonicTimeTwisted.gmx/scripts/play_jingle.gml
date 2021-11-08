@@ -6,6 +6,11 @@ with (objMusic) {
     musicJingle = -1;
     musicJingleAsset = song;
     
+    // cancel any queued state when not supposed to resume.
+    if (!resume) {
+        queuedState = MUSIC_STATE.SILENCE;
+    }
+    
     if (state == MUSIC_STATE.EFFECT) {
         if (resume && statePrevious != MUSIC_STATE.EFFECT && statePrevious != MUSIC_STATE.JINGLE) {
             queuedState = statePrevious;
