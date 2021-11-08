@@ -3,7 +3,7 @@ var song = argument0;
 var resume = argument1;
 with (objMusic) {
     if (state == MUSIC_STATE.JINGLE) {
-        if (statePrevious != MUSIC_STATE.EFFECT && statePrevious != MUSIC_STATE.JINGLE) {
+        if (resume && statePrevious != MUSIC_STATE.EFFECT && statePrevious != MUSIC_STATE.JINGLE) {
             queuedState = statePrevious;
         }
         

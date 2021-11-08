@@ -125,7 +125,22 @@ else if (keyboard_check_pressed(vk_f7)) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Music State
+            <string>/// Handle music state(s)
+
+/*
+    A little warning:
+    
+    - This code was "nasty made in a rush - (c) Overbound" for v1.0.4's original release.
+    - Then it was improved a little bit by me (nik) by making it more readable (did not make it more stable)
+    - And now you're here, in it's v1.1.2 implementation, with a fourth state variable just to fix effect&lt;-&gt;jingle stacking ;-;
+      that fourth variable is queuedState, it holds the state that should be resumed after both jingle and effect stop.
+      It's always BOSS_LOOP/INTRO or MUSIC_LOOP/INTRO, it can never be SILENCE, if it is, priorityMusicState will be used.
+    
+    Only proceed if you're thy braveful and thy mightful
+    
+    - Nikita Krapivin.
+*/
+
 switch (state) { // MUSIC_STATE.
     case MUSIC_STATE.SILENCE: // silence
         // Do nothing.
