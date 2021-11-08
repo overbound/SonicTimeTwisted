@@ -3,6 +3,7 @@
 if objProgram.spawn_tag!=0 return false;
 // force to drop if we're flying or gliding
 if (state==player_state_glide) {player_is_glide_falling(); return true;}
+if (state==player_state_shield_fly) {player_state_standby(); return true;}
 if (state==player_state_fly)
 {
     // animate
