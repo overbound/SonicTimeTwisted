@@ -4,9 +4,9 @@ var resume = argument1;
 with (objMusic) {
     if (state == MUSIC_STATE.JINGLE) {
         statePrevious = state;
-        previousPosition = 0;
+        music_reset_previous_position();
         audio_sound_gain(musicJingle, 0, 200);
-    } else if (state == MUSIC_STATE.JINGLE && statePrevious == MUSIC_STATE.EFFECT) { 
+    } else if (/*state == MUSIC_STATE.EFFECT ||*/ (state == MUSIC_STATE.JINGLE && statePrevious == MUSIC_STATE.EFFECT)) { 
         stop_sound(musicEffect);
         musicEffect = -1;
         musicEffectAsset = -1;

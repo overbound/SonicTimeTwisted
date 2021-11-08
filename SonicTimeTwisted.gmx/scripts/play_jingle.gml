@@ -10,7 +10,7 @@ with (objMusic) {
         musicJingle = audio_play_sound(musicJingleAsset, 20, false);
         audio_sound_gain(musicJingle, 0, 0);
         statePrevious = MUSIC_STATE.JINGLE;
-        previousPosition = 0;
+        music_reset_previous_position();
     } else if (state == MUSIC_STATE.JINGLE) {
         musicJingle = audio_play_sound(musicJingleAsset, 20, false);
         audio_sound_gain(musicJingle, bgmGain / 100, 200);

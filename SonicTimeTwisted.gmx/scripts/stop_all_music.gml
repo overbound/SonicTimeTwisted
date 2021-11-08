@@ -9,11 +9,11 @@ var stopEffects = true; if (argument_count > 1) stopEffects = argument[1];
 with (objMusic) {
     if (resume) {
         statePrevious = state;
-        previousPosition = audio_sound_get_track_position(currentMusic);
+        music_set_previous_position();
     }
     else {
         statePrevious = MUSIC_STATE.SILENCE;
-        previousPosition = 0;
+        music_reset_previous_position();
     }
     state = MUSIC_STATE.SILENCE;
     

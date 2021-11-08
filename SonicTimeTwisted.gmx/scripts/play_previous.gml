@@ -1,6 +1,6 @@
 ///play_previous(statePrevious,position)
 var sp = argument0;
-var position = argument1;
+var position = music_get_previous_position(sp);
 with (objMusic) {
     switch (sp) {
         case MUSIC_STATE.SILENCE: // silence
