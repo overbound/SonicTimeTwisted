@@ -1,6 +1,7 @@
 // player_update_water_running()
 
 landed &= ~2;
+var water_level = y;
 
 if (abs(xspeed) >= waterrun_threshold) {
     if (mask_rotation == 0 and not underwater) {
@@ -16,6 +17,7 @@ if (abs(xspeed) >= waterrun_threshold) {
                     angle = 0;
                     relative_angle = 0;
                 }
+                water_level = floor(local_id.bbox_top);
                 break;
             }
         }
@@ -29,6 +31,7 @@ if (landed & 2) {
         wave.player_id = id;
         wave.image_xscale = facing;
         wave.depth = depth + 1;
+        wave.water_level = water_level - 14;
     }
 } else {
     if (instance_exists(wave)) {

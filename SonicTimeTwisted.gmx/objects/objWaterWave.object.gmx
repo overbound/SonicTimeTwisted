@@ -41,6 +41,7 @@
             <kind>1</kind>
             <string>/// Initialize
 image_speed = 0.3;
+water_level = y;
 </string>
           </argument>
         </arguments>
@@ -81,6 +82,7 @@ image_speed = 0.3;
 if (not (player_id.landed &amp; 2)) {
     instance_destroy();
 }
+y = water_level;
 </string>
           </argument>
         </arguments>
