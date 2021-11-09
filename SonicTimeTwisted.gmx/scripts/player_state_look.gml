@@ -22,5 +22,5 @@ if (!input_check(cUP) || input_axis_x() != 0 || xspeed != 0) return player_is_ru
 if input_check_pressed(cACTION)
 {
     if character_id==1 return player_is_dashing(); else
-    if player_collision_ceiling(offset_y+5) return player_is_jumping();
+    if not player_collision_ceiling(offset_y+5) return player_is_jumping();
 }
