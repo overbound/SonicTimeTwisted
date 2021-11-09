@@ -14,6 +14,7 @@ with (objMusic) {
     else {
         statePrevious = MUSIC_STATE.SILENCE;
         music_reset_previous_position();
+        queuedState = statePrevious;
     }
     state = MUSIC_STATE.SILENCE;
     

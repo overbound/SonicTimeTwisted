@@ -172,7 +172,7 @@ switch (state) { // MUSIC_STATE.
                 pstate = queuedState;
                 queuedState = MUSIC_STATE.SILENCE;
             }
-            else if (statePrevious != MUSIC_STATE.SILENCE &amp;&amp; statePrevious != MUSIC_STATE.JINGLE) {
+            else if (statePrevious != MUSIC_STATE.JINGLE) {
                 pstate = statePrevious;
             } 
             
