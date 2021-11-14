@@ -11,13 +11,13 @@ with(objResources)
     {
          sprite_delete(timePostPastSprite);
     }
-    timePostPastSprite = tr_load_localized_sprite('sprPastPost', 6, true, false, 16, 51);
+    timePostPastSprite = tr_load_localized_sprite(sprite_get_name(sprPastPost), sprite_get_number(sprPastPost), false, false, sprite_get_xoffset(sprPastPost), sprite_get_yoffset(sprPastPost));
     
     if(sprite_exists(timePostFutureSprite))
     {
          sprite_delete(timePostFutureSprite);
     }
-    timePostFutureSprite = tr_load_localized_sprite('sprFuturePost', 6, true, false, 16, 51);
+    timePostFutureSprite = tr_load_localized_sprite(sprite_get_name(sprFuturePost), sprite_get_number(sprFuturePost), false, false, sprite_get_xoffset(sprFuturePost), sprite_get_yoffset(sprFuturePost));
 }
 
 
