@@ -3,3 +3,4 @@ French
 Russian
 BrazilianPortuguese
 Ukrainian
+Italian

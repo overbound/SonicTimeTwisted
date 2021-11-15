@@ -157,6 +157,22 @@ if(
     next_message = true;
 }
 
+// do we have the %break format character?
+if (string_count("%b", super_title_line2) &gt; 0) {
+    // here we just get rid of the character entirely.
+    super_title_line2 = string_replace(super_title_line2, "%b", "");
+    var _bpos = string_pos("%b", super_title_line2_player_overlay) + string_length("%b");
+    var _bend = string_length(super_title_line2_player_overlay) - (_bpos - 1);
+    super_title_line2_player_overlay = string_copy(super_title_line2_player_overlay, _bpos, _bend);
+    show_debug_message("Found %break format character.");
+    show_debug_message("overlay=" + super_title_line2_player_overlay);
+}
+
+// italian and german shenanigans
+name_offsetx = string_width(string_copy(line1, 1, string_pos(name_tag, line1) - 1));
+sline1_offsetx = string_width(string_copy(super_title_line1, 1, string_pos(super_title_line1_player_overlay, super_title_line1) - 1));
+sline2_offsetx = string_width(string_copy(super_title_line2, 1, string_pos(super_title_line2_player_overlay, super_title_line2) - 1));
+//next_message = true;
 </string>
           </argument>
         </arguments>
@@ -389,9 +405,9 @@ if(state &gt;= 6)
     // text
     draw_set_font(objResources.fontTitleSmallest);
     draw_text_color(round(draw_x_offset+title_ox1 - title_offset1), draw_y_offset_title + 56, super_title_line1,c_white,c_white,c_gray,c_gray,1);
-    draw_text_color(round(draw_x_offset+title_ox1 - title_offset1), draw_y_offset_title + 56, super_title_line1_player_overlay,c_white,c_white,title_color,title_color,1);
+    draw_text_color(round(draw_x_offset+title_ox1 - title_offset1 + sline1_offsetx), draw_y_offset_title + 56, super_title_line1_player_overlay,c_white,c_white,title_color,title_color,1);
     draw_text_color(round(draw_x_offset+title_ox2 + title_offset2), draw_y_offset_title + 74, super_title_line2,c_white,c_white,c_gray,c_gray,1);
-    draw_text_color(round(draw_x_offset+title_ox2 + title_offset2), draw_y_offset_title + 74, super_title_line2_player_overlay,c_white,c_white,title_color,title_color,1);
+    draw_text_color(round(draw_x_offset+title_ox2 + title_offset2 + sline2_offsetx), draw_y_offset_title + 74, super_title_line2_player_overlay,c_white,c_white,title_color,title_color,1);
 }
 else
 {
