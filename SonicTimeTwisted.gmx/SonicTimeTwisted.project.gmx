@@ -3838,6 +3838,9 @@
         <script>scripts\sfx_special_volume.gml</script>
         <script>scripts\set_zone_music.gml</script>
         <script>scripts\set_boss_music.gml</script>
+        <script>scripts\music_reset_previous_position.gml</script>
+        <script>scripts\music_set_previous_position.gml</script>
+        <script>scripts\music_get_previous_position.gml</script>
       </scripts>
       <scripts name="Helper">
         <script>scripts\string_explode.gml</script>

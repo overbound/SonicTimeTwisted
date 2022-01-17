@@ -13,7 +13,7 @@ case 1:
     underwater_count = -1;
     // reset music
     if audio_is_playing(bgmDrowning) {
-        play_previous(objMusic.priorityMusicState, objMusic.previousPosition);
+        play_previous(objMusic.priorityMusicState);
     }
     break;
 case 2:

@@ -28,7 +28,7 @@ with argument0 instance_destroy();
 play_sfx(sndGetAir, 1);
 // reset music
 if audio_is_playing(bgmDrowning) {
-    play_previous(objMusic.priorityMusicState, objMusic.previousPosition);
+    play_previous(objMusic.priorityMusicState);
 }
 // rumble
 rumble(rumble_short_weak);

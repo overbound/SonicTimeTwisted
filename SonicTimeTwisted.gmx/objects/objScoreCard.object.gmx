@@ -104,8 +104,8 @@ score_offset2 = score_offset1 + 80;
 score_offset3 = score_offset1 + 80;
 score_offset4 = score_offset1 + 96;
 // music
+stop_all_music(false, true);
 audio_stop_all();
-stop_all_music(false);
 play_jingle(bgmClear, false);
 // start event
 alarm[0] = 60;

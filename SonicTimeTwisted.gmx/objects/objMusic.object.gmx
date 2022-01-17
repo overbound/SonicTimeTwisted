@@ -53,14 +53,56 @@ bossIntroAsset = -1;
 bossLoopAsset = -1;
 musicJingleAsset = -1;
 musicEffectAsset = -1;
+// previous positions for every track type:
+previousPositionIntro = 0;
+previousPositionLoop = 0;
+previousPositionBossIntro = 0;
+previousPositionBossLoop = 0;
+previousPositionJingle = 0;
+previousPositionEffect = 0;
 // default fall back (only musicIntro(1) or bossIntro(3))
+queuedState = statePrevious;
 priorityMusicState = MUSIC_STATE.MUSIC_INTRO;
-previousPosition = 0;
 
 // volume variables.
 sfxGain = 100;
 bgmGain = 100;
 masterGain = 75;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Debug keys
+
+
+if (keyboard_check_pressed(vk_f6)) {
+    player_get_lives(1);
+}
+else if (keyboard_check_pressed(vk_f7)) {
+    with (objPlayer) {
+        player_get_invincibility();
+    }
+}
+
+
 </string>
           </argument>
         </arguments>
@@ -83,7 +125,22 @@ masterGain = 75;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Music State
+            <string>/// Handle music state(s)
+
+/*
+    A little warning:
+    
+    - This code was "nasty made in a rush - (c) Overbound" for v1.0.4's original release.
+    - Then it was improved a little bit by me (nik) by making it more readable (did not make it more stable)
+    - And now you're here, in it's v1.1.2 implementation, with a fourth state variable just to fix effect&lt;-&gt;jingle stacking ;-;
+      that fourth variable is queuedState, it holds the state that should be resumed after both jingle and effect stop.
+      It's always BOSS_LOOP/INTRO or MUSIC_LOOP/INTRO, it can never be SILENCE, if it is, priorityMusicState will be used.
+    
+    Only proceed if you're thy braveful and thy mightful
+    
+    - Nikita Krapivin.
+*/
+
 switch (state) { // MUSIC_STATE.
     case MUSIC_STATE.SILENCE: // silence
         // Do nothing.
@@ -111,10 +168,15 @@ switch (state) { // MUSIC_STATE.
     case MUSIC_STATE.JINGLE: // Play Jingle
         if (!audio_is_playing(musicJingle)) {
             var pstate = priorityMusicState;
-            if (statePrevious != MUSIC_STATE.JINGLE &amp;&amp; statePrevious != MUSIC_STATE.EFFECT) {
+            if (queuedState != MUSIC_STATE.SILENCE) {
+                pstate = queuedState;
+                queuedState = MUSIC_STATE.SILENCE;
+            }
+            else if (statePrevious != MUSIC_STATE.JINGLE) {
                 pstate = statePrevious;
             } 
-            play_previous(pstate, previousPosition);
+            
+            play_previous(pstate);
         }
         break;
     case MUSIC_STATE.EFFECT: // Play Effect
@@ -127,18 +189,25 @@ switch (state) { // MUSIC_STATE.
         
         if (instance_exists(levelHandle)) { 
             if (!audio_is_playing(musicEffect) &amp;&amp; !levelHandle.cleared) {
-                if (statePrevious == MUSIC_STATE.JINGLE) {
-                    if (audio_is_playing(musicJingle)) {
-                        audio_sound_gain(musicJingle, bgmGain / 100, 200);
-                        state = MUSIC_STATE.JINGLE;
-                        break;
-                    }
-                    else {
-                        play_previous(priorityMusicState, previousPosition);
-                    }
+                if (statePrevious == MUSIC_STATE.JINGLE &amp;&amp; audio_is_playing(musicJingle)) {
+                    audio_sound_gain(musicJingle, bgmGain / 100, 200);
+                    state = MUSIC_STATE.JINGLE;
+                    break;
                 }
                 else {
-                    play_previous(priorityMusicState, previousPosition);
+                    var pstate = priorityMusicState;
+                    // never ever play an effect after an effect, effects should NEVER stack.
+                    // oh also guard from SILENCE states since drowning may trigger a silence state when quitting.
+                    // (drowning is always supposed to restart the level OST, since resume is set to false there)
+                    if (queuedState != MUSIC_STATE.SILENCE) {
+                        pstate = queuedState;
+                        queuedState = MUSIC_STATE.SILENCE;
+                    }
+                    else if (statePrevious != MUSIC_STATE.SILENCE &amp;&amp; statePrevious != MUSIC_STATE.EFFECT) {
+                        pstate = statePrevious;
+                    }
+                    
+                    play_previous(pstate);
                 }
             }
        }
