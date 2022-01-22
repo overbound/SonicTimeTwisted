@@ -559,7 +559,7 @@ if objProgram.spawn_tag == 0 {
     <instance objName="objBlock" x="1312" y="7232" name="inst_5A70AD6B" locked="0" code="climbable=true;&#xA;" scaleX="4" scaleY="6" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="1344" y="7200" name="inst_A42DFFA4" locked="0" code="climbable=true;&#xA;" scaleX="4" scaleY="6" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="2880" y="6368" name="inst_BFD6431A" locked="0" code="climbable=true;&#xA;" scaleX="4" scaleY="6" colour="4294967295" rotation="0"/>
-    <instance objName="objBlock" x="3836" y="5504" name="inst_ECEC7521" locked="0" code="climbable=1;" scaleX="32" scaleY="71" colour="4294967295" rotation="0"/>
+    <instance objName="objBlock" x="3840" y="5504" name="inst_ECEC7521" locked="0" code="climbable=1;" scaleX="32" scaleY="71" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="3200" y="5420" name="inst_65E68FF8" locked="0" code="" scaleX="110.5" scaleY="10.5" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="1376" y="5120" name="inst_DDCF466D" locked="0" code="climbable=1;&#xA;" scaleX="132" scaleY="32" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="3584" y="7552" name="inst_C6446F08" locked="0" code="" scaleX="64" scaleY="32" colour="4294967295" rotation="0"/>
