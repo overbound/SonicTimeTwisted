@@ -175,7 +175,6 @@ if(string_length(deviceLabel) == 0)
         // there is not supposed to be an input device
         deviceLabel = tr("_btusb_joymap_Device_Disabled");
     }
-    
 }
 menu_fn_refresh_displayed_label(31, deviceLabel);
 // calculating the optimal menu width at the same time - done here so that possible values are not duplicated among several scripts

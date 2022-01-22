@@ -1,24 +1,24 @@
 items = false;
 
 menu_fn_add_title(tr("_options_menu_BTUSB_title"));
-if(android_get_input_mode())
+// force updating the device label before displaying (or not) the mapping buttons
+var currentDeviceLabel = string(android_get_device_label(0, 30));
+objProgram.inputManager.device_label = currentDeviceLabel;
+if(android_get_input_mode() && (string_length(currentDeviceLabel) > 0))
 {
     // Gamepad rumble does not work on android :/
     //menu_fn_add_option(tr("_btusb_joymap_Rumble"), 0, 1, "< " + tr("_Off") + " >");
     // codes below 31 are used for mapping
     menu_fn_add_option(tr("_btusb_joymap_Device"), 31);
-    if (string_length(objProgram.inputManager.device_label) > 0)
-    {   
-        menu_fn_add_option(tr("_options_menu_Remap_all"), 1);
-        menu_fn_add_option(tr("_buttonname_Up"), 2, 1, "");
-        menu_fn_add_option(tr("_buttonname_Down"), 3, 1, "");
-        menu_fn_add_option(tr("_buttonname_Left"), 4, 1, "");
-        menu_fn_add_option(tr("_buttonname_Right"), 5, 1, "");
-        menu_fn_add_option(tr("_buttonname_A"), 6, 1, "");
-        menu_fn_add_option(tr("_buttonname_B"), 7, 1, "");
-        menu_fn_add_option(tr("_buttonname_C"), 8, 1, "");
-        menu_fn_add_option(tr("_buttonname_Start"), 9, 1, "");
-    }
+    menu_fn_add_option(tr("_options_menu_Remap_all"), 1);
+    menu_fn_add_option(tr("_buttonname_Up"), 2, 1, "");
+    menu_fn_add_option(tr("_buttonname_Down"), 3, 1, "");
+    menu_fn_add_option(tr("_buttonname_Left"), 4, 1, "");
+    menu_fn_add_option(tr("_buttonname_Right"), 5, 1, "");
+    menu_fn_add_option(tr("_buttonname_A"), 6, 1, "");
+    menu_fn_add_option(tr("_buttonname_B"), 7, 1, "");
+    menu_fn_add_option(tr("_buttonname_C"), 8, 1, "");
+    menu_fn_add_option(tr("_buttonname_Start"), 9, 1, "");
 }
 else
 {
