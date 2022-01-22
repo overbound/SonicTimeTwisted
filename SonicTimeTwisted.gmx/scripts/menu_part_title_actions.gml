@@ -11,7 +11,7 @@ switch(argument0)
         menu_fn_goto_submenu(menu_part_options_items);
         break;
     case 2:
-        menu_fn_open_confirmation_window(tr("_exit_the_game"), 4);
+        menu_fn_open_confirmation_window(tr("_exit_the_game"), 4, -1, true);
         break;
     case 3:
         menu_fn_close_menu(transition_to, objFadeWhite, saveSelect, 10);

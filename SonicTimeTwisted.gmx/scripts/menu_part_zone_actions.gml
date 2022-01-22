@@ -8,7 +8,7 @@ switch(argument0)
         menu_fn_goto_submenu(menu_part_options_items);
         break;
     case 2: // Ask for restart
-        menu_fn_open_confirmation_window(tr("_zone_menu_AreYouSure"), 3);
+        menu_fn_open_confirmation_window(tr("_zone_menu_AreYouSure"), 3, -1, true);
         break;
     case 3: // Restart
         //menu_fn_close_menu(menu_fn_restart_game);
