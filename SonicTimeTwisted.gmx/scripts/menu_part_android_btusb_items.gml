@@ -22,7 +22,7 @@ if(android_get_input_mode() && (string_length(currentDeviceLabel) > 0))
 }
 else
 {
-    menu_fn_add_option(tr("_btusb_joymap_Device"), 31, 1, "");
+    menu_fn_add_option(tr("_btusb_joymap_Device"), 31);
 }
 menu_fn_add_option(tr("_options_menu_Back"), 10);
 

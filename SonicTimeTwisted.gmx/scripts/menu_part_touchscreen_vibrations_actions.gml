@@ -48,31 +48,41 @@ switch(argument0)
         break;
     case -2:
     case -3:
-        switch(cursor)
+        switch(items[cursor, 1])
         {
             case 0:
-                if (objProgram.inputManager.vibration_type & 1)
+                with(objProgram.inputManager)
                 {
-                    objProgram.inputManager.vibration_type--;
-                }
-                else
-                {
-                    objProgram.inputManager.vibration_type++;
+                    if (vibration_type & 1)
+                    {
+                        vibration_type--;
+                    }
+                    else
+                    {
+                        vibration_type++;
+                    }
+                    // reload the scripts to make sure rumble scripts work correctly
+                    rumble_reset();
+                    script_execute(input_init_script);
                 }
                 break;
             case 3:
-                if (objProgram.inputManager.vibration_type >> 1)
+                with(objProgram.inputManager)
                 {
-                    objProgram.inputManager.vibration_type -= 2;
-                }
-                else
-                {
-                    objProgram.inputManager.vibration_type += 2;
+                    if (vibration_type >> 1)
+                    {
+                        vibration_type -= 2;
+                    }
+                    else
+                    {
+                        vibration_type += 2;
+                    }    
+                    // reload the scripts to make sure rumble scripts work correctly
+                    rumble_reset();
+                    script_execute(input_init_script);
                 }
                 break;
         }
-        // reload the scripts to make sure rumble scripts work correctly
-        script_execute(input_init_script);
         break;
 }
 
