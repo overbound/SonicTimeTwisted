@@ -1,6 +1,7 @@
 //player_reaction_floating_right()
 if state == player_state_floating return false;
 if (state==player_state_glide) {player_is_glide_falling(); return true;}
+if (state==player_state_shield_fly) {player_state_standby(); return true;}
 if (state==player_state_fly)
 player_is_falling();
 // animate
