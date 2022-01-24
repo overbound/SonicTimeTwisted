@@ -993,6 +993,7 @@ get_titlecard_array(room);</code>
     <instance objName="objDDFFanPlatform" x="3212" y="1344" name="inst_39F4368F" locked="0" code="mode = 1;&#xA;time=64;&#xA;offset=64;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objCapsule" x="2592" y="368" name="inst_40025801" locked="0" code="fake = true;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpinFlamesEmmit" x="1664" y="623" name="inst_B107465D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objBlock" x="960" y="4432" name="inst_82CEA910" locked="0" code="climbable=false;&#xA;" scaleX="8" scaleY="2" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="ddf2_1" x="1408" y="512" w="64" h="64" xo="960" yo="320" id="10000001" name="tiled_10000001" depth="10" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
