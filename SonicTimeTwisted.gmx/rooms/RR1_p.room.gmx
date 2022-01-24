@@ -742,8 +742,8 @@ get_titlecard_array(room);</code>
     <instance objName="objLampPost" x="4832" y="1008" name="inst_F9DB5E71" locked="0" code="tag=21;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objLampPost" x="5168" y="432" name="inst_10184167" locked="0" code="tag=22;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objLampPost" x="8640" y="212" name="inst_DE5970C1" locked="0" code="tag=24;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objMonitor" x="3792" y="1716" name="inst_1CEBA520" locked="0" code="tag=2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objMonitor" x="3824" y="1716" name="inst_656EEE65" locked="0" code="tag=2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objMonitor" x="3792" y="1716" name="inst_1CEBA520" locked="0" code="icon=2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objMonitor" x="3824" y="1716" name="inst_656EEE65" locked="0" code="icon=2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpring" x="3856" y="1716" name="inst_B37795E0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRing" x="3908" y="1728" name="inst_CDED3911" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRing" x="3908" y="1704" name="inst_5CAF7E0B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
