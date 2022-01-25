@@ -797,7 +797,6 @@ get_titlecard_array(room);</code>
     <instance objName="objRing" x="6888" y="2464" name="inst_FAFD15A8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRing" x="6888" y="2392" name="inst_9999213C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objMonitor" x="6672" y="2256" name="inst_71D10E03" locked="0" code="icon=2;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objMonitor" x="6672" y="2256" name="inst_57BDC037" locked="0" code="icon=2;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objMonitor" x="6672" y="2032" name="inst_15794D22" locked="0" code="icon=8;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpike" x="5712" y="928" name="inst_65C4FE58" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="180"/>
     <instance objName="objSpike" x="5840" y="1088" name="inst_C10F9E64" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="180"/>
