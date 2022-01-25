@@ -1928,25 +1928,25 @@
       <store>0</store>
       <ConfigOptions>
         <Config name="Default">
-          <CopyToMask>134217856</CopyToMask>
+          <CopyToMask>135266496</CopyToMask>
         </Config>
         <Config name="AndroidSmartphone">
-          <CopyToMask>134217856</CopyToMask>
+          <CopyToMask>135266496</CopyToMask>
         </Config>
         <Config name="AndroidConsole">
-          <CopyToMask>134217856</CopyToMask>
+          <CopyToMask>135266496</CopyToMask>
         </Config>
         <Config name="MacOS">
-          <CopyToMask>134217856</CopyToMask>
+          <CopyToMask>135266496</CopyToMask>
         </Config>
         <Config name="Linux">
-          <CopyToMask>134217856</CopyToMask>
+          <CopyToMask>135266496</CopyToMask>
         </Config>
         <Config name="PlayStation">
-          <CopyToMask>134217856</CopyToMask>
+          <CopyToMask>135266496</CopyToMask>
         </Config>
         <Config name="Browser">
-          <CopyToMask>134217856</CopyToMask>
+          <CopyToMask>135266496</CopyToMask>
         </Config>
       </ConfigOptions>
       <filename>gamecontrollerdb.txt</filename>
