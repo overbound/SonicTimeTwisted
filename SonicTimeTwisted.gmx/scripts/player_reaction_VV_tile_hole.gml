@@ -15,12 +15,6 @@ underwater = false;
 underwater_count = -1;
 // modify stats
 player_reset_physics();
-// splash sound
-play_sfx(sndSplash, 1);
-// cancel drowning music
-    if player_id==0 { 
- //               stop_music_drowning();
-            }
 // other
 depth = 0;
 // stop reacting
