@@ -29,16 +29,15 @@
 width = 426;
 height = 240;
 vsync = true; // enabled by default.
-window_mode = 1;
-window_scale = 2;
-window_state = 2;
+window_scale = 2; // default window scale, 2x.
+center_delay = 3; // apparently two frames is not enough on Linux...
 split_screen = false;
 paused = false;
 screenshot = -1; // for pausing
 scanlines = false;
 flashing_reduced = 1;
 default_image_speed = 1;
-alarm[0] = 2;
+alarm[0] = center_delay;
 view_enabled = true;
 view_visible[0] = true;
 view_wview[0] = width;
@@ -121,7 +120,7 @@ else
     gui_height = height;
 }
 
-
+surface_resize(application_surface, width, height); /* set up the app surf */
 
 // A simple boolean that goes from between 0 and 1 every drawn frame
 // Allows to remove some "mod" and "!boolean" calculations here and there
@@ -133,10 +132,24 @@ flashing_visible = false;
 // only when the conditioned code is purely visual
 frame_counter = 0;
 /**
-Load the appropriate video mode. See the set_video_mode script for details
+Load the appropriate video mode. See the apply_video_settings script for details
 **/
-video_mode = 0;
+video_mode = window_scale; // run in window_scale by default.
+prev_video_mode = video_mode; // only used by Alt-Enter.
+altenter_hold = false;
 score_tally_mode = 0;
+/**
+Set initial max scale
+**/
+event_user(3);
+/**
+0 - pre-1.1.2 format
+1 - post-1.1.2 format, with new video mode.
+2 - ??? reserved
+**/
+options_format_none = 0; // no format is present, fallback to pre-1.1.2
+options_format = 1; // current, please increment this value on any changes.
+
 </string>
           </argument>
         </arguments>
@@ -207,8 +220,107 @@ window_center();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Unpause
-if not paused and sprite_exists(screenshot) { sprite_delete(screenshot); }
+            <string>/// Unpause and handle Alt-Enter
+if (not paused &amp;&amp; sprite_exists(screenshot)) {
+    sprite_delete(screenshot);
+    screenshot = -1;
+}
+
+// Since we can never trust GameMaker, let's handle Alt-Enter manually.
+// oh and Alt-Enter can be pressed in various ways, Alt-Enter, Enter-Alt, weird!
+// _pressed() functions might work poorly in this case.
+if (keyboard_check(vk_alt) &amp;&amp; keyboard_check(vk_enter) &amp;&amp; !altenter_hold) {
+    altenter_hold = true;
+    event_user(4);
+}
+else if (!keyboard_check(vk_alt) &amp;&amp; !keyboard_check(vk_enter) &amp;&amp; altenter_hold) {
+    altenter_hold = false;
+    /* do nothing */
+}
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="14">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Exclusively toggle fullscreen.
+
+event_user(3);
+
+if (video_mode &gt; 0) {
+    /* save current window scale into a temp var and go fullscreen */
+    prev_video_mode = video_mode;
+    video_mode = 0;
+}
+else {
+    /* restore previous scale */
+    video_mode = prev_video_mode;
+}
+
+apply_video_settings();
+save_options();
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="13">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Detect maximum possible scale.
+
+/* need to call that on every videomode change, since the
+   display the window is displayed on can always change
+   mind multiple displays, always */
+
+/* always leave a margin e.g. for the taskbar (in pixels). */
+var _dmargin = 50;
+var _dw = display_get_width() - _dmargin;
+var _dh = display_get_height() - _dmargin;
+
+var _ms = 1;
+while (width * _ms &lt; _dw &amp;&amp; height * _ms &lt; _dh) {
+    ++_ms;
+}
+
+/* need to decrement by one, since the loop will quit only if the scale exceeds */
+--_ms;
+
+max_scale = _ms;
+/* we're done here */
+
 </string>
           </argument>
         </arguments>
@@ -234,6 +346,7 @@ if not paused and sprite_exists(screenshot) { sprite_delete(screenshot); }
             <string>///toggle vertical sync.
 vsync = !vsync;
 apply_video_settings();
+save_options();
 </string>
           </argument>
         </arguments>
@@ -257,13 +370,10 @@ apply_video_settings();
           <argument>
             <kind>1</kind>
             <string>/// Scroll through screen modes - backwards
-video_mode = (video_mode - 1);
-if(video_mode &lt; 0)
-{
-    video_mode = 3;
-}
+event_user(3);
+--video_mode; if (video_mode &lt; 0) video_mode = max_scale;
 apply_video_settings();
-
+save_options();
 </string>
           </argument>
         </arguments>
@@ -287,7 +397,8 @@ apply_video_settings();
           <argument>
             <kind>1</kind>
             <string>/// Scroll through screen modes - forwards
-video_mode = (video_mode + 1) mod 4;
+event_user(3);
+++video_mode; if (video_mode &gt; max_scale) video_mode = 0;
 apply_video_settings();
 save_options();
 </string>
@@ -453,7 +564,8 @@ else if scanlines
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>event_user(0);
+            <string>///scroll videomodes forward.
+event_user(0);
 </string>
           </argument>
         </arguments>
