@@ -1689,7 +1689,6 @@ get_titlecard_array(room);</code>
     <instance objName="objVVPlatform" x="15368" y="1220" name="inst_F3D8D835" locked="0" code="length=80;&#xA;time = 0.01125;&#xA;mode = 4;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objVVShipMediumStationary" x="14655" y="1300" name="inst_1690FD86" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSlant" x="14472" y="1568" name="inst_2CF55AB0" locked="0" code="angled = 0;" scaleX="2" scaleY="0.125" colour="4294967295" rotation="0"/>
-    <instance objName="objVVShipMediumStationary" x="14472" y="1764" name="inst_B58C78E7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="14384" y="1484" name="inst_D83E314F" locked="0" code="climbable = 1;" scaleX="4" scaleY="2.5" colour="4294967295" rotation="0"/>
     <instance objName="objVVPlatform" x="14992" y="1280" name="inst_92E3FC8A" locked="0" code="length=80;&#xA;time = 0.01125;&#xA;mode = 4;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objVVPlatform" x="15432" y="960" name="inst_F46FCDC3" locked="0" code="length=80;&#xA;time = 0.02125;&#xA;mode = 4;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
