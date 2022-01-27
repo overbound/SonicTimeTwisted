@@ -852,7 +852,7 @@ get_titlecard_array(room);</code>
     <instance objName="objBlock" x="7408" y="964" name="inst_E790D5E2" locked="0" code="climbable=1;&#xA;" scaleX="20" scaleY="23.5" colour="4294967295" rotation="0"/>
     <instance objName="objLevel" x="0" y="0" name="inst_0004605A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="6036" y="712" name="inst_71EC42F9" locked="0" code="through=1;" scaleX="5.7142858505249" scaleY="23" colour="4294967295" rotation="0"/>
-    <instance objName="objStart" x="258" y="1556" name="inst_1AEBA317" locked="0" code="tag=0;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objStart" x="234" y="1556" name="inst_1AEBA317" locked="0" code="tag=0;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSlant" x="7472" y="960" name="inst_B982F78A" locked="0" code="" scaleX="-2" scaleY="0.125" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="816" y="1344" name="inst_74A0D987" locked="0" code="climbable=1;&#xA;" scaleX="32" scaleY="8" colour="4294967295" rotation="0"/>
     <instance objName="objLayerFlip" x="12172" y="320" name="inst_DC9F6FEA" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -1445,7 +1445,7 @@ get_titlecard_array(room);</code>
     <instance objName="objRing" x="564" y="1356" name="inst_5234BBAC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRing" x="584" y="1356" name="inst_98AF1AC9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRing" x="604" y="1356" name="inst_0A4AE6A0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSignPostAct2" x="128" y="1556" name="inst_2542CA40" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSignPostAct2" x="104" y="1556" name="inst_2542CA40" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="14144" y="-4" name="inst_8EE98B83" locked="0" code="climbable=1;&#xA;" scaleX="24" scaleY="88" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="14336" y="256" name="inst_23ACE31F" locked="0" code="" scaleX="72" scaleY="32" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="14336" y="964" name="inst_EE033E6F" locked="0" code="" scaleX="64" scaleY="8" colour="4294967295" rotation="0"/>

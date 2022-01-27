@@ -359,7 +359,7 @@ get_titlecard_array(room);</code>
     <instance objName="objSlant" x="2704" y="880" name="inst_E8BA332D" locked="0" code="angled = 0;" scaleX="1.5" scaleY="0.125" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="2640" y="880" name="inst_B6F35768" locked="0" code="" scaleX="2" scaleY="0.5" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="2520" y="884" name="inst_FEA99F7B" locked="0" code="" scaleX="29" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objVV1BossBroken" x="18432" y="1422" name="inst_69B50B49" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objVV1BossBroken" x="18408" y="1422" name="inst_69B50B49" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSlant" x="2576" y="880" name="inst_3C20FB01" locked="0" code="angled = 0;" scaleX="2" scaleY="0.125" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="2256" y="916" name="inst_C2C5E4B1" locked="0" code="climbable=1;&#xA;" scaleX="32" scaleY="29.5" colour="4294967295" rotation="0"/>
     <instance objName="objSpringRed" x="272" y="1500" name="inst_6BAE8202" locked="0" code="through = true;&#xA;depth = 10;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -1195,7 +1195,7 @@ get_titlecard_array(room);</code>
     <instance objName="objRing" x="17300" y="1416" name="inst_1E7B561C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRing" x="17320" y="1416" name="inst_E857B001" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRing" x="17340" y="1416" name="inst_52576AB5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSignPost" x="18368" y="1428" name="inst_E3C0E07A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSignPost" x="18344" y="1428" name="inst_E3C0E07A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSlant" x="18500" y="1440" name="inst_450222BA" locked="0" code="angled=0;" scaleX="-2.125" scaleY="0.125" colour="4294967295" rotation="0"/>
     <instance objName="objSlant" x="18500" y="1440" name="inst_C2B34BC0" locked="0" code="angled=0;" scaleX="2.125" scaleY="0.125" colour="4294967295" rotation="0"/>
     <instance objName="objVV1BossController" x="32" y="0" name="inst_2349F875" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
