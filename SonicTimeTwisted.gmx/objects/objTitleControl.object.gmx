@@ -791,7 +791,7 @@ if(menu.state == 0)
                 levelSelect +=1;
                 play_sfx(sndRing,0);
                 with (objProgram) check_cheatcode = true;
-                show_debug_message("UUDDLRLR cheatcode entered!");
+                show_debug_message("LLRRUD cheatcode entered!");
             } else if input_check_pressed(cRIGHT) || input_check_pressed(cUP) || input_check_pressed(cLEFT) {
                 levelSelect = 0;
             }
