@@ -226,24 +226,12 @@ if (not paused &amp;&amp; sprite_exists(screenshot)) {
     screenshot = -1;
 }
 
-// Since we can never trust GameMaker, let's handle Alt-Enter manually.
-// oh and Alt-Enter can be pressed in various ways, Alt-Enter, Enter-Alt, weird!
-// _pressed() functions might work poorly in this case.
-if (keyboard_check(vk_alt) &amp;&amp; keyboard_check(vk_enter) &amp;&amp; !altenter_hold) {
-    altenter_hold = true;
-    event_user(4);
-}
-else if (!keyboard_check(vk_alt) &amp;&amp; !keyboard_check(vk_enter) &amp;&amp; altenter_hold) {
-    altenter_hold = false;
-    /* do nothing */
-}
-
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="7" enumb="14">
+    <event eventtype="7" enumb="15">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -276,6 +264,51 @@ else {
 
 apply_video_settings();
 save_options();
+show_debug_message("video_mode = " + string(video_mode));
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="14">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Detect alt-enter or enter-alt presses.
+// Since we can never trust GameMaker, let's handle Alt-Enter manually.
+// oh and Alt-Enter can be pressed in various ways, Alt-Enter, Enter-Alt, weird!
+// PS: This user event can technically be called from any object.
+//     but since we are dealing with "quality" software
+//     it is called in a with() from objInput.
+var _altenter = keyboard_check(vk_alt) &amp;&amp; keyboard_check(vk_enter);
+
+if (_altenter &amp;&amp; !altenter_hold) {
+    altenter_hold = true;
+    event_user(5);
+}
+else if (!_altenter &amp;&amp; altenter_hold) {
+    altenter_hold = false;
+}
+
+// le GM moment.
+if (altenter_hold) {
+    keyboard_clear(vk_alt);
+    keyboard_clear(vk_enter);
+}
 
 </string>
           </argument>
