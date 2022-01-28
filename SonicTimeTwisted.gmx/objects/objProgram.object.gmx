@@ -367,20 +367,8 @@ if(!show_startup_window())
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>apply_video_settings();
-// sync window properties
-if (window_get_fullscreen()) {
-    window_mode = 2;
-}
-else if ((window_get_width() &gt; width) || (window_get_height() &gt; height)) {
-    window_mode = 1;
-    window_scale = 2;
-}
-else if ((window_get_width() != (width * window_scale)) || (window_get_height() != (height * window_scale))) {
-    window_set_size(width * window_scale, height * window_scale);
-}
-
-surface_resize(application_surface, width, height);
+            <string>///Apply video settings.
+apply_video_settings();
 </string>
           </argument>
         </arguments>

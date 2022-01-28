@@ -180,6 +180,8 @@ state = 0;
 state_press = 0;
 state_release = 0;
 
+with (objScreen) event_user(4);
+
 script_execute(input_manage_script);
 if(use_fallback)
 {

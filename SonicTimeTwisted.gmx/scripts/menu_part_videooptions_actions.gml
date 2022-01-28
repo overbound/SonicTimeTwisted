@@ -76,26 +76,13 @@ var offLabel = "< "+tr("_Off")+ " >";
 
 if(DEVICE_INFO & DEVICE_TYPE_COMPUTER)
 {
-    var gfxLabel1 = "< "+tr("_graphics_menu_1x")+ " >";
-    var gfxLabel2 = "< "+tr("_graphics_menu_2x")+ " >";
-    var gfxLabel3 = "< "+tr("_graphics_menu_3x")+ " >";
-    var gfxLabel4 = "< "+tr("_graphics_menu_Fs")+ " >";
+    var gfxLabel1 = "< "+tr("_graphics_menu_Fs")+ " >";
+    var gfxLabel2 = "< "+tr_format(tr("_graphics_menu_Ws"), objScreen.video_mode)+ " >";
 
-    switch(objScreen.video_mode)
-    {
-        case 0:
-            menu_fn_refresh_displayed_value(0, gfxLabel1);
-            break;
-        case 1:
-            menu_fn_refresh_displayed_value(0, gfxLabel2);
-            break;
-        case 2:
-            menu_fn_refresh_displayed_value(0, gfxLabel3);
-            break;
-        case 3:
-            menu_fn_refresh_displayed_value(0, gfxLabel4);
-            break;
-    }
+    if (objScreen.video_mode <= 0)
+        menu_fn_refresh_displayed_value(0, gfxLabel1);
+    else
+        menu_fn_refresh_displayed_value(0, gfxLabel2);
 
     if(objScreen.vsync)
     {
@@ -105,7 +92,7 @@ if(DEVICE_INFO & DEVICE_TYPE_COMPUTER)
     {
         menu_fn_refresh_displayed_value(3, offLabel);
     }
-    menu_fn_calculate_width_add(0, false, gfxLabel1, gfxLabel2, gfxLabel3, gfxLabel4);
+    menu_fn_calculate_width_add(0, false, gfxLabel1, gfxLabel2);
     menu_fn_calculate_width_add(3, false, onLabel, offLabel);
 }
 

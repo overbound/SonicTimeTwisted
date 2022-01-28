@@ -4,10 +4,28 @@ if (stt_file_exists(file)) {
     
     with(objScreen)
     {
-        video_mode = ini_read_real('video_options', "mode", 0);
+        video_mode = ini_read_real('video_options', "mode", 2);
         flashing_reduced = ini_read_real('video_options', "flashing_reduced", 1);
         score_tally_mode = ini_read_real('video_options', "score_tally_mode", 0);
         vsync = ini_read_real('video_options', "vsync", true);
+        var this_fmt = ini_read_real('video_options', "format_version", options_format_none);
+        if (this_fmt == options_format_none) {
+            /* need to convert videomode */
+            switch (video_mode) {
+                /* window 1x (very tiny) */
+                case 0: video_mode = 1; break;
+                /* window 2x (default) */
+                default:
+                case 1: video_mode = 2; break;
+                /* window 3x */
+                case 2: video_mode = 3; break;
+                /* fullscreen */
+                case 3:
+                case 4: video_mode = 0; break;
+            }
+            
+            show_debug_message("Upgrading video settings from old format...");
+        }
         
         // apply settings
         apply_video_settings();
