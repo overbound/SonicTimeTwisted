@@ -718,10 +718,10 @@ get_titlecard_array(room);</code>
     <instance objName="objSpringRed" x="3408" y="912" name="inst_AEFD020E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="3840" y="1280" name="inst_8F90E674" locked="0" code="climbable=1;&#xA;" scaleX="136" scaleY="4" colour="4294967295" rotation="0"/>
     <instance objName="objField" x="8968" y="160" name="inst_B724A136" locked="0" code="reaction_script=player_reaction_floating_right;&#xA;top=128;&#xA;bottom=576;&#xA;" scaleX="4.53333330154419" scaleY="23.25" colour="4294967295" rotation="0"/>
-    <instance objName="objField" x="10064" y="144" name="inst_7F79A6D7" locked="0" code="reaction_script=player_reaction_floating_stop;" scaleX="4" scaleY="25" colour="4294967295" rotation="0"/>
+    <instance objName="objField" x="10116" y="144" name="inst_7F79A6D7" locked="0" code="reaction_script=player_reaction_floating_stop;" scaleX="2" scaleY="24" colour="4294967295" rotation="0"/>
     <instance objName="objField" x="3720" y="1344" name="inst_5255FD70" locked="0" code="reaction_script=player_reaction_floating_right;&#xA;top=1280;&#xA;bottom=1728;" scaleX="4" scaleY="13" colour="4294967295" rotation="0"/>
     <instance objName="objField" x="5440" y="240" name="inst_B21A481A" locked="0" code="reaction_script=player_reaction_floating_right;&#xA;top=128;&#xA;bottom=576;&#xA;" scaleX="4" scaleY="13" colour="4294967295" rotation="0"/>
-    <instance objName="objField" x="6592" y="128" name="inst_AE26D771" locked="0" code="reaction_script=player_reaction_floating_stop;" scaleX="4" scaleY="26" colour="4294967295" rotation="0"/>
+    <instance objName="objField" x="6624" y="144" name="inst_AE26D771" locked="0" code="reaction_script=player_reaction_floating_stop;" scaleX="2" scaleY="26" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="10112" y="224" name="inst_B4AFB9B5" locked="0" code="climbable=1;" scaleX="16" scaleY="20" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="3952" y="1536" name="inst_67323C78" locked="0" code="climbable=1;" scaleX="10" scaleY="8" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="4208" y="1600" name="inst_6772FB34" locked="0" code="climbable=1;" scaleX="10" scaleY="8" colour="4294967295" rotation="0"/>
@@ -771,7 +771,7 @@ get_titlecard_array(room);</code>
     <instance objName="objRRBreakableColumn" x="5456" y="992" name="inst_E0EF8E30" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRRBreakableColumn" x="5968" y="880" name="inst_5A6C8611" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpring" x="6176" y="784" name="inst_AB275350" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objField" x="5440" y="496" name="inst_2337EA57" locked="0" code="reaction_script=player_reaction_floating_right;&#xA;top=128;&#xA;bottom=576;" scaleX="72" scaleY="2" colour="4294967295" rotation="0"/>
+    <instance objName="objField" x="5440" y="496" name="inst_2337EA57" locked="0" code="reaction_script=player_reaction_floating_right;&#xA;top=128;&#xA;bottom=576;" scaleX="70" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="objField" x="5448" y="240" name="inst_0F6F8E11" locked="0" code="reaction_script=player_reaction_floating_right;&#xA;top=128;&#xA;bottom=576;&#xA;" scaleX="4" scaleY="13" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="5440" y="128" name="inst_B2150242" locked="0" code="climbable=1;" scaleX="152" scaleY="4" colour="4294967295" rotation="0"/>
     <instance objName="objRing" x="6676" y="516" name="inst_2F9EFA60" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -1255,7 +1255,7 @@ get_titlecard_array(room);</code>
     <instance objName="objRing" x="6248" y="104" name="inst_6A395BCA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRing" x="6276" y="104" name="inst_B1A00EAD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRing" x="6304" y="104" name="inst_73D4347D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objField" x="4880" y="1280" name="inst_8E1500DF" locked="0" code="reaction_script=player_reaction_floating_stop;" scaleX="3" scaleY="24.533332824707" colour="4294967295" rotation="0"/>
+    <instance objName="objField" x="4880" y="1296" name="inst_8E1500DF" locked="0" code="reaction_script=player_reaction_floating_stop;" scaleX="2" scaleY="24" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="8960" y="128" name="inst_3E8A0CAF" locked="0" code="climbable=1;" scaleX="152" scaleY="4" colour="4294967295" rotation="0"/>
     <instance objName="objMonitor" x="9568" y="112" name="inst_33F18932" locked="0" code="icon=9;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpikesNonSolid" x="6400" y="368" name="inst_87C871E5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
@@ -1297,8 +1297,8 @@ get_titlecard_array(room);</code>
     <instance objName="objStart" x="4800" y="624" name="inst_43AE539F" locked="0" code="tag=5;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objField" x="3776" y="1652" name="inst_9D3501F1" locked="0" code="reaction_script=player_reaction_floating_right;&#xA;top=1280;&#xA;bottom=1728;&#xA;" scaleX="64" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="objField" x="3904" y="1721" name="inst_DC713D85" locked="0" code="reaction_script=player_reaction_floating_stop;" scaleX="64.2666702270508" scaleY="3.20000004768372" colour="4294967295" rotation="0"/>
-    <instance objName="objField" x="5436" y="566" name="inst_E60A100E" locked="0" code="reaction_script=player_reaction_floating_stop;" scaleX="64.2666702270508" scaleY="3.20000004768372" colour="4294967295" rotation="0"/>
-    <instance objName="objField" x="8960" y="567" name="inst_41BBC320" locked="0" code="reaction_script=player_reaction_floating_stop;" scaleX="72.533332824707" scaleY="3.25" colour="4294967295" rotation="0"/>
+    <instance objName="objField" x="5436" y="566" name="inst_E60A100E" locked="0" code="reaction_script=player_reaction_floating_stop;" scaleX="64.2666702270508" scaleY="2" colour="4294967295" rotation="0"/>
+    <instance objName="objField" x="8960" y="567" name="inst_41BBC320" locked="0" code="reaction_script=player_reaction_floating_stop;" scaleX="70" scaleY="3.25" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="8128" y="-320" name="inst_31DC0D7A" locked="0" code="climbable=1;&#xA;" scaleX="33.5" scaleY="40" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="13816" y="-200" name="inst_40CAD852" locked="0" code="climbable=1;&#xA;" scaleX="185.142852783203" scaleY="3.5" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="11724" y="-192" name="inst_CE6D8BD5" locked="0" code="climbable=1;&#xA;" scaleX="185.142852783203" scaleY="3.5" colour="4294967295" rotation="0"/>
