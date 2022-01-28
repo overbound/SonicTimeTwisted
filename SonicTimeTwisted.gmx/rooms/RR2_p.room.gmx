@@ -256,7 +256,7 @@ get_titlecard_array(room);</code>
     <instance objName="objRing" x="536" y="748" name="inst_6AFC15EC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRing" x="556" y="748" name="inst_D7F7EF46" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRing" x="516" y="748" name="inst_5C3287A6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objRing" x="496" y="748" name="inst_78244E0B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objRing" x="576" y="748" name="inst_78244E0B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRing" x="9988" y="208" name="inst_D4628EAF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRing" x="9968" y="192" name="inst_4D539A6C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRing" x="10008" y="224" name="inst_6CF9788C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -1575,7 +1575,6 @@ get_titlecard_array(room);</code>
     <instance objName="objSlant" x="6384" y="1324" name="inst_A4FC2D6B" locked="0" code="angled=0;&#xA;" scaleX="-1.125" scaleY="0.625" colour="4294967295" rotation="0"/>
     <instance objName="objSlant" x="6456" y="1344" name="inst_40CCE9D7" locked="0" code="" scaleX="-2.32258057594299" scaleY="0.125" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="5056" y="1168" name="inst_80B488D1" locked="0" code="climbable=1;" scaleX="16" scaleY="14" colour="4294967295" rotation="0"/>
-    <instance objName="objWarp" x="616" y="712" name="inst_C3204AD7" locked="0" code="xx = 12800;&#xA;yy = 1300;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="RR1_p1" x="8128" y="64" w="64" h="64" xo="448" yo="1792" id="10000001" name="tiled_10000001" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
