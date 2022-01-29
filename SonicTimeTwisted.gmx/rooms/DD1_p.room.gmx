@@ -17,10 +17,10 @@ with objLevel bg = instance_create(x,y,objDDPastBack);
 objProgram.in_past = true;
 
 // setup titlecard
-get_titlecard_array(room);
 if (!instance_exists(objTitlecard)) {
     instance_create(0, 0, objTitlecard);
-}</code>
+}
+get_titlecard_array(room);</code>
   <enableViews>0</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>
