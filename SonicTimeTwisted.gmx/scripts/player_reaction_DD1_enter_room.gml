@@ -11,5 +11,8 @@ if objProgram.temp_xview_offset!=0 {
     view_xview=x-objProgram.temp_xview_offset;
 }
 with objLevel started = true;
+if (!instance_exists(objTitlecard)) {
+    instance_create(0, 0, objTitlecard);
+}
 with objTitlecard mode = 3;
 with argument0 instance_destroy();

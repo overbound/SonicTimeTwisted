@@ -36,7 +36,10 @@ objLevel.timer_enabled = true;
 //objLevel.started = false;
 with objHud visible=1;
 // setup titlecard
-with instance_create(0, 0, objTitlecard)
+if (!instance_exists(objTitlecard)) {
+    instance_create(0, 0, objTitlecard);
+}
+with objTitlecard
 {
     get_titlecard_array(room, id);
     event_perform(ev_other, ev_room_start);
