@@ -6,6 +6,7 @@ main_border_color = make_colour_rgb(43, 28, 59);
 main_bg_alpha = 0.75;
 timer = 0;
 
+is_touchscreen = false;
 item_script = menu_part_title_items;
 action_script = menu_part_title_actions;
 draw_script = menu_fn_draw_default;
