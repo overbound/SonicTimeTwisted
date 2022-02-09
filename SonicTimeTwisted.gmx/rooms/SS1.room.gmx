@@ -1331,11 +1331,11 @@ if objProgram.spawn_tag == 0 {
     <instance objName="objField" x="1564" y="3772" name="inst_B2330E4C" locked="0" code="reaction_script=player_reaction_ss_stop_sound;" scaleX="12.25" scaleY="12.5" colour="4294967295" rotation="0"/>
     <instance objName="objField" x="2760" y="3940" name="inst_1EBB1CF0" locked="0" code="reaction_script=player_reaction_ss_stop_sound;&#xA;" scaleX="12.25" scaleY="12.5" colour="4294967295" rotation="0"/>
     <instance objName="objSpringRedDiagonal" x="3600" y="520" name="inst_9A96C3A1" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objLampPost" x="680" y="2032" name="inst_6AA65F49" locked="0" code="tag=20;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objLampPost" x="2192" y="1648" name="inst_59384A78" locked="0" code="tag=21" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objLampPost" x="3320" y="3440" name="inst_11EF72EA" locked="0" code="tag=22;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objLampPost" x="548" y="3440" name="inst_CE654229" locked="0" code="tag=23;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objLampPost" x="840" y="5680" name="inst_412D9D12" locked="0" code="tag=25;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objLampPost" x="680" y="2032" name="inst_6AA65F49" locked="0" code="init_lamp_post(20);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objLampPost" x="2192" y="1648" name="inst_59384A78" locked="0" code="init_lamp_post(21)" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objLampPost" x="3320" y="3440" name="inst_11EF72EA" locked="0" code="init_lamp_post(22);" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objLampPost" x="548" y="3440" name="inst_CE654229" locked="0" code="init_lamp_post(23);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objLampPost" x="840" y="5680" name="inst_412D9D12" locked="0" code="init_lamp_post(25);" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objCurveConcave" x="2924" y="6836" name="inst_E3BC2116" locked="0" code="" scaleX="-0.790000021457672" scaleY="0.791666686534882" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="3392" y="6304" name="inst_367BB0B1" locked="0" code="climbable=true;" scaleX="4" scaleY="6" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="3360" y="6336" name="inst_2BA48711" locked="0" code="climbable=true;" scaleX="4" scaleY="6" colour="4294967295" rotation="0"/>
@@ -1395,7 +1395,7 @@ if objProgram.spawn_tag == 0 {
     <instance objName="objRing" x="3720" y="4536" name="inst_EA78346F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRing" x="3740" y="4528" name="inst_C89308D4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRing" x="3760" y="4520" name="inst_F06D5B55" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objLampPost" x="3508" y="4592" name="inst_60262190" locked="0" code="tag=24;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objLampPost" x="3508" y="4592" name="inst_60262190" locked="0" code="init_lamp_post(24);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBubbleCluster" x="3572" y="4608" name="inst_7E245D5A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRing" x="3404" y="4608" name="inst_78B291E6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRing" x="3424" y="4608" name="inst_AF9DC340" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -1462,7 +1462,7 @@ if objProgram.spawn_tag == 0 {
     <instance objName="objSpring" x="336" y="7408" name="inst_85C31048" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objConveyerAngled" x="3384" y="3908" name="inst_BCC3EDB3" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objConveyerAngled" x="3528" y="3948" name="inst_CEB74D7E" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objLampPost" x="3060" y="1264" name="inst_A51E19B9" locked="0" code="tag=26;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objLampPost" x="3060" y="1264" name="inst_A51E19B9" locked="0" code="init_lamp_post(26);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="2944" y="3456" name="inst_B4E9F361" locked="0" code="climbable=1;" scaleX="48" scaleY="96" colour="4294967295" rotation="0"/>
     <instance objName="objConveyerAngled" x="3624" y="4052" name="inst_D2794FE4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="3200" y="2428" name="inst_08E180B5" locked="0" code="climbable=1;&#xA;" scaleX="8" scaleY="12.5" colour="4294967295" rotation="0"/>

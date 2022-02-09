@@ -4708,6 +4708,8 @@
         <script>scripts\init_ffz_orb_flashing.gml</script>
         <script>scripts\step_ffz_orb_flashing.gml</script>
       </scripts>
+      <script>scripts\init_big_ring.gml</script>
+      <script>scripts\init_lamp_post.gml</script>
     </scripts>
   </scripts>
   <shaders name="shaders">
