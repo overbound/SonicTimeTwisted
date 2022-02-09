@@ -120,6 +120,43 @@
         </arguments>
       </action>
     </event>
+    <event eventtype="7" enumb="10">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// load the ring when the room starts
+completedRing=load_big_ring(tag);
+if completedRing &amp;&amp; (objProgram.special_future_current_level &lt; 7 || objProgram.special_past_current_level &lt; 7) {
+    visible = false;
+    reaction_script=noone;
+} else if objProgram.temp_spawn_tag == tag {
+    visible = false; 
+    reaction_script=noone;
+} else {
+    visible = true; 
+    reaction_script=player_reaction_giant_ring
+}
+if objProgram.in_past {
+    sprite_index = sprRingGiantPast;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="7" enumb="7">
       <action>
         <libid>1</libid>
@@ -141,42 +178,6 @@
 if sprite_index == sprGiantRingDisapear {
     visible = false;
     reaction_script=noone;
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="7" enumb="4">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>completedRing=load_big_ring(tag);
-if completedRing &amp;&amp; (objProgram.special_future_current_level &lt; 7 || objProgram.special_past_current_level &lt; 7) {
-    visible = false;
-    reaction_script=noone;
-} else if objProgram.temp_spawn_tag == tag {
-    visible = false; 
-    reaction_script=noone;
-} else {
-    visible = true; 
-    reaction_script=player_reaction_giant_ring
-}
-if objProgram.in_past {
-    sprite_index = sprRingGiantPast;
 }
 </string>
           </argument>

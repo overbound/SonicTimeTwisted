@@ -939,7 +939,7 @@ get_titlecard_array(room);</code>
     <instance objName="objSlant" x="2276" y="1736" name="inst_5E40191F" locked="0" code="" scaleX="-0.629999995231628" scaleY="0.375" colour="4294967295" rotation="0"/>
     <instance objName="objSlant" x="2564" y="1776" name="inst_4D300679" locked="0" code="angled=0;&#xA;" scaleX="1.5" scaleY="0.125" colour="4294967295" rotation="0"/>
     <instance objName="objWhalebot" x="4708" y="668" name="inst_7D445FDE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objRingGiant" x="5636" y="724" name="inst_759AA312" locked="0" code="tag=30;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objRingGiant" x="5636" y="724" name="inst_759AA312" locked="0" code="init_big_ring(30);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objMonitor" x="9776" y="1072" name="inst_F8533E34" locked="0" code="icon=8;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWhalebot" x="13888" y="1608" name="inst_7291C7C2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWhalebot" x="13932" y="1560" name="inst_5153F39B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -1403,7 +1403,7 @@ get_titlecard_array(room);</code>
     <instance objName="objRing" x="3044" y="1496" name="inst_1101889B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRing" x="3064" y="1504" name="inst_D731CE11" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="2368" y="1472" name="inst_2D0B3F75" locked="0" code="climbable=1;&#xA;" scaleX="32" scaleY="2" colour="4294967295" rotation="0"/>
-    <instance objName="objRingGiant" x="12176" y="908" name="inst_9732B1F5" locked="0" code="tag=31;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objRingGiant" x="12176" y="908" name="inst_9732B1F5" locked="0" code="init_big_ring(31);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpring" x="12176" y="1104" name="inst_FB7A46E4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWaterfall" x="12128" y="848" name="inst_34A48ACC" locked="0" code="" scaleX="1" scaleY="39.3800010681152" colour="4294967295" rotation="0"/>
     <instance objName="objWhalebot" x="9988" y="116" name="inst_BF531993" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -1469,14 +1469,14 @@ get_titlecard_array(room);</code>
     <instance objName="objCapsule" x="15104" y="788" name="inst_5BDE5805" locked="0" code="depth=1;&#xA;remove=0;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objField" x="15616" y="576" name="inst_CE8BBC9D" locked="0" code="reaction_script=level_goto_dd1;&#xA;" scaleX="4" scaleY="16" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="14849" y="868" name="inst_60CBFD5C" locked="0" code="climbable=true;&#xA;" scaleX="8" scaleY="12.5" colour="4294967295" rotation="0"/>
-    <instance objName="objLampPost" x="14196" y="784" name="inst_70B52940" locked="0" code="tag=24;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objLampPost" x="14196" y="784" name="inst_70B52940" locked="0" code="init_lamp_post(24);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRing" x="14212" y="764" name="inst_57C916D7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRing" x="14232" y="764" name="inst_D08371C1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRing" x="14252" y="764" name="inst_EF23A149" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objLampPost" x="4444" y="1492" name="inst_43DA4075" locked="0" code="tag=20;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objLampPost" x="3884" y="768" name="inst_0E2E2AB0" locked="0" code="tag=21;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objLampPost" x="8240" y="384" name="inst_87919E13" locked="0" code="tag=22;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objLampPost" x="8964" y="1076" name="inst_D61F13D8" locked="0" code="tag=23;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objLampPost" x="4444" y="1492" name="inst_43DA4075" locked="0" code="init_lamp_post(20);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objLampPost" x="3884" y="768" name="inst_0E2E2AB0" locked="0" code="init_lamp_post(21);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objLampPost" x="8240" y="384" name="inst_87919E13" locked="0" code="init_lamp_post(22);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objLampPost" x="8964" y="1076" name="inst_D61F13D8" locked="0" code="init_lamp_post(23);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objLayerFlip" x="10280" y="416" name="inst_A151F81A" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objLayerFlip" x="8984" y="48" name="inst_8847D584" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objLayerFlip" x="7720" y="800" name="inst_329F8310" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>

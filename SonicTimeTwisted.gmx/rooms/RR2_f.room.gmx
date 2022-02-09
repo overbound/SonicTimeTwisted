@@ -526,7 +526,7 @@ get_titlecard_array(room);</code>
     <instance objName="objRRBreakableColumn" x="3424" y="1472" name="inst_765E1261" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRRBreakableColumn" x="3456" y="1472" name="inst_4EED833E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRRBreakableColumn" x="3488" y="1472" name="inst_A69BB2FF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objLampPost" x="6940" y="1328" name="inst_A58DB5A6" locked="0" code="tag=20;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objLampPost" x="6940" y="1328" name="inst_A58DB5A6" locked="0" code="init_lamp_post(20);" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRRBreakableColumn" x="8480" y="576" name="inst_ABE9FD88" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRRBreakableColumn" x="8512" y="576" name="inst_2BFC4654" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRRBreakableColumn" x="8544" y="576" name="inst_16E081CD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -552,14 +552,14 @@ get_titlecard_array(room);</code>
     <instance objName="objRRBreakableColumn" x="8736" y="1280" name="inst_53276701" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRRBreakableColumn" x="8768" y="1280" name="inst_691E5F51" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRRBreakableColumn" x="8800" y="1280" name="inst_350A269A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objLampPost" x="11560" y="528" name="inst_809F429A" locked="0" code="tag=23;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objLampPost" x="11368" y="1552" name="inst_D2C49AB1" locked="0" code="tag=21;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objLampPost" x="11560" y="528" name="inst_809F429A" locked="0" code="init_lamp_post(23);" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objLampPost" x="11368" y="1552" name="inst_D2C49AB1" locked="0" code="init_lamp_post(21);" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpringRed" x="11312" y="1712" name="inst_49D55037" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
-    <instance objName="objLampPost" x="16256" y="1456" name="inst_A3443DD0" locked="0" code="tag=24;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objLampPost" x="16256" y="1456" name="inst_A3443DD0" locked="0" code="init_lamp_post(24);" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objMonitor" x="15564" y="1712" name="inst_35709654" locked="0" code="icon=10;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objMonitor" x="15596" y="1712" name="inst_B52EF6DB" locked="0" code="icon=2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objTimePost" x="9184" y="720" name="inst_2F40F5A0" locked="0" code="tag=3;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objLampPost" x="8128" y="208" name="inst_F907A33F" locked="0" code="tag=25" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objLampPost" x="8128" y="208" name="inst_F907A33F" locked="0" code="init_lamp_post(25)" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="9472" y="768" name="inst_580FFB11" locked="0" code="climbable=1;" scaleX="24.5" scaleY="24" colour="4294967295" rotation="0"/>
     <instance objName="objLayerFlip" x="8551" y="1756" name="inst_4A957699" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objLayerFlip" x="2728" y="1308" name="inst_D4CCDD67" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -1076,7 +1076,7 @@ get_titlecard_array(room);</code>
     <instance objName="objRRBreakableColumn" x="1824" y="896" name="inst_DC396EFC" locked="0" code="through=0;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRRBreakableColumn" x="1776" y="960" name="inst_3687040A" locked="0" code="through=0;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="2048" y="288" name="inst_75EC1DAF" locked="0" code="climbable=1;&#xA;" scaleX="8" scaleY="20" colour="4294967295" rotation="0"/>
-    <instance objName="objRingGiant" x="1948" y="364" name="inst_82C926FE" locked="0" code="tag=30;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objRingGiant" x="1948" y="364" name="inst_82C926FE" locked="0" code="init_big_ring(30);" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRRBreakableColumn" x="6912" y="1728" name="inst_1153C4F0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRRBreakableColumn" x="6944" y="1728" name="inst_030B683F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objMoleFan" x="8308" y="1608" name="inst_A6C2C209" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -1116,7 +1116,7 @@ get_titlecard_array(room);</code>
     <instance objName="objRRBreakableColumn" x="11456" y="960" name="inst_34AFDAA8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpringRed" x="11312" y="1008" name="inst_F7D65086" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
     <instance objName="objSpringRed" x="11088" y="1008" name="inst_1725D656" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="270"/>
-    <instance objName="objLampPost" x="11404" y="944" name="inst_1F2BBE7E" locked="0" code="tag=26;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objLampPost" x="11404" y="944" name="inst_1F2BBE7E" locked="0" code="init_lamp_post(26);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpike" x="13044" y="1664" name="inst_81D2C8F9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpike" x="13076" y="1664" name="inst_E6A96AFD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpike" x="13108" y="1664" name="inst_BBC1C123" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -1384,7 +1384,7 @@ get_titlecard_array(room);</code>
     <instance objName="objRRBreakableColumn" x="1888" y="472" name="inst_B5C7D06A" locked="0" code="through=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRRBreakableColumn" x="1920" y="472" name="inst_0E75E775" locked="0" code="through=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRRBreakableColumn" x="1952" y="472" name="inst_51A7CBD5" locked="0" code="through=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objRingGiant" x="10300" y="1408" name="inst_7BF5D0A8" locked="0" code="tag=31;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objRingGiant" x="10300" y="1408" name="inst_7BF5D0A8" locked="0" code="init_big_ring(31);" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objStart" x="11008" y="1712" name="inst_C41A1E23" locked="0" code="tag=4;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objTimePost" x="3124" y="1968" name="inst_098F25BD" locked="0" code="tag=1;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objMonitor" x="2736" y="1968" name="inst_FD736408" locked="0" code="icon=11;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

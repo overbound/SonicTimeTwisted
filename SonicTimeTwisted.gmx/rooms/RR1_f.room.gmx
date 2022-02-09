@@ -290,7 +290,7 @@ if (objProgram.spawn_tag == 0) instance_destroy(objTitlecard);</code>
     <instance objName="objRing" x="6828" y="1392" name="inst_336D9EF0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="4032" y="1136" name="inst_7F4E4E5A" locked="0" code="climbable=1;&#xA;" scaleX="16" scaleY="66" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="6848" y="64" name="inst_48962D19" locked="0" code="climbable=1;&#xA;" scaleX="20" scaleY="32.5714302062988" colour="4294967295" rotation="0"/>
-    <instance objName="objLampPost" x="5200" y="1776" name="inst_CBF858F6" locked="0" code="tag=20;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objLampPost" x="5200" y="1776" name="inst_CBF858F6" locked="0" code="init_lamp_post(20);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRing" x="3780" y="1600" name="inst_CDED3911" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRing" x="3780" y="1576" name="inst_5CAF7E0B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRing" x="3780" y="1552" name="inst_AECEB962" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -531,7 +531,7 @@ if (objProgram.spawn_tag == 0) instance_destroy(objTitlecard);</code>
     <instance objName="objRing" x="12632" y="200" name="inst_6AF0801F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRing" x="12680" y="200" name="inst_73B1235C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRing" x="12704" y="200" name="inst_FD923BAF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objLampPost" x="11644" y="1168" name="inst_F50330BF" locked="0" code="tag=25;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objLampPost" x="11644" y="1168" name="inst_F50330BF" locked="0" code="init_lamp_post(25);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpike" x="2304" y="992" name="inst_7DD49777" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpike" x="2336" y="992" name="inst_E8D0ED88" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRing" x="6476" y="76" name="inst_793D047C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -560,7 +560,7 @@ if (objProgram.spawn_tag == 0) instance_destroy(objTitlecard);</code>
     <instance objName="objBlock" x="2688" y="992" name="inst_BF400B09" locked="0" code="climbable=1;&#xA;" scaleX="8" scaleY="4" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="1984" y="992" name="inst_F119D43C" locked="0" code="climbable=1;&#xA;" scaleX="8" scaleY="5" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="1984" y="800" name="inst_A78D301A" locked="0" code="climbable=1;&#xA;" scaleX="7.5" scaleY="8" colour="4294967295" rotation="0"/>
-    <instance objName="objRingGiant" x="748" y="524" name="inst_D7185005" locked="0" code="tag=30;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objRingGiant" x="748" y="524" name="inst_D7185005" locked="0" code="init_big_ring(30);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSlant" x="1472" y="944" name="inst_53A8634D" locked="0" code="" scaleX="1" scaleY="0.75" colour="4294967295" rotation="0"/>
     <instance objName="objSlant" x="1504" y="920" name="inst_20EFE2A8" locked="0" code="" scaleX="0.875" scaleY="0.75" colour="4294967295" rotation="0"/>
     <instance objName="objSlant" x="1532" y="896" name="inst_99B5A99B" locked="0" code="" scaleX="0.75" scaleY="0.75" colour="4294967295" rotation="0"/>
@@ -1376,7 +1376,7 @@ if (objProgram.spawn_tag == 0) instance_destroy(objTitlecard);</code>
     <instance objName="objBlock" x="13824" y="1664" name="inst_BE046498" locked="0" code="climbable=1;&#xA;&#xA;" scaleX="40" scaleY="24" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="13920" y="1856" name="inst_C48962D0" locked="0" code="climbable=1;&#xA;&#xA;" scaleX="28" scaleY="16" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="13504" y="1856" name="inst_18C3A6D9" locked="0" code="climbable=1;&#xA;&#xA;" scaleX="36" scaleY="8" colour="4294967295" rotation="0"/>
-    <instance objName="objRingGiant" x="13856" y="1916" name="inst_490B1421" locked="0" code="tag=31;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objRingGiant" x="13856" y="1916" name="inst_490B1421" locked="0" code="init_big_ring(31);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpringRedDiagonal" x="13488" y="2000" name="inst_BFE29926" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpringGreen" x="6704" y="240" name="inst_4CE5BE43" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objGlassBottom" x="1536" y="1472" name="inst_046647F9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
