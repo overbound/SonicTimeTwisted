@@ -9,6 +9,10 @@ for (i=0; i<total_locals; i+=1)
     local_id = ds_list_find_value(terrain_list, i);
     // continue if passing through
     if not collision_ray(argument0, 0, mask_rotation, local_id) or local_id.through continue;
+    // continue if sliding
+    if local_id.slide != 0 {
+        continue;
+    }
     // confirm matching local
     return local_id;
 }
