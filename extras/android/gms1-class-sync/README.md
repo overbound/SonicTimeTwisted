@@ -55,6 +55,6 @@ The arguments provided to the JAR should be as follows:
  - The name of the extension in Game maker Studio 1, which is **SttAndroid**.
  - At least one root directory of a Game Maker Studio 1 project containing the extension (for instance, Sonic Time Twisted itself and the provided test project) .
 
-Running **export.bat** will run the tool. In every Game maker Studio 1 project, the extension's Java code will be deleted and recopied.
+Running **gms1sync.bat** will run the tool. In every Game maker Studio 1 project, the extension's Java code will be deleted and recopied.
 
-Don't forget to clean the project in Game Maker Studio 1, otherwise the old commpiled cache/bytecode will still linger.
+Don't forget to clean the project in Game Maker Studio 1, otherwise the old compiled cache/bytecode will still linger.

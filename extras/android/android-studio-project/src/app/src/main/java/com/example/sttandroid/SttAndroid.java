@@ -205,17 +205,20 @@ public class SttAndroid extends ExtensionBase {
      * If a device doesn't have a manager registered, can be used and there is an open slot,
      * a new manager instance is created.
      *
+     * A device should only be assigned if the event is that of a key press
+     *
      * @param device InputDevice to test
+     * @param doAssign Whether the device should be assigned if it isn't already
      * @return The matching input device manager
      */
-    protected InputDeviceManager getInputDeviceManagerToUse(InputDevice device) {
+    protected InputDeviceManager getInputDeviceManagerToUse(InputDevice device, boolean doAssign) {
         if (inputs[0].isDeviceAssigned(device.getId())) {
             return inputs[0];
         } else {
             if (inputs[1].isDeviceAssigned(device.getId())) {
                 return inputs[1];
             } else {
-                if (isDeviceSuitable(device)) {
+                if (doAssign && isDeviceSuitable(device)) {
                     if (!inputs[0].hasAssignedDevice()) {
                         inputs[0].assignSingleDevice(device);
                         return inputs[0];
@@ -267,7 +270,7 @@ public class SttAndroid extends ExtensionBase {
                 }
             }
         } else {
-            InputDeviceManager inputDeviceManager = getInputDeviceManagerToUse(event.getDevice());
+            InputDeviceManager inputDeviceManager = getInputDeviceManagerToUse(event.getDevice(), event.getAction() == KeyEvent.ACTION_DOWN);
             if (inputDeviceManager != null) {
                 return inputDeviceManager.processKeyEvent(event);
             }
@@ -289,7 +292,7 @@ public class SttAndroid extends ExtensionBase {
         if (!externalDevicesEnabled) {
             return false;
         }
-        InputDeviceManager inputDeviceManager = getInputDeviceManagerToUse(event.getDevice());
+        InputDeviceManager inputDeviceManager = getInputDeviceManagerToUse(event.getDevice(), true);
         if (inputDeviceManager != null) {
             return inputDeviceManager.processGenericMotionEvent(event);
         }

@@ -13,6 +13,7 @@ while (file != "")
             file_text_readln(fileHandle);
             android_feed_input_mapping_row(row);
         }
+        file_text_close(fileHandle);
     }
     file = file_find_next();
 }
