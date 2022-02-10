@@ -577,7 +577,7 @@ if(mouse_check_button_pressed(mb_left))
     mouse_dx = 0;
     mouse_dy = 0;
     mouse_click_registered = false;
-    x_on_press = view_xview[0];
+    x_on_press = mouse_x + view_xview[0];
     y_on_press = mouse_y;
     
 }
@@ -599,7 +599,7 @@ if(mouse_check_button_released(mb_left))
         case 5:
             // selecting a slot
             // within 2 pixels is considered a touch
-            if(abs(view_xview[0] - x_on_press) &lt;= 2)
+            if(abs(mouse_x + view_xview[0] - x_on_press) &lt;= 2)
             {
                 tap_registered = true;
             }
@@ -1471,6 +1471,7 @@ if selectState==5 {
     draw_set_halign(fa_left);
     draw_set_valign(fa_top);
 }
+
 </string>
           </argument>
         </arguments>
