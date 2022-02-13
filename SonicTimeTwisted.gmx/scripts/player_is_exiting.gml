@@ -13,6 +13,7 @@ if superform {
     objProgram.temp_superform = true;
 }
 objProgram.temp_shield = shield_type;
+objProgram.temp_mask_rotation = mask_rotation;
 // movement and collision
 xspeed = 12*facing;
 // counters

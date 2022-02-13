@@ -61,6 +61,7 @@ spawn_tag = 0;
 spawn_time = 36000;
 temp_spawn_tag = -1;
 temp_spawn_time = -1;
+temp_mask_rotation = -1;
 time_traveling = 0;
 in_past = false;
 temp_shield = -1;

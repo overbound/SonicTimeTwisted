@@ -20,6 +20,11 @@ limit_xspeed = false;
 limit_yspeed = true;
 angle=0;
 jump_action = true;
+if (objProgram.temp_mask_rotation != -1)
+{
+    mask_rotation = objProgram.temp_mask_rotation;
+    objProgram.temp_mask_rotation = -1;
+}
 // timers
 underwater_count = -1;
 invulnerable = 0;
