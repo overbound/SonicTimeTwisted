@@ -66,8 +66,32 @@ progress = 0;
 kill=0;
 invincible=0;
 landing_tracker = instance_create(x, y, objSSPlayerLandingTracker);
+// set an alarm to make sure region activations aren't on every single step
+alarm[1] = 1;
 
 </string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>605</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>null counter</string>
           </argument>
         </arguments>
       </action>
@@ -159,25 +183,30 @@ else visible = true;
           <argument>
             <kind>1</kind>
             <string>/// region activation
-instance_deactivate_all(true);
-instance_activate_object(objProgram);
-instance_activate_object(objSSLevel);
-instance_activate_object(objGameData);
-instance_activate_object(objResources);
-instance_activate_object(objMusic);
-instance_activate_object(objSSMessages);
-instance_activate_object(objSSHud);
-instance_activate_object(objScreen);
-instance_activate_object(objSSCamera);
-instance_activate_object(objTransition);
-instance_activate_object(objTrack);
-instance_activate_object(objSSMetalSonic);
-instance_activate_object(objInput);
-instance_activate_object(objInputHelp);
-instance_activate_object(objMenu);
-instance_activate_object(objSSPlayerLandingTracker);
-instance_activate_region(x-1408,y-1408,2816,2816,true);
-//instance_activate_region(x-1536,y-1536,3072,3072,true);
+// placing it here so that it plays at step end
+if (alarm[1] == 0)
+{
+    instance_deactivate_all(true);
+    instance_activate_object(objProgram);
+    instance_activate_object(objSSLevel);
+    instance_activate_object(objGameData);
+    instance_activate_object(objResources);
+    instance_activate_object(objMusic);
+    instance_activate_object(objSSMessages);
+    instance_activate_object(objSSHud);
+    instance_activate_object(objScreen);
+    instance_activate_object(objSSCamera);
+    instance_activate_object(objTransition);
+    instance_activate_object(objTrack);
+    instance_activate_object(objSSMetalSonic);
+    instance_activate_object(objInput);
+    instance_activate_object(objInputHelp);
+    instance_activate_object(objMenu);
+    instance_activate_object(objSSPlayerLandingTracker);
+    instance_activate_region(x-1408,y-1408,2816,2816,true);
+    //instance_activate_region(x-1536,y-1536,3072,3072,true);
+    alarm[1] = 2;
+}
 </string>
           </argument>
         </arguments>

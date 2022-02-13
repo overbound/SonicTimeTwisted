@@ -5369,7 +5369,6 @@
           <object>objects\objSSPastTrack7_2</object>
         </objects>
       </objects>
-      <object>objects\objSSAlwaysActive</object>
       <object>objects\objSSBoost</object>
       <object>objects\objSSCamera</object>
       <object>objects\objSSEmerald</object>
