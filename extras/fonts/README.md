@@ -36,7 +36,7 @@ Nah, just kidding. In fact, a font is defined by a PNG image, several parameters
 
 #### Font definition files ####
 
-The **fonts/** subdirectory contains three types of files: PNG files containing different fonts, an XML file definiting the properties of each font and an XSD file allowing to validate the XML file in question. For a translator, there's no need to edit these.
+The **fonts/** subdirectory contains three types of files: PNG files containing different fonts, an XML file defining the properties of each font and an XSD file allowing to validate the XML file in question. For a translator, there's no need to edit these.
 
 The XML file **fonts.xml** contains, for each font, the following properties:
 
