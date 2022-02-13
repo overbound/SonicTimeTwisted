@@ -111,12 +111,12 @@ dir2 = d3d_point_direction(xto, yto, -zto, x, y, -z);
             <kind>1</kind>
             <string>/// Update visible objects
 var d = point_direction(x, y, xto, yto);
-var left_bound = d - 45;
+var left_bound = d - 50;
 if(left_bound &lt; 0)
 {
     left_bound = left_bound + 360;   
 }
-var right_bound = (d + 45) mod 360;
+var right_bound = (d + 50) mod 360;
 if(left_bound &gt; right_bound)
 {
     with(objSSParent)
