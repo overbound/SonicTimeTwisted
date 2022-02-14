@@ -1124,7 +1124,7 @@ get_titlecard_array(room);</code>
     <instance objName="objRhinobot" x="6968" y="1760" name="inst_5CDF328E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objMonitor" x="7460" y="1588" name="inst_7662F5EF" locked="0" code="icon=11;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objMonitor" x="7464" y="1680" name="inst_5B3DBE4E" locked="0" code="icon=5;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objMonitor" x="7456" y="1764" name="inst_0C21554D" locked="0" code="icon=2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objMonitor" x="7464" y="1764" name="inst_0C21554D" locked="0" code="icon=2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objMetalThrow" x="1756" y="1516" name="inst_532A18A7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objMetalThrow" x="9044" y="272" name="inst_1F96B8B3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRing" x="3540" y="892" name="inst_E24A1110" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -1255,7 +1255,7 @@ get_titlecard_array(room);</code>
     <instance objName="objRing" x="7144" y="1676" name="inst_A7E54BDC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objVVRhinobotSpawn" x="8688" y="1440" name="inst_3869E186" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpringRed" x="7472" y="1680" name="inst_60092A4C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
-    <instance objName="objSpringRed" x="7456" y="1764" name="inst_19E31B55" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
+    <instance objName="objSpringRed" x="7472" y="1760" name="inst_19E31B55" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
     <instance objName="objRing" x="8172" y="348" name="inst_AF235CF4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRing" x="8172" y="368" name="inst_B28797CD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRing" x="8172" y="388" name="inst_B5BF08E0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -1744,6 +1744,7 @@ get_titlecard_array(room);</code>
     <instance objName="objVVBreakableWall" x="2560" y="848" name="inst_F0D81DEF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="2432" y="896" name="inst_F00AF0ED" locked="0" code="climbable=1;&#xA;" scaleX="24" scaleY="32" colour="4294967295" rotation="0"/>
     <instance objName="objSpringRed" x="14064" y="1444" name="inst_AD3A7F95" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objBlock" x="7472" y="1776" name="inst_D0FCEEE5" locked="0" code="" scaleX="2" scaleY="1.5" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="vvf2_1" x="15040" y="768" w="64" h="64" xo="512" yo="320" id="10014954" name="inst_FB9E6266" depth="10" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
