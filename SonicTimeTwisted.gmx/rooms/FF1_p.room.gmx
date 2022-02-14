@@ -1246,7 +1246,7 @@ get_titlecard_array(room);</code>
     <instance objName="objRing" x="7820" y="1308" name="inst_2C83A62B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSealbot" x="3484" y="368" name="inst_65C2F48E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSealbot" x="3684" y="242" name="inst_0871CDED" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objMonitor" x="3712" y="144" name="inst_06C08638" locked="0" code="icon=10;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objMonitor" x="3824" y="240" name="inst_06C08638" locked="0" code="icon=10;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRing" x="3728" y="236" name="inst_409B7F9C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRing" x="3748" y="236" name="inst_ACE2E380" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRing" x="3768" y="236" name="inst_A8906416" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -1561,7 +1561,6 @@ get_titlecard_array(room);</code>
     <instance objName="objSlant" x="3760" y="384" name="inst_F2D5E274" locked="0" code="" scaleX="2.5" scaleY="1.25" colour="4294967295" rotation="0"/>
     <instance objName="objSlant" x="3712" y="424" name="inst_A87E22FE" locked="0" code="" scaleX="1.5" scaleY="0.774193525314331" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="3640" y="448" name="inst_ECD3FA25" locked="0" code="" scaleX="10" scaleY="1.5" colour="4294967295" rotation="0"/>
-    <instance objName="objBlock" x="3648" y="160" name="inst_73B2D54E" locked="0" code="through = 1;" scaleX="16" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="7680" y="1536" name="inst_6D9EEE62" locked="0" code="" scaleX="23" scaleY="60" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
@@ -1606,12 +1605,6 @@ get_titlecard_array(room);</code>
     <tile bgName="tileFF1_P_2" x="8960" y="1152" w="64" h="64" xo="704" yo="1472" id="10031121" name="inst_6A4A51B5" depth="5" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tileFF1_P_2" x="576" y="2560" w="64" h="64" xo="960" yo="1728" id="10031246" name="inst_D4976074" depth="5" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tileFF1_P_2" x="576" y="2624" w="64" h="64" xo="960" yo="1728" id="10031247" name="inst_2E18F4CE" depth="5" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tileFF1_P_1" x="3648" y="160" w="64" h="64" xo="640" yo="704" id="10032395" name="inst_A0D1CF1A" depth="5" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tileFF1_P_1" x="3712" y="160" w="64" h="64" xo="832" yo="704" id="10032396" name="inst_73203AEF" depth="5" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tileFF1_P_1" x="3712" y="224" w="64" h="64" xo="832" yo="768" id="10032397" name="inst_56D02243" depth="5" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tileFF1_P_1" x="3648" y="224" w="64" h="64" xo="640" yo="768" id="10032398" name="inst_E2E81E8C" depth="5" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tileFF1_P_1" x="3584" y="160" w="64" h="64" xo="320" yo="576" id="10032401" name="inst_EF89AC98" depth="5" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tileFF1_P_1" x="3776" y="160" w="64" h="64" xo="640" yo="576" id="10032403" name="inst_93E9EB85" depth="5" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tileFF1_P_2" x="7040" y="448" w="64" h="64" xo="576" yo="256" id="10022279" name="inst_3668D408" depth="4" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tileFF1_P_2" x="7104" y="448" w="64" h="64" xo="640" yo="256" id="10022280" name="inst_E5A31C9F" depth="4" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tileFF1_P_2" x="7104" y="384" w="64" h="64" xo="640" yo="192" id="10022281" name="inst_4FA845BF" depth="4" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
