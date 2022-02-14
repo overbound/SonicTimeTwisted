@@ -1098,7 +1098,7 @@ get_titlecard_array(room);</code>
     <instance objName="objCurveConcaveSlim" x="2712" y="1444" name="inst_B7889D28" locked="0" code="" scaleX="1.42999994754791" scaleY="-1.42999994754791" colour="4294967295" rotation="0"/>
     <instance objName="objLayerFlip" x="11208" y="316" name="inst_78BACCFE" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objLayerFlip" x="12297" y="442" name="inst_2149A96A" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objField" x="4480" y="1600" name="inst_AA69353B" locked="0" code="reaction_script=player_reaction_floating_right;&#xA;top=1600;&#xA;bottom=2048;&#xA;" scaleX="4" scaleY="28" colour="4294967295" rotation="0"/>
+    <instance objName="objField" x="4480" y="1632" name="inst_AA69353B" locked="0" code="reaction_script=player_reaction_floating_right;&#xA;top=1600;&#xA;bottom=2048;&#xA;" scaleX="4" scaleY="25.0699996948242" colour="4294967295" rotation="0"/>
     <instance objName="objField" x="5696" y="608" name="inst_5C351E96" locked="0" code="reaction_script=player_reaction_floating_right;&#xA;top=576;&#xA;bottom=1016;" scaleX="4" scaleY="24.625" colour="4294967295" rotation="0"/>
     <instance objName="objField" x="12928" y="1120" name="inst_D214A8A8" locked="0" code="reaction_script=player_reaction_floating_right;&#xA;top=1088;&#xA;bottom=room_height;;&#xA;" scaleX="4" scaleY="22" colour="4294967295" rotation="0"/>
     <instance objName="objField" x="14148" y="1120" name="inst_DEF2CBD2" locked="0" code="reaction_script=player_reaction_floating_stop;&#xA;" scaleX="2" scaleY="11" colour="4294967295" rotation="0"/>
