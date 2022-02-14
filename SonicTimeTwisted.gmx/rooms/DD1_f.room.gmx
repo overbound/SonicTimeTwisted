@@ -23,11 +23,7 @@ with objLevel {
     }
 }
 // setup titlecard
-if (!instance_exists(objTitlecard)) {
-    instance_create(0, 0, objTitlecard);
-}
-get_titlecard_array(room);
-if (objProgram.spawn_tag == 0) objTitlecard.mode = 3;</code>
+get_titlecard_array(room);</code>
   <enableViews>0</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>
