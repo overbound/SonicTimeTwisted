@@ -48,6 +48,8 @@ with (objProgram) {
     temp_spawn_tag = -1;
     temp_spawn_time = -1;
     temp_shield = -1;
+    // fix issue #245 on GitHub.
+    cutscene = 0;
 }
 
 </string>
