@@ -1575,6 +1575,7 @@ get_titlecard_array(room);</code>
     <instance objName="objSlant" x="6384" y="1324" name="inst_A4FC2D6B" locked="0" code="angled=0;&#xA;" scaleX="-1.125" scaleY="0.625" colour="4294967295" rotation="0"/>
     <instance objName="objSlant" x="6456" y="1344" name="inst_40CCE9D7" locked="0" code="" scaleX="-2.32258057594299" scaleY="0.125" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="5056" y="1168" name="inst_80B488D1" locked="0" code="climbable=1;" scaleX="16" scaleY="14" colour="4294967295" rotation="0"/>
+    <instance objName="objBlock" x="2628" y="1280" name="inst_9A10559C" locked="0" code="" scaleX="22.8571434020996" scaleY="3.42857146263123" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="RR1_p1" x="8128" y="64" w="64" h="64" xo="448" yo="1792" id="10000001" name="tiled_10000001" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
