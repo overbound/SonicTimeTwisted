@@ -29,7 +29,15 @@ argument0.force *=0.5;
 spring_hspeed = -sine[rotation_offset]*argument0.force;
 spring_vspeed = -cosine[rotation_offset]*argument0.force;
 // bounce from spring
-if (spring_hspeed!=0) {xspeed = spring_hspeed; facing = sign(xspeed);}
+if (spring_hspeed!=0) {
+    xspeed = spring_hspeed;
+    facing = sign(xspeed);
+    // cancelling Knuckles gliding/sliding
+    if (state == player_state_glide || state == player_state_glide_slide)
+    {
+        player_is_running();
+    }
+}
 if (spring_vspeed==0) {if landed sliding = 16;} else
 {
     // states and flags
