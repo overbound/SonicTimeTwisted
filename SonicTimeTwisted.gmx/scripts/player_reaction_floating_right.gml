@@ -27,4 +27,7 @@ jump_action = false;
 rolling_jump = true;
 landed = false;
 terrain_id = noone;
+if (!instance_exists(objRRWind)) {
+    instance_create(0, 0, objRRWind);
+}
 return true;
