@@ -5212,6 +5212,8 @@
       <object>objects\objRRBreakableColumn</object>
       <object>objects\objRRWallRun</object>
       <object>objects\objSwing</object>
+      <object>objects\objRRWind</object>
+      <object>objects\objRRLeaf</object>
     </objects>
     <objects name="Scene Objects">
       <objects name="Cutscene">
