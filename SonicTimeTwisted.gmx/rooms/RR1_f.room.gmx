@@ -2383,12 +2383,6 @@ if (objProgram.spawn_tag == 0) instance_destroy(objTitlecard);</code>
     <tile bgName="RR1_f1" x="14592" y="832" w="64" h="64" xo="1152" yo="256" id="10000990" name="tiled_10000990" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="RR1_f1" x="14656" y="832" w="64" h="64" xo="1216" yo="256" id="10000991" name="tiled_10000991" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="RR1_f1" x="14720" y="832" w="64" h="64" xo="1280" yo="256" id="10000992" name="tiled_10000992" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="RR1_f1" x="14784" y="832" w="64" h="64" xo="1152" yo="896" id="10000993" name="tiled_10000993" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="RR1_f1" x="14848" y="832" w="64" h="64" xo="1088" yo="896" id="10000994" name="tiled_10000994" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="RR1_f1" x="14912" y="832" w="64" h="64" xo="1152" yo="896" id="10000995" name="tiled_10000995" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="RR1_f1" x="14976" y="832" w="64" h="64" xo="1088" yo="896" id="10000996" name="tiled_10000996" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="RR1_f1" x="15040" y="832" w="64" h="64" xo="1152" yo="896" id="10000997" name="tiled_10000997" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="RR1_f1" x="15104" y="832" w="64" h="64" xo="1152" yo="896" id="10000998" name="tiled_10000998" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="RR1_f1" x="704" y="896" w="64" h="64" xo="1664" yo="1728" id="10000999" name="tiled_10000999" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="RR1_f1" x="768" y="896" w="64" h="64" xo="1728" yo="1728" id="10001000" name="tiled_10001000" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="RR1_f1" x="1472" y="896" w="64" h="64" xo="512" yo="1152" id="10001001" name="tiled_10001001" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
@@ -2462,12 +2456,6 @@ if (objProgram.spawn_tag == 0) instance_destroy(objTitlecard);</code>
     <tile bgName="RR1_f1" x="14592" y="896" w="64" h="64" xo="1152" yo="320" id="10001069" name="tiled_10001069" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="RR1_f1" x="14656" y="896" w="64" h="64" xo="1216" yo="320" id="10001070" name="tiled_10001070" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="RR1_f1" x="14720" y="896" w="64" h="64" xo="1280" yo="320" id="10001071" name="tiled_10001071" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="RR1_f1" x="14784" y="896" w="64" h="64" xo="1152" yo="960" id="10001072" name="tiled_10001072" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="RR1_f1" x="14848" y="896" w="64" h="64" xo="1088" yo="960" id="10001073" name="tiled_10001073" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="RR1_f1" x="14912" y="896" w="64" h="64" xo="1152" yo="960" id="10001074" name="tiled_10001074" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="RR1_f1" x="14976" y="896" w="64" h="64" xo="1088" yo="960" id="10001075" name="tiled_10001075" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="RR1_f1" x="15040" y="896" w="64" h="64" xo="1152" yo="960" id="10001076" name="tiled_10001076" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="RR1_f1" x="15104" y="896" w="64" h="64" xo="1152" yo="960" id="10001077" name="tiled_10001077" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="RR1_f1" x="128" y="960" w="64" h="64" xo="512" yo="1920" id="10001078" name="tiled_10001078" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="RR1_f1" x="192" y="960" w="64" h="64" xo="384" yo="1920" id="10001079" name="tiled_10001079" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="RR1_f1" x="320" y="960" w="64" h="64" xo="512" yo="1920" id="10001080" name="tiled_10001080" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
@@ -2575,12 +2563,6 @@ if (objProgram.spawn_tag == 0) instance_destroy(objTitlecard);</code>
     <tile bgName="RR1_f1" x="14528" y="960" w="64" h="64" xo="64" yo="320" id="10001182" name="tiled_10001182" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="RR1_f1" x="14592" y="960" w="64" h="64" xo="1152" yo="384" id="10001183" name="tiled_10001183" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="RR1_f1" x="14656" y="960" w="64" h="64" xo="1216" yo="384" id="10001184" name="tiled_10001184" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="RR1_f1" x="14784" y="960" w="64" h="64" xo="1088" yo="896" id="10001186" name="tiled_10001186" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="RR1_f1" x="14848" y="960" w="64" h="64" xo="1152" yo="896" id="10001187" name="tiled_10001187" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="RR1_f1" x="14912" y="960" w="64" h="64" xo="1088" yo="896" id="10001188" name="tiled_10001188" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="RR1_f1" x="14976" y="960" w="64" h="64" xo="1152" yo="896" id="10001189" name="tiled_10001189" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="RR1_f1" x="15040" y="960" w="64" h="64" xo="1088" yo="896" id="10001190" name="tiled_10001190" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="RR1_f1" x="15104" y="960" w="64" h="64" xo="1152" yo="896" id="10001191" name="tiled_10001191" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="RR1_f1" x="192" y="1024" w="64" h="64" xo="1024" yo="448" id="10001192" name="tiled_10001192" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="RR1_f1" x="320" y="1024" w="64" h="64" xo="192" yo="64" id="10001193" name="tiled_10001193" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="RR1_f1" x="448" y="1024" w="64" h="64" xo="384" yo="1920" id="10001194" name="tiled_10001194" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
@@ -2666,11 +2648,6 @@ if (objProgram.spawn_tag == 0) instance_destroy(objTitlecard);</code>
     <tile bgName="RR1_f1" x="12416" y="1024" w="64" h="64" xo="1408" yo="1792" id="10001274" name="tiled_10001274" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="RR1_f1" x="12928" y="1024" w="64" h="64" xo="1536" yo="1792" id="10001275" name="tiled_10001275" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="RR1_f1" x="12992" y="1024" w="64" h="64" xo="1600" yo="1792" id="10001276" name="tiled_10001276" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="RR1_f1" x="14848" y="1024" w="64" h="64" xo="1152" yo="960" id="10001283" name="tiled_10001283" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="RR1_f1" x="14912" y="1024" w="64" h="64" xo="1088" yo="960" id="10001284" name="tiled_10001284" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="RR1_f1" x="14976" y="1024" w="64" h="64" xo="1152" yo="960" id="10001285" name="tiled_10001285" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="RR1_f1" x="15040" y="1024" w="64" h="64" xo="1088" yo="960" id="10001286" name="tiled_10001286" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="RR1_f1" x="15104" y="1024" w="64" h="64" xo="1152" yo="960" id="10001287" name="tiled_10001287" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="RR1_f1" x="512" y="1088" w="64" h="64" xo="0" yo="0" id="10001288" name="tiled_10001288" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="RR1_f1" x="576" y="1088" w="64" h="64" xo="64" yo="0" id="10001289" name="tiled_10001289" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="RR1_f1" x="640" y="1088" w="64" h="64" xo="192" yo="320" id="10001290" name="tiled_10001290" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
@@ -2747,10 +2724,6 @@ if (objProgram.spawn_tag == 0) instance_destroy(objTitlecard);</code>
     <tile bgName="RR1_f1" x="12352" y="1088" w="64" h="64" xo="384" yo="1088" id="10001361" name="tiled_10001361" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="RR1_f1" x="12416" y="1088" w="64" h="64" xo="320" yo="1088" id="10001362" name="tiled_10001362" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="RR1_f1" x="12480" y="1088" w="64" h="64" xo="1472" yo="960" id="10001363" name="tiled_10001363" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="RR1_f1" x="14912" y="1088" w="64" h="64" xo="1088" yo="896" id="10001371" name="tiled_10001371" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="RR1_f1" x="14976" y="1088" w="64" h="64" xo="1152" yo="896" id="10001372" name="tiled_10001372" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="RR1_f1" x="15040" y="1088" w="64" h="64" xo="1088" yo="896" id="10001373" name="tiled_10001373" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="RR1_f1" x="15104" y="1088" w="64" h="64" xo="1152" yo="896" id="10001374" name="tiled_10001374" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="RR1_f1" x="512" y="1152" w="64" h="64" xo="0" yo="64" id="10001375" name="tiled_10001375" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="RR1_f1" x="576" y="1152" w="64" h="64" xo="64" yo="64" id="10001376" name="tiled_10001376" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="RR1_f1" x="640" y="1152" w="64" h="64" xo="1152" yo="1088" id="10001377" name="tiled_10001377" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
@@ -2818,10 +2791,6 @@ if (objProgram.spawn_tag == 0) instance_destroy(objTitlecard);</code>
     <tile bgName="RR1_f1" x="12864" y="1152" w="64" h="64" xo="320" yo="1024" id="10001439" name="tiled_10001439" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="RR1_f1" x="12928" y="1152" w="64" h="64" xo="1408" yo="832" id="10001440" name="tiled_10001440" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="RR1_f1" x="13504" y="1152" w="64" h="64" xo="128" yo="320" id="10001441" name="tiled_10001441" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="RR1_f1" x="14912" y="1152" w="64" h="64" xo="1088" yo="960" id="10001449" name="tiled_10001449" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="RR1_f1" x="14976" y="1152" w="64" h="64" xo="1152" yo="960" id="10001450" name="tiled_10001450" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="RR1_f1" x="15040" y="1152" w="64" h="64" xo="1088" yo="960" id="10001451" name="tiled_10001451" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="RR1_f1" x="15104" y="1152" w="64" h="64" xo="1152" yo="960" id="10001452" name="tiled_10001452" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="RR1_f1" x="640" y="1216" w="64" h="64" xo="1024" yo="960" id="10001453" name="tiled_10001453" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="RR1_f1" x="704" y="1216" w="64" h="64" xo="1088" yo="960" id="10001454" name="tiled_10001454" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="RR1_f1" x="768" y="1216" w="64" h="64" xo="1152" yo="960" id="10001455" name="tiled_10001455" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
@@ -3117,6 +3086,56 @@ if (objProgram.spawn_tag == 0) instance_destroy(objTitlecard);</code>
     <tile bgName="RR1_f1" x="13312" y="1984" w="64" h="64" xo="320" yo="1024" id="10001784" name="tiled_10001784" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="RR1_f1" x="13376" y="1984" w="64" h="64" xo="1344" yo="832" id="10001785" name="tiled_10001785" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="RR1_f1" x="13440" y="1984" w="64" h="64" xo="1408" yo="832" id="10001786" name="tiled_10001786" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="RR1_f1" x="15168" y="832" w="64" h="64" xo="1984" yo="0" id="10032462" name="inst_135E0BEC" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="RR1_f1" x="15168" y="896" w="64" h="64" xo="1984" yo="0" id="10032463" name="inst_1E1F9856" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="RR1_f1" x="15168" y="960" w="64" h="64" xo="1984" yo="0" id="10032464" name="inst_2943A5D8" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="RR1_f1" x="15232" y="960" w="64" h="64" xo="1984" yo="0" id="10032465" name="inst_97E797E3" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="RR1_f1" x="15232" y="896" w="64" h="64" xo="1984" yo="0" id="10032466" name="inst_E263E535" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="RR1_f1" x="15232" y="832" w="64" h="64" xo="1984" yo="0" id="10032467" name="inst_CB4025F7" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="RR1_f1" x="15296" y="832" w="64" h="64" xo="1984" yo="0" id="10032468" name="inst_1887C925" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="RR1_f1" x="15296" y="896" w="64" h="64" xo="1984" yo="0" id="10032469" name="inst_2F95950C" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="RR1_f1" x="15296" y="960" w="64" h="64" xo="1984" yo="0" id="10032470" name="inst_D7B5ECC1" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="RR1_f1" x="15296" y="1024" w="64" h="64" xo="1984" yo="0" id="10032471" name="inst_3F3F1F3E" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="RR1_f1" x="15360" y="1024" w="64" h="64" xo="1984" yo="0" id="10032472" name="inst_934AC861" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="RR1_f1" x="15360" y="960" w="64" h="64" xo="1984" yo="0" id="10032473" name="inst_2374DAF1" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="RR1_f1" x="15360" y="896" w="64" h="64" xo="1984" yo="0" id="10032474" name="inst_37C965C2" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="RR1_f1" x="15360" y="832" w="64" h="64" xo="1984" yo="0" id="10032475" name="inst_AB6CD829" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="RR1_f1" x="15424" y="832" w="64" h="64" xo="1984" yo="0" id="10032476" name="inst_FC58C4AC" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="RR1_f1" x="15424" y="896" w="64" h="64" xo="1984" yo="0" id="10032477" name="inst_4D820F41" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="RR1_f1" x="15488" y="896" w="64" h="64" xo="1984" yo="0" id="10032478" name="inst_1861FE1A" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="RR1_f1" x="15488" y="832" w="64" h="64" xo="1984" yo="0" id="10032479" name="inst_21F2130A" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="RR1_f1" x="15488" y="960" w="64" h="64" xo="1984" yo="0" id="10032480" name="inst_93D14B36" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="RR1_f1" x="15488" y="1024" w="64" h="64" xo="1984" yo="0" id="10032481" name="inst_B2741B68" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="RR1_f1" x="15424" y="1024" w="64" h="64" xo="1984" yo="0" id="10032482" name="inst_06609EB4" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="RR1_f1" x="15424" y="960" w="64" h="64" xo="1984" yo="0" id="10032483" name="inst_99B4E56B" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="RR1_f1" x="15552" y="960" w="64" h="64" xo="1984" yo="0" id="10032484" name="inst_995DD6AF" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="RR1_f1" x="15552" y="1024" w="64" h="64" xo="1984" yo="0" id="10032485" name="inst_F240C636" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="RR1_f1" x="15616" y="1024" w="64" h="64" xo="1984" yo="0" id="10032486" name="inst_9708DFA4" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="RR1_f1" x="15616" y="960" w="64" h="64" xo="1984" yo="0" id="10032487" name="inst_25BBC0A6" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="RR1_f1" x="15616" y="896" w="64" h="64" xo="1984" yo="0" id="10032488" name="inst_31F5EBA5" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="RR1_f1" x="15616" y="832" w="64" h="64" xo="1984" yo="0" id="10032489" name="inst_511D541B" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="RR1_f1" x="15552" y="832" w="64" h="64" xo="1984" yo="0" id="10032490" name="inst_0121D258" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="RR1_f1" x="15552" y="896" w="64" h="64" xo="1984" yo="0" id="10032491" name="inst_17E6FDC2" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="RR1_f1" x="15104" y="1152" w="64" h="64" xo="1984" yo="0" id="10032555" name="inst_72039CEF" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="RR1_f1" x="15104" y="1088" w="64" h="64" xo="1984" yo="0" id="10032556" name="inst_CB6813B1" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="RR1_f1" x="15040" y="1088" w="64" h="64" xo="1984" yo="0" id="10032557" name="inst_74E74871" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="RR1_f1" x="15040" y="1152" w="64" h="64" xo="1984" yo="0" id="10032558" name="inst_E998CCFE" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="RR1_f1" x="14976" y="1152" w="64" h="64" xo="1984" yo="0" id="10032559" name="inst_45B5E71A" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="RR1_f1" x="14976" y="1088" w="64" h="64" xo="1984" yo="0" id="10032560" name="inst_121984D9" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="RR1_f1" x="14912" y="1088" w="64" h="64" xo="1984" yo="0" id="10032561" name="inst_03AB68A9" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="RR1_f1" x="14912" y="1152" w="64" h="64" xo="1984" yo="0" id="10032562" name="inst_E398792C" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="RR1_f1" x="15104" y="1024" w="64" h="64" xo="1984" yo="0" id="10032563" name="inst_9C064F89" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="RR1_f1" x="15104" y="960" w="64" h="64" xo="1984" yo="0" id="10032564" name="inst_6488A11C" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="RR1_f1" x="15104" y="896" w="64" h="64" xo="1984" yo="0" id="10032565" name="inst_4943AA4D" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="RR1_f1" x="15104" y="832" w="64" h="64" xo="1984" yo="0" id="10032566" name="inst_7AC379CB" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="RR1_f1" x="15040" y="832" w="64" h="64" xo="1984" yo="0" id="10032567" name="inst_C3E00B23" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="RR1_f1" x="15040" y="896" w="64" h="64" xo="1984" yo="0" id="10032568" name="inst_971BC455" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="RR1_f1" x="14976" y="1024" w="64" h="64" xo="1984" yo="0" id="10032571" name="inst_A98086E2" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="RR1_f1" x="14976" y="960" w="64" h="64" xo="1984" yo="0" id="10032572" name="inst_192B685B" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="RR1_f1" x="14848" y="1024" w="64" h="64" xo="1984" yo="0" id="10032579" name="inst_2BC3204B" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="RR1_f1" x="14848" y="960" w="64" h="64" xo="1984" yo="0" id="10032580" name="inst_9415C3A5" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="RR1_f1" x="14848" y="896" w="64" h="64" xo="1984" yo="0" id="10032581" name="inst_C2931987" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="RR1_f1" x="14848" y="832" w="64" h="64" xo="1984" yo="0" id="10032582" name="inst_C16D2F6D" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="RR1_f1" x="3264" y="0" w="64" h="64" xo="320" yo="1344" id="10001787" name="tiled_10001787" depth="2" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="RR1_f1" x="10752" y="0" w="64" h="64" xo="512" yo="320" id="10001788" name="tiled_10001788" depth="2" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="RR1_f1" x="10816" y="0" w="64" h="64" xo="576" yo="320" id="10001789" name="tiled_10001789" depth="2" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
@@ -3873,8 +3892,6 @@ if (objProgram.spawn_tag == 0) instance_destroy(objTitlecard);</code>
     <tile bgName="RR1_f1" x="14400" y="832" w="64" h="64" xo="1472" yo="960" id="10002591" name="tiled_10002591" depth="2" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="RR1_f1" x="14464" y="832" w="64" h="64" xo="1088" yo="896" id="10002592" name="tiled_10002592" depth="2" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="RR1_f1" x="14528" y="832" w="64" h="64" xo="1152" yo="896" id="10002593" name="tiled_10002593" depth="2" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="RR1_f1" x="14784" y="832" w="64" h="64" xo="256" yo="320" id="10002597" name="tiled_10002597" depth="2" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="RR1_f1" x="14848" y="832" w="64" h="64" xo="320" yo="320" id="10002598" name="tiled_10002598" depth="2" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="RR1_f1" x="15168" y="832" w="64" h="64" xo="1088" yo="896" id="10002599" name="tiled_10002599" depth="2" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="RR1_f1" x="15232" y="832" w="64" h="64" xo="1152" yo="896" id="10002600" name="tiled_10002600" depth="2" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="RR1_f1" x="15296" y="832" w="64" h="64" xo="1152" yo="896" id="10002601" name="tiled_10002601" depth="2" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
@@ -4866,6 +4883,37 @@ if (objProgram.spawn_tag == 0) instance_destroy(objTitlecard);</code>
     <tile bgName="RR1_f1" x="8512" y="640" w="64" h="64" xo="1280" yo="192" id="10019866" name="inst_0E8CAD20" depth="2" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="RR1_f1" x="8512" y="768" w="64" h="64" xo="1280" yo="192" id="10019867" name="inst_59FB015B" depth="2" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="RR1_f1" x="8512" y="704" w="64" h="64" xo="1280" yo="192" id="10019868" name="inst_76989061" depth="2" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="RR1_f1" x="14784" y="832" w="64" h="64" xo="1152" yo="896" id="10032524" name="inst_D3F1C7B8" depth="2" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="RR1_f1" x="14784" y="896" w="64" h="64" xo="1152" yo="960" id="10032525" name="inst_6967E75A" depth="2" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="RR1_f1" x="14784" y="960" w="64" h="64" xo="1088" yo="896" id="10032526" name="inst_E7F7A8A7" depth="2" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="RR1_f1" x="14848" y="832" w="64" h="64" xo="1088" yo="896" id="10032527" name="inst_31A0B190" depth="2" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="RR1_f1" x="14976" y="832" w="64" h="64" xo="1088" yo="896" id="10032528" name="inst_13B7E2B3" depth="2" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="RR1_f1" x="15104" y="832" w="64" h="64" xo="1152" yo="896" id="10032529" name="inst_3163D1DB" depth="2" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="RR1_f1" x="15040" y="832" w="64" h="64" xo="1152" yo="896" id="10032530" name="inst_8D3B00CC" depth="2" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="RR1_f1" x="14912" y="832" w="64" h="64" xo="1152" yo="896" id="10032531" name="inst_119C6A65" depth="2" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="RR1_f1" x="14912" y="896" w="64" h="64" xo="1152" yo="960" id="10032532" name="inst_B9F2F7EE" depth="2" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="RR1_f1" x="15040" y="896" w="64" h="64" xo="1152" yo="960" id="10032533" name="inst_6BAD9D16" depth="2" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="RR1_f1" x="15104" y="896" w="64" h="64" xo="1152" yo="960" id="10032534" name="inst_37C3F4B5" depth="2" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="RR1_f1" x="14976" y="896" w="64" h="64" xo="1088" yo="960" id="10032535" name="inst_E7F8F867" depth="2" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="RR1_f1" x="14848" y="896" w="64" h="64" xo="1088" yo="960" id="10032536" name="inst_0770A98A" depth="2" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="RR1_f1" x="14848" y="960" w="64" h="64" xo="1152" yo="896" id="10032537" name="inst_E5B87F20" depth="2" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="RR1_f1" x="14848" y="1024" w="64" h="64" xo="1152" yo="960" id="10032538" name="inst_90C8E3F4" depth="2" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="RR1_f1" x="14976" y="1024" w="64" h="64" xo="1152" yo="960" id="10032539" name="inst_62D17EDF" depth="2" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="RR1_f1" x="15104" y="1024" w="64" h="64" xo="1152" yo="960" id="10032540" name="inst_E5CDD922" depth="2" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="RR1_f1" x="15104" y="960" w="64" h="64" xo="1152" yo="896" id="10032541" name="inst_5B4F8E5A" depth="2" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="RR1_f1" x="14976" y="960" w="64" h="64" xo="1152" yo="896" id="10032542" name="inst_D298E8E3" depth="2" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="RR1_f1" x="14912" y="960" w="64" h="64" xo="1088" yo="896" id="10032543" name="inst_668E1C66" depth="2" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="RR1_f1" x="14912" y="1088" w="64" h="64" xo="1088" yo="896" id="10032544" name="inst_F94CC6B1" depth="2" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="RR1_f1" x="15040" y="1088" w="64" h="64" xo="1088" yo="896" id="10032545" name="inst_33F47472" depth="2" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="RR1_f1" x="15040" y="960" w="64" h="64" xo="1088" yo="896" id="10032546" name="inst_3C8448AC" depth="2" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="RR1_f1" x="14912" y="1024" w="64" h="64" xo="1088" yo="960" id="10032547" name="inst_6D0CE258" depth="2" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="RR1_f1" x="14912" y="1152" w="64" h="64" xo="1088" yo="960" id="10032548" name="inst_AD4AB9C4" depth="2" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="RR1_f1" x="15040" y="1152" w="64" h="64" xo="1088" yo="960" id="10032549" name="inst_CC6D8367" depth="2" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="RR1_f1" x="15040" y="1024" w="64" h="64" xo="1088" yo="960" id="10032550" name="inst_A15EDB45" depth="2" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="RR1_f1" x="15104" y="1088" w="64" h="64" xo="1152" yo="896" id="10032551" name="inst_A7B5E56B" depth="2" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="RR1_f1" x="14976" y="1088" w="64" h="64" xo="1152" yo="896" id="10032552" name="inst_70DE3895" depth="2" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="RR1_f1" x="14976" y="1152" w="64" h="64" xo="1152" yo="960" id="10032553" name="inst_5258EEB1" depth="2" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="RR1_f1" x="15104" y="1152" w="64" h="64" xo="1152" yo="960" id="10032554" name="inst_2D366863" depth="2" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="RR1_f1" x="11520" y="0" w="64" h="64" xo="192" yo="640" id="10003542" name="tiled_10003542" depth="1" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="RR1_f1" x="5376" y="64" w="64" h="64" xo="64" yo="192" id="10003543" name="tiled_10003543" depth="1" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="RR1_f1" x="11520" y="64" w="64" h="64" xo="192" yo="704" id="10003547" name="tiled_10003547" depth="1" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
