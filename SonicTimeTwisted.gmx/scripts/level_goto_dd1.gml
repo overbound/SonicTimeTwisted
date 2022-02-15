@@ -9,9 +9,6 @@ if objProgram.in_past level = ds_list_find_value(objProgram.past_list, objProgra
 level = ds_list_find_value(objProgram.future_list, objProgram.current_level);
 // start level
 //transition_to(objCloudTransition, level, 24);
-if objProgram.in_past {
-    room_goto(DD1_p);
-} else room_goto(DD1_f);
 objProgram.temp_xspeed=xspeed;
 objProgram.temp_yspeed=yspeed;
 objProgram.temp_state=state;
@@ -23,4 +20,14 @@ objProgram.temp_timeline_position=timeline_position;
 objProgram.temp_y=784-y;
 objProgram.temp_yview_offset=objLevel.player[0].y-view_yview;
 objProgram.temp_xview_offset=objLevel.player[0].x-view_xview;
+if (state == player_state_fly) {
+    objProgram.temp_fly_value = alarm[0];
+} else if (state == player_state_glide) {
+    objProgram.temp_fly_value = glide_speed;
+} else {
+    objProgram.temp_fly_value = 0;
+}
+if objProgram.in_past {
+    room_goto(DD1_p);
+} else room_goto(DD1_f);
 with argument0 instance_destroy();

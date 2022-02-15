@@ -8,6 +8,7 @@ with objLevel.player[0] {
     jump_action = false;
     rolling_jump = false;
     facing = 1;
+    camera.top = 0;
     camera.right = room_width;
     animation = "level_start";
     if character_id == 3 {
