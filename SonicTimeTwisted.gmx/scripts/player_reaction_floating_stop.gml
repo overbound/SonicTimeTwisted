@@ -5,4 +5,7 @@ if state == player_state_floating || state == player_state_glide || state == pla
 camera.top=0;
 camera.bottom=room_height;
 xspeed=max(abs(xspeed),4);
+with (objRRWind) {
+    instance_destroy();
+}
 return false;
