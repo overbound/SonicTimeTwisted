@@ -4551,6 +4551,7 @@
               </scripts>
               <scripts name="Viridian Valley">
                 <script>scripts\player_reaction_VV_bushes.gml</script>
+                <script>scripts\player_reaction_VV_change_cscurve_passthrough.gml</script>
                 <script>scripts\player_reaction_VV_path.gml</script>
                 <script>scripts\player_reaction_VV_ship.gml</script>
                 <script>scripts\player_reaction_VV_tile_hole.gml</script>
@@ -5474,6 +5475,10 @@
           <object>objects\objVVBombExplosion</object>
           <object>objects\objVVBombLarge</object>
           <object>objects\objVVBombLauncher</object>
+        </objects>
+        <objects name="Conditionally Solid Curves">
+          <object>objects\objVVCSCField</object>
+          <object>objects\objVVCSCurveConcave</object>
         </objects>
         <objects name="Metal Sonic Thowing">
           <object>objects\objMetalThrow</object>
