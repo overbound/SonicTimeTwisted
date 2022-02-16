@@ -1562,8 +1562,8 @@ get_titlecard_array(room);</code>
     <instance objName="objCurveConcave" x="9920" y="528" name="inst_2DFE4ED0" locked="0" code="" scaleX="-1.33333337306976" scaleY="1.33333337306976" colour="4294967295" rotation="0"/>
     <instance objName="objCurveConvex" x="9792" y="432" name="inst_7BB27E6D" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objCurveConcave" x="9472" y="304" name="inst_EDAFDF71" locked="0" code="" scaleX="1.34737002849579" scaleY="-1.34737002849579" colour="4294967295" rotation="0"/>
-    <instance objName="objBlock" x="8960" y="0" name="inst_0C2A6006" locked="0" code="" scaleX="2.5" scaleY="20" colour="4294967295" rotation="0"/>
-    <instance objName="objSlant" x="9216" y="204" name="inst_0D3F19A3" locked="0" code="" scaleX="-8" scaleY="-3" colour="4294967295" rotation="0"/>
+    <instance objName="objBlock" x="8960" y="0" name="inst_0C2A6006" locked="0" code="climbable=true;&#xA;" scaleX="1" scaleY="25.6000003814697" colour="4294967295" rotation="0"/>
+    <instance objName="objSlant" x="9208" y="205" name="inst_0D3F19A3" locked="0" code="" scaleX="-7.5" scaleY="-2.90000009536743" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="9472" y="79" name="inst_0709CA4C" locked="0" code="climbable=true;" scaleX="2" scaleY="12" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="8960" y="308" name="inst_1FC5F4C2" locked="0" code="climbable=true;" scaleX="2" scaleY="33.5" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="8960" y="560" name="inst_9CD64AC7" locked="0" code="climbable=true;" scaleX="12" scaleY="2" colour="4294967295" rotation="0"/>
@@ -1582,7 +1582,7 @@ get_titlecard_array(room);</code>
     <instance objName="objBlock" x="9472" y="688" name="inst_6D0E5D4D" locked="0" code="climbable=true;" scaleX="88" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="9840" y="660" name="inst_C4ED76EE" locked="0" code="climbable=true;" scaleX="42" scaleY="1.5" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="9904" y="-80" name="inst_1F9C9464" locked="0" code="climbable=true;" scaleX="2" scaleY="76" colour="4294967295" rotation="0"/>
-    <instance objName="objBlock" x="8960" y="-412" name="inst_7A743A9F" locked="0" code="" scaleX="120" scaleY="65.5" colour="4294967295" rotation="0"/>
+    <instance objName="objBlock" x="8960" y="-412" name="inst_7A743A9F" locked="0" code="climbable=true;&#xA;" scaleX="120" scaleY="65.5" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="12080" y="404" name="inst_02EB03E9" locked="0" code="climbable=1;&#xA;angled=0;&#xA;" scaleX="34" scaleY="26.5" colour="4294967295" rotation="0"/>
     <instance objName="objSpring" x="12904" y="560" name="inst_5589F001" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objMonitor" x="12940" y="560" name="inst_89F7D1B8" locked="0" code="icon=2;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -1639,11 +1639,11 @@ get_titlecard_array(room);</code>
     <instance objName="objBlock" x="3312" y="788" name="inst_FCB9D569" locked="0" code="" scaleX="18" scaleY="0.5" colour="4294967295" rotation="0"/>
     <instance objName="objSpring" x="13888" y="324" name="inst_695EDC55" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objMoleYoyo" x="13944" y="316" name="inst_F12E2C52" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objVVPlatform" x="7840" y="384" name="inst_CD0F5C7A" locked="0" code="image_index=1;mode = 2;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objVVPlatform" x="7968" y="448" name="inst_BCF62231" locked="0" code="image_index=1;mode = 1;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objVVPlatform" x="7840" y="376" name="inst_CD0F5C7A" locked="0" code="image_index=1;mode = 2;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objVVPlatform" x="7968" y="432" name="inst_BCF62231" locked="0" code="image_index=1;mode = 1;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objVVPlatform" x="7968" y="320" name="inst_3FA966D8" locked="0" code="image_index=1;mode = 1;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objVVPlatform" x="7840" y="300" name="inst_B8833BC2" locked="0" code="image_index=1;mode = 2;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objVVPlatform" x="7840" y="512" name="inst_D12AACBA" locked="0" code="image_index=1;mode = 2;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objVVPlatform" x="7840" y="296" name="inst_B8833BC2" locked="0" code="image_index=1;mode = 2;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objVVPlatform" x="7840" y="488" name="inst_D12AACBA" locked="0" code="image_index=1;mode = 2;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpringRed" x="10756" y="660" name="inst_218E3E3B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objMonitor" x="13456" y="320" name="inst_FDA5DCBA" locked="0" code="icon=3;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objMonitor" x="13488" y="320" name="inst_787547C3" locked="0" code="icon=9;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

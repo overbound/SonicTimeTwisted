@@ -32,8 +32,8 @@ spring_vspeed = -cosine[rotation_offset]*argument0.force;
 if (spring_hspeed!=0) {
     xspeed = spring_hspeed;
     facing = sign(xspeed);
-    // cancelling Knuckles gliding/sliding
-    if (state == player_state_glide || state == player_state_glide_slide)
+    // cancelling Knuckles sliding
+    if (state == player_state_glide_slide)
     {
         player_is_running();
     }
