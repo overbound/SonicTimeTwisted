@@ -270,7 +270,7 @@ case 4: y = floor(ystart+sin(objScreen.image_index*time)*length); break;
           </argument>
           <argument>
             <kind>0</kind>
-            <string>1</string>
+            <string>2</string>
           </argument>
         </arguments>
       </action>
