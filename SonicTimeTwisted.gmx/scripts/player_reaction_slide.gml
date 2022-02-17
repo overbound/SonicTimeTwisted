@@ -2,10 +2,10 @@
 // check collision code
 if (argument1!=2) return false;
 var nnull = argument0;
+// animate (if a slope is hit at a certain angle, "push" is played instead)
+animation_new = "hurt";
 // ignore if already sliding
 if state==player_state_slide return false;
-// animate
-animation_new = "hurt";
 timeline_speed = 1;
 // states and flags
 state = player_state_slide;
