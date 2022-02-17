@@ -9,7 +9,9 @@ with (objProgram) {
     temp_timeline_position=0;
     temp_image_index=0;
     temp_y=0;
+    temp_x=0;
     temp_yview_offset=0;
     temp_xview_offset=0;
+    temp_fly_value=0;
     temp_superform = false;
 }
