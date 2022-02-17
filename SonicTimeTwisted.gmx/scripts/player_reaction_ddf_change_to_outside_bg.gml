@@ -2,8 +2,7 @@
 if (objLevel.bg.object_index != objDDFutureBack) {
     with objLevel.bg instance_destroy();
     with objParallax instance_destroy();
-    objLevel.bg = instance_create(x,y,objDDFutureBack);
     with objLevel {
         bg = instance_create(x,y,objDDFutureBack);
-    }    
+    }
 }

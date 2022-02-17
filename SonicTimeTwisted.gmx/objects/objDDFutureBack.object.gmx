@@ -62,35 +62,6 @@ parallax_create(1, backDDFSky, 0, 0, 16, 256, 0, 0, 0.85, relative_y, 0, 128, 0,
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="1">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if instance_exists(objLevel.player[0])
-    if objLevel.player[0].x &gt; 9432 &amp;&amp; objLevel.player[0].x &lt; 12448 {
-        with objParallax instance_destroy();
-        objLevel.bg = instance_create(x,y,objDDFutureIndoorBack);
-        instance_destroy();
-        
-    }
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
   </events>
   <PhysicsObject>0</PhysicsObject>
   <PhysicsObjectSensor>0</PhysicsObjectSensor>

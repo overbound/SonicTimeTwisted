@@ -13,7 +13,11 @@
   <code>// initialize level settings
 objProgram.in_past = false;
 with objLevel {
-    bg = instance_create(x,y,objDDFutureBack);
+    if (objProgram.spawn_tag==5) || (objProgram.spawn_tag==22) || (objProgram.spawn_tag==32) {
+        bg = instance_create(x,y,objDDFutureIndoorBack);    
+    } else {
+        bg = instance_create(x,y,objDDFutureBack);
+    }
     act = 1;
     flower = sprFlowerDD;
     if objProgram.spawn_tag==0 {
@@ -867,8 +871,8 @@ get_titlecard_array(room);</code>
     <instance objName="objBlock" x="5824" y="320" name="inst_D41C3C20" locked="0" code="" scaleX="4" scaleY="8" colour="4294967295" rotation="0"/>
     <instance objName="objField" x="12584" y="192" name="inst_0119A98C" locked="0" code="reaction_script=player_reaction_ddf_change_to_outside_bg;" scaleX="9.5" scaleY="16" colour="4294967295" rotation="0"/>
     <instance objName="objField" x="12352" y="192" name="inst_98EFBF53" locked="0" code="reaction_script=player_reaction_ddf_change_to_inside_bg;&#xA;" scaleX="8" scaleY="16" colour="4294967295" rotation="0"/>
-    <instance objName="objField" x="9416" y="192" name="inst_7D3BBB51" locked="0" code="reaction_script=player_reaction_ddf_change_to_outside_bg;&#xA;" scaleX="8" scaleY="20" colour="4294967295" rotation="0"/>
-    <instance objName="objField" x="9568" y="192" name="inst_0C0A3C47" locked="0" code="reaction_script=player_reaction_ddf_change_to_inside_bg;&#xA;" scaleX="8" scaleY="20" colour="4294967295" rotation="0"/>
+    <instance objName="objField" x="9416" y="192" name="inst_7D3BBB51" locked="0" code="reaction_script=player_reaction_ddf_change_to_outside_bg;&#xA;" scaleX="7.5" scaleY="20" colour="4294967295" rotation="0"/>
+    <instance objName="objField" x="9576" y="192" name="inst_0C0A3C47" locked="0" code="reaction_script=player_reaction_ddf_change_to_inside_bg;&#xA;" scaleX="8" scaleY="20" colour="4294967295" rotation="0"/>
     <instance objName="objDDFFanPlatform" x="11968" y="1398" name="inst_E5D873C4" locked="0" code="time=32;&#xA;offset=32;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objDDFFanPlatform" x="11712" y="863" name="inst_2228AAE3" locked="0" code="time=32;&#xA;offset=64;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objLayerSet" x="3584" y="704" name="inst_5123D8E5" locked="0" code="depth_mask=1;" scaleX="14" scaleY="3.06382989883423" colour="4294901760" rotation="0"/>
