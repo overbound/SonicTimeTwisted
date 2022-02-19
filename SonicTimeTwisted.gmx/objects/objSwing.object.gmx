@@ -134,7 +134,9 @@ if active
         y = other.y;
     
         if input_check_pressed(cACTION) {
-        
+            // removing the "cACTION pressed" bit so that the instashield/flight/glide doesn't immediately activate
+            objProgram.inputManager.state_press = objProgram.inputManager.state_press &amp; (~cACTION);
+            
             other.active = false;
             other.player_id = noone;
             
