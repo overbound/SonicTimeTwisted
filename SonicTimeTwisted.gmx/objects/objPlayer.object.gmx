@@ -147,7 +147,6 @@ super_lose_rings = false;
 table_size = 64;
 xtable = ds_list_create();
 ytable = ds_list_create();
-xprev=x;
 
 // sound
 reserved_sound = -1;
@@ -422,10 +421,21 @@ default: // normal activity
             <string>/// Execute end of path
 
 // get absolute speed for conversion
-if xtable &gt; 0 {
+if ds_exists(xtable, ds_type_list) &amp;&amp; ds_exists(ytable, ds_type_list) {
+    var path_xspeed = 0;
+    var path_yspeed = 0;
+    
     var offset = ds_list_size(xtable)-1;
-    var path_xspeed = ds_list_find_value(xtable, offset)-ds_list_find_value(xtable, offset-1);
-    var path_yspeed = ds_list_find_value(ytable, offset)-ds_list_find_value(ytable, offset-1);
+    if (offset &gt;= 1)
+    {
+        path_xspeed = ds_list_find_value(xtable, offset)-ds_list_find_value(xtable, offset-1);
+    }
+    
+    offset = ds_list_size(ytable)-1;
+    if (offset &gt;= 1)
+    {
+        path_yspeed = ds_list_find_value(ytable, offset)-ds_list_find_value(ytable, offset-1);
+    }
 
     // rumble if leaving tube
     if(state == player_state_path)

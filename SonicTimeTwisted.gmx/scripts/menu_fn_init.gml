@@ -15,7 +15,7 @@ keys_script = menu_fn_keys_default;
 touchscreen_script = menu_fn_touchscreen_default;
 
 next_item_script = -1;
-next_cursor = 0;
+next_cursor = -1;
 
 up = false;
 up_prev = false;
