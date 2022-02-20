@@ -126,8 +126,15 @@ state = 0;
             <kind>1</kind>
             <string>/// start closing the door
 through = false;
-state = 1;
-close_timer = bbox_bottom - draw_bbox_top;
+// only use state 1 (animation) if the door is on screen
+if (rectangle_in_rectangle(bbox_left, draw_bbox_top, bbox_right, bbox_bottom, view_xview[0], view_yview[0], view_xview[0] + view_wview[0], view_yview[0] + view_hview[0]) &gt; 0)
+{
+    close_timer = bbox_bottom - draw_bbox_top;
+    state = 1;
+} else {
+    close_timer = 0;
+    state = 2;
+}
 </string>
           </argument>
         </arguments>
