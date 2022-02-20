@@ -3,8 +3,8 @@
   <caption></caption>
   <width>18688</width>
   <height>2048</height>
-  <vsnap>4</vsnap>
-  <hsnap>4</hsnap>
+  <vsnap>16</vsnap>
+  <hsnap>16</hsnap>
   <isometric>0</isometric>
   <speed>60</speed>
   <persistent>0</persistent>
@@ -857,8 +857,7 @@ get_titlecard_array(room);</code>
     <instance objName="objBlock" x="9712" y="1536" name="inst_43A7D05D" locked="0" code="climbable=true;" scaleX="2" scaleY="8" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="10144" y="1472" name="inst_1BBD6520" locked="0" code="" scaleX="36" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="objCurveConcave" x="12016" y="480" name="inst_8461A17E" locked="0" code="" scaleX="0.666666686534882" scaleY="0.666666686534882" colour="4294967295" rotation="0"/>
-    <instance objName="objBlock" x="12080" y="420" name="inst_9CC41A68" locked="0" code="climbable=true;" scaleX="18" scaleY="2.5" colour="4294967295" rotation="0"/>
-    <instance objName="objBlock" x="12080" y="440" name="inst_5EB96172" locked="0" code="" scaleX="2" scaleY="13" colour="4294967295" rotation="0"/>
+    <instance objName="objBlock" x="12080" y="420" name="inst_9CC41A68" locked="0" code="climbable=true;" scaleX="18" scaleY="45" colour="4294967295" rotation="0"/>
     <instance objName="objCurveConcave" x="10764" y="1588" name="inst_7EF8FBEE" locked="0" code="climbable=true;" scaleX="1.22105264663696" scaleY="1.30526316165924" colour="4294967295" rotation="0"/>
     <instance objName="objSlant" x="10688" y="1344" name="inst_8CBFA7BD" locked="0" code="angled = 0;" scaleX="1.5" scaleY="0.129999995231628" colour="4294967295" rotation="0"/>
     <instance objName="objSlant" x="10768" y="1344" name="inst_57B0A286" locked="0" code="angled = 0;" scaleX="-1" scaleY="0.125" colour="4294967295" rotation="0"/>
@@ -883,7 +882,6 @@ get_titlecard_array(room);</code>
     <instance objName="objCurveConcave" x="11320" y="760" name="inst_15AB436B" locked="0" code="climbable=true;" scaleX="-1.25" scaleY="-1.25" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="11200" y="624" name="inst_9A2F9F24" locked="0" code="" scaleX="64.5" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="objCurveConcave" x="11592" y="760" name="inst_FBD7DF48" locked="0" code="climbable=true;" scaleX="1.25" scaleY="-1.25" colour="4294967295" rotation="0"/>
-    <instance objName="objCurveConvex" x="12224" y="640" name="inst_B6C17EC9" locked="0" code="" scaleX="-1.33333003520966" scaleY="-1.33333003520966" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="11712" y="624" name="inst_E5972A76" locked="0" code="climbable=true;" scaleX="2" scaleY="26" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="11840" y="944" name="inst_EE24DC1B" locked="0" code="" scaleX="16" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="11968" y="912" name="inst_251D5429" locked="0" code="climbable=true;" scaleX="2" scaleY="44" colour="4294967295" rotation="0"/>
@@ -952,8 +950,6 @@ get_titlecard_array(room);</code>
     <instance objName="objBlock" x="11776" y="228" name="inst_100756FA" locked="0" code="through=1;&#xA;climbable=true;" scaleX="40" scaleY="0.5" colour="4294967295" rotation="0"/>
     <instance objName="objCurveConvex" x="11200" y="960" name="inst_8461946B" locked="0" code="climbable=true;" scaleX="-1.33333003520966" scaleY="-1.33333003520966" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="12096" y="768" name="inst_FD7862B0" locked="0" code="" scaleX="144" scaleY="10.75" colour="4294967295" rotation="0"/>
-    <instance objName="objBlock" x="12080" y="624" name="inst_A4CF00FF" locked="0" code="climbable=true;" scaleX="2" scaleY="26" colour="4294967295" rotation="0"/>
-    <instance objName="objBlock" x="12208" y="440" name="inst_A82F1D5A" locked="0" code="climbable=true;" scaleX="2" scaleY="11" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="13296" y="132" name="inst_7B409AAF" locked="0" code="climbable=true;" scaleX="2" scaleY="87.5" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="13312" y="132" name="inst_F2A1F290" locked="0" code="" scaleX="93" scaleY="1.5" colour="4294967295" rotation="0"/>
     <instance objName="objSlant" x="13360" y="128" name="inst_05BAD281" locked="0" code="climbable=true;" scaleX="-2" scaleY="0.125" colour="4294967295" rotation="0"/>
@@ -1148,8 +1144,8 @@ get_titlecard_array(room);</code>
     <instance objName="objMonitor" x="4912" y="1028" name="inst_A1108B87" locked="0" code="icon=11;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpringRed" x="5152" y="1300" name="inst_FC2099C3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objVV1BossSign" x="17954" y="1424" name="inst_1D584FF3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objWater" x="3004" y="840" name="inst_70BDB35C" locked="0" code="remove=0;" scaleX="64.5" scaleY="16.5" colour="1694498815" rotation="0"/>
-    <instance objName="objWater" x="12088" y="604" name="inst_AA820912" locked="0" code="remove=0;" scaleX="76.75" scaleY="14.25" colour="1694498815" rotation="0"/>
+    <instance objName="objWater" x="3008" y="840" name="inst_70BDB35C" locked="0" code="remove=0;" scaleX="64" scaleY="16.5" colour="1694498815" rotation="0"/>
+    <instance objName="objWater" x="12224" y="604" name="inst_AA820912" locked="0" code="remove=0;" scaleX="67" scaleY="14.25" colour="1694498815" rotation="0"/>
     <instance objName="objWater" x="3072" y="1620" name="inst_A10B0A16" locked="0" code="remove=0;" scaleX="16" scaleY="27" colour="1694498815" rotation="0"/>
     <instance objName="objBoost" x="8768" y="1712" name="inst_C70D4108" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpring" x="1360" y="924" name="inst_A240434B" locked="0" code="depth=10;&#xA;through=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -1736,7 +1732,6 @@ get_titlecard_array(room);</code>
     <instance objName="objRingGiant" x="7600" y="884" name="inst_75CC4562" locked="0" code="init_big_ring(32);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpringRed" x="7724" y="948" name="inst_DEA2D9E2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="2056" y="868" name="inst_834A7C13" locked="0" code="through = 1;" scaleX="26" scaleY="1" colour="4286644096" rotation="0"/>
-    <instance objName="objSlant" x="3012" y="752" name="inst_4EFAB820" locked="0" code="angled = 0;" scaleX="-0.129032254219055" scaleY="0.125" colour="4294967295" rotation="0"/>
     <instance objName="objSlant" x="7444" y="672" name="inst_09EBD22E" locked="0" code="angled = 0;&#xA;climbable=1;&#xA;" scaleX="1.37999999523163" scaleY="0.125" colour="4294967295" rotation="0"/>
     <instance objName="objSlant" x="7436" y="672" name="inst_F70434B0" locked="0" code="angled = 0;&#xA;climbable = 1;&#xA;" scaleX="-1.375" scaleY="0.125" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="7392" y="676" name="inst_1900884F" locked="0" code="climbable=true;" scaleX="12" scaleY="3.5" colour="4294967295" rotation="0"/>
@@ -1756,6 +1751,9 @@ get_titlecard_array(room);</code>
     <instance objName="objVVCSCField" x="9668" y="928" name="inst_A17BE5DB" locked="0" code="" scaleX="7" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objVVCSCField" x="9784" y="672" name="inst_52F9F0E7" locked="0" code="set_through = 0;&#xA;" scaleX="1.25" scaleY="13.6000003814697" colour="4294967295" rotation="0"/>
     <instance objName="objVVCSCurveConcave" x="9784" y="792" name="inst_9FEE56F6" locked="0" code="" scaleX="-1.25" scaleY="1.25" colour="4294967295" rotation="0"/>
+    <instance objName="objVVDoor" x="2992" y="656" name="inst_CE821E84" locked="0" code="" scaleX="1" scaleY="5.75" colour="4294967295" rotation="0"/>
+    <instance objName="objVVDoor" x="12208" y="232" name="inst_A3B100BF" locked="0" code="add_small_tile = true;&#xA;" scaleX="1" scaleY="11.5" colour="4294967295" rotation="0"/>
+    <instance objName="objAABobbin" x="4240" y="704" name="inst_4901D616" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="BGVVF1_1" x="3520" y="128" w="64" h="64" xo="960" yo="0" id="10000001" name="tiled_10000001" depth="5" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
@@ -1802,8 +1800,6 @@ get_titlecard_array(room);</code>
     <tile bgName="BGVVF1_1" x="9216" y="448" w="64" h="64" xo="1152" yo="0" id="10000042" name="tiled_10000042" depth="5" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="BGVVF1_1" x="9280" y="448" w="64" h="64" xo="1216" yo="0" id="10000043" name="tiled_10000043" depth="5" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="BGVVF1_2" x="12032" y="448" w="64" h="64" xo="832" yo="320" id="10000044" name="tiled_10000044" depth="5" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="BGVVF1_1" x="12096" y="448" w="64" h="64" xo="384" yo="768" id="10000045" name="tiled_10000045" depth="5" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="BGVVF1_1" x="12160" y="448" w="64" h="64" xo="448" yo="768" id="10000046" name="tiled_10000046" depth="5" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="BGVVF1_1" x="13248" y="448" w="64" h="64" xo="1728" yo="1600" id="10000047" name="tiled_10000047" depth="5" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="BGVVF1_1" x="13312" y="448" w="64" h="64" xo="256" yo="0" id="10000048" name="tiled_10000048" depth="5" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="BGVVF1_1" x="13376" y="448" w="64" h="64" xo="320" yo="0" id="10000049" name="tiled_10000049" depth="5" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
@@ -1825,8 +1821,6 @@ get_titlecard_array(room);</code>
     <tile bgName="BGVVF1_1" x="11904" y="512" w="64" h="64" xo="896" yo="768" id="10000065" name="tiled_10000065" depth="5" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="BGVVF1_1" x="11968" y="512" w="64" h="64" xo="960" yo="768" id="10000066" name="tiled_10000066" depth="5" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="BGVVF1_2" x="12032" y="512" w="64" h="64" xo="832" yo="320" id="10000067" name="tiled_10000067" depth="5" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="BGVVF1_1" x="12096" y="512" w="64" h="64" xo="512" yo="1792" id="10000068" name="tiled_10000068" depth="5" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="BGVVF1_1" x="12160" y="512" w="64" h="64" xo="576" yo="1792" id="10000069" name="tiled_10000069" depth="5" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="BGVVF1_1" x="13248" y="512" w="64" h="64" xo="1728" yo="1664" id="10000070" name="tiled_10000070" depth="5" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="BGVVF1_1" x="13312" y="512" w="64" h="64" xo="256" yo="64" id="10000071" name="tiled_10000071" depth="5" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="BGVVF1_1" x="13376" y="512" w="64" h="64" xo="320" yo="64" id="10000072" name="tiled_10000072" depth="5" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
@@ -1843,8 +1837,6 @@ get_titlecard_array(room);</code>
     <tile bgName="BGVVF1_1" x="9216" y="576" w="64" h="64" xo="1152" yo="128" id="10000083" name="tiled_10000083" depth="5" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="BGVVF1_1" x="9280" y="576" w="64" h="64" xo="1216" yo="128" id="10000084" name="tiled_10000084" depth="5" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="BGVVF1_1" x="11008" y="576" w="64" h="64" xo="1088" yo="256" id="10000085" name="tiled_10000085" depth="5" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="BGVVF1_1" x="12096" y="576" w="64" h="64" xo="512" yo="1856" id="10000086" name="tiled_10000086" depth="5" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="BGVVF1_1" x="12160" y="576" w="64" h="64" xo="576" yo="1856" id="10000087" name="tiled_10000087" depth="5" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="BGVVF1_1" x="13248" y="576" w="64" h="64" xo="1728" yo="1472" id="10000088" name="tiled_10000088" depth="5" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="BGVVF1_1" x="13312" y="576" w="64" h="64" xo="256" yo="128" id="10000089" name="tiled_10000089" depth="5" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="BGVVF1_1" x="13376" y="576" w="64" h="64" xo="320" yo="128" id="10000090" name="tiled_10000090" depth="5" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
@@ -2293,8 +2285,6 @@ get_titlecard_array(room);</code>
     <tile bgName="BGVVF1_1" x="3904" y="1088" w="64" h="64" xo="128" yo="192" id="10021348" name="inst_C25EED00" depth="5" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="BGVVF1_1" x="3712" y="1088" w="64" h="64" xo="128" yo="192" id="10021349" name="inst_3DCDE770" depth="5" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="BGVVF1_2" x="3968" y="1088" w="64" h="64" xo="832" yo="128" id="10021389" name="inst_3CC489FC" depth="5" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="BGVVF1_2" x="12096" y="768" w="64" h="64" xo="896" yo="0" id="10021411" name="inst_92E7C35F" depth="5" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="BGVVF1_2" x="12160" y="768" w="64" h="64" xo="896" yo="0" id="10021412" name="inst_9A852C56" depth="5" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="BGVVF1_2" x="12224" y="768" w="64" h="64" xo="896" yo="0" id="10021413" name="inst_F81715FB" depth="5" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="BGVVF1_2" x="12288" y="768" w="64" h="64" xo="896" yo="0" id="10021414" name="inst_1AC477EC" depth="5" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="BGVVF1_2" x="12352" y="768" w="64" h="64" xo="896" yo="0" id="10021415" name="inst_15FD8667" depth="5" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
@@ -2405,6 +2395,19 @@ get_titlecard_array(room);</code>
     <tile bgName="BGVVF1_2" x="10112" y="1152" w="64" h="64" xo="1920" yo="192" id="10031560" name="inst_70965A32" depth="5" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="BGVVF1_2" x="9984" y="1152" w="64" h="64" xo="448" yo="896" id="10031561" name="inst_53C5D6A8" depth="5" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="BGVVF1_2" x="10048" y="1152" w="64" h="64" xo="64" yo="832" id="10031562" name="inst_2825F856" depth="5" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="BGVVF1_1" x="12160" y="448" w="64" h="64" xo="448" yo="0" id="10032584" name="inst_83B0A706" depth="5" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="BGVVF1_1" x="12096" y="448" w="64" h="64" xo="256" yo="0" id="10032585" name="inst_D9422E8A" depth="5" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="BGVVF1_1" x="12160" y="768" w="64" h="64" xo="448" yo="192" id="10032598" name="inst_E2A6A587" depth="5" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="BGVVF1_1" x="12160" y="704" w="64" h="64" xo="448" yo="64" id="10032599" name="inst_0AC12AF7" depth="5" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="BGVVF1_1" x="12160" y="640" w="64" h="64" xo="448" yo="128" id="10032604" name="inst_D062BC33" depth="5" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="BGVVF1_1" x="12032" y="576" w="64" h="64" xo="256" yo="64" id="10032609" name="inst_C48F32B8" depth="5" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="BGVVF1_1" x="12096" y="576" w="64" h="64" xo="256" yo="64" id="10032610" name="inst_39ABEEDF" depth="5" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="BGVVF1_1" x="12096" y="704" w="64" h="64" xo="256" yo="192" id="10032611" name="inst_877B4754" depth="5" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="BGVVF1_1" x="12096" y="768" w="64" h="64" xo="256" yo="128" id="10032612" name="inst_170B6B00" depth="5" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="BGVVF1_1" x="12096" y="640" w="64" h="64" xo="256" yo="128" id="10032613" name="inst_E3DC62D1" depth="5" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="BGVVF1_1" x="12160" y="576" w="64" h="64" xo="448" yo="128" id="10032614" name="inst_65D681FC" depth="5" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="BGVVF1_1" x="12160" y="512" w="64" h="64" xo="448" yo="64" id="10032615" name="inst_B2FE921D" depth="5" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="BGVVF1_1" x="12096" y="512" w="64" h="64" xo="256" yo="128" id="10032616" name="inst_528D758B" depth="5" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="BGVVF1_1" x="2880" y="0" w="64" h="64" xo="768" yo="1216" id="10000531" name="tiled_10000531" depth="4" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="BGVVF1_1" x="2944" y="0" w="64" h="64" xo="832" yo="1216" id="10000532" name="tiled_10000532" depth="4" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="BGVVF1_1" x="3008" y="0" w="64" h="64" xo="896" yo="1216" id="10000533" name="tiled_10000533" depth="4" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
@@ -6772,8 +6775,6 @@ get_titlecard_array(room);</code>
     <tile bgName="backAAPOverlay5" x="3328" y="1088" w="64" h="64" xo="0" yo="0" id="10021353" name="inst_217AF0A4" depth="4" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="backAAPOverlay5" x="3392" y="1088" w="64" h="64" xo="0" yo="0" id="10021354" name="inst_D5E714F2" depth="4" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="backAAPOverlay5" x="3200" y="1088" w="64" h="64" xo="0" yo="0" id="10021355" name="inst_872D7013" depth="4" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="backAAPOverlay5" x="12160" y="768" w="64" h="64" xo="0" yo="0" id="10021356" name="inst_2D3A1F8A" depth="4" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="backAAPOverlay5" x="12096" y="768" w="64" h="64" xo="0" yo="0" id="10021357" name="inst_224313BF" depth="4" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="backAAPOverlay5" x="12224" y="768" w="64" h="64" xo="0" yo="0" id="10021358" name="inst_6CA1EDCF" depth="4" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="backAAPOverlay5" x="12288" y="768" w="64" h="64" xo="0" yo="0" id="10021359" name="inst_CE769099" depth="4" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="backAAPOverlay5" x="12352" y="768" w="64" h="64" xo="0" yo="0" id="10021360" name="inst_D1CD2937" depth="4" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

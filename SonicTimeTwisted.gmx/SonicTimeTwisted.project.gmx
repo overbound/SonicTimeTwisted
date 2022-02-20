@@ -2224,6 +2224,7 @@
             <sounds name="Viridian Valley">
               <sound>sound\sndMetalUFOAttack</sound>
               <sound>sound\sndVVLeaves</sound>
+              <sound>sound\sndVVDoor</sound>
             </sounds>
           </sounds>
         </sounds>
@@ -3379,6 +3380,7 @@
                 <sprite>sprites\sprVVBushes</sprite>
                 <sprite>sprites\sprVVLeaf</sprite>
               </sprites>
+              <sprite>sprites\sprVVDoor</sprite>
             </sprites>
             <sprites name="Tiles">
               <sprite>sprites\sprVVDiamond</sprite>
@@ -5507,6 +5509,7 @@
         <object>objects\objVVLeaf</object>
         <object>objects\objVVPlatform</object>
         <object>objects\objVVTileHole</object>
+        <object>objects\objVVDoor</object>
       </objects>
       <objects name="Backgrounds">
         <object>objects\objUFOBg</object>
