@@ -780,7 +780,7 @@
     <option_winUAP_store_logo>Configs\PlayStation\WindowsUAP\logos\StoreLogo.scale-100.png</option_winUAP_store_logo>
     <option_winUAP_texture_page>1024</option_winUAP_texture_page>
     <option_winUAP_wide_logo>Configs\PlayStation\WindowsUAP\logos\WideLogo.scale-100.png</option_winUAP_wide_logo>
-    <option_windowcolor>clBlue</option_windowcolor>
+    <option_windowcolor>clBlack</option_windowcolor>
     <option_windows_alternate_sync_method>True</option_windows_alternate_sync_method>
     <option_windows_build_version>1</option_windows_build_version>
     <option_windows_company_info>Overbound Game Studio</option_windows_company_info>
