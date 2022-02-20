@@ -4502,6 +4502,7 @@
                 <script>scripts\player_reaction_DD_breakable_rock.gml</script>
                 <script>scripts\player_reaction_DD1_boost_spin.gml</script>
                 <script>scripts\player_reaction_DD1_enter_room.gml</script>
+                <script>scripts\player_reaction_DD1_prevent_sonic_shield.gml</script>
                 <script>scripts\player_reaction_DD1_start.gml</script>
                 <script>scripts\player_reaction_ddf_change_to_inside_bg.gml</script>
                 <script>scripts\player_reaction_ddf_change_to_outside_bg.gml</script>

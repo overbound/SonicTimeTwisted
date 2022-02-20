@@ -263,7 +263,7 @@ get_titlecard_array(room);</code>
     <instance objName="objOstrich" x="6556" y="288" name="inst_2D47A4D1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPlaneStop" x="8836" y="-48" name="inst_56A9C959" locked="0" code="is_right = 1;&#xA;" scaleX="3.2380952835083" scaleY="23.0476188659668" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="2944" y="-304" name="inst_C0D32AAB" locked="0" code="climbable=true;" scaleX="12" scaleY="230" colour="4294967295" rotation="0"/>
-    <instance objName="objMonitor" x="1692" y="1664" name="inst_8C9F7E2F" locked="0" code="icon=8;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objMonitor" x="1692" y="1664" name="inst_8C9F7E2F" locked="0" code="icon=8;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpring" x="1372" y="1664" name="inst_E4BA74CC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRing" x="3552" y="176" name="inst_91975E8C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRing" x="3552" y="156" name="inst_7232F37E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -720,14 +720,14 @@ get_titlecard_array(room);</code>
     <instance objName="objField" x="188" y="1676" name="inst_BC270027" locked="0" code="reaction_script=player_reaction_DD1_enter_room;" scaleX="8" scaleY="8" colour="4294967295" rotation="0"/>
     <instance objName="objStart" x="256" y="1744" name="inst_EAFC274F" locked="0" code="tag=0;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objStart" x="1120" y="1712" name="inst_790406FA" locked="0" code="tag=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objField" x="512" y="1688" name="inst_BFC3384B" locked="0" code="reaction_script=player_reaction_DD1_boost_spin;&#xA;" scaleX="4" scaleY="8" colour="4294967295" rotation="0"/>
+    <instance objName="objField" x="512" y="1688" name="inst_BFC3384B" locked="0" code="reaction_script=player_reaction_DD1_boost_spin;" scaleX="4" scaleY="8" colour="4294967295" rotation="0"/>
     <instance objName="objDDBreakableRock" x="780" y="1840" name="inst_18C0F2C5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objDDBreakableRock" x="820" y="1840" name="inst_6C6B1CB3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objDDBreakableRock" x="860" y="1840" name="inst_20D37B24" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objDDBreakableRock" x="900" y="1840" name="inst_5EA801B8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objDDBreakableRock" x="5708" y="684" name="inst_FFC8276A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objDDBreakableRock" x="6120" y="1472" name="inst_6BFDA39F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objField" x="1024" y="-128" name="inst_88A22A1D" locked="0" code="reaction_script=player_reaction_DD1_start;&#xA;left = 0;&#xA;top = 0;&#xA;right = room_width;&#xA;bottom = room_height;" scaleX="32" scaleY="120" colour="4294967295" rotation="0"/>
+    <instance objName="objField" x="1024" y="-128" name="inst_88A22A1D" locked="0" code="reaction_script=player_reaction_DD1_start;&#xA;left = 0;&#xA;top = 0;&#xA;right = room_width;&#xA;bottom = room_height;" scaleX="48" scaleY="120" colour="4294967295" rotation="0"/>
     <instance objName="objDDBreakableRock" x="940" y="1824" name="inst_87BAB1AE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objDDBreakableRock" x="980" y="1796" name="inst_89516758" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objDDBreakableRock" x="1000" y="1756" name="inst_D67FE7F5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -1015,6 +1015,7 @@ get_titlecard_array(room);</code>
     <instance objName="objField" x="6692" y="-608" name="inst_13AB1487" locked="0" code="reaction_script=player_reaction_change_room_demensions;&#xA;top=0;&#xA;bottom=room_height;&#xA;right=room_width;&#xA;left=996;&#xA;" scaleX="10.3999996185303" scaleY="112" colour="4294967295" rotation="0"/>
     <instance objName="objField" x="6848" y="-624" name="inst_D8B450F1" locked="0" code="reaction_script=player_reaction_clamp_speeds;&#xA;spd=10;" scaleX="10.3999996185303" scaleY="112" colour="4294967295" rotation="0"/>
     <instance objName="objBoost" x="10516" y="976" name="inst_13329785" locked="0" code="facing=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objField" x="992" y="1552" name="inst_24997E82" locked="0" code="reaction_script=player_reaction_DD1_prevent_sonic_shield;&#xA;" scaleX="2" scaleY="10" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="dd1_f_1" x="512" y="1728" w="64" h="64" xo="1856" yo="704" id="10015432" name="inst_082A66C6" depth="4" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

@@ -1,8 +1,16 @@
 /// player_reaction_AA1Start(local_id)
 // ignore if we skipped the cutscene already
-if objProgram.spawn_tag!=0 return false;
+if (objProgram.spawn_tag!=0)
+{
+    with argument0 instance_destroy();
+    return false;
+}
+// prevent using the shield
+if (character_id == 1)
+{
+    jump_action = false;
+}
 // force to drop if we're flying or gliding
-
 if (state==player_state_glide) {player_is_glide_falling(); return true;}
 if (state==player_state_shield_fly) {player_state_standby(); return true;}
 if (state==player_state_fly)

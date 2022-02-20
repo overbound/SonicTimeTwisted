@@ -1025,7 +1025,7 @@ get_titlecard_array(room);</code>
     <instance objName="objDDBreakableRock" x="708" y="1888" name="inst_20222115" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objDDBreakableRock" x="668" y="1868" name="inst_9F21714D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objField" x="512" y="1760" name="inst_D7803B10" locked="0" code="reaction_script=player_reaction_DD1_boost_spin;" scaleX="4" scaleY="6" colour="4294967295" rotation="0"/>
-    <instance objName="objField" x="1084" y="240" name="inst_6638D267" locked="0" code="reaction_script=player_reaction_DD1_start;&#xA;left = 0;&#xA;top = 0;&#xA;right = room_width;&#xA;bottom = room_height;&#xA;" scaleX="28" scaleY="98" colour="4294967295" rotation="0"/>
+    <instance objName="objField" x="1024" y="240" name="inst_6638D267" locked="0" code="reaction_script=player_reaction_DD1_start;&#xA;left = 0;&#xA;top = 0;&#xA;right = room_width;&#xA;bottom = room_height;" scaleX="48" scaleY="98" colour="4294967295" rotation="0"/>
     <instance objName="objDDBreakableRock" x="3200" y="1584" name="inst_C41A519C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objDDFallingPlatform" x="6336" y="976" name="inst_6D76F03F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRing" x="6324" y="1124" name="inst_E58E24CB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -1194,6 +1194,7 @@ get_titlecard_array(room);</code>
     <instance objName="objFan" x="11264" y="1344" name="inst_810AA44A" locked="0" code="" scaleX="4.03125" scaleY="6.46875" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="11136" y="1472" name="inst_A50E3A1C" locked="0" code="climbable=true;" scaleX="16" scaleY="16" colour="4294967295" rotation="0"/>
     <instance objName="objField" x="10220" y="1560" name="inst_82DB5C2C" locked="0" code="reaction_script=player_reaction_clamp_speeds;&#xA;spd=10;" scaleX="10" scaleY="32" colour="4294967295" rotation="0"/>
+    <instance objName="objField" x="992" y="1616" name="inst_BB89D27E" locked="0" code="reaction_script=player_reaction_DD1_prevent_sonic_shield;&#xA;" scaleX="2" scaleY="10" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="DDZCaveBG" x="3520" y="1568" w="256" h="304" xo="0" yo="0" id="10026680" name="inst_6C435B1E" depth="10" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
