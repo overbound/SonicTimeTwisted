@@ -5144,6 +5144,7 @@
         <object>objects\objFadeWhiteFromSave</object>
         <object>objects\objFadeWhiteFromSaveToTitle</object>
         <object>objects\objFadeWhiteFromLevelToTitle</object>
+        <object>objects\objFadeWhiteFromSpecialStageToTitle</object>
         <object>objects\objFinalEnding</object>
         <object>objects\objGameOver</object>
         <object>objects\objLevelToSS</object>
