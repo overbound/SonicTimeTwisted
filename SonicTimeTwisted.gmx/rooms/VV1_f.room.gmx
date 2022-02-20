@@ -308,7 +308,7 @@ get_titlecard_array(room);</code>
     <instance objName="objSlant" x="1448" y="1108" name="inst_3512E19C" locked="0" code="angled=0;&#xA;through=1;" scaleX="-0.75" scaleY="0.125" colour="4286644096" rotation="0"/>
     <instance objName="objCurveConvex" x="1296" y="1192" name="inst_E776CE81" locked="0" code="through=1;" scaleX="0.666666984558105" scaleY="0.666666984558105" colour="4286644096" rotation="0"/>
     <instance objName="objCurveConvex" x="1424" y="1192" name="inst_CA4F930B" locked="0" code="through=1;" scaleX="-0.666666984558105" scaleY="0.666666984558105" colour="4286644096" rotation="0"/>
-    <instance objName="objCurveConcave" x="1808" y="1044" name="inst_53209602" locked="0" code="through=1;&#xA;climbable=true;" scaleX="1.33333003520966" scaleY="1.33333003520966" colour="4286644096" rotation="0"/>
+    <instance objName="objCurveConcave" x="1808" y="1044" name="inst_53209602" locked="0" code="" scaleX="1.33333003520966" scaleY="1.33333003520966" colour="4286644096" rotation="0"/>
     <instance objName="objSlant" x="1760" y="1172" name="inst_B7B9CE66" locked="0" code="angled=0;&#xA;through=1;" scaleX="1.5" scaleY="0.125" colour="4286644096" rotation="0"/>
     <instance objName="objSlant" x="2000" y="992" name="inst_2058C6C8" locked="0" code="angled=0;&#xA;" scaleX="1.5" scaleY="0.129999995231628" colour="4286644096" rotation="0"/>
     <instance objName="objSlant" x="2000" y="992" name="inst_1DB81FCA" locked="0" code="angled=0;&#xA;" scaleX="-2" scaleY="0.125" colour="4286644096" rotation="0"/>
