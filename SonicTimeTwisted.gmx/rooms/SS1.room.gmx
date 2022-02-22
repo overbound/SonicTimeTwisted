@@ -6609,6 +6609,7 @@ if objProgram.spawn_tag == 0 {
     <tile bgName="ssz_1" x="1216" y="3392" w="64" h="64" xo="960" yo="1088" id="10018771" name="inst_3619BE2C" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="ssz_1" x="960" y="3648" w="64" h="64" xo="960" yo="1088" id="10018772" name="inst_A2DBABA3" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="ssz_1" x="704" y="3520" w="64" h="64" xo="640" yo="64" id="10030229" name="inst_014EE9FE" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="ssz_1" x="1408" y="1152" w="64" h="64" xo="256" yo="64" id="10032619" name="inst_26E82534" depth="3" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="ssz_1" x="448" y="768" w="64" h="64" xo="960" yo="1152" id="10013870" name="inst_74D24B9F" depth="-1" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="ssz_1" x="448" y="832" w="64" h="64" xo="960" yo="1152" id="10013871" name="inst_9DBFB95F" depth="-1" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="ssz_1" x="448" y="896" w="64" h="64" xo="960" yo="1152" id="10013872" name="inst_D1CDBDBE" depth="-1" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
