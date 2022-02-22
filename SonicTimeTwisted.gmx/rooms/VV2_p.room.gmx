@@ -1734,7 +1734,6 @@ get_titlecard_array(room);</code>
     <instance objName="objLayerSet" x="12658" y="704" name="inst_168F6508" locked="0" code="depth_mask=1;&#xA;" scaleX="8" scaleY="5.44680833816528" colour="4294901760" rotation="0"/>
     <instance objName="objLayerSet" x="12736" y="832" name="inst_1A109C44" locked="0" code="depth_mask=1;&#xA;" scaleX="8" scaleY="2.72340416908264" colour="4294901760" rotation="0"/>
     <instance objName="objSpringGreen" x="6800" y="1760" name="inst_05DB63E3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objStart" x="636" y="-364" name="inst_011B7CB2" locked="0" code="tag = 3;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objStart" x="11348" y="656" name="inst_D0D9044E" locked="0" code="tag = 5;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objTimePost" x="9540" y="208" name="inst_54B79BCF" locked="0" code="tag=2;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objStart" x="3096" y="964" name="inst_E9F675A7" locked="0" code="tag = 3;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
