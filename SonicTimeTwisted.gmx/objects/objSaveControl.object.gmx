@@ -1749,6 +1749,8 @@ else
 {
     // if it's a no save slot, the game immediately starts
     objProgram.in_past = false;
+    objProgram.special_future_current_level = 0;
+    objProgram.special_past_current_level = 0;
     objGameData.character_id[0] = slots[selectCheck].characterSelect;
     load_emeralds();
     load_lives();

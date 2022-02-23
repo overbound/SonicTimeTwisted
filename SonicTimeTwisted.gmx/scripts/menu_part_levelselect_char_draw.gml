@@ -4,6 +4,12 @@ if(state == 1 || state == 4)
 }
 else
 {
+    var is_super_mode = objProgram.special_future_current_level >= 7 || objProgram.special_past_current_level >= 7;
+    var super_sprite_images = -1;
+    if (is_super_mode) {
+        super_sprite_images = sprite_get_number(sprCharacterSelectSuper);
+    }
+
     draw_rectangle_colour(
         internal__draw_menu_rect_x1,
         internal__draw_menu_rect_y1,
@@ -42,19 +48,42 @@ else
         if(prev_cursor == -1 || prev_cursor == CHARS_COUNT)
         {        
             var char_sprite_index = temporary_variable;
-            draw_sprite(sprCharacterSelect, char_sprite_index, internal__draw_menu_rect_x_center, internal__draw_menu_rect_y_center);
+            if (char_sprite_index < super_sprite_images)
+            {
+                draw_sprite(sprCharacterSelectSuper, char_sprite_index, internal__draw_menu_rect_x_center, internal__draw_menu_rect_y_center);
+            }
+            else
+            {
+                draw_sprite(sprCharacterSelect, char_sprite_index, internal__draw_menu_rect_x_center, internal__draw_menu_rect_y_center);
+            }
+            
             char_sprite_index--;
             if(char_sprite_index < 0)
             {
                 char_sprite_index = char_sprite_index + CHARS_COUNT;
             }
-            draw_sprite_ext(sprCharacterSelect, char_sprite_index, internal__draw_menu_rect_x_center - 64, internal__draw_menu_rect_y_center, 0.8, 0.8, 0, c_gray, 1);
+            if (char_sprite_index < super_sprite_images)
+            {
+                draw_sprite_ext(sprCharacterSelectSuper, char_sprite_index, internal__draw_menu_rect_x_center - 64, internal__draw_menu_rect_y_center, 0.8, 0.8, 0, c_gray, 1);
+            }
+            else
+            {
+                draw_sprite_ext(sprCharacterSelect, char_sprite_index, internal__draw_menu_rect_x_center - 64, internal__draw_menu_rect_y_center, 0.8, 0.8, 0, c_gray, 1);
+            }
             var char_sprite_index = temporary_variable + 1;
             if(char_sprite_index >= CHARS_COUNT)
             {
                 char_sprite_index = char_sprite_index - CHARS_COUNT;
             }
-            draw_sprite_ext(sprCharacterSelect, char_sprite_index, internal__draw_menu_rect_x_center + 64, internal__draw_menu_rect_y_center, 0.8, 0.8, 0, c_gray, 1);
+            if (char_sprite_index < super_sprite_images)
+            {
+                draw_sprite_ext(sprCharacterSelectSuper, char_sprite_index, internal__draw_menu_rect_x_center + 64, internal__draw_menu_rect_y_center, 0.8, 0.8, 0, c_gray, 1);            
+            }
+            else
+            {
+                draw_sprite_ext(sprCharacterSelect, char_sprite_index, internal__draw_menu_rect_x_center + 64, internal__draw_menu_rect_y_center, 0.8, 0.8, 0, c_gray, 1);            
+            }
+
         }
         else
         {
@@ -76,44 +105,94 @@ else
             {
                 scrolling_offset = scrolling_offset + CHARS_COUNT;
             }
-            draw_sprite_ext(sprCharacterSelect, scrolling_offset, internal__draw_menu_rect_x_center - 96, internal__draw_menu_rect_y_center, 0.7, 0.7, 0, c_dkgray, 1);
+            if (scrolling_offset < super_sprite_images)
+            {
+                draw_sprite_ext(sprCharacterSelectSuper, scrolling_offset, internal__draw_menu_rect_x_center - 96, internal__draw_menu_rect_y_center, 0.7, 0.7, 0, c_dkgray, 1);
+            }
+            else
+            {
+                draw_sprite_ext(sprCharacterSelect, scrolling_offset, internal__draw_menu_rect_x_center - 96, internal__draw_menu_rect_y_center, 0.7, 0.7, 0, c_dkgray, 1);            
+            }
             scrolling_offset += 1;
             if(scrolling_offset >= CHARS_COUNT)
             {
                 scrolling_offset -= CHARS_COUNT;
             }
-            draw_sprite_ext(sprCharacterSelect, scrolling_offset, internal__draw_menu_rect_x_center - 32, internal__draw_menu_rect_y_center, 0.9, 0.9, 0, c_gray, 1);
+            if (scrolling_offset < super_sprite_images)
+            {
+                draw_sprite_ext(sprCharacterSelectSuper, scrolling_offset, internal__draw_menu_rect_x_center - 32, internal__draw_menu_rect_y_center, 0.9, 0.9, 0, c_gray, 1);
+            }
+            else
+            {
+                draw_sprite_ext(sprCharacterSelect, scrolling_offset, internal__draw_menu_rect_x_center - 32, internal__draw_menu_rect_y_center, 0.9, 0.9, 0, c_gray, 1);
+            }
             scrolling_offset += 1;
             if(scrolling_offset >= CHARS_COUNT)
             {
                 scrolling_offset -= CHARS_COUNT;
             }
-            draw_sprite_ext(sprCharacterSelect, scrolling_offset, internal__draw_menu_rect_x_center + 32, internal__draw_menu_rect_y_center, 0.9, 0.9, 0, c_gray, 1);
+            if (scrolling_offset < super_sprite_images)
+            {
+                draw_sprite_ext(sprCharacterSelectSuper, scrolling_offset, internal__draw_menu_rect_x_center + 32, internal__draw_menu_rect_y_center, 0.9, 0.9, 0, c_gray, 1);
+            }
+            else
+            {
+                draw_sprite_ext(sprCharacterSelect, scrolling_offset, internal__draw_menu_rect_x_center + 32, internal__draw_menu_rect_y_center, 0.9, 0.9, 0, c_gray, 1);
+            }
             scrolling_offset += 1;
             if(scrolling_offset >= CHARS_COUNT)
             {
                 scrolling_offset -= CHARS_COUNT;
             }
-            draw_sprite_ext(sprCharacterSelect, scrolling_offset, internal__draw_menu_rect_x_center + 96, internal__draw_menu_rect_y_center, 0.7, 0.7, 0, c_dkgray, 1);
+            if (scrolling_offset < super_sprite_images)
+            {
+                draw_sprite_ext(sprCharacterSelectSuper, scrolling_offset, internal__draw_menu_rect_x_center + 96, internal__draw_menu_rect_y_center, 0.7, 0.7, 0, c_dkgray, 1);
+            }
+            else
+            {
+                draw_sprite_ext(sprCharacterSelect, scrolling_offset, internal__draw_menu_rect_x_center + 96, internal__draw_menu_rect_y_center, 0.7, 0.7, 0, c_dkgray, 1);
+            }
         }
     }
     else
     {
         // the cursor is on the "exit" button : gray out everything
-        var char_sprite_index = temporary_variable;
-        draw_sprite_ext(sprCharacterSelect, char_sprite_index, internal__draw_menu_rect_x_center, internal__draw_menu_rect_y_center, 1, 1, 0, c_gray, 1);
+        var char_sprite_index = temporary_variable;        
+        if (char_sprite_index < super_sprite_images)
+        {
+            draw_sprite_ext(sprCharacterSelectSuper, char_sprite_index, internal__draw_menu_rect_x_center, internal__draw_menu_rect_y_center, 1, 1, 0, c_gray, 1);
+        }
+        else
+        {
+            draw_sprite_ext(sprCharacterSelect, char_sprite_index, internal__draw_menu_rect_x_center, internal__draw_menu_rect_y_center, 1, 1, 0, c_gray, 1);
+        }
         char_sprite_index--;
         if(char_sprite_index < 0)
         {
             char_sprite_index = char_sprite_index + CHARS_COUNT;
         }
-        draw_sprite_ext(sprCharacterSelect, char_sprite_index, internal__draw_menu_rect_x_center - 64, internal__draw_menu_rect_y_center, 0.8, 0.8, 0, c_dkgray, 1);
+        
+        if (char_sprite_index < super_sprite_images)
+        {
+            draw_sprite_ext(sprCharacterSelectSuper, char_sprite_index, internal__draw_menu_rect_x_center - 64, internal__draw_menu_rect_y_center, 0.8, 0.8, 0, c_dkgray, 1);
+        }
+        else
+        {
+            draw_sprite_ext(sprCharacterSelect, char_sprite_index, internal__draw_menu_rect_x_center - 64, internal__draw_menu_rect_y_center, 0.8, 0.8, 0, c_dkgray, 1);
+        }
         var char_sprite_index = temporary_variable + 1;
         if(char_sprite_index >= CHARS_COUNT)
         {
             char_sprite_index = char_sprite_index - CHARS_COUNT;
         }
-        draw_sprite_ext(sprCharacterSelect, char_sprite_index, internal__draw_menu_rect_x_center + 64, internal__draw_menu_rect_y_center, 0.8, 0.8, 0, c_dkgray, 1);
+        if (char_sprite_index < super_sprite_images)
+        {
+            draw_sprite_ext(sprCharacterSelectSuper, char_sprite_index, internal__draw_menu_rect_x_center + 64, internal__draw_menu_rect_y_center, 0.8, 0.8, 0, c_dkgray, 1);
+        }
+        else
+        {
+            draw_sprite_ext(sprCharacterSelect, char_sprite_index, internal__draw_menu_rect_x_center + 64, internal__draw_menu_rect_y_center, 0.8, 0.8, 0, c_dkgray, 1);
+        }
     }
     // exit button
     var sprite_index_to_draw;

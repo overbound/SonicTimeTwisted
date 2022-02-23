@@ -718,6 +718,8 @@ if(menu.state == 0)
                         if(!instance_exists(objTransition))
                         {
                             pauseState = 0;
+                            objProgram.special_future_current_level = 0;
+                            objProgram.special_past_current_level = 0;
                             with(menu) menu_fn_open_menu(menu_part_levelselect_char_items, false, true);
                         }
                     }
@@ -803,6 +805,8 @@ if(menu.state == 0)
                     // allow the menu object to handle everything
                     if(!instance_exists(objTransition))
                     {
+                        objProgram.special_future_current_level = 0;
+                        objProgram.special_past_current_level = 0;
                         with(menu) menu_fn_open_menu(menu_part_levelselect_char_items, false, false);
                     }
                     

@@ -2350,6 +2350,7 @@
       </sprites>
       <sprites name="Title Screen">
         <sprite>sprites\sprCharacterSelect</sprite>
+        <sprite>sprites\sprCharacterSelectSuper</sprite>
         <sprite>sprites\sprOverboundLogo</sprite>
         <sprite>sprites\sprTitleCloud0</sprite>
         <sprite>sprites\sprTitleCloud1</sprite>
