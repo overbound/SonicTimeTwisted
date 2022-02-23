@@ -12,7 +12,12 @@ else
 {
     draw_sprite_ext(dpad_jumpbutton_sprite, 0, bax, bay, 1, 1, 0, c_white, image_alpha);
 }
-if(super_button_enabled)
+var level_ongoing = true;
+with (objLevel)
+{
+    level_ongoing = !cleared;
+}
+if(super_button_enabled && level_ongoing)
 {
     var subimg = 0;
     if (objProgram.inputManager.state & cB)

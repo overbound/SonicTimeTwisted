@@ -64,7 +64,7 @@ if jump_action
 {
     // super transformation
     if superform and player_transform_input() player_transform(false); else
-    if objProgram.special_future_current_level>=7 and objGameData.rings[0]>=50 and (character_id == 1) and not (superform or invincibility) and player_transform_input() return player_is_transforming(); else
+    if objProgram.special_future_current_level>=7 and (not objLevel.cleared) and objGameData.rings[0]>=50 and (character_id == 1) and not (superform or invincibility) and player_transform_input() return player_is_transforming(); else
     // jump action    
     if input_check_pressed(cACTION)
     {
