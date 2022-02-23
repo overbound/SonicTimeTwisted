@@ -140,6 +140,9 @@ if active
             objProgram.inputManager.state_press = objProgram.inputManager.state_press &amp; (~cB);
             objProgram.inputManager.state_press = objProgram.inputManager.state_press &amp; (~cC);
             
+            // sound
+            play_sfx(sndJump, 0);
+            
             other.active = false;
             other.player_id = noone;
             
