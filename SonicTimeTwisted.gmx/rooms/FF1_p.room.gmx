@@ -1052,7 +1052,7 @@ get_titlecard_array(room);</code>
     <instance objName="objSpike" x="8720" y="3952" name="inst_DD94D762" locked="0" code="sprite_index = sprFFPSpikes;&#xA;depth=0;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpike" x="8752" y="3952" name="inst_A0985A57" locked="0" code="sprite_index = sprFFPSpikes;&#xA;depth=0;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objFFSwingWheel" x="3696" y="2992" name="inst_C0AF3FCF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objFFCollapsingPlatform" x="7808" y="3904" name="inst_07C34238" locked="0" code="image_index = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objFFCollapsingPlatform" x="7808" y="3904" name="inst_07C34238" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objFFCollapsingPlatform" x="8128" y="3840" name="inst_298B10BD" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objFFCollapsingPlatform" x="9728" y="2304" name="inst_E3EA4EDC" locked="0" code="image_index=1;&#xA;" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objFFCollapsingPlatform" x="9216" y="2304" name="inst_92053145" locked="0" code="image_index=0;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

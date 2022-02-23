@@ -189,7 +189,7 @@ get_titlecard_array(room);</code>
     <instance objName="objBlock" x="4928" y="1672" name="inst_71CFC01F" locked="0" code="climbable=1;&#xA;" scaleX="5" scaleY="25.7142848968506" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="5164" y="1792" name="inst_C30346D8" locked="0" code="climbable=1;&#xA;" scaleX="13.7142858505249" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="4736" y="1028" name="inst_7CFDFD8B" locked="0" code="climbable=1;&#xA;" scaleX="24" scaleY="8" colour="4294967295" rotation="0"/>
-    <instance objName="objBlock" x="4928" y="956" name="inst_78C14F2B" locked="0" code="climbable=1;&#xA;" scaleX="8" scaleY="17" colour="4294967295" rotation="0"/>
+    <instance objName="objBlock" x="4928" y="960" name="inst_78C14F2B" locked="0" code="climbable=1;&#xA;" scaleX="8" scaleY="16.5" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="5120" y="448" name="inst_BA663222" locked="0" code="climbable=1;&#xA;" scaleX="40" scaleY="48" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="512" y="1284" name="inst_664B8ECC" locked="0" code="climbable=1;&#xA;" scaleX="16" scaleY="24.5" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="1280" y="1540" name="inst_513BC477" locked="0" code="climbable=1;&#xA;" scaleX="32" scaleY="12.5" colour="4294967295" rotation="0"/>
