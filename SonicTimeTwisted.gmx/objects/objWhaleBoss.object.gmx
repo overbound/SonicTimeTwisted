@@ -45,14 +45,14 @@ image_index = 1;
 //image_xscale=-1;
 state=0;
 direction = 300;
-jumpoffset=510;//510
 jaw = instance_create(x,y,objWhaleBossJaw)
 with jaw { parentId = other; }
 fin = instance_create(x,y,objWhaleFin)
 with fin { parentId = other; }
-smalljumpoffset=0;
 draw_direction=direction;
 explosionLoop=0;
+
+jump_timer=20;
 </string>
           </argument>
         </arguments>
@@ -218,13 +218,12 @@ if sprite_index == sprWhaleBossJump {
     }
 
 switch state {
-case 0: // Stop
+case 0: // Time before first jump - not using a timer because it's a one-time thing
+    jump_timer -= 1;
+    
     with objLevel.player[0] {
-    
-        if x+other.jumpoffset &gt; other.x &amp;&amp; x &lt; other.x {
-    
+        if other.jump_timer &lt;= 0 {
             other.state = 1; 
-        
         }
     }
 break;

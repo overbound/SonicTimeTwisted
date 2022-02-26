@@ -1,13 +1,5 @@
 //player_reaction_tt_boss_start(local_id)
-//state=player_state_object;
-xspeed = 0;
-x = objTTBossController.x;
-if landed {
-    animation_new = "idle";
-    timeline_speed = 1;
-    image_angle = 0;
-    
-}
+
 with objLevel.player[0].camera{
     
     top =objTTBossController.y-200;

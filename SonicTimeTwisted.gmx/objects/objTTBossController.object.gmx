@@ -40,7 +40,6 @@
           <argument>
             <kind>1</kind>
             <string>state = -1;
-instance_create(x+500,y+340,objWhaleBoss);
 playerId = noone;
 ground = 1009;
 </string>
@@ -77,6 +76,7 @@ case 0:
         state = 1;
         set_boss_music(room);
         play_boss_intro(objMusic.bossIntroAsset, 0);
+        instance_create(x+500,y+340,objWhaleBoss);
     }
 break;
 case 1:
