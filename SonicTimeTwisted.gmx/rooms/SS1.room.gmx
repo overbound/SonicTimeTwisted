@@ -1265,7 +1265,7 @@ if objProgram.spawn_tag == 0 {
     <instance objName="objSSMetalCut" x="2304" y="4048" name="inst_AF6D62BD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="1824" y="4112" name="inst_AC1BCA50" locked="0" code="" scaleX="12" scaleY="14" colour="4294967295" rotation="0"/>
     <instance objName="objSSScreen" x="2304" y="3976" name="inst_508660FC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objBlock" x="2176" y="4096" name="inst_3EC7F27C" locked="0" code="through=true;&#xA;" scaleX="32" scaleY="8" colour="4294967295" rotation="0"/>
+    <instance objName="objBlock" x="2176" y="4096" name="inst_3EC7F27C" locked="0" code="" scaleX="32" scaleY="8" colour="4294967295" rotation="0"/>
     <instance objName="objSSController" x="2292" y="3968" name="inst_DD88AAC5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRing" x="588" y="7532" name="inst_DBE1EECA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRing" x="608" y="7532" name="inst_DAC01156" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
