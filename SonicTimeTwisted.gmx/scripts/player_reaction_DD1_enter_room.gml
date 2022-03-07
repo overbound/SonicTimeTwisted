@@ -14,6 +14,7 @@ if objProgram.temp_xview_offset!=0 {
     } else if (state == player_state_glide) {
         glide_speed = objProgram.temp_fly_value;
     }
+    objProgram.temp_fly_value = 0;
 }
 with objLevel started = true;
 if (!instance_exists(objTitlecard)) {

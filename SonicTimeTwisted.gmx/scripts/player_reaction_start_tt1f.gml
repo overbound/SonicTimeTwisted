@@ -5,7 +5,9 @@ if !landed {
     if objProgram.in_past
         x = 368;
     else x=192;
-    yspeed-=.05;
+    if (state != player_state_fly) {
+        yspeed-=.05;
+    }
 }
 // remove trigger
 else {

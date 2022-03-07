@@ -581,7 +581,7 @@ with player[0] {
         break;
         
         case DD1_p:
-        
+            
             animation_new =objProgram.temp_animation;
             start_dd1();
             
@@ -607,7 +607,14 @@ with player[0] {
         case TT1_p:
         
             start_tt1();
-            animation_new = "spin";
+            if (objProgram.temp_animation != 'idle' &amp;&amp; objProgram.temp_animation != 'spin')
+            {
+                animation_new = objProgram.temp_animation;
+            }
+            else
+            {
+                animation_new = "spin";
+            }
             
         break;
         

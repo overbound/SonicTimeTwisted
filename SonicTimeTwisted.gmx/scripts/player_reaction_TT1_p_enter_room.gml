@@ -1,4 +1,4 @@
-//player_reaction_start_dd1
+//player_reaction_TT1_p_enter_room
 if objProgram.temp_xview_offset!=0 {
     xspeed=objProgram.temp_xspeed;
     yspeed=objProgram.temp_yspeed;
@@ -9,13 +9,21 @@ if objProgram.temp_xview_offset!=0 {
     x=objProgram.temp_x;
     view_yview=y-objProgram.temp_yview_offset;
     view_xview=x-objProgram.temp_xview_offset;
+    if (state == player_state_fly) {
+        alarm[0] = objProgram.temp_fly_value;
+    } else if (state == player_state_glide) {
+        glide_speed = objProgram.temp_fly_value;
+    }
+    objProgram.temp_fly_value = 0;
     objProgram.temp_xview_offset = 0;
 }
 with objLevel started = true;
 with objTitlecard mode = 3;
 if !landed {
     xspeed = 0;
-    yspeed-=.05;
+    if (state != player_state_fly) {
+        yspeed-=.05;
+    }
 } else {
    // animate
     image_angle = 0;

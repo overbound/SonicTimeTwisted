@@ -20,6 +20,13 @@ objProgram.temp_timeline_position=timeline_position;
 objProgram.temp_x=x-18944;
 objProgram.temp_yview_offset=objLevel.player[0].y-view_yview;
 objProgram.temp_xview_offset=objLevel.player[0].x-view_xview;
+if (state == player_state_fly) {
+    objProgram.temp_fly_value = alarm[0];
+} else if (state == player_state_glide) {
+    objProgram.temp_fly_value = glide_speed;
+} else {
+    objProgram.temp_fly_value = 0;
+}
 with argument0 instance_destroy();
 
 room_goto(TT1_p);
