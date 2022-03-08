@@ -1851,6 +1851,7 @@ get_titlecard_array(room);
     <instance objName="objRing" x="3444" y="60" name="inst_ECB47D0C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRing" x="3468" y="60" name="inst_A83B7975" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRing" x="3492" y="60" name="inst_9B96A3EF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objRing" x="16508" y="444" name="inst_D2560685" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="tileAA1_F_2" x="5376" y="1600" w="64" h="64" xo="320" yo="896" id="10020896" name="inst_27AD9B3A" depth="5" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
