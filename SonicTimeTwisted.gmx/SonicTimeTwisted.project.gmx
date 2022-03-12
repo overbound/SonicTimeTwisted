@@ -1859,19 +1859,19 @@
               <CopyToMask>2097160</CopyToMask>
             </Config>
             <Config name="AndroidSmartphone">
-              <CopyToMask>9223372036854775807</CopyToMask>
+              <CopyToMask>2097160</CopyToMask>
             </Config>
             <Config name="AndroidConsole">
-              <CopyToMask>9223372036854775807</CopyToMask>
+              <CopyToMask>2097160</CopyToMask>
             </Config>
             <Config name="MacOS">
-              <CopyToMask>9223372036854775807</CopyToMask>
+              <CopyToMask>2097160</CopyToMask>
             </Config>
             <Config name="Linux">
               <CopyToMask>2097160</CopyToMask>
             </Config>
             <Config name="PlayStation">
-              <CopyToMask>9223372036854775807</CopyToMask>
+              <CopyToMask>2097160</CopyToMask>
             </Config>
             <Config name="Browser">
               <CopyToMask>2097160</CopyToMask>
@@ -1894,19 +1894,19 @@
               <CopyToMask>2097160</CopyToMask>
             </Config>
             <Config name="AndroidSmartphone">
-              <CopyToMask>9223372036854775807</CopyToMask>
+              <CopyToMask>2097160</CopyToMask>
             </Config>
             <Config name="AndroidConsole">
-              <CopyToMask>9223372036854775807</CopyToMask>
+              <CopyToMask>2097160</CopyToMask>
             </Config>
             <Config name="MacOS">
-              <CopyToMask>9223372036854775807</CopyToMask>
+              <CopyToMask>2097160</CopyToMask>
             </Config>
             <Config name="Linux">
               <CopyToMask>2097160</CopyToMask>
             </Config>
             <Config name="PlayStation">
-              <CopyToMask>9223372036854775807</CopyToMask>
+              <CopyToMask>2097160</CopyToMask>
             </Config>
             <Config name="Browser">
               <CopyToMask>2097160</CopyToMask>
@@ -5837,7 +5837,7 @@
     </rooms>
   </rooms>
   <constants number="90">
-    <constant name="VERSION">"v1.1.2"</constant>
+    <constant name="VERSION">"v1.1.2.1"</constant>
     <constant name="GAMEPAD_POV_Y">7</constant>
     <constant name="GAMEPAD_POV_X">6</constant>
     <constant name="GAMEPAD_AXIS_V">5</constant>
