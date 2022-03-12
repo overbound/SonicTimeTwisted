@@ -118,6 +118,7 @@ lines[13, 0] = "CONTRIBUTORS";
 lines[14, 0] = "Additional Programming by";
 lines[14, 1] = 'Alex Khayrullin';
 lines[14, 2] = 'Nik';
+lines[14, 3] = 'TabularElf';
 
 lines[15, 0] = "Additional Art by";
 lines[15, 1] = 'Alex Khayrullin';
