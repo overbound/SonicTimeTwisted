@@ -9,7 +9,7 @@
     <Config>Configs\PlayStation</Config>
     <Config>Configs\Browser</Config>
   </Configs>
-  <datafiles number="110" name="datafiles">
+  <datafiles number="111" name="datafiles">
     <datafile>
       <name>translations.txt</name>
       <exists>-1</exists>
@@ -45,7 +45,7 @@
       </ConfigOptions>
       <filename>translations.txt</filename>
     </datafile>
-    <datafiles number="110" name="translations">
+    <datafiles number="111" name="translations">
       <datafile>
         <name>English.json</name>
         <exists>-1</exists>
@@ -81,7 +81,7 @@
         </ConfigOptions>
         <filename>English.json</filename>
       </datafile>
-      <datafiles number="110" name="Russian">
+      <datafiles number="111" name="Russian">
         <datafile>
           <name>sprFontHud.png</name>
           <exists>-1</exists>
@@ -433,7 +433,7 @@
         </ConfigOptions>
         <filename>Russian.json</filename>
       </datafile>
-      <datafiles number="110" name="BrazilianPortuguese">
+      <datafiles number="111" name="BrazilianPortuguese">
         <datafile>
           <name>sprFontHud.png</name>
           <exists>-1</exists>
@@ -785,7 +785,7 @@
         </ConfigOptions>
         <filename>BrazilianPortuguese.json</filename>
       </datafile>
-      <datafiles number="110" name="French">
+      <datafiles number="111" name="French">
         <datafile>
           <name>sprFontHud.png</name>
           <exists>-1</exists>
@@ -1137,7 +1137,7 @@
         </ConfigOptions>
         <filename>French.json</filename>
       </datafile>
-      <datafiles number="110" name="Ukrainian">
+      <datafiles number="111" name="Ukrainian">
         <datafile>
           <name>sprFontHud.png</name>
           <exists>-1</exists>
@@ -1489,7 +1489,7 @@
         </ConfigOptions>
         <filename>Ukrainian.json</filename>
       </datafile>
-      <datafiles number="110" name="Italian">
+      <datafiles number="111" name="Italian">
         <datafile>
           <name>sprFontHud.png</name>
           <exists>-1</exists>
@@ -1842,8 +1842,8 @@
         <filename>Italian.json</filename>
       </datafile>
     </datafiles>
-    <datafiles number="110" name="android">
-      <datafiles number="110" name="gamepad">
+    <datafiles number="111" name="android">
+      <datafiles number="111" name="gamepad">
         <datafile>
           <name>045e_02fd_xbox_wireless_controller.csv</name>
           <exists>-1</exists>
@@ -1950,6 +1950,41 @@
         </Config>
       </ConfigOptions>
       <filename>gamecontrollerdb.txt</filename>
+    </datafile>
+    <datafile>
+      <name>libnikxfix.so</name>
+      <exists>-1</exists>
+      <size>10144</size>
+      <exportAction>2</exportAction>
+      <exportDir></exportDir>
+      <overwrite>0</overwrite>
+      <freeData>-1</freeData>
+      <removeEnd>0</removeEnd>
+      <store>0</store>
+      <ConfigOptions>
+        <Config name="Default">
+          <CopyToMask>134217856</CopyToMask>
+        </Config>
+        <Config name="AndroidSmartphone">
+          <CopyToMask>134217856</CopyToMask>
+        </Config>
+        <Config name="AndroidConsole">
+          <CopyToMask>134217856</CopyToMask>
+        </Config>
+        <Config name="MacOS">
+          <CopyToMask>134217856</CopyToMask>
+        </Config>
+        <Config name="Linux">
+          <CopyToMask>134217856</CopyToMask>
+        </Config>
+        <Config name="PlayStation">
+          <CopyToMask>134217856</CopyToMask>
+        </Config>
+        <Config name="Browser">
+          <CopyToMask>134217856</CopyToMask>
+        </Config>
+      </ConfigOptions>
+      <filename>libnikxfix.so</filename>
     </datafile>
   </datafiles>
   <NewExtensions>
