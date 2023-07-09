@@ -19,7 +19,6 @@ package ${YYAndroidPackageName};
 import ${YYAndroidPackageName}.R;
 import com.yoyogames.runner.RunnerJNILib;
 
-
 import android.content.Context;
 import android.hardware.input.InputManager;
 import android.os.Vibrator;
@@ -94,13 +93,6 @@ public class SttAndroid extends ExtensionBase {
     protected InputDeviceManager[] inputs;
 
     /**
-     * For compatibility purposes, supported API levels are kept low, preventing the use of some
-     * advanced methods, so we're calculating whether a device is external in a roundabout way and
-     * store the result here.
-     */
-    protected Map<String, Boolean> external;
-
-    /**
      * Whether the library is in double device detecting mode (detecting Joy-Cons) .
      */
     protected byte doubleInputDetectingMode;
@@ -132,7 +124,6 @@ public class SttAndroid extends ExtensionBase {
         inputs = new InputDeviceManager[2];
         inputs[0] = new InputDeviceManager();
         inputs[1] = new InputDeviceManager();
-        external = new HashMap<>();
         doubleInputDetectingMode = -1;
         doubleDeviceModeTempInputDevice = null;
 
@@ -149,46 +140,6 @@ public class SttAndroid extends ExtensionBase {
     }
 
     /**
-     * Tests whether a device is external. Since we're aiming for compatibility with lower API
-     * levels, this is done in roundabout ways and the result is stored into a map for further use.
-     *
-     * @param device InputDevice to test
-     * @return Whether the device is external
-     */
-    protected boolean isDeviceExternal(InputDevice device) {
-        String descriptor = device.getDescriptor();
-        try {
-            if (external.containsKey(descriptor)) {
-                return external.get(descriptor);
-            }
-        } catch (NullPointerException npee) {
-            return true;
-        }
-        // attempting hidden method
-        try {
-            Method m = InputDevice.class.getMethod("isExternal");
-            boolean result = (Boolean) m.invoke(device);
-            external.put(descriptor, result);
-            return result;
-        } catch (Exception e) {
-            // hidden method failed: turning to toString
-            String[] lines = device.toString().split("\n");
-            boolean result = true;
-            for (int i = 0; i < lines.length; i++) {
-                String line = lines[i];
-                if (line.replaceAll("^\\s*([^ :]+):.*", "$1")
-                        .equalsIgnoreCase("location")) {
-                    result = line.replaceAll("^\\s*[^ :]+:(.*)$", "$1").trim()
-                            .equalsIgnoreCase("external");
-                    break;
-                }
-            }
-            external.put(descriptor, result);
-            return result;
-        }
-    }
-
-    /**
      * Tests whether a device can be used with the game.
      *
      * @param device InputDevice to test
@@ -196,11 +147,15 @@ public class SttAndroid extends ExtensionBase {
      */
     protected boolean isDeviceSuitable(InputDevice device) {
         int sources = device.getSources();
-        return isDeviceExternal(device) && (
-                ((sources & InputDevice.SOURCE_GAMEPAD) == InputDevice.SOURCE_GAMEPAD) ||
-                        ((sources & InputDevice.SOURCE_JOYSTICK) == InputDevice.SOURCE_JOYSTICK) ||
-                        ((sources & InputDevice.SOURCE_KEYBOARD) == InputDevice.SOURCE_KEYBOARD)
-        );
+        if (((sources & InputDevice.SOURCE_GAMEPAD) == InputDevice.SOURCE_GAMEPAD) ||
+            ((sources & InputDevice.SOURCE_JOYSTICK) == InputDevice.SOURCE_JOYSTICK)) {
+            return true;
+        } else {
+            if ((sources & InputDevice.SOURCE_KEYBOARD) == InputDevice.SOURCE_KEYBOARD) {
+                return device.getKeyboardType() == InputDevice.KEYBOARD_TYPE_ALPHABETIC;
+            }
+        }
+        return false;
     }
 
     /**
@@ -263,7 +218,7 @@ public class SttAndroid extends ExtensionBase {
             } else {
                 if (android_double_device_detecting_mode_get_state() == 2) {
                     if (doubleDeviceModeTempInputDevice != event.getDevice()
-                            && isDeviceSuitable(event.getDevice())) {
+                        && isDeviceSuitable(event.getDevice())) {
                         inputs[(int) android_double_device_detecting_mode_get_input_number()]
                                 .assignTwoDevices(doubleDeviceModeTempInputDevice, event.getDevice());
                         doubleDeviceModeTempInputDevice = null;
