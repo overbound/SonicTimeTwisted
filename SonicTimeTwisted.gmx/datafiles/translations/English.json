@@ -185,6 +185,9 @@
 		"_graphics_menu_Randomdigits": "Random digits",
 		"_graphics_menu_Variablespeed": "Variable speed",
 		"_graphics_menu_Fixedspeed": "Fixed speed",
+		"_graphics_menu_Timer": "Timer format",
+		"_graphics_menu_Timer_MMSSCS": "M'S\"CS",
+		"_graphics_menu_Timer_MMSS": "M:S",
 
 		"_loc_menu_Language": "Language",
 		"_loc_menu_Reload": "Reload translation files",

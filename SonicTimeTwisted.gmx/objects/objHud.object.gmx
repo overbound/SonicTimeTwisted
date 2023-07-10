@@ -54,6 +54,7 @@ character_id[0] = max(objGameData.character_id[0]-1, 0);
 character_id[1] = max(objGameData.character_id[1]-1, 0);
 // time stamp
 time_stamp = "";
+timer_mode = objScreen.timer_mode;
 pauseOffset = 0;
 pauseState = 0;
 controlState = 0;
@@ -138,7 +139,11 @@ if instance_exists(objLevel) {
     milliseconds = string(milliseconds);
     
     // update time stamp
-    time_stamp = minutes+"'"+seconds+'"'+milliseconds;
+    if (objScreen.timer_mode) {
+        time_stamp = minutes+":"+seconds;
+    } else {
+        time_stamp = minutes+"'"+seconds+'"'+milliseconds;
+    }
 }
 </string>
           </argument>

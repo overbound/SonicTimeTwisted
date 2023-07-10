@@ -5,6 +5,7 @@ if(instance_exists(objScreen))
     ini_write_real('video_options', "flashing_reduced", objScreen.flashing_reduced);
     ini_write_real('video_options', 'score_tally_mode', objScreen.score_tally_mode);
     ini_write_real('video_options', "vsync", objScreen.vsync);
+    ini_write_real('video_options', "timer_mode", objScreen.timer_mode);
     ini_write_real('video_options', "format_version", objScreen.options_format);
 }
 if(instance_exists(objProgram.inputManager))

@@ -251,6 +251,9 @@
 		"_graphics_menu_Randomdigits": "Cifre Casuali",
 		"_graphics_menu_Variablespeed": "Velocità Variabile",
 		"_graphics_menu_Fixedspeed": "Velocità Fissa",
+		"_graphics_menu_Timer": "Timer format",
+		"_graphics_menu_Timer_MMSSCS": "M'S\"CS",
+		"_graphics_menu_Timer_MMSS": "M:S",
 
 		"_loc_menu_Language": "Lingua",
 		"_loc_menu_Reload": "Ricarica file di traduzione",

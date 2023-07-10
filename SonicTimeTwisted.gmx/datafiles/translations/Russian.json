@@ -251,6 +251,9 @@
 		"_graphics_menu_Randomdigits": "Случайные числа",
 		"_graphics_menu_Variablespeed": "Перемен. скорость",
 		"_graphics_menu_Fixedspeed": "Фикс. скорость",
+		"_graphics_menu_Timer": "Формат времени",
+		"_graphics_menu_Timer_MMSSCS": "M'S\"CS",
+		"_graphics_menu_Timer_MMSS": "M:S",
 
 		"_loc_menu_Language": "Язык",
 		"_loc_menu_Reload": "Перезагрузить все переводы",

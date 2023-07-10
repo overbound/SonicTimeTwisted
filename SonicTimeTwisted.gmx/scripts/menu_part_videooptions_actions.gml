@@ -16,6 +16,10 @@ switch(argument0)
         with (objScreen) event_user(2);
         break;
     case 4:
+        objScreen.timer_mode = (objScreen.timer_mode + 1) mod 2;
+        with (objHud) { timer_mode = objScreen.timer_mode; }
+        break;
+    case 5:
     case -1:
         menu_fn_exit_submenu(menu_part_options_items, 0);
         break;
@@ -42,6 +46,13 @@ switch(argument0)
             case 3:
                 with (objScreen) event_user(2);
                 break;
+            case 4:
+                objScreen.timer_mode--;
+                if (objScreen.timer_mode < 0) {
+                    objScreen.timer_mode = 1;
+                }
+                with (objHud) { timer_mode = objScreen.timer_mode; }
+                break;
         }
         break;
     case -3:
@@ -62,6 +73,10 @@ switch(argument0)
                 break;
             case 3:
                 with (objScreen) event_user(2);
+                break;
+            case 4:
+                objScreen.timer_mode = (objScreen.timer_mode + 1) mod 2;
+                with (objHud) { timer_mode = objScreen.timer_mode; }
                 break;
         }
         break;
@@ -122,8 +137,22 @@ else
     menu_fn_refresh_displayed_value(2, offLabel);
 }
 
+var timerLabel1 = "< "+tr("_graphics_menu_Timer_MMSSCS")+ " >";
+var timerLabel2 = "< "+tr("_graphics_menu_Timer_MMSS")+ " >";
+
+switch(objScreen.timer_mode)
+{
+    case 0:
+        menu_fn_refresh_displayed_value(4, timerLabel1);
+        break;
+    case 1:
+        menu_fn_refresh_displayed_value(4, timerLabel2);
+        break;
+}
+
 menu_fn_calculate_width_add(1, false, tallyLabel1, tallyLabel2, tallyLabel3);
 menu_fn_calculate_width_add(2, false, onLabel, offLabel);
+menu_fn_calculate_width_add(4, false, timerLabel1, timerLabel2);
 
 menu_fn_calculate_width_finish();
 // preserve the cursor value - usually false for the sake of touchscreen controls

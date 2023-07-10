@@ -251,6 +251,9 @@
 		"_graphics_menu_Randomdigits": "Dígt. aleatórios",
 		"_graphics_menu_Variablespeed": "Veloc. variável",
 		"_graphics_menu_Fixedspeed": "Velocidade fixa",
+		"_graphics_menu_Timer": "Timer format",
+		"_graphics_menu_Timer_MMSSCS": "M'S\"CS",
+		"_graphics_menu_Timer_MMSS": "M:S",
 
 		"_loc_menu_Language": "Idioma",
 		"_loc_menu_Reload": "Recarregar arquivo",

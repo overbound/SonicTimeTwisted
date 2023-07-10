@@ -138,6 +138,7 @@ video_mode = window_scale; // run in window_scale by default.
 prev_video_mode = video_mode; // only used by Alt-Enter.
 altenter_hold = false;
 score_tally_mode = 0;
+timer_mode = 0;
 /**
 Set initial max scale
 **/

@@ -252,6 +252,9 @@
 		"_graphics_menu_Randomdigits": "Dígitos aleatoros",
 		"_graphics_menu_Variablespeed": "Velocidad variable",
 		"_graphics_menu_Fixedspeed": "Velocidad arreglada",
+		"_graphics_menu_Timer": "Timer format",
+		"_graphics_menu_Timer_MMSSCS": "M'S\"CS",
+		"_graphics_menu_Timer_MMSS": "M:S",
 
 		"_loc_menu_Language": "Laenguaje",
 		"_loc_menu_Reload": "Recargar traducciones",

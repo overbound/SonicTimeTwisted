@@ -248,6 +248,9 @@
 		"_graphics_menu_Randomdigits": "Випадкові цифри",
 		"_graphics_menu_Variablespeed": "Змінна швидкість",
 		"_graphics_menu_Fixedspeed": "Фікс. швидкість",
+		"_graphics_menu_Timer": "Формат часу",
+		"_graphics_menu_Timer_MMSSCS": "M'S\"CS",
+		"_graphics_menu_Timer_MMSS": "M:S",
 
 		"_loc_menu_Language": "Мова",
 		"_loc_menu_Reload": "Перезавантажити переклади",

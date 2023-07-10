@@ -250,6 +250,9 @@
 		"_graphics_menu_Randomdigits": "Chiffres aléatoires",
 		"_graphics_menu_Variablespeed": "Vitesse variable",
 		"_graphics_menu_Fixedspeed": "Vitesse fixée",
+		"_graphics_menu_Timer": "Format du temps",
+		"_graphics_menu_Timer_MMSSCS": "M'S\"CS",
+		"_graphics_menu_Timer_MMSS": "M:S",
 
 		"_loc_menu_Language": "Langue",
 		"_loc_menu_Reload": "Recharger les traductions",
