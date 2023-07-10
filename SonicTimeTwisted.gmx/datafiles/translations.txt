@@ -4,3 +4,4 @@ Russian
 BrazilianPortuguese
 Ukrainian
 Italian
+Spanish
