@@ -22,6 +22,17 @@ if objProgram.spawn_tag == 0 {
     objLevel.timer = 36000;
     objGameData.rings[0] = 0;
     objProgram.cutscene = false;
+} else {    
+    if objProgram.spawn_tag == 25 {
+        with objSSBack {
+            with backWall { image_index=1; }    
+            with cloud[0] visible = true;
+            with cloud[1] visible = true;
+            with cloud[2] visible = true;
+            with cloud[3] visible = true;
+            alarm[0]=120;
+        }
+    }
 }</code>
   <enableViews>0</enableViews>
   <clearViewBackground>-1</clearViewBackground>
