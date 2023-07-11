@@ -1,6 +1,6 @@
 ///stt_file_exists(fname)
 
-if (DEVICE_INFO & DEVICE_OS_PLAYSTATION)
+if (objProgram.device_info & DEVICE_OS_PLAYSTATION)
 {
     var _name = argument0;
     with (objProgram)
@@ -9,7 +9,7 @@ if (DEVICE_INFO & DEVICE_OS_PLAYSTATION)
     }
 }
 else
-if(DEVICE_INFO & DEVICE_OS_ANDROID)
+if(objProgram.device_info & DEVICE_OS_ANDROID)
 {
     return file_exists(working_directory + argument0);
 }

@@ -45,7 +45,7 @@ switch(argument0)
         );
         break;
     case INPUT_OS_SPECIFIC_1:
-        if(DEVICE_INFO & DEVICE_OS_ANDROID)
+        if(objProgram.device_info & DEVICE_OS_ANDROID)
         {
             set_input_method_detailed(
                 input_method_init_android_btusb,

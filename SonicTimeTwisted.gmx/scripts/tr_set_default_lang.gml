@@ -1,7 +1,7 @@
 ///tr_set_default_lang()
 // Only call on first run!
 
-if (DEVICE_INFO & DEVICE_OS_BROWSER) {
+if (objProgram.device_info & DEVICE_OS_BROWSER) {
     // do not ask, it just doesn't work properly. i don't *want* to know why.
     // it will fallback to 'en' anyway.
     return false;

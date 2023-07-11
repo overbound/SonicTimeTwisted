@@ -32,7 +32,7 @@ if (code_is_compiled()) {
     show_debug_message("YYC is enabled, expect weird behaviour.");
     math_set_epsilon(0.00001);
 }
-
+init_device_info();
 image_speed = 0;
 level = "";
 /* AUTHOR NOTE: This object controls all global game operations, such as the
@@ -149,7 +149,7 @@ special_level_add(SSF7, SSP2);
 special_level_add(SSF4, SSP6);
 */
 
-if (DEVICE_INFO &amp; DEVICE_OS_PLAYSTATION)
+if (objProgram.device_info &amp; DEVICE_OS_PLAYSTATION)
 {
     show_debug_message("[STT-PS]: Allocating stuff for saving and loading...");
     storage_map = ds_map_create(); // filename|content (as a string)
@@ -245,7 +245,7 @@ if (ds_map_exists(async_load, "group_id"))
     exit;
 }
 
-if (DEVICE_INFO &amp; DEVICE_OS_PLAYSTATION)
+if (objProgram.device_info &amp; DEVICE_OS_PLAYSTATION)
 {
     show_debug_message("[STT-PS]: async_load ds map as JSON:");
     show_debug_message(json_encode(async_load));
@@ -420,7 +420,7 @@ apply_video_settings();
 audio_stop_all();
 d3d_end();
 
-if (DEVICE_INFO &amp; DEVICE_OS_PLAYSTATION) {
+if (objProgram.device_info &amp; DEVICE_OS_PLAYSTATION) {
     if (ds_exists(storage_buffers, ds_type_map)) {
         for (var _k = ds_map_find_first(storage_buffers);
              ds_map_exists(storage_buffers, _k);
@@ -469,7 +469,7 @@ cosine = 0;
             <kind>1</kind>
             <string>///draw save progress (if on consoles)
 
-if (DEVICE_INFO &amp; DEVICE_OS_PLAYSTATION)
+if (objProgram.device_info &amp; DEVICE_OS_PLAYSTATION)
 {
     if (async_busy/* || true*/)
     {
@@ -565,7 +565,7 @@ print_mem_usage();
           <argument>
             <kind>1</kind>
             <string>// only available for windows
-if(DEVICE_INFO &amp; DEVICE_TYPE_COMPUTER)
+if(objProgram.device_info &amp; DEVICE_TYPE_COMPUTER)
 {
     game_restart();
 }

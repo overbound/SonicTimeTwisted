@@ -1,4 +1,4 @@
-if((DEVICE_INFO & DEVICE_TYPE_SMARTPHONE) && (DEVICE_INFO & DEVICE_OS_ANDROID))
+if((objProgram.device_info & DEVICE_TYPE_SMARTPHONE) && (objProgram.device_info & DEVICE_OS_ANDROID))
 {
     input_method_init_physical();
     input_manage_script = input_method_android_btusb;
@@ -23,7 +23,7 @@ if((DEVICE_INFO & DEVICE_TYPE_SMARTPHONE) && (DEVICE_INFO & DEVICE_OS_ANDROID))
                 input_rumble_trigger_script = rumble_manage;
                 break;
         }
-        if(DEVICE_INFO & DEVICE_OS_ANDROID)
+        if(objProgram.device_info & DEVICE_OS_ANDROID)
         {
             // his should work with input devices too
             input_rumble_perform_script = rumble_perform_android_smartphone;

@@ -3,13 +3,13 @@ items = false;
 menu_fn_add_title(tr("_options_menu_Title"));
 menu_fn_add_option(tr("_options_menu_Video"), 0);
 menu_fn_add_option(tr("_options_menu_sound_title"), 11);
-if(DEVICE_INFO & DEVICE_TYPE_COMPUTER)
+if(objProgram.device_info & DEVICE_TYPE_COMPUTER)
 {
     menu_fn_add_option(tr("_options_menu_Input_Method"), 1, 1, "");
 }
-if(DEVICE_INFO & DEVICE_TYPE_SMARTPHONE)
+if(objProgram.device_info & DEVICE_TYPE_SMARTPHONE)
 {
-    if (DEVICE_INFO & DEVICE_OS_ANDROID)
+    if (objProgram.device_info & DEVICE_OS_ANDROID)
     {
         menu_fn_add_option(tr("_options_menu_Input_Method"), 8, true, "");
         menu_fn_add_option(tr("_options_menu_touchscreen_Configure_vibrations"), 12);
@@ -20,22 +20,22 @@ if(DEVICE_INFO & DEVICE_TYPE_SMARTPHONE)
     }
     menu_fn_add_option(tr("_options_menu_Configure_Touchscreen"), 6);
 }
-if(DEVICE_INFO & DEVICE_TYPE_COMPUTER)
+if(objProgram.device_info & DEVICE_TYPE_COMPUTER)
 {
     menu_fn_add_option(tr("_options_menu_Map_keys"), 2);
     menu_fn_add_option(tr("_options_menu_Map_gamepad"), 3);
 }
 else
 {
-   if(DEVICE_INFO & DEVICE_TYPE_SMARTPHONE || DEVICE_INFO & DEVICE_TYPE_CONSOLE)
+   if(objProgram.device_info & DEVICE_TYPE_SMARTPHONE || objProgram.device_info & DEVICE_TYPE_CONSOLE)
    {
-       if(DEVICE_INFO & DEVICE_OS_ANDROID)
+       if(objProgram.device_info & DEVICE_OS_ANDROID)
        {
             menu_fn_add_option(tr("_options_menu_Map_BTUSB_device"), 9);
        }
        else
        {
-            if (!(DEVICE_INFO & DEVICE_OS_PLAYSTATION)) menu_fn_add_option(tr("_options_menu_Map_keys"), 2);
+            if (!(objProgram.device_info & DEVICE_OS_PLAYSTATION)) menu_fn_add_option(tr("_options_menu_Map_keys"), 2);
             menu_fn_add_option(tr("_options_menu_Map_gamepad"), 3);
        }
    }

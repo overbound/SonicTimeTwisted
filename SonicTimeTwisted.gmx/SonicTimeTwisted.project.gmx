@@ -2,8 +2,7 @@
 <assets>
   <Configs name="configs">
     <Config>Configs\Default</Config>
-    <Config>Configs\AndroidSmartphone</Config>
-    <Config>Configs\AndroidConsole</Config>
+    <Config>Configs\Android</Config>
     <Config>Configs\MacOS</Config>
     <Config>Configs\Linux</Config>
     <Config>Configs\PlayStation</Config>
@@ -24,10 +23,7 @@
         <Config name="Default">
           <CopyToMask>9223372036854775807</CopyToMask>
         </Config>
-        <Config name="AndroidSmartphone">
-          <CopyToMask>9223372036854775807</CopyToMask>
-        </Config>
-        <Config name="AndroidConsole">
+        <Config name="Android">
           <CopyToMask>9223372036854775807</CopyToMask>
         </Config>
         <Config name="MacOS">
@@ -60,10 +56,7 @@
           <Config name="Default">
             <CopyToMask>9223372036854775807</CopyToMask>
           </Config>
-          <Config name="AndroidSmartphone">
-            <CopyToMask>9223372036854775807</CopyToMask>
-          </Config>
-          <Config name="AndroidConsole">
+          <Config name="Android">
             <CopyToMask>9223372036854775807</CopyToMask>
           </Config>
           <Config name="MacOS">
@@ -96,10 +89,7 @@
             <Config name="Default">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
-            <Config name="AndroidSmartphone">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="AndroidConsole">
+            <Config name="Android">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="MacOS">
@@ -131,10 +121,7 @@
             <Config name="Default">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
-            <Config name="AndroidSmartphone">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="AndroidConsole">
+            <Config name="Android">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="MacOS">
@@ -166,10 +153,7 @@
             <Config name="Default">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
-            <Config name="AndroidSmartphone">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="AndroidConsole">
+            <Config name="Android">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="MacOS">
@@ -201,10 +185,7 @@
             <Config name="Default">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
-            <Config name="AndroidSmartphone">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="AndroidConsole">
+            <Config name="Android">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="MacOS">
@@ -236,10 +217,7 @@
             <Config name="Default">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
-            <Config name="AndroidSmartphone">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="AndroidConsole">
+            <Config name="Android">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="MacOS">
@@ -271,10 +249,7 @@
             <Config name="Default">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
-            <Config name="AndroidSmartphone">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="AndroidConsole">
+            <Config name="Android">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="MacOS">
@@ -306,10 +281,7 @@
             <Config name="Default">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
-            <Config name="AndroidSmartphone">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="AndroidConsole">
+            <Config name="Android">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="MacOS">
@@ -341,10 +313,7 @@
             <Config name="Default">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
-            <Config name="AndroidSmartphone">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="AndroidConsole">
+            <Config name="Android">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="MacOS">
@@ -376,10 +345,7 @@
             <Config name="Default">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
-            <Config name="AndroidSmartphone">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="AndroidConsole">
+            <Config name="Android">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="MacOS">
@@ -412,10 +378,7 @@
           <Config name="Default">
             <CopyToMask>9223372036854775807</CopyToMask>
           </Config>
-          <Config name="AndroidSmartphone">
-            <CopyToMask>9223372036854775807</CopyToMask>
-          </Config>
-          <Config name="AndroidConsole">
+          <Config name="Android">
             <CopyToMask>9223372036854775807</CopyToMask>
           </Config>
           <Config name="MacOS">
@@ -448,10 +411,7 @@
             <Config name="Default">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
-            <Config name="AndroidSmartphone">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="AndroidConsole">
+            <Config name="Android">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="MacOS">
@@ -483,10 +443,7 @@
             <Config name="Default">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
-            <Config name="AndroidSmartphone">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="AndroidConsole">
+            <Config name="Android">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="MacOS">
@@ -518,10 +475,7 @@
             <Config name="Default">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
-            <Config name="AndroidSmartphone">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="AndroidConsole">
+            <Config name="Android">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="MacOS">
@@ -553,10 +507,7 @@
             <Config name="Default">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
-            <Config name="AndroidSmartphone">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="AndroidConsole">
+            <Config name="Android">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="MacOS">
@@ -588,10 +539,7 @@
             <Config name="Default">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
-            <Config name="AndroidSmartphone">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="AndroidConsole">
+            <Config name="Android">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="MacOS">
@@ -623,10 +571,7 @@
             <Config name="Default">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
-            <Config name="AndroidSmartphone">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="AndroidConsole">
+            <Config name="Android">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="MacOS">
@@ -658,10 +603,7 @@
             <Config name="Default">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
-            <Config name="AndroidSmartphone">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="AndroidConsole">
+            <Config name="Android">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="MacOS">
@@ -693,10 +635,7 @@
             <Config name="Default">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
-            <Config name="AndroidSmartphone">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="AndroidConsole">
+            <Config name="Android">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="MacOS">
@@ -728,10 +667,7 @@
             <Config name="Default">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
-            <Config name="AndroidSmartphone">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="AndroidConsole">
+            <Config name="Android">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="MacOS">
@@ -764,10 +700,7 @@
           <Config name="Default">
             <CopyToMask>9223372036854775807</CopyToMask>
           </Config>
-          <Config name="AndroidSmartphone">
-            <CopyToMask>9223372036854775807</CopyToMask>
-          </Config>
-          <Config name="AndroidConsole">
+          <Config name="Android">
             <CopyToMask>9223372036854775807</CopyToMask>
           </Config>
           <Config name="MacOS">
@@ -800,10 +733,7 @@
             <Config name="Default">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
-            <Config name="AndroidSmartphone">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="AndroidConsole">
+            <Config name="Android">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="MacOS">
@@ -835,10 +765,7 @@
             <Config name="Default">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
-            <Config name="AndroidSmartphone">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="AndroidConsole">
+            <Config name="Android">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="MacOS">
@@ -870,10 +797,7 @@
             <Config name="Default">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
-            <Config name="AndroidSmartphone">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="AndroidConsole">
+            <Config name="Android">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="MacOS">
@@ -905,10 +829,7 @@
             <Config name="Default">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
-            <Config name="AndroidSmartphone">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="AndroidConsole">
+            <Config name="Android">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="MacOS">
@@ -940,10 +861,7 @@
             <Config name="Default">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
-            <Config name="AndroidSmartphone">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="AndroidConsole">
+            <Config name="Android">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="MacOS">
@@ -975,10 +893,7 @@
             <Config name="Default">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
-            <Config name="AndroidSmartphone">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="AndroidConsole">
+            <Config name="Android">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="MacOS">
@@ -1010,10 +925,7 @@
             <Config name="Default">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
-            <Config name="AndroidSmartphone">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="AndroidConsole">
+            <Config name="Android">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="MacOS">
@@ -1045,10 +957,7 @@
             <Config name="Default">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
-            <Config name="AndroidSmartphone">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="AndroidConsole">
+            <Config name="Android">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="MacOS">
@@ -1080,10 +989,7 @@
             <Config name="Default">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
-            <Config name="AndroidSmartphone">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="AndroidConsole">
+            <Config name="Android">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="MacOS">
@@ -1116,10 +1022,7 @@
           <Config name="Default">
             <CopyToMask>9223372036854775807</CopyToMask>
           </Config>
-          <Config name="AndroidSmartphone">
-            <CopyToMask>9223372036854775807</CopyToMask>
-          </Config>
-          <Config name="AndroidConsole">
+          <Config name="Android">
             <CopyToMask>9223372036854775807</CopyToMask>
           </Config>
           <Config name="MacOS">
@@ -1152,10 +1055,7 @@
             <Config name="Default">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
-            <Config name="AndroidSmartphone">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="AndroidConsole">
+            <Config name="Android">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="MacOS">
@@ -1187,10 +1087,7 @@
             <Config name="Default">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
-            <Config name="AndroidSmartphone">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="AndroidConsole">
+            <Config name="Android">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="MacOS">
@@ -1222,10 +1119,7 @@
             <Config name="Default">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
-            <Config name="AndroidSmartphone">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="AndroidConsole">
+            <Config name="Android">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="MacOS">
@@ -1257,10 +1151,7 @@
             <Config name="Default">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
-            <Config name="AndroidSmartphone">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="AndroidConsole">
+            <Config name="Android">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="MacOS">
@@ -1292,10 +1183,7 @@
             <Config name="Default">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
-            <Config name="AndroidSmartphone">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="AndroidConsole">
+            <Config name="Android">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="MacOS">
@@ -1327,10 +1215,7 @@
             <Config name="Default">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
-            <Config name="AndroidSmartphone">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="AndroidConsole">
+            <Config name="Android">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="MacOS">
@@ -1362,10 +1247,7 @@
             <Config name="Default">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
-            <Config name="AndroidSmartphone">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="AndroidConsole">
+            <Config name="Android">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="MacOS">
@@ -1397,10 +1279,7 @@
             <Config name="Default">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
-            <Config name="AndroidSmartphone">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="AndroidConsole">
+            <Config name="Android">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="MacOS">
@@ -1432,10 +1311,7 @@
             <Config name="Default">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
-            <Config name="AndroidSmartphone">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="AndroidConsole">
+            <Config name="Android">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="MacOS">
@@ -1468,10 +1344,7 @@
           <Config name="Default">
             <CopyToMask>9223372036854775807</CopyToMask>
           </Config>
-          <Config name="AndroidSmartphone">
-            <CopyToMask>9223372036854775807</CopyToMask>
-          </Config>
-          <Config name="AndroidConsole">
+          <Config name="Android">
             <CopyToMask>9223372036854775807</CopyToMask>
           </Config>
           <Config name="MacOS">
@@ -1504,10 +1377,7 @@
             <Config name="Default">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
-            <Config name="AndroidSmartphone">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="AndroidConsole">
+            <Config name="Android">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="MacOS">
@@ -1539,10 +1409,7 @@
             <Config name="Default">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
-            <Config name="AndroidSmartphone">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="AndroidConsole">
+            <Config name="Android">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="MacOS">
@@ -1574,10 +1441,7 @@
             <Config name="Default">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
-            <Config name="AndroidSmartphone">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="AndroidConsole">
+            <Config name="Android">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="MacOS">
@@ -1609,10 +1473,7 @@
             <Config name="Default">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
-            <Config name="AndroidSmartphone">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="AndroidConsole">
+            <Config name="Android">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="MacOS">
@@ -1644,10 +1505,7 @@
             <Config name="Default">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
-            <Config name="AndroidSmartphone">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="AndroidConsole">
+            <Config name="Android">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="MacOS">
@@ -1679,10 +1537,7 @@
             <Config name="Default">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
-            <Config name="AndroidSmartphone">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="AndroidConsole">
+            <Config name="Android">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="MacOS">
@@ -1714,10 +1569,7 @@
             <Config name="Default">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
-            <Config name="AndroidSmartphone">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="AndroidConsole">
+            <Config name="Android">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="MacOS">
@@ -1749,10 +1601,7 @@
             <Config name="Default">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
-            <Config name="AndroidSmartphone">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="AndroidConsole">
+            <Config name="Android">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="MacOS">
@@ -1784,10 +1633,7 @@
             <Config name="Default">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
-            <Config name="AndroidSmartphone">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="AndroidConsole">
+            <Config name="Android">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="MacOS">
@@ -1820,10 +1666,7 @@
           <Config name="Default">
             <CopyToMask>9223372036854775807</CopyToMask>
           </Config>
-          <Config name="AndroidSmartphone">
-            <CopyToMask>9223372036854775807</CopyToMask>
-          </Config>
-          <Config name="AndroidConsole">
+          <Config name="Android">
             <CopyToMask>9223372036854775807</CopyToMask>
           </Config>
           <Config name="MacOS">
@@ -1855,10 +1698,7 @@
           <Config name="Default">
             <CopyToMask>9223372036854775807</CopyToMask>
           </Config>
-          <Config name="AndroidSmartphone">
-            <CopyToMask>9223372036854775807</CopyToMask>
-          </Config>
-          <Config name="AndroidConsole">
+          <Config name="Android">
             <CopyToMask>9223372036854775807</CopyToMask>
           </Config>
           <Config name="MacOS">
@@ -1891,10 +1731,7 @@
             <Config name="Default">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
-            <Config name="AndroidSmartphone">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="AndroidConsole">
+            <Config name="Android">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="MacOS">
@@ -1926,10 +1763,7 @@
             <Config name="Default">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
-            <Config name="AndroidSmartphone">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="AndroidConsole">
+            <Config name="Android">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="MacOS">
@@ -1961,10 +1795,7 @@
             <Config name="Default">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
-            <Config name="AndroidSmartphone">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="AndroidConsole">
+            <Config name="Android">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="MacOS">
@@ -1996,10 +1827,7 @@
             <Config name="Default">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
-            <Config name="AndroidSmartphone">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="AndroidConsole">
+            <Config name="Android">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="MacOS">
@@ -2031,10 +1859,7 @@
             <Config name="Default">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
-            <Config name="AndroidSmartphone">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="AndroidConsole">
+            <Config name="Android">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="MacOS">
@@ -2066,10 +1891,7 @@
             <Config name="Default">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
-            <Config name="AndroidSmartphone">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="AndroidConsole">
+            <Config name="Android">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="MacOS">
@@ -2101,10 +1923,7 @@
             <Config name="Default">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
-            <Config name="AndroidSmartphone">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="AndroidConsole">
+            <Config name="Android">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="MacOS">
@@ -2136,10 +1955,7 @@
             <Config name="Default">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
-            <Config name="AndroidSmartphone">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="AndroidConsole">
+            <Config name="Android">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="MacOS">
@@ -2171,10 +1987,7 @@
             <Config name="Default">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
-            <Config name="AndroidSmartphone">
-              <CopyToMask>9223372036854775807</CopyToMask>
-            </Config>
-            <Config name="AndroidConsole">
+            <Config name="Android">
               <CopyToMask>9223372036854775807</CopyToMask>
             </Config>
             <Config name="MacOS">
@@ -2210,10 +2023,7 @@
             <Config name="Default">
               <CopyToMask>2097160</CopyToMask>
             </Config>
-            <Config name="AndroidSmartphone">
-              <CopyToMask>2097160</CopyToMask>
-            </Config>
-            <Config name="AndroidConsole">
+            <Config name="Android">
               <CopyToMask>2097160</CopyToMask>
             </Config>
             <Config name="MacOS">
@@ -2245,10 +2055,7 @@
             <Config name="Default">
               <CopyToMask>2097160</CopyToMask>
             </Config>
-            <Config name="AndroidSmartphone">
-              <CopyToMask>2097160</CopyToMask>
-            </Config>
-            <Config name="AndroidConsole">
+            <Config name="Android">
               <CopyToMask>2097160</CopyToMask>
             </Config>
             <Config name="MacOS">
@@ -2282,10 +2089,7 @@
         <Config name="Default">
           <CopyToMask>202375362</CopyToMask>
         </Config>
-        <Config name="AndroidSmartphone">
-          <CopyToMask>202375362</CopyToMask>
-        </Config>
-        <Config name="AndroidConsole">
+        <Config name="Android">
           <CopyToMask>202375362</CopyToMask>
         </Config>
         <Config name="MacOS">
@@ -2317,10 +2121,7 @@
         <Config name="Default">
           <CopyToMask>134217856</CopyToMask>
         </Config>
-        <Config name="AndroidSmartphone">
-          <CopyToMask>134217856</CopyToMask>
-        </Config>
-        <Config name="AndroidConsole">
+        <Config name="Android">
           <CopyToMask>134217856</CopyToMask>
         </Config>
         <Config name="MacOS">
@@ -4542,6 +4343,7 @@
         </scripts>
         <scripts name="Startup">
           <script>scripts\show_startup_window.gml</script>
+          <script>scripts\init_device_info.gml</script>
         </scripts>
         <scripts name="Transitions">
           <script>scripts\end_level_normal.gml</script>
@@ -6188,7 +5990,7 @@
       </rooms>
     </rooms>
   </rooms>
-  <constants number="90">
+  <constants number="89">
     <constant name="VERSION">"v1.1.3-dev"</constant>
     <constant name="GAMEPAD_POV_Y">7</constant>
     <constant name="GAMEPAD_POV_X">6</constant>
@@ -6275,7 +6077,6 @@
     <constant name="INPUT_TOUCHSCREEN">1</constant>
     <constant name="INPUT_GAMEPAD">2</constant>
     <constant name="INPUT_OS_SPECIFIC_1">3</constant>
-    <constant name="DEVICE_HAS_TOUCHSCREEN">0</constant>
     <constant name="DEVICE_SUPPORTS_FILE_FIND">1</constant>
     <constant name="sine">global._sine_lookup</constant>
     <constant name="cosine">global._cosine_lookup</constant>

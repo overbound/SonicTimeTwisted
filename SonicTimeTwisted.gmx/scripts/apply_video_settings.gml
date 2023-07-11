@@ -12,7 +12,7 @@ Video modes NEW:
 n - window xn
 ...
 **/
-if (DEVICE_INFO & DEVICE_TYPE_COMPUTER) {
+if (objProgram.device_info & DEVICE_TYPE_COMPUTER) {
     with (objScreen) {        
         /* apply vsync */
         display_set_windows_alternate_sync(vsync);

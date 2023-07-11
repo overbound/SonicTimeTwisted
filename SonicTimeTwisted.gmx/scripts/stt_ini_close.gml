@@ -1,6 +1,6 @@
 ///stt_ini_close()
 
-if (DEVICE_INFO & DEVICE_OS_PLAYSTATION)
+if (objProgram.device_info & DEVICE_OS_PLAYSTATION)
 {
     with (objProgram)
     {

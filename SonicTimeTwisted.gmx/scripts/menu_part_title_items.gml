@@ -2,7 +2,7 @@ items = false;
 
 menu_fn_add_option(tr("_main_menu_Play"), 0);
 menu_fn_add_option(tr("_main_menu_Options"), 1);
-if ((DEVICE_INFO & DEVICE_TYPE_COMPUTER) && (!(DEVICE_INFO & DEVICE_OS_BROWSER)))
+if ((objProgram.device_info & DEVICE_TYPE_COMPUTER) && (!(objProgram.device_info & DEVICE_OS_BROWSER)))
 {
     menu_fn_add_option(tr("_main_menu_Exit"), 2);
 }

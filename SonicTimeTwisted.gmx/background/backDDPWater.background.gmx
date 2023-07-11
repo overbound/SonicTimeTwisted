@@ -12,11 +12,10 @@
   <TextureGroups>
     <TextureGroup0>18</TextureGroup0>
     <TextureGroup1>18</TextureGroup1>
-    <TextureGroup2>18</TextureGroup2>
+    <TextureGroup2>0</TextureGroup2>
     <TextureGroup3>0</TextureGroup3>
-    <TextureGroup4>0</TextureGroup4>
+    <TextureGroup4>18</TextureGroup4>
     <TextureGroup5>18</TextureGroup5>
-    <TextureGroup6>18</TextureGroup6>
   </TextureGroups>
   <For3D>0</For3D>
   <width>96</width>

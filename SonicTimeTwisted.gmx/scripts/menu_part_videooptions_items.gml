@@ -1,13 +1,13 @@
 items = false;
 
 menu_fn_add_title(tr("_graphics_menu_Title"));
-if(DEVICE_INFO & DEVICE_TYPE_COMPUTER)
+if(objProgram.device_info & DEVICE_TYPE_COMPUTER)
 {
     menu_fn_add_option(tr("_graphics_menu_Screen_size"), 0, 1, "");
 }
 menu_fn_add_option(tr("_graphics_menu_Stm"), 1, 1, "");
 menu_fn_add_option(tr("_graphics_menu_Fr"), 2, 1, "");
-if (DEVICE_INFO & DEVICE_TYPE_COMPUTER)
+if (objProgram.device_info & DEVICE_TYPE_COMPUTER)
 {
     menu_fn_add_option(tr("_graphics_menu_VSync"), 3, 1, "");
 }

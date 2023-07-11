@@ -228,9 +228,9 @@ else
 
 menu_fn_calculate_width_add(1, false, inputLabel1, inputLabel2);
 
-if(DEVICE_INFO & DEVICE_TYPE_SMARTPHONE)
+if(objProgram.device_info & DEVICE_TYPE_SMARTPHONE)
 {
-    if(DEVICE_INFO & DEVICE_OS_ANDROID)
+    if(objProgram.device_info & DEVICE_OS_ANDROID)
     {
         inputLabel1 = "< "+tr("_options_menu_InputLabel_Touchscreen")+ " >";
         inputLabel2 = "< "+tr("_options_menu_InputLabel_BTUSB_device")+ " >";

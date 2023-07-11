@@ -891,9 +891,8 @@
     <option_xbone_title_id></option_xbone_title_id>
   </Options>
   <ConfigConstants>
-    <constants number="3">
+    <constants number="2">
       <constant name="DEVICE_INFO">DEVICE_TYPE_CONSOLE | DEVICE_OS_PLAYSTATION</constant>
-      <constant name="DEVICE_HAS_TOUCHSCREEN">0</constant>
       <constant name="DEVICE_SUPPORTS_FILE_FIND">0</constant>
     </constants>
   </ConfigConstants>

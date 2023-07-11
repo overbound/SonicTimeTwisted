@@ -8,7 +8,7 @@ if (!file_exists(_fname)) {
 show_debug_message("Loading translation " + _fname);
 
 var _str;
-if (DEVICE_INFO & DEVICE_OS_BROWSER) { // HTML5.
+if (objProgram.device_info & DEVICE_OS_BROWSER) { // HTML5.
     var _filehandle = file_text_open_read(_fname);
     _str = "";
     while (!file_text_eof(_filehandle)) {

@@ -11,7 +11,6 @@
     <volume>1</volume>
     <volume>1</volume>
     <volume>1</volume>
-    <volume>1</volume>
   </volume>
   <pan>0</pan>
   <bitRates>
@@ -21,10 +20,8 @@
     <bitRate>192</bitRate>
     <bitRate>192</bitRate>
     <bitRate>192</bitRate>
-    <bitRate>192</bitRate>
   </bitRates>
   <sampleRates>
-    <sampleRate>44100</sampleRate>
     <sampleRate>44100</sampleRate>
     <sampleRate>44100</sampleRate>
     <sampleRate>44100</sampleRate>
@@ -39,10 +36,8 @@
     <type>0</type>
     <type>0</type>
     <type>0</type>
-    <type>0</type>
   </types>
   <bitDepths>
-    <bitDepth>16</bitDepth>
     <bitDepth>16</bitDepth>
     <bitDepth>16</bitDepth>
     <bitDepth>16</bitDepth>

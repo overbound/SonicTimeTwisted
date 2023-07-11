@@ -18,7 +18,7 @@ if(state == 0)
             draw_absolutely = true;
         }
     }
-    if(DEVICE_INFO & DEVICE_TYPE_SMARTPHONE)
+    if(objProgram.device_info & DEVICE_TYPE_SMARTPHONE)
     {
         draw_offset_x = (objScreen.gui_width-objScreen.width)/2;  
         gui_click_offset_x = draw_offset_x;

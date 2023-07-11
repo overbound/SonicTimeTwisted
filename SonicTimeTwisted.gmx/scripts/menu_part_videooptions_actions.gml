@@ -89,7 +89,7 @@ menu_fn_calculate_width_start();
 var onLabel = "< "+tr("_On")+ " >";
 var offLabel = "< "+tr("_Off")+ " >";
 
-if(DEVICE_INFO & DEVICE_TYPE_COMPUTER)
+if(objProgram.device_info & DEVICE_TYPE_COMPUTER)
 {
     var gfxLabel1 = "< "+tr("_graphics_menu_Fs")+ " >";
     var gfxLabel2 = "< "+tr_format(tr("_graphics_menu_Ws"), objScreen.video_mode)+ " >";

@@ -1,6 +1,6 @@
 ///stt_ini_open(fname)
 
-if (DEVICE_INFO & DEVICE_OS_PLAYSTATION)
+if (objProgram.device_info & DEVICE_OS_PLAYSTATION)
 {
     var _name = argument0;
     with (objProgram)
@@ -11,7 +11,7 @@ if (DEVICE_INFO & DEVICE_OS_PLAYSTATION)
 }
 
 else
-if(DEVICE_INFO & DEVICE_OS_ANDROID)
+if(objProgram.device_info & DEVICE_OS_ANDROID)
 {
     show_debug_message("Opening "+working_directory + argument0);
     ini_open(working_directory + argument0);

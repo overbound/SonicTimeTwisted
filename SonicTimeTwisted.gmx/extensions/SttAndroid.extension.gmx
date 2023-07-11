@@ -27,10 +27,7 @@
     <Config name="Default">
       <CopyToMask>2097160</CopyToMask>
     </Config>
-    <Config name="AndroidSmartphone">
-      <CopyToMask>2097160</CopyToMask>
-    </Config>
-    <Config name="AndroidConsole">
+    <Config name="Android">
       <CopyToMask>2097160</CopyToMask>
     </Config>
     <Config name="MacOS">
@@ -62,10 +59,7 @@
         <Config name="Default">
           <CopyToMask>2097160</CopyToMask>
         </Config>
-        <Config name="AndroidSmartphone">
-          <CopyToMask>2097160</CopyToMask>
-        </Config>
-        <Config name="AndroidConsole">
+        <Config name="Android">
           <CopyToMask>2097160</CopyToMask>
         </Config>
         <Config name="MacOS">
@@ -420,6 +414,15 @@
           <args>
             <arg>2</arg>
           </args>
+        </function>
+        <function>
+          <name>android_get_device_type</name>
+          <externalName>android_get_device_type</externalName>
+          <kind>11</kind>
+          <help>android_get_device_type()</help>
+          <returnType>2</returnType>
+          <argCount>-1</argCount>
+          <args/>
         </function>
       </functions>
       <constants/>

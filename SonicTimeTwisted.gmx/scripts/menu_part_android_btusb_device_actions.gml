@@ -38,7 +38,7 @@ switch(argument0)
         
     case 9:
         // action : device detect cancel
-        if(DEVICE_INFO & DEVICE_OS_ANDROID)
+        if(objProgram.device_info & DEVICE_OS_ANDROID)
         {
             android_double_device_detecting_mode_cancel();
         }
@@ -46,7 +46,7 @@ switch(argument0)
         break;
     case 10:
         // action : open device input window 1
-        if(DEVICE_INFO & DEVICE_OS_ANDROID)
+        if(objProgram.device_info & DEVICE_OS_ANDROID)
         {
             android_disconnect_input(0);
             android_double_device_detecting_mode_init(0);
@@ -56,14 +56,14 @@ switch(argument0)
         break;
     case 11:
         // action : open device input window 2
-        if(DEVICE_INFO & DEVICE_OS_ANDROID)
+        if(objProgram.device_info & DEVICE_OS_ANDROID)
         {
             confirmation_cursor = 2;
         }
         menu_fn_open_device_detect_window(tr("_options_menu_BTUSB_device_DoubleMode_device2"), 12, 9);
         break;
     case 12:
-        if(DEVICE_INFO & DEVICE_OS_ANDROID)
+        if(objProgram.device_info & DEVICE_OS_ANDROID)
         {
             confirmation_cursor = 0;
         }

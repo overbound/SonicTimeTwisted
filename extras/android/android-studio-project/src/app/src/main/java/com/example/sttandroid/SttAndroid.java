@@ -17,7 +17,9 @@
  */
 package com.example.sttandroid;
 
+import android.app.UiModeManager;
 import android.content.Context;
+import android.content.res.Configuration;
 import android.hardware.input.InputManager;
 import android.os.Vibrator;
 import android.view.InputDevice;
@@ -655,6 +657,22 @@ public class SttAndroid extends ExtensionBase {
     }
 
     /**
+     * Returns a value representing the device type
+     *
+     * @return 0 if smartphone, 1 if console or TV
+     */
+    public double android_get_device_type() {
+
+        UiModeManager umm = (UiModeManager) RunnerJNILib.GetApplicationContext().getSystemService(
+                Context.UI_MODE_SERVICE
+        );
+        if (umm.getCurrentModeType() == Configuration.UI_MODE_TYPE_TELEVISION) {
+            return 1.0;
+        }
+        return 0.0;
+    }
+
+    /**
      * Starts the rumble thread for the main device.
      */
     protected void startRumbleThread() {
@@ -662,7 +680,7 @@ public class SttAndroid extends ExtensionBase {
             terminateRumbleThread();
         }
         Vibrator v = (Vibrator) RunnerJNILib.GetApplicationContext().getSystemService(
-                Context.VIBRATOR_SERVICE
+                Context.VIBRATOR_MANAGER_SERVICE
         );
         if (v.hasVibrator()) {
             rumbleThread = new RumbleThread(v);

@@ -7,7 +7,7 @@ internal__button_count = array_height_2d(items);
 var view_width = view_wview[view_current];
 var view_height = view_hview[view_current];
 
-if(DEVICE_INFO & DEVICE_TYPE_SMARTPHONE)
+if(objProgram.device_info & DEVICE_TYPE_SMARTPHONE)
 {
     view_width = objScreen.gui_width;
     view_height = objScreen.gui_height;

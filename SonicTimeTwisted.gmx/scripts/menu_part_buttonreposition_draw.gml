@@ -10,7 +10,7 @@ if(is_array(temporary_variable))
     var x_test;
     var x_delta = 0;
     var y_delta = 0;
-    if(DEVICE_INFO & DEVICE_TYPE_SMARTPHONE)
+    if(objProgram.device_info & DEVICE_TYPE_SMARTPHONE)
     {
         x_test = objScreen.gui_width/2;
         x_delta = (objScreen.gui_width - objScreen.width)/2;

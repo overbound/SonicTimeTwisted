@@ -44,7 +44,7 @@ view_wview[0] = width;
 view_hview[0] = height;
 view_wport[0] = width;
 view_hport[0] = height;
-if(DEVICE_INFO &amp; DEVICE_TYPE_SMARTPHONE)
+if(objProgram.device_info &amp; DEVICE_TYPE_SMARTPHONE)
 {
     // calculating what the definition would be if the game used the entire screen
     // first, the most common case: if the screen is of an aspect ratio larger than the game's native one
@@ -292,7 +292,7 @@ show_debug_message("video_mode = " + string(video_mode));
             <string>///Detect alt-enter or enter-alt presses.
 
 // macOS special begin, this does nothing on any target that's not macOS!
-if (DEVICE_INFO &amp; DEVICE_OS_MACOS) {
+if (objProgram.device_info &amp; DEVICE_OS_MACOS) {
     var _iswindowfs = window_get_fullscreen();
     var _isgamefs = video_mode == 0;
     // check if the window state does not match game's expected state.

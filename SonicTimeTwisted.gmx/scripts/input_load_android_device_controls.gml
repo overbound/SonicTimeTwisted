@@ -3,7 +3,7 @@ var loaded = false;
 if(argument0) // argument0 - from INI, default values if false
 {
     show_debug_message("Load controls from INI");
-    if(DEVICE_INFO & DEVICE_TYPE_SMARTPHONE)
+    if(objProgram.device_info & DEVICE_TYPE_SMARTPHONE)
     {
         var input_method = ini_read_real('input','method',-1);
         if(input_method == INPUT_OS_SPECIFIC_1)
@@ -17,7 +17,7 @@ if(argument0) // argument0 - from INI, default values if false
     }
     else
     {
-        if(DEVICE_INFO & DEVICE_TYPE_CONSOLE)
+        if(objProgram.device_info & DEVICE_TYPE_CONSOLE)
         {
             // Android consoles only have gamepads, so there's not even a choice
             android_set_input_mode(1);
@@ -40,7 +40,7 @@ if(argument0) // argument0 - from INI, default values if false
 }
 else
 {
-    if(DEVICE_INFO & DEVICE_TYPE_CONSOLE)
+    if(objProgram.device_info & DEVICE_TYPE_CONSOLE)
     {
         android_set_input_mode(1);
         objProgram.inputManager.input_method = INPUT_OS_SPECIFIC_1;
