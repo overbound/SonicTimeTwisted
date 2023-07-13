@@ -8,11 +8,11 @@ if(argument0) // argument0 - from INI, default values if false
         var input_method = ini_read_real('input','method',-1);
         if(input_method == INPUT_OS_SPECIFIC_1)
         {
-            android_set_input_mode(1);
+            sttandroid_mode_set(1);
         }
         else
         {
-            android_set_input_mode(0);    
+            sttandroid_mode_set(0);    
         }
     }
     else
@@ -20,7 +20,7 @@ if(argument0) // argument0 - from INI, default values if false
         if(objProgram.device_info & DEVICE_TYPE_CONSOLE)
         {
             // Android consoles only have gamepads, so there's not even a choice
-            android_set_input_mode(1);
+            sttandroid_mode_set(1);
             objProgram.inputManager.input_method = INPUT_OS_SPECIFIC_1;
         }
     }
@@ -36,18 +36,18 @@ if(argument0) // argument0 - from INI, default values if false
     input_load_android_device_one_control(cSTART, "1080,-1");
     
     double_device_mode = false;
-    loaded = android_is_mapping_complete(0);
+    loaded = sttandroid_gamepad_swmap_is_complete(0);
 }
 else
 {
     if(objProgram.device_info & DEVICE_TYPE_CONSOLE)
     {
-        android_set_input_mode(1);
+        sttandroid_mode_set(1);
         objProgram.inputManager.input_method = INPUT_OS_SPECIFIC_1;
     }
     else
     {
-        android_set_input_mode(0);
+        sttandroid_mode_set(0);
     }
 }
 if(!loaded)

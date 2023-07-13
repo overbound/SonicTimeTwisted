@@ -1,13 +1,7 @@
-var _state = android_get_input_state(0);
-if(_state >= 0)
+if (sttandroid_gamepad_get_state(0) == -1)
 {
-    state = _state;
+    android_run_hardware_mapping(0);
 }
-else
-{
-    if(_state == -1)
-    {
-        android_run_hardware_mapping(0);
-    }
-    state = 0;
-}
+
+state = sttandroid_input_get_state(0);
+

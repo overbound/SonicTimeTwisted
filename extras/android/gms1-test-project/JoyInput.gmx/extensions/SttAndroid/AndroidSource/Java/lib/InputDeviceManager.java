@@ -456,7 +456,7 @@ public class InputDeviceManager {
      * Add a software mapping. They are stored here.
      *
      * @param inputCode Constant for the mapped input as managed by Sonic Time Twisted
-     * @param keyCode   Integer describing an input as returned by android_get_any_key()
+     * @param keyCode   Integer describing an input as returned by sttandroid_gamepad_anykey_get_value()
      * @return Whether the entry could be added
      */
     public boolean softwareMapKey(int inputCode, int keyCode) {

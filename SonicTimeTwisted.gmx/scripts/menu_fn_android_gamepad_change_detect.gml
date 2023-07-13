@@ -1,7 +1,7 @@
 /// menu_fn_android_gamepad_change_detect()
 if(objProgram.inputManager.device_label == "")
 {
-    var currentDeviceLabel = string(android_get_device_label(0, 30));
+    var currentDeviceLabel = string(sttandroid_gamepad_get_label(0, 30));
     if(currentDeviceLabel != "")
     {
         objProgram.inputManager.device_label = currentDeviceLabel;
@@ -10,7 +10,7 @@ if(objProgram.inputManager.device_label == "")
 }
 else
 {
-    if(!android_has_assigned_device(0))
+    if(!sttandroid_gamepad_has_assigned(0))
     {
         objProgram.inputManager.device_label = "";
         return true;

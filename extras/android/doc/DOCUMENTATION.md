@@ -160,7 +160,7 @@ Concerning all methods containing the parameter **inputNumber**: as mentioned be
 
 Covered method:
 ```
- - android_get_input_state(inputNumber)
+ - sttandroid_input_get_state(inputNumber)
 ```
 
 This method returns the input state that can be used by Sonic Time Twisted for a given player.
@@ -171,15 +171,15 @@ A returned value of -2 means that no device has been assigned. -1 means that a d
 
 Covered methods:
 ```
- - android_set_input_mode(isExternal)
- - android_get_input_mode()
- - android_set_vibrate_mode(isExternal)
- - android_get_vibrate_mode()
+ - sttandroid_mode_set(isExternal)
+ - sttandroid_mode_get()
+ - sttandroid_rumble_set_enabled(isExternal)
+ - sttandroid_rumble_get_enabled()
 ```
 
 By default, both the input mode and the vibrate mode are set to 0 (so, internal) , meaning that vibrations will be handled by the device itself and external controls will not work.
 
-Using `android_set_input_mode(true)` will enable gamepad controls. Using `android_set_vibrate_mode(true)` will forward vibrations to gamepads, although, as mentioned now, gamepads don't vibrate on Android.
+Using `sttandroid_mode_set(true)` will enable gamepad controls. Using `sttandroid_rumble_set_enabled(true)` will forward vibrations to gamepads, although, as mentioned now, gamepads don't vibrate on Android.
 
 It is possible to experiment with setting the input mode to gamepads and keeping the vibrations on the phone itself, so that if a phone is connected using a gamepad that clamps the smartphone, such as the Razer Kishi, the whole ensemble vibrates using the smartphone.
 
@@ -189,7 +189,7 @@ Respective getters return the already set values.
 
 Covered method:
 ```
- - android_rumble_perform(inputNumber, power)
+ - sttandroid_rumble_perform(inputNumber, power)
 ```
 
 Make a device vibrate for an indefinite amount of time. Normally, the inputNumber should indicate, in case of gamepads, which one rumbles, but Android doesn't detect gamepad vibrators.
@@ -200,66 +200,66 @@ Power is a decimal value that goes from 0 (disabled) to 1 (vibrates constantly) 
 
 Covered methods:
 ```
- - android_has_assigned_device(inputNumber)
- - android_is_double_device(inputNumber)
- - android_get_device_label(inputNumber, truncate)
- - android_get_device_vendor_product_descriptor(inputNumber)
- - android_disconnect_input(inputNumber)
+ - sttandroid_gamepad_has_assigned(inputNumber)
+ - sttandroid_gamepad_is_double(inputNumber)
+ - sttandroid_gamepad_get_label(inputNumber, truncate)
+ - sttandroid_gamepad_get_descriptor(inputNumber)
+ - sttandroid_gamepad_disconnect(inputNumber)
 ```
 
 Devices are connected automatically when an event (KeyEvent or MotionEvent) is handled, and the main class picks an IDM for it. Therefore, no "device connect" method exists.
 
-`android_has_assigned_device` returns true or false depending on whether an input has an assigned device. `android_is_double_device` returns true or false depending on whether an IDM manages two devices (more on that below) .
+`sttandroid_gamepad_has_assigned` returns true or false depending on whether an input has an assigned device. `sttandroid_gamepad_is_double` returns true or false depending on whether an IDM manages two devices (more on that below) .
 
-`android_get_device_label` returns the connected device's name, truncated using the number of desired characters provided as the second parameter. If this number exceeds 3, then the final three characters of the returned string will be an ellipsis. If the second parameter is -1, the name will be returned in full. If there are two devices, their names will be both returned, concatenated with a slash.
+`sttandroid_gamepad_get_label` returns the connected device's name, truncated using the number of desired characters provided as the second parameter. If this number exceeds 3, then the final three characters of the returned string will be an ellipsis. If the second parameter is -1, the name will be returned in full. If there are two devices, their names will be both returned, concatenated with a slash.
 
-`android_get_device_vendor_product_descriptor` is a more developer-centered method, and as such only used in the Game Maker Studio test app. It returns zero, two or four strings separated by two pipes ("||") :
+`sttandroid_gamepad_get_descriptor` is a more developer-centered method, and as such only used in the Game Maker Studio test app. It returns zero, two or four strings separated by two pipes ("||") :
  - The first string is the identifier of the vendor of the first/only connected device, converted to a 4-symbol HEX string, as seen in filenames of Android's own *.kl files.
  - The second string is the product identifier of the first/only connected device, converted to a 4-symbol HEX string, as seen in filenames of Android's own *.kl files.
  - The third and fourth strings are the same informations, but for the second device, if any.
 
 These 4-symbol HEX strings are used in hardware mappings, as will be explained below.
 
-`android_disconnect_input` Terminates the rumble thread if one exists and removes the IDM's association with its device(s).
+`sttandroid_gamepad_disconnect` Terminates the rumble thread if one exists and removes the IDM's association with its device(s).
 
 ### Handling hardware mappings
 
 Covered methods:
 ```
- - android_is_device_hardware_mapped(inputNumber)
- - android_feed_input_mapping_start(inputNumber)
- - android_feed_input_mapping_new_file()
- - android_feed_input_mapping_row(row)
- - android_feed_input_mapping_done()
- - android_reset_hardware_mappings(inputNumber)
+ - sttandroid_gamepad_hwmap_is_applied(inputNumber)
+ - sttandroid_gamepad_hwmap_start(inputNumber)
+ - sttandroid_gamepad_hwmap_newfile()
+ - sttandroid_gamepad_hwmap_feed_row(row)
+ - sttandroid_gamepad_hwmap_finish()
+ - sttandroid_gamepad_hwmap_reset(inputNumber)
 ```
 
 In order to make hardware mappings easy to contribute to, the choice has been made to store hardware mappings as CSV files stored in the external files of the Game Maker Studio project. The problem is, Android Java code has no access to a Game Maker Studio's external files, so it's up to GMS to read the CSV files and provide them to the Android library row by row. More on the structure of the hardware mappings below.
 
-`android_is_device_hardware_mapped` tells whether the mapped device has a hardware mapping. It is unusable if it doesn't.
+`sttandroid_gamepad_hwmap_is_applied` tells whether the mapped device has a hardware mapping. It is unusable if it doesn't.
 
-If the need to read hardware mappings for an IDM presents itself, the method `android_feed_input_mapping_start` should be executed to initialize the hardware mapping injection. After this, the Game Maker Studio project should read the provided CSV files row by row, calling `android_feed_input_mapping_new_file` at the start of every file and using `android_feed_input_mapping_row` to send every row. Once all CSV files have been combed through, `android_feed_input_mapping_done` serves to tell that hardware mappings have been read, if suitable ones have been found, they will be applied, otherwise default hard-coded mappings will be used.
+If the need to read hardware mappings for an IDM presents itself, the method `sttandroid_gamepad_hwmap_start` should be executed to initialize the hardware mapping injection. After this, the Game Maker Studio project should read the provided CSV files row by row, calling `sttandroid_gamepad_hwmap_newfile` at the start of every file and using `sttandroid_gamepad_hwmap_feed_row` to send every row. Once all CSV files have been combed through, `sttandroid_gamepad_hwmap_finish` serves to tell that hardware mappings have been read, if suitable ones have been found, they will be applied, otherwise default hard-coded mappings will be used.
 
-Finally, the applied hardware mappings for a device can be deleted wwith `android_reset_hardware_mappings`.
+Finally, the applied hardware mappings for a device can be deleted wwith `sttandroid_gamepad_hwmap_reset`.
 
 ### Handling double device detection
 
 Covered methods:
 ```
- - android_double_device_detecting_mode_init(inputNumber)
- - android_double_device_detecting_mode_cancel()
- - android_double_device_detecting_mode_get_input_number()
- - android_double_device_detecting_mode_get_state()
- - android_double_device_detecting_mode_is_last_successful()
+ - sttandroid_gamepad_doubledetect_start(inputNumber)
+ - sttandroid_gamepad_doubledetect_cancel()
+ - sttandroid_gamepad_doubledetect_get_input_number()
+ - sttandroid_gamepad_doubledetect_get_detect_state()
+ - sttandroid_gamepad_doubledetect_is_success()
 ```
 
 These methods are used to deal with double device detection to allow using two devices per player, such as Joy-Cons.
 
-A special mode for detecting these devices is enabled with `android_double_device_detecting_mode_init`. Once this is executed, the rest is automatic and triggered by events, however `android_double_device_detecting_mode_cancel` can cancel it.
+A special mode for detecting these devices is enabled with `sttandroid_gamepad_doubledetect_start`. Once this is executed, the rest is automatic and triggered by events, however `sttandroid_gamepad_doubledetect_cancel` can cancel it.
 
-However, since this is an aysnchronous treatment, functions exist to determine the mode's state: `android_double_device_detecting_mode_get_input_number` gets the player number, `android_double_device_detecting_mode_get_state` gets 1 if the first device is being detected, 2 if the second one is being detected, and 0 if the mode is not active yet or anymore. 
+However, since this is an aysnchronous treatment, functions exist to determine the mode's state: `sttandroid_gamepad_doubledetect_get_input_number` gets the player number, `sttandroid_gamepad_doubledetect_get_detect_state` gets 1 if the first device is being detected, 2 if the second one is being detected, and 0 if the mode is not active yet or anymore. 
 
-`android_double_device_detecting_mode_is_last_successful` is used to tell whether the last execution of the double device detection has been completed or cancelled.
+`sttandroid_gamepad_doubledetect_is_success` is used to tell whether the last execution of the double device detection has been completed or cancelled.
 
 ### Handling software mappings
 
@@ -267,14 +267,14 @@ However, since this is an aysnchronous treatment, functions exist to determine t
 
 Covered methods:
 ```
- - android_set_any_key_mode(inputNumber, value)
- - android_get_any_key_mode(inputNumber)
- - android_get_any_key(inputNumber)
+ - sttandroid_gamepad_anykey_set_mode(inputNumber, value)
+ - sttandroid_gamepad_anykey_get_mode(inputNumber)
+ - sttandroid_gamepad_anykey_get_value(inputNumber)
 ```
 
-This special mode is enabled and disabled with `android_set_any_key_mode`, and `android_get_any_key_mode` can be used to see whether it is enabled.
+This special mode is enabled and disabled with `sttandroid_gamepad_anykey_set_mode`, and `sttandroid_gamepad_anykey_get_mode` can be used to see whether it is enabled.
 
-In this mode, the input state returned by the library is always 0. However, running `android_get_any_key` returns a value that represents not an in-game button, but rather an already hardware-mapped key press or axis state change. This is used in screens where the game prompts to provide an input to create a software mapping with a given in-game button. This method returns the same type of value that has already been described:
+In this mode, the input state returned by the library is always 0. However, running `sttandroid_gamepad_anykey_get_value` returns a value that represents not an in-game button, but rather an already hardware-mapped key press or axis state change. This is used in screens where the game prompts to provide an input to create a software mapping with a given in-game button. This method returns the same type of value that has already been described:
  - a key code multiplied by 10 in case of a button press.
  - an axis ID multiplied by 10 and increased by 1 in case of a positive axis value
  - an axis ID multiplied by 10 and increased by 2 in case of a negative axis value
@@ -284,23 +284,23 @@ In this mode, the input state returned by the library is always 0. However, runn
 
 Covered methods:
 ```
- - android_map_input(inputNumber, inputCode, keyCode)
- - android_clear_mapping(inputNumber, inputCode, isBackup)
- - android_get_mapped_value(inputNumber, inputCode, isBackup)
- - android_get_mapped_descriptor(inputNumber, inputCode)
+ - sttandroid_gamepad_swmap_set(inputNumber, inputCode, keyCode)
+ - sttandroid_gamepad_swmap_clear(inputNumber, inputCode, isBackup)
+ - sttandroid_gamepad_swmap_get(inputNumber, inputCode, isBackup)
+ - sttandroid_gamepad_swmap_get_descriptor(inputNumber, inputCode)
 ```
 
 In all of these cases, **inputCode** is a code that matches an in-game button as Sonic Time Twisted sees it (1 for Up, 2 for Down and so on...) .
 
 **Reminder**: there are actually two maps in the software mapping. The main map is used for storing... well, current mappings. A backup map is used for storing previous mappings (unless the corresponding buttons/axes have been mapped to something else) , the end goal being that two inputs should be usable at once (for instance, a default mapping maps the in-game direction buttons with both the D-Pad and the left stick in this manner) .
 
-`android_map_input` is simply used to assign a software mapping, **keyCode** being a value returned by `android_get_any_key`.
+`sttandroid_gamepad_swmap_set` is simply used to assign a software mapping, **keyCode** being a value returned by `sttandroid_gamepad_anykey_get_value`.
 
-`android_clear_mapping` can be used to delete a mapping for a particular in-game button. ***isBackup** is used to determine whether a mapping should be removed from the backup map or the main one. If a mapping is removed from the main map, and a mapping exists in a backup map, it is transferred to the main map.
+`sttandroid_gamepad_swmap_clear` can be used to delete a mapping for a particular in-game button. ***isBackup** is used to determine whether a mapping should be removed from the backup map or the main one. If a mapping is removed from the main map, and a mapping exists in a backup map, it is transferred to the main map.
 
-`android_get_mapped_value` returns a value in the same format as returned by `android_get_any_key` that indicates what a given in-game button is mapped to in one of the two software mapping maps.
+`sttandroid_gamepad_swmap_get` returns a value in the same format as returned by `sttandroid_gamepad_anykey_get_value` that indicates what a given in-game button is mapped to in one of the two software mapping maps.
 
-`android_get_mapped_descriptor` returns a sequence of zero, two or four strings separated with two pipe characters ("||") that contain:
+`sttandroid_gamepad_swmap_get_descriptor` returns a sequence of zero, two or four strings separated with two pipe characters ("||") that contain:
  - The name of the button/axis to diplay as being mapped for a given in-game button, using the main mapping.
  - If the main mapping for a given in-game button is an axis, this part contains "+" or "-" depending on the mapped axis value, it's an empty string if a button has been mapped or the mapping is missing.
  - The name of the button/axis to diplay as being mapped for a given in-game button, using the backup mapping.

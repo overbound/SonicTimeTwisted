@@ -2,9 +2,9 @@ switch(argument0)
 {
     case 10:
     case -1:
-        if(android_get_input_mode())
+        if(sttandroid_mode_get())
         {
-            if(android_is_mapping_complete(0))
+            if(sttandroid_gamepad_swmap_is_complete(0))
             {
                 menu_fn_exit_submenu(menu_part_options_items, 9);
             }
@@ -36,14 +36,14 @@ switch(argument0)
             ds_map_destroy(temp_map);
         }
         temp_map = ds_map_create();
-        ds_map_add(temp_map, cUP, android_get_mapped_configuration(0, cUP));
-        ds_map_add(temp_map, cDOWN, android_get_mapped_configuration(0, cDOWN));
-        ds_map_add(temp_map, cLEFT, android_get_mapped_configuration(0, cLEFT));
-        ds_map_add(temp_map, cRIGHT, android_get_mapped_configuration(0, cRIGHT));
-        ds_map_add(temp_map, cA, android_get_mapped_configuration(0, cA));
-        ds_map_add(temp_map, cB, android_get_mapped_configuration(0, cB));
-        ds_map_add(temp_map, cC, android_get_mapped_configuration(0, cC));
-        ds_map_add(temp_map, cSTART, android_get_mapped_configuration(0, cSTART));
+        ds_map_add(temp_map, cUP, sttandroid_gamepad_swmap_get_both(0, cUP));
+        ds_map_add(temp_map, cDOWN, sttandroid_gamepad_swmap_get_both(0, cDOWN));
+        ds_map_add(temp_map, cLEFT, sttandroid_gamepad_swmap_get_both(0, cLEFT));
+        ds_map_add(temp_map, cRIGHT, sttandroid_gamepad_swmap_get_both(0, cRIGHT));
+        ds_map_add(temp_map, cA, sttandroid_gamepad_swmap_get_both(0, cA));
+        ds_map_add(temp_map, cB, sttandroid_gamepad_swmap_get_both(0, cB));
+        ds_map_add(temp_map, cC, sttandroid_gamepad_swmap_get_both(0, cC));
+        ds_map_add(temp_map, cSTART, sttandroid_gamepad_swmap_get_both(0, cSTART));
         menu_part_android_btusb_actions(21);
         break;
     case 2:
@@ -80,7 +80,7 @@ switch(argument0)
         break;
     case 11:
         // save the mapped button
-        android_set_any_key_mode(0, false);
+        sttandroid_gamepad_anykey_set_mode(0, false);
         save_control_map_android_device();
         break;
     case 12:
@@ -121,18 +121,18 @@ switch(argument0)
         break;
     case 29:
         // group mapping - success, discard the backup and save
-        android_set_any_key_mode(0, false);
+        sttandroid_gamepad_anykey_set_mode(0, false);
         ds_map_destroy(temp_map);
         save_control_map_android_device();
         break;
     case 30:
         // group mapping - cancelled, discard backup
-        android_set_any_key_mode(0, false);
+        sttandroid_gamepad_anykey_set_mode(0, false);
         var mapkey = ds_map_find_first(temp_map);
         for(var i = 0; i < ds_map_size(temp_map); i++)
         {
             var mapvalue = ds_map_find_value(temp_map, mapkey);
-            android_set_mapped_configuration(0, mapkey, mapvalue);
+            sttandroid_gamepad_swmap_set_both(0, mapkey, mapvalue);
             mapkey = ds_map_find_next(temp_map, mapkey);
         }
         ds_map_destroy(temp_map);
@@ -165,7 +165,7 @@ switch(argument0)
 var deviceLabel = objProgram.inputManager.device_label;
 if(string_length(deviceLabel) == 0)
 {
-    if(android_get_input_mode())
+    if(sttandroid_mode_get())
     {
         // there is supposed to be an input device, but none has been triggered yet
         deviceLabel = tr("_btusb_joymap_Device_Unknown");

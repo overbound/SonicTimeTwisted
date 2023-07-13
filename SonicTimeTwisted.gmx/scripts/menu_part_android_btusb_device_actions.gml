@@ -5,7 +5,7 @@ switch(argument0)
         menu_fn_exit_submenu(menu_part_android_btusb_items, 31);
         break;
     case 0:
-        android_disconnect_input(0);
+        sttandroid_gamepad_disconnect(0);
         menu_fn_reopen(menu_part_android_btusb_device_items, 0);
         break;
     case 1:
@@ -40,7 +40,7 @@ switch(argument0)
         // action : device detect cancel
         if(objProgram.device_info & DEVICE_OS_ANDROID)
         {
-            android_double_device_detecting_mode_cancel();
+            sttandroid_gamepad_doubledetect_cancel();
         }
         objProgram.inputManager.double_device_mode = false;
         break;
@@ -48,8 +48,8 @@ switch(argument0)
         // action : open device input window 1
         if(objProgram.device_info & DEVICE_OS_ANDROID)
         {
-            android_disconnect_input(0);
-            android_double_device_detecting_mode_init(0);
+            sttandroid_gamepad_disconnect(0);
+            sttandroid_gamepad_doubledetect_start(0);
             confirmation_cursor = 1;
         }
         menu_fn_open_device_detect_window(tr("_options_menu_BTUSB_device_DoubleMode_device1"), 11, 9);
@@ -75,7 +75,7 @@ switch(argument0)
 menu_fn_calculate_width_start();
 var onLabel = "< "+tr("_On")+" >";
 var offLabel = "< "+tr("_Off")+" >";
-if(android_is_double_device(0))
+if(sttandroid_gamepad_is_double(0))
 {
     menu_fn_refresh_displayed_value(1, onLabel);
 }

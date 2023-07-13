@@ -2,9 +2,9 @@ items = false;
 
 menu_fn_add_title(tr("_options_menu_BTUSB_title"));
 // force updating the device label before displaying (or not) the mapping buttons
-var currentDeviceLabel = string(android_get_device_label(0, 30));
+var currentDeviceLabel = string(sttandroid_gamepad_get_label(0, 30));
 objProgram.inputManager.device_label = currentDeviceLabel;
-if(android_get_input_mode() && (string_length(currentDeviceLabel) > 0))
+if(sttandroid_mode_get() && (string_length(currentDeviceLabel) > 0))
 {
     // Gamepad rumble does not work on android :/
     //menu_fn_add_option(tr("_btusb_joymap_Rumble"), 0, 1, "< " + tr("_Off") + " >");

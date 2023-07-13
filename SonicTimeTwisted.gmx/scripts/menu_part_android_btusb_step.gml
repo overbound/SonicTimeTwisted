@@ -10,10 +10,10 @@ if(state == 13 || state == 14)
     else
     {
         // confirmation_cursor - used to store the currently mapped key
-        var _input = android_get_any_key(0);
+        var _input = sttandroid_gamepad_anykey_get_value(0);
         if(_input > -1)
         {
-            android_map_input(0, confirmation_cursor, _input);
+            sttandroid_gamepad_swmap_set(0, confirmation_cursor, _input);
             state = 15;
         }
     }

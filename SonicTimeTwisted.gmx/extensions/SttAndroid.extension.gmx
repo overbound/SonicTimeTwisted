@@ -78,10 +78,10 @@
       <ProxyFiles/>
       <functions>
         <function>
-          <name>android_get_input_state</name>
-          <externalName>android_get_input_state</externalName>
+          <name>sttandroid_input_get_state</name>
+          <externalName>sttandroid_input_get_state</externalName>
           <kind>11</kind>
-          <help>android_get_input_state(inputNumber)</help>
+          <help>sttandroid_input_get_state(inputNumber)</help>
           <returnType>2</returnType>
           <argCount>1</argCount>
           <args>
@@ -89,10 +89,10 @@
           </args>
         </function>
         <function>
-          <name>android_reset_hardware_mappings</name>
-          <externalName>android_reset_hardware_mappings</externalName>
+          <name>sttandroid_gamepad_hwmap_reset</name>
+          <externalName>sttandroid_gamepad_hwmap_reset</externalName>
           <kind>11</kind>
-          <help>android_reset_hardware_mappings(inputNumber)</help>
+          <help>sttandroid_gamepad_hwmap_reset(inputNumber)</help>
           <returnType>2</returnType>
           <argCount>1</argCount>
           <args>
@@ -100,10 +100,10 @@
           </args>
         </function>
         <function>
-          <name>android_feed_input_mapping_start</name>
-          <externalName>android_feed_input_mapping_start</externalName>
+          <name>sttandroid_gamepad_hwmap_start</name>
+          <externalName>sttandroid_gamepad_hwmap_start</externalName>
           <kind>11</kind>
-          <help>android_feed_input_mapping_start(inputNumber)</help>
+          <help>sttandroid_gamepad_hwmap_start(inputNumber)</help>
           <returnType>2</returnType>
           <argCount>1</argCount>
           <args>
@@ -111,19 +111,19 @@
           </args>
         </function>
         <function>
-          <name>android_feed_input_mapping_new_file</name>
-          <externalName>android_feed_input_mapping_new_file</externalName>
+          <name>sttandroid_gamepad_hwmap_newfile</name>
+          <externalName>sttandroid_gamepad_hwmap_newfile</externalName>
           <kind>11</kind>
-          <help>android_feed_input_mapping_new_file()</help>
+          <help>sttandroid_gamepad_hwmap_newfile()</help>
           <returnType>2</returnType>
           <argCount>0</argCount>
           <args/>
         </function>
         <function>
-          <name>android_feed_input_mapping_row</name>
-          <externalName>android_feed_input_mapping_row</externalName>
+          <name>sttandroid_gamepad_hwmap_feed_row</name>
+          <externalName>sttandroid_gamepad_hwmap_feed_row</externalName>
           <kind>11</kind>
-          <help>android_feed_input_mapping_row(row) </help>
+          <help>sttandroid_gamepad_hwmap_feed_row(row) </help>
           <returnType>2</returnType>
           <argCount>1</argCount>
           <args>
@@ -131,19 +131,19 @@
           </args>
         </function>
         <function>
-          <name>android_feed_input_mapping_done</name>
-          <externalName>android_feed_input_mapping_done</externalName>
+          <name>sttandroid_gamepad_hwmap_finish</name>
+          <externalName>sttandroid_gamepad_hwmap_finish</externalName>
           <kind>11</kind>
-          <help>android_feed_input_mapping_done()</help>
+          <help>sttandroid_gamepad_hwmap_finish()</help>
           <returnType>2</returnType>
           <argCount>0</argCount>
           <args/>
         </function>
         <function>
-          <name>android_double_device_detecting_mode_init</name>
-          <externalName>android_double_device_detecting_mode_init</externalName>
+          <name>sttandroid_gamepad_doubledetect_start</name>
+          <externalName>sttandroid_gamepad_doubledetect_start</externalName>
           <kind>11</kind>
-          <help>android_double_device_detecting_mode_init(inputNumber)</help>
+          <help>sttandroid_gamepad_doubledetect_start(inputNumber)</help>
           <returnType>2</returnType>
           <argCount>1</argCount>
           <args>
@@ -151,46 +151,46 @@
           </args>
         </function>
         <function>
-          <name>android_double_device_detecting_mode_get_input_number</name>
-          <externalName>android_double_device_detecting_mode_get_input_number</externalName>
+          <name>sttandroid_gamepad_doubledetect_get_input_number</name>
+          <externalName>sttandroid_gamepad_doubledetect_get_input_number</externalName>
           <kind>11</kind>
-          <help>android_double_device_detecting_mode_get_input_number()</help>
+          <help>sttandroid_gamepad_doubledetect_get_input_number()</help>
           <returnType>2</returnType>
           <argCount>0</argCount>
           <args/>
         </function>
         <function>
-          <name>android_double_device_detecting_mode_get_state</name>
-          <externalName>android_double_device_detecting_mode_get_state</externalName>
+          <name>sttandroid_gamepad_doubledetect_get_detect_state</name>
+          <externalName>sttandroid_gamepad_doubledetect_get_detect_state</externalName>
           <kind>11</kind>
-          <help>android_double_device_detecting_mode_get_state()</help>
+          <help>sttandroid_gamepad_doubledetect_get_detect_state()</help>
           <returnType>2</returnType>
           <argCount>0</argCount>
           <args/>
         </function>
         <function>
-          <name>android_double_device_detecting_mode_cancel</name>
-          <externalName>android_double_device_detecting_mode_cancel</externalName>
+          <name>sttandroid_gamepad_doubledetect_cancel</name>
+          <externalName>sttandroid_gamepad_doubledetect_cancel</externalName>
           <kind>11</kind>
-          <help>android_double_device_detecting_mode_cancel()</help>
+          <help>sttandroid_gamepad_doubledetect_cancel()</help>
           <returnType>2</returnType>
           <argCount>0</argCount>
           <args/>
         </function>
         <function>
-          <name>android_double_device_detecting_mode_is_last_successful</name>
-          <externalName>android_double_device_detecting_mode_is_last_successful</externalName>
+          <name>sttandroid_gamepad_doubledetect_is_success</name>
+          <externalName>sttandroid_gamepad_doubledetect_is_success</externalName>
           <kind>11</kind>
-          <help>android_double_device_detecting_mode_is_last_successful()</help>
+          <help>sttandroid_gamepad_doubledetect_is_success()</help>
           <returnType>2</returnType>
           <argCount>0</argCount>
           <args/>
         </function>
         <function>
-          <name>android_disconnect_input</name>
-          <externalName>android_disconnect_input</externalName>
+          <name>sttandroid_gamepad_disconnect</name>
+          <externalName>sttandroid_gamepad_disconnect</externalName>
           <kind>11</kind>
-          <help>android_disconnect_input(inputNumber)</help>
+          <help>sttandroid_gamepad_disconnect(inputNumber)</help>
           <returnType>2</returnType>
           <argCount>1</argCount>
           <args>
@@ -198,10 +198,10 @@
           </args>
         </function>
         <function>
-          <name>android_set_any_key_mode</name>
-          <externalName>android_set_any_key_mode</externalName>
+          <name>sttandroid_gamepad_anykey_set_mode</name>
+          <externalName>sttandroid_gamepad_anykey_set_mode</externalName>
           <kind>11</kind>
-          <help>android_set_any_key_mode(inputNumber, value)</help>
+          <help>sttandroid_gamepad_anykey_set_mode(inputNumber, value)</help>
           <returnType>2</returnType>
           <argCount>2</argCount>
           <args>
@@ -210,10 +210,10 @@
           </args>
         </function>
         <function>
-          <name>android_get_any_key_mode</name>
-          <externalName>android_get_any_key_mode</externalName>
+          <name>sttandroid_gamepad_anykey_get_mode</name>
+          <externalName>sttandroid_gamepad_anykey_get_mode</externalName>
           <kind>11</kind>
-          <help>android_get_any_key_mode(inputNumber)</help>
+          <help>sttandroid_gamepad_anykey_get_mode(inputNumber)</help>
           <returnType>2</returnType>
           <argCount>1</argCount>
           <args>
@@ -221,10 +221,10 @@
           </args>
         </function>
         <function>
-          <name>android_get_any_key</name>
-          <externalName>android_get_any_key</externalName>
+          <name>sttandroid_gamepad_anykey_get_value</name>
+          <externalName>sttandroid_gamepad_anykey_get_value</externalName>
           <kind>11</kind>
-          <help>android_get_any_key(inputNumber)</help>
+          <help>sttandroid_gamepad_anykey_get_value(inputNumber)</help>
           <returnType>2</returnType>
           <argCount>1</argCount>
           <args>
@@ -232,10 +232,10 @@
           </args>
         </function>
         <function>
-          <name>android_map_input</name>
-          <externalName>android_map_input</externalName>
+          <name>sttandroid_gamepad_swmap_set</name>
+          <externalName>sttandroid_gamepad_swmap_set</externalName>
           <kind>11</kind>
-          <help>android_map_input(inputNumber, inputCode, keyCode)</help>
+          <help>sttandroid_gamepad_swmap_set(inputNumber, inputCode, keyCode)</help>
           <returnType>2</returnType>
           <argCount>3</argCount>
           <args>
@@ -245,10 +245,10 @@
           </args>
         </function>
         <function>
-          <name>android_clear_mapping</name>
-          <externalName>android_clear_mapping</externalName>
+          <name>sttandroid_gamepad_swmap_clear</name>
+          <externalName>sttandroid_gamepad_swmap_clear</externalName>
           <kind>11</kind>
-          <help>android_clear_mapping(inputNumber, inputCode, isBackupMap)</help>
+          <help>sttandroid_gamepad_swmap_clear(inputNumber, inputCode, isBackupMap)</help>
           <returnType>2</returnType>
           <argCount>3</argCount>
           <args>
@@ -258,10 +258,10 @@
           </args>
         </function>
         <function>
-          <name>android_get_mapped_descriptor</name>
-          <externalName>android_get_mapped_descriptor</externalName>
+          <name>sttandroid_gamepad_swmap_get_descriptor</name>
+          <externalName>sttandroid_gamepad_swmap_get_descriptor</externalName>
           <kind>11</kind>
-          <help>android_get_mapped_descriptor(inputNumber, inputCode)</help>
+          <help>sttandroid_gamepad_swmap_get_descriptor(inputNumber, inputCode)</help>
           <returnType>1</returnType>
           <argCount>2</argCount>
           <args>
@@ -270,10 +270,10 @@
           </args>
         </function>
         <function>
-          <name>android_get_device_label</name>
-          <externalName>android_get_device_label</externalName>
+          <name>sttandroid_gamepad_get_label</name>
+          <externalName>sttandroid_gamepad_get_label</externalName>
           <kind>11</kind>
-          <help>android_get_device_label(inputNumber, truncate)</help>
+          <help>sttandroid_gamepad_get_label(inputNumber, truncate)</help>
           <returnType>1</returnType>
           <argCount>2</argCount>
           <args>
@@ -282,10 +282,10 @@
           </args>
         </function>
         <function>
-          <name>android_rumble_perform</name>
-          <externalName>android_rumble_perform</externalName>
+          <name>sttandroid_rumble_perform</name>
+          <externalName>sttandroid_rumble_perform</externalName>
           <kind>11</kind>
-          <help>android_rumble_perform(inputNumber, power)</help>
+          <help>sttandroid_rumble_perform(inputNumber, power)</help>
           <returnType>2</returnType>
           <argCount>2</argCount>
           <args>
@@ -294,10 +294,10 @@
           </args>
         </function>
         <function>
-          <name>android_set_input_mode</name>
-          <externalName>android_set_input_mode</externalName>
+          <name>sttandroid_mode_set</name>
+          <externalName>sttandroid_mode_set</externalName>
           <kind>11</kind>
-          <help>android_set_input_mode(isExternal)</help>
+          <help>sttandroid_mode_set(isExternal)</help>
           <returnType>2</returnType>
           <argCount>1</argCount>
           <args>
@@ -305,10 +305,10 @@
           </args>
         </function>
         <function>
-          <name>android_set_vibrate_mode</name>
-          <externalName>android_set_vibrate_mode</externalName>
+          <name>sttandroid_rumble_set_enabled</name>
+          <externalName>sttandroid_rumble_set_enabled</externalName>
           <kind>11</kind>
-          <help>android_set_vibrate_mode(isExternal)</help>
+          <help>sttandroid_rumble_set_enabled(isExternal)</help>
           <returnType>2</returnType>
           <argCount>1</argCount>
           <args>
@@ -316,10 +316,10 @@
           </args>
         </function>
         <function>
-          <name>android_get_device_vendor_product_descriptor</name>
-          <externalName>android_get_device_vendor_product_descriptor</externalName>
+          <name>sttandroid_gamepad_get_descriptor</name>
+          <externalName>sttandroid_gamepad_get_descriptor</externalName>
           <kind>11</kind>
-          <help>android_get_device_vendor_product_descriptor(inputNumber)</help>
+          <help>sttandroid_gamepad_get_descriptor(inputNumber)</help>
           <returnType>1</returnType>
           <argCount>1</argCount>
           <args>
@@ -327,8 +327,8 @@
           </args>
         </function>
         <function>
-          <name>android_get_input_mode</name>
-          <externalName>android_get_input_mode</externalName>
+          <name>sttandroid_mode_get</name>
+          <externalName>sttandroid_mode_get</externalName>
           <kind>11</kind>
           <help></help>
           <returnType>2</returnType>
@@ -336,8 +336,8 @@
           <args/>
         </function>
         <function>
-          <name>android_get_vibrate_mode</name>
-          <externalName>android_get_vibrate_mode</externalName>
+          <name>sttandroid_rumble_get_enabled</name>
+          <externalName>sttandroid_rumble_get_enabled</externalName>
           <kind>11</kind>
           <help></help>
           <returnType>2</returnType>
@@ -345,10 +345,10 @@
           <args/>
         </function>
         <function>
-          <name>android_get_mapped_value</name>
-          <externalName>android_get_mapped_value</externalName>
+          <name>sttandroid_gamepad_swmap_get</name>
+          <externalName>sttandroid_gamepad_swmap_get</externalName>
           <kind>11</kind>
-          <help>android_get_mapped_value(inputNumber,inputCode,isBackup)</help>
+          <help>sttandroid_gamepad_swmap_get(inputNumber,inputCode,isBackup)</help>
           <returnType>2</returnType>
           <argCount>3</argCount>
           <args>
@@ -358,10 +358,10 @@
           </args>
         </function>
         <function>
-          <name>android_is_double_device</name>
-          <externalName>android_is_double_device</externalName>
+          <name>sttandroid_gamepad_is_double</name>
+          <externalName>sttandroid_gamepad_is_double</externalName>
           <kind>11</kind>
-          <help>android_is_double_device(inputNumber)</help>
+          <help>sttandroid_gamepad_is_double(inputNumber)</help>
           <returnType>2</returnType>
           <argCount>1</argCount>
           <args>
@@ -369,10 +369,10 @@
           </args>
         </function>
         <function>
-          <name>android_get_mapped_configuration</name>
-          <externalName>android_get_mapped_configuration</externalName>
+          <name>sttandroid_gamepad_swmap_get_both</name>
+          <externalName>sttandroid_gamepad_swmap_get_both</externalName>
           <kind>11</kind>
-          <help>android_get_mapped_configuration(inputNumber,inputCode)</help>
+          <help>sttandroid_gamepad_swmap_get_both(inputNumber,inputCode)</help>
           <returnType>1</returnType>
           <argCount>2</argCount>
           <args>
@@ -381,10 +381,10 @@
           </args>
         </function>
         <function>
-          <name>android_set_mapped_configuration</name>
-          <externalName>android_set_mapped_configuration</externalName>
+          <name>sttandroid_gamepad_swmap_set_both</name>
+          <externalName>sttandroid_gamepad_swmap_set_both</externalName>
           <kind>11</kind>
-          <help>android_set_mapped_configuration(inputNumber,inputCode,configuration)</help>
+          <help>sttandroid_gamepad_swmap_set_both(inputNumber,inputCode,configuration)</help>
           <returnType>2</returnType>
           <argCount>3</argCount>
           <args>
@@ -394,10 +394,10 @@
           </args>
         </function>
         <function>
-          <name>android_has_assigned_device</name>
-          <externalName>android_has_assigned_device</externalName>
+          <name>sttandroid_gamepad_has_assigned</name>
+          <externalName>sttandroid_gamepad_has_assigned</externalName>
           <kind>11</kind>
-          <help>android_has_assigned_device(inputNumber)</help>
+          <help>sttandroid_gamepad_has_assigned(inputNumber)</help>
           <returnType>2</returnType>
           <argCount>1</argCount>
           <args>
@@ -405,10 +405,10 @@
           </args>
         </function>
         <function>
-          <name>android_is_mapping_complete</name>
-          <externalName>android_is_mapping_complete</externalName>
+          <name>sttandroid_gamepad_swmap_is_complete</name>
+          <externalName>sttandroid_gamepad_swmap_is_complete</externalName>
           <kind>11</kind>
-          <help>android_is_mapping_complete(inputNumber)</help>
+          <help>sttandroid_gamepad_swmap_is_complete(inputNumber)</help>
           <returnType>2</returnType>
           <argCount>1</argCount>
           <args>
@@ -416,13 +416,24 @@
           </args>
         </function>
         <function>
-          <name>android_get_device_type</name>
-          <externalName>android_get_device_type</externalName>
+          <name>sttandroid_device_get_type</name>
+          <externalName>sttandroid_device_get_type</externalName>
           <kind>11</kind>
-          <help>android_get_device_type()</help>
+          <help>sttandroid_device_get_type()</help>
           <returnType>2</returnType>
           <argCount>-1</argCount>
           <args/>
+        </function>
+        <function>
+          <name>sttandroid_gamepad_get_state</name>
+          <externalName>sttandroid_gamepad_get_state</externalName>
+          <kind>11</kind>
+          <help>sttandroid_gamepad_get_state(inputNumber)</help>
+          <returnType>2</returnType>
+          <argCount>1</argCount>
+          <args>
+            <arg>2</arg>
+          </args>
         </function>
       </functions>
       <constants/>

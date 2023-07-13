@@ -101,7 +101,7 @@ else
     haptics_duration = 5;
     rumble_strength = 1;
     
-    android_set_input_mode(0);
+    sttandroid_mode_set(0);
 }
     
 used_deadzone = 10;

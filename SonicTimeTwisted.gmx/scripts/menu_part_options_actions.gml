@@ -54,20 +54,20 @@ switch(argument0)
         state = 25;
         break;
     case 8:
-        switch(android_get_input_mode())
+        switch(sttandroid_mode_get())
         {
             case 0:
                 // TOUCHSCREEN -> EXTERNAL DEVICE
-                android_set_input_mode(1);
+                sttandroid_mode_set(1);
                 break;
             case 1:
                 // EXTERNAL DEVICE -> TOUCHSCREEN
-                android_set_input_mode(0);
+                sttandroid_mode_set(0);
                 break;
         }
         // checking this again after setting: on devices other than Android (eg testing on Windows) the value remains at 0
         // so the rest of the game should know
-        switch(android_get_input_mode())
+        switch(sttandroid_mode_get())
         {
             case 0:
                 set_input_method(INPUT_TOUCHSCREEN, false);
@@ -138,16 +138,16 @@ switch(argument0)
                 }
                 break;
             case 8:
-                switch(android_get_input_mode())
+                switch(sttandroid_mode_get())
                 {
                     case 0:
                         // TOUCHSCREEN -> EXTERNAL DEVICE
-                        android_set_input_mode(1);
+                        sttandroid_mode_set(1);
                         set_input_method(INPUT_OS_SPECIFIC_1, false);
                         break;
                     case 1:
                         // EXTERNAL DEVICE -> TOUCHSCREEN
-                        android_set_input_mode(0);
+                        sttandroid_mode_set(0);
                         set_input_method(INPUT_TOUCHSCREEN, false);
                         break;
                         
@@ -191,16 +191,16 @@ switch(argument0)
                 }
                 break;
             case 8:
-                switch(android_get_input_mode())
+                switch(sttandroid_mode_get())
                 {
                     case 0:
                         // TOUCHSCREEN -> EXTERNAL DEVICE
-                        android_set_input_mode(1);
+                        sttandroid_mode_set(1);
                         set_input_method(INPUT_OS_SPECIFIC_1, false);
                         break;
                     case 1:
                         // EXTERNAL DEVICE -> TOUCHSCREEN
-                        android_set_input_mode(0);
+                        sttandroid_mode_set(0);
                         set_input_method(INPUT_TOUCHSCREEN, false);
                         break;
                         
@@ -234,7 +234,7 @@ if(objProgram.device_info & DEVICE_TYPE_SMARTPHONE)
     {
         inputLabel1 = "< "+tr("_options_menu_InputLabel_Touchscreen")+ " >";
         inputLabel2 = "< "+tr("_options_menu_InputLabel_BTUSB_device")+ " >";
-        switch(android_get_input_mode())
+        switch(sttandroid_mode_get())
         {
             case 0:
                 menu_fn_refresh_displayed_value(8, inputLabel1);

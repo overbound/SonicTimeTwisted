@@ -3,10 +3,10 @@ menu_fn_step_default();
 // update the device label if one is connected while navigating in this menu
 if(objProgram.inputManager.device_label == "")
 {
-    var dd_state = real(android_double_device_detecting_mode_get_state());
+    var dd_state = real(sttandroid_gamepad_doubledetect_get_detect_state());
     if(dd_state == 0)
     {
-        var currentDeviceLabel = string(android_get_device_label(0, 30));
+        var currentDeviceLabel = string(sttandroid_gamepad_get_label(0, 30));
         if(currentDeviceLabel != "")
         {
             objProgram.inputManager.device_label = currentDeviceLabel;
@@ -20,12 +20,12 @@ if(state == 20)
 {
     if(keyboard_check_pressed(DEVICE_BACK_BUTTON))
     {
-        if(android_double_device_detecting_mode_get_state() != 0)
+        if(sttandroid_gamepad_doubledetect_get_detect_state() != 0)
         {
-            android_double_device_detecting_mode_cancel();
+            sttandroid_gamepad_doubledetect_cancel();
         }
     }
-    var dd_state = real(android_double_device_detecting_mode_get_state());
+    var dd_state = real(sttandroid_gamepad_doubledetect_get_detect_state());
     if(dd_state == 2 && confirmation_cursor == 1)
     {
         objProgram.inputManager.device_label = "";
@@ -35,9 +35,9 @@ if(state == 20)
     {
         if(dd_state == 0)
         {
-            if(!android_double_device_detecting_mode_is_last_successful())
+            if(!sttandroid_gamepad_doubledetect_is_success())
             {
-                android_disconnect_input(0);
+                sttandroid_gamepad_disconnect(0);
             }
             objProgram.inputManager.device_label = "";
             state = 22;

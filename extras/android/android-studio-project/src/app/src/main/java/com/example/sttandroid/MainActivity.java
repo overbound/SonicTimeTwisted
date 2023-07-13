@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
 
         sttAndroid = new SttAndroid();
 
-        sttAndroid.android_set_input_mode(1.0);
+        sttAndroid.sttandroid_mode_set(1.0);
         inputState = -1;
         prevInputState = -1;
         consoleOutput = new String[33];
@@ -90,11 +90,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     public boolean dispatchKeyEvent(KeyEvent event) {
-        if(sttAndroid.android_has_assigned_device(0) > 0 &&
-                sttAndroid.android_is_device_hardware_mapped(0) == 0)
-        {
-            injectMappings();
-        }
+        injectMappings();
         if (!sttAndroid.dispatchKeyEvent(event)) {
             // automatic hardware map if state == -1
             if(event.getAction() == KeyEvent.ACTION_UP)
@@ -129,16 +125,16 @@ public class MainActivity extends AppCompatActivity {
                                 switch(cursor)
                                 {
                                     case 0:
-                                        if(sttAndroid.android_is_double_device(0) > 0)
+                                        if(sttAndroid.sttandroid_gamepad_is_double(0) > 0)
                                         {
                                             print("Disconnected double device");
-                                            sttAndroid.android_disconnect_input(0);
+                                            sttAndroid.sttandroid_gamepad_disconnect(0);
                                         }
                                         else
                                         {
                                             appState = MainActivity.APPSTATE_DOUBLEDEVICE;
                                             print("Double device detection mode activated");
-                                            sttAndroid.android_double_device_detecting_mode_init(0);
+                                            sttAndroid.sttandroid_gamepad_doubledetect_start(0);
                                             thread = new DoubleDeviceThread(this, sttAndroid);
                                             thread.start();
                                         }
@@ -155,23 +151,23 @@ public class MainActivity extends AppCompatActivity {
                                         switch(vibrating)
                                         {
                                             case 0:
-                                                sttAndroid.android_rumble_perform(0, 0.25);
+                                                sttAndroid.sttandroid_rumble_perform(0, 0.25);
                                                 vibrating = 1;
                                                 break;
                                             case 1:
-                                                sttAndroid.android_rumble_perform(0, 0.5);
+                                                sttAndroid.sttandroid_rumble_perform(0, 0.5);
                                                 vibrating = 2;
                                                 break;
                                             case 2:
-                                                sttAndroid.android_rumble_perform(0, 0.75);
+                                                sttAndroid.sttandroid_rumble_perform(0, 0.75);
                                                 vibrating = 3;
                                                 break;
                                             case 3:
-                                                sttAndroid.android_rumble_perform(0, 1);
+                                                sttAndroid.sttandroid_rumble_perform(0, 1);
                                                 vibrating = 4;
                                                 break;
                                             case 4:
-                                                sttAndroid.android_rumble_perform(0, 0);
+                                                sttAndroid.sttandroid_rumble_perform(0, 0);
                                                 vibrating = 0;
                                                 break;
                                         }
@@ -180,7 +176,7 @@ public class MainActivity extends AppCompatActivity {
                                         return true;
                                     case 3:
                                         appState = MainActivity.APPSTATE_IDLE;
-                                        if(sttAndroid.android_has_assigned_device(0) > 0)
+                                        if(sttAndroid.sttandroid_gamepad_has_assigned(0) > 0)
                                         {
                                             print("Device is connected");
                                         }
@@ -188,9 +184,9 @@ public class MainActivity extends AppCompatActivity {
                                         {
                                             print("Device is not connected");
                                         }
-                                        sttAndroid.android_disconnect_input(0);
+                                        sttAndroid.sttandroid_gamepad_disconnect(0);
                                         print("Disconnecting");
-                                        if(sttAndroid.android_has_assigned_device(0) > 0)
+                                        if(sttAndroid.sttandroid_gamepad_has_assigned(0) > 0)
                                         {
                                             print("Device is connected");
                                         }
@@ -213,90 +209,111 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    private boolean mappingInitialized = false;
+
     protected void injectMappings()
     {
-        sttAndroid.android_feed_input_mapping_start(0);
-        sttAndroid.android_feed_input_mapping_new_file();
-        try {
-            InputStream is = this.getAssets().open("mappings/switch.csv");
-            List<Byte> bytes = new ArrayList<Byte>();
-            int readByte;
-            boolean finished = false;
-            while (!finished) {
-                readByte = is.read();
-                if (readByte == -1) {
-                    finished = true;
-                } else {
-                    bytes.add((byte) readByte);
+        if (sttAndroid.sttandroid_gamepad_get_state(0) != -2) {
+            sttAndroid.sttandroid_gamepad_hwmap_start(0);
+            sttAndroid.sttandroid_gamepad_hwmap_newfile();
+            try {
+                InputStream is = this.getAssets().open("mappings/switch.csv");
+                List<Byte> bytes = new ArrayList<Byte>();
+                int readByte;
+                boolean finished = false;
+                while (!finished) {
+                    readByte = is.read();
+                    if (readByte == -1) {
+                        finished = true;
+                    } else {
+                        bytes.add((byte) readByte);
+                    }
                 }
-            }
-            is.close();
+                is.close();
 
-            byte[] finalBytes = new byte[bytes.size()];
-            for (int i = 0; i < bytes.size(); i++) {
-                finalBytes[i] = bytes.get(i);
-            }
+                byte[] finalBytes = new byte[bytes.size()];
+                for (int i = 0; i < bytes.size(); i++) {
+                    finalBytes[i] = bytes.get(i);
+                }
 
-            String[] rows = (new String(finalBytes)).split("\n");
-            for (int i = 0; i < rows.length; i++) {
-                sttAndroid.android_feed_input_mapping_row(rows[i]);
+                String[] rows = (new String(finalBytes)).split("\n");
+                for (int i = 0; i < rows.length; i++) {
+                    sttAndroid.sttandroid_gamepad_hwmap_feed_row(rows[i]);
+                }
+            } catch (IOException e) {
+                print(e.getMessage());
             }
-        } catch (IOException e) {
-            print(e.getMessage());
+            sttAndroid.sttandroid_gamepad_hwmap_finish();
         }
-        sttAndroid.android_feed_input_mapping_done();
-        updateDisplay();
 
-        /**
-        sttAndroid.android_map_input(0, SttAndroid.cUP, 12);
-        sttAndroid.android_map_input(0, SttAndroid.cDOWN, 11);
-        sttAndroid.android_map_input(0, SttAndroid.cLEFT, 2);
-        sttAndroid.android_map_input(0, SttAndroid.cRIGHT, 1);
-
-        sttAndroid.android_map_input(0, SttAndroid.cUP, 162);
-        sttAndroid.android_map_input(0, SttAndroid.cDOWN, 161);
-        sttAndroid.android_map_input(0, SttAndroid.cLEFT, 152);
-        sttAndroid.android_map_input(0, SttAndroid.cRIGHT, 151);
-
-        sttAndroid.android_map_input(0, SttAndroid.cA,  990);
-        sttAndroid.android_map_input(0, SttAndroid.cB,  960);
-        sttAndroid.android_map_input(0, SttAndroid.cC,  970);
-        sttAndroid.android_map_input(0, SttAndroid.cSTART,  1080);
-         **/
-
-        setMappingConfig(SttAndroid.cUP, "162,12");
-        setMappingConfig(SttAndroid.cDOWN, "161,11");
-        setMappingConfig(SttAndroid.cLEFT, "152,2");
-        setMappingConfig(SttAndroid.cRIGHT, "151,1");
-        setMappingConfig(SttAndroid.cA, "960,-1");
-        setMappingConfig(SttAndroid.cB, "970,-1");
-        setMappingConfig(SttAndroid.cC, "990,-1");
-        setMappingConfig(SttAndroid.cSTART, "1080,1000");
+        if(!mappingInitialized) {
 
 
-        print("UP   : "+getMappedDescriptor(SttAndroid.cUP));
-        print("DOWN : "+getMappedDescriptor(SttAndroid.cDOWN));
-        print("LEFT : "+getMappedDescriptor(SttAndroid.cLEFT));
-        print("RIGHT: "+getMappedDescriptor(SttAndroid.cRIGHT));
-        print("A    : "+getMappedDescriptor(SttAndroid.cA));
-        print("B    : "+getMappedDescriptor(SttAndroid.cB));
-        print("C    : "+getMappedDescriptor(SttAndroid.cC));
-        print("START: "+getMappedDescriptor(SttAndroid.cSTART));
+            updateDisplay();
+
+            /**
+            sttAndroid.sttandroid_gamepad_swmap_set(0, SttAndroid.cUP, 12);
+            sttAndroid.sttandroid_gamepad_swmap_set(0, SttAndroid.cDOWN, 11);
+            sttAndroid.sttandroid_gamepad_swmap_set(0, SttAndroid.cLEFT, 2);
+            sttAndroid.sttandroid_gamepad_swmap_set(0, SttAndroid.cRIGHT, 1);
+
+            sttAndroid.sttandroid_gamepad_swmap_set(0, SttAndroid.cUP, 162);
+            sttAndroid.sttandroid_gamepad_swmap_set(0, SttAndroid.cDOWN, 161);
+            sttAndroid.sttandroid_gamepad_swmap_set(0, SttAndroid.cLEFT, 152);
+            sttAndroid.sttandroid_gamepad_swmap_set(0, SttAndroid.cRIGHT, 151);
+
+            sttAndroid.sttandroid_gamepad_swmap_set(0, SttAndroid.cA,  990);
+            sttAndroid.sttandroid_gamepad_swmap_set(0, SttAndroid.cB,  960);
+            sttAndroid.sttandroid_gamepad_swmap_set(0, SttAndroid.cC,  970);
+            sttAndroid.sttandroid_gamepad_swmap_set(0, SttAndroid.cSTART,  1080);
+             **/
+
+            setMappingConfig(SttAndroid.cUP, "162,12");
+            setMappingConfig(SttAndroid.cDOWN, "161,11");
+            setMappingConfig(SttAndroid.cLEFT, "152,2");
+            setMappingConfig(SttAndroid.cRIGHT, "151,1");
+            setMappingConfig(SttAndroid.cA, "960,-1");
+            setMappingConfig(SttAndroid.cB, "970,-1");
+            setMappingConfig(SttAndroid.cC, "990,-1");
+            setMappingConfig(SttAndroid.cSTART, "1080,1000");
 
 
-        print("UP   : "+getMappingConfig(SttAndroid.cUP));
-        print("DOWN : "+getMappingConfig(SttAndroid.cDOWN));
-        print("LEFT : "+getMappingConfig(SttAndroid.cLEFT));
-        print("RIGHT: "+getMappingConfig(SttAndroid.cRIGHT));
-        print("A    : "+getMappingConfig(SttAndroid.cA));
-        print("B    : "+getMappingConfig(SttAndroid.cB));
-        print("C    : "+getMappingConfig(SttAndroid.cC));
-        print("START: "+getMappingConfig(SttAndroid.cSTART));
+            setKeyboardMappingConfig(SttAndroid.cUP, "190,510");
+            setKeyboardMappingConfig(SttAndroid.cDOWN, "200,470");
+            setKeyboardMappingConfig(SttAndroid.cLEFT, "210,290");
+            setKeyboardMappingConfig(SttAndroid.cRIGHT, "220,320");
+            setKeyboardMappingConfig(SttAndroid.cA, "540,1450");
+            setKeyboardMappingConfig(SttAndroid.cB, "520,1460");
+            setKeyboardMappingConfig(SttAndroid.cC, "310,1470");
+            setKeyboardMappingConfig(SttAndroid.cSTART, "660,1600");
+
+
+            print("UP   : "+getMappedDescriptor(SttAndroid.cUP));
+            print("DOWN : "+getMappedDescriptor(SttAndroid.cDOWN));
+            print("LEFT : "+getMappedDescriptor(SttAndroid.cLEFT));
+            print("RIGHT: "+getMappedDescriptor(SttAndroid.cRIGHT));
+            print("A    : "+getMappedDescriptor(SttAndroid.cA));
+            print("B    : "+getMappedDescriptor(SttAndroid.cB));
+            print("C    : "+getMappedDescriptor(SttAndroid.cC));
+            print("START: "+getMappedDescriptor(SttAndroid.cSTART));
+
+
+            print("UP   : "+getMappingConfig(SttAndroid.cUP));
+            print("DOWN : "+getMappingConfig(SttAndroid.cDOWN));
+            print("LEFT : "+getMappingConfig(SttAndroid.cLEFT));
+            print("RIGHT: "+getMappingConfig(SttAndroid.cRIGHT));
+            print("A    : "+getMappingConfig(SttAndroid.cA));
+            print("B    : "+getMappingConfig(SttAndroid.cB));
+            print("C    : "+getMappingConfig(SttAndroid.cC));
+            print("START: "+getMappingConfig(SttAndroid.cSTART));
+
+            mappingInitialized = true;
+        }
     }
 
     protected String getMappedDescriptor(int inputCode)
     {
-        String descriptor = sttAndroid.android_get_mapped_descriptor(0, inputCode);
+        String descriptor = sttAndroid.sttandroid_gamepad_swmap_get_descriptor(0, inputCode);
         String[] parts = descriptor.split("\\|\\|", 4);
 
         if(parts.length == 4)
@@ -311,21 +328,27 @@ public class MainActivity extends AppCompatActivity {
 
     protected void setMappingConfig(int inputCode, String config)
     {
-        sttAndroid.android_set_mapped_configuration(0, inputCode, config);
+        sttAndroid.sttandroid_gamepad_swmap_set_both(0, inputCode, config);
     }
 
     protected String getMappingConfig(int inputCode)
     {
-        return sttAndroid.android_get_mapped_configuration(0, inputCode);
+        return sttAndroid.sttandroid_gamepad_swmap_get_both(0, inputCode);
+    }
+
+    protected void setKeyboardMappingConfig(int inputCode, String config)
+    {
+        sttAndroid.sttandroid_keyboard_swmap_set_both(0, inputCode, config);
+    }
+
+    protected String getKeyboardMappingConfig(int inputCode)
+    {
+        return sttAndroid.sttandroid_keyboard_swmap_get_both(0, inputCode);
     }
 
     @Override
     public boolean dispatchGenericMotionEvent(MotionEvent event) {
-        if(sttAndroid.android_has_assigned_device(0) > 0 &&
-            sttAndroid.android_is_device_hardware_mapped(0) == 0)
-        {
-            injectMappings();
-        }
+        injectMappings();
 
         boolean result = sttAndroid.dispatchGenericMotionEvent(event);
         updateDisplay();
@@ -365,9 +388,9 @@ public class MainActivity extends AppCompatActivity {
     {
         StringBuffer sb = new StringBuffer();
 
-        if(sttAndroid.android_get_any_key_mode(0) == 0.0)
+        if(sttAndroid.sttandroid_gamepad_anykey_get_mode(0) == 0.0)
         {
-            int state = (int) sttAndroid.android_get_input_state(0);
+            int state = (int) sttAndroid.sttandroid_gamepad_get_state(0);
             if(state == -2)
             {
                 sb.append("\nNo device\n");
@@ -380,86 +403,87 @@ public class MainActivity extends AppCompatActivity {
                 }
                 else
                 {
-
-                    sb.append("   [");
-                    if((state & 1) == 1)
-                    {
-                        sb.append("^");
-                    }
-                    else
-                    {
-                        sb.append(" ");
-                    }
-                    sb.append("]\n[");
-                    if((state & 4) == 4)
-                    {
-                        sb.append("<");
-                    }
-                    else
-                    {
-                        sb.append(" ");
-                    }
-                    sb.append("]   [");
-                    if((state & 8) == 8)
-                    {
-                        sb.append(">");
-                    }
-                    else
-                    {
-                        sb.append(" ");
-                    }
-                    sb.append("]  [");
-                    if((state & 128) == 128)
-                    {
-                        sb.append("S");
-                    }
-                    else
-                    {
-                        sb.append(" ");
-                    }
-                    sb.append("]  [");
-                    if((state & 16) == 16)
-                    {
-                        sb.append("A");
-                    }
-                    else
-                    {
-                        sb.append(" ");
-                    }
-                    sb.append("][");
-                    if((state & 32) == 32)
-                    {
-                        sb.append("B");
-                    }
-                    else
-                    {
-                        sb.append(" ");
-                    }
-                    sb.append("][");
-                    if((state & 64) == 64)
-                    {
-                        sb.append("C");
-                    }
-                    else
-                    {
-                        sb.append(" ");
-                    }
-                    sb.append("]\n   [");
-                    if((state & 2) == 2)
-                    {
-                        sb.append("v");
-                    }
-                    else
-                    {
-                        sb.append(" ");
-                    }
-                    sb.append("]\n");
+                    sb.append("\nDevice OK\n");
                 }
             }
+            state = (int) sttAndroid.sttandroid_input_get_state(0);
+            sb.append("   [");
+            if((state & 1) == 1)
+            {
+                sb.append("^");
+            }
+            else
+            {
+                sb.append(" ");
+            }
+            sb.append("]\n[");
+            if((state & 4) == 4)
+            {
+                sb.append("<");
+            }
+            else
+            {
+                sb.append(" ");
+            }
+            sb.append("]   [");
+            if((state & 8) == 8)
+            {
+                sb.append(">");
+            }
+            else
+            {
+                sb.append(" ");
+            }
+            sb.append("]  [");
+            if((state & 128) == 128)
+            {
+                sb.append("S");
+            }
+            else
+            {
+                sb.append(" ");
+            }
+            sb.append("]  [");
+            if((state & 16) == 16)
+            {
+                sb.append("A");
+            }
+            else
+            {
+                sb.append(" ");
+            }
+            sb.append("][");
+            if((state & 32) == 32)
+            {
+                sb.append("B");
+            }
+            else
+            {
+                sb.append(" ");
+            }
+            sb.append("][");
+            if((state & 64) == 64)
+            {
+                sb.append("C");
+            }
+            else
+            {
+                sb.append(" ");
+            }
+            sb.append("]\n   [");
+            if((state & 2) == 2)
+            {
+                sb.append("v");
+            }
+            else
+            {
+                sb.append(" ");
+            }
+            sb.append("]\n");
         }
         else
         {
-            sb.append("\n\n\n");
+            sb.append("\n\n\n\n");
         }
         for(int i = 0; i < consoleOutput.length; i++)
         {
@@ -480,7 +504,7 @@ public class MainActivity extends AppCompatActivity {
         sb.append("Cannot cancel :)\n\n");
 
         sb.append(cursor == 0 ? " > " : "   ");
-        sb.append(sttAndroid.android_is_double_device(0) > 0 ? "Disable" : "Enable");
+        sb.append(sttAndroid.sttandroid_gamepad_is_double(0) > 0 ? "Disable" : "Enable");
         sb.append(" double device mode\n");
         sb.append(cursor == 1 ? " > " : "   ");
         sb.append("Map keys\n");
@@ -541,24 +565,24 @@ public class MainActivity extends AppCompatActivity {
         {
             this.activity = activity;
             this.sttAndroid = sttAndroid;
-            prevState = (int) sttAndroid.android_double_device_detecting_mode_get_state();
+            prevState = (int) sttAndroid.sttandroid_gamepad_doubledetect_get_detect_state();
             done = false;
         }
 
         public void run() {
             while(!done)
             {
-                if(prevState == 1 && sttAndroid.android_double_device_detecting_mode_get_state() == 2)
+                if(prevState == 1 && sttAndroid.sttandroid_gamepad_doubledetect_get_detect_state() == 2)
                 {
                     activity.print("First device detected");
                     prevState = 2;
                 }
                 else
                 {
-                    if(prevState == 2 && sttAndroid.android_double_device_detecting_mode_get_state() == 0)
+                    if(prevState == 2 && sttAndroid.sttandroid_gamepad_doubledetect_get_detect_state() == 0)
                     {
                         activity.print("Second device detected");
-                        activity.print("Device: "+sttAndroid.android_get_device_label(0, -1));
+                        activity.print("Device: "+sttAndroid.sttandroid_gamepad_get_label(0, -1));
                         prevState = 2;
                         done =  true;
                         activity.joinThread(this, MainActivity.APPSTATE_IDLE);
@@ -583,7 +607,7 @@ public class MainActivity extends AppCompatActivity {
             this.sttAndroid = sttAndroid;
             currentKey = 1;
             prevCurrentKey = 0;
-            sttAndroid.android_set_any_key_mode(0, 1);
+            sttAndroid.sttandroid_gamepad_anykey_set_mode(0, 1);
         }
 
         public void run() {
@@ -622,10 +646,10 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
 
-                int key = (int) sttAndroid.android_get_any_key(0);
+                int key = (int) sttAndroid.sttandroid_gamepad_anykey_get_value(0);
                 if(key  != -1 && key != this.prev_key)
                 {
-                    if(sttAndroid.android_map_input(0, currentKey, key) > 0)
+                    if(sttAndroid.sttandroid_gamepad_swmap_set(0, currentKey, key) > 0)
                     {
                         this.prev_key = key;
                         switch(key % 10)
@@ -656,7 +680,7 @@ public class MainActivity extends AppCompatActivity {
             }
             activity.print("Done!");
             this.prev_key = -1;
-            sttAndroid.android_set_any_key_mode(0, 0);
+            sttAndroid.sttandroid_gamepad_anykey_set_mode(0, 0);
             activity.joinThread(this, MainActivity.APPSTATE_IDLE);
         }
     }

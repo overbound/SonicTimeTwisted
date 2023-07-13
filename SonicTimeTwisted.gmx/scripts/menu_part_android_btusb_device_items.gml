@@ -1,8 +1,8 @@
 items = false;
 
-if(real(android_double_device_detecting_mode_get_state()) == 0)
+if(real(sttandroid_gamepad_doubledetect_get_detect_state()) == 0)
 {
-    var deviceLabel = string(android_get_device_label(0, 30));
+    var deviceLabel = string(sttandroid_gamepad_get_label(0, 30));
     if(string_length(deviceLabel) == 0)
     {
         menu_fn_add_title(tr("_options_menu_BTUSB_device"));

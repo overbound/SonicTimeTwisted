@@ -138,10 +138,10 @@ public class SttAndroid extends ExtensionBase {
 
         rumbleThread = null;
         externalDevicesEnabled = false;
-        // intentionally set to TRUE because of what android_set_vibrate_mode() contains
+        // intentionally set to TRUE because of what sttandroid_rumble_set_enabled() contains
         delegateRumbleToExternalDevices = true;
-        android_set_input_mode(0.0);
-        android_set_vibrate_mode(0.0);
+        sttandroid_mode_set(0.0);
+        sttandroid_rumble_set_enabled(0.0);
 
         InputManager im = (InputManager) RunnerJNILib.GetApplicationContext().getSystemService(Context.INPUT_SERVICE);
         im.registerInputDeviceListener(new InputDeviceManager.Listener(inputs), null);
@@ -254,17 +254,17 @@ public class SttAndroid extends ExtensionBase {
             return false;
         }
         if (doubleInputDetectingMode > -1 && event.getAction() == KeyEvent.ACTION_DOWN) {
-            if (android_double_device_detecting_mode_get_state() == 1) {
+            if (sttandroid_gamepad_doubledetect_get_detect_state() == 1) {
                 if (isDeviceSuitable(event.getDevice())) {
                     doubleDeviceModeTempInputDevice = event.getDevice();
                     doubleInputDetectingMode++;
                     return true;
                 }
             } else {
-                if (android_double_device_detecting_mode_get_state() == 2) {
+                if (sttandroid_gamepad_doubledetect_get_detect_state() == 2) {
                     if (doubleDeviceModeTempInputDevice != event.getDevice()
                             && isDeviceSuitable(event.getDevice())) {
-                        inputs[(int) android_double_device_detecting_mode_get_input_number()]
+                        inputs[(int) sttandroid_gamepad_doubledetect_get_input_number()]
                                 .assignTwoDevices(doubleDeviceModeTempInputDevice, event.getDevice());
                         doubleDeviceModeTempInputDevice = null;
                         doubleInputDetectingMode = -1;
@@ -308,7 +308,7 @@ public class SttAndroid extends ExtensionBase {
      * @param inputNumber Player number: 0 or 1
      * @return 1 if a main device is associated with this instance, 0 otherwise
      */
-    public double android_has_assigned_device(double inputNumber) {
+    public double sttandroid_gamepad_has_assigned(double inputNumber) {
         return this.inputs[(int) inputNumber].hasAssignedDevice() ? 1.0 : 0.0;
     }
 
@@ -319,7 +319,7 @@ public class SttAndroid extends ExtensionBase {
      * @param inputNumber Player number: 0 or 1
      * @return 1 if a second device is associated with this instance, 0 otherwise
      */
-    public double android_is_double_device(double inputNumber) {
+    public double sttandroid_gamepad_is_double(double inputNumber) {
         return this.inputs[(int) inputNumber].isDoubleDevice() ? 1.0 : 0.0;
     }
 
@@ -330,7 +330,7 @@ public class SttAndroid extends ExtensionBase {
      * @param inputNumber Player number: 0 or 1
      * @return Input state
      */
-    public double android_get_input_state(double inputNumber) {
+    public double sttandroid_input_get_state(double inputNumber) {
         return this.inputs[(int) inputNumber].getInputState();
     }
 
@@ -340,7 +340,7 @@ public class SttAndroid extends ExtensionBase {
      * @param inputNumber Player number: 0 or 1
      * @return Random value because GameMaker Studio needs a return type.
      */
-    public double android_reset_hardware_mappings(double inputNumber) {
+    public double sttandroid_gamepad_hwmap_reset(double inputNumber) {
         this.inputs[(int) inputNumber].resetHardwareMappings();
         return 0.0;
     }
@@ -351,7 +351,7 @@ public class SttAndroid extends ExtensionBase {
      * @param inputNumber Player number: 0 or 1, determines the input device manager to update
      * @return Random value because GameMaker Studio needs a return type.
      */
-    public double android_feed_input_mapping_start(double inputNumber) {
+    public double sttandroid_gamepad_hwmap_start(double inputNumber) {
         Mapping.startHardwareMapping(inputs[(int) inputNumber]);
         return 0.0;
     }
@@ -361,7 +361,7 @@ public class SttAndroid extends ExtensionBase {
      *
      * @return Random value because GameMaker Studio needs a return type.
      */
-    public double android_feed_input_mapping_new_file() {
+    public double sttandroid_gamepad_hwmap_newfile() {
         Mapping.startNewFile();
         return 0.0;
     }
@@ -372,7 +372,7 @@ public class SttAndroid extends ExtensionBase {
      * @param row The CSV row to analyze
      * @return Random value because GameMaker Studio needs a return type.
      */
-    public double android_feed_input_mapping_row(String row) {
+    public double sttandroid_gamepad_hwmap_feed_row(String row) {
         Mapping.feedRow(row);
         return 0.0;
     }
@@ -383,7 +383,7 @@ public class SttAndroid extends ExtensionBase {
      *
      * @return Random value because GameMaker Studio needs a return type.
      */
-    public double android_feed_input_mapping_done() {
+    public double sttandroid_gamepad_hwmap_finish() {
         Mapping.endHardwareMapping();
         return 0.0;
     }
@@ -396,7 +396,7 @@ public class SttAndroid extends ExtensionBase {
      * @param inputNumber Player number: 0 or 1
      * @return 1 if the first device exists and has hardware mappings applied, 0 otherwise
      */
-    public double android_is_device_hardware_mapped(double inputNumber) {
+    public double sttandroid_gamepad_hwmap_is_applied(double inputNumber) {
         return this.inputs[(int) inputNumber].isDeviceHardwareMapped() ? 1.0 : 0.0;
     }
 
@@ -406,7 +406,7 @@ public class SttAndroid extends ExtensionBase {
      * @param inputNumber Player number: 0 or 1, determines the input device manager to update
      * @return Random value because GameMaker Studio needs a return type.
      */
-    public double android_double_device_detecting_mode_init(double inputNumber) {
+    public double sttandroid_gamepad_doubledetect_start(double inputNumber) {
 
         doubleInputDetectingMode = (byte) (inputNumber * 10);
         doubleInputDetectingMode += 1;
@@ -418,7 +418,7 @@ public class SttAndroid extends ExtensionBase {
      *
      * @return Player number: 0 or 1
      */
-    public double android_double_device_detecting_mode_get_input_number() {
+    public double sttandroid_gamepad_doubledetect_get_input_number() {
 
         if (doubleInputDetectingMode > -1) {
             return doubleInputDetectingMode / 10;
@@ -431,7 +431,7 @@ public class SttAndroid extends ExtensionBase {
      *
      * @return State: 0 for inactive, 1 for detecting first input, 2 for second input
      */
-    public double android_double_device_detecting_mode_get_state() {
+    public double sttandroid_gamepad_doubledetect_get_detect_state() {
 
         if (doubleInputDetectingMode > -1) {
             return doubleInputDetectingMode % 10;
@@ -444,7 +444,7 @@ public class SttAndroid extends ExtensionBase {
      *
      * @return Random value because GameMaker Studio needs a return type.
      */
-    public double android_double_device_detecting_mode_cancel() {
+    public double sttandroid_gamepad_doubledetect_cancel() {
         doubleInputDetectingMode = -2;
         return 0.0;
     }
@@ -455,7 +455,7 @@ public class SttAndroid extends ExtensionBase {
      *
      * @return 1 if last time wa successful (or not ran), 0 otherwise
      */
-    public double android_double_device_detecting_mode_is_last_successful() {
+    public double sttandroid_gamepad_doubledetect_is_success() {
         return doubleInputDetectingMode == -1 ? 1.0 : 0.0;
     }
 
@@ -465,7 +465,7 @@ public class SttAndroid extends ExtensionBase {
      * @param inputNumber Player number: 0 or 1
      * @return Random value because GameMaker Studio needs a return type.
      */
-    public double android_disconnect_input(double inputNumber) {
+    public double sttandroid_gamepad_disconnect(double inputNumber) {
         inputs[(int) inputNumber].disconnect();
         return 0.0;
     }
@@ -478,7 +478,7 @@ public class SttAndroid extends ExtensionBase {
      * @param value       1 or 0 to enable or disable
      * @return Random value because GameMaker Studio needs a return type.
      */
-    public double android_set_any_key_mode(double inputNumber, double value) {
+    public double sttandroid_gamepad_anykey_set_mode(double inputNumber, double value) {
         inputs[(int) inputNumber].setAnyKeyMode(value > 0.0);
         return 0.0;
     }
@@ -489,7 +489,7 @@ public class SttAndroid extends ExtensionBase {
      * @param inputNumber Player number: 0 or 1
      * @return 1 if the any key mode is enabled, 0 otherwise
      */
-    public double android_get_any_key_mode(double inputNumber) {
+    public double sttandroid_gamepad_anykey_get_mode(double inputNumber) {
         return inputs[(int) inputNumber].isAnyKeyMode() ? 1.0 : 0.0;
     }
 
@@ -502,7 +502,7 @@ public class SttAndroid extends ExtensionBase {
      * @param inputNumber Player number: 0 or 1
      * @return Integer unique to a button press or axis state or -1 if nothing is pressed
      */
-    public double android_get_any_key(double inputNumber) {
+    public double sttandroid_gamepad_anykey_get_value(double inputNumber) {
         return inputs[(int) inputNumber].getAnyInput();
     }
 
@@ -511,10 +511,10 @@ public class SttAndroid extends ExtensionBase {
      *
      * @param inputNumber Player number: 0 or 1
      * @param inputCode   Constant for the mapped input as managed by Sonic Time Twisted
-     * @param keyCode     Integer describing an input as returned by android_get_any_key()
+     * @param keyCode     Integer describing an input as returned by sttandroid_gamepad_anykey_get_value()
      * @return 1 if the entry could be added, 0 otherwise
      */
-    public double android_map_input(double inputNumber, double inputCode, double keyCode) {
+    public double sttandroid_gamepad_swmap_set(double inputNumber, double inputCode, double keyCode) {
         return inputs[(int) inputNumber].softwareMapKey((int) inputCode, (int) keyCode) ? 1.0 : 0.0;
     }
 
@@ -526,7 +526,7 @@ public class SttAndroid extends ExtensionBase {
      * @param isBackupMap TRUE to clear from the backup map, FALSE to clear from the main map
      * @return 1 if something was deleted, 0 if not
      */
-    public double android_clear_mapping(double inputNumber, double inputCode, double isBackupMap) {
+    public double sttandroid_gamepad_swmap_clear(double inputNumber, double inputCode, double isBackupMap) {
         return inputs[(int) inputNumber].
                 clearSoftwareMapping((int) inputCode, isBackupMap > 0.0) ? 1.0 : 0.0;
     }
@@ -539,7 +539,7 @@ public class SttAndroid extends ExtensionBase {
      * @param isBackup    1 to request mapping from the backup map, 0 to use the main one
      * @return An integer representing a mapped button or axis
      */
-    public double android_get_mapped_value(double inputNumber, double inputCode, double isBackup) {
+    public double sttandroid_gamepad_swmap_get(double inputNumber, double inputCode, double isBackup) {
         return inputs[(int) inputNumber].getSoftwareMappedCode((int) inputCode, isBackup > 0.0);
     }
 
@@ -553,7 +553,7 @@ public class SttAndroid extends ExtensionBase {
      * @param inputCode   Constant for the mapped input as managed by Sonic Time Twisted
      * @return A string describing a mapped button or axis
      */
-    public String android_get_mapped_descriptor(double inputNumber, double inputCode) {
+    public String sttandroid_gamepad_swmap_get_descriptor(double inputNumber, double inputCode) {
         return inputs[(int) inputNumber].getSoftwareMappedDescriptor((int) inputCode);
     }
 
@@ -566,12 +566,12 @@ public class SttAndroid extends ExtensionBase {
      * @param inputCode   Constant for the mapped input as managed by Sonic Time Twisted
      * @return A string describing a mapped button or axis
      */
-    public String android_get_mapped_configuration(double inputNumber, double inputCode) {
+    public String sttandroid_gamepad_swmap_get_both(double inputNumber, double inputCode) {
         return inputs[(int) inputNumber].getSoftwareMappedConfiguration((int) inputCode);
     }
 
     /**
-     * Applies a sequence returned by android_get_mapped_configuration.
+     * Applies a sequence returned by sttandroid_gamepad_swmap_get_both.
      *
      * The first value will be stored in the main map, the second value will be stored in the
      * backup map
@@ -581,7 +581,7 @@ public class SttAndroid extends ExtensionBase {
      * @param configuration A string with mapped values
      * @return Random value because GameMaker Studio needs a return type.
      */
-    public double android_set_mapped_configuration(double inputNumber, double inputCode,
+    public double sttandroid_gamepad_swmap_set_both(double inputNumber, double inputCode,
                                                    String configuration) {
         inputs[(int) inputNumber].setSoftwareMappedConfiguration((int) inputCode, configuration);
         return 0.0;
@@ -593,7 +593,7 @@ public class SttAndroid extends ExtensionBase {
      * @param inputNumber   Player number: 0 or 1
      * @return 1 if all buttons are mapped for the given player, 0 otherwise
      */
-    public double android_is_mapping_complete(double inputNumber) {
+    public double sttandroid_gamepad_swmap_is_complete(double inputNumber) {
         return inputs[(int) inputNumber].isSoftwareMappingComplete() ? 1.0 : 0.0;
     }
 
@@ -605,7 +605,7 @@ public class SttAndroid extends ExtensionBase {
      * @param truncate    Number of characters to display or -1 for displaying in full
      * @return Label of the device(s) associated with an input device manager, eventually truncated
      */
-    public String android_get_device_label(double inputNumber, double truncate) {
+    public String sttandroid_gamepad_get_label(double inputNumber, double truncate) {
         return inputs[(int) inputNumber].getLabel((int) truncate);
     }
 
@@ -617,7 +617,7 @@ public class SttAndroid extends ExtensionBase {
      * @param inputNumber Player number: 0 or 1
      * @return A string containing vendors and products
      */
-    public String android_get_device_vendor_product_descriptor(double inputNumber) {
+    public String sttandroid_gamepad_get_descriptor(double inputNumber) {
         return inputs[(int) inputNumber].getVendorProductDescriptor();
     }
 
@@ -629,7 +629,7 @@ public class SttAndroid extends ExtensionBase {
      * @param power       Vibration power: 0 to 1 with decimals
      * @return Random value because GameMaker Studio needs a return type.
      */
-    public double android_rumble_perform(double inputNumber, double power) {
+    public double sttandroid_rumble_perform(double inputNumber, double power) {
         if (delegateRumbleToExternalDevices) {
             inputs[(int) inputNumber].performRumble((int) (power * 50));
         } else {
@@ -646,7 +646,7 @@ public class SttAndroid extends ExtensionBase {
      * @param isExternal Whether external devices must be used for input.
      * @return Random value because GameMaker Studio needs a return type.
      */
-    public double android_set_input_mode(double isExternal) {
+    public double sttandroid_mode_set(double isExternal) {
         boolean newValue = Math.round(isExternal) > 0;
         if ((!newValue) && externalDevicesEnabled) {
             inputs[0].disconnectAll();
@@ -661,7 +661,7 @@ public class SttAndroid extends ExtensionBase {
      *
      * @return 1 if gamepads are enabled, 0 otherwise
      */
-    public double android_get_input_mode() {
+    public double sttandroid_mode_get() {
         return externalDevicesEnabled ? 1.0 : 0.0;
     }
 
@@ -672,7 +672,7 @@ public class SttAndroid extends ExtensionBase {
      * @param isExternal Whether external devices must be used for vibrating.
      * @return Random value because GameMaker Studio needs a return type.
      */
-    public double android_set_vibrate_mode(double isExternal) {
+    public double sttandroid_rumble_set_enabled(double isExternal) {
         boolean newValue = Math.round(isExternal) > 0;
 
         if (newValue && (!delegateRumbleToExternalDevices)) {
@@ -697,7 +697,7 @@ public class SttAndroid extends ExtensionBase {
      *
      * @return 1 if gamepads are used for rumble, 0 otherwise
      */
-    public double android_get_vibrate_mode() {
+    public double sttandroid_rumble_get_enabled() {
         return delegateRumbleToExternalDevices ? 1.0 : 0.0;
     }
 

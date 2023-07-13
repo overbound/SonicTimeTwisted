@@ -41,20 +41,20 @@ for(var i = 0; i &lt; 36; i++)
 {
     textRows[i] = "";
 }
-android_set_input_mode(1);
-// android_map_input(inputNumber, inputCode, keyCode)
-android_map_input(0, cUP, 12);
-android_map_input(0, cDOWN, 11);
-android_map_input(0, cLEFT, 2);
-android_map_input(0, cRIGHT, 1);
-android_map_input(0, cUP, 162);
-android_map_input(0, cDOWN, 161);
-android_map_input(0, cLEFT, 152);
-android_map_input(0, cRIGHT, 151);
-android_map_input(0, cA, 990);
-android_map_input(0, cB, 960);
-android_map_input(0, cC, 970);
-android_map_input(0, cSTART, 1080);
+sttandroid_mode_set(1);
+// sttandroid_gamepad_swmap_set(inputNumber, inputCode, keyCode)
+sttandroid_gamepad_swmap_set(0, cUP, 12);
+sttandroid_gamepad_swmap_set(0, cDOWN, 11);
+sttandroid_gamepad_swmap_set(0, cLEFT, 2);
+sttandroid_gamepad_swmap_set(0, cRIGHT, 1);
+sttandroid_gamepad_swmap_set(0, cUP, 162);
+sttandroid_gamepad_swmap_set(0, cDOWN, 161);
+sttandroid_gamepad_swmap_set(0, cLEFT, 152);
+sttandroid_gamepad_swmap_set(0, cRIGHT, 151);
+sttandroid_gamepad_swmap_set(0, cA, 990);
+sttandroid_gamepad_swmap_set(0, cB, 960);
+sttandroid_gamepad_swmap_set(0, cC, 970);
+sttandroid_gamepad_swmap_set(0, cSTART, 1080);
 
 add_console_output("Key mappings:");
 add_console_output("UP: "+string(android_get_formatted_mapped_descriptor(0, cUP)));
@@ -87,19 +87,19 @@ add_console_output("START: "+string(android_get_formatted_mapped_descriptor(0, c
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>inputState = android_get_input_state(0);
+            <string>inputState = sttandroid_gamepad_get_state(0);
 if(inputState == -1)
 {
     android_set_hardware_mapping(0);
 }
 if(inputState &gt;= 0)
 {
-    var detectedDeviceLabel = android_get_device_label(0, -1);
+    var detectedDeviceLabel = sttandroid_gamepad_get_label(0, -1);
     if(detectedDeviceLabel != deviceLabel)
     {
         deviceLabel = detectedDeviceLabel;
         add_console_output("Device: "+string(detectedDeviceLabel));
-        var vendorData = string_explode('||', string(android_get_device_vendor_product_descriptor(0)));
+        var vendorData = string_explode('||', string(sttandroid_gamepad_get_descriptor(0)));
         if(array_length_1d(vendorData) == 4)
         {
             add_console_output(" - vendor:  "+vendorData[0]);
@@ -153,14 +153,14 @@ if(inputState != prevInputState)
             <kind>1</kind>
             <string>if(state == 2)
 {
-    var readState = android_get_any_key(0);
+    var readState = sttandroid_gamepad_anykey_get_value(0);
     if(prevReadState != readState)
     {
         add_console_output("Read: "+string(readState));
 
         if(readState &gt;= 0)
         {
-            if(android_map_input(0, mappedKey, readState))
+            if(sttandroid_gamepad_swmap_set(0, mappedKey, readState))
             {
                 add_console_output(android_get_formatted_mapped_descriptor(0, mappedKey));
                 switch(mappedKey)
@@ -195,7 +195,7 @@ if(inputState != prevInputState)
                         break;
                     case 128:
                         add_console_output("Done");
-                        android_set_any_key_mode(0, false);
+                        sttandroid_gamepad_anykey_set_mode(0, false);
                         mappedKey = 0;
                         state = 0;
                         break;
@@ -213,7 +213,7 @@ else
 if(state == 3)
 {
     var prevSubState = subState;
-    subState = android_double_device_detecting_mode_get_state();
+    subState = sttandroid_gamepad_doubledetect_get_detect_state();
     if(prevSubState != subState)
     {
         switch(subState)
@@ -265,7 +265,7 @@ if(state == 3)
         {
             add_console_output("Mapping inputs");
             add_console_output("Press UP");
-            android_set_any_key_mode(0, true);
+            sttandroid_gamepad_anykey_set_mode(0, true);
             state = 2;
             mappedKey = 1;
         }
@@ -273,7 +273,7 @@ if(state == 3)
         if(mouse_y &lt; 200)
         {
             add_console_output("Device detection mode ON");
-            android_double_device_detecting_mode_init(0);
+            sttandroid_gamepad_doubledetect_start(0);
             state = 3;
             subState = 0;
             
@@ -284,12 +284,12 @@ if(state == 3)
             if(vibrating)
             {
                 add_console_output("Vibration stopped");    
-                android_rumble_perform(0, 0);
+                sttandroid_rumble_perform(0, 0);
             }
             else
             {
                 add_console_output("Vibration started");            
-                android_rumble_perform(0, 1);
+                sttandroid_rumble_perform(0, 1);
             }
             vibrating = !vibrating;
             state = 0;
@@ -395,11 +395,11 @@ else
             <kind>1</kind>
             <string>if(state == 2)
 {
-    android_set_any_key_mode(0, false);
+    sttandroid_gamepad_anykey_set_mode(0, false);
 }
 if(state == 3)
 {
-    android_double_device_detecting_mode_cancel();
+    sttandroid_gamepad_doubledetect_cancel();
 }
 state = 0;
 </string>
