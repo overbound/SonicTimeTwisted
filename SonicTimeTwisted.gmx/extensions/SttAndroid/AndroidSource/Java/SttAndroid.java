@@ -119,14 +119,11 @@ public class SttAndroid extends ExtensionBase {
     protected RumbleThread rumbleThread;
 
     /**
-     * True if external devices are enabled
-     */
-    protected boolean externalDevicesEnabled;
-
-    /**
      * True if vibration should be delegatedto external devices
      */
     protected boolean delegateRumbleToExternalDevices;
+
+    protected int mode;
 
     /**
      * Constructor
@@ -141,7 +138,7 @@ public class SttAndroid extends ExtensionBase {
         keyboardDeviceId = -1;
 
         rumbleThread = null;
-        externalDevicesEnabled = false;
+        mode = 0;
         // intentionally set to TRUE because of what sttandroid_rumble_set_enabled() contains
         delegateRumbleToExternalDevices = true;
         sttandroid_mode_set(0.0);
@@ -232,7 +229,7 @@ public class SttAndroid extends ExtensionBase {
      */
     @Override
     public boolean dispatchKeyEvent(KeyEvent event) {
-        if (!externalDevicesEnabled) {
+        if (mode == 0) {
             return false;
         }
         if (doubleInputDetectingMode > -1 && event.getAction() == KeyEvent.ACTION_DOWN) {
@@ -274,7 +271,7 @@ public class SttAndroid extends ExtensionBase {
      */
     @Override
     public boolean dispatchGenericMotionEvent(MotionEvent event) {
-        if (!externalDevicesEnabled) {
+        if (mode == 0) {
             return false;
         }
         AbstractManager manager = getInputDeviceManagerToUse(event.getDevice(), true);
@@ -628,16 +625,16 @@ public class SttAndroid extends ExtensionBase {
     /**
      * Set this to TRUE to enable external devices (gamepads) and FALSE to disable them.
      *
-     * @param isExternal Whether external devices must be used for input.
+     * @param mode two-bit int: bit 0 is whether gamepad is active, bit 1 is whether keyboard is active
      * @return Random value because GameMaker Studio needs a return type.
      */
-    public double sttandroid_mode_set(double isExternal) {
-        boolean newValue = Math.round(isExternal) > 0;
-        if ((!newValue) && externalDevicesEnabled) {
+    public double sttandroid_mode_set(double mode) {
+        int newMode = (int)Math.round(mode);
+        if (((newMode & 1) == 0) && (this.mode & 1) != 0) {
             inputs[0].disconnectAll();
             inputs[1].disconnectAll();
         }
-        externalDevicesEnabled = newValue;
+        this.mode = newMode;
         return 0.0;
     }
 
@@ -647,7 +644,7 @@ public class SttAndroid extends ExtensionBase {
      * @return 1 if gamepads are enabled, 0 otherwise
      */
     public double sttandroid_mode_get() {
-        return externalDevicesEnabled ? 1.0 : 0.0;
+        return this.mode;
     }
 
     /**

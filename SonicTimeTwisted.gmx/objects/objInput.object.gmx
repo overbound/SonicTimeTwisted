@@ -74,6 +74,7 @@ input_manage_script_fallback = input_method_dummy_script;
 input_draw_script_fallback = input_method_dummy_script;
 input_method = 0;
 input_method_fallback = 0;
+input_method_autodetected = 0;
 use_fallback = false;
 
 smartphone_controls_enabled = false;

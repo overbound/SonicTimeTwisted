@@ -166,6 +166,7 @@
 		"_options_menu_InputLabel_Gamepad": "Manette",
 		"_options_menu_InputLabel_Keyboard": "Clavier",
 		"_options_menu_InputLabel_BTUSB_device": "Périph. BT/USB",
+		"_options_menu_InputLabel_Auto": "Auto",
 		
 		"_options_menu_keymap_press": "Appuyez sur \"%0\"",
 		

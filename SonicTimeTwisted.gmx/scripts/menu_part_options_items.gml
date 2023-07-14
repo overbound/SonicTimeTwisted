@@ -7,17 +7,10 @@ if(objProgram.device_info & DEVICE_TYPE_COMPUTER)
 {
     menu_fn_add_option(tr("_options_menu_Input_Method"), 1, 1, "");
 }
-if(objProgram.device_info & DEVICE_TYPE_SMARTPHONE)
+if(objProgram.device_info & DEVICE_OS_ANDROID)
 {
-    if (objProgram.device_info & DEVICE_OS_ANDROID)
-    {
-        menu_fn_add_option(tr("_options_menu_Input_Method"), 8, true, "");
-        menu_fn_add_option(tr("_options_menu_touchscreen_Configure_vibrations"), 12);
-    }
-    else
-    {
-        menu_fn_add_option(tr("_options_menu_Input_Method"), 5, true, "");
-    }
+    menu_fn_add_option(tr("_options_menu_touchscreen_Configure_vibrations"), 12);
+    menu_fn_add_option(tr("_options_menu_Input_Method"), 5, true, "");
     menu_fn_add_option(tr("_options_menu_Configure_Touchscreen"), 6);
 }
 if(objProgram.device_info & DEVICE_TYPE_COMPUTER)

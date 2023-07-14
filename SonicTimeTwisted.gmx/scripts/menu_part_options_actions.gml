@@ -8,13 +8,17 @@ switch(argument0)
     case 1:
         switch(get_input_method())
         {
+            case INPUT_AUTO:
+                // AUTO -> KEYBOARD
+                set_input_method(INPUT_KEYBOARD, false);
+                break;
             case INPUT_KEYBOARD:
                 // KEYBOARD -> GAMEPAD
                 set_input_method(INPUT_GAMEPAD, false);
                 break;
             case INPUT_GAMEPAD:
-                // GAMEPAD -> KEYBOARD
-                set_input_method(INPUT_KEYBOARD, false);
+                // GAMEPAD -> AUTO
+                set_input_method(INPUT_AUTO, false);
                 break;
         }
         break;
@@ -27,6 +31,14 @@ switch(argument0)
     case 5:
         switch(get_input_method())
         {
+            case INPUT_AUTO:
+                // AUTO -> TOUCHSCREEN if smartphone, GAMEPAD otherwise
+                if (objProgram.device_info & DEVICE_TYPE_SMARTPHONE) {
+                    set_input_method(INPUT_TOUCHSCREEN, false);
+                } else {
+                    set_input_method(INPUT_GAMEPAD, false);
+                }
+                break;
             case INPUT_TOUCHSCREEN:
                 // TOUCHSCREEN -> GAMEPAD
                 set_input_method(INPUT_GAMEPAD, false);
@@ -36,8 +48,8 @@ switch(argument0)
                 set_input_method(INPUT_KEYBOARD, false);
                 break;
             case INPUT_KEYBOARD:
-                // KEYBOARD -> TOUCHSCREEN
-                set_input_method(INPUT_TOUCHSCREEN, false);
+                // KEYBOARD -> AUTO
+                set_input_method(INPUT_AUTO, false);
                 break;
         }
         break;
@@ -54,28 +66,7 @@ switch(argument0)
         state = 25;
         break;
     case 8:
-        switch(sttandroid_mode_get())
-        {
-            case 0:
-                // TOUCHSCREEN -> EXTERNAL DEVICE
-                sttandroid_mode_set(1);
-                break;
-            case 1:
-                // EXTERNAL DEVICE -> TOUCHSCREEN
-                sttandroid_mode_set(0);
-                break;
-        }
-        // checking this again after setting: on devices other than Android (eg testing on Windows) the value remains at 0
-        // so the rest of the game should know
-        switch(sttandroid_mode_get())
-        {
-            case 0:
-                set_input_method(INPUT_TOUCHSCREEN, false);
-                break;
-            case 1:
-                set_input_method(INPUT_OS_SPECIFIC_1, false);
-                break;
-        }
+        // use this ID for a future method
         break;
     case 9:
          menu_fn_goto_submenu(menu_part_android_btusb_items);
@@ -110,47 +101,43 @@ switch(argument0)
             case 1:
                 switch(get_input_method())
                 {
-                    case INPUT_KEYBOARD:
-                        // KEYBOARD -> GAMEPAD
+                    case INPUT_AUTO:
+                        // AUTO -> GAMEPAD
                         set_input_method(INPUT_GAMEPAD, false);
                         break;
                     case INPUT_GAMEPAD:
                         // GAMEPAD -> KEYBOARD
                         set_input_method(INPUT_KEYBOARD, false);
                         break;
+                    case INPUT_KEYBOARD:
+                        // KEYBOARD -> AUTO
+                        set_input_method(INPUT_AUTO, false);
+                        break;
                 }
                 break;
             case 5:
                 switch(get_input_method())
                 {
-                    case INPUT_GAMEPAD:
-                        // GAMEPAD -> TOUCHSCREEN
-                        set_input_method(INPUT_TOUCHSCREEN, false);
-                        break;
-                    case INPUT_KEYBOARD:
-                        // KEYBOARD -> GAMEPAD
-                        set_input_method(INPUT_GAMEPAD, false);
+                    case INPUT_AUTO:
+                        // AUTO -> TOUCHSCREEN if smartphone, GAMEPAD otherwise
+                        if (objProgram.device_info & DEVICE_TYPE_SMARTPHONE) {
+                            set_input_method(INPUT_TOUCHSCREEN, false);
+                        } else {
+                            set_input_method(INPUT_GAMEPAD, false);
+                        }
                         break;
                     case INPUT_TOUCHSCREEN:
-                        // TOUCHSCREEN -> KEYBOARD
+                        // TOUCHSCREEN -> GAMEPAD
+                        set_input_method(INPUT_GAMEPAD, false);
+                        break;
+                    case INPUT_GAMEPAD:
+                        // GAMEPAD -> KEYBOARD
                         set_input_method(INPUT_KEYBOARD, false);
                         break;
-                }
-                break;
-            case 8:
-                switch(sttandroid_mode_get())
-                {
-                    case 0:
-                        // TOUCHSCREEN -> EXTERNAL DEVICE
-                        sttandroid_mode_set(1);
-                        set_input_method(INPUT_OS_SPECIFIC_1, false);
+                    case INPUT_KEYBOARD:
+                        // KEYBOARD -> AUTO
+                        set_input_method(INPUT_AUTO, false);
                         break;
-                    case 1:
-                        // EXTERNAL DEVICE -> TOUCHSCREEN
-                        sttandroid_mode_set(0);
-                        set_input_method(INPUT_TOUCHSCREEN, false);
-                        break;
-                        
                 }
                 break;
         }
@@ -162,13 +149,17 @@ switch(argument0)
             case 1:
                 switch(get_input_method())
                 {
+                    case INPUT_AUTO:
+                        // AUTO -> KEYBOARD
+                        set_input_method(INPUT_KEYBOARD, false);
+                        break;
                     case INPUT_KEYBOARD:
                         // KEYBOARD -> GAMEPAD
                         set_input_method(INPUT_GAMEPAD, false);
                         break;
                     case INPUT_GAMEPAD:
-                        // GAMEPAD -> KEYBOARD
-                        set_input_method(INPUT_KEYBOARD, false);
+                        // GAMEPAD -> AUTO
+                        set_input_method(INPUT_AUTO, false);
                         break;
                 }
                 break;
@@ -176,20 +167,29 @@ switch(argument0)
                 // kept this as a default input selection for smartphones. Android needed an override in any case
                 switch(get_input_method())
                 {
-                    case INPUT_TOUCHSCREEN:
-                        // TOUCHSCREEN -> GAMEPAD
-                        set_input_method(INPUT_GAMEPAD, false);
-                        break;
-                    case INPUT_GAMEPAD:
-                        // GAMEPAD -> KEYBOARD
+                    case INPUT_AUTO:
+                        // AUTO -> KEYBOARD
                         set_input_method(INPUT_KEYBOARD, false);
                         break;
                     case INPUT_KEYBOARD:
-                        // KEYBOARD -> TOUCHSCREEN
-                        set_input_method(INPUT_TOUCHSCREEN, false);
+                        // KEYBOARD -> GAMEPAD
+                        set_input_method(INPUT_GAMEPAD, false);
+                        break;
+                    case INPUT_GAMEPAD:
+                        // GAMEPAD -> TOUCHSCREEN if smartphone, AUTO otherwise
+                        if (objProgram.device_info & DEVICE_TYPE_SMARTPHONE) {
+                            set_input_method(INPUT_TOUCHSCREEN, false);
+                        } else {
+                            set_input_method(INPUT_AUTO, false);
+                        }
+                        break;
+                    case INPUT_TOUCHSCREEN:
+                        // TOUCHSCREEN -> AUTO
+                        set_input_method(INPUT_AUTO, false);
                         break;
                 }
                 break;
+                /*
             case 8:
                 switch(sttandroid_mode_get())
                 {
@@ -206,6 +206,7 @@ switch(argument0)
                         
                 }
                 break;
+                */
         }
         break;
 }
@@ -214,53 +215,32 @@ switch(argument0)
 // calculating the optimal menu width at the same time - done here so that possible values are not duplicated among several scripts
 menu_fn_calculate_width_start();
 
-var inputLabel1 = "< "+tr("_options_menu_InputLabel_Gamepad")+ " >";
-var inputLabel2 = "< "+tr("_options_menu_InputLabel_Keyboard")+ " >";
 
-if(objProgram.inputManager.input_method == INPUT_GAMEPAD)
-{
-    menu_fn_refresh_displayed_value(1, inputLabel1);
-}
-else
-{
-    menu_fn_refresh_displayed_value(1, inputLabel2);
-}
+var inputLabel_gamepad = "< "+tr("_options_menu_InputLabel_Gamepad")+ " >";
+var inputLabel_keybord = "< "+tr("_options_menu_InputLabel_Keyboard")+ " >";
+var inputLabel_touchscreen = "< "+tr("_options_menu_InputLabel_Touchscreen")+ " >";
+var inputLabel_auto = "< "+tr("_options_menu_InputLabel_Auto")+ " >";
 
-menu_fn_calculate_width_add(1, false, inputLabel1, inputLabel2);
-
-if(objProgram.device_info & DEVICE_TYPE_SMARTPHONE)
-{
-    if(objProgram.device_info & DEVICE_OS_ANDROID)
-    {
-        inputLabel1 = "< "+tr("_options_menu_InputLabel_Touchscreen")+ " >";
-        inputLabel2 = "< "+tr("_options_menu_InputLabel_BTUSB_device")+ " >";
-        switch(sttandroid_mode_get())
-        {
-            case 0:
-                menu_fn_refresh_displayed_value(8, inputLabel1);
-                break;
-            case 1:
-                menu_fn_refresh_displayed_value(8, inputLabel2);
-                break;
-        }
-        menu_fn_calculate_width_add(8, false, inputLabel1, inputLabel2);
-    }
-    else
-    {
-        inputLabel1 = "< "+tr("_options_menu_InputLabel_Gamepad")+ " >";
-        inputLabel2 = "< "+tr("_options_menu_InputLabel_Keyboard")+ " >";
-        switch(get_input_method())
-        {
-            case INPUT_GAMEPAD:
-                menu_fn_refresh_displayed_value(5, inputLabel1);
-                break;
-            case INPUT_KEYBOARD:
-                menu_fn_refresh_displayed_value(5, inputLabel2);
-                break;
-        }
-        menu_fn_calculate_width_add(5, false, inputLabel1, inputLabel2);
-    }
+switch(objProgram.inputManager.input_method) {
+    case INPUT_GAMEPAD:
+        menu_fn_refresh_displayed_value(1, inputLabel_gamepad);
+        menu_fn_refresh_displayed_value(5, inputLabel_gamepad);
+        break;
+    case INPUT_KEYBOARD:
+        menu_fn_refresh_displayed_value(1, inputLabel_keybord);
+        menu_fn_refresh_displayed_value(5, inputLabel_keybord);
+        break;
+    case INPUT_TOUCHSCREEN:
+        menu_fn_refresh_displayed_value(1, inputLabel_touchscreen);
+        menu_fn_refresh_displayed_value(5, inputLabel_touchscreen);
+        break;
+    default:
+        menu_fn_refresh_displayed_value(1, inputLabel_auto);
+        menu_fn_refresh_displayed_value(5, inputLabel_auto);
+        
 }
+menu_fn_calculate_width_add(1, false, inputLabel_gamepad, inputLabel_keybord, inputLabel_touchscreen, inputLabel_auto);
+menu_fn_calculate_width_add(5, false, inputLabel_gamepad, inputLabel_keybord, inputLabel_touchscreen, inputLabel_auto);
 menu_fn_calculate_width_finish();
 is_touchscreen = prev_is_touchscreen;
 // preserve the cursor value - usually false for the sake of touchscreen controls

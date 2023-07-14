@@ -168,6 +168,7 @@
 		"_options_menu_InputLabel_Gamepad": "Mando",
 		"_options_menu_InputLabel_Keyboard": "Teclado",
 		"_options_menu_InputLabel_BTUSB_device": "Dispositivo BT/USB",
+		"_options_menu_InputLabel_Auto": "Auto",
 
 		"_options_menu_keymap_press": "Pulsar \"%0\"",
 

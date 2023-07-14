@@ -166,7 +166,7 @@
 		"_options_menu_InputLabel_Touchscreen": "Tela Touch",
 		"_options_menu_InputLabel_Gamepad": "Gamepad",
 		"_options_menu_InputLabel_Keyboard": "Teclado",
-		"_options_menu_InputLabel_BTUSB_device": "Gamepad BT/USB",
+		"_options_menu_InputLabel_Auto": "Auto",
 
 		"_options_menu_keymap_press": "Pressione \"%0\"",
 		

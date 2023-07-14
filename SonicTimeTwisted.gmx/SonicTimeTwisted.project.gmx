@@ -4097,6 +4097,7 @@
           <script>scripts\input_method_init_physical.gml</script>
           <script>scripts\input_method_init_smartphone.gml</script>
           <script>scripts\input_method_keyboard.gml</script>
+          <script>scripts\input_method_auto.gml</script>
           <script>scripts\input_method_smartphone_switch.gml</script>
           <script>scripts\input_method_smartphone_switch_menu.gml</script>
           <script>scripts\set_smartphone_controls_enabled.gml</script>
@@ -5990,7 +5991,7 @@
       </rooms>
     </rooms>
   </rooms>
-  <constants number="89">
+  <constants number="90">
     <constant name="VERSION">"v1.1.3-dev"</constant>
     <constant name="GAMEPAD_POV_Y">7</constant>
     <constant name="GAMEPAD_POV_X">6</constant>
@@ -6076,7 +6077,8 @@
     <constant name="INPUT_KEYBOARD">0</constant>
     <constant name="INPUT_TOUCHSCREEN">1</constant>
     <constant name="INPUT_GAMEPAD">2</constant>
-    <constant name="INPUT_OS_SPECIFIC_1">3</constant>
+    <constant name="INPUT_AUTO">3</constant>
+    <constant name="INPUT_OS_SPECIFIC_1">4</constant>
     <constant name="DEVICE_SUPPORTS_FILE_FIND">1</constant>
     <constant name="sine">global._sine_lookup</constant>
     <constant name="cosine">global._cosine_lookup</constant>
