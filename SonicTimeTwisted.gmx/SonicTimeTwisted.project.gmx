@@ -4112,8 +4112,9 @@
             <script>scripts\input_load_keyboard_controls.gml</script>
             <script>scripts\input_load_gamepad_controls.gml</script>
             <script>scripts\input_load_touchscreen_controls.gml</script>
-            <script>scripts\input_load_android_device_controls.gml</script>
-            <script>scripts\input_load_android_device_one_control.gml</script>
+            <script>scripts\input_load_android_controls.gml</script>
+            <script>scripts\input_load_android_gamepad_one_control.gml</script>
+            <script>scripts\input_load_android_keyboard_one_control.gml</script>
             <script>scripts\input_reload_keyboard_controls.gml</script>
             <script>scripts\input_reload_gamepad_controls.gml</script>
             <script>scripts\input_load_android_gamepad_default_controls.gml</script>
@@ -4239,7 +4240,8 @@
             <script>scripts\menu_fn_restart_specialstage.gml</script>
           </scripts>
           <scripts name="android">
-            <script>scripts\android_get_mapped_label.gml</script>
+            <script>scripts\android_get_gamepad_mapped_label.gml</script>
+            <script>scripts\android_get_keyboard_mapped_label.gml</script>
             <script>scripts\android_start_software_mapping.gml</script>
           </scripts>
           <script>scripts\menu_fn_calculate_width_simple.gml</script>
@@ -4263,6 +4265,8 @@
             <script>scripts\menu_part_keymap_items.gml</script>
             <script>scripts\menu_part_keymap_actions.gml</script>
             <script>scripts\menu_part_keymap_step.gml</script>
+            <script>scripts\menu_part_keymap_actions_android.gml</script>
+            <script>scripts\menu_part_keymap_step_android.gml</script>
             <script>scripts\menu_part_joymap_items.gml</script>
             <script>scripts\menu_part_joymap_actions.gml</script>
             <script>scripts\menu_part_joymap_step.gml</script>

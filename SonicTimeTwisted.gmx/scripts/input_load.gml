@@ -16,7 +16,7 @@ if (stt_file_exists(file)) {
         input_load_touchscreen_controls(true);
         if(objProgram.device_info & DEVICE_OS_ANDROID)
         {
-            input_load_android_device_controls(true);
+            input_load_android_controls(true);
         }
         else
         {
@@ -29,7 +29,7 @@ if (stt_file_exists(file)) {
     {
         if(objProgram.device_info & DEVICE_OS_ANDROID)
         {
-            input_load_android_device_controls(true);
+            input_load_android_controls(true);
         }
         else
         {
@@ -50,7 +50,7 @@ if (stt_file_exists(file)) {
         input_load_touchscreen_controls(false);
         if(objProgram.device_info & DEVICE_OS_ANDROID)
         {
-            input_load_android_device_controls(false);
+            input_load_android_controls(false);
         }
         else
         {
@@ -63,7 +63,7 @@ if (stt_file_exists(file)) {
     {
         if(objProgram.device_info & DEVICE_OS_ANDROID)
         {
-            input_load_android_device_controls(false);
+            input_load_android_controls(false);
         }
         else
         {

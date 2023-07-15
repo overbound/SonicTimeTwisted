@@ -488,6 +488,74 @@
             <arg>2</arg>
           </args>
         </function>
+        <function>
+          <name>sttandroid_keyboard_swmap_get_descriptor</name>
+          <externalName>sttandroid_keyboard_swmap_get_descriptor</externalName>
+          <kind>11</kind>
+          <help>sttandroid_keyboard_swmap_get_descriptor(inputNumber,inputCode)</help>
+          <returnType>1</returnType>
+          <argCount>2</argCount>
+          <args>
+            <arg>2</arg>
+            <arg>2</arg>
+          </args>
+        </function>
+        <function>
+          <name>sttandroid_keyboard_swmap_is_complete</name>
+          <externalName>sttandroid_keyboard_swmap_is_complete</externalName>
+          <kind>11</kind>
+          <help>sttandroid_keyboard_swmap_is_complete(inputNumber)</help>
+          <returnType>2</returnType>
+          <argCount>1</argCount>
+          <args>
+            <arg>2</arg>
+          </args>
+        </function>
+        <function>
+          <name>sttandroid_keyboard_swmap_get_both</name>
+          <externalName>sttandroid_keyboard_swmap_get_both</externalName>
+          <kind>11</kind>
+          <help>sttandroid_keyboard_swmap_get_both(inputNumber, inputCode)</help>
+          <returnType>1</returnType>
+          <argCount>2</argCount>
+          <args>
+            <arg>2</arg>
+            <arg>2</arg>
+          </args>
+        </function>
+        <function>
+          <name>sttandroid_keyboard_anykey_set_mode</name>
+          <externalName>sttandroid_keyboard_anykey_set_mode</externalName>
+          <kind>11</kind>
+          <help>sttandroid_keyboard_anykey_set_mode(value)</help>
+          <returnType>2</returnType>
+          <argCount>1</argCount>
+          <args>
+            <arg>2</arg>
+          </args>
+        </function>
+        <function>
+          <name>sttandroid_keyboard_anykey_get_value</name>
+          <externalName>sttandroid_keyboard_anykey_get_value</externalName>
+          <kind>11</kind>
+          <help>sttandroid_keyboard_anykey_get_value()</help>
+          <returnType>2</returnType>
+          <argCount>0</argCount>
+          <args/>
+        </function>
+        <function>
+          <name>sttandroid_keyboard_swmap_set</name>
+          <externalName></externalName>
+          <kind>11</kind>
+          <help>sttandroid_keyboard_swmap_set(inputNumber,inputCode,keyCode)</help>
+          <returnType>2</returnType>
+          <argCount>3</argCount>
+          <args>
+            <arg>2</arg>
+            <arg>2</arg>
+            <arg>2</arg>
+          </args>
+        </function>
       </functions>
       <constants/>
     </file>

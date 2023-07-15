@@ -1,6 +1,7 @@
 package com.example.sttandroid.lib;
 
 import android.annotation.SuppressLint;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 
@@ -156,8 +157,14 @@ public class KeyboardManager extends AbstractManager {
      * @return Integer unique to a key press or -1 if nothing is pressed
      */
     public int getAnyInput() {
-        int result = -1;
-        return result;
+        if (this.anyKeyMode && allPresses.size() > 0) {
+            for (Map.Entry<Integer, Boolean> entry : allPresses.entrySet()) {
+                if ((entry.getValue())) {
+                    return entry.getKey();
+                }
+            }
+        }
+        return -1;
     }
 
     protected boolean softwareMapKeyInternal(

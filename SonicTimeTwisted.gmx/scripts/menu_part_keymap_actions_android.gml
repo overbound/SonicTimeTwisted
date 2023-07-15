@@ -2,7 +2,7 @@ switch(argument0)
 {
     case 9:
     case -1:
-        if(input_check_keyboard_bindings_complete())
+        if(sttandroid_keyboard_swmap_is_complete(0))
         {
             menu_fn_exit_submenu(menu_part_options_items, 2);
         }
@@ -25,6 +25,7 @@ switch(argument0)
             var key_control = im.key_control[i];
             ds_map_add(temp_map, key_control, stored_key);
         }
+        sttandroid_keyboard_anykey_set_mode(true);
         menu_part_keymap_actions(21);
         break;
     case 1:
@@ -67,7 +68,7 @@ switch(argument0)
         // incomplete mapping - revert
         with(objProgram.inputManager)
         {
-            input_load_keyboard_controls(false);
+            input_load_android_controls(true);
         }
         save_control_map_keyboard();
         break;
@@ -106,79 +107,26 @@ switch(argument0)
     case 29:
         // group mapping - success, discard the backup and save everything
         ds_map_destroy(temp_map);
-        save_control_map_keyboard();
+        sttandroid_keyboard_anykey_set_mode(false);
+        save_control_map_android_device();
         break;
     case 30:
         // group mapping - cancelled, reload mappings from the ini file
-        input_reload_keyboard_controls();
+        input_load_android_controls(true);
+        sttandroid_keyboard_anykey_set_mode(false);
         ds_map_destroy(temp_map);
         break;
 }
 
 // refreshing key labels
-var upLabel = '';
-var downLabel = '';
-var leftLabel = '';
-var rightLabel = '';
-var aLabel = '';
-var bLabel = '';
-var cLabel = '';
-var startLabel = '';
-
-if(objProgram.device_info & DEVICE_OS_ANDROID)
-{
-    upLabel = android_get_keyboard_mapped_label(0, cUP);
-    downLabel = android_get_keyboard_mapped_label(0, cDOWN);
-    leftLabel = android_get_keyboard_mapped_label(0, cLEFT);
-    rightLabel = android_get_keyboard_mapped_label(0, cRIGHT);
-    aLabel = android_get_keyboard_mapped_label(0, cA);
-    bLabel = android_get_keyboard_mapped_label(0, cB);
-    cLabel = android_get_keyboard_mapped_label(0, cC);
-    startLabel = android_get_keyboard_mapped_label(0, cSTART);
-}
-else
-{
-    for(var i=0; i < objProgram.inputManager.key_count; i++)
-    {
-        var stored_key = objProgram.inputManager.key[i];
-        switch(objProgram.inputManager.key_control[i])
-        {
-            case cUP:
-                upLabel = menu_fn_set_or_prepend_kb_label(stored_key, upLabel);
-                break;
-            case cDOWN:
-                downLabel = menu_fn_set_or_prepend_kb_label(stored_key, downLabel);
-                break;
-            case cLEFT:
-                leftLabel = menu_fn_set_or_prepend_kb_label(stored_key, leftLabel);
-                break;
-            case cRIGHT:
-                rightLabel = menu_fn_set_or_prepend_kb_label(stored_key, rightLabel);
-                break;
-            case cA:
-                aLabel = menu_fn_set_or_prepend_kb_label(stored_key, aLabel);
-                break;
-            case cB:
-                bLabel = menu_fn_set_or_prepend_kb_label(stored_key, bLabel);
-                break;
-            case cC:
-                cLabel = menu_fn_set_or_prepend_kb_label(stored_key, cLabel);
-                break;
-            case cSTART:
-                startLabel = menu_fn_set_or_prepend_kb_label(stored_key, startLabel);
-                break;
-        }
-    }
-}
-
-menu_fn_refresh_displayed_value(1, upLabel);
-menu_fn_refresh_displayed_value(2, downLabel);
-menu_fn_refresh_displayed_value(3, leftLabel);
-menu_fn_refresh_displayed_value(4, rightLabel);
-menu_fn_refresh_displayed_value(5, aLabel);
-menu_fn_refresh_displayed_value(6, bLabel);
-menu_fn_refresh_displayed_value(7, cLabel);
-menu_fn_refresh_displayed_value(8, startLabel);
+menu_fn_refresh_displayed_value(1, android_get_keyboard_mapped_label(0, cUP));
+menu_fn_refresh_displayed_value(2, android_get_keyboard_mapped_label(0, cDOWN));
+menu_fn_refresh_displayed_value(3, android_get_keyboard_mapped_label(0, cLEFT));
+menu_fn_refresh_displayed_value(4, android_get_keyboard_mapped_label(0, cRIGHT));
+menu_fn_refresh_displayed_value(5, android_get_keyboard_mapped_label(0, cA));
+menu_fn_refresh_displayed_value(6, android_get_keyboard_mapped_label(0, cB));
+menu_fn_refresh_displayed_value(7, android_get_keyboard_mapped_label(0, cC));
+menu_fn_refresh_displayed_value(8, android_get_keyboard_mapped_label(0, cSTART));
 
 // calculating the optimal menu width at the same time - done here so that possible values are not duplicated among several scripts
 menu_fn_calculate_width_start();

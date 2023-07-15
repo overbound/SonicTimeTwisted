@@ -1,6 +1,6 @@
 items = false;
 
-menu_fn_add_title(tr("_options_menu_BTUSB_title"));
+menu_fn_add_title(tr("_options_menu_Gamepad_settings"));
 // force updating the device label before displaying (or not) the mapping buttons
 var currentDeviceLabel = string(sttandroid_gamepad_get_label(0, 30));
 objProgram.inputManager.device_label = currentDeviceLabel;

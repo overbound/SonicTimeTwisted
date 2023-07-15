@@ -14,6 +14,8 @@ public abstract class AbstractManager {
 
     protected boolean any_press_registered = false;
 
+    protected int previousAnyKey = -1;
+
     /**
      * Forwards key presses to the device wrapper(s)
      *

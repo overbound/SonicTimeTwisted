@@ -129,6 +129,7 @@ public class SttAndroid extends ExtensionBase {
     protected boolean anyPressRegistered = false;
 
     protected boolean handleAnyPressRegistered = false;
+    protected int previousAnyKey = -1;
 
     /**
      * Constructor
@@ -516,6 +517,7 @@ public class SttAndroid extends ExtensionBase {
      * @return 1 if the any key mode is enabled, 0 otherwise
      */
     public double sttandroid_gamepad_anykey_get_mode(double inputNumber) {
+        previousAnyKey = -1;
         return inputs[(int) inputNumber].isAnyKeyMode() ? 1.0 : 0.0;
     }
 
@@ -529,7 +531,13 @@ public class SttAndroid extends ExtensionBase {
      * @return Integer unique to a button press or axis state or -1 if nothing is pressed
      */
     public double sttandroid_gamepad_anykey_get_value(double inputNumber) {
-        return inputs[(int) inputNumber].getAnyInput();
+        int result = inputs[(int) inputNumber].getAnyInput();
+        if (previousAnyKey != result) {
+            previousAnyKey = result;
+            return previousAnyKey;
+        } else {
+            return -1;
+        }
     }
 
     /**
@@ -753,6 +761,7 @@ public class SttAndroid extends ExtensionBase {
      */
     public double sttandroid_keyboard_anykey_set_mode(double value) {
         keyboard.setAnyKeyMode(value > 0.0);
+        previousAnyKey = -1;
         return 0.0;
     }
 
@@ -774,7 +783,13 @@ public class SttAndroid extends ExtensionBase {
      * @return Integer unique to a button press or axis state or -1 if nothing is pressed
      */
     public double sttandroid_keyboard_anykey_get_value() {
-        return keyboard.getAnyInput();
+        int result = keyboard.getAnyInput();
+        if (previousAnyKey != result) {
+            previousAnyKey = result;
+            return previousAnyKey;
+        } else {
+            return -1;
+        }
     }
 
     /**
@@ -822,7 +837,9 @@ public class SttAndroid extends ExtensionBase {
      * @return A string describing a mapped button or axis
      */
     public String sttandroid_keyboard_swmap_get_descriptor(double inputNumber, double inputCode) {
-        return keyboard.getSoftwareMappedDescriptor((int) inputNumber, (int) inputCode);
+        String res = keyboard.getSoftwareMappedDescriptor((int) inputNumber, (int) inputCode);
+        Log.d("yoyo", "sttandroid_keyboard_swmap_get_descriptor: "+inputNumber+" "+inputCode+" -> "+res);
+        return res;
     }
 
 

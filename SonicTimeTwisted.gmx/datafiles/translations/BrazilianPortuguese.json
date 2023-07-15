@@ -10,7 +10,7 @@
 		"titlecard_zone_is_first": 0,
 		"ss_start_go_is_longer": 1,
 		
-	 "font_param": {
+		"font_param": {
 			"sprFontHud": {
 				"alphabet": " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~ ÀÁÃÂÄÇÈÉÊËÌÍÎÏÒÓÕÔÖÙÚÛÜàáãâäçèéêëìíîïòóõôöùúûü",
 				"removeback": 0,
@@ -147,7 +147,6 @@
 		"_options_menu_Configure_Touchscreen": "Configurar Toques",
 		"_options_menu_Map_keys": "Mapear Teclado",
 		"_options_menu_Map_gamepad": "Mapear controle",
-		"_options_menu_Map_BTUSB_device": "Mapear controle BT/USB",
 		"_options_menu_WaD": "Avisos Importantes!",
 		"_options_menu_Back": "< Voltar",
 		"_options_menu_Remap_all": "Mapear tudo",
@@ -156,8 +155,7 @@
 		"_btusb_joymap_Device": "Dispositivo",
 		"_btusb_joymap_Device_Disabled": "Desabilitado",
 		"_btusb_joymap_Device_Unknown": "Dispositivo Desconhecido",
-		"_options_menu_BTUSB_title": "Mapear controle BT/USB",
-		"_options_menu_BTUSB_device": "Dispositivo BT/USB",
+		"_options_menu_Gamepad_settings": "Configurar Controle",
 		"_options_menu_BTUSB_device_Disconnect": "Desconectado",
 		"_options_menu_BTUSB_device_DoubleMode": "Controlador duplo",
 		"_options_menu_BTUSB_device_DoubleMode_device1": "Aperte um botão do Primeiro Controle",
