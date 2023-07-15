@@ -12,6 +12,8 @@ public abstract class AbstractManager {
      */
     final static int BUTTON = 0;
 
+    protected boolean any_press_registered = false;
+
     /**
      * Forwards key presses to the device wrapper(s)
      *

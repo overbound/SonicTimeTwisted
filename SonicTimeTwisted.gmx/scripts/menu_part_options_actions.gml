@@ -189,24 +189,6 @@ switch(argument0)
                         break;
                 }
                 break;
-                /*
-            case 8:
-                switch(sttandroid_mode_get())
-                {
-                    case 0:
-                        // TOUCHSCREEN -> EXTERNAL DEVICE
-                        sttandroid_mode_set(1);
-                        set_input_method(INPUT_OS_SPECIFIC_1, false);
-                        break;
-                    case 1:
-                        // EXTERNAL DEVICE -> TOUCHSCREEN
-                        sttandroid_mode_set(0);
-                        set_input_method(INPUT_TOUCHSCREEN, false);
-                        break;
-                        
-                }
-                break;
-                */
         }
         break;
 }

@@ -22,6 +22,7 @@ import android.content.Context;
 import android.content.res.Configuration;
 import android.hardware.input.InputManager;
 import android.os.Vibrator;
+import android.util.Log;
 import android.view.InputDevice;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
@@ -122,6 +123,10 @@ public class SttAndroid extends ExtensionBase {
 
     protected int mode;
 
+    protected boolean anyPressRegistered = false;
+
+    protected boolean handleAnyPressRegistered = false;
+
     /**
      * Constructor
      */
@@ -168,7 +173,7 @@ public class SttAndroid extends ExtensionBase {
         if (keyboardDeviceId == device.getId()) {
             return true;
         }
-        if ((device.getSources() & InputDevice.SOURCE_KEYBOARD) == InputDevice.SOURCE_KEYBOARD) {
+        if (((mode & 2) == 2) && (!isDeviceGamepad(device)) && (device.getSources() & InputDevice.SOURCE_KEYBOARD) == InputDevice.SOURCE_KEYBOARD) {
             keyboardDeviceId = device.getId();
             return device.getKeyboardType() == InputDevice.KEYBOARD_TYPE_ALPHABETIC;
         }
@@ -196,7 +201,7 @@ public class SttAndroid extends ExtensionBase {
                 if (isDeviceKeyboard(device)) {
                     return keyboard;
                 } else {
-                    if (doAssign && isDeviceGamepad(device)) {
+                    if (doAssign && ((mode & 1) == 1) && isDeviceGamepad(device)) {
                         if (!inputs[0].hasAssignedDevice()) {
                             inputs[0].assignSingleDevice(device);
                             return inputs[0];
@@ -226,6 +231,7 @@ public class SttAndroid extends ExtensionBase {
      */
     @Override
     public boolean dispatchKeyEvent(KeyEvent event) {
+        // Log.d("yoyo", "KEY "+event.getKeyCode()+" "+(event.getAction() == KeyEvent.ACTION_DOWN ? "PRESSED" : "RELEASED"));
         if (mode == 0) {
             return false;
         }
@@ -249,8 +255,19 @@ public class SttAndroid extends ExtensionBase {
                 }
             }
         } else {
-            AbstractManager manager = getInputDeviceManagerToUse(event.getDevice(), event.getAction() == KeyEvent.ACTION_DOWN);
+            AbstractManager manager;
+            if (event.getAction() == KeyEvent.ACTION_DOWN) {
+                if (handleAnyPressRegistered && (!anyPressRegistered) && (isDeviceGamepad(event.getDevice()) || isDeviceKeyboard(event.getDevice()))) {
+                    anyPressRegistered = true;
+                }
+                manager = getInputDeviceManagerToUse(event.getDevice(), true);
+            } else {
+                manager = getInputDeviceManagerToUse(event.getDevice(), false);
+            }
+            // Log.d("yoyo", "  getting a manager");
+
             if (manager != null) {
+                // Log.d("yoyo", "  manager not null : "+manager.getClass().getCanonicalName());
                 return manager.processKeyEvent(event);
             }
         }
@@ -271,11 +288,35 @@ public class SttAndroid extends ExtensionBase {
         if (mode == 0) {
             return false;
         }
+        if (handleAnyPressRegistered && (!anyPressRegistered) && (isDeviceGamepad(event.getDevice()) || isDeviceKeyboard(event.getDevice()))) {
+            anyPressRegistered = true;
+        }
         AbstractManager manager = getInputDeviceManagerToUse(event.getDevice(), true);
         if (manager != null) {
             return manager.processGenericMotionEvent(event);
         }
         return false;
+    }
+
+    public double sttandroid_input_is_any_pressed_handled() {
+        return handleAnyPressRegistered ? 1.0 : 0.0;
+    }
+
+    public double sttandroid_input_set_any_pressed_handled(double anyPressHandled) {
+        handleAnyPressRegistered = anyPressHandled > 0.5;
+        anyPressRegistered &= handleAnyPressRegistered;
+
+        Log.d("yoyo", "handleAnyPressRegistered : "+(handleAnyPressRegistered ? "1" : "0"));
+        return 0.0;
+    }
+
+    public double sttandroid_input_check_any_pressed() {
+        if (anyPressRegistered) {
+            Log.d("yoyo", "    <- "+(anyPressRegistered ? "1" : "0"));
+            anyPressRegistered = false;
+            return 1.0;
+        }
+        return 0.0;
     }
 
     /**
@@ -285,12 +326,15 @@ public class SttAndroid extends ExtensionBase {
      * @return Input state
      */
     public double sttandroid_input_get_state(double inputNumber) {
-        return Math.max(this.inputs[(int) inputNumber].getInputState((int) inputNumber), 0) |
-                this.keyboard.getInputState((int) inputNumber);
+        return (
+            (((this.mode & 1) == 1) ? Math.max(this.inputs[(int) inputNumber].getInputState((int) inputNumber), 0) : 0)
+            |
+            (((this.mode & 2) == 2) ? this.keyboard.getInputState((int) inputNumber) : 0)
+        );
     }
 
     public double sttandroid_gamepad_get_state(double inputNumber) {
-        return this.inputs[(int) inputNumber].getInputState((int) inputNumber);
+        return ((this.mode & 1) == 1) ? this.inputs[(int) inputNumber].getInputState((int) inputNumber) : 0;
     }
 
     /**
@@ -589,6 +633,17 @@ public class SttAndroid extends ExtensionBase {
     }
 
     /**
+     * Gets the ID of the used device. In case of two devices, both are joined with a slash.
+     * Used for debugging purposes.
+     *
+     * @param inputNumber Player number: 0 or 1
+     * @return Label of the device(s) associated with an input device manager, eventually truncated
+     */
+    public String sttandroid_gamepad_get_id(double inputNumber) {
+        return inputs[(int) inputNumber].getId();
+    }
+
+    /**
      * Returns a sequence of four strings separated with "||" describing the device. The first
      * string contains the HEX string with the vendor code, the second contains the NEX string with
      * the product ID. The following two contain the same for the second device, if any.
@@ -632,6 +687,10 @@ public class SttAndroid extends ExtensionBase {
             inputs[1].disconnectAll();
         }
         this.mode = newMode;
+        if (this.mode != 3) {
+            handleAnyPressRegistered = false;
+            anyPressRegistered = false;
+        }
         return 0.0;
     }
 

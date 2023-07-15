@@ -30,6 +30,7 @@ import com.yoyogames.runner.RunnerJNILib;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -63,6 +64,8 @@ public class MainActivity extends AppCompatActivity {
 
     protected int vibrating;
 
+    protected int mode = 3;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -72,14 +75,11 @@ public class MainActivity extends AppCompatActivity {
 
         sttAndroid = new SttAndroid();
 
-        sttAndroid.sttandroid_mode_set(1.0);
+        sttAndroid.sttandroid_mode_set(mode);
         inputState = -1;
         prevInputState = -1;
         consoleOutput = new String[33];
-        for(int i = 0; i < consoleOutput.length;i++)
-        {
-            consoleOutput[i] = "";
-        }
+        Arrays.fill(consoleOutput, "");
         appState = APPSTATE_IDLE;
         cursor = 0;
         thread = null;
@@ -113,12 +113,12 @@ public class MainActivity extends AppCompatActivity {
                                 cursor--;
                                 if(cursor < 0)
                                 {
-                                    cursor = 3;
+                                    cursor = 5;
                                 }
                                 updateDisplay();
                                 return true;
                             case KeyEvent.KEYCODE_VOLUME_DOWN:
-                                cursor = (cursor + 1) % 4;
+                                cursor = (cursor + 1) % 6;
                                 updateDisplay();
                                 return true;
                             case KeyEvent.KEYCODE_BACK:
@@ -171,10 +171,14 @@ public class MainActivity extends AppCompatActivity {
                                                 vibrating = 0;
                                                 break;
                                         }
-                                        appState = MainActivity.APPSTATE_IDLE;
                                         updateDisplay();
                                         return true;
                                     case 3:
+                                        mode = (mode + 1) % 4;
+                                        sttAndroid.sttandroid_mode_set(mode);
+                                        updateDisplay();
+                                        return true;
+                                    case 4:
                                         appState = MainActivity.APPSTATE_IDLE;
                                         if(sttAndroid.sttandroid_gamepad_has_assigned(0) > 0)
                                         {
@@ -194,6 +198,10 @@ public class MainActivity extends AppCompatActivity {
                                         {
                                             print("Device is not connected");
                                         }
+                                        updateDisplay();
+                                        return true;
+                                    case 5:
+                                        appState = MainActivity.APPSTATE_IDLE;
                                         updateDisplay();
                                         return true;
                                 }
@@ -246,10 +254,10 @@ public class MainActivity extends AppCompatActivity {
             sttAndroid.sttandroid_gamepad_hwmap_finish();
         }
 
+
+        updateDisplay();
+
         if(!mappingInitialized) {
-
-
-            updateDisplay();
 
             /**
             sttAndroid.sttandroid_gamepad_swmap_set(0, SttAndroid.cUP, 12);
@@ -388,103 +396,96 @@ public class MainActivity extends AppCompatActivity {
     {
         StringBuffer sb = new StringBuffer();
 
-        if(sttAndroid.sttandroid_gamepad_anykey_get_mode(0) == 0.0)
+        int state = (int) sttAndroid.sttandroid_gamepad_get_state(0);
+        if(state == -2)
         {
-            int state = (int) sttAndroid.sttandroid_gamepad_get_state(0);
-            if(state == -2)
-            {
-                sb.append("\nNo device\n");
-            }
-            else
-            {
-                if(state == -1)
-                {
-                    sb.append("\nDevice not mapped\n");
-                }
-                else
-                {
-                    sb.append("\nDevice OK\n");
-                }
-            }
-            state = (int) sttAndroid.sttandroid_input_get_state(0);
-            sb.append("   [");
-            if((state & 1) == 1)
-            {
-                sb.append("^");
-            }
-            else
-            {
-                sb.append(" ");
-            }
-            sb.append("]\n[");
-            if((state & 4) == 4)
-            {
-                sb.append("<");
-            }
-            else
-            {
-                sb.append(" ");
-            }
-            sb.append("]   [");
-            if((state & 8) == 8)
-            {
-                sb.append(">");
-            }
-            else
-            {
-                sb.append(" ");
-            }
-            sb.append("]  [");
-            if((state & 128) == 128)
-            {
-                sb.append("S");
-            }
-            else
-            {
-                sb.append(" ");
-            }
-            sb.append("]  [");
-            if((state & 16) == 16)
-            {
-                sb.append("A");
-            }
-            else
-            {
-                sb.append(" ");
-            }
-            sb.append("][");
-            if((state & 32) == 32)
-            {
-                sb.append("B");
-            }
-            else
-            {
-                sb.append(" ");
-            }
-            sb.append("][");
-            if((state & 64) == 64)
-            {
-                sb.append("C");
-            }
-            else
-            {
-                sb.append(" ");
-            }
-            sb.append("]\n   [");
-            if((state & 2) == 2)
-            {
-                sb.append("v");
-            }
-            else
-            {
-                sb.append(" ");
-            }
-            sb.append("]\n");
+            sb.append("\nNo device\n");
         }
         else
         {
-            sb.append("\n\n\n\n");
+            if(state == -1)
+            {
+                sb.append("\nDevice not mapped\n");
+            }
+            else
+            {
+                sb.append("\nDevice OK\n");
+            }
         }
+        state = (int) sttAndroid.sttandroid_input_get_state(0);
+        sb.append("   [");
+        if((state & 1) == 1)
+        {
+            sb.append("^");
+        }
+        else
+        {
+            sb.append(" ");
+        }
+        sb.append("]\n[");
+        if((state & 4) == 4)
+        {
+            sb.append("<");
+        }
+        else
+        {
+            sb.append(" ");
+        }
+        sb.append("]   [");
+        if((state & 8) == 8)
+        {
+            sb.append(">");
+        }
+        else
+        {
+            sb.append(" ");
+        }
+        sb.append("]  [");
+        if((state & 128) == 128)
+        {
+            sb.append("S");
+        }
+        else
+        {
+            sb.append(" ");
+        }
+        sb.append("]  [");
+        if((state & 16) == 16)
+        {
+            sb.append("A");
+        }
+        else
+        {
+            sb.append(" ");
+        }
+        sb.append("][");
+        if((state & 32) == 32)
+        {
+            sb.append("B");
+        }
+        else
+        {
+            sb.append(" ");
+        }
+        sb.append("][");
+        if((state & 64) == 64)
+        {
+            sb.append("C");
+        }
+        else
+        {
+            sb.append(" ");
+        }
+        sb.append("]\n   [");
+        if((state & 2) == 2)
+        {
+            sb.append("v");
+        }
+        else
+        {
+            sb.append(" ");
+        }
+        sb.append("]\n");
         for(int i = 0; i < consoleOutput.length; i++)
         {
             sb.append(consoleOutput[i]+"\n");
@@ -529,7 +530,13 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
         sb.append(cursor == 3 ? " > " : "   ");
+        sb.append("Mode: ");
+        sb.append(sttAndroid.sttandroid_mode_get());
+        sb.append("\n");
+        sb.append(cursor == 4 ? " > " : "   ");
         sb.append("Disconnect\n");
+        sb.append(cursor == 5 ? " > " : "   ");
+        sb.append("Return\n");
 
 
 

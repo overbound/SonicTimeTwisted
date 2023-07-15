@@ -319,6 +319,30 @@ if(is_touchscreen != prev_is_touchscreen)
         <exetype>2</exetype>
         <functionname></functionname>
         <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Clear message
+hint_top = "";
+hint_bottom = "";
+hint_up_to_date = false;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
         <whoName>other</whoName>
         <relative>0</relative>
         <isnot>0</isnot>

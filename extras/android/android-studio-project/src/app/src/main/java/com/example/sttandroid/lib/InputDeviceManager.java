@@ -20,6 +20,7 @@ package com.example.sttandroid.lib;
 import android.annotation.SuppressLint;
 import android.hardware.input.InputManager;
 import android.os.Vibrator;
+import android.util.Log;
 import android.view.InputDevice;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
@@ -275,6 +276,7 @@ public class InputDeviceManager extends AbstractManager {
      * @return Whether the event was processed
      */
     public boolean processKeyEvent(KeyEvent event) {
+        // Log.d("yoyo", "event: "+event.getKeyCode());
         if (!device0.processKeyEvent(event)) {
             if (device1 != null) {
                 return device1.processKeyEvent(event);
@@ -567,6 +569,21 @@ public class InputDeviceManager extends AbstractManager {
             deviceLabel = sb.toString();
         }
         return deviceLabel;
+    }
+
+    public String getId() {
+        StringBuilder sb = new StringBuilder();
+        if (device0 != null) {
+            sb.append(device0.device.getId());
+
+            if (device1 != null) {
+                sb.append("/");
+                sb.append(device1.device.getId());
+            }
+        } else {
+            sb.append("N");
+        }
+        return sb.toString();
     }
 
     /**

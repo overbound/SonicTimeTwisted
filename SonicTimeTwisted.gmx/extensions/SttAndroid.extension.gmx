@@ -435,6 +435,59 @@
             <arg>2</arg>
           </args>
         </function>
+        <function>
+          <name>sttandroid_input_check_any_pressed</name>
+          <externalName>sttandroid_input_check_any_pressed</externalName>
+          <kind>11</kind>
+          <help>sttandroid_input_check_any_pressed()</help>
+          <returnType>2</returnType>
+          <argCount>-1</argCount>
+          <args/>
+        </function>
+        <function>
+          <name>sttandroid_gamepad_get_id</name>
+          <externalName>sttandroid_gamepad_get_id</externalName>
+          <kind>11</kind>
+          <help>sttandroid_gamepad_get_id(inputNumber)</help>
+          <returnType>1</returnType>
+          <argCount>1</argCount>
+          <args>
+            <arg>2</arg>
+          </args>
+        </function>
+        <function>
+          <name>sttandroid_keyboard_swmap_set_both</name>
+          <externalName>sttandroid_keyboard_swmap_set_both</externalName>
+          <kind>11</kind>
+          <help>sttandroid_keyboard_swmap_set_both(inputNumber, inputCode, keyCodes)</help>
+          <returnType>2</returnType>
+          <argCount>3</argCount>
+          <args>
+            <arg>2</arg>
+            <arg>2</arg>
+            <arg>1</arg>
+          </args>
+        </function>
+        <function>
+          <name>sttandroid_input_is_any_pressed_handled</name>
+          <externalName>sttandroid_input_is_any_pressed_handled</externalName>
+          <kind>11</kind>
+          <help>sttandroid_input_is_any_pressed_handled()</help>
+          <returnType>2</returnType>
+          <argCount>0</argCount>
+          <args/>
+        </function>
+        <function>
+          <name>sttandroid_input_set_any_pressed_handled</name>
+          <externalName>sttandroid_input_set_any_pressed_handled</externalName>
+          <kind>11</kind>
+          <help>sttandroid_input_set_any_pressed_handled(anyPressHandled)</help>
+          <returnType>2</returnType>
+          <argCount>1</argCount>
+          <args>
+            <arg>2</arg>
+          </args>
+        </function>
       </functions>
       <constants/>
     </file>

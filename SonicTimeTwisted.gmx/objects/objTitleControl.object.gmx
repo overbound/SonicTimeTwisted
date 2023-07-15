@@ -67,15 +67,7 @@ if(allow_skipping)
 {
    event_user(0);
 }
-sync_is_touchscreen();
-if(is_touchscreen)
-{
-    startText = tr('_startText_MO');
-}
-else
-{
-    startText = tr('_startText_PC');
-}
+event_user(2);
 level_select_max_presses = 0;
 menu = instance_create(x,y,objMenu);
 menu.default_state = 1;
@@ -528,6 +520,9 @@ if(pauseState == 0)
 else
 if(pauseState == 3)
 {
+    // update message based on the current input method
+    event_user(2);
+    
     if(start &amp;&amp; menu.state == 0)
     {
         var do_start = false;
@@ -588,6 +583,10 @@ if(menu.state == 0)
 {
     // are we restarting?
     with (objProgram) if (check_cheatcode) other.levelSelect = 6; // here `other` is the title control object.
+    
+    // update interface based on the current input method
+    // adds a little overhead, but nothing comparable with the rest of the game :)
+    event_user(2);
     if(is_fallback_touchscreen)
     {
         // level select touchscreen version - tap on every displayed name, then touch the title screen with two fingers
@@ -923,6 +922,8 @@ if(state &gt;= 3) {
           <argument>
             <kind>1</kind>
             <string>/// manage skipping to title
+
+event_user(2);
 skipping++;
 if(skipping == 30)
 {
@@ -984,6 +985,39 @@ if(skipping &gt;= 60)
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
+      </action>
+    </event>
+    <event eventtype="7" enumb="12">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Update PRESS START/TOUCH SCREEN prompt
+
+sync_is_touchscreen();
+if(is_touchscreen)
+{
+    startText = tr('_startText_MO');
+}
+else
+{
+    startText = tr('_startText_PC');
+}
+</string>
+          </argument>
+        </arguments>
       </action>
     </event>
     <event eventtype="7" enumb="11">
@@ -1204,7 +1238,11 @@ audio_stop_all();
             draw_text_color(view_xview[0]+213,view_yview[0]+yshift,names[name - 3],c_white,c_white,c_yellow,c_yellow,1);
             break;
         case 12:
-            if pauseState == 3 draw_text_color(view_xview[0]+213, view_yview[0]+228, startText,c_white,c_white,c_yellow,c_yellow,1); start=true; break;
+            if (pauseState == 3) {
+                draw_text_color(view_xview[0]+213, view_yview[0]+228, startText,c_white,c_white,c_yellow,c_yellow,1); 
+            }
+            start=true;
+            break;
     }
     draw_set_halign(fa_center);
     draw_set_color(c_white);

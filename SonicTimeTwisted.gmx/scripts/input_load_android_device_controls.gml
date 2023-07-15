@@ -5,23 +5,14 @@ if(argument0) // argument0 - from INI, default values if false
     show_debug_message("Load controls from INI");
     if(objProgram.device_info & DEVICE_TYPE_SMARTPHONE)
     {
-        var input_method = ini_read_real('input','method',-1);
-        if(input_method == INPUT_OS_SPECIFIC_1)
-        {
-            sttandroid_mode_set(1);
-        }
-        else
-        {
-            sttandroid_mode_set(0);    
-        }
+        var input_method = ini_read_real('input','method',INPUT_AUTO);
+        set_input_method(input_method, false);
     }
     else
     {
         if(objProgram.device_info & DEVICE_TYPE_CONSOLE)
         {
-            // Android consoles only have gamepads, so there's not even a choice
-            sttandroid_mode_set(1);
-            objProgram.inputManager.input_method = INPUT_OS_SPECIFIC_1;
+            set_input_method(INPUT_AUTO, false);
         }
     }
     
@@ -40,20 +31,12 @@ if(argument0) // argument0 - from INI, default values if false
 }
 else
 {
-    if(objProgram.device_info & DEVICE_TYPE_CONSOLE)
-    {
-        sttandroid_mode_set(1);
-        objProgram.inputManager.input_method = INPUT_OS_SPECIFIC_1;
-    }
-    else
-    {
-        sttandroid_mode_set(0);
-    }
+    set_input_method(INPUT_AUTO, false);
 }
 if(!loaded)
 {
     show_debug_message("No INI or mapping incomplete");
-    input_load_android_device_default_controls();
+    input_load_android_gamepad_default_controls();
     
     double_device_mode = false;
 }

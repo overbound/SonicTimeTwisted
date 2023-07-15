@@ -2519,7 +2519,6 @@
         </sprites>
         <sprite>sprites\sprHud</sprite>
         <sprite>sprites\sprLives</sprite>
-        <sprite>sprites\sprLivesAlt</sprite>
       </sprites>
       <sprites name="Save Screen">
         <sprite>sprites\sprCharSelect</sprite>
@@ -4078,8 +4077,14 @@
               <script>scripts\input_method_android_btusb.gml</script>
               <script>scripts\input_method_android_btusb_rumble.gml</script>
               <script>scripts\android_run_hardware_mapping.gml</script>
+              <script>scripts\input_method_init_android_auto.gml</script>
+              <script>scripts\input_method_android_auto.gml</script>
+              <script>scripts\input_method_android_ggpoint.gml</script>
+              <script>scripts\input_method_android_ssgyro_abs.gml</script>
+              <script>scripts\input_method_android_ssgyro_rel.gml</script>
+              <script>scripts\input_method_android_touchscreen_abs.gml</script>
+              <script>scripts\input_method_android_touchscreen_rel.gml</script>
             </scripts>
-            <script>scripts\input_method_draw_touchscreen.gml</script>
             <script>scripts\input_method_init_touchscreen.gml</script>
             <script>scripts\input_method_haptics_touchscreen.gml</script>
             <script>scripts\input_method_haptics_ssgyro.gml</script>
@@ -4111,7 +4116,7 @@
             <script>scripts\input_load_android_device_one_control.gml</script>
             <script>scripts\input_reload_keyboard_controls.gml</script>
             <script>scripts\input_reload_gamepad_controls.gml</script>
-            <script>scripts\input_load_android_device_default_controls.gml</script>
+            <script>scripts\input_load_android_gamepad_default_controls.gml</script>
           </scripts>
           <script>scripts\input_load.gml</script>
         </scripts>

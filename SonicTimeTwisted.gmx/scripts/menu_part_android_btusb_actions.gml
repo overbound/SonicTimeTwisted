@@ -85,7 +85,7 @@ switch(argument0)
         break;
     case 12:
         // reset default software mapping
-        input_load_android_device_default_controls();
+        input_load_android_gamepad_default_controls();
         break;
     case 21:
         // group mapping - up
