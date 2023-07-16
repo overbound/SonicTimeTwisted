@@ -4106,6 +4106,8 @@
           <script>scripts\input_method_smartphone_switch.gml</script>
           <script>scripts\input_method_smartphone_switch_menu.gml</script>
           <script>scripts\set_smartphone_controls_enabled.gml</script>
+          <script>scripts\input_method_auto_detect_gamepad_use.gml</script>
+          <script>scripts\input_method_auto_determine_gamepad_to_use.gml</script>
         </scripts>
         <scripts name="Loading">
           <scripts name="Devices">
@@ -4267,19 +4269,24 @@
             <script>scripts\menu_part_keymap_step.gml</script>
             <script>scripts\menu_part_keymap_actions_android.gml</script>
             <script>scripts\menu_part_keymap_step_android.gml</script>
-            <script>scripts\menu_part_joymap_items.gml</script>
-            <script>scripts\menu_part_joymap_actions.gml</script>
-            <script>scripts\menu_part_joymap_step.gml</script>
+            <script>scripts\menu_part_gamepad_simple_items.gml</script>
+            <script>scripts\menu_part_gamepad_simple_actions.gml</script>
+            <script>scripts\menu_part_gamepad_simple_step.gml</script>
+            <script>scripts\menu_part_gamepad_ext_items.gml</script>
+            <script>scripts\menu_part_gamepad_ext_actions.gml</script>
+            <script>scripts\menu_part_gamepad_ext_step.gml</script>
+            <script>scripts\menu_part_gamepad_ext_step_device.gml</script>
+            <script>scripts\menu_part_gamepad_ext_step_nodevice.gml</script>
+            <script>scripts\menu_part_gamepad_ext_actions_android.gml</script>
+            <script>scripts\menu_part_gamepad_ext_step_android.gml</script>
+            <script>scripts\menu_part_gamepad_device_items.gml</script>
+            <script>scripts\menu_part_gamepad_device_actions.gml</script>
+            <script>scripts\menu_part_gamepad_device_step_device.gml</script>
+            <script>scripts\menu_part_gamepad_device_step_nodevice.gml</script>
+            <script>scripts\menu_part_gamepad_device_actions_android.gml</script>
+            <script>scripts\menu_part_gamepad_device_step_android.gml</script>
+            <script>scripts\menu_fn_android_gamepad_change_detect.gml</script>
             <scripts name="smartphone">
-              <scripts name="android">
-                <script>scripts\menu_part_android_btusb_items.gml</script>
-                <script>scripts\menu_part_android_btusb_actions.gml</script>
-                <script>scripts\menu_part_android_btusb_step.gml</script>
-                <script>scripts\menu_part_android_btusb_device_items.gml</script>
-                <script>scripts\menu_part_android_btusb_device_actions.gml</script>
-                <script>scripts\menu_part_android_btusb_device_step.gml</script>
-                <script>scripts\menu_fn_android_gamepad_change_detect.gml</script>
-              </scripts>
               <script>scripts\menu_part_touchscreen_items.gml</script>
               <script>scripts\menu_part_touchscreen_actions.gml</script>
               <script>scripts\menu_part_touchscreen_step.gml</script>

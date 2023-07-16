@@ -1,7 +1,7 @@
 menu_fn_step_default();
 
 // update the device label if one is connected while navigating in this menu
-if(objProgram.inputManager.device_label == "")
+if(objProgram.inputManager.paddesc == "")
 {
     var dd_state = real(sttandroid_gamepad_doubledetect_get_detect_state());
     if(dd_state == 0)
@@ -9,8 +9,8 @@ if(objProgram.inputManager.device_label == "")
         var currentDeviceLabel = string(sttandroid_gamepad_get_label(0, 30));
         if(currentDeviceLabel != "")
         {
-            objProgram.inputManager.device_label = currentDeviceLabel;
-            menu_part_android_btusb_device_items();
+            objProgram.inputManager.paddesc = currentDeviceLabel;
+            menu_fn_reopen(menu_part_gamepad_device_items, 0);
         }
     }
 }
@@ -28,7 +28,7 @@ if(state == 20)
     var dd_state = real(sttandroid_gamepad_doubledetect_get_detect_state());
     if(dd_state == 2 && confirmation_cursor == 1)
     {
-        objProgram.inputManager.device_label = "";
+        objProgram.inputManager.paddesc = "";
         state = 22;
     }
     else
@@ -39,7 +39,7 @@ if(state == 20)
             {
                 sttandroid_gamepad_disconnect(0);
             }
-            objProgram.inputManager.device_label = "";
+            objProgram.inputManager.paddesc = "";
             state = 22;
         }
     }
@@ -49,6 +49,6 @@ if(state == 2)
 {    
     if(menu_fn_android_gamepad_change_detect())
     {
-        menu_fn_reopen(menu_part_android_btusb_device_items, 0);
+        menu_fn_reopen(menu_part_gamepad_device_items, 0);
     }
 }

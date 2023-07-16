@@ -50,4 +50,3 @@ if(!loaded)
     
     double_device_mode = false;
 }
-device_label = "";

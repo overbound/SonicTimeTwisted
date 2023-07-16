@@ -17,11 +17,17 @@ draw_script = menu_fn_draw_default;
 step_script = menu_part_keymap_step;
 keys_script = menu_fn_keys_default;
 touchscreen_script = menu_fn_touchscreen_default;
+
 if(objProgram.device_info & DEVICE_OS_ANDROID) {
     action_script = menu_part_keymap_actions_android;
     step_script = menu_part_keymap_step_android;
+    // run this to refresh displayed existing values
+    // -4 is an action that does not exist
+    menu_part_keymap_actions_android(-4);
+} else {
+    // run this to refresh displayed existing values
+    // -4 is an action that does not exist
+    menu_part_keymap_actions(-4);
 }
 
-// run this to refresh displayed existing values
-// -4 is an action that does not exist
-menu_part_keymap_actions(-4);
+

@@ -11,14 +11,14 @@ menu_fn_add_option(tr("_buttonname_A"), 6, 1, "");
 menu_fn_add_option(tr("_buttonname_B"), 7, 1, "");
 menu_fn_add_option(tr("_buttonname_C"), 8, 1, "");
 menu_fn_add_option(tr("_buttonname_Start"), 9, 1, "");
-menu_fn_add_option(tr("_options_menu_Back"), 10);
+menu_fn_add_option(tr("_options_menu_Back"), 9);
 
-action_script = menu_part_joymap_actions;
+action_script = menu_part_gamepad_simple_actions;
 draw_script = menu_fn_draw_default;
-step_script = menu_part_joymap_step;
+step_script = menu_part_gamepad_simple_step;
 keys_script = menu_fn_keys_default;
 touchscreen_script = menu_fn_touchscreen_default;
 
 // run this to refresh displayed existing values
 // -4 is an action that does not exist
-menu_part_joymap_actions(-4);
+menu_part_gamepad_simple_actions(-4);

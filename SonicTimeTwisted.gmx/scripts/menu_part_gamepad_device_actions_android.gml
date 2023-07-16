@@ -2,11 +2,11 @@ switch(argument0)
 {
     case 2:
     case -1:
-        menu_fn_exit_submenu(menu_part_android_btusb_items, 31);
+        menu_fn_exit_submenu(menu_part_gamepad_ext_items, 31);
         break;
     case 0:
         sttandroid_gamepad_disconnect(0);
-        menu_fn_reopen(menu_part_android_btusb_device_items, 0);
+        menu_fn_reopen(menu_part_gamepad_device_items, 0);
         break;
     case 1:
         if(objProgram.inputManager.double_device_mode)
@@ -15,7 +15,7 @@ switch(argument0)
         }
         else
         {
-            menu_part_android_btusb_device_actions(10);
+            menu_part_gamepad_device_actions(10);
         }
         break;
     case -2:
@@ -30,7 +30,7 @@ switch(argument0)
                 }
                 else
                 {
-                    menu_part_android_btusb_device_actions(10);
+                    menu_part_gamepad_device_actions(10);
                 }
             }
         }

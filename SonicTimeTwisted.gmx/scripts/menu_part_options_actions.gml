@@ -55,7 +55,7 @@ switch(argument0)
         menu_fn_goto_submenu(menu_part_keymap_items);
         break;
     case 3:
-        menu_fn_goto_submenu(menu_part_joymap_items);
+        menu_fn_goto_submenu(menu_part_gamepad_simple_items);
         break;
     case 5:
         // use this ID for a future option
@@ -76,7 +76,7 @@ switch(argument0)
         // use this ID for a future option
         break;
     case 9:
-         menu_fn_goto_submenu(menu_part_android_btusb_items);
+         menu_fn_goto_submenu(menu_part_gamepad_ext_items);
          break;
     case 10:
          menu_fn_goto_submenu(menu_part_l18n_items);

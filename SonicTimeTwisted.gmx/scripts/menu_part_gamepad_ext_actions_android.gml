@@ -44,7 +44,7 @@ switch(argument0)
         ds_map_add(temp_map, cB, sttandroid_gamepad_swmap_get_both(0, cB));
         ds_map_add(temp_map, cC, sttandroid_gamepad_swmap_get_both(0, cC));
         ds_map_add(temp_map, cSTART, sttandroid_gamepad_swmap_get_both(0, cSTART));
-        menu_part_android_btusb_actions(21);
+        menu_part_gamepad_ext_actions(21);
         break;
     case 2:
         // individual map - button Up
@@ -138,7 +138,7 @@ switch(argument0)
         ds_map_destroy(temp_map);
         break;
     case 31:
-        menu_fn_goto_submenu(menu_part_android_btusb_device_items);
+        menu_fn_goto_submenu(menu_part_gamepad_device_items);
         break;
     case -2:
     case -3:
@@ -162,7 +162,7 @@ switch(argument0)
 }
 
 // refreshing gamepad labels
-var deviceLabel = objProgram.inputManager.device_label;
+var deviceLabel = objProgram.inputManager.paddesc;
 if(string_length(deviceLabel) == 0)
 {
     if(sttandroid_mode_get())

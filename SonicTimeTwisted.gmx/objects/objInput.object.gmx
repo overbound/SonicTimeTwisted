@@ -42,9 +42,11 @@ state_release = 0;
 // axes
 x_axis = 0;
 y_axis = 0;
-pad = 0;
-paddesc = "unknown";
+pad = -1;
+paddesc = "";
 padcount = gamepad_get_device_count();
+padids = ds_list_create();
+device_label = '';
 for (i = padcount - 1; i &gt; -1; i--) padarray[i] = false;
 button_count = 0;
 axis_count = 0;
@@ -105,6 +107,7 @@ input_load_touchscreen_controls(false);
             <string>/// Clean up
 if (ds_exists(stream, ds_type_list)) ds_list_destroy(stream);
 if (ds_exists(rumble_queue, ds_type_queue)) ds_queue_destroy(rumble_queue);
+ds_list_destroy(padids);
 computer_input_reset_state();
 </string>
           </argument>
@@ -265,41 +268,38 @@ previous_state = state;
 switch (async_load[?"event_type"]) {
 case "gamepad discovered":
     var index = async_load[?"pad_index"];
-    pad = index;
-    paddesc = string_lower(gamepad_get_description(pad));
-    padarray[pad] = true;
-    show_debug_message('Slot: ' + string(pad));
-    show_debug_message('Model: ' + gamepad_get_description(pad));
+    show_debug_message('Slot: ' + string(index));
+    show_debug_message('Model: ' + gamepad_get_description(index));
+    ds_list_add(padids, index);
+    padarray[index] = true;
     
     break;
 case "gamepad lost":
     var index = async_load[?"pad_index"];
     var found = false;
-    padarray[pad] = false;
+    padarray[index] = false;
     
     show_debug_message('Lost pad at slot ' + string(pad));
     
     if (pad == index) {
-        // Search for a connected gamepad so we can switch to it.
-        for (var i = 0; i &lt; padcount; i++) {
-            if (padarray[i]) {
-                pad = i;
-                paddesc = string_lower(gamepad_get_description(pad));
-                found = true;
-                break;
-            }
-        }
-        
-        // That disconnected gamepad was the last.
-        if (!found) {
-            show_debug_message("All gamepads are disconnected!");
-            /*
-                A hint for those who want to port STT to Switch,
-                here you can invoke the joycon applet,
-                look at this, all controllers are disconnected, gameplay cannot progress any further,
-                by N's regulations you must ask the player to connect at least one controller.
-            */
-        }
+        pad = -1;
+        paddesc = '';
+    }
+    
+    var index_to_remove = ds_list_find_index(padids, index);
+    if (index_to_remove &gt; -1) {
+        ds_list_delete(padids, index_to_remove);
+    }
+    
+    // That disconnected gamepad was the last.
+    if (ds_list_empty(padids)) {
+        show_debug_message("All gamepads are disconnected!");
+        /*
+            A hint for those who want to port STT to Switch,
+            here you can invoke the joycon applet,
+            look at this, all controllers are disconnected, gameplay cannot progress any further,
+            by N's regulations you must ask the player to connect at least one controller.
+        */
     }
     
     break;

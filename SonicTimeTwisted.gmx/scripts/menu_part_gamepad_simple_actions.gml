@@ -49,7 +49,7 @@ switch(argument0)
             var key_control = im.axis_control[i];
             ds_map_add(temp_map, key_control, stored_key);
         }
-        menu_part_joymap_actions(21);
+        menu_part_gamepad_simple_actions(21);
         break;
     case 2:
         // individual map - button Up

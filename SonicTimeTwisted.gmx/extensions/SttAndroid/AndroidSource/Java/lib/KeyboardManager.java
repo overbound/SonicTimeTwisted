@@ -160,12 +160,10 @@ public class KeyboardManager extends AbstractManager {
         if (this.anyKeyMode && allPresses.size() > 0) {
             for (Map.Entry<Integer, Boolean> entry : allPresses.entrySet()) {
                 if ((entry.getValue())) {
-                    Log.d("yoyo", "ANYKEY: "+entry.getKey());
                     return entry.getKey();
                 }
             }
         }
-        Log.d("yoyo", "ANYKEY: -1");
         return -1;
     }
 

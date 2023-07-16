@@ -310,13 +310,13 @@ public class SttAndroid extends ExtensionBase {
         handleAnyPressRegistered = anyPressHandled > 0.5;
         anyPressRegistered &= handleAnyPressRegistered;
 
-        Log.d("yoyo", "handleAnyPressRegistered : "+(handleAnyPressRegistered ? "1" : "0"));
+        // Log.d("yoyo", "handleAnyPressRegistered : "+(handleAnyPressRegistered ? "1" : "0"));
         return 0.0;
     }
 
     public double sttandroid_input_check_any_pressed() {
         if (anyPressRegistered) {
-            Log.d("yoyo", "    <- "+(anyPressRegistered ? "1" : "0"));
+            // Log.d("yoyo", "    <- "+(anyPressRegistered ? "1" : "0"));
             anyPressRegistered = false;
             return 1.0;
         }

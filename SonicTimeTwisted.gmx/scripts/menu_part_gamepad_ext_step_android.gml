@@ -23,6 +23,6 @@ if(state == 2)
 {    
     if(menu_fn_android_gamepad_change_detect())
     {
-        menu_fn_reopen(menu_part_android_btusb_items, 0);
+        menu_fn_reopen(menu_part_gamepad_ext_items, 0);
     }
 }
