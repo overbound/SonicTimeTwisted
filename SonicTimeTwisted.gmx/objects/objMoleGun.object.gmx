@@ -506,8 +506,9 @@ with other instance_destroy();
     if x &gt; other.x {
         wall_facing = -1;
     } else wall_facing = 1;
-    state = 1;
-    store_speed = hspeed;
+    store_facing = -wall_facing;
+    store_speed = abs(hspeed) * -wall_facing;
+    state = 1
     stopped = true;
     alarm[0] = 80;
 }
