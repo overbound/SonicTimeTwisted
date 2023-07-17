@@ -4079,11 +4079,11 @@
               <script>scripts\android_run_hardware_mapping.gml</script>
               <script>scripts\input_method_init_android_auto.gml</script>
               <script>scripts\input_method_android_auto.gml</script>
-              <script>scripts\input_method_android_ggpoint.gml</script>
-              <script>scripts\input_method_android_ssgyro_abs.gml</script>
-              <script>scripts\input_method_android_ssgyro_rel.gml</script>
-              <script>scripts\input_method_android_touchscreen_abs.gml</script>
-              <script>scripts\input_method_android_touchscreen_rel.gml</script>
+              <script>scripts\input_method_android_auto_ggpoint.gml</script>
+              <script>scripts\input_method_android_auto_ssgyro_abs.gml</script>
+              <script>scripts\input_method_android_auto_ssgyro_rel.gml</script>
+              <script>scripts\input_method_android_auto_touchscreen_abs.gml</script>
+              <script>scripts\input_method_android_auto_touchscreen_rel.gml</script>
             </scripts>
             <script>scripts\input_method_init_touchscreen.gml</script>
             <script>scripts\input_method_haptics_touchscreen.gml</script>
@@ -4128,6 +4128,8 @@
             <script>scripts\rumble.gml</script>
             <script>scripts\rumble_enqueue.gml</script>
             <script>scripts\rumble_manage.gml</script>
+            <script>scripts\rumble_manage_smartphone.gml</script>
+            <script>scripts\rumble_manage_auto.gml</script>
             <script>scripts\rumble_reset.gml</script>
           </scripts>
           <scripts name="Effects">
@@ -4152,6 +4154,7 @@
             <script>scripts\rumble_perform_android_smartphone.gml</script>
             <script>scripts\rumble_perform_windows_gamepad.gml</script>
             <script>scripts\rumble_perform_null.gml</script>
+            <script>scripts\rumble_perform_windows_gamepad_auto.gml</script>
           </scripts>
         </scripts>
         <scripts name="Saving">

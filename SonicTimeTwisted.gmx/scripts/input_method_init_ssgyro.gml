@@ -49,11 +49,11 @@ if((objProgram.device_info & DEVICE_TYPE_SMARTPHONE) && (vibration_type > 0))
             break;
         case 2:
             input_rumble_manage_script = input_method_dummy_script;
-            input_rumble_trigger_script = rumble_manage;
+            input_rumble_trigger_script = rumble_manage_smartphone;
             break;
         case 3:
             input_rumble_manage_script = input_method_haptics_ssgyro;
-            input_rumble_trigger_script = rumble_manage;
+            input_rumble_trigger_script = rumble_manage_smartphone;
             break;
     }
     if(objProgram.device_info & DEVICE_OS_ANDROID)

@@ -8,7 +8,7 @@ if (argument_count >= 3) {
 }
 var autoDetectedMethod = objProgram.inputManager.input_method_autodetected;
 
-//show_debug_message('set_input_method: '+string(argument[0])+' '+string(argument[1])+' '+string(is_touchscreen));
+show_debug_message('set_input_method: '+string(argument[0])+' '+string(argument[1])+' '+string(is_touchscreen));
 objProgram.inputManager.input_method = argument[0];
 is_touchscreen = (argument[0] == INPUT_TOUCHSCREEN) || ((argument[0] == INPUT_AUTO) && (autoDetectedMethod == INPUT_TOUCHSCREEN));
 if(argument[1])
@@ -26,7 +26,7 @@ if(objProgram.device_info & DEVICE_OS_ANDROID) {
             set_input_method_detailed(
                 input_method_init_android_btusb,
                 input_method_android_btusb,
-                input_method_dummy_script,
+                rumble_manage_smartphone,
                 input_method_dummy_script,
                 rumble_perform_android_smartphone,
                 input_method_dummy_script,
@@ -39,7 +39,7 @@ if(objProgram.device_info & DEVICE_OS_ANDROID) {
             set_input_method_detailed(
                 input_method_init_smartphone,
                 input_method_dummy_script,
-                input_method_dummy_script,
+                rumble_manage_smartphone,
                 input_method_dummy_script,
                 rumble_perform_android_smartphone,
                 input_method_dummy_script,
@@ -52,7 +52,7 @@ if(objProgram.device_info & DEVICE_OS_ANDROID) {
             set_input_method_detailed(
                 input_method_init_android_btusb,
                 input_method_android_btusb,
-                input_method_dummy_script,
+                rumble_manage_smartphone,
                 input_method_dummy_script,
                 rumble_perform_android_smartphone,
                 input_method_dummy_script,
@@ -65,7 +65,7 @@ if(objProgram.device_info & DEVICE_OS_ANDROID) {
             set_input_method_detailed(
                 input_method_init_android_auto,
                 input_method_android_auto,
-                input_method_dummy_script,
+                rumble_manage_smartphone,
                 input_method_dummy_script,
                 rumble_perform_android_smartphone,
                 input_method_dummy_script,
@@ -93,7 +93,7 @@ if(objProgram.device_info & DEVICE_OS_ANDROID) {
                 input_method_dummy_script,
                 input_method_dummy_script,
                 input_method_dummy_script,
-                rumble_perform_android_smartphone,
+                input_method_dummy_script,
                 input_method_dummy_script,
                 argument[1]
             );
@@ -113,16 +113,17 @@ if(objProgram.device_info & DEVICE_OS_ANDROID) {
             );
             break;
         case INPUT_AUTO:
+            var trigger_script = input_method_dummy_script;
+            if (objProgram.inputManager.rumble_enabled) trigger_script = rumble_manage_auto;
             set_input_method_detailed(
                 input_method_init_physical,
                 input_method_auto,
+                trigger_script,
                 input_method_dummy_script,
-                input_method_dummy_script,
-                input_method_dummy_script,
+                rumble_perform_windows_gamepad_auto,
                 input_method_dummy_script,
                 argument[1]
             );
-            objProgram.inputManager.input_method_autodetected = INPUT_KEYBOARD;
             break;
     }
 }

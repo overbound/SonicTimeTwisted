@@ -34,6 +34,7 @@ if(objProgram.device_info & DEVICE_OS_ANDROID) {
     {
         menu_fn_add_option(tr("_btusb_joymap_Device"), 31);
         menu_fn_add_option(tr("_btusb_joymap_Rumble"), 0, 1, "< " + tr("_Off") + " >");
+        menu_fn_add_option(tr("_options_menu_touchscreen_vibration_SliderStrengthCr"), 32, 1, string(objProgram.inputManager.rumble_strength) + "%");
         menu_fn_add_option(tr("_options_menu_Remap_all"), 1);
         menu_fn_add_option(tr("_buttonname_Up"), 2, 1, "");
         menu_fn_add_option(tr("_buttonname_Down"), 3, 1, "");

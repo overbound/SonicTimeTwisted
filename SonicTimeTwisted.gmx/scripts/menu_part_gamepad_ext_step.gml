@@ -34,4 +34,16 @@ if(state == 13 || state == 14)
             }
         }
     }
+} else {
+
+    if (state == 17)
+    {
+        
+        switch(confirmation_index)
+        {
+            case 0:
+                objProgram.inputManager.rumble_strength = menu_fn_sync_slider(objProgram.inputManager.rumble_strength);
+                break;
+        }
+    }
 }

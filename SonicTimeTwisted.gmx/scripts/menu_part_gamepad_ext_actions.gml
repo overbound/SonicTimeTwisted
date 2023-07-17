@@ -4,7 +4,7 @@ switch(argument0)
     case -1:
         if(input_check_gamepad_bindings_complete())
         {
-            menu_fn_exit_submenu(menu_part_options_items, 3);
+            menu_fn_exit_submenu(menu_part_options_items, 9);
         }
         else
         {
@@ -139,6 +139,9 @@ switch(argument0)
     case 31:
         menu_fn_goto_submenu(menu_part_gamepad_device_items);
         break;
+    case 32:
+        menu_fn_open_slider_window(0, tr('_options_menu_touchscreen_vibration_SliderStrengthCr'), objProgram.inputManager.rumble_strength, 0, 200);
+        break;
     case -2:
     case -3:
          // press left or right
@@ -242,6 +245,7 @@ else
 {
     menu_fn_refresh_displayed_value(0, "< "+tr("_Off")+" >");
 }
+menu_fn_refresh_displayed_value(32, string(objProgram.inputManager.rumble_strength) + "%");
 
 menu_fn_refresh_displayed_value(2, upLabel);
 menu_fn_refresh_displayed_value(3, downLabel);

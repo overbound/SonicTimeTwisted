@@ -78,6 +78,7 @@ input_method = 0;
 input_method_fallback = 0;
 input_method_autodetected = 0;
 use_fallback = false;
+rumble_strength = 50;
 
 smartphone_controls_enabled = false;
 // initialize touchscreen-specific controls without copy-pasting everything, there are a lot of variables

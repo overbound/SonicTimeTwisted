@@ -2,9 +2,7 @@
 input_reset_gamepad_bindings();
 var loaded = false;
 if(argument0) // argument0 - from INI, default values if false
-{
-    pad = round(ini_read_real('gamepad_controls','padnumber', pad));
-    
+{    
     input_bind_buttons_or_axes(ini_read_string('gamepad_controls', 'up', string(-gp_axislv)), pad, cUP);
     input_bind_buttons_or_axes(ini_read_string('gamepad_controls', 'down', '+' + string(gp_axislv)), pad, cDOWN);
     input_bind_buttons_or_axes(ini_read_string('gamepad_controls', 'left', string(-gp_axislh)), pad, cLEFT);
@@ -15,6 +13,8 @@ if(argument0) // argument0 - from INI, default values if false
     input_bind_buttons_or_axes(ini_read_string('gamepad_controls','c', gp_face1), pad, cC);
     input_bind_buttons_or_axes(ini_read_string('gamepad_controls','start', gp_face1), pad, cSTART);
         
+    rumble_strength = ini_read_real('gamepad_controls', 'rumble', 100);
+
     loaded = input_check_gamepad_bindings_complete();
     if(!loaded)
     {

@@ -20,13 +20,13 @@ switch(argument0)
         break;
     case 0:
         // rumble
-         if(objProgram.inputManager.rumble_configuration_script == rumble_manage)
+         if(objProgram.inputManager.rumble_configuration_script == rumble_manage_smartphone)
          {
              objProgram.inputManager.rumble_configuration_script = input_method_dummy_script;
          }
          else
          {
-             objProgram.inputManager.rumble_configuration_script = rumble_manage;
+             objProgram.inputManager.rumble_configuration_script = rumble_manage_smartphone;
          }
          break;
     case 1:
@@ -147,13 +147,13 @@ switch(argument0)
          {
              if(items[cursor, 1] == 0)
              {
-                 if(objProgram.inputManager.rumble_configuration_script == rumble_manage)
+                 if(objProgram.inputManager.rumble_configuration_script == rumble_manage_smartphone)
                  {
                      objProgram.inputManager.rumble_configuration_script = input_method_dummy_script;
                  }
                  else
                  {
-                     objProgram.inputManager.rumble_configuration_script = rumble_manage;
+                     objProgram.inputManager.rumble_configuration_script = rumble_manage_smartphone;
                  }
              }
          }
@@ -182,7 +182,7 @@ menu_fn_calculate_width_start();
 var onLabel = "< "+tr("_On")+" >";
 var offLabel = "< "+tr("_Off")+" >";
 
-if(objProgram.inputManager.rumble_configuration_script == rumble_manage)
+if(objProgram.inputManager.rumble_configuration_script == rumble_manage_smartphone)
 {
     menu_fn_refresh_displayed_value(0, onLabel);
 }

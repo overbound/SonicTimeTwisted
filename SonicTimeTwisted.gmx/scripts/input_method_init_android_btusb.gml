@@ -14,11 +14,11 @@ if(vibration_type > 0)
             break;
         case 2:
             input_rumble_manage_script = input_method_dummy_script;
-            input_rumble_trigger_script = rumble_manage;
+            input_rumble_trigger_script = rumble_manage_smartphone;
             break;
         case 3:
             input_rumble_manage_script = input_method_haptics_touchscreen;
-            input_rumble_trigger_script = rumble_manage;
+            input_rumble_trigger_script = rumble_manage_smartphone;
             break;
     }
 }
