@@ -165,7 +165,7 @@ switch(argument0)
 var deviceLabel = objProgram.inputManager.paddesc;
 if(string_length(deviceLabel) == 0)
 {
-    deviceLabel = tr("_btusb_joymap_Device_Unknown");
+    deviceLabel = tr("_btusb_joymap_Device_Disabled");
 }
 menu_fn_refresh_displayed_label(31, deviceLabel);
 
