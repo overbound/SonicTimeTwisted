@@ -1257,14 +1257,14 @@ public class InputDeviceManager extends AbstractManager {
                     int axisIndex = key / 10;
                     float axisValue = event.getAxisValue(axisIndex);
                     this.setPressState(
-                            (Integer) pair.getValue(), key, axisValue > 0.5
+                            (Integer) pair.getValue(), key, axisValue > 0.3
                     );
                 } else {
                     if (key % 10 == InputDeviceManager.AXIS_NEGATIVE) {
                         int axisIndex = key / 10;
                         float axisValue = event.getAxisValue(axisIndex);
                         this.setPressState(
-                                (Integer) pair.getValue(), key, axisValue < -0.5
+                                (Integer) pair.getValue(), key, axisValue < -0.3
                         );
                     }
                 }
@@ -1291,7 +1291,7 @@ public class InputDeviceManager extends AbstractManager {
                     int axisIndex = key / 10;
                     float axisValue = event.getAxisValue(axisIndex);
                     this.setPressState(
-                            (Integer) pair.getValue(), 0, axisValue > 0.5
+                            (Integer) pair.getValue(), 0, axisValue > 0.3
                     );
                 }
                 else
@@ -1300,7 +1300,7 @@ public class InputDeviceManager extends AbstractManager {
                         int axisIndex = key / 10;
                         float axisValue = event.getAxisValue(axisIndex);
                         this.setPressState(
-                                (Integer) pair.getValue(), 0, axisValue < -0.5
+                                (Integer) pair.getValue(), 0, axisValue < -0.3
                         );
                     }
                 }
