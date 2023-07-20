@@ -246,6 +246,8 @@
 		"_graphics_menu_VSync": "Вертикальная синхронизация",
 		"_graphics_menu_Ws": "Оконный %0x",
 		"_graphics_menu_Fs": "На весь экран",
+		"_graphics_menu_Interpolation": "Размытие",
+		"_graphics_menu_Interpolation_GUI_only": "Только интерфейс",
 		"_graphics_menu_Randomdigits": "Случайные числа",
 		"_graphics_menu_Variablespeed": "Перемен. скорость",
 		"_graphics_menu_Fixedspeed": "Фикс. скорость",

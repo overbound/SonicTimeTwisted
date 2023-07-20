@@ -23,6 +23,12 @@ switch(argument0)
     case -1:
         menu_fn_exit_submenu(menu_part_options_items, 0);
         break;
+    case 6:
+        with(objScreen)
+        {
+            event_user(6);
+        }
+        break;
     case -2:
         // left key
         switch(items[cursor, 1])
@@ -53,6 +59,12 @@ switch(argument0)
                 }
                 with (objHud) { timer_mode = objScreen.timer_mode; }
                 break;
+            case 6:
+                with(objScreen)
+                {
+                    event_user(7);
+                }
+                break;
         }
         break;
     case -3:
@@ -78,6 +90,12 @@ switch(argument0)
                 objScreen.timer_mode = (objScreen.timer_mode + 1) mod 2;
                 with (objHud) { timer_mode = objScreen.timer_mode; }
                 break;
+            case 6:
+                with(objScreen)
+                {
+                    event_user(6);
+                }
+                break;
         }
         break;
 }
@@ -89,7 +107,7 @@ menu_fn_calculate_width_start();
 var onLabel = "< "+tr("_On")+ " >";
 var offLabel = "< "+tr("_Off")+ " >";
 
-if(objProgram.device_info & DEVICE_TYPE_COMPUTER)
+if(objProgram.device_info & DEVICE_TYPE_COMPUTER || objProgram.device_info & DEVICE_OS_ANDROID)
 {
     var gfxLabel1 = "< "+tr("_graphics_menu_Fs")+ " >";
     var gfxLabel2 = "< "+tr_format(tr("_graphics_menu_Ws"), objScreen.video_mode)+ " >";
@@ -99,6 +117,11 @@ if(objProgram.device_info & DEVICE_TYPE_COMPUTER)
     else
         menu_fn_refresh_displayed_value(0, gfxLabel2);
 
+    menu_fn_calculate_width_add(0, false, gfxLabel1, gfxLabel2);
+}
+
+if(objProgram.device_info & DEVICE_TYPE_COMPUTER)
+{
     if(objScreen.vsync)
     {
         menu_fn_refresh_displayed_value(3, onLabel);
@@ -107,7 +130,6 @@ if(objProgram.device_info & DEVICE_TYPE_COMPUTER)
     {
         menu_fn_refresh_displayed_value(3, offLabel);
     }
-    menu_fn_calculate_width_add(0, false, gfxLabel1, gfxLabel2);
     menu_fn_calculate_width_add(3, false, onLabel, offLabel);
 }
 
@@ -150,9 +172,24 @@ switch(objScreen.timer_mode)
         break;
 }
 
+var onlyGUIlabel = "< "+tr('_graphics_menu_Interpolation_GUI_only')+ " >";
+if(objScreen.interpolation)
+{
+    if (objScreen.interpolation == 2) {
+        menu_fn_refresh_displayed_value(6, onlyGUIlabel);
+    } else {
+        menu_fn_refresh_displayed_value(6, onLabel);
+    }
+}
+else
+{
+    menu_fn_refresh_displayed_value(6, offLabel);
+}
+
 menu_fn_calculate_width_add(1, false, tallyLabel1, tallyLabel2, tallyLabel3);
 menu_fn_calculate_width_add(2, false, onLabel, offLabel);
 menu_fn_calculate_width_add(4, false, timerLabel1, timerLabel2);
+menu_fn_calculate_width_add(6, false, onLabel, offLabel, onlyGUIlabel);
 
 menu_fn_calculate_width_finish();
 // preserve the cursor value - usually false for the sake of touchscreen controls

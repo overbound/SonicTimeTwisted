@@ -28,6 +28,7 @@
             <string>/// Screen settings
 width = 426;
 height = 240;
+postdraw_event = 8; // postdraw event - set to 8 to draw normally, 9 for special drawing of application_surface
 vsync = true; // enabled by default.
 window_scale = 2; // default window scale, 2x.
 center_delay = 3; // apparently two frames is not enough on Linux...
@@ -37,6 +38,9 @@ screenshot = -1; // for pausing
 scanlines = false;
 flashing_reduced = 1;
 default_image_speed = 1;
+intscalex = 0;
+intscaley = 0;
+interpolation = 0;
 alarm[0] = center_delay;
 view_enabled = true;
 view_visible[0] = true;
@@ -180,6 +184,30 @@ if sprite_exists(screenshot) { sprite_delete(screenshot); }
         </arguments>
       </action>
     </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Only apply interpolation setting
+texture_set_interpolation(interpolation);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="2" enumb="0">
       <action>
         <libid>1</libid>
@@ -197,8 +225,14 @@ if sprite_exists(screenshot) { sprite_delete(screenshot); }
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Center Window After Resize
-window_center();
+            <string>///Center window after resize and apply interpolation
+if (objProgram.device_info &amp; DEVICE_TYPE_COMPUTER) {
+    if (window_scale != 0) {
+        window_center();
+    }
+}
+texture_set_interpolation(interpolation);
+
 </string>
           </argument>
         </arguments>
@@ -227,6 +261,123 @@ if (not paused &amp;&amp; sprite_exists(screenshot)) {
     screenshot = -1;
 }
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="19">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// PostDraw event if integer scaling ON - draw app surface now
+if (interpolation == 2) {
+    texture_set_interpolation(false);
+    draw_surface_ext(application_surface, intscalex, intscaley, window_scale, window_scale, 0, c_white, 1);
+    texture_set_interpolation(true);
+} else {
+    draw_surface_ext(application_surface, intscalex, intscaley, window_scale, window_scale, 0, c_white, 1);
+}
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="18">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// PostDraw event if integer scaling OFF - no code here
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="17">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Apply blur - back (only relevant on Android)
+if (objProgram.device_info &amp; DEVICE_OS_ANDROID) {
+    interpolation = interpolation - 1;
+    if (interpolation &lt; 0) {
+        interpolation = 2;
+    }
+} else {
+    interpolation = !interpolation;
+}
+alarm[1] = 1;
+save_options();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="16">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Apply blur - forward (only relevant on Android)
+if (objProgram.device_info &amp; DEVICE_OS_ANDROID) {
+    interpolation = (interpolation + 1) mod 3;
+} else {
+    interpolation = !interpolation;
+}
+alarm[1] = 1;
+save_options();
 </string>
           </argument>
         </arguments>
@@ -550,6 +701,31 @@ for (var i = 0; i &lt; 2; i += 1)
             <kind>1</kind>
             <string>/// Clean up
 if sprite_exists(screenshot) { sprite_delete(screenshot); }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="77">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// if integer scaling is active, it will be managed here
+event_user(postdraw_event);
+
 </string>
           </argument>
         </arguments>

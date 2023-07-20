@@ -1,10 +1,12 @@
 items = false;
 
 menu_fn_add_title(tr("_graphics_menu_Title"));
-if(objProgram.device_info & DEVICE_TYPE_COMPUTER)
+if(objProgram.device_info & DEVICE_TYPE_COMPUTER || objProgram.device_info & DEVICE_OS_ANDROID)
 {
+    // on computers, this sets the window size; on Android, this takes care of integer scaling
     menu_fn_add_option(tr("_graphics_menu_Screen_size"), 0, 1, "");
 }
+menu_fn_add_option(tr("_graphics_menu_Interpolation"), 6, 1, "");
 menu_fn_add_option(tr("_graphics_menu_Stm"), 1, 1, "");
 menu_fn_add_option(tr("_graphics_menu_Fr"), 2, 1, "");
 if (objProgram.device_info & DEVICE_TYPE_COMPUTER)

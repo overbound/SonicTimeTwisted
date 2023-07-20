@@ -6,15 +6,6 @@ menu_fn_add_option(tr("_options_menu_sound_title"), 11);
 if(objProgram.device_info & DEVICE_TYPE_COMPUTER)
 {
     menu_fn_add_option(tr("_options_menu_Input_Method"), 1, 1, "");
-}
-if(objProgram.device_info & DEVICE_OS_ANDROID)
-{
-    menu_fn_add_option(tr("_options_menu_Input_Method"), 1, 1, "");
-    menu_fn_add_option(tr("_options_menu_touchscreen_Configure_vibrations"), 12);
-    menu_fn_add_option(tr("_options_menu_Configure_Touchscreen"), 6);
-}
-if(objProgram.device_info & DEVICE_TYPE_COMPUTER)
-{
     menu_fn_add_option(tr("_options_menu_Map_keys"), 2);
     menu_fn_add_option(tr("_options_menu_Gamepad_settings"), 9);
 }
@@ -24,6 +15,11 @@ else
    {
        if(objProgram.device_info & DEVICE_OS_ANDROID)
        {
+            menu_fn_add_option(tr("_options_menu_Input_Method"), 1, 1, "");
+            if (objProgram.device_info & DEVICE_TYPE_SMARTPHONE) {
+                menu_fn_add_option(tr("_options_menu_touchscreen_Configure_vibrations"), 12);
+                menu_fn_add_option(tr("_options_menu_Configure_Touchscreen"), 6);
+            }
             menu_fn_add_option(tr("_options_menu_Map_keys"), 2);
             menu_fn_add_option(tr("_options_menu_Gamepad_settings"), 9);
        }

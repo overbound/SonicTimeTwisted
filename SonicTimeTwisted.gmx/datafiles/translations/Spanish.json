@@ -247,6 +247,8 @@
 		"_graphics_menu_VSync": "VSync",
 		"_graphics_menu_Ws": "Ventana %0x",
 		"_graphics_menu_Fs": "Pantalla completa",
+		"_graphics_menu_Interpolation": "Blur",
+		"_graphics_menu_Interpolation_GUI_only": "GUI only",
 		"_graphics_menu_Randomdigits": "Dígitos aleatoros",
 		"_graphics_menu_Variablespeed": "Velocidad variable",
 		"_graphics_menu_Fixedspeed": "Velocidad arreglada",

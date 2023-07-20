@@ -5,6 +5,7 @@ if (stt_file_exists(file)) {
     with(objScreen)
     {
         video_mode = ini_read_real('video_options', "mode", 2);
+        interpolation = ini_read_real('video_options', "interpolation", 0);
         flashing_reduced = ini_read_real('video_options', "flashing_reduced", 1);
         score_tally_mode = ini_read_real('video_options', "score_tally_mode", 0);
         vsync = ini_read_real('video_options', "vsync", true);

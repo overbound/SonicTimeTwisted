@@ -243,6 +243,8 @@
 		"_graphics_menu_VSync": "Вертикальна синхронізація",
 		"_graphics_menu_Ws": "Вікно %0x",
 		"_graphics_menu_Fs": "Повний екран",
+		"_graphics_menu_Interpolation": "Розмиття",
+		"_graphics_menu_Interpolation_GUI_only": "Тільки інтерфейс",
 		"_graphics_menu_Randomdigits": "Випадкові цифри",
 		"_graphics_menu_Variablespeed": "Змінна швидкість",
 		"_graphics_menu_Fixedspeed": "Фікс. швидкість",

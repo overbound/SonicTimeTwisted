@@ -245,6 +245,8 @@
 		"_graphics_menu_VSync": "VSync",
 		"_graphics_menu_Ws": "Fenêtre %0x",
 		"_graphics_menu_Fs": "Plein écran",
+		"_graphics_menu_Interpolation": "Floutage",
+		"_graphics_menu_Interpolation_GUI_only": "Interface seulement",
 		"_graphics_menu_Randomdigits": "Chiffres aléatoires",
 		"_graphics_menu_Variablespeed": "Vitesse variable",
 		"_graphics_menu_Fixedspeed": "Vitesse fixée",

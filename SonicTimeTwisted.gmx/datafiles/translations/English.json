@@ -180,6 +180,8 @@
 		"_graphics_menu_VSync": "VSync",
 		"_graphics_menu_Ws": "Window %0x",
 		"_graphics_menu_Fs": "Full screen",
+		"_graphics_menu_Interpolation": "Blur",
+		"_graphics_menu_Interpolation_GUI_only": "GUI only",
 		"_graphics_menu_Randomdigits": "Random digits",
 		"_graphics_menu_Variablespeed": "Variable speed",
 		"_graphics_menu_Fixedspeed": "Fixed speed",
