@@ -129,3 +129,9 @@ internal__touch_dir = 0;
 internal__touch_dir_changed = false;
 
 internal__calculated_width = 200;
+
+// hold buttons variables
+internal__hold_up_timer = 0;
+internal__hold_down_timer = 0;
+internal__hold_left_timer = 0;
+internal__hold_right_timer = 0;
