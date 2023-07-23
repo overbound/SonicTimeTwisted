@@ -125,6 +125,8 @@ else
     flash_update_event = 4;
     slot_draw_event = 5;
 }
+mouse_x_scaled = get_mouse_x_with_scale();
+mouse_y_scaled = get_mouse_y_with_scale();
 </string>
           </argument>
         </arguments>
@@ -565,6 +567,29 @@ if xSpeed == 0 {
       </action>
       <action>
         <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Update mouse positions
+mouse_x_scaled = get_mouse_x_with_scale();
+mouse_y_scaled = get_mouse_y_with_scale();
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
         <id>422</id>
         <kind>1</kind>
         <userelative>0</userelative>
@@ -596,21 +621,21 @@ if xSpeed == 0 {
             <string>/// Detect &amp; distinguish press or drag
 if(mouse_check_button_pressed(mb_left))
 {
-    mouse_prev_x = mouse_x - view_xview[0];
-    mouse_prev_y = mouse_y - view_yview[0];
+    mouse_prev_x = mouse_x_scaled - view_xview[0];
+    mouse_prev_y = mouse_y_scaled - view_yview[0];
     mouse_dx = 0;
     mouse_dy = 0;
     mouse_click_registered = false;
-    x_on_press = mouse_x + view_xview[0];
-    y_on_press = mouse_y;
+    x_on_press = mouse_x_scaled + view_xview[0];
+    y_on_press = mouse_y_scaled;
     
 }
 if(mouse_check_button(mb_left))
 {
-    mouse_dx = mouse_x - view_xview[0] - mouse_prev_x;
-    mouse_dy = mouse_y - view_yview[0] - mouse_prev_y;
-    mouse_prev_x = mouse_x - view_xview[0];
-    mouse_prev_y = mouse_y - view_yview[0];
+    mouse_dx = mouse_x_scaled - view_xview[0] - mouse_prev_x;
+    mouse_dy = mouse_y_scaled - view_yview[0] - mouse_prev_y;
+    mouse_prev_x = mouse_x_scaled - view_xview[0];
+    mouse_prev_y = mouse_y_scaled - view_yview[0];
 }
 tap_registered = false;
 drag_registered = false;
@@ -623,7 +648,7 @@ if(mouse_check_button_released(mb_left))
         case 5:
             // selecting a slot
             // within 2 pixels is considered a touch
-            if(abs(mouse_x + view_xview[0] - x_on_press) &lt;= 2)
+            if(abs(mouse_x_scaled + view_xview[0] - x_on_press) &lt;= 2)
             {
                 tap_registered = true;
             }
@@ -635,13 +660,13 @@ if(mouse_check_button_released(mb_left))
         case 2:
             // selecting a character for a new game or a zone via vertical dragging
             // within 2 pixels is considered a touch
-            if (abs(y_on_press - mouse_y) &lt;= 2)
+            if (abs(y_on_press - mouse_y_scaled) &lt;= 2)
             {
                 tap_registered = true;
             }
             else
             {
-                y_drag = mouse_y - y_on_press;
+                y_drag = mouse_y_scaled - y_on_press;
                 drag_registered = true;
             }
             break;
@@ -820,7 +845,7 @@ if(drag_registered)
 var cancelled = false;
 if(tap_registered)
 {
-    if(point_in_rectangle(mouse_x, mouse_y,
+    if(point_in_rectangle(mouse_x_scaled, mouse_y_scaled,
         slots[selectCheck].bbox_left, slots[selectCheck].bbox_top,
         slots[selectCheck].bbox_right, slots[selectCheck].bbox_bottom))
     {
@@ -831,18 +856,18 @@ if(tap_registered)
             // the check is only done if both past and future can be displayed
             // also, tapping an already selected time period starts the game
             var do_start = true;
-            if (mouse_y &lt;= bbox_top + 65)
+            if (mouse_y_scaled &lt;= bbox_top + 65)
             {
                 if(visiblePast &amp;&amp; visibleFuture)
                 {
-                    if(mouse_x &lt; x &amp;&amp; other.stageLeftRight == 1)
+                    if(mouse_x_scaled &lt; x &amp;&amp; other.stageLeftRight == 1)
                     {
                         other.stageLeftRight = 0;
                         do_start = false;
                     }
                     else
                     {
-                        if(mouse_x &gt;= x &amp;&amp; other.stageLeftRight == 0)
+                        if(mouse_x_scaled &gt;= x &amp;&amp; other.stageLeftRight == 0)
                         {
                             other.stageLeftRight = 1;
                             do_start = false;
@@ -983,7 +1008,7 @@ if(drag_registered)
 var cancelled = false;
 if(tap_registered)
 {
-    if(point_in_rectangle(mouse_x, mouse_y,
+    if(point_in_rectangle(mouse_x_scaled, mouse_y_scaled,
         slots[selectCheck].bbox_left, slots[selectCheck].bbox_top,
         slots[selectCheck].bbox_right, slots[selectCheck].bbox_bottom))
     {
@@ -1105,7 +1130,7 @@ if(cancelled)
 if(tap_registered)
 {
 
-    if(point_in_rectangle(mouse_x, mouse_y,
+    if(point_in_rectangle(mouse_x_scaled, mouse_y_scaled,
         slots[selectCheck].bbox_left, slots[selectCheck].bbox_top,
         slots[selectCheck].bbox_right, slots[selectCheck].bbox_bottom))
     {
@@ -1277,7 +1302,7 @@ if(selectState == 4 || selectState == 6)
             <string>/// Manage clicks
 if(tap_registered)
 {
-    var clicked_on = instance_position(mouse_x, mouse_y, objSaveSlot);
+    var clicked_on = instance_position(mouse_x_scaled, mouse_y_scaled, objSaveSlot);
     if(clicked_on != noone)
     {
         play_sfx(sndBeep, 0);
@@ -1287,7 +1312,7 @@ if(tap_registered)
     }
     else
     {
-        clicked_on = instance_position(mouse_x, mouse_y, objNoSaveSlot);
+        clicked_on = instance_position(mouse_x_scaled, mouse_y_scaled, objNoSaveSlot);
         if(clicked_on != noone)
         {
             play_sfx(sndBeep, 0);
@@ -1297,7 +1322,7 @@ if(tap_registered)
         }
         else
         {
-            clicked_on = instance_position(mouse_x, mouse_y, objDeleteSlot);
+            clicked_on = instance_position(mouse_x_scaled, mouse_y_scaled, objDeleteSlot);
             if(clicked_on != noone)
             {
                 play_sfx(sndBeep, 0);
@@ -1913,6 +1938,35 @@ stop_all_music(false);
         </arguments>
       </action>
     </event>
+    <event eventtype="8" enumb="64">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(is_touchscreen)
+{
+    if(selectState == 0)
+    {
+        draw_sprite(sprTouchscreenReturn, 0, view_wview[0] - 28, 4);
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
@@ -1978,13 +2032,6 @@ stop_all_music(false);
 }
 draw_surface(hint_surface, view_xview[0], view_yview[0]);
 event_user(slot_draw_event);
-if(is_touchscreen)
-{
-    if(selectState == 0)
-    {
-        draw_sprite(sprTouchscreenReturn, 0, view_xview[0] + view_wview[0] - 28, view_yview[0] + 4);
-    }
-}
 </string>
           </argument>
         </arguments>

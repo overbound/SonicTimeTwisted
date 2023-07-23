@@ -19,7 +19,7 @@ with (objScreen) {
         display_reset(0, vsync);
         
         if (video_mode <= 0) {
-            window_scale = 0;
+            window_scale = full_scale;
             window_set_fullscreen(true);
         }
         else {
@@ -36,8 +36,8 @@ with (objScreen) {
         if (objProgram.device_info & DEVICE_OS_ANDROID) {
             
             if (video_mode <= 0) {
+                window_scale = full_scale;
                 if (interpolation == 2) {
-                    window_scale = min(display_get_width()/width, display_get_height()/height);
                     application_surface_draw_enable(false);
                     intscalex = floor((display_get_width() - width * window_scale)/2);
                     intscaley = floor((display_get_height() - height * window_scale)/2);

@@ -4095,6 +4095,8 @@
             <script>scripts\input_method_haptics_ggpoint.gml</script>
             <script>scripts\input_method_init_ggpoint.gml</script>
             <script>scripts\input_method_draw_ggpoint.gml</script>
+            <script>scripts\get_mouse_x_with_scale.gml</script>
+            <script>scripts\get_mouse_y_with_scale.gml</script>
           </scripts>
           <script>scripts\input_method_dummy_script.gml</script>
           <script>scripts\input_method_gamepad.gml</script>
@@ -4467,6 +4469,7 @@
         <script>scripts\init_titlecard.gml</script>
         <script>scripts\render_titlecard.gml</script>
         <script>scripts\get_titlecard_array.gml</script>
+        <script>scripts\is_skip_button_pressed.gml</script>
       </scripts>
     </scripts>
     <scripts name="Scene Objects">

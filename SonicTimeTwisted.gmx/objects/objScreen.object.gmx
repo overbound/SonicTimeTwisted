@@ -31,6 +31,7 @@ height = 240;
 postdraw_event = 8; // postdraw event - set to 8 to draw normally, 9 for special drawing of application_surface
 vsync = true; // enabled by default.
 window_scale = 2; // default window scale, 2x.
+full_scale = min(display_get_width()/width, display_get_height()/height); // some drawing modes need this, no need to recalculate it every frame
 center_delay = 3; // apparently two frames is not enough on Linux...
 split_screen = false;
 paused = false;
@@ -290,8 +291,7 @@ if (interpolation == 2) {
     texture_set_interpolation(true);
 } else {
     draw_surface_ext(application_surface, intscalex, intscaley, window_scale, window_scale, 0, c_white, 1);
-}
-
+}   
 </string>
           </argument>
         </arguments>
@@ -377,6 +377,7 @@ if (objProgram.device_info &amp; DEVICE_OS_ANDROID) {
     interpolation = !interpolation;
 }
 alarm[1] = 1;
+apply_video_settings();
 save_options();
 </string>
           </argument>

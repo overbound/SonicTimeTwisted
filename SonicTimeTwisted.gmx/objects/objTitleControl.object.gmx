@@ -598,9 +598,7 @@ if(menu.state == 0)
                 var skip_pressed = false;
                 if(allow_skipping &amp;&amp; name &lt; 9)
                 {
-                    skip_pressed =  point_in_rectangle(device_mouse_x(0), device_mouse_y(0), 
-                        view_xview[0] + view_wview[0] - 28, view_yview[0] + 4,
-                        view_xview[0] + view_wview[0] - 4, view_yview[0] + 28);       
+                    skip_pressed =  is_skip_button_pressed();      
                 }
                 if(skip_pressed)
                 {
@@ -1161,6 +1159,16 @@ audio_stop_all();
 {
     with(menu) event_user(3);
 }
+if(state &gt;= 2)
+{
+    if(allow_skipping)
+    {
+        if(name &lt; 9 &amp;&amp; is_fallback_touchscreen)
+        {
+           draw_sprite(sprTouchscreenFastForward, 0, view_wview[0] - 28, 4);
+        }
+    }
+}
 </string>
           </argument>
         </arguments>
@@ -1258,13 +1266,6 @@ audio_stop_all();
         }
         draw_rectangle(view_xview[0], view_yview[0], view_xview[0] + view_wview[0], view_yview[0] + view_hview[0], false);
         draw_set_alpha(1);
-    }
-    if(allow_skipping)
-    {
-        if(name &lt; 9 &amp;&amp; is_fallback_touchscreen)
-        {
-           draw_sprite(sprTouchscreenFastForward, 0, view_xview[0] + view_wview[0] - 28, view_yview[0] + 4);
-        }
     }
 }
 if(state &lt;= 2 || state == 4)
