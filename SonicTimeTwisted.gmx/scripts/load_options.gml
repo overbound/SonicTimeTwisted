@@ -4,7 +4,11 @@ if (stt_file_exists(file)) {
     
     with(objScreen)
     {
-        video_mode = ini_read_real('video_options', "mode", 2);
+        if (objProgram.device_info & DEVICE_TYPE_COMPUTER) {
+            video_mode = ini_read_real('video_options', "mode", 2);
+        } else {
+            video_mode = ini_read_real('video_options', "mode", 0);
+        }
         interpolation = ini_read_real('video_options', "interpolation", 0);
         flashing_reduced = ini_read_real('video_options', "flashing_reduced", 1);
         score_tally_mode = ini_read_real('video_options', "score_tally_mode", 0);
