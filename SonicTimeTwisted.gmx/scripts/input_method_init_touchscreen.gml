@@ -4,16 +4,19 @@ switch(vksize)
         dpad_base_sprite = sprTouchscreenDPadBaseBig;
         dpad_joystick_sprite = sprTouchscreenDPadJoyBig;
         dpad_jumpbutton_sprite = sprTouchscreenButtonBig;
+        bar = 16;
         break;
     case 1:
         dpad_base_sprite = sprTouchscreenDPadBaseMed;
         dpad_joystick_sprite = sprTouchscreenDPadJoyMed;
         dpad_jumpbutton_sprite = sprTouchscreenButtonMed;
+        bar = 12;
         break;
     case 2:
         dpad_base_sprite = sprTouchscreenDPadBaseSmall;
         dpad_joystick_sprite = sprTouchscreenDPadJoySmall;
         dpad_jumpbutton_sprite = sprTouchscreenButtonSmall;
+        bar = 8;
         break;
 }
 if(dpadmode == 0)

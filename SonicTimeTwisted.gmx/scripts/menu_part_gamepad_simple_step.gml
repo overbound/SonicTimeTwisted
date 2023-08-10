@@ -15,7 +15,7 @@ if(state == 13 || state == 14)
         {
             with(objProgram.inputManager)
             {
-                input_bind_axis(pad, abs(real(_axis)), sign(real(_axis)), .3, other.confirmation_cursor);
+                input_bind_axis(pad, abs(real(_axis)), sign(real(_axis)), other.confirmation_cursor);
             }
             
             state = 15;

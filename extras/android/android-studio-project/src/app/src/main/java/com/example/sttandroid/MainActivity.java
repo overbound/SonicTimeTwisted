@@ -76,6 +76,7 @@ public class MainActivity extends AppCompatActivity {
         sttAndroid = new SttAndroid();
 
         sttAndroid.sttandroid_mode_set(mode);
+        sttAndroid.sttandroid_gamepad_set_analog_controls_enabled(0, 1);
         inputState = -1;
         prevInputState = -1;
         consoleOutput = new String[33];
@@ -486,6 +487,8 @@ public class MainActivity extends AppCompatActivity {
             sb.append(" ");
         }
         sb.append("]\n");
+        sb.append("X axis: "+sttAndroid.sttandroid_gamepad_get_analog_x_axis(0)+"\n");
+        sb.append("Y axis: "+sttAndroid.sttandroid_gamepad_get_analog_y_axis(0)+"\n");
         for(int i = 0; i < consoleOutput.length; i++)
         {
             sb.append(consoleOutput[i]+"\n");

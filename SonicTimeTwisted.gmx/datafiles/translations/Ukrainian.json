@@ -158,6 +158,12 @@
 		"_options_menu_BTUSB_device_DoubleMode_device1": "Натисніть на кнопку на першому пристрої",
 		"_options_menu_BTUSB_device_DoubleMode_device2": "Натисніть на кнопку на другому пристрої",
 		
+		"_options_menu_Gamepad_analog_controls": "Анаголове керування",
+		"_options_menu_Gamepad_analog_enable": "В звичайних рівнях",
+		"_options_menu_Gamepad_analog_enable_SS": "В особливих рівнях",
+		"_options_menu_Gamepad_analog_enable_GG": "В останній зоні",
+		"_options_menu_Gamepad_deadzone": "Мертва зона",
+		
 		"_options_menu_InputLabel_Touchscreen": "Сенс. екран",
 		"_options_menu_InputLabel_Gamepad": "Геймпад",
 		"_options_menu_InputLabel_Keyboard": "Клавіатура",

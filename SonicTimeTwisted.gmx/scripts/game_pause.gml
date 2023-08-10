@@ -17,3 +17,9 @@ else
     instance_deactivate_object(objSceneObject);
     audio_pause_all();
 }
+if (argument0) {
+    with (objInput) {
+        analog_enabled = false;
+    }
+}
+

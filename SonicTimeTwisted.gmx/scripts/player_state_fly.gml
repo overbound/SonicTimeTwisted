@@ -5,14 +5,14 @@ if input_check(cLEFT)
     // set facing
     facing = -1;
     // accelerate
-    if xspeed>-speed_cap {xspeed -= air_acceleration; if xspeed<-speed_cap xspeed = -speed_cap;}
+    if xspeed>-used_speed_cap {xspeed -= air_acceleration; if xspeed<-used_speed_cap xspeed = -used_speed_cap;}
 }
 if input_check(cRIGHT)
 {
     // set facing
     facing = 1;
     // accelerate
-    if xspeed<speed_cap {xspeed += air_acceleration; if xspeed>speed_cap xspeed = speed_cap;}
+    if xspeed<used_speed_cap {xspeed += air_acceleration; if xspeed>used_speed_cap xspeed = used_speed_cap;}
 }
 // update position
 if not player_movement_air() {if audio_is_playing(reserved_sound) stop_sound(reserved_sound); return false;}

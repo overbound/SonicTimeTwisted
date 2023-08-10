@@ -7,6 +7,8 @@ segment_width = offset_x*0.5;
 segment_height = offset_y*0.5;
 // speed values
 speed_cap = 6;
+used_speed_cap = speed_cap;
+analog_applied = objProgram.inputManager.analog_applied;
 acceleration = 0.046875;
 deceleration = 0.5;
 ground_friction = 0.046875;
@@ -75,4 +77,8 @@ if underwater
     hit_force = 0.0625;
     
     jump_action = true;
+}
+// GGZ modification
+if (room == MM1) {
+    speed_cap = 4;
 }

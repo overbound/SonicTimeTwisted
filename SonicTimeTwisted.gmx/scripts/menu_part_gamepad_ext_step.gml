@@ -15,7 +15,7 @@ if(state == 13 || state == 14)
         {
             with(objProgram.inputManager)
             {
-                input_bind_axis(pad, abs(real(_axis)), sign(real(_axis)), .3, other.confirmation_cursor);
+                input_bind_axis(pad, abs(real(_axis)), sign(real(_axis)), other.confirmation_cursor);
             }
             
             state = 15;
@@ -43,6 +43,10 @@ if(state == 13 || state == 14)
         {
             case 0:
                 objProgram.inputManager.rumble_strength = menu_fn_sync_slider(objProgram.inputManager.rumble_strength);
+                break;
+            case 1:
+                objProgram.inputManager.deadzone_int = menu_fn_sync_slider(objProgram.inputManager.deadzone_int);
+                objProgram.inputManager.deadzone = objProgram.inputManager.deadzone_int/100;
                 break;
         }
     }

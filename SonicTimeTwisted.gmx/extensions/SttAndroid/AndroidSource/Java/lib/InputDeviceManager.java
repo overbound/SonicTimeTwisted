@@ -106,6 +106,17 @@ public class InputDeviceManager extends AbstractManager {
     protected boolean anyKeyMode;
 
     /**
+     *
+     */
+    protected double deadzone;
+
+    protected boolean analogEnabled = false;
+
+    protected double axisX = 0.0;
+
+    protected double axisY = 0.0;
+
+    /**
      * Constructor
      */
     public InputDeviceManager() {
@@ -119,6 +130,17 @@ public class InputDeviceManager extends AbstractManager {
         rumbleEnabled = false;
         hardwareMappingsFound = false;
         anyKeyMode = false;
+        deadzone = 0.5;
+        axisX = 0.0;
+        axisY = 0.0;
+    }
+
+    public void setAxisX(double axisX) {
+        this.axisX = axisX;
+    }
+
+    public void setAxisY(double axisY) {
+        this.axisY = axisY;
     }
 
     /**
@@ -188,7 +210,7 @@ public class InputDeviceManager extends AbstractManager {
     public void assignSingleDevice(InputDevice device) {
         this.disconnect();
 
-        device0 = new DeviceWrapper(device);
+        device0 = new DeviceWrapper(device, this);
         device1 = null;
 
         if(anyKeyMode)
@@ -209,8 +231,8 @@ public class InputDeviceManager extends AbstractManager {
     public void assignTwoDevices(InputDevice device0, InputDevice device1) {
         this.disconnect();
 
-        this.device0 = new DeviceWrapper(device0);
-        this.device1 = new DeviceWrapper(device1);
+        this.device0 = new DeviceWrapper(device0, this);
+        this.device1 = new DeviceWrapper(device1, this);
 
         if(anyKeyMode)
         {
@@ -276,7 +298,6 @@ public class InputDeviceManager extends AbstractManager {
      * @return Whether the event was processed
      */
     public boolean processKeyEvent(KeyEvent event) {
-        // Log.d("yoyo", "event: "+event.getKeyCode());
         if (!device0.processKeyEvent(event)) {
             if (device1 != null) {
                 return device1.processKeyEvent(event);
@@ -293,6 +314,7 @@ public class InputDeviceManager extends AbstractManager {
      * @return Whether the event was processed
      */
     public boolean processGenericMotionEvent(MotionEvent event) {
+        resetAnalogAxes();
         if (!device0.processGenericMotionEvent(event)) {
             if (device1 != null) {
                 return device1.processGenericMotionEvent(event);
@@ -743,6 +765,20 @@ public class InputDeviceManager extends AbstractManager {
                                 Hex.getFourDigitHexString(device1.device.getProductId())) : "||");
     }
 
+    public void setDeadzone(double deadzone){
+        this.deadzone = deadzone;
+        if (device0 == null) {
+            device0.setDeadzone(deadzone);
+        }
+        if (device1 == null) {
+            device1.setDeadzone(deadzone);
+        }
+    }
+
+    public double getDeadzone() {
+        return deadzone;
+    }
+
     /**
      * Makes the device (or an external device) vibrate.
      * Does not deactivate by itself, use power 0.
@@ -799,6 +835,65 @@ public class InputDeviceManager extends AbstractManager {
         }
     }
 
+    public void resetAnalogAxes() {
+        axisX = 0.0;
+        axisY = 0.0;
+    }
+
+    public void updateAnalogAxisMin(int eventInt, float axisValue) {
+        // normally used to update UP and LEFT, multiply by -1 if DOWN or RIGHT are managed instead
+        if ((eventInt & 0b1010) > 0) {
+            axisValue *= -1;
+        }
+        if ((eventInt & 0b11) > 0) {
+            // vertical
+            axisY = Math.min(axisY, axisValue);
+        } else {
+            if ((eventInt & 0b1100) > 0) {
+                // horizontal
+                axisX = Math.min(axisX, axisValue);
+            }
+        }
+    }
+
+    public void updateAnalogAxisMax(int eventInt, float axisValue) {
+        // normally used to update DOWN or RIGHT, multiply by -1 if UP and LEFT are managed instead
+        if ((eventInt & 0b101) > 0) {
+            axisValue *= -1;
+        }
+        if ((eventInt & 0b11) > 0) {
+            // vertical
+            axisY = Math.max(axisY, axisValue);
+        } else {
+            if ((eventInt & 0b1100) > 0) {
+                // horizontal
+                axisX = Math.max(axisX, axisValue);
+            }
+        }
+    }
+
+    public void setAnalogEnabled(boolean analogEnabled) {
+        this.analogEnabled = analogEnabled;
+        if (device0 != null) {
+            device0.setAnalogEnabled(analogEnabled);
+        }
+        if (device1 != null) {
+            device1.setAnalogEnabled(analogEnabled);
+        }
+    }
+
+    public double getAxisX() {
+        return axisX;
+    }
+
+    public double getAxisY() {
+        return axisY;
+    }
+
+    public boolean getAnalogEnabled() {
+        return analogEnabled;
+    }
+
     /**
      * A wrapper for a single device.
      * Handles the associated hardware mappings.
@@ -853,12 +948,18 @@ public class InputDeviceManager extends AbstractManager {
          */
         protected boolean stateNeedsUpdating;
 
+        protected double deadzone;
+        protected double deadzone_minus;
+        InputDeviceManager deviceManager;
+
+        protected boolean analogEnabled = false;
+
         /**
          * Constructor
          *
          * @param assignedDevice Associated InputDevice
          */
-        public DeviceWrapper(InputDevice assignedDevice) {
+        public DeviceWrapper(InputDevice assignedDevice, InputDeviceManager deviceManager) {
             device = assignedDevice;
             deviceId = device.getId();
             hardwareMappings = new HashMap<>();
@@ -868,6 +969,14 @@ public class InputDeviceManager extends AbstractManager {
             anyKeyMode = false;
             previousState = 0;
             stateNeedsUpdating = true;
+            this.setDeadzone(deviceManager.getDeadzone());
+            this.deviceManager = deviceManager;
+            this.analogEnabled = deviceManager.getAnalogEnabled();
+        }
+
+
+        public void setAnalogEnabled(boolean analogEnabled) {
+            this.analogEnabled = analogEnabled;
         }
 
         /**
@@ -888,6 +997,11 @@ public class InputDeviceManager extends AbstractManager {
 
             allPresses.clear();
             this.anyKeyMode = anyKeyMode;
+        }
+
+        public void setDeadzone(double deadzone) {
+            this.deadzone = deadzone;
+            deadzone_minus = deadzone * -1;
         }
 
         /**
@@ -1250,25 +1364,62 @@ public class InputDeviceManager extends AbstractManager {
         public boolean processGenericMotionEventAnyKeyOff(MotionEvent event) {
             Iterator<Entry<Integer, Integer>> it = directMappings.entrySet().iterator();
             stateNeedsUpdating = true;
-            while (it.hasNext()) {
-                Entry pair = it.next();
-                int key = (Integer) pair.getKey();
-                if (key % 10 == InputDeviceManager.AXIS) {
-                    int axisIndex = key / 10;
-                    float axisValue = event.getAxisValue(axisIndex);
-                    this.setPressState(
-                            (Integer) pair.getValue(), key, axisValue > 0.3
-                    );
-                } else {
-                    if (key % 10 == InputDeviceManager.AXIS_NEGATIVE) {
+            if (analogEnabled) {
+                while (it.hasNext()) {
+                    Entry pair = it.next();
+                    int key = (Integer) pair.getKey();
+                    int val = (Integer) pair.getValue();
+                    if (key % 10 == InputDeviceManager.AXIS) {
+                        int axisIndex = key / 10;
+                        float axisValue = event.getAxisValue(axisIndex);
+                        if ((axisIndex == MotionEvent.AXIS_HAT_X) || (axisIndex == MotionEvent.AXIS_HAT_Y)) {
+                            this.setPressState(
+                                    val, key, axisValue > deadzone
+                            );
+                        } else {
+                            if (axisValue > 0) {
+                                this.deviceManager.updateAnalogAxisMax(val, axisValue);
+                            }
+                        }
+                    } else {
+                        if (key % 10 == InputDeviceManager.AXIS_NEGATIVE) {
+                            int axisIndex = key / 10;
+                            float axisValue = event.getAxisValue(axisIndex);
+                            if ((axisIndex == MotionEvent.AXIS_HAT_X) || (axisIndex == MotionEvent.AXIS_HAT_Y)) {
+                                this.setPressState(
+                                        val, key, axisValue < deadzone_minus
+                                );
+                            } else {
+                                if (axisValue < 0) {
+                                    this.deviceManager.updateAnalogAxisMin(val, axisValue);
+                                }
+                            }
+                        }
+                    }
+                }
+            } else {
+                while (it.hasNext()) {
+                    Entry pair = it.next();
+                    int key = (Integer) pair.getKey();
+                    int val = (Integer) pair.getValue();
+                    if (key % 10 == InputDeviceManager.AXIS) {
                         int axisIndex = key / 10;
                         float axisValue = event.getAxisValue(axisIndex);
                         this.setPressState(
-                                (Integer) pair.getValue(), key, axisValue < -0.3
+                                val, key, axisValue > deadzone
                         );
+                    } else {
+                        if (key % 10 == InputDeviceManager.AXIS_NEGATIVE) {
+                            int axisIndex = key / 10;
+                            float axisValue = event.getAxisValue(axisIndex);
+                            this.setPressState(
+                                    val, key, axisValue < deadzone_minus
+                            );
+                        }
                     }
                 }
             }
+
             return true;
         }
 
@@ -1291,7 +1442,7 @@ public class InputDeviceManager extends AbstractManager {
                     int axisIndex = key / 10;
                     float axisValue = event.getAxisValue(axisIndex);
                     this.setPressState(
-                            (Integer) pair.getValue(), 0, axisValue > 0.3
+                            (Integer) pair.getValue(), 0, axisValue > deadzone
                     );
                 }
                 else
@@ -1300,7 +1451,7 @@ public class InputDeviceManager extends AbstractManager {
                         int axisIndex = key / 10;
                         float axisValue = event.getAxisValue(axisIndex);
                         this.setPressState(
-                                (Integer) pair.getValue(), 0, axisValue < -0.3
+                                (Integer) pair.getValue(), 0, axisValue < deadzone_minus
                         );
                     }
                 }

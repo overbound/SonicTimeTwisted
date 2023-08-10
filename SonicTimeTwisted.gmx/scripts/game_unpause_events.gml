@@ -3,6 +3,8 @@
 // Used to trigger events on game unpause
 // They include updating and items that depend on localization or flashing configurations
 
+refresh_analog_controls_enabled();
+
 // Past/Future signposts - localizeable sprites
 with(objTimePost)
 {

@@ -13,6 +13,10 @@ if(instance_exists(objProgram.inputManager))
 {
     ini_write_real('input', 'method', objProgram.inputManager.input_method);
     ini_write_real('input', 'rumble', objProgram.inputManager.rumble_enabled);
+    ini_write_real('input', 'deadzone', objProgram.inputManager.deadzone_int);
+    ini_write_real('input', 'analog_in_zones', objProgram.inputManager.analog_in_zones);
+    ini_write_real('input', 'analog_in_ss', objProgram.inputManager.analog_in_ss);
+    ini_write_real('input', 'analog_in_gg', objProgram.inputManager.analog_in_gg);
     ini_write_real('smartphone', 'dpadmode', objProgram.inputManager.dpadmode);
     ini_write_real('smartphone', 'vkalpha', objProgram.inputManager.vkalpha);
     ini_write_real('smartphone', 'gyroinss', objProgram.inputManager.gyroinss);

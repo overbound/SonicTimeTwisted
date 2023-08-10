@@ -64,6 +64,21 @@ rumble_queue = ds_queue_create();
 rumble_configuration_script = input_method_dummy_script;
 rumble_enabled = false;
 
+// analog controls
+deadzone = 0.5;
+deadzone_int = 50;
+analog_in_zones = false;
+analog_in_ss = false;
+analog_in_gg = false;
+analog_x = 0.0;
+analog_y = 0.0;
+analog_d = 0.0;
+analog_enabled = true;
+analog_applied = false;
+analog_range_min = 0.2;
+analog_range_max = 0.95;
+input_analog_script = analog_postprocess_dummy;
+
 // input devices management
 input_init_script = input_method_dummy_script;
 input_manage_script = input_method_dummy_script;
@@ -238,9 +253,16 @@ if (state &amp; cDOWN &amp;&amp; flag_player_input) || (computer_cDOWN &amp;&amp
 state_press = (state &amp; previous_state) ^ state;
 state_release = (state &amp; previous_state) ^ previous_state;
 
-/// Manage rumble/haptic
+// Manage rumble/haptic
 script_execute(input_rumble_manage_script);
 script_execute(input_rumble_perform_script);
+
+// update analog used
+analog_applied = false;
+if (analog_enabled) {
+    // thank you GML in 1.4.9999 for analyzing all conditions in if (&amp;&amp;) no matter the returned values...
+    analog_applied = (x_axis == 0) &amp;&amp; (y_axis == 0);
+}
 
 previous_state = state;
 </string>
@@ -407,6 +429,28 @@ switch(room)
     default:
         use_fallback = false;
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Enable/disable analog controls
+refresh_analog_controls_enabled();
 </string>
           </argument>
         </arguments>

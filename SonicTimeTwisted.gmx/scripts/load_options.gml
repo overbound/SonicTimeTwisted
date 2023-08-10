@@ -52,6 +52,12 @@ if (stt_file_exists(file)) {
             input_rumble_trigger_script = rumble_manage;
         else
             input_rumble_trigger_script = input_method_dummy_script;
+            
+        deadzone_int = ini_read_real('input','deadzone',30);
+        deadzone = deadzone_int/100;
+        analog_in_zones = ini_read_real('input','analog_in_zones',0) > 0.1;
+        analog_in_ss = ini_read_real('input','analog_in_ss',0) > 0.1;
+        analog_in_gg = ini_read_real('input','analog_in_gg',0) > 0.1;
     }
     
     with (objMusic)

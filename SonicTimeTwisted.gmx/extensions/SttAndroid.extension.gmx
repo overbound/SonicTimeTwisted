@@ -556,6 +556,74 @@
             <arg>2</arg>
           </args>
         </function>
+        <function>
+          <name>sttandroid_gamepad_get_deadzone</name>
+          <externalName>sttandroid_gamepad_get_deadzone</externalName>
+          <kind>11</kind>
+          <help>sttandroid_gamepad_get_deadzone(inputNumber)</help>
+          <returnType>2</returnType>
+          <argCount>1</argCount>
+          <args>
+            <arg>2</arg>
+          </args>
+        </function>
+        <function>
+          <name>sttandroid_gamepad_set_deadzone</name>
+          <externalName>sttandroid_gamepad_set_deadzone</externalName>
+          <kind>11</kind>
+          <help>sttandroid_gamepad_set_deadzone(inputNumber,deadzone)</help>
+          <returnType>2</returnType>
+          <argCount>2</argCount>
+          <args>
+            <arg>2</arg>
+            <arg>2</arg>
+          </args>
+        </function>
+        <function>
+          <name>sttandroid_gamepad_set_analog_controls_enabled</name>
+          <externalName>sttandroid_gamepad_set_analog_controls_enabled</externalName>
+          <kind>11</kind>
+          <help>sttandroid_gamepad_set_analog_controls_enabled(inputNumber,enabled)</help>
+          <returnType>2</returnType>
+          <argCount>2</argCount>
+          <args>
+            <arg>2</arg>
+            <arg>2</arg>
+          </args>
+        </function>
+        <function>
+          <name>sttandroid_gamepad_get_analog_controls_enabled</name>
+          <externalName>sttandroid_gamepad_get_analog_controls_enabled</externalName>
+          <kind>11</kind>
+          <help>sttandroid_gamepad_get_analog_controls_enabled(inputNumber)</help>
+          <returnType>2</returnType>
+          <argCount>1</argCount>
+          <args>
+            <arg>2</arg>
+          </args>
+        </function>
+        <function>
+          <name>sttandroid_gamepad_get_analog_x_axis</name>
+          <externalName>sttandroid_gamepad_get_analog_x_axis</externalName>
+          <kind>11</kind>
+          <help>sttandroid_gamepad_get_analog_x_axis(inputNumber)</help>
+          <returnType>2</returnType>
+          <argCount>1</argCount>
+          <args>
+            <arg>2</arg>
+          </args>
+        </function>
+        <function>
+          <name>sttandroid_gamepad_get_analog_y_axis</name>
+          <externalName>sttandroid_gamepad_get_analog_y_axis</externalName>
+          <kind>11</kind>
+          <help>sttandroid_gamepad_get_analog_y_axis(inputNumber)</help>
+          <returnType>2</returnType>
+          <argCount>1</argCount>
+          <args>
+            <arg>2</arg>
+          </args>
+        </function>
       </functions>
       <constants/>
     </file>

@@ -28,10 +28,10 @@ if(!loaded)
     input_bind_button(pad, gp_face3, cC);
     input_bind_button(pad, gp_start, cSTART);
     
-    input_bind_axis(pad, gp_axislv, -1, .3, cUP);
-    input_bind_axis(pad, gp_axislv,  1, .3, cDOWN);
-    input_bind_axis(pad, gp_axislh, -1, .3, cLEFT);
-    input_bind_axis(pad, gp_axislh,  1, .3, cRIGHT);
+    input_bind_axis(pad, gp_axislv, -1, cUP);
+    input_bind_axis(pad, gp_axislv,  1, cDOWN);
+    input_bind_axis(pad, gp_axislh, -1, cLEFT);
+    input_bind_axis(pad, gp_axislh,  1, cRIGHT);
     
     input_bind_button(pad, gp_padu, cUP);
     input_bind_button(pad, gp_padd, cDOWN);

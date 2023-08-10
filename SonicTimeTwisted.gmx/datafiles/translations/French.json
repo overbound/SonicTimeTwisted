@@ -160,6 +160,12 @@
 		"_options_menu_BTUSB_device_DoubleMode_device1": "Appuyez sur un bouton sur le premier périphérique",
 		"_options_menu_BTUSB_device_DoubleMode_device2": "Appuyez sur un bouton sur le deuxième périphérique",
 		
+		"_options_menu_Gamepad_analog_controls": "Contrôle analogique",
+		"_options_menu_Gamepad_analog_enable": "Dans les niveaux réguliers",
+		"_options_menu_Gamepad_analog_enable_SS": "Dans les niveaux spéciaux",
+		"_options_menu_Gamepad_analog_enable_GG": "Dans le dernier niveau",
+		"_options_menu_Gamepad_deadzone": "Zone morte",
+		
 		"_options_menu_InputLabel_Touchscreen": "Écran tactile",
 		"_options_menu_InputLabel_Gamepad": "Manette",
 		"_options_menu_InputLabel_Keyboard": "Clavier",

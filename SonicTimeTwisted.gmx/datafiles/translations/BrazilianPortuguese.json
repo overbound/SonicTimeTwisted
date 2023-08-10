@@ -160,6 +160,12 @@
 		"_options_menu_BTUSB_device_DoubleMode": "Controlador duplo",
 		"_options_menu_BTUSB_device_DoubleMode_device1": "Aperte um botão do Primeiro Controle",
 		"_options_menu_BTUSB_device_DoubleMode_device2": "Aperte um botão do Segundo Controle",
+		
+		"_options_menu_Gamepad_analog_controls": "Analog controls",
+		"_options_menu_Gamepad_analog_enable": "In regular acts",
+		"_options_menu_Gamepad_analog_enable_SS": "In Special Stages",
+		"_options_menu_Gamepad_analog_enable_GG": "In final zone",
+		"_options_menu_Gamepad_deadzone": "Zona morta",
 
 		"_options_menu_InputLabel_Touchscreen": "Tela Touch",
 		"_options_menu_InputLabel_Gamepad": "Gamepad",

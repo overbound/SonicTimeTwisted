@@ -19,7 +19,7 @@ if motion_direction!=0
         {
             // braking
             if abs(xspeed)>brake_threshold and mask_rotation==gravity_angle() {animation_new = "brake"; timeline_speed = 1;}
-            // decelerate and reverse directio
+            // decelerate and reverse direction
             
             xspeed += deceleration*motion_direction;
             if xspeed!=0 and sign(xspeed)==motion_direction xspeed = deceleration*motion_direction;
@@ -28,10 +28,18 @@ if motion_direction!=0
     else
     {
         // accelerate
-        if abs(xspeed)<speed_cap
+        if abs(xspeed)<used_speed_cap
         {
             xspeed += acceleration*motion_direction;
-            if abs(xspeed)>speed_cap xspeed = speed_cap*motion_direction;
+            if abs(xspeed)>used_speed_cap xspeed = used_speed_cap*motion_direction;
+        } else {
+            if (objProgram.inputManager.analog_applied) {
+                // decelerate with analog controls
+                if (objProgram.inputManager.analog_x != 0 && abs(objProgram.inputManager.analog_x) < 1) {
+                    if xspeed > used_speed_cap xspeed = xspeed - deceleration;
+                    if xspeed < used_speed_cap xspeed = xspeed + deceleration;
+                }
+            }
         }
     }
 }
@@ -146,7 +154,7 @@ if abs(xspeed)<slide_threshold and relative_angle>=45 and relative_angle<=315
 }
 
 // slope factor
-if abs(xspeed)>speed_cap xspeed -= player_slope_factor(slope_friction_cap, ground_friction); else
+if abs(xspeed)>used_speed_cap xspeed -= player_slope_factor(slope_friction_cap, ground_friction); else
 xspeed -= player_slope_factor(slope_friction, ground_friction);
 // standing
 if motion_direction==0 and xspeed==0 return player_is_standing();

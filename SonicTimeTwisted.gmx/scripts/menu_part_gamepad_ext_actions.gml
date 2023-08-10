@@ -142,6 +142,12 @@ switch(argument0)
     case 32:
         menu_fn_open_slider_window(0, tr('_options_menu_touchscreen_vibration_SliderStrengthCr'), objProgram.inputManager.rumble_strength, 0, 200);
         break;
+    case 33:
+        menu_fn_open_slider_window(1, tr('_options_menu_Gamepad_deadzone'), objProgram.inputManager.deadzone_int, 5, 95);
+        break;
+    case 34:
+        menu_fn_goto_submenu(menu_part_gamepad_analog_items);
+        break;
     case -2:
     case -3:
          // press left or right
@@ -246,6 +252,7 @@ else
     menu_fn_refresh_displayed_value(0, "< "+tr("_Off")+" >");
 }
 menu_fn_refresh_displayed_value(32, string(objProgram.inputManager.rumble_strength) + "%");
+menu_fn_refresh_displayed_value(33, string(objProgram.inputManager.deadzone_int) + "%");
 
 menu_fn_refresh_displayed_value(2, upLabel);
 menu_fn_refresh_displayed_value(3, downLabel);
@@ -266,6 +273,8 @@ menu_fn_calculate_width_add(6, true, 20);
 menu_fn_calculate_width_add(7, true, 20);
 menu_fn_calculate_width_add(8, true, 20);
 menu_fn_calculate_width_add(9, true, 20);
+menu_fn_calculate_width_add(32, true, 4);
+menu_fn_calculate_width_add(33, true, 4);
 menu_fn_calculate_width_finish();
 
 // preserve the cursor value - usually false for the sake of touchscreen controls

@@ -11,7 +11,7 @@ switch(argument0)
         break;
     case 3:
     case -1:
-        menu_fn_exit_submenu(menu_part_options_items, 0);
+        menu_fn_exit_submenu(menu_part_options_items, 1);
         break;
         
     // sliders exist for a reason.

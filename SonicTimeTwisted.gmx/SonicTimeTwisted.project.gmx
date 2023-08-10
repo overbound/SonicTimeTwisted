@@ -4038,6 +4038,12 @@
         <script>scripts\get_path_sep.gml</script>
       </scripts>
       <scripts name="Input">
+        <scripts name="Analog">
+          <script>scripts\analog_postprocess_dummy.gml</script>
+          <script>scripts\analog_postprocess_act.gml</script>
+          <script>scripts\analog_postprocess_ggz.gml</script>
+          <script>scripts\analog_apply_deadzone.gml</script>
+        </scripts>
         <scripts name="Binding">
           <scripts name="With backup">
             <script>scripts\input_bind_keys.gml</script>
@@ -4184,6 +4190,8 @@
         <script>scripts\set_input_enabled.gml</script>
         <script>scripts\sync_is_touchscreen.gml</script>
         <script>scripts\update_smartphone_controls_enabled.gml</script>
+        <script>scripts\refresh_analog_controls_enabled.gml</script>
+        <script>scripts\set_analog_controls_enabled.gml</script>
       </scripts>
       <scripts name="Math">
         <script>scripts\Lerp.gml</script>
@@ -4322,6 +4330,8 @@
             <script>scripts\menu_part_sound_items.gml</script>
             <script>scripts\menu_part_sound_actions.gml</script>
             <script>scripts\menu_part_sound_step.gml</script>
+            <script>scripts\menu_part_gamepad_analog_items.gml</script>
+            <script>scripts\menu_part_gamepad_analog_actions.gml</script>
           </scripts>
           <scripts name="special_stage">
             <script>scripts\menu_part_sstage_offtrack_items.gml</script>

@@ -2,56 +2,117 @@
 if (not objLevel.started) return false;
 if (player_collision_object()) return false;
 
-if input_check(cUP) && view_yview < y {
-    if yspeed > -4 {
-        yspeed-=acceleration;
+var analog_applied = objProgram.inputManager.analog_applied;    
+
+if (analog_applied) {
+
+    var analog_y = objProgram.inputManager.analog_y;
+    var used_speed_cap_y = speed_cap * abs(analog_y);
+
+    if abs(yspeed) > used_speed_cap_y {
+        if yspeed < 0 {
+            yspeed += deceleration;
+        } else if yspeed > 0  {
+             yspeed -= deceleration;
+        }
+        if abs(yspeed) < 1 {
+            yspeed=0;
+        }
+    } else {
+        if analog_y < 0 && view_yview < y {
+            if yspeed > -used_speed_cap_y {
+                yspeed-=acceleration;
+            }
+        } else {
+            if analog_y > 0 && view_yview + view_hview > y {
+                if yspeed < used_speed_cap_y {
+                    yspeed+=acceleration;
+                }
+            }         
+        }
     }
-} 
-if input_check(cDOWN) && view_yview + view_hview > y {
-    if yspeed < 4 {
-        yspeed+=acceleration;
-    }
-} 
-if !input_check(cUP) && !input_check(cDOWN) {
-    if yspeed < 0 {
-        yspeed += deceleration;
-    } else if yspeed > 0  {
-         yspeed -= deceleration;
-    }
-    if abs(yspeed) < 1 {
-        yspeed=0;
+} else {
+    if input_check(cUP) && view_yview < y {
+        if yspeed > -4 {
+            yspeed-=acceleration;
+        }
+    } 
+    if input_check(cDOWN) && view_yview + view_hview > y {
+        if yspeed < 4 {
+            yspeed+=acceleration;
+        }
+    } 
+    if !input_check(cUP) && !input_check(cDOWN) {
+        if yspeed < 0 {
+            yspeed += deceleration;
+        } else if yspeed > 0  {
+             yspeed -= deceleration;
+        }
+        if abs(yspeed) < 1 {
+            yspeed=0;
+        }
     }
 }
 
 switch (alarm[0])
 {
     case -1:
-        if input_check(cLEFT){
-    
-            if xspeed > -4 {
-                xspeed-=acceleration;
-            }
-            facing = -1;
-    
-        } 
-    
-        if input_check(cRIGHT) {
-            if xspeed < 4 {
-                xspeed+=acceleration;
-            }
-            facing = 1;
+        if (analog_applied) {
+
+            var analog_x = objProgram.inputManager.analog_x;
+            var used_speed_cap_x = speed_cap * abs(analog_x);
             
-        } 
-    
-        if !input_check(cLEFT) && !input_check(cRIGHT)  && view_xview < x {
-    
-            if xspeed > -2 {
-               xspeed -=deceleration;
-            } if xspeed < -2 {
-                xspeed=-2;
-            }
-    
-        } 
+            if analog_x == 0 || abs(xspeed) > used_speed_cap_x  {
+        
+                if xspeed > -2 {
+                   xspeed -=deceleration;
+                } if xspeed < -2 {
+                    xspeed=-2;
+                }
+            } else {
+                if analog_x < 0 {
+            
+                    if xspeed > -used_speed_cap_x {
+                        xspeed-=acceleration;
+                    }
+                    facing = -1;
+            
+                } else {
+                    if analog_x > 0 {
+                        if xspeed < used_speed_cap_x {
+                            xspeed+=acceleration;
+                        }
+                        facing = 1;
+                    } 
+                }
+            }     
+        } else {
+            if input_check(cLEFT){
+        
+                if xspeed > -4 {
+                    xspeed-=acceleration;
+                }
+                facing = -1;
+        
+            } 
+        
+            if input_check(cRIGHT) {
+                if xspeed < 4 {
+                    xspeed+=acceleration;
+                }
+                facing = 1;
+                
+            } 
+        
+            if !input_check(cLEFT) && !input_check(cRIGHT)  && view_xview < x {
+        
+                if xspeed > -2 {
+                   xspeed -=deceleration;
+                } if xspeed < -2 {
+                    xspeed=-2;
+                }
+            } 
+        }
         
         if image_angle > 4 {
         

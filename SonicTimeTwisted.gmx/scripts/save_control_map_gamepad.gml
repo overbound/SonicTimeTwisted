@@ -9,5 +9,5 @@ ini_write_string('gamepad_controls', menu_fn_get_keymap_getkey(cA), get_control_
 ini_write_string('gamepad_controls', menu_fn_get_keymap_getkey(cB), get_control_map_gamepad_value(cB));
 ini_write_string('gamepad_controls', menu_fn_get_keymap_getkey(cC), get_control_map_gamepad_value(cC));
 ini_write_string('gamepad_controls', menu_fn_get_keymap_getkey(cSTART), get_control_map_gamepad_value(cSTART));
-ini_write_real('gamepad_controls', 'rumble', clamp(rumble_strength, 0, 100));
+ini_write_real('gamepad_controls', 'rumble', clamp(objProgram.inputManager.rumble_strength, 0, 100));
 stt_ini_close();

@@ -1,5 +1,5 @@
 ///set_input_method(method, asFallback, ?autoDetectedMethod)
-
+show_debug_message('set_input_method');
 
 if (argument_count >= 3) {
     objProgram.inputManager.input_method_autodetected = argument[2];
@@ -8,7 +8,6 @@ if (argument_count >= 3) {
 }
 var autoDetectedMethod = objProgram.inputManager.input_method_autodetected;
 
-show_debug_message('set_input_method: '+string(argument[0])+' '+string(argument[1])+' '+string(is_touchscreen));
 objProgram.inputManager.input_method = argument[0];
 is_touchscreen = (argument[0] == INPUT_TOUCHSCREEN) || ((argument[0] == INPUT_AUTO) && (autoDetectedMethod == INPUT_TOUCHSCREEN));
 if(argument[1])

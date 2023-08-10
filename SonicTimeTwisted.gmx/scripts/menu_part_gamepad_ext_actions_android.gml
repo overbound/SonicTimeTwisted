@@ -140,6 +140,12 @@ switch(argument0)
     case 31:
         menu_fn_goto_submenu(menu_part_gamepad_device_items);
         break;
+    case 33:
+        menu_fn_open_slider_window(1, tr('_options_menu_Gamepad_deadzone'), objProgram.inputManager.deadzone_int, 5, 95);
+        break;
+    case 34:
+        menu_fn_goto_submenu(menu_part_gamepad_analog_items);
+        break;
     case -2:
     case -3:
          // press left or right
@@ -191,6 +197,7 @@ else
     menu_fn_refresh_displayed_value(0, offLabel);
 }
 menu_fn_calculate_width_add(0, false, onLabel, offLabel);
+menu_fn_refresh_displayed_value(33, string(objProgram.inputManager.deadzone_int) + "%");
 
 menu_fn_refresh_displayed_value(2, android_get_gamepad_mapped_label(0, cUP));
 menu_fn_refresh_displayed_value(3, android_get_gamepad_mapped_label(0, cDOWN));
@@ -209,6 +216,7 @@ menu_fn_calculate_width_add(6, true, 20);
 menu_fn_calculate_width_add(7, true, 20);
 menu_fn_calculate_width_add(8, true, 20);
 menu_fn_calculate_width_add(9, true, 20);
+menu_fn_calculate_width_add(33, true, 4);
 
 menu_fn_calculate_width_finish();
 // preserve the cursor value - usually false for the sake of touchscreen controls

@@ -131,6 +131,7 @@ public class SttAndroid extends ExtensionBase {
     protected boolean handleAnyPressRegistered = false;
     protected int previousAnyKey = -1;
 
+
     /**
      * Constructor
      */
@@ -138,6 +139,7 @@ public class SttAndroid extends ExtensionBase {
         inputs = new InputDeviceManager[2];
         inputs[0] = new InputDeviceManager();
         inputs[1] = new InputDeviceManager();
+
         doubleInputDetectingMode = -1;
         doubleDeviceModeTempInputDevice = null;
         keyboard = new KeyboardManager();
@@ -666,6 +668,15 @@ public class SttAndroid extends ExtensionBase {
         return inputs[(int) inputNumber].getVendorProductDescriptor();
     }
 
+    public double sttandroid_gamepad_get_deadzone(double inputNumber) {
+        return inputs[(int) inputNumber].getDeadzone();
+    }
+
+    public double sttandroid_gamepad_set_deadzone(double inputNumber, double deadzone) {
+        inputs[(int) inputNumber].setDeadzone(deadzone);
+        return 0.0;
+    }
+
     /**
      * Makes the device (or an external device) vibrate.
      * Does not deactivate by itself, use power 0.
@@ -895,6 +906,23 @@ public class SttAndroid extends ExtensionBase {
             return 1.0;
         }
         return 0.0;
+    }
+
+    public double sttandroid_gamepad_set_analog_controls_enabled(double inputNumber, double enabled) {
+        inputs[(int) inputNumber].setAnalogEnabled(enabled > 0.5);
+        return 0.0;
+    }
+
+    public double sttandroid_gamepad_get_analog_controls_enabled(double inputNumber) {
+        return inputs[(int) inputNumber].getAnalogEnabled() ? 1.0 : 0.0;
+    }
+
+    public double sttandroid_gamepad_get_analog_x_axis(double inputNumber) {
+        return inputs[(int) inputNumber].getAxisX();
+    }
+
+    public double sttandroid_gamepad_get_analog_y_axis(double inputNumber) {
+        return inputs[(int) inputNumber].getAxisY();
     }
 
     /**

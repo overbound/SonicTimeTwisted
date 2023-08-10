@@ -1,10 +1,11 @@
 // player_state_fall()
+var motion_direction = input_axis_x();
 // ignore if rolling from a jump
 //if not rolling_jump
 //{
     // aerial acceleration
-    if input_check(cLEFT) {facing = -1; if xspeed>-speed_cap xspeed = max(xspeed-air_acceleration, -speed_cap);}
-    if input_check(cRIGHT) {facing = 1; if xspeed<speed_cap xspeed = min(xspeed+air_acceleration, speed_cap);}
+    if motion_direction < 0 {facing = -1; if xspeed>-used_speed_cap xspeed = max(xspeed-air_acceleration, -used_speed_cap);}
+    if motion_direction > 0 {facing = 1; if xspeed<used_speed_cap xspeed = min(xspeed+air_acceleration, used_speed_cap);}
 //}
 // update position
 if not player_movement_air()

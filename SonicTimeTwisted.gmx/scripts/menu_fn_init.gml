@@ -35,6 +35,8 @@ ok_press = false;
 cancel = false;
 cancel_prev = false;
 cancel_press = false;
+// disable analog controls
+set_analog_controls_enabled(false);
 
 previous_input_state = objProgram.inputManager.state;
 // if the device is touchscreen-compatible, enable the switch

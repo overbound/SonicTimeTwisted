@@ -22,7 +22,6 @@ if(argument0 >= 0 && argument0 < gamepad_mapping_count)
         axis_gamepad = array_1d_delete_keys(axis_gamepad, mapping_index);
         axis = array_1d_delete_keys(axis, mapping_index);
         axis_direction = array_1d_delete_keys(axis_direction, mapping_index);
-        axis_deadzone = array_1d_delete_keys(axis_deadzone, mapping_index);
         axis_control = array_1d_delete_keys(axis_control, mapping_index);
         
         axis_count = array_length_1d(axis);
