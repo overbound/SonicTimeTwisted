@@ -68,7 +68,10 @@ invincible=0;
 landing_tracker = instance_create(x, y, objSSPlayerLandingTracker);
 // set an alarm to make sure region activations aren't on every single step
 alarm[1] = 1;
-
+max_move_speed = 8;
+direction_multiplier = -1.5;
+cannot_accelerate = true;
+analog_current_yaxis = 0;
 </string>
           </argument>
         </arguments>
@@ -303,14 +306,46 @@ if jumping == true &amp;&amp; jump_release == false{
 
 }
 
-
-if (input_check(cLEFT)) xaxis = -1;
-else if (input_check(cRIGHT)) xaxis = 1;
-else xaxis = 0;
-
-if (input_check(cUP)) yaxis = -1;
-else if (input_check(cDOWN)) yaxis = 4;
-else yaxis = 0;
+if (objProgram.inputManager.analog_applied) {
+    var analog_x = objProgram.inputManager.analog_x;
+    var analog_y = objProgram.inputManager.analog_y;
+    
+    xaxis = sign(analog_x);
+    
+    if (analog_current_yaxis != 0) {
+        if (xaxis == 0) &amp;&amp; (analog_y == 0) {
+            analog_current_yaxis = 0;
+        }
+    } else {
+        analog_current_yaxis = sign(analog_y);
+        if (analog_current_yaxis) {
+            if (xaxis != 0) {
+                analog_current_yaxis = -1;   
+            }
+        }
+        if (analog_current_yaxis &gt; 0) {
+            analog_current_yaxis = 4;    
+        }
+    }
+    yaxis = analog_current_yaxis;
+    
+    max_move_speed = 8*abs(analog_y);
+    direction_multiplier = -1.5*abs(analog_x);
+    // give some leeway, allow to accelerate while running ALMOST straight
+    cannot_accelerate = abs(analog_x) &gt; 0.1;
+} else {
+    if (input_check(cLEFT)) xaxis = -1;
+    else if (input_check(cRIGHT)) xaxis = 1;
+    else xaxis = 0;
+    
+    if (input_check(cUP)) yaxis = -1;
+    else if (input_check(cDOWN)) yaxis = 4;
+    else yaxis = 0;
+    
+    max_move_speed = 8;
+    direction_multiplier = -1.5;
+    cannot_accelerate = (xaxis != 0);
+}
 
 }
 </string>
@@ -355,7 +390,7 @@ with(landing_tracker)
     }
 }
 
-move_direction += xaxis * -1.5;
+move_direction += xaxis * direction_multiplier;
 
 if (bounce_timer)
 {
@@ -367,7 +402,7 @@ else
 {
   move_speed += yaxis * -0.1;
   move_speed = max(move_speed, -2);
-  if move_speed &gt; 8 {
+  if move_speed &gt; max_move_speed {
     move_speed -= .25;
   }
   
@@ -385,7 +420,7 @@ if (yaxis == 0)
   f = 0.1;
 }
 else
-if (xaxis != 0)
+if (cannot_accelerate)
 {
   f = 0.1;
 }

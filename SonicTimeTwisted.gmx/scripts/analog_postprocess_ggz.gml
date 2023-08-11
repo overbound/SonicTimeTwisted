@@ -1,6 +1,9 @@
 var analog_angle = point_direction(0, 0, analog_x, analog_y);
 analog_d = analog_apply_deadzone(point_distance(0, 0, analog_x, analog_y));
 
+analog_x = 0;
+analog_y = 0;
+
 if (analog_angle mod 45 == 0) {
     switch(angle) {
         case 0:

@@ -29,6 +29,7 @@ switch(room) {
     case SSP6:
     case SSP7:
         set_analog_controls_enabled(objProgram.inputManager.analog_in_ss);
+        input_analog_script = analog_postprocess_ssz;
         break;
     case MM1:
         if (objProgram.inputManager.analog_in_gg) {

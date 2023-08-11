@@ -4042,6 +4042,7 @@
           <script>scripts\analog_postprocess_dummy.gml</script>
           <script>scripts\analog_postprocess_act.gml</script>
           <script>scripts\analog_postprocess_ggz.gml</script>
+          <script>scripts\analog_postprocess_ssz.gml</script>
           <script>scripts\analog_apply_deadzone.gml</script>
         </scripts>
         <scripts name="Binding">
