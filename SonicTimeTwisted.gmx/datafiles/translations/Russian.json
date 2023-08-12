@@ -86,6 +86,7 @@
 	"data": {
 		"_Yes": "Да",
 		"_No": "Нет",
+		"_OK": "OK",
 		"_On": "Вкл",
 		"_Off": "Выкл",
 		"_Disabled": "Откл.",
@@ -166,6 +167,7 @@
 		"_options_menu_Gamepad_analog_enable_SS": "В бонусных зонах",
 		"_options_menu_Gamepad_analog_enable_GG": "В последней зоне",
 		"_options_menu_Gamepad_deadzone": "Мёртвая зона",
+		"_options_menu_Gamepad_analog_warning": "Аналоговое управление работает только если вверх/вниз и влево/вправо назначены на одни и те же оси.",
 		
 		"_options_menu_InputLabel_Touchscreen": "Тачскрин",
 		"_options_menu_InputLabel_Gamepad": "Геймпад",

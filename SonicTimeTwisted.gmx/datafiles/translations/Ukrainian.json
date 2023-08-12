@@ -83,6 +83,7 @@
 	"data": {
 		"_Yes": "Так",
 		"_No": "Ні",
+		"_OK": "OK",
 		"_On": "Увімк.",
 		"_Off": "Вимк.",
 		"_Disabled": "Вимк.",
@@ -163,6 +164,7 @@
 		"_options_menu_Gamepad_analog_enable_SS": "В особливих рівнях",
 		"_options_menu_Gamepad_analog_enable_GG": "В останній зоні",
 		"_options_menu_Gamepad_deadzone": "Мертва зона",
+		"_options_menu_Gamepad_analog_warning": "Аналогове керування працює тільки коли вгору/вниз і ліворуч/праворуч назначені на одні й ті ж самі вісі.",
 		
 		"_options_menu_InputLabel_Touchscreen": "Сенс. екран",
 		"_options_menu_InputLabel_Gamepad": "Геймпад",

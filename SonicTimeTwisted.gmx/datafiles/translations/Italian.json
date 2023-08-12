@@ -86,6 +86,7 @@
 	"data": {
 		"_Yes": "Sì",
 		"_No": "No",
+		"_OK": "OK",
 		"_On": "Attiva",
 		"_Off": "Disattiva",
 		"_Disabled": "Disabilitato",
@@ -166,6 +167,7 @@
 		"_options_menu_Gamepad_analog_enable_SS": "In Special Stages",
 		"_options_menu_Gamepad_analog_enable_GG": "In final zone",
 		"_options_menu_Gamepad_deadzone": "Zona Morta",
+		"_options_menu_Gamepad_analog_warning": "Analog controls cannot be used unless Up/Down and Left/Right are mapped to the same axes.",
 		
 		"_options_menu_InputLabel_Touchscreen": "Touchscreen",
 		"_options_menu_InputLabel_Gamepad": "Controller",

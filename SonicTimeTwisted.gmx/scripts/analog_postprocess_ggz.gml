@@ -5,7 +5,7 @@ analog_x = 0;
 analog_y = 0;
 
 if (analog_angle mod 45 == 0) {
-    switch(angle) {
+    switch(analog_angle) {
         case 0:
             analog_x = analog_d;
             analog_y = 0;

@@ -71,6 +71,7 @@ alarm[1] = 1;
 max_move_speed = 8;
 direction_multiplier = -1.5;
 cannot_accelerate = true;
+decel = 0.1;
 analog_current_yaxis = 0;
 </string>
           </argument>
@@ -332,7 +333,13 @@ if (objProgram.inputManager.analog_applied) {
     max_move_speed = 8*abs(analog_y);
     direction_multiplier = -1.5*abs(analog_x);
     // give some leeway, allow to accelerate while running ALMOST straight
-    cannot_accelerate = abs(analog_x) &gt; 0.1;
+    if (abs(analog_x) &gt; 0.1) {
+        decel = max(0.1, analog_x/20.0);
+    }
+    else
+    {
+        decel = 0;
+    }
 } else {
     if (input_check(cLEFT)) xaxis = -1;
     else if (input_check(cRIGHT)) xaxis = 1;
@@ -344,7 +351,13 @@ if (objProgram.inputManager.analog_applied) {
     
     max_move_speed = 8;
     direction_multiplier = -1.5;
-    cannot_accelerate = (xaxis != 0);
+    if (xaxis != 0) {
+        decel = 0.1;
+    }
+    else
+    {
+        decel = 0;
+    }
 }
 
 }
@@ -417,16 +430,11 @@ if (bounce_timer)
 else
 if (yaxis == 0)
 {
-  f = 0.1;
-}
-else
-if (cannot_accelerate)
-{
-  f = 0.1;
+    f = 0.1;
 }
 else
 {
-  f = 0;
+    f = decel;
 }
 
 if (move_speed &gt; f) move_speed -= f;
