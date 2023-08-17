@@ -9,6 +9,7 @@ if(argument0) // argument0 - from INI, default values if false
     vkdeadzone = ini_read_real('smartphone','vkdeadzone',0.25);
     vkdeadzoness = ini_read_real('smartphone','vkdeadzoness',0.25);
     gyroinss = ini_read_real('smartphone','gyroinss',1);
+    gyroinss_axis = ini_read_real('smartphone','gyroinss_axis',2);
     vksize = ini_read_real('smartphone','vksize',0);
     dpadx = ini_read_real('smartphone','dpadx',64 - margin);
     dpady = ini_read_real('smartphone','dpady',178);
@@ -76,6 +77,7 @@ else
     
     // Gyroscope for special stages
     gyroinss = 1; // 0 - use d-pad to turn, 1 - use gyroscope
+    gyroinss_axis = 2; // 1, 2, 3 - x, y, z axes respectively; -1, -2, -3 - same axes, but inverted
     gyromode = 1; // 0 - gyroscope simply turns the buttons on and off; 1 - pseudo-analog mode
     gyro_switch_on_angle_x = 0.15; // angle on which the button is pressed
     gyro_analog_start_x = 0.139626; // angle from which the analog control starts
@@ -87,9 +89,6 @@ else
     
     // On start, the controls are invisible
     image_alpha = 0;
-    
-    // subscript for managing gyroscope in special stages
-    input_gyro_script = input_method_dummy_script;
     
     // special counter for the analog mode for gyroscope in special stages
     gyro_counter = 0;

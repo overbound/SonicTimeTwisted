@@ -11,8 +11,8 @@ else
     menu_fn_add_option(tr("_options_menu_gyroscope_Start_angle"), 2, true, "");
     menu_fn_add_option(tr("_options_menu_gyroscope_End_angle"), 3, true, "");
 }
-
-menu_fn_add_option(tr("_options_menu_Back"), 4);
+menu_fn_add_option(tr("_options_menu_touchscreen_sstage_Gyroscope_axis"), 4, true, "");
+menu_fn_add_option(tr("_options_menu_Back"), 5);
 
 button_width = 300;
 

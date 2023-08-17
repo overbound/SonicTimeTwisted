@@ -13,25 +13,28 @@ if(analog_angle > 29 && analog_angle < 151) {
         analog_y = 0;
     }
 }
-
-if (analog_angle < (90 - min_angle) && analog_angle > 30) {
-    // right
-    analog_x = clamp((90 - min_angle) - analog_angle, 0, max_angle)/max_angle;
-} else {
-    if (analog_angle > (270 + min_angle)  && analog_angle < 330) {
+// 
+if (!objProgram.inputManager.gyroinss) {
+    if (analog_angle < (90 - min_angle) && analog_angle > 30) {
         // right
-        analog_x = clamp(analog_angle - (270 + min_angle), 0, max_angle)/max_angle;
+        analog_x = clamp((90 - min_angle) - analog_angle, 0, max_angle)/max_angle;
     } else {
-        if (analog_angle > (90 + min_angle) && analog_angle < 150) {
-            // left
-            analog_x = clamp((90 + min_angle) - analog_angle, -max_angle, 0)/max_angle;
+        if (analog_angle > (270 + min_angle)  && analog_angle < 330) {
+            // right
+            analog_x = clamp(analog_angle - (270 + min_angle), 0, max_angle)/max_angle;
         } else {
-            if (analog_angle < (270 - min_angle) && analog_angle > 210) {
+            if (analog_angle > (90 + min_angle) && analog_angle < 150) {
                 // left
-                analog_x = clamp(analog_angle - (270 - min_angle), -max_angle, 0)/max_angle;
+                analog_x = clamp((90 + min_angle) - analog_angle, -max_angle, 0)/max_angle;
             } else {
-                analog_x = 0;
+                if (analog_angle < (270 - min_angle) && analog_angle > 210) {
+                    // left
+                    analog_x = clamp(analog_angle - (270 - min_angle), -max_angle, 0)/max_angle;
+                } else {
+                    analog_x = 0;
+                }
             }
         }
-    }
+    }    
 }
+

@@ -28,14 +28,6 @@ else
 {
     input_manage_script = input_method_ssgyro_rel;
 }
-if(gyromode)
-{
-    input_gyro_script = input_method_ssgyro_gyro_analog;
-}
-else
-{
-    input_gyro_script = input_method_ssgyro_gyro_simple;
-}
 input_rumble_manage_script = input_method_dummy_script;
 input_rumble_perform_script = rumble_perform_null;
 input_rumble_trigger_script = input_method_dummy_script;

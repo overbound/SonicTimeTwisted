@@ -14,6 +14,16 @@ switch(argument0)
         menu_fn_open_slider_window(3, tr("_options_menu_gyroscope_End_angle"), round(radtodeg(objProgram.inputManager.gyro_analog_end_x)), round(radtodeg(objProgram.inputManager.gyro_analog_start_x)) + 1, 90);
         break;
     case 4:
+        if (objProgram.inputManager.gyroinss_axis > 0) {
+            objProgram.inputManager.gyroinss_axis *= -1;
+        } else {
+            objProgram.inputManager.gyroinss_axis = 1 - objProgram.inputManager.gyroinss_axis;
+            if (objProgram.inputManager.gyroinss_axis >= 4) {
+                objProgram.inputManager.gyroinss_axis = 1;
+            }
+        }
+        break;
+    case 5:
     case -1:
         menu_fn_exit_submenu(menu_part_touchscreenss_items, 2);
         break;
@@ -23,6 +33,16 @@ switch(argument0)
             case 0:
                 objProgram.inputManager.gyromode = 1 - objProgram.inputManager.gyromode;
                 break;
+            case 4:
+                if (objProgram.inputManager.gyroinss_axis > 0) {
+                    objProgram.inputManager.gyroinss_axis = -(objProgram.inputManager.gyroinss_axis - 1);
+                    if (objProgram.inputManager.gyroinss_axis == 0) {
+                        objProgram.inputManager.gyroinss_axis = -3;
+                    }
+                } else {
+                    objProgram.inputManager.gyroinss_axis *= -1;
+                }
+                break;
         }
         break;
     case -3:
@@ -30,6 +50,16 @@ switch(argument0)
         {
             case 0:
                 objProgram.inputManager.gyromode = 1 - objProgram.inputManager.gyromode;
+                break;
+            case 4:
+                if (objProgram.inputManager.gyroinss_axis > 0) {
+                    objProgram.inputManager.gyroinss_axis *= -1;
+                } else {
+                    objProgram.inputManager.gyroinss_axis = 1 - objProgram.inputManager.gyroinss_axis;
+                    if (objProgram.inputManager.gyroinss_axis >= 4) {
+                        objProgram.inputManager.gyroinss_axis = 1;
+                    }
+                }
                 break;
         }
         break;
@@ -60,5 +90,33 @@ else
     menu_fn_calculate_width_add(2, true, 2); // value goes up to 90, so 2 symbols max
     menu_fn_calculate_width_add(3, true, 2); // value goes up to 90, so 2 symbols max
 }
+switch(objProgram.inputManager.gyroinss_axis) {
+    case 1:
+        menu_fn_refresh_displayed_value(4, "< "+tr("_options_menu_touchscreen_sstage_Gyroscope_axis_x")+" >");
+        break;
+    case -1:
+        menu_fn_refresh_displayed_value(4, "< "+tr("_options_menu_touchscreen_sstage_Gyroscope_axis_xinv")+" >");
+        break;
+    case 2:
+        menu_fn_refresh_displayed_value(4, "< "+tr("_options_menu_touchscreen_sstage_Gyroscope_axis_y")+" >");
+        break;
+    case -2:
+        menu_fn_refresh_displayed_value(4, "< "+tr("_options_menu_touchscreen_sstage_Gyroscope_axis_yinv")+" >");
+        break;
+    case 3:
+        menu_fn_refresh_displayed_value(4, "< "+tr("_options_menu_touchscreen_sstage_Gyroscope_axis_z")+" >");
+        break;
+    case -3:
+        menu_fn_refresh_displayed_value(4, "< "+tr("_options_menu_touchscreen_sstage_Gyroscope_axis_zinv")+" >");
+        break;
+}
+
+menu_fn_calculate_width_add(4, false, "< "+tr("_options_menu_touchscreen_sstage_Gyroscope_axis_x")+" >");
+menu_fn_calculate_width_add(4, false, "< "+tr("_options_menu_touchscreen_sstage_Gyroscope_axis_xinv")+" >");
+menu_fn_calculate_width_add(4, false, "< "+tr("_options_menu_touchscreen_sstage_Gyroscope_axis_y")+" >");
+menu_fn_calculate_width_add(4, false, "< "+tr("_options_menu_touchscreen_sstage_Gyroscope_axis_yinv")+" >");
+menu_fn_calculate_width_add(4, false, "< "+tr("_options_menu_touchscreen_sstage_Gyroscope_axis_z")+" >");
+menu_fn_calculate_width_add(4, false, "< "+tr("_options_menu_touchscreen_sstage_Gyroscope_axis_zinv")+" >");
+
 menu_fn_calculate_width_finish();
 return argument0 >= 1 && argument0 <= 3;

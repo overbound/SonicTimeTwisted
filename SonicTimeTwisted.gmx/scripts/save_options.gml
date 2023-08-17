@@ -20,6 +20,7 @@ if(instance_exists(objProgram.inputManager))
     ini_write_real('smartphone', 'dpadmode', objProgram.inputManager.dpadmode);
     ini_write_real('smartphone', 'vkalpha', objProgram.inputManager.vkalpha);
     ini_write_real('smartphone', 'gyroinss', objProgram.inputManager.gyroinss);
+    ini_write_real('smartphone', 'gyroinss_axis', objProgram.inputManager.gyroinss_axis);
     ini_write_real('smartphone', 'vksize', objProgram.inputManager.vksize);
     ini_write_real('smartphone', 'dpadx', objProgram.inputManager.dpadx);
     ini_write_real('smartphone', 'dpady', objProgram.inputManager.dpady);

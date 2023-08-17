@@ -233,6 +233,13 @@
 		"_options_menu_touchscreen_sstage_SliderDeadZone": "Zona morta (%)",
 		"_options_menu_touchscreen_sstage_DPad": "Freccette",
 		"_options_menu_touchscreen_sstage_Gyroscope": "Giroscopio",
+		"_options_menu_touchscreen_sstage_Gyroscope_axis": "Axis",
+		"_options_menu_touchscreen_sstage_Gyroscope_axis_x": "X",
+		"_options_menu_touchscreen_sstage_Gyroscope_axis_xinv": "X inverted",
+		"_options_menu_touchscreen_sstage_Gyroscope_axis_y": "Y",
+		"_options_menu_touchscreen_sstage_Gyroscope_axis_yinv": "Y inverted",
+		"_options_menu_touchscreen_sstage_Gyroscope_axis_z": "Z",
+		"_options_menu_touchscreen_sstage_Gyroscope_axis_zinv": "Z inverted",
 		
 		"_buttonname_Up": "Sù",
 		"_buttonname_Down": "Giù",

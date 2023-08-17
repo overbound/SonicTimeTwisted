@@ -22,6 +22,7 @@ import com.yoyogames.runner.RunnerJNILib;
 
 import android.app.UiModeManager;
 import android.content.Context;
+import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.hardware.input.InputManager;
 import android.os.Vibrator;
@@ -906,6 +907,13 @@ public class SttAndroid extends ExtensionBase {
             return 1.0;
         }
         return 0.0;
+    }
+
+    public double sttandroid_device_has_gyroscope() {
+        return RunnerJNILib.GetApplicationContext().getPackageManager()
+                .hasSystemFeature(
+                        PackageManager.FEATURE_SENSOR_GYROSCOPE
+                ) ? 1.0 : 0.0;
     }
 
     public double sttandroid_gamepad_set_analog_controls_enabled(double inputNumber, double enabled) {

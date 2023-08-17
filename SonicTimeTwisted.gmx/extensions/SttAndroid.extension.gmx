@@ -624,6 +624,15 @@
             <arg>2</arg>
           </args>
         </function>
+        <function>
+          <name>sttandroid_device_has_gyroscope</name>
+          <externalName>sttandroid_device_has_gyroscope</externalName>
+          <kind>11</kind>
+          <help>sttandroid_device_has_gyroscope()</help>
+          <returnType>2</returnType>
+          <argCount>-1</argCount>
+          <args/>
+        </function>
       </functions>
       <constants/>
     </file>

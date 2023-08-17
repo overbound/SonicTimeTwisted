@@ -3,7 +3,7 @@ menu_fn_draw_default();
 var tilt_value = 0;
 with(objProgram.inputManager)
 {
-    var tilt_x = device_get_tilt_y();
+    var tilt_x = get_gyroscope_value();
     tilt_value = 0;
     
     if(gyromode == 0)

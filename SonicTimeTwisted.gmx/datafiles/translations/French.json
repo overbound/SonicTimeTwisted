@@ -232,6 +232,13 @@
 		"_options_menu_touchscreen_sstage_SliderDeadZone": "Zone morte (%)",
 		"_options_menu_touchscreen_sstage_DPad": "Croix dir.",
 		"_options_menu_touchscreen_sstage_Gyroscope": "Gyroscope",
+		"_options_menu_touchscreen_sstage_Gyroscope_axis": "Axe",
+		"_options_menu_touchscreen_sstage_Gyroscope_axis_x": "X",
+		"_options_menu_touchscreen_sstage_Gyroscope_axis_xinv": "X inversé",
+		"_options_menu_touchscreen_sstage_Gyroscope_axis_y": "Y",
+		"_options_menu_touchscreen_sstage_Gyroscope_axis_yinv": "Y inversé",
+		"_options_menu_touchscreen_sstage_Gyroscope_axis_z": "Z",
+		"_options_menu_touchscreen_sstage_Gyroscope_axis_zinv": "Z inversé",
 		
 		"_buttonname_Up": "Haut",
 		"_buttonname_Down": "Bas",

@@ -7,6 +7,8 @@ if(smartphone_controls_enabled)
     {
         var input_state = 0;
         var dpx, dpy, p_distance;
+        analog_x = 0;
+        analog_y = 0;
         
         joyx = dpadx;
         joyy = dpady;
@@ -109,35 +111,51 @@ if(smartphone_controls_enabled)
                 p_distance = point_distance(dpadx, dpady, dpx, dpy);
                 if(p_distance > 2)
                 {
-                    var d_direction = point_direction(dpadx, dpady, dpx, dpy);
-                    var d_radians = degtorad(d_direction);
-                    joyx = dpx;
-                    joyy = dpy;
-                    // draw the joystick under the thumb, but dont'd draw it completely outside of the base
-                    if(!point_in_circle(joyx, joyy, dpadx, dpady, bar))
-                    {
-                        joyx = dpadx + cos(d_radians) * bar;
-                        joyy = dpady - sin(d_radians) * bar;
+                    if (analog_enabled) {
+                        joyx = dpx;
+                        joyy = dpy;
+                        // draw the joystick under the thumb, but dont'd draw it completely outside of the base
+                        if(!point_in_circle(joyx, joyy, dpadx, dpady, bar))
+                        {
+                            var d_direction = point_direction(dpadx, dpady, dpx, dpy);
+                            joyx = dpadx + dcos(d_direction) * bar;
+                            joyy = dpady - dsin(d_direction) * bar;
+                        }
+                        analog_x = clamp((joyx - dpadx)/bar, -1, 1);
+                        analog_y = clamp((joyy - dpady)/bar, -1, 1);
+                        analog_d = 0.0;
+                        script_execute(input_analog_script);
+                    } else {
+                        var d_direction = point_direction(dpadx, dpady, dpx, dpy);
+                        joyx = dpx;
+                        joyy = dpy;
+                        // draw the joystick under the thumb, but dont'd draw it completely outside of the base
+                        if(!point_in_circle(joyx, joyy, dpadx, dpady, bar))
+                        {
+                            joyx = dpadx + dcos(d_direction) * bar;
+                            joyy = dpady - dsin(d_direction) * bar;
+                        }
+                        if(p_distance > used_deadzone)
+                        {
+                            if(d_direction <= 55 || d_direction >= 305)
+                            {
+                                input_state |= cRIGHT;
+                            }
+                            if (d_direction >= 35 && d_direction <= 145)
+                            {
+                                input_state |= cUP;
+                            }
+                            if (d_direction >= 125 && d_direction <= 235)
+                            {
+                                input_state |= cLEFT;
+                            }
+                            if (d_direction >= 215 && d_direction <= 325)
+                            {
+                                input_state |= cDOWN;
+                            }
+                        }
                     }
-                    if(p_distance > used_deadzone)
-                    {
-                        if(d_direction <= 55 || d_direction >= 305)
-                        {
-                            input_state |= cRIGHT;
-                        }
-                        if (d_direction >= 35 && d_direction <= 145)
-                        {
-                            input_state |= cUP;
-                        }
-                        if (d_direction >= 125 && d_direction <= 235)
-                        {
-                            input_state |= cLEFT;
-                        }
-                        if (d_direction >= 215 && d_direction <= 325)
-                        {
-                            input_state |= cDOWN;
-                        }
-                    }
+                    
                     joyalpha = 1;          
                 }
             }

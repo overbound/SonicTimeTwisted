@@ -237,6 +237,13 @@
 		"_options_menu_touchscreen_sstage_SliderDeadZone": "Мёртвая зона (%)",
 		"_options_menu_touchscreen_sstage_DPad": "Крестовина",
 		"_options_menu_touchscreen_sstage_Gyroscope": "Гироскоп",
+		"_options_menu_touchscreen_sstage_Gyroscope_axis": "Ось",
+		"_options_menu_touchscreen_sstage_Gyroscope_axis_x": "X",
+		"_options_menu_touchscreen_sstage_Gyroscope_axis_xinv": "Перевёрнутый X",
+		"_options_menu_touchscreen_sstage_Gyroscope_axis_y": "Y",
+		"_options_menu_touchscreen_sstage_Gyroscope_axis_yinv": "Перевёрнутый Y",
+		"_options_menu_touchscreen_sstage_Gyroscope_axis_z": "Z",
+		"_options_menu_touchscreen_sstage_Gyroscope_axis_zinv": "Перевёрнутый Z",
 
 		"_buttonname_Up": "Вверх",
 		"_buttonname_Down": "Вниз",

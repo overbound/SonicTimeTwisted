@@ -167,6 +167,13 @@
 		"_options_menu_touchscreen_sstage_SliderDeadZone": "Dead zone (%)",
 		"_options_menu_touchscreen_sstage_DPad": "D-Pad",
 		"_options_menu_touchscreen_sstage_Gyroscope": "Gyroscope",
+		"_options_menu_touchscreen_sstage_Gyroscope_axis": "Axis",
+		"_options_menu_touchscreen_sstage_Gyroscope_axis_x": "X",
+		"_options_menu_touchscreen_sstage_Gyroscope_axis_xinv": "X inverted",
+		"_options_menu_touchscreen_sstage_Gyroscope_axis_y": "Y",
+		"_options_menu_touchscreen_sstage_Gyroscope_axis_yinv": "Y inverted",
+		"_options_menu_touchscreen_sstage_Gyroscope_axis_z": "Z",
+		"_options_menu_touchscreen_sstage_Gyroscope_axis_zinv": "Z inverted",
 		
 		"_buttonname_Up": "Up",
 		"_buttonname_Down": "Down",

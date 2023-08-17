@@ -1,5 +1,4 @@
 ///set_input_method(method, asFallback, ?autoDetectedMethod)
-show_debug_message('set_input_method');
 
 if (argument_count >= 3) {
     objProgram.inputManager.input_method_autodetected = argument[2];
@@ -20,7 +19,6 @@ if(objProgram.device_info & DEVICE_OS_ANDROID) {
     switch(argument[0])
     {
         case INPUT_KEYBOARD:
-            show_debug_message('sttandroid_mode_set(2)');
             sttandroid_mode_set(2);
             set_input_method_detailed(
                 input_method_init_android_btusb,
@@ -33,7 +31,6 @@ if(objProgram.device_info & DEVICE_OS_ANDROID) {
             );
             break;
         case INPUT_TOUCHSCREEN:
-            show_debug_message('sttandroid_mode_set(0)');
             sttandroid_mode_set(0);
             set_input_method_detailed(
                 input_method_init_smartphone,
@@ -46,7 +43,6 @@ if(objProgram.device_info & DEVICE_OS_ANDROID) {
             );
             break;
         case INPUT_GAMEPAD:
-            show_debug_message('sttandroid_mode_set(1)');
             sttandroid_mode_set(1);
             set_input_method_detailed(
                 input_method_init_android_btusb,
@@ -59,7 +55,6 @@ if(objProgram.device_info & DEVICE_OS_ANDROID) {
             );
             break;       
         case INPUT_AUTO:
-            show_debug_message('sttandroid_mode_set(3)');
             sttandroid_mode_set(3);
             set_input_method_detailed(
                 input_method_init_android_auto,

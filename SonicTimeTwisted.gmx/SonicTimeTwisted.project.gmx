@@ -4075,9 +4075,8 @@
               <script>scripts\input_method_touchscreen_abs.gml</script>
               <script>scripts\input_method_ssgyro_abs.gml</script>
               <script>scripts\input_method_ssgyro_rel.gml</script>
-              <script>scripts\input_method_ssgyro_gyro_simple.gml</script>
-              <script>scripts\input_method_ssgyro_gyro_analog.gml</script>
               <script>scripts\input_method_touchscreen_rel.gml</script>
+              <script>scripts\get_gyroscope_value.gml</script>
             </scripts>
             <scripts name="Android">
               <script>scripts\input_method_init_android_btusb.gml</script>

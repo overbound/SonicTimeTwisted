@@ -6,13 +6,24 @@ if(smartphone_controls_enabled)
     if(!objScreen.paused)
     {
         var input_state = 0;
+        var analog_used = false;
+        analog_x = get_gyroscope_value();
+        analog_y = 0;
+        if (!gyromode) {
+            if (analog_x <= -gyro_switch_on_angle_x) {
+                input_state |= cLEFT;
+            } else {
+                if (analog_x >= gyro_switch_on_angle_x) {
+                    input_state |= cRIGHT;
+                }
+            }
+            analog_x = 0;
+        }
         var dpx, dpy, p_distance;
         joyx = dpadx;
         joyy = dpady;
         current_dpadx = dpadx;
         current_dpady = dpady;
-        // gyroscope
-        input_state |= script_execute(input_gyro_script);
         for(var device = 0; device <= 4; device++)
         {
             if (device == dpad_device_id)
@@ -67,29 +78,46 @@ if(smartphone_controls_enabled)
                 p_distance = point_distance(dpadx, dpady, dpx, dpy);
                 if(p_distance > 2)
                 {
-                    var d_direction = point_direction(dpadx, dpady, dpx, dpy);
-                    var d_radians = degtorad(d_direction);
-                    joyx = current_dpadx;
-                    joyy = dpy;
-                    // draw the joystick under the thumb, but dont'd draw it completely outside of the base
-                    if(!point_in_circle(joyx, joyy, dpadx, dpady, bar))
-                    {
-                        joyx = dpadx;
-                        joyy = dpady - sin(d_radians) * bar;
-                    }
-                    if(p_distance > used_deadzone)
-                    {
-                        if(d_direction <= 180)
+                    if (analog_enabled) {
+                        joyx = current_dpadx;
+                        joyy = dpy;
+                        // draw the joystick under the thumb, but dont'd draw it completely outside of the base
+                        if(!point_in_circle(joyx, joyy, dpadx, dpady, bar))
                         {
-                            input_state |= cUP;
+                            var d_direction = point_direction(dpadx, dpady, dpx, dpy);
+                            joyx = dpadx + dcos(d_direction) * bar;
+                            joyy = dpady - dsin(d_direction) * bar;
                         }
-                        else
+                        analog_y = clamp((joyy - dpady)/bar, -1, 1);
+                        analog_d = 0.0;
+                        analog_used = true;
+                    } else {
+                        var d_direction = point_direction(dpadx, dpady, dpx, dpy);
+                        joyx = current_dpadx;
+                        joyy = dpy;
+                        // draw the joystick under the thumb, but dont'd draw it completely outside of the base
+                        if(!point_in_circle(joyx, joyy, dpadx, dpady, bar))
                         {
-                            input_state |= cDOWN;
+                            joyx = dpadx;
+                            joyy = dpady - dsin(d_direction) * bar;
+                        }
+                        if(p_distance > used_deadzone)
+                        {
+                            if(d_direction <= 180)
+                            {
+                                input_state |= cUP;
+                            }
+                            else
+                            {
+                                input_state |= cDOWN;
+                            }
                         }
                     }
                 }
             }
+        }
+        if (analog_used) {
+            script_execute(input_analog_script);        
         }
         objProgram.inputManager.state |= input_state;
     }
