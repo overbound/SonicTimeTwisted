@@ -125,69 +125,27 @@ lines[15, 1] = 'Alex Khayrullin';
 lines[15, 2] = 'bennascar';
 lines[15, 3] = 'Romulo Santos';
 
-// Inject localization author(s)
-var langname = tr_get_lang_creditsname();
-if(langname != "")
-{
-    var authors_main = tr_get_lang_authors(true);
-    var authors_contrib = tr_get_lang_authors(false);
-    
-    var include_authors_main  = string_length(authors_main) &gt; 0;
-    var include_authors_contrib  = string_length(authors_contrib) &gt; 0;
-    
-    var section_cursor = 16;
-    if(include_authors_main || include_authors_contrib)
-    {
-        lines[section_cursor, 0] = "LOCALIZATION";
-        section_cursor++;
-        lines[section_cursor, 0] = langname;
-        var name_cursor = 1;
-        var names;
-        if(include_authors_main)
-        {
-            names = string_explode(chr(10), authors_main);
-            if(include_authors_contrib)
-            {
-                section_cursor++;
-                if(array_length_1d(names) == 1)
-                {
-                    lines[section_cursor, 0] = "Main author";                
-                }
-                else
-                {
-                    lines[section_cursor, 0] = "Main authors";
-                }
-                name_cursor=1;
+lines[16, 0] = "LOCALIZATION";
+
+// Inject localization authors
+var languages = tr_get_language_codes();
+
+for(var l = 0; l &lt; array_length_1d(languages); l++) {
+    if (languages[l] != "en") {
+        var array_index = array_height_2d(lines);
+        lines[array_index, 0] = tr_get_lang_creditsname(languages[l]);
+        lines[array_index, 1] = tr_get_lang_authors(true, languages[l]);    
+        var contrib = tr_get_lang_authors(false, languages[l])
+        if (contrib != "") {
+            var contrib_counter = 2;
+            while (string_pos(",", contrib)) {
+                lines[array_index, contrib_counter] = string_copy(contrib, 0, string_pos(",", contrib) - 1);
+                contrib = string_copy(contrib, string_pos(",", contrib) + 1, string_length(contrib) - string_pos(",", contrib) - 1)
             }
-            for(var i = 0 ; i &lt; array_length_1d(names); i++)
-            {
-                lines[section_cursor, name_cursor] = names[i];
-                name_cursor++;
-            }
-        }
-        if(include_authors_contrib)
-        {
-            names = string_explode(chr(10), authors_contrib);
-            if(include_authors_main)
-            {
-                section_cursor++;
-                if(array_length_1d(names) == 1)
-                {
-                    lines[section_cursor, 0] = "Contributor";                
-                }
-                else
-                {
-                    lines[section_cursor, 0] = "Contributors";
-                }
-                name_cursor=1;
-            }
-            for(var i = 0 ; i &lt; array_length_1d(names); i++)
-            {
-                lines[section_cursor, name_cursor] = names[i];
-                name_cursor++;
-            }
+            lines[array_index, contrib_counter] = contrib;  
         }
     }
+    
 }
 
 // the array above is designed to be easy to edit, now we're converting it to the format we'll actually use

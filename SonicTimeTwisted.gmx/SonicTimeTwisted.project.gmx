@@ -4455,6 +4455,7 @@
         <script>scripts\tr_free_localized_sprites.gml</script>
         <script>scripts\tr_stream_loc_sound.gml</script>
         <script>scripts\tr_get_prepend.gml</script>
+        <script>scripts\tr_get_language_codes.gml</script>
       </scripts>
     </scripts>
     <scripts name="Overlays">
