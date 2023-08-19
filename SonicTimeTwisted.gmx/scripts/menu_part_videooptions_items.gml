@@ -14,6 +14,7 @@ if (objProgram.device_info & DEVICE_TYPE_COMPUTER)
     menu_fn_add_option(tr("_graphics_menu_VSync"), 3, 1, "");
 }
 menu_fn_add_option(tr("_graphics_menu_Timer"), 4, 1, "");
+menu_fn_add_option(tr("_graphics_menu_Shield"), 7, 1, "");
 menu_fn_add_option(tr("_options_menu_Back"), 5);
 
 action_script = menu_part_videooptions_actions;

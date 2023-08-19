@@ -29,6 +29,9 @@ switch(argument0)
             event_user(6);
         }
         break;
+    case 7:
+        objScreen.show_shield = !objScreen.show_shield;
+        break;
     case -2:
         // left key
         switch(items[cursor, 1])
@@ -65,6 +68,9 @@ switch(argument0)
                     event_user(7);
                 }
                 break;
+            case 7:
+                objScreen.show_shield = !objScreen.show_shield;
+                break;
         }
         break;
     case -3:
@@ -95,6 +101,9 @@ switch(argument0)
                 {
                     event_user(6);
                 }
+                break;
+            case 7:
+                objScreen.show_shield = !objScreen.show_shield;
                 break;
         }
         break;
@@ -186,10 +195,17 @@ else
     menu_fn_refresh_displayed_value(6, offLabel);
 }
 
+if(objScreen.show_shield) {
+    menu_fn_refresh_displayed_value(7, onLabel);
+} else {
+    menu_fn_refresh_displayed_value(7, offLabel);
+}
+
 menu_fn_calculate_width_add(1, false, tallyLabel1, tallyLabel2, tallyLabel3);
 menu_fn_calculate_width_add(2, false, onLabel, offLabel);
 menu_fn_calculate_width_add(4, false, timerLabel1, timerLabel2);
 menu_fn_calculate_width_add(6, false, onLabel, offLabel, onlyGUIlabel);
+menu_fn_calculate_width_add(7, false, onLabel, offLabel);
 
 menu_fn_calculate_width_finish();
 // preserve the cursor value - usually false for the sake of touchscreen controls

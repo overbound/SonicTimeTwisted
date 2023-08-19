@@ -144,6 +144,7 @@ prev_video_mode = video_mode; // only used by Alt-Enter.
 altenter_hold = false;
 score_tally_mode = 0;
 timer_mode = 0;
+show_shield = 1;
 /**
 Set initial max scale
 **/

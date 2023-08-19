@@ -14,6 +14,7 @@ if (stt_file_exists(file)) {
         score_tally_mode = ini_read_real('video_options', "score_tally_mode", 0);
         vsync = ini_read_real('video_options', "vsync", true);
         timer_mode = ini_read_real('video_options', "timer_mode", 0);
+        show_shield = ini_read_real('video_options', "show_shield", 1);
         var this_fmt = ini_read_real('video_options', "format_version", options_format_none);
         if (this_fmt == options_format_none) {
             /* need to convert videomode */
