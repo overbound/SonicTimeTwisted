@@ -13,6 +13,9 @@ if(state == 17)
             value_multipled = menu_fn_sync_slider(value_multipled);
             objProgram.inputManager.vkdeadzone = value_multipled/100;        
         break;
+        case 10:
+            objProgram.inputManager.vkdetection = menu_fn_sync_slider(objProgram.inputManager.vkdetection);
+        break;
     }
 
 }

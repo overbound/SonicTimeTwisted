@@ -4,7 +4,7 @@ switch(argument0)
     case -1:
         if(input_check_gamepad_bindings_complete())
         {
-            menu_fn_exit_submenu(menu_part_options_items, 3);
+            menu_fn_exit_submenu(menu_part_input_items, 6);
         }
         else
         {

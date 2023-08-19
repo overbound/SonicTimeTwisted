@@ -20,10 +20,13 @@ switch(argument0)
         break;
     case 6:
     case -1:
-        menu_fn_exit_submenu(menu_part_options_items, 6);
+        menu_fn_exit_submenu(menu_part_input_items, 5);
         break;
     case 9:
         menu_fn_open_slider_window(9, tr("_options_menu_touchscreen_DeadzoneSlider"), round(objProgram.inputManager.vkdeadzone*100), 5, 95);
+        break;
+    case 10:
+        menu_fn_open_slider_window(10, tr("_options_menu_touchscreen_DetectionSlider"), objProgram.inputManager.vkdetection, 100, 300);
         break;
     case -2:
         // left key
@@ -136,9 +139,11 @@ menu_fn_calculate_width_add(5, false, option1Label, option2Label);
 var alphaLabel = string(round(objProgram.inputManager.vkalpha*100))+'%';
 menu_fn_refresh_displayed_value(3, alphaLabel);
 menu_fn_refresh_displayed_value(9, string(round(objProgram.inputManager.vkdeadzone*100))+'%');
+menu_fn_refresh_displayed_value(10, string(objProgram.inputManager.vkdetection)+'%');
 
 menu_fn_calculate_width_add(3, true, 4);
 menu_fn_calculate_width_add(9, true, 4);
+menu_fn_calculate_width_add(10, true, 4);
 
 menu_fn_calculate_width_finish();
 // preserve the cursor value - usually false for the sake of touchscreen controls

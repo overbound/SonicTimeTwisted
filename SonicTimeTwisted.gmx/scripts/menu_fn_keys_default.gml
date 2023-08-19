@@ -161,3 +161,10 @@ if(state == 17)
         state = 18;
     }
 }
+if(state == 27)
+{
+    if(ok_press || cancel_press)
+    {
+        state = 28;
+    }
+}

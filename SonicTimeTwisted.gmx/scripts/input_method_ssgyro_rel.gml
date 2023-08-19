@@ -34,7 +34,7 @@ if(smartphone_controls_enabled)
                 
                 // jump button
                 if(point_in_circle(device_mouse_x_to_gui(device), device_mouse_y_to_gui(device),
-                    bax, bay, bar
+                    bax, bay, bard
                 ))
                 {
                     input_state |= cC;

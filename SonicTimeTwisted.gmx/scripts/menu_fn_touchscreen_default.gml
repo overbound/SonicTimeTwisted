@@ -297,4 +297,36 @@ switch(state)
             }
         }
         break;
+    case 27:
+        if(mouse_check_button_pressed(mb_left))
+        {
+            mx = device_mouse_x_to_gui(0) + gui_click_offset_x;
+            my = device_mouse_y_to_gui(0) + gui_click_offset_y;
+            
+            if(mx < internal__draw_confirmation_rect_x1 || mx > internal__draw_confirmation_rect_x2 ||
+              my < internal__draw_confirmation_rect_y1 || my > internal__draw_confirmation_rect_y2)
+            
+            {
+                state = 28;
+            }
+            else
+            {
+                if(my >= internal__draw_confirmation_buttons_y && my <= internal__draw_confirmation_buttons_y + 21)
+                {
+                    if(mx >= internal__draw_confirmation_yes_button_x1 && mx <= internal__draw_confirmation_yes_button_x2 + 9)
+                    {
+                        state = 28;
+                    }
+                }
+            }
+            
+        }
+        else
+        {
+            if(cancel_press)
+            {
+                state = 28;
+            }
+        }
+        break;
 }

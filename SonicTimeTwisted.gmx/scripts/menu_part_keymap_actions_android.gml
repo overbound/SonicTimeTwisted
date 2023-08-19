@@ -4,7 +4,7 @@ switch(argument0)
     case -1:
         if(sttandroid_keyboard_swmap_is_complete(0))
         {
-            menu_fn_exit_submenu(menu_part_options_items, 2);
+            menu_fn_exit_submenu(menu_part_input_items, 2);
         }
         else
         {

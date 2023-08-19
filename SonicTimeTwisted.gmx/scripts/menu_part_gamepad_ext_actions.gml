@@ -1,10 +1,11 @@
+var gamepad_present = objProgram.inputManager.pad > -1;
 switch(argument0)
 {
     case 10:
     case -1:
         if(input_check_gamepad_bindings_complete())
         {
-            menu_fn_exit_submenu(menu_part_options_items, 9);
+            menu_fn_exit_submenu(menu_part_input_items, 3);
         }
         else
         {
@@ -24,63 +25,99 @@ switch(argument0)
          break;
     case 1:
         // general mapping - prepare a map for a backup, then engage!
-        if(ds_exists(temp_map, ds_type_map))
-        {
-            ds_map_destroy(temp_map);
-        }
-        temp_map = ds_map_create();
-        var im = objProgram.inputManager;
-        for(var i=0; i < im.button_count; i++)
-        {
-            ds_map_add(temp_map, im.button_control[i], string(im.button[i]));
-        }
-        for(var i=0; i < im.axis_count; i++)
-        {
-            var stored_key = string(im.axis[i]);
-            if(im.axis_direction[i] < 0)
+        if (gamepad_present) {
+            if(ds_exists(temp_map, ds_type_map))
             {
-                stored_key = '-'+stored_key;
+                ds_map_destroy(temp_map);
             }
-            else
+            temp_map = ds_map_create();
+            var im = objProgram.inputManager;
+            for(var i=0; i < im.button_count; i++)
             {
-                stored_key = '+'+stored_key;            
+                ds_map_add(temp_map, im.button_control[i], string(im.button[i]));
             }
-            var key_control = im.axis_control[i];
-            ds_map_add(temp_map, key_control, stored_key);
+            for(var i=0; i < im.axis_count; i++)
+            {
+                var stored_key = string(im.axis[i]);
+                if(im.axis_direction[i] < 0)
+                {
+                    stored_key = '-'+stored_key;
+                }
+                else
+                {
+                    stored_key = '+'+stored_key;            
+                }
+                var key_control = im.axis_control[i];
+                ds_map_add(temp_map, key_control, stored_key);
+            }
+            menu_part_gamepad_ext_actions(21);
+        } else {
+            menu_fn_open_warning_window(tr('_options_menu_Gamepad_warning_none'));
         }
-        menu_part_gamepad_ext_actions(21);
         break;
     case 2:
         // individual map - button Up
-        menu_fn_open_mapping_window(tr_format(tr("_options_menu_keymap_press"), tr("_buttonname_Up")), cUP, 11);
+        if (gamepad_present) {
+            menu_fn_open_mapping_window(tr_format(tr("_options_menu_keymap_press"), tr("_buttonname_Up")), cUP, 11);
+        } else {
+            menu_fn_open_warning_window(tr('_options_menu_Gamepad_warning_none'));
+        }
         break;
     case 3:
         // individual map - button Down
-        menu_fn_open_mapping_window(tr_format(tr("_options_menu_keymap_press"), tr("_buttonname_Down")), cDOWN, 11);
+        if (gamepad_present) {
+            menu_fn_open_mapping_window(tr_format(tr("_options_menu_keymap_press"), tr("_buttonname_Down")), cDOWN, 11);
+        } else {
+            menu_fn_open_warning_window(tr('_options_menu_Gamepad_warning_none'));
+        }
         break;
     case 4:
         // individual map - button Left
-        menu_fn_open_mapping_window(tr_format(tr("_options_menu_keymap_press"), tr("_buttonname_Left")), cLEFT, 11);
+        if (gamepad_present) {
+            menu_fn_open_mapping_window(tr_format(tr("_options_menu_keymap_press"), tr("_buttonname_Left")), cLEFT, 11);
+        } else {
+            menu_fn_open_warning_window(tr('_options_menu_Gamepad_warning_none'));
+        }
         break;
     case 5:
         // individual map - button Right
-        menu_fn_open_mapping_window(tr_format(tr("_options_menu_keymap_press"), tr("_buttonname_Right")), cRIGHT, 11);
+        if (gamepad_present) {
+            menu_fn_open_mapping_window(tr_format(tr("_options_menu_keymap_press"), tr("_buttonname_Right")), cRIGHT, 11);
+        } else {
+            menu_fn_open_warning_window(tr('_options_menu_Gamepad_warning_none'));
+        }
         break;
     case 6:
         // individual map - button A
-        menu_fn_open_mapping_window(tr_format(tr("_options_menu_keymap_press"), tr("_buttonname_A")), cA, 11);
+        if (gamepad_present) {
+            menu_fn_open_mapping_window(tr_format(tr("_options_menu_keymap_press"), tr("_buttonname_A")), cA, 11);
+        } else {
+            menu_fn_open_warning_window(tr('_options_menu_Gamepad_warning_none'));
+        }
         break;
     case 7:
         // individual map - button B
-        menu_fn_open_mapping_window(tr_format(tr("_options_menu_keymap_press"), tr("_buttonname_B")), cB, 11);
+        if (gamepad_present) {
+            menu_fn_open_mapping_window(tr_format(tr("_options_menu_keymap_press"), tr("_buttonname_B")), cB, 11);
+        } else {
+            menu_fn_open_warning_window(tr('_options_menu_Gamepad_warning_none'));
+        }
         break;
     case 8:
         // individual map - button C
-        menu_fn_open_mapping_window(tr_format(tr("_options_menu_keymap_press"), tr("_buttonname_C")), cC, 11);
+        if (gamepad_present) {
+            menu_fn_open_mapping_window(tr_format(tr("_options_menu_keymap_press"), tr("_buttonname_C")), cC, 11);
+        } else {
+            menu_fn_open_warning_window(tr('_options_menu_Gamepad_warning_none'));
+        }
         break;
     case 9:
         // individual map - button Start
-        menu_fn_open_mapping_window(tr_format(tr("_options_menu_keymap_press"), tr("_buttonname_Start")), cSTART, 11);
+        if (gamepad_present) {
+            menu_fn_open_mapping_window(tr_format(tr("_options_menu_keymap_press"), tr("_buttonname_Start")), cSTART, 11);
+        } else {
+            menu_fn_open_warning_window(tr('_options_menu_Gamepad_warning_none'));
+        }
         break;
     case 11:
         // individual map = save everything
@@ -146,7 +183,7 @@ switch(argument0)
         menu_fn_open_slider_window(1, tr('_options_menu_Gamepad_deadzone'), objProgram.inputManager.deadzone_int, 5, 95);
         break;
     case 34:
-        menu_fn_goto_submenu(menu_part_gamepad_analog_items);
+        menu_fn_goto_submenu(menu_part_analog_controls_items);
         break;
     case -2:
     case -3:

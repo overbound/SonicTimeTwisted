@@ -28,7 +28,7 @@ if(smartphone_controls_enabled)
                 
                 // jump button
                 if(point_in_circle(device_mouse_x_to_gui(device), device_mouse_y_to_gui(device),
-                    bax, bay, bar
+                    bax, bay, bard
                 ))
                 {
                     input_state |= cC;
@@ -39,7 +39,7 @@ if(smartphone_controls_enabled)
                 if (dpad_device_id == noone)
                 {
                     p_distance = point_distance(dpadx, dpady, dpx, dpy);
-                    if(p_distance > 2 && p_distance <= bar * 2)
+                    if(p_distance > 2 && p_distance <= bard)
                     {
                         dpad_device_id = device;
                         continue;

@@ -1,3 +1,4 @@
+var gamepad_present = sttandroid_mode_get() > 0;
 switch(argument0)
 {
     case 10:
@@ -6,7 +7,7 @@ switch(argument0)
         {
             if(sttandroid_gamepad_swmap_is_complete(0))
             {
-                menu_fn_exit_submenu(menu_part_options_items, 9);
+            menu_fn_exit_submenu(menu_part_input_items, 3);
             }
             else
             {

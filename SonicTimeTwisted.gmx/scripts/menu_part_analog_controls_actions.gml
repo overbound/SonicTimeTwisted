@@ -11,7 +11,11 @@ switch(argument0)
         break;
     case 3:
     case -1:
-        menu_fn_exit_submenu(menu_part_gamepad_ext_items, 34);
+        if(objProgram.device_info & DEVICE_TYPE_SMARTPHONE) {
+            menu_fn_exit_submenu(menu_part_input_items, 7);
+        } else {
+            menu_fn_exit_submenu(menu_part_gamepad_ext_items, 34);
+        }
         break;
     case -2:
     case -3:

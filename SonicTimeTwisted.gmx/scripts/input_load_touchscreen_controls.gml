@@ -28,6 +28,7 @@ if(argument0) // argument0 - from INI, default values if false
     haptics_strength = round(ini_read_real('smartphone', 'haptics_strength', 50));
     haptics_duration = round(ini_read_real('smartphone', 'haptics_duration', 5));
     rumble_strength = ini_read_real('smartphone', 'rumble_strength', 1);
+    vkdetection = ini_read_real('smartphone','vkdetection', 200);
 }
 else
 {
@@ -63,6 +64,7 @@ else
     
     // direction pad & A button radius
     bar = 32;
+    bard = 32;
     
     // Start button coordinates
     bsx = screen_width/2 - margin;
@@ -99,6 +101,9 @@ else
     haptics_strength = 50;
     haptics_duration = 5;
     rumble_strength = 1;
+    
+    // detection range for touchscreen buttons - in percents of their radius
+    vkdetection = 200;
 }
     
 used_deadzone = 10;

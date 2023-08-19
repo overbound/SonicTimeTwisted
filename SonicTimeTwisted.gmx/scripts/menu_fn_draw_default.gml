@@ -358,14 +358,16 @@ switch(state)
             case 16:
             case 18:
             case 19:
-            case 22:        
+            case 22:    
+            case 26:     
+            case 28:        
                 var width_offset = 0;
-                if(state == 9 || state == 12 || state == 16 || state == 19)
+                if(state == 9 || state == 12 || state == 16 || state == 19 || state == 26)
                 {   
                     width_offset = round((internal__draw_confirmation_rect_x2 - internal__draw_confirmation_rect_x1 ) / 20 * (10 - timer));
                     draw_set_alpha(timer/20);
                 }
-                if(state == 11 || state == 15 || state == 18 || state == 22)
+                if(state == 11 || state == 15 || state == 18 || state == 22 || state == 28)
                 {
                     width_offset = round((internal__draw_confirmation_rect_x2 - internal__draw_confirmation_rect_x1 ) / 20 * timer);
                     draw_set_alpha(0.5 - (timer/20));
@@ -393,6 +395,7 @@ switch(state)
             case 17:
             case 20:
             case 21:
+            case 27:
                 draw_set_alpha(0.5);
                 draw_rectangle_colour(0, 0, 512, 256, c_black, c_black, c_black, c_black, false);
                 draw_set_alpha(1);
@@ -532,36 +535,75 @@ switch(state)
                 }
                 else
                 {
-                    if(state == 13 || state == 14 || state == 20 || state == 21)
+                    if(state == 27)
                     {
                         draw_set_halign(fa_center);
                         draw_set_font(objResources.fontHudMin);
                         draw_set_colour(c_white);
-                        draw_text(internal__draw_confirmation_rect_x_center, internal__draw_confirmation_rect_y1 + margin, confirmation_text);
+                        draw_text_ext(internal__draw_menu_rect_x_center + 4, internal__draw_confirmation_rect_y1 + margin, confirmation_text, 16, objScreen.gui_width - 4*margin);
+                    
+                        var sprite_image = 1;
+                        var text_color = c_white;
+                        var text_offset = 0;
+                        draw_set_font(objResources.fontHud);
+                        text_offset = 0;
+                        
+                        draw_sprite(
+                            sprMenuCursorLeft, sprite_image,
+                            internal__draw_confirmation_yes_button_x1,
+                            internal__draw_confirmation_buttons_y);
+                        draw_sprite(
+                            sprMenuCursorRight, sprite_image,
+                            internal__draw_confirmation_yes_button_x2,
+                            internal__draw_confirmation_buttons_y);
+                        draw_sprite_stretched(sprMenuCursorMid, sprite_image,
+                            internal__draw_confirmation_yes_button_x1 + 18,
+                            internal__draw_confirmation_buttons_y,
+                            internal__draw_confirmation_yes_button_x2 - internal__draw_confirmation_yes_button_x1 - 17,21);
+                        draw_set_halign(fa_center);
+                        draw_set_valign(fa_top);
+                        
+                        draw_set_colour(text_color);
+                        draw_text(
+                            (internal__draw_confirmation_yes_button_x1 + internal__draw_confirmation_yes_button_x2 + 9) div 2,
+                            internal__draw_confirmation_buttons_y + 3 + text_offset, confirmation_yes_label
+                        );
+                        
+                        draw_set_colour(c_white);
                     }
                     else
                     {
-                        if(state == 17)
+                        if(state == 13 || state == 14 || state == 20 || state == 21)
                         {
                             draw_set_halign(fa_center);
                             draw_set_font(objResources.fontHudMin);
                             draw_set_colour(c_white);
                             draw_text(internal__draw_confirmation_rect_x_center, internal__draw_confirmation_rect_y1 + margin, confirmation_text);
-                            draw_set_valign(fa_bottom);
-                            draw_text(internal__draw_confirmation_rect_x_center, internal__draw_confirmation_rect_y2 - margin, string(confirmation_cursor));
-                            draw_set_valign(fa_middle);
-                            draw_set_halign(fa_left);
-                            draw_text(internal__draw_confirmation_rect_x1 + margin, internal__draw_menu_rect_y_center, string(confirmation_no_action));
-                            draw_set_halign(fa_right);
-                            draw_text(internal__draw_confirmation_rect_x2 - margin, internal__draw_menu_rect_y_center, string(confirmation_yes_action));
-                            draw_set_halign(fa_center);
-                            draw_set_valign(fa_top);   
-                            
-                            draw_set_color(main_border_color);
-                            draw_rectangle(internal__draw_confirmation_rect_x_center - 101, internal__draw_menu_rect_y_center - 9, internal__draw_confirmation_rect_x_center + 101, internal__draw_menu_rect_y_center + 9, false);                         
-                            draw_set_color(c_white);
-                            var slider_length = round(200*((confirmation_cursor - confirmation_no_action)/(confirmation_yes_action - confirmation_no_action)));
-                            draw_rectangle(internal__draw_confirmation_rect_x_center - 100, internal__draw_menu_rect_y_center - 8, internal__draw_confirmation_rect_x_center - 100 + slider_length, internal__draw_menu_rect_y_center + 8, false);                         
+                        }
+                        else
+                        {
+                            if(state == 17)
+                            {
+                                draw_set_halign(fa_center);
+                                draw_set_font(objResources.fontHudMin);
+                                draw_set_colour(c_white);
+                                draw_text(internal__draw_confirmation_rect_x_center, internal__draw_confirmation_rect_y1 + margin, confirmation_text);
+                                draw_set_valign(fa_bottom);
+                                draw_text(internal__draw_confirmation_rect_x_center, internal__draw_confirmation_rect_y2 - margin, string(confirmation_cursor));
+                                draw_set_valign(fa_middle);
+                                draw_set_halign(fa_left);
+                                draw_text(internal__draw_confirmation_rect_x1 + margin, internal__draw_menu_rect_y_center, string(confirmation_no_action));
+                                draw_set_halign(fa_right);
+                                draw_text(internal__draw_confirmation_rect_x2 - margin, internal__draw_menu_rect_y_center, string(confirmation_yes_action));
+                                draw_set_halign(fa_center);
+                                draw_set_valign(fa_top);   
+                                
+                                draw_set_color(main_border_color);
+                                draw_rectangle(internal__draw_confirmation_rect_x_center - 101, internal__draw_menu_rect_y_center - 9, internal__draw_confirmation_rect_x_center + 101, internal__draw_menu_rect_y_center + 9, false);                         
+                                draw_set_color(c_white);
+                                var slider_length = round(200*((confirmation_cursor - confirmation_no_action)/(confirmation_yes_action - confirmation_no_action)));
+                                draw_rectangle(internal__draw_confirmation_rect_x_center - 100, internal__draw_menu_rect_y_center - 8, internal__draw_confirmation_rect_x_center - 100 + slider_length, internal__draw_menu_rect_y_center + 8, false);                         
+                            }
                         }
                     }
                 }

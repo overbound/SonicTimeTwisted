@@ -27,3 +27,7 @@ objMenu states reference
 23 - menu reloading: closing
 24 - menu reloading: reopening
 25 - disappeared (displaying disclaimers)
+
+26 - opening warning window
+27 - Warning window
+28 - closing warning window

@@ -80,6 +80,7 @@ switch(state)
     case 12:
     case 16:
     case 19:
+    case 26:
         timer++;
         if(timer >= 10)
         {
@@ -94,6 +95,7 @@ switch(state)
     case 17:
     case 20:
     case 21:
+    case 27:
         if(is_touchscreen)
         {
             script_execute(touchscreen_script);
@@ -256,13 +258,14 @@ switch(state)
     case 15:
     case 18:
     case 22:
+    case 28:
         timer++;
         if(timer >= 10)
         {
             var change_state = false;
             var current_state = state;
             // 11 - YES selected; 15 - key mapped
-            if(((state == 11 && confirmation_cursor == 0) || (state == 15 && confirmation_cursor >= 0) || (state == 22 && confirmation_cursor >= 0)) && confirmation_yes_action != -1)
+            if(((state == 11 && confirmation_cursor == 0) || (state == 15 && confirmation_cursor >= 0) || (state == 22 && confirmation_cursor >= 0) || (state == 28)) && confirmation_yes_action != -1)
             {
                 script_execute(action_script, confirmation_yes_action);
                 change_state = current_state != state;
