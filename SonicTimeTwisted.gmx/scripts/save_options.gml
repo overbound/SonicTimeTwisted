@@ -18,6 +18,10 @@ if(instance_exists(objProgram.inputManager))
     ini_write_real('input', 'analog_in_zones', objProgram.inputManager.analog_in_zones);
     ini_write_real('input', 'analog_in_ss', objProgram.inputManager.analog_in_ss);
     ini_write_real('input', 'analog_in_gg', objProgram.inputManager.analog_in_gg);
+    ini_write_real('input', 'analog_deadzone_min', objProgram.inputManager.analog_deadzone_min);
+    ini_write_real('input', 'analog_deadzone_max', objProgram.inputManager.analog_deadzone_max);
+    ini_write_real('input', 'analog_ss_min_angle', objProgram.inputManager.analog_ss_min_angle);
+    ini_write_real('input', 'analog_ss_max_angle', objProgram.inputManager.analog_ss_max_angle);
     ini_write_real('smartphone', 'dpadmode', objProgram.inputManager.dpadmode);
     ini_write_real('smartphone', 'vkalpha', objProgram.inputManager.vkalpha);
     ini_write_real('smartphone', 'gyroinss', objProgram.inputManager.gyroinss);

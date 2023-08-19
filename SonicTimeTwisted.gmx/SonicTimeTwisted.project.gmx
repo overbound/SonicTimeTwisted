@@ -4302,6 +4302,7 @@
               <script>scripts\menu_fn_android_gamepad_change_detect.gml</script>
               <script>scripts\menu_part_analog_controls_items.gml</script>
               <script>scripts\menu_part_analog_controls_actions.gml</script>
+              <script>scripts\menu_part_analog_controls_step.gml</script>
               <script>scripts\menu_part_keymap_items.gml</script>
               <script>scripts\menu_part_keymap_actions.gml</script>
               <script>scripts\menu_part_keymap_actions_android.gml</script>
