@@ -36,7 +36,6 @@ if (stt_file_exists(file)) {
             input_load_gamepad_controls(true);
         }
     }
-    input_load_generic_controls(true);
     stt_ini_close();
     
 } else {
@@ -71,5 +70,4 @@ if (stt_file_exists(file)) {
             input_load_gamepad_controls(false);
         }
     }
-    input_load_generic_controls(false);
 }

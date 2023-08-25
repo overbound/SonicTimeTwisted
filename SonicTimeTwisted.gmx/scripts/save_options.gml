@@ -15,13 +15,13 @@ if(instance_exists(objProgram.inputManager))
     ini_write_real('input', 'method', objProgram.inputManager.input_method);
     ini_write_real('input', 'rumble', objProgram.inputManager.rumble_enabled);
     ini_write_real('input', 'deadzone', objProgram.inputManager.deadzone_int);
-    ini_write_real('input', 'analog_in_zones', objProgram.inputManager.analog_in_zones);
-    ini_write_real('input', 'analog_in_ss', objProgram.inputManager.analog_in_ss);
-    ini_write_real('input', 'analog_in_gg', objProgram.inputManager.analog_in_gg);
-    ini_write_real('input', 'analog_deadzone_min', objProgram.inputManager.analog_deadzone_min);
-    ini_write_real('input', 'analog_deadzone_max', objProgram.inputManager.analog_deadzone_max);
-    ini_write_real('input', 'analog_ss_min_angle', objProgram.inputManager.analog_ss_min_angle);
-    ini_write_real('input', 'analog_ss_max_angle', objProgram.inputManager.analog_ss_max_angle);
+    ini_write_real('input', 'analog_in_zones', objProgram.inputManager.gpanalog_in_zones);
+    ini_write_real('input', 'analog_in_ss', objProgram.inputManager.gpanalog_in_ss);
+    ini_write_real('input', 'analog_in_gg', objProgram.inputManager.gpanalog_in_gg);
+    ini_write_real('input', 'analog_deadzone_min', objProgram.inputManager.gpanalog_deadzone_min);
+    ini_write_real('input', 'analog_deadzone_max', objProgram.inputManager.gpanalog_deadzone_max);
+    ini_write_real('input', 'analog_ss_min_angle', objProgram.inputManager.gpanalog_ss_min_angle);
+    ini_write_real('input', 'analog_ss_max_angle', objProgram.inputManager.gpanalog_ss_max_angle);
     ini_write_real('smartphone', 'dpadmode', objProgram.inputManager.dpadmode);
     ini_write_real('smartphone', 'vkalpha', objProgram.inputManager.vkalpha);
     ini_write_real('smartphone', 'gyroinss', objProgram.inputManager.gyroinss);
@@ -47,6 +47,13 @@ if(instance_exists(objProgram.inputManager))
     ini_write_real('smartphone', 'vkdeadzone', objProgram.inputManager.vkdeadzone);
     ini_write_real('smartphone', 'vkdeadzoness', objProgram.inputManager.vkdeadzoness);
     ini_write_real('smartphone', 'vkdetection', objProgram.inputManager.vkdetection);
+    ini_write_real('smartphone', 'touchanalog_in_zones', objProgram.inputManager.touchanalog_in_zones);
+    ini_write_real('smartphone', 'touchanalog_in_ss', objProgram.inputManager.touchanalog_in_ss);
+    ini_write_real('smartphone', 'touchanalog_in_gg', objProgram.inputManager.touchanalog_in_gg);
+    ini_write_real('smartphone', 'touchanalog_deadzone_min', objProgram.inputManager.touchanalog_deadzone_min);
+    ini_write_real('smartphone', 'touchanalog_deadzone_max', objProgram.inputManager.touchanalog_deadzone_max);
+    ini_write_real('smartphone', 'touchanalog_ss_min_angle', objProgram.inputManager.touchanalog_ss_min_angle);
+    ini_write_real('smartphone', 'touchanalog_ss_max_angle', objProgram.inputManager.touchanalog_ss_max_angle);
 }
 if (instance_exists(objMusic))
 {

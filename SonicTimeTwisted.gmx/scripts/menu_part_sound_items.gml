@@ -1,10 +1,10 @@
 items = false;
 
-menu_fn_add_title(tr("_options_menu_sound_title"));
-menu_fn_add_option(tr("_options_menu_sound_Master_Volume"), 0, 1, "");
-menu_fn_add_option(tr("_options_menu_sound_SFX_Volume"), 1, 1, "");
-menu_fn_add_option(tr("_options_menu_sound_Music_Volume"), 2, 1, "");
-menu_fn_add_option(tr("_options_menu_Back"), 3);
+menu_fn_add_title(tr("_menu_sfx_Title"));
+menu_fn_add_option(tr("_menu_sfx_MasterVolume"), 0, 1, "");
+menu_fn_add_option(tr("_menu_sfx_SFXVolume"), 1, 1, "");
+menu_fn_add_option(tr("_menu_sfx_MusicVolume"), 2, 1, "");
+menu_fn_add_option(tr("_menu_Back"), 3);
 
 action_script = menu_part_sound_actions;
 draw_script = menu_fn_draw_default;

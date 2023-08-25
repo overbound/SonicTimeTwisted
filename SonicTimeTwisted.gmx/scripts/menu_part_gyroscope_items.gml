@@ -1,18 +1,18 @@
 items = false;
 
-menu_fn_add_title(tr("_options_menu_gyroscope_Title"));
-menu_fn_add_option(tr("_options_menu_gyroscope_Mode"), 0, 1, "");
+menu_fn_add_title(tr("_menu_gyro_Title"));
+menu_fn_add_option(tr("_menu_gyro_Mode"), 0, 1, "");
 if(objProgram.inputManager.gyromode == 0)
 {
-    menu_fn_add_option(tr("_options_menu_gyroscope_Trigger_angle"), 1, true, "");
+    menu_fn_add_option(tr("_menu_gyro_TriggerAngle"), 1, true, "");
 }
 else
 {
-    menu_fn_add_option(tr("_options_menu_gyroscope_Start_angle"), 2, true, "");
-    menu_fn_add_option(tr("_options_menu_gyroscope_End_angle"), 3, true, "");
+    menu_fn_add_option(tr("_menu_gyro_StartAngle"), 2, true, "");
+    menu_fn_add_option(tr("_menu_gyro_EndAngle"), 3, true, "");
 }
-menu_fn_add_option(tr("_options_menu_touchscreen_sstage_Gyroscope_axis"), 4, true, "");
-menu_fn_add_option(tr("_options_menu_Back"), 5);
+menu_fn_add_option(tr("_menu_gyro_Axis"), 4, true, "");
+menu_fn_add_option(tr("_menu_Back"), 5);
 
 button_width = 300;
 

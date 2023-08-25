@@ -55,7 +55,7 @@ if((objProgram.device_info & DEVICE_TYPE_SMARTPHONE) && (vibration_type > 0))
         input_rumble_perform_script = rumble_perform_android_smartphone;
     }
 }
-// Enable super button if the character is Sonic and all seven Chaod Emeralds are collected
+// Enable super button if the character is Sonic and all seven Chaos Emeralds are collected
 super_button_enabled = (objGameData.character_id[0] == 1)
     && (objProgram.special_future_current_level >= 7);
 

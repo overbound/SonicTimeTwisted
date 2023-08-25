@@ -1,15 +1,15 @@
 items = false;
 
-menu_fn_add_title(tr("_options_menu_Title"));
-menu_fn_add_option(tr("_options_menu_Video"), 0);
-menu_fn_add_option(tr("_options_menu_sound_title"), 11);
-menu_fn_add_option(tr("_options_menu_Input"), 1);
-menu_fn_add_option(tr("_options_menu_Localization"), 10);
+menu_fn_add_title(tr("_menu_options_Title"));
+menu_fn_add_option(tr("_menu_options_Video"), 0);
+menu_fn_add_option(tr("_menu_options_Sound"), 11);
+menu_fn_add_option(tr("_menu_options_Input"), 1);
+menu_fn_add_option(tr("_menu_options_Localization"), 10);
 if (menu_type == 0)
 {
-    menu_fn_add_option(tr("_options_menu_WaD"), 7);
+    menu_fn_add_option(tr("_menu_options_WaD"), 7);
 }
-menu_fn_add_option(tr("_options_menu_Back"), 4);
+menu_fn_add_option(tr("_menu_Back"), 4);
 
 action_script = menu_part_options_actions;
 draw_script = menu_fn_draw_default;

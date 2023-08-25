@@ -17,10 +17,10 @@ switch(argument0)
         }
         break;
     case 1:
-        menu_fn_open_slider_window(1, tr("_options_menu_touchscreen_vibration_SliderDuration"), objProgram.inputManager.haptics_duration, 0, 60);
+        menu_fn_open_slider_window(1, tr("_menu_vibration_Duration"), objProgram.inputManager.haptics_duration, 0, 60, tr("_menu_format_frames"));
         break;
     case 2:
-        menu_fn_open_slider_window(2, tr("_options_menu_touchscreen_vibration_SliderStrength"), objProgram.inputManager.haptics_strength, 0, 100);
+        menu_fn_open_slider_window(2, tr("_menu_vibration_HStrength"), objProgram.inputManager.haptics_strength, 0, 100, tr("_menu_format_percent"));
         break;
     case 3:
         with(objProgram.inputManager)
@@ -40,7 +40,7 @@ switch(argument0)
 
         break;
     case 4:
-        menu_fn_open_slider_window(4, tr("_options_menu_touchscreen_vibration_SliderStrengthCr"), round(objProgram.inputManager.rumble_strength*100), 0, 200);
+        menu_fn_open_slider_window(4, tr("_menu_vibration_CrStrength"), round(objProgram.inputManager.rumble_strength*100), 0, 200, tr("_menu_format_percent"));
         break;
     case 5:
     case -1:
@@ -111,7 +111,7 @@ else
     menu_fn_refresh_displayed_value(3, disabledLabel);
 }
 
-menu_fn_refresh_displayed_value(1, tr_format(tr("_options_menu_touchscreen_vibration_HapticsDurationFmt"), string(objProgram.inputManager.haptics_duration)));
+menu_fn_refresh_displayed_value(1, tr_format(tr("_menu_format_frames"), string(objProgram.inputManager.haptics_duration)));
 menu_fn_refresh_displayed_value(2, string(objProgram.inputManager.haptics_strength));
 menu_fn_refresh_displayed_value(4, string(round(objProgram.inputManager.rumble_strength*100)));
 
@@ -119,7 +119,7 @@ menu_fn_refresh_displayed_value(4, string(round(objProgram.inputManager.rumble_s
 menu_fn_calculate_width_add(0, false, enabledLabel, disabledLabel);
 menu_fn_calculate_width_add(3, false, enabledLabel, disabledLabel);
 
-menu_fn_calculate_width_add(1, false, tr_format(tr("_options_menu_touchscreen_vibration_HapticsDurationFmt"), "60"));
+menu_fn_calculate_width_add(1, false, tr_format(tr("_menu_format_frames"), "60"));
 menu_fn_calculate_width_add(2, true, 3); // the value is 100 max, so 3 symbols
 menu_fn_calculate_width_add(4, true, 3); // the value is 100 max, so 3 symbols
 

@@ -52,7 +52,7 @@ switch(argument0)
             sttandroid_gamepad_doubledetect_start(0);
             confirmation_cursor = 1;
         }
-        menu_fn_open_device_detect_window(tr("_options_menu_BTUSB_device_DoubleMode_device1"), 11, 9);
+        menu_fn_open_device_detect_window(tr("_menu_gpdevice_DoubleMode1"), 11, 9);
         break;
     case 11:
         // action : open device input window 2
@@ -60,7 +60,7 @@ switch(argument0)
         {
             confirmation_cursor = 2;
         }
-        menu_fn_open_device_detect_window(tr("_options_menu_BTUSB_device_DoubleMode_device2"), 12, 9);
+        menu_fn_open_device_detect_window(tr("_menu_gpdevice_DoubleMode2"), 12, 9);
         break;
     case 12:
         if(objProgram.device_info & DEVICE_OS_ANDROID)

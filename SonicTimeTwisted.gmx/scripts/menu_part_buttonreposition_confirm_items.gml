@@ -1,7 +1,7 @@
 items = false;
-menu_fn_add_option(tr("_options_menu_touchscreen_buttonreposition_save"), 0);
-menu_fn_add_option(tr("_options_menu_touchscreen_buttonreposition_discard"), 1);
-menu_fn_add_option(tr("_options_menu_touchscreen_buttonreposition_default"), 2);
+menu_fn_add_option(tr("_menu_touch_Reposition_Save"), 0);
+menu_fn_add_option(tr("_menu_touch_Reposition_Discard"), 1);
+menu_fn_add_option(tr("_menu_touch_Reposition_Default"), 2);
 
 menu_fn_calculate_width_simple();
 

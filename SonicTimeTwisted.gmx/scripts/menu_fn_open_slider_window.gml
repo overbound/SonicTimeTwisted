@@ -1,14 +1,16 @@
-/// menu_fn_open_slider_window(sliderIndex, text, currentValue, min, max)
+/// menu_fn_open_slider_window(sliderIndex, text, currentValue, min, max, suffix)
 // argument0 - slider index (allows having mutiple sliders per page)
 // argument1 - text
 // argument2 - current value
 // argument3 - minimum value
 // argument4 - maximum value
+// argument5 - unit suffix
 confirmation_index = argument0;
 confirmation_text = argument1;
 confirmation_cursor = argument2;
 confirmation_no_action = argument3; // used as minimum instead
 confirmation_yes_action = argument4; // used as maximum instead
+confirmation_yes_label = argument5; // used as suffix
 
 var view_width = objScreen.gui_width;
 var view_height = objScreen.gui_height;

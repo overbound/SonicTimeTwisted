@@ -118,8 +118,8 @@ var offLabel = "< "+tr("_Off")+ " >";
 
 if(objProgram.device_info & DEVICE_TYPE_COMPUTER || objProgram.device_info & DEVICE_OS_ANDROID)
 {
-    var gfxLabel1 = "< "+tr("_graphics_menu_Fs")+ " >";
-    var gfxLabel2 = "< "+tr_format(tr("_graphics_menu_Ws"), objScreen.video_mode)+ " >";
+    var gfxLabel1 = "< "+tr("_menu_gfx_ScreenSize_Full")+ " >";
+    var gfxLabel2 = "< "+tr_format(tr("_menu_gfx_ScreenSize_Window"), objScreen.video_mode)+ " >";
 
     if (objScreen.video_mode <= 0)
         menu_fn_refresh_displayed_value(0, gfxLabel1);
@@ -142,9 +142,9 @@ if(objProgram.device_info & DEVICE_TYPE_COMPUTER)
     menu_fn_calculate_width_add(3, false, onLabel, offLabel);
 }
 
-var tallyLabel1 = "< "+tr("_graphics_menu_Randomdigits")+ " >";
-var tallyLabel2 = "< "+tr("_graphics_menu_Variablespeed")+ " >";
-var tallyLabel3 = "< "+tr("_graphics_menu_Fixedspeed")+ " >";
+var tallyLabel1 = "< "+tr("_menu_gfx_Tally_Random")+ " >";
+var tallyLabel2 = "< "+tr("_menu_gfx_Tally_Variable")+ " >";
+var tallyLabel3 = "< "+tr("_menu_gfx_Tally_Fixed")+ " >";
 
 switch(objScreen.score_tally_mode)
 {
@@ -168,8 +168,8 @@ else
     menu_fn_refresh_displayed_value(2, offLabel);
 }
 
-var timerLabel1 = "< "+tr("_graphics_menu_Timer_MMSSCS")+ " >";
-var timerLabel2 = "< "+tr("_graphics_menu_Timer_MMSS")+ " >";
+var timerLabel1 = "< "+tr("_menu_gfx_Timer_MMSSCS")+ " >";
+var timerLabel2 = "< "+tr("_menu_gfx_Timer_MMSS")+ " >";
 
 switch(objScreen.timer_mode)
 {
@@ -181,7 +181,7 @@ switch(objScreen.timer_mode)
         break;
 }
 
-var onlyGUIlabel = "< "+tr('_graphics_menu_Interpolation_GUI_only')+ " >";
+var onlyGUIlabel = "< "+tr('_menu_gfx_Blur_GuiOnly')+ " >";
 if(objScreen.interpolation)
 {
     if (objScreen.interpolation == 2) {

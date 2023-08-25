@@ -66,11 +66,8 @@ switch(argument0)
     case 6:
         menu_fn_goto_submenu(menu_part_gamepad_simple_items);
         break;
-    case 7:
-        menu_fn_goto_submenu(menu_part_analog_controls_items);
-        break;
     case -1:
-    case 8:
+    case 7:
         save_options();
         menu_fn_exit_submenu(menu_part_options_items, 1);
         break;
@@ -184,10 +181,10 @@ switch(argument0)
 menu_fn_calculate_width_start();
 
 
-var inputLabel_gamepad = "< "+tr("_options_menu_InputLabel_Gamepad")+ " >";
-var inputLabel_keybord = "< "+tr("_options_menu_InputLabel_Keyboard")+ " >";
-var inputLabel_touchscreen = "< "+tr("_options_menu_InputLabel_Touchscreen")+ " >";
-var inputLabel_auto = "< "+tr("_options_menu_InputLabel_Auto")+ " >";
+var inputLabel_gamepad = "< "+tr("_menu_input_Method_Gamepad")+ " >";
+var inputLabel_keybord = "< "+tr("_menu_input_Method_Keyboard")+ " >";
+var inputLabel_touchscreen = "< "+tr("_menu_input_Method_Touchscreen")+ " >";
+var inputLabel_auto = "< "+tr("_menu_input_Method_Auto")+ " >";
 
 switch(objProgram.inputManager.input_method) {
     case INPUT_GAMEPAD:

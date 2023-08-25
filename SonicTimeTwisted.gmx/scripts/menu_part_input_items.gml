@@ -1,11 +1,11 @@
 items = false;
 
-menu_fn_add_title(tr("_options_menu_Input"));
+menu_fn_add_title(tr("_menu_input_Title"));
 if(objProgram.device_info & DEVICE_TYPE_COMPUTER)
 {
-    menu_fn_add_option(tr("_options_menu_Input_Method"), 1, 1, "");
-    menu_fn_add_option(tr("_options_menu_Map_keys"), 2);
-    menu_fn_add_option(tr("_options_menu_Gamepad_settings"), 3);
+    menu_fn_add_option(tr("_menu_input_Method"), 1, 1, "");
+    menu_fn_add_option(tr("_menu_input_Keyboard"), 2);
+    menu_fn_add_option(tr("_menu_input_Gamepad"), 3);
 }
 else
 {
@@ -13,25 +13,24 @@ else
    {
        if(objProgram.device_info & DEVICE_OS_ANDROID)
        {
-            menu_fn_add_option(tr("_options_menu_Input_Method"), 1, 1, "");
+            menu_fn_add_option(tr("_menu_input_Method"), 1, 1, "");
             if (objProgram.device_info & DEVICE_TYPE_SMARTPHONE) {
-                menu_fn_add_option(tr("_options_menu_touchscreen_Configure_vibrations"), 4);
-                menu_fn_add_option(tr("_options_menu_Configure_Touchscreen"), 5);
-                menu_fn_add_option(tr("_options_menu_analog_controls"), 7);
+                menu_fn_add_option(tr("_menu_input_Vibrations"), 4);
+                menu_fn_add_option(tr("_menu_input_Touchscreen"), 5);
             }
-            menu_fn_add_option(tr("_options_menu_Map_keys"), 2);
-            menu_fn_add_option(tr("_options_menu_Gamepad_settings"), 3);
+            menu_fn_add_option(tr("_menu_input_Keyboard"), 2);
+            menu_fn_add_option(tr("_menu_input_Gamepad"), 3);
        }
        else
        {
             if (!(objProgram.device_info & DEVICE_OS_PLAYSTATION)) {
-                menu_fn_add_option(tr("_options_menu_Map_keys"), 2);
+                menu_fn_add_option(tr("_menu_input_Keyboard"), 2);
             }
-            menu_fn_add_option(tr("_options_menu_Map_gamepad"), 6);
+            menu_fn_add_option(tr("_menu_input_Gamepad"), 6);
        }
    }
 }
-menu_fn_add_option(tr("_options_menu_Back"), 8);
+menu_fn_add_option(tr("_menu_Back"), 7);
 
 action_script = menu_part_input_actions;
 draw_script = menu_fn_draw_default;

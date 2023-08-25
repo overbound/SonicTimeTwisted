@@ -4,7 +4,7 @@ switch(argument0)
         objProgram.inputManager.gyroinss = (objProgram.inputManager.gyroinss + 1) mod 2;
         break;
     case 1:
-        menu_fn_open_slider_window(1, tr("_options_menu_touchscreen_sstage_SliderDeadZone"), round(objProgram.inputManager.vkdeadzoness*100), 5, 95);
+        menu_fn_open_slider_window(1, tr("_menu_sstouch_Deadzone"), round(objProgram.inputManager.vkdeadzoness*100), 5, 95, tr("_menu_format_percent"));
         break;
     case 2:
         menu_fn_goto_submenu(menu_part_gyroscope_items);
@@ -44,8 +44,8 @@ switch(argument0)
 // calculating the optimal menu width at the same time - done here so that possible values are not duplicated among several scripts
 menu_fn_calculate_width_start();
 
-var dpadLabel = "< "+tr("_options_menu_touchscreen_sstage_DPad")+ " >";
-var gyroLabel = "< "+tr("_options_menu_touchscreen_sstage_Gyroscope")+ " >";
+var dpadLabel = "< "+tr("_menu_sstouch_InputMethod_DPad")+ " >";
+var gyroLabel = "< "+tr("_menu_sstouch_InputMethod_Gyroscope")+ " >";
 if(objProgram.inputManager.gyroinss)
 {
     menu_fn_refresh_displayed_value(0, gyroLabel);

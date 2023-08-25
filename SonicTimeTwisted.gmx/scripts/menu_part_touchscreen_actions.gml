@@ -10,7 +10,7 @@ switch(argument0)
         objProgram.inputManager.dpadmode = (objProgram.inputManager.dpadmode + 1) mod 2;
         break;
     case 3:
-        menu_fn_open_slider_window(3, tr("_options_menu_touchscreen_OpacitySlider"), round(objProgram.inputManager.vkalpha*100), 0, 100);
+        menu_fn_open_slider_window(3, tr("_menu_touch_Opacity"), round(objProgram.inputManager.vkalpha*100), 0, 100, tr("_menu_format_percent"));
         break;
     case 4:
         menu_fn_goto_submenu(menu_part_touchscreenss_items);
@@ -22,11 +22,14 @@ switch(argument0)
     case -1:
         menu_fn_exit_submenu(menu_part_input_items, 5);
         break;
+    case 7:
+        menu_fn_goto_submenu(menu_part_touchanalog_controls_items);
+        break;
     case 9:
-        menu_fn_open_slider_window(9, tr("_options_menu_touchscreen_DeadzoneSlider"), round(objProgram.inputManager.vkdeadzone*100), 5, 95);
+        menu_fn_open_slider_window(9, tr("_menu_touch_Deadzone"), round(objProgram.inputManager.vkdeadzone*100), 5, 95, tr("_menu_format_percent"));
         break;
     case 10:
-        menu_fn_open_slider_window(10, tr("_options_menu_touchscreen_DetectionSlider"), objProgram.inputManager.vkdetection, 100, 300);
+        menu_fn_open_slider_window(10, tr("_menu_touch_Detection"), objProgram.inputManager.vkdetection, 100, 300, tr("_menu_format_percent"));
         break;
     case -2:
         // left key
@@ -98,9 +101,9 @@ switch(argument0)
 // calculating the optimal menu width at the same time - done here so that possible values are not duplicated among several scripts
 menu_fn_calculate_width_start();
 
-var option1Label = "< "+tr('_options_menu_touchscreen_dpadsize_Large')+ " >"
-var option2Label = "< "+tr('_options_menu_touchscreen_dpadsize_Medium')+ " >"
-var option3Label = "< "+tr('_options_menu_touchscreen_dpadsize_Small')+ " >"
+var option1Label = "< "+tr('_menu_touch_Size_Large')+ " >"
+var option2Label = "< "+tr('_menu_touch_Size_Medium')+ " >"
+var option3Label = "< "+tr('_menu_touch_Size_Small')+ " >"
 
 var dpadSizeLabel = option1Label;
 if(objProgram.inputManager.vksize == 1)
@@ -116,8 +119,8 @@ menu_fn_refresh_displayed_value(1, dpadSizeLabel);
 menu_fn_calculate_width_add(1, false, option1Label, option2Label, option3Label);
 
 
-option1Label = "< "+tr('_options_menu_touchscreen_dpadmode_Static')+ " >"
-option2Label = "< "+tr('_options_menu_touchscreen_dpadmode_Dynamic')+ " >"
+option1Label = "< "+tr('_menu_touch_DPadMode_Static')+ " >"
+option2Label = "< "+tr('_menu_touch_DPadMode_Dynamic')+ " >"
 var dpadModeLabel = option1Label;
 if(objProgram.inputManager.dpadmode)
 {
@@ -126,8 +129,8 @@ if(objProgram.inputManager.dpadmode)
 menu_fn_refresh_displayed_value(2, dpadModeLabel);
 menu_fn_calculate_width_add(1, false, option1Label, option2Label);
 
-option1Label = "< "+tr('_options_menu_touchscreen_gyrogglabel_DPad')+ " >"
-option2Label = "< "+tr('_options_menu_touchscreen_gyrogglabel_Point')+ " >"
+option1Label = "< "+tr('_menu_touch_GGControls_DPad')+ " >"
+option2Label = "< "+tr('_menu_touch_GGControls_Point')+ " >"
 var gyroGGLabel = option1Label;
 if(objProgram.inputManager.gg_mode == 1)
 {

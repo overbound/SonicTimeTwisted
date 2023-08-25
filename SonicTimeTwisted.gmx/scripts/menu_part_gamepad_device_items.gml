@@ -3,27 +3,27 @@ items = false;
 if(objProgram.device_info & DEVICE_OS_ANDROID) {
     if(real(sttandroid_gamepad_doubledetect_get_detect_state()) == 0)
     {
-        var deviceLabel = string(sttandroid_gamepad_get_label(0, 30));
+        var deviceLabel = string(sttandroid_gamepad_get_label(0, real(tr('_menu_gamepad_Device_Length'))));
         if(string_length(deviceLabel) == 0)
         {
-            menu_fn_add_title(tr("_options_menu_Gamepad_settings"));
+            menu_fn_add_title(tr("_menu_gpdevice_Title"));
         }
         else
         {
             menu_fn_add_title(deviceLabel);
         }
     }
-    menu_fn_add_option(tr("_options_menu_BTUSB_device_Disconnect"), 0);
-    menu_fn_add_option(tr("_options_menu_BTUSB_device_DoubleMode"), 1, 1, "");
-    menu_fn_add_option(tr("_options_menu_Back"), 2);
+    menu_fn_add_option(tr("_menu_gpdevice_Disconnect"), 0);
+    menu_fn_add_option(tr("_menu_gpdevice_DoubleMode"), 1, 1, "");
+    menu_fn_add_option(tr("_menu_Back"), 2);
 } else {
     if (string_length(objProgram.inputManager.paddesc) > 0) {
         menu_fn_add_title(objProgram.inputManager.paddesc);
     } else {
-        menu_fn_add_title(tr("_options_menu_Gamepad_settings"));
+        menu_fn_add_title(tr("_menu_gpdevice_Title"));
     }
-    menu_fn_add_option(tr("_options_menu_BTUSB_device_Disconnect"), 0);
-    menu_fn_add_option(tr("_options_menu_Back"), 2);
+    menu_fn_add_option(tr("_menu_gpdevice_Disconnect"), 0);
+    menu_fn_add_option(tr("_menu_Back"), 2);
 }
 
 

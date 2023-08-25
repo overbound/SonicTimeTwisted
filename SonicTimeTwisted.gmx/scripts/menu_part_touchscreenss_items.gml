@@ -1,9 +1,9 @@
 items = false;
-menu_fn_add_title(tr("_options_menu_touchscreen_sstage_Title"));
-menu_fn_add_option(tr("_options_menu_Input_Method"), 0, 1, "");
-menu_fn_add_option(tr("_options_menu_touchscreen_sstage_Dead_zone"), 1, 1, "");
-menu_fn_add_option(tr("_options_menu_touchscreen_sstage_Configure_gyroscope"), 2);
-menu_fn_add_option(tr("_options_menu_Back"), 3);
+menu_fn_add_title(tr("_menu_sstouch_Title"));
+menu_fn_add_option(tr("_menu_sstouch_InputMethod"), 0, 1, "");
+menu_fn_add_option(tr("_menu_sstouch_Deadzone"), 1, 1, "");
+menu_fn_add_option(tr("_menu_sstouch_Gyroscope"), 2);
+menu_fn_add_option(tr("_menu_Back"), 3);
 
 action_script = menu_part_touchscreenss_actions;
 draw_script = menu_part_touchscreenss_draw;

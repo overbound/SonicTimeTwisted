@@ -80,6 +80,20 @@ analog_deadzone_max = 0.95;
 analog_ss_min_angle = 15;
 analog_ss_max_angle = 30;
 input_analog_script = analog_postprocess_dummy;
+gpanalog_in_zones = false;
+gpanalog_in_ss = false;
+gpanalog_in_gg = false;
+gpanalog_deadzone_min = 0.2;
+gpanalog_deadzone_max = 0.95;
+gpanalog_ss_min_angle = 15;
+gpanalog_ss_max_angle = 30;
+touchanalog_in_zones = false;
+touchanalog_in_ss = false;
+touchanalog_in_gg = false;
+touchanalog_deadzone_min = 0.2;
+touchanalog_deadzone_max = 0.95;
+touchanalog_ss_min_angle = 15;
+touchanalog_ss_max_angle = 30;
 
 // input devices management
 input_init_script = input_method_dummy_script;

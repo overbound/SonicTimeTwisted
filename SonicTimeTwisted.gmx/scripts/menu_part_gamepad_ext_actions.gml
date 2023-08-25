@@ -9,7 +9,7 @@ switch(argument0)
         }
         else
         {
-            menu_fn_open_confirmation_window(tr("_options_menu_keymap_incomplete"), 21, 12, false, tr("_options_menu_keymap_remap"), tr("_options_menu_keymap_reset"));
+            menu_fn_open_confirmation_window(tr("_menu_Remap_Incomplete"), 21, 12, false, tr("_menu_Remap_Redo"), tr("_menu_Remap_Reset"));
         }
         break;
     case 0:
@@ -52,71 +52,71 @@ switch(argument0)
             }
             menu_part_gamepad_ext_actions(21);
         } else {
-            menu_fn_open_warning_window(tr('_options_menu_Gamepad_warning_none'));
+            menu_fn_open_warning_window(tr('_menu_gamepad_Warning'));
         }
         break;
     case 2:
         // individual map - button Up
         if (gamepad_present) {
-            menu_fn_open_mapping_window(tr_format(tr("_options_menu_keymap_press"), tr("_buttonname_Up")), cUP, 11);
+            menu_fn_open_mapping_window(tr_format(tr("_menu_Remap_Press"), tr("_menu_buttonname_Up")), cUP, 11);
         } else {
-            menu_fn_open_warning_window(tr('_options_menu_Gamepad_warning_none'));
+            menu_fn_open_warning_window(tr('_menu_gamepad_Warning'));
         }
         break;
     case 3:
         // individual map - button Down
         if (gamepad_present) {
-            menu_fn_open_mapping_window(tr_format(tr("_options_menu_keymap_press"), tr("_buttonname_Down")), cDOWN, 11);
+            menu_fn_open_mapping_window(tr_format(tr("_menu_Remap_Press"), tr("_menu_buttonname_Down")), cDOWN, 11);
         } else {
-            menu_fn_open_warning_window(tr('_options_menu_Gamepad_warning_none'));
+            menu_fn_open_warning_window(tr('_menu_gamepad_Warning'));
         }
         break;
     case 4:
         // individual map - button Left
         if (gamepad_present) {
-            menu_fn_open_mapping_window(tr_format(tr("_options_menu_keymap_press"), tr("_buttonname_Left")), cLEFT, 11);
+            menu_fn_open_mapping_window(tr_format(tr("_menu_Remap_Press"), tr("_menu_buttonname_Left")), cLEFT, 11);
         } else {
-            menu_fn_open_warning_window(tr('_options_menu_Gamepad_warning_none'));
+            menu_fn_open_warning_window(tr('_menu_gamepad_Warning'));
         }
         break;
     case 5:
         // individual map - button Right
         if (gamepad_present) {
-            menu_fn_open_mapping_window(tr_format(tr("_options_menu_keymap_press"), tr("_buttonname_Right")), cRIGHT, 11);
+            menu_fn_open_mapping_window(tr_format(tr("_menu_Remap_Press"), tr("_menu_buttonname_Right")), cRIGHT, 11);
         } else {
-            menu_fn_open_warning_window(tr('_options_menu_Gamepad_warning_none'));
+            menu_fn_open_warning_window(tr('_menu_gamepad_Warning'));
         }
         break;
     case 6:
         // individual map - button A
         if (gamepad_present) {
-            menu_fn_open_mapping_window(tr_format(tr("_options_menu_keymap_press"), tr("_buttonname_A")), cA, 11);
+            menu_fn_open_mapping_window(tr_format(tr("_menu_Remap_Press"), tr("_menu_buttonname_A")), cA, 11);
         } else {
-            menu_fn_open_warning_window(tr('_options_menu_Gamepad_warning_none'));
+            menu_fn_open_warning_window(tr('_menu_gamepad_Warning'));
         }
         break;
     case 7:
         // individual map - button B
         if (gamepad_present) {
-            menu_fn_open_mapping_window(tr_format(tr("_options_menu_keymap_press"), tr("_buttonname_B")), cB, 11);
+            menu_fn_open_mapping_window(tr_format(tr("_menu_Remap_Press"), tr("_menu_buttonname_B")), cB, 11);
         } else {
-            menu_fn_open_warning_window(tr('_options_menu_Gamepad_warning_none'));
+            menu_fn_open_warning_window(tr('_menu_gamepad_Warning'));
         }
         break;
     case 8:
         // individual map - button C
         if (gamepad_present) {
-            menu_fn_open_mapping_window(tr_format(tr("_options_menu_keymap_press"), tr("_buttonname_C")), cC, 11);
+            menu_fn_open_mapping_window(tr_format(tr("_menu_Remap_Press"), tr("_menu_buttonname_C")), cC, 11);
         } else {
-            menu_fn_open_warning_window(tr('_options_menu_Gamepad_warning_none'));
+            menu_fn_open_warning_window(tr('_menu_gamepad_Warning'));
         }
         break;
     case 9:
         // individual map - button Start
         if (gamepad_present) {
-            menu_fn_open_mapping_window(tr_format(tr("_options_menu_keymap_press"), tr("_buttonname_Start")), cSTART, 11);
+            menu_fn_open_mapping_window(tr_format(tr("_menu_Remap_Press"), tr("_menu_buttonname_Start")), cSTART, 11);
         } else {
-            menu_fn_open_warning_window(tr('_options_menu_Gamepad_warning_none'));
+            menu_fn_open_warning_window(tr('_menu_gamepad_Warning'));
         }
         break;
     case 11:
@@ -133,35 +133,35 @@ switch(argument0)
         break;
     case 21:
         // group mapping - up
-        menu_fn_open_mapping_window(tr_format(tr("_options_menu_keymap_press"), tr("_buttonname_Up")), cUP, 22, 30);
+        menu_fn_open_mapping_window(tr_format(tr("_menu_Remap_Press"), tr("_menu_buttonname_Up")), cUP, 22, 30);
         break;
     case 22:
         // group mapping - down
-        menu_fn_open_mapping_window(tr_format(tr("_options_menu_keymap_press"), tr("_buttonname_Down")), cDOWN, 23, 30);
+        menu_fn_open_mapping_window(tr_format(tr("_menu_Remap_Press"), tr("_menu_buttonname_Down")), cDOWN, 23, 30);
         break;
     case 23:
         // group mapping - left
-        menu_fn_open_mapping_window(tr_format(tr("_options_menu_keymap_press"), tr("_buttonname_Left")), cLEFT, 24, 30);
+        menu_fn_open_mapping_window(tr_format(tr("_menu_Remap_Press"), tr("_menu_buttonname_Left")), cLEFT, 24, 30);
         break;
     case 24:
         // group mapping - right
-        menu_fn_open_mapping_window(tr_format(tr("_options_menu_keymap_press"), tr("_buttonname_Right")), cRIGHT, 25, 30);
+        menu_fn_open_mapping_window(tr_format(tr("_menu_Remap_Press"), tr("_menu_buttonname_Right")), cRIGHT, 25, 30);
         break;
     case 25:
         // group mapping - a
-        menu_fn_open_mapping_window(tr_format(tr("_options_menu_keymap_press"), tr("_buttonname_A")), cA, 26, 30);
+        menu_fn_open_mapping_window(tr_format(tr("_menu_Remap_Press"), tr("_menu_buttonname_A")), cA, 26, 30);
         break;
     case 26:
         // group mapping - b
-        menu_fn_open_mapping_window(tr_format(tr("_options_menu_keymap_press"), tr("_buttonname_B")), cB, 27, 30);
+        menu_fn_open_mapping_window(tr_format(tr("_menu_Remap_Press"), tr("_menu_buttonname_B")), cB, 27, 30);
         break;
     case 27:
         // group mapping - c
-        menu_fn_open_mapping_window(tr_format(tr("_options_menu_keymap_press"), tr("_buttonname_C")), cC, 28, 30);
+        menu_fn_open_mapping_window(tr_format(tr("_menu_Remap_Press"), tr("_menu_buttonname_C")), cC, 28, 30);
         break;
     case 28:
         // group mapping - start
-        menu_fn_open_mapping_window(tr_format(tr("_options_menu_keymap_press"), tr("_buttonname_Start")), cSTART, 29, 30);
+        menu_fn_open_mapping_window(tr_format(tr("_menu_Remap_Press"), tr("_menu_buttonname_Start")), cSTART, 29, 30);
         break;
     case 29:
         // group mapping - success, discard the backup and save everything
@@ -177,13 +177,13 @@ switch(argument0)
         menu_fn_goto_submenu(menu_part_gamepad_device_items);
         break;
     case 32:
-        menu_fn_open_slider_window(0, tr('_options_menu_touchscreen_vibration_SliderStrengthCr'), objProgram.inputManager.rumble_strength, 0, 200);
+        menu_fn_open_slider_window(0, tr('_menu_gamepad_RumbleStrength'), objProgram.inputManager.rumble_strength, 0, 200, tr("_menu_format_percent"));
         break;
     case 33:
-        menu_fn_open_slider_window(1, tr('_options_menu_Gamepad_deadzone'), objProgram.inputManager.deadzone_int, 5, 95);
+        menu_fn_open_slider_window(1, tr('_menu_gamepad_Deadzone'), objProgram.inputManager.deadzone_int, 5, 95, tr("_menu_format_percent"));
         break;
     case 34:
-        menu_fn_goto_submenu(menu_part_analog_controls_items);
+        menu_fn_goto_submenu(menu_part_gpanalog_controls_items);
         break;
     case -2:
     case -3:
@@ -208,7 +208,7 @@ switch(argument0)
 var deviceLabel = objProgram.inputManager.paddesc;
 if(string_length(deviceLabel) == 0)
 {
-    deviceLabel = tr("_btusb_joymap_Device_Disabled");
+    deviceLabel = tr("_menu_gamepad_Device_Disabled");
 }
 menu_fn_refresh_displayed_label(31, deviceLabel);
 
@@ -278,6 +278,13 @@ with(objProgram.inputManager)
     }
 }
 
+var currentDeviceLabel;
+if(objProgram.device_info & DEVICE_OS_ANDROID) {
+    currentDeviceLabel = string(sttandroid_gamepad_get_label(0, real(tr('_menu_gamepad_Device_Length'))));
+} else {
+    currentDeviceLabel = objProgram.inputManager.paddesc;
+}
+menu_fn_refresh_displayed_value(31, currentDeviceLabel);
 
 
 if(objProgram.inputManager.rumble_enabled)

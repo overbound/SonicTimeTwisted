@@ -20,7 +20,7 @@ if(is_array(temporary_variable))
     {
         x_test = objScreen.width/2;
     }
-    draw_text(x_test, y_delta, tr("_options_menu_touchscreen_buttonreposition_back"));
+    draw_text(x_test, y_delta, tr("_menu_touch_Reposition_Back"));
 
     draw_sprite(dpadSprite, 0,
         temporary_variable[5, 1] + x_delta,

@@ -589,7 +589,7 @@ switch(state)
                                 draw_set_colour(c_white);
                                 draw_text(internal__draw_confirmation_rect_x_center, internal__draw_confirmation_rect_y1 + margin, confirmation_text);
                                 draw_set_valign(fa_bottom);
-                                draw_text(internal__draw_confirmation_rect_x_center, internal__draw_confirmation_rect_y2 - margin, string(confirmation_cursor));
+                                draw_text(internal__draw_confirmation_rect_x_center, internal__draw_confirmation_rect_y2 - margin, tr_format(confirmation_yes_label, string(confirmation_cursor)));
                                 draw_set_valign(fa_middle);
                                 draw_set_halign(fa_left);
                                 draw_text(internal__draw_confirmation_rect_x1 + margin, internal__draw_menu_rect_y_center, string(confirmation_no_action));

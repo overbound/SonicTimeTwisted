@@ -3,8 +3,9 @@ if (pad == -1) {
     if (pad > -1) {
         paddesc = gamepad_get_description(pad);
         
-        if (string_length(paddesc) > 30) {
-            paddesc = string_copy(paddesc, 0, 27)+'...';
+		var descLength = real(tr('_menu_gamepad_Device_Length'));
+        if (string_length(paddesc) > descLength) {
+            paddesc = string_copy(paddesc, 0, descLength - 3)+'...';
         }
         return input_method_auto_detect_gamepad_use();
     }

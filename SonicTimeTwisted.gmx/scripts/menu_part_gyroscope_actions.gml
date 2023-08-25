@@ -5,13 +5,13 @@ switch(argument0)
         menu_fn_set_scripts(menu_part_gyroscope_items, 0);
         break;
     case 1:
-        menu_fn_open_slider_window(1, tr("_options_menu_gyroscope_Trigger_angle"), round(radtodeg(objProgram.inputManager.gyro_switch_on_angle_x)), 5, 90);
+        menu_fn_open_slider_window(1, tr("_menu_gyro_TriggerAngle"), round(radtodeg(objProgram.inputManager.gyro_switch_on_angle_x)), 5, 90, tr("_menu_format_degrees"));
         break;
     case 2:
-        menu_fn_open_slider_window(2, tr("_options_menu_gyroscope_Start_angle"), round(radtodeg(objProgram.inputManager.gyro_analog_start_x)), 5, round(radtodeg(objProgram.inputManager.gyro_analog_end_x)) - 1);
+        menu_fn_open_slider_window(2, tr("_menu_gyro_StartAngle"), round(radtodeg(objProgram.inputManager.gyro_analog_start_x)), 5, round(radtodeg(objProgram.inputManager.gyro_analog_end_x)) - 1, tr("_menu_format_degrees"));
         break;
     case 3:
-        menu_fn_open_slider_window(3, tr("_options_menu_gyroscope_End_angle"), round(radtodeg(objProgram.inputManager.gyro_analog_end_x)), round(radtodeg(objProgram.inputManager.gyro_analog_start_x)) + 1, 90);
+        menu_fn_open_slider_window(3, tr("_menu_gyro_EndAngle"), round(radtodeg(objProgram.inputManager.gyro_analog_end_x)), round(radtodeg(objProgram.inputManager.gyro_analog_start_x)) + 1, 90, tr("_menu_format_degrees"));
         break;
     case 4:
         if (objProgram.inputManager.gyroinss_axis > 0) {
@@ -71,7 +71,7 @@ menu_fn_calculate_width_start();
 
 if(objProgram.inputManager.gyromode == 0)
 {
-    var gyromode_label = "< "+tr("_options_menu_gyroscope_Simulate_button")+ " >";
+    var gyromode_label = "< "+tr("_menu_gyro_Mode_SimulateButton")+ " >";
     menu_fn_refresh_displayed_value(0, gyromode_label);
     menu_fn_refresh_displayed_value(1, string(round(radtodeg(objProgram.inputManager.gyro_switch_on_angle_x))));
     
@@ -80,7 +80,7 @@ if(objProgram.inputManager.gyromode == 0)
 }
 else
 {
-    var gyromode_label = "< "+tr("_options_menu_gyroscope_Pseudo_analog")+ " >";
+    var gyromode_label = "< "+tr("_menu_gyro_Mode_Analog")+ " >";
     
     menu_fn_refresh_displayed_value(0, gyromode_label);
     menu_fn_refresh_displayed_value(2, string(round(radtodeg(objProgram.inputManager.gyro_analog_start_x))));
@@ -92,31 +92,31 @@ else
 }
 switch(objProgram.inputManager.gyroinss_axis) {
     case 1:
-        menu_fn_refresh_displayed_value(4, "< "+tr("_options_menu_touchscreen_sstage_Gyroscope_axis_x")+" >");
+        menu_fn_refresh_displayed_value(4, "< "+tr("_menu_gyro_Axis_X")+" >");
         break;
     case -1:
-        menu_fn_refresh_displayed_value(4, "< "+tr("_options_menu_touchscreen_sstage_Gyroscope_axis_xinv")+" >");
+        menu_fn_refresh_displayed_value(4, "< "+tr("_menu_gyro_Axis_Xinv")+" >");
         break;
     case 2:
-        menu_fn_refresh_displayed_value(4, "< "+tr("_options_menu_touchscreen_sstage_Gyroscope_axis_y")+" >");
+        menu_fn_refresh_displayed_value(4, "< "+tr("_menu_gyro_Axis_Y")+" >");
         break;
     case -2:
-        menu_fn_refresh_displayed_value(4, "< "+tr("_options_menu_touchscreen_sstage_Gyroscope_axis_yinv")+" >");
+        menu_fn_refresh_displayed_value(4, "< "+tr("_menu_gyro_Axis_Yinv")+" >");
         break;
     case 3:
-        menu_fn_refresh_displayed_value(4, "< "+tr("_options_menu_touchscreen_sstage_Gyroscope_axis_z")+" >");
+        menu_fn_refresh_displayed_value(4, "< "+tr("_menu_gyro_Axis_Z")+" >");
         break;
     case -3:
-        menu_fn_refresh_displayed_value(4, "< "+tr("_options_menu_touchscreen_sstage_Gyroscope_axis_zinv")+" >");
+        menu_fn_refresh_displayed_value(4, "< "+tr("_menu_gyro_Axis_Zinv")+" >");
         break;
 }
 
-menu_fn_calculate_width_add(4, false, "< "+tr("_options_menu_touchscreen_sstage_Gyroscope_axis_x")+" >");
-menu_fn_calculate_width_add(4, false, "< "+tr("_options_menu_touchscreen_sstage_Gyroscope_axis_xinv")+" >");
-menu_fn_calculate_width_add(4, false, "< "+tr("_options_menu_touchscreen_sstage_Gyroscope_axis_y")+" >");
-menu_fn_calculate_width_add(4, false, "< "+tr("_options_menu_touchscreen_sstage_Gyroscope_axis_yinv")+" >");
-menu_fn_calculate_width_add(4, false, "< "+tr("_options_menu_touchscreen_sstage_Gyroscope_axis_z")+" >");
-menu_fn_calculate_width_add(4, false, "< "+tr("_options_menu_touchscreen_sstage_Gyroscope_axis_zinv")+" >");
+menu_fn_calculate_width_add(4, false, "< "+tr("_menu_gyro_Axis_X")+" >");
+menu_fn_calculate_width_add(4, false, "< "+tr("_menu_gyro_Axis_Xinv")+" >");
+menu_fn_calculate_width_add(4, false, "< "+tr("_menu_gyro_Axis_Y")+" >");
+menu_fn_calculate_width_add(4, false, "< "+tr("_menu_gyro_Axis_Yinv")+" >");
+menu_fn_calculate_width_add(4, false, "< "+tr("_menu_gyro_Axis_Z")+" >");
+menu_fn_calculate_width_add(4, false, "< "+tr("_menu_gyro_Axis_Zinv")+" >");
 
 menu_fn_calculate_width_finish();
 return argument0 >= 1 && argument0 <= 3;

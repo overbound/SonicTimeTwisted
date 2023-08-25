@@ -6,7 +6,7 @@ if(objProgram.inputManager.paddesc == "")
     var dd_state = real(sttandroid_gamepad_doubledetect_get_detect_state());
     if(dd_state == 0)
     {
-        var currentDeviceLabel = string(sttandroid_gamepad_get_label(0, 30));
+        var currentDeviceLabel = string(sttandroid_gamepad_get_label(0, real(tr('_menu_gamepad_Device_Length'))));
         if(currentDeviceLabel != "")
         {
             objProgram.inputManager.paddesc = currentDeviceLabel;

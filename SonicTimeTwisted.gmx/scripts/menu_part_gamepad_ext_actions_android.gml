@@ -1,4 +1,4 @@
-var gamepad_present = sttandroid_mode_get() > 0;
+var gamepad_present = sttandroid_gamepad_has_assigned(0);
 switch(argument0)
 {
     case 10:
@@ -11,7 +11,7 @@ switch(argument0)
             }
             else
             {
-                menu_fn_open_confirmation_window(tr("_options_menu_keymap_incomplete"), 21, 12, false, tr("_options_menu_keymap_remap"), tr("_options_menu_keymap_reset"));
+                menu_fn_open_confirmation_window(tr("_menu_Remap_Incomplete"), 21, 12, false, tr("_menu_Remap_Redo"), tr("_menu_Remap_Reset"));
             }
         }
         else
@@ -32,52 +32,88 @@ switch(argument0)
          break;
     case 1:
         // general mapping - prepare a map for a backup, then engage!
-        if(ds_exists(temp_map, ds_type_map))
-        {
-            ds_map_destroy(temp_map);
+        if (gamepad_present) {
+            if(ds_exists(temp_map, ds_type_map))
+            {
+                ds_map_destroy(temp_map);
+            }
+            temp_map = ds_map_create();
+            ds_map_add(temp_map, cUP, sttandroid_gamepad_swmap_get_both(0, cUP));
+            ds_map_add(temp_map, cDOWN, sttandroid_gamepad_swmap_get_both(0, cDOWN));
+            ds_map_add(temp_map, cLEFT, sttandroid_gamepad_swmap_get_both(0, cLEFT));
+            ds_map_add(temp_map, cRIGHT, sttandroid_gamepad_swmap_get_both(0, cRIGHT));
+            ds_map_add(temp_map, cA, sttandroid_gamepad_swmap_get_both(0, cA));
+            ds_map_add(temp_map, cB, sttandroid_gamepad_swmap_get_both(0, cB));
+            ds_map_add(temp_map, cC, sttandroid_gamepad_swmap_get_both(0, cC));
+            ds_map_add(temp_map, cSTART, sttandroid_gamepad_swmap_get_both(0, cSTART));
+            menu_part_gamepad_ext_actions(21);
+        } else {
+            menu_fn_open_warning_window(tr('_menu_gamepad_Warning'));
         }
-        temp_map = ds_map_create();
-        ds_map_add(temp_map, cUP, sttandroid_gamepad_swmap_get_both(0, cUP));
-        ds_map_add(temp_map, cDOWN, sttandroid_gamepad_swmap_get_both(0, cDOWN));
-        ds_map_add(temp_map, cLEFT, sttandroid_gamepad_swmap_get_both(0, cLEFT));
-        ds_map_add(temp_map, cRIGHT, sttandroid_gamepad_swmap_get_both(0, cRIGHT));
-        ds_map_add(temp_map, cA, sttandroid_gamepad_swmap_get_both(0, cA));
-        ds_map_add(temp_map, cB, sttandroid_gamepad_swmap_get_both(0, cB));
-        ds_map_add(temp_map, cC, sttandroid_gamepad_swmap_get_both(0, cC));
-        ds_map_add(temp_map, cSTART, sttandroid_gamepad_swmap_get_both(0, cSTART));
-        menu_part_gamepad_ext_actions(21);
         break;
     case 2:
         // individual map - button Up
-        android_start_software_mapping(tr_format(tr("_options_menu_keymap_press"), tr("_buttonname_Up")), cUP, 11, -1);
+        if (gamepad_present) {
+            android_start_software_mapping(tr_format(tr("_menu_Remap_Press"), tr("_menu_buttonname_Up")), cUP, 11, -1);
+        } else {
+            menu_fn_open_warning_window(tr('_menu_gamepad_Warning'));
+        }
         break;
     case 3:
         // individual map - button Down
-        android_start_software_mapping(tr_format(tr("_options_menu_keymap_press"), tr("_buttonname_Down")), cDOWN, 11, -1);
+        if (gamepad_present) {
+            android_start_software_mapping(tr_format(tr("_menu_Remap_Press"), tr("_menu_buttonname_Down")), cDOWN, 11, -1);
+        } else {
+            menu_fn_open_warning_window(tr('_menu_gamepad_Warning'));
+        }
         break;
     case 4:
         // individual map - button Left
-        android_start_software_mapping(tr_format(tr("_options_menu_keymap_press"), tr("_buttonname_Left")), cLEFT, 11, -1);
+        if (gamepad_present) {
+            android_start_software_mapping(tr_format(tr("_menu_Remap_Press"), tr("_menu_buttonname_Left")), cLEFT, 11, -1);
+        } else {
+            menu_fn_open_warning_window(tr('_menu_gamepad_Warning'));
+        }
         break;
     case 5:
         // individual map - button Right
-        android_start_software_mapping(tr_format(tr("_options_menu_keymap_press"), tr("_buttonname_Right")), cRIGHT, 11, -1);
+        if (gamepad_present) {
+            android_start_software_mapping(tr_format(tr("_menu_Remap_Press"), tr("_menu_buttonname_Right")), cRIGHT, 11, -1);
+        } else {
+            menu_fn_open_warning_window(tr('_menu_gamepad_Warning'));
+        }
         break;
     case 6:
         // individual map - button A
-        android_start_software_mapping(tr_format(tr("_options_menu_keymap_press"), tr("_buttonname_A")), cA, 11, -1);
+        if (gamepad_present) {
+            android_start_software_mapping(tr_format(tr("_menu_Remap_Press"), tr("_menu_buttonname_A")), cA, 11, -1);
+        } else {
+            menu_fn_open_warning_window(tr('_menu_gamepad_Warning'));
+        }
         break;
     case 7:
         // individual map - button B
-        android_start_software_mapping(tr_format(tr("_options_menu_keymap_press"), tr("_buttonname_B")), cB, 11, -1);
+        if (gamepad_present) {
+            android_start_software_mapping(tr_format(tr("_menu_Remap_Press"), tr("_menu_buttonname_B")), cB, 11, -1);
+        } else {
+            menu_fn_open_warning_window(tr('_menu_gamepad_Warning'));
+        }
         break;
     case 8:
         // individual map - button C
-        android_start_software_mapping(tr_format(tr("_options_menu_keymap_press"), tr("_buttonname_C")), cC, 11, -1);
+        if (gamepad_present) {
+            android_start_software_mapping(tr_format(tr("_menu_Remap_Press"), tr("_menu_buttonname_C")), cC, 11, -1);
+        } else {
+            menu_fn_open_warning_window(tr('_menu_gamepad_Warning'));
+        }
         break;
     case 9:
         // individual map - button Start
-        android_start_software_mapping(tr_format(tr("_options_menu_keymap_press"), tr("_buttonname_Start")), cSTART, 11, -1);
+        if (gamepad_present) {
+            android_start_software_mapping(tr_format(tr("_menu_Remap_Press"), tr("_menu_buttonname_Start")), cSTART, 11, -1);
+        } else {
+            menu_fn_open_warning_window(tr('_menu_gamepad_Warning'));
+        }
         break;
     case 11:
         // save the mapped button
@@ -90,35 +126,35 @@ switch(argument0)
         break;
     case 21:
         // group mapping - up
-        android_start_software_mapping(tr_format(tr("_options_menu_keymap_press"), tr("_buttonname_Up")), cUP, 22, 30);
+        android_start_software_mapping(tr_format(tr("_menu_Remap_Press"), tr("_menu_buttonname_Up")), cUP, 22, 30);
         break;
     case 22:
         // group mapping - down
-        android_start_software_mapping(tr_format(tr("_options_menu_keymap_press"), tr("_buttonname_Down")), cDOWN, 23, 30);
+        android_start_software_mapping(tr_format(tr("_menu_Remap_Press"), tr("_menu_buttonname_Down")), cDOWN, 23, 30);
         break;
     case 23:
         // group mapping - left
-        android_start_software_mapping(tr_format(tr("_options_menu_keymap_press"), tr("_buttonname_Left")), cLEFT, 24, 30);
+        android_start_software_mapping(tr_format(tr("_menu_Remap_Press"), tr("_menu_buttonname_Left")), cLEFT, 24, 30);
         break;
     case 24:
         // group mapping - right
-        android_start_software_mapping(tr_format(tr("_options_menu_keymap_press"), tr("_buttonname_Right")), cRIGHT, 25, 30);
+        android_start_software_mapping(tr_format(tr("_menu_Remap_Press"), tr("_menu_buttonname_Right")), cRIGHT, 25, 30);
         break;
     case 25:
         // group mapping - a
-        android_start_software_mapping(tr_format(tr("_options_menu_keymap_press"), tr("_buttonname_A")), cA, 26, 30);
+        android_start_software_mapping(tr_format(tr("_menu_Remap_Press"), tr("_menu_buttonname_A")), cA, 26, 30);
         break;
     case 26:
         // group mapping - b
-        android_start_software_mapping(tr_format(tr("_options_menu_keymap_press"), tr("_buttonname_B")), cB, 27, 30);
+        android_start_software_mapping(tr_format(tr("_menu_Remap_Press"), tr("_menu_buttonname_B")), cB, 27, 30);
         break;
     case 27:
         // group mapping - c
-        android_start_software_mapping(tr_format(tr("_options_menu_keymap_press"), tr("_buttonname_C")), cC, 28, 30);
+        android_start_software_mapping(tr_format(tr("_menu_Remap_Press"), tr("_menu_buttonname_C")), cC, 28, 30);
         break;
     case 28:
         // group mapping - start
-        android_start_software_mapping(tr_format(tr("_options_menu_keymap_press"), tr("_buttonname_Start")), cSTART, 29, 30);
+        android_start_software_mapping(tr_format(tr("_menu_Remap_Press"), tr("_menu_buttonname_Start")), cSTART, 29, 30);
         break;
     case 29:
         // group mapping - success, discard the backup and save
@@ -142,10 +178,10 @@ switch(argument0)
         menu_fn_goto_submenu(menu_part_gamepad_device_items);
         break;
     case 33:
-        menu_fn_open_slider_window(1, tr('_options_menu_Gamepad_deadzone'), objProgram.inputManager.deadzone_int, 5, 95);
+        menu_fn_open_slider_window(1, tr('_menu_gamepad_DeadzoneSlider'), objProgram.inputManager.deadzone_int, 5, 95, tr("_menu_format_percent"));
         break;
     case 34:
-        menu_fn_goto_submenu(menu_part_gamepad_analog_items);
+        menu_fn_goto_submenu(menu_part_gpanalog_controls_items);
         break;
     case -2:
     case -3:
@@ -175,15 +211,15 @@ if(string_length(deviceLabel) == 0)
     if(sttandroid_mode_get())
     {
         // there is supposed to be an input device, but none has been triggered yet
-        deviceLabel = tr("_btusb_joymap_Device_Unknown");
+        deviceLabel = tr("_menu_gamepad_Device_Unknown");
     }
     else
     {
         // there is not supposed to be an input device
-        deviceLabel = tr("_btusb_joymap_Device_Disabled");
+        deviceLabel = tr("_menu_gamepad_Device_Disabled");
     }
 }
-menu_fn_refresh_displayed_label(31, deviceLabel);
+menu_fn_refresh_displayed_value(31, deviceLabel);
 // calculating the optimal menu width at the same time - done here so that possible values are not duplicated among several scripts
 menu_fn_calculate_width_start();
 var onLabel = "< "+tr("_On")+" >";

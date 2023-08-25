@@ -1,13 +1,13 @@
 switch(argument0)
 {
     case 0:
-        menu_fn_open_slider_window(0, tr('_options_menu_sound_Master_Volume'), objMusic.masterGain, 0, 100);
+        menu_fn_open_slider_window(0, tr('_menu_sfx_MasterVolume'), objMusic.masterGain, 0, 100, tr("_menu_format_percent"));
         break;
     case 1:
-        menu_fn_open_slider_window(1, tr('_options_menu_sound_SFX_Volume'), objMusic.sfxGain, 0, 100);
+        menu_fn_open_slider_window(1, tr('_menu_sfx_SFXVolume'), objMusic.sfxGain, 0, 100, tr("_menu_format_percent"));
         break;
     case 2:
-        menu_fn_open_slider_window(2, tr('_options_menu_sound_Music_Volume'), objMusic.bgmGain, 0, 100);
+        menu_fn_open_slider_window(2, tr('_menu_sfx_MusicVolume'), objMusic.bgmGain, 0, 100, tr("_menu_format_percent"));
         break;
     case 3:
     case -1:

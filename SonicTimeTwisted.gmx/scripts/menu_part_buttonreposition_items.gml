@@ -1,5 +1,5 @@
 items = false;
-menu_fn_add_option(tr("_options_menu_Back"), 0);
+menu_fn_add_option(tr("_menu_Back"), 0);
 
 menu_fn_calculate_width_simple();
 
