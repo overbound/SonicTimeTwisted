@@ -592,17 +592,6 @@
           </args>
         </function>
         <function>
-          <name>sttandroid_gamepad_get_analog_controls_enabled</name>
-          <externalName>sttandroid_gamepad_get_analog_controls_enabled</externalName>
-          <kind>11</kind>
-          <help>sttandroid_gamepad_get_analog_controls_enabled(inputNumber)</help>
-          <returnType>2</returnType>
-          <argCount>1</argCount>
-          <args>
-            <arg>2</arg>
-          </args>
-        </function>
-        <function>
           <name>sttandroid_gamepad_get_analog_x_axis</name>
           <externalName>sttandroid_gamepad_get_analog_x_axis</externalName>
           <kind>11</kind>

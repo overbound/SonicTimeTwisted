@@ -25,3 +25,4 @@ with(objProgram.inputManager)
     }
     script_execute(argument0);
 }
+refresh_analog_controls_enabled();

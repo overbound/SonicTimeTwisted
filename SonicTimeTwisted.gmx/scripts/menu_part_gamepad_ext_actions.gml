@@ -205,14 +205,6 @@ switch(argument0)
 }
 
 // refreshing gamepad labels
-var deviceLabel = objProgram.inputManager.paddesc;
-if(string_length(deviceLabel) == 0)
-{
-    deviceLabel = tr("_menu_gamepad_Device_Disabled");
-}
-menu_fn_refresh_displayed_label(31, deviceLabel);
-
-// refreshing gamepad labels
 var upLabel = '';
 var downLabel = '';
 var leftLabel = '';

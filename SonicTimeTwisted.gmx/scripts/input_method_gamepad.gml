@@ -37,7 +37,7 @@ if (pad > -1) {
     if (pad > -1) {
         paddesc = gamepad_get_description(pad);
         
-		var descLength = real(tr('_menu_gamepad_Device_Length'));
+        var descLength = real(tr('_menu_gamepad_Device_Length'));
         if (string_length(paddesc) > descLength) {
             paddesc = string_copy(paddesc, 0, descLength - 3)+'...';
         }

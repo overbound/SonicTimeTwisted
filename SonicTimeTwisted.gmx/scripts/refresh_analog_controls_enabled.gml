@@ -29,21 +29,21 @@ with (objProgram.inputManager) {
         case SSP5:
         case SSP6:
         case SSP7:
-            if (set_analog_controls_enabled(analog_in_ss, touchanalog_in_ss)) {
+            if (set_analog_controls_enabled(gpanalog_in_ss, touchanalog_in_ss)) {
                 input_analog_script = analog_postprocess_ssz;
             } else {
                 input_analog_script = analog_postprocess_dummy;
             }
             break;
         case MM1:
-            if (set_analog_controls_enabled(analog_in_gg, touchanalog_in_gg)) {
+            if (set_analog_controls_enabled(gpanalog_in_gg, touchanalog_in_gg)) {
                 input_analog_script = analog_postprocess_ggz;
             } else {
                 input_analog_script = analog_postprocess_dummy;
             }
             break;
         default:
-            if (set_analog_controls_enabled(analog_in_zones, touchanalog_in_zones)) {
+            if (set_analog_controls_enabled(gpanalog_in_zones, touchanalog_in_zones)) {
                 input_analog_script = analog_postprocess_act;
             } else {
                 input_analog_script = analog_postprocess_dummy;

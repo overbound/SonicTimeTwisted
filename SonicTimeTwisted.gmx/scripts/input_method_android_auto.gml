@@ -1,5 +1,5 @@
 switch(input_method_autodetected) {
-    case INPUT_OS_SPECIFIC_1:
+    case INPUT_GAMEPAD:
         if (mouse_check_button_released(mb_left)) {
             set_input_method(INPUT_AUTO, false, INPUT_TOUCHSCREEN);
         } else {
@@ -8,7 +8,7 @@ switch(input_method_autodetected) {
         break;
     case INPUT_AUTO:
         if (sttandroid_input_check_any_pressed()) {
-            set_input_method(INPUT_AUTO, false, INPUT_OS_SPECIFIC_1);
+            set_input_method(INPUT_AUTO, false, INPUT_GAMEPAD);
         } else {
             if (mouse_check_button_pressed(mb_left)) {
                 set_input_method(INPUT_AUTO, false, INPUT_TOUCHSCREEN);
@@ -17,7 +17,7 @@ switch(input_method_autodetected) {
         break;
     case INPUT_TOUCHSCREEN:
         if (sttandroid_input_check_any_pressed()) {
-            set_input_method(INPUT_AUTO, false, INPUT_OS_SPECIFIC_1);
+            set_input_method(INPUT_AUTO, false, INPUT_GAMEPAD);
         }       
         break;
     default:

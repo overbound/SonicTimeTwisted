@@ -921,10 +921,6 @@ public class SttAndroid extends ExtensionBase {
         return 0.0;
     }
 
-    public double sttandroid_gamepad_get_analog_controls_enabled(double inputNumber) {
-        return inputs[(int) inputNumber].getAnalogEnabled() ? 1.0 : 0.0;
-    }
-
     public double sttandroid_gamepad_get_analog_x_axis(double inputNumber) {
         return inputs[(int) inputNumber].getAxisX();
     }
