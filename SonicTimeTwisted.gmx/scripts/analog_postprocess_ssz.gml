@@ -47,7 +47,6 @@ if (analog_d > 0) {
             }
             break;   
     }
-    show_debug_message("analog_angle: "+string(analog_angle)+" -> "+string(analog_x));
 } else {
     analog_x = 0;
 }

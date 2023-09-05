@@ -22,18 +22,7 @@ if(!objScreen.paused)
             {
                 input_state |= cC;
             }
-            // tilting controls
-            var tilt_x = get_gyroscope_value();
-            // simple mode where tilting simply presses left and right
-            if(tilt_x < -1*gyro_switch_on_angle_x)
-            {
-                input_state |= cLEFT;
-            }
-            else
-            if(tilt_x > gyro_switch_on_angle_x)
-            {
-                input_state |= cRIGHT;
-            }
+            
             // run button
             if(point_in_circle(device_mouse_x_to_gui(device), device_mouse_y_to_gui(device),
                 dpadx, dpady, bar

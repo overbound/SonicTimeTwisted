@@ -7,18 +7,7 @@ if(smartphone_controls_enabled)
     {
         var input_state = 0;
         var analog_used = false;
-        analog_x = get_gyroscope_value();
         analog_y = 0;
-        if (!gyromode) {
-            if (analog_x <= -gyro_switch_on_angle_x) {
-                input_state |= cLEFT;
-            } else {
-                if (analog_x >= gyro_switch_on_angle_x) {
-                    input_state |= cRIGHT;
-                }
-            }
-            analog_x = 0;
-        }
         var dpad_is_pressed = false;
         var dpx, dpy, p_distance;
         for(var device = 0; device <= 4; device++)
@@ -123,6 +112,17 @@ if(smartphone_controls_enabled)
         }
         if (analog_used) {
             script_execute(input_analog_script);        
+        }
+        analog_x = get_gyroscope_value();
+        if (!gyromode) {
+            if (analog_x <= -gyro_switch_on_angle_x) {
+                input_state |= cLEFT;
+            } else {
+                if (analog_x >= gyro_switch_on_angle_x) {
+                    input_state |= cRIGHT;
+                }
+            }
+            analog_x = 0;
         }
         objProgram.inputManager.state |= input_state;
     }

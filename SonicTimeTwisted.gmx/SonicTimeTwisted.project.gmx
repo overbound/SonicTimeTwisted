@@ -4093,6 +4093,7 @@
             </scripts>
             <script>scripts\input_method_init_touchscreen.gml</script>
             <script>scripts\input_method_haptics_touchscreen.gml</script>
+            <script>scripts\input_method_ssgyro.gml</script>
             <script>scripts\input_method_haptics_ssgyro.gml</script>
             <script>scripts\input_method_draw_ssgyro.gml</script>
             <script>scripts\input_method_init_ssgyro.gml</script>
@@ -4105,7 +4106,6 @@
           </scripts>
           <script>scripts\input_method_dummy_script.gml</script>
           <script>scripts\input_method_gamepad.gml</script>
-          <script>scripts\input_method_ssgyro.gml</script>
           <script>scripts\input_method_gamepad_create_vars.gml</script>
           <script>scripts\input_method_init_physical.gml</script>
           <script>scripts\input_method_init_smartphone.gml</script>
