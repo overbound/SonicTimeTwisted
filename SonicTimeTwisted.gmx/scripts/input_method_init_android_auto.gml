@@ -26,5 +26,5 @@ if (input_method_autodetected == INPUT_TOUCHSCREEN) {
     input_manage_script = input_method_android_auto;
 }
 
-sttandroid_input_set_any_pressed_handled(false);
+sttandroid_input_set_any_pressed_handled(true);
 

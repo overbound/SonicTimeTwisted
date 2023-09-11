@@ -178,7 +178,7 @@ switch(argument0)
         menu_fn_goto_submenu(menu_part_gamepad_device_items);
         break;
     case 33:
-        menu_fn_open_slider_window(1, tr('_menu_gamepad_DeadzoneSlider'), objProgram.inputManager.deadzone_int, 5, 95, tr("_menu_format_percent"));
+        menu_fn_open_slider_window(1, tr('_menu_gamepad_Deadzone'), objProgram.inputManager.deadzone_int, 5, 95, tr("_menu_format_percent"));
         break;
     case 34:
         menu_fn_goto_submenu(menu_part_gpanalog_controls_items);

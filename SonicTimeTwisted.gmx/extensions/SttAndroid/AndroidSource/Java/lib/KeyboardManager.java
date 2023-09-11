@@ -32,7 +32,6 @@ public class KeyboardManager extends AbstractManager {
 
     protected HashMap<Integer, Integer> directMappings;
 
-    protected boolean anyKeyMode;
     protected int previousState;
 
     /**

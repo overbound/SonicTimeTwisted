@@ -12,9 +12,10 @@ public abstract class AbstractManager {
      */
     final static int BUTTON = 0;
 
-    protected boolean any_press_registered = false;
-
-    protected int previousAnyKey = -1;
+    /**
+     * Whether the input should be in any key mode (used as a fallback if no device is connected)
+     */
+    protected boolean anyKeyMode;
 
     /**
      * Forwards key presses to the device wrapper(s)
@@ -32,12 +33,35 @@ public abstract class AbstractManager {
      */
     public abstract boolean processGenericMotionEvent(MotionEvent event);
 
-
+    /**
+     * Returns the state as Sonic Time Twisted uses it (a sum of powers of two)
+     *
+     * @return Input state, -1 if device not HW mapped, -2 if device not assigned
+     */
     public abstract int getInputState(int player);
-    public abstract boolean isAnyKeyMode();
-    public abstract void setAnyKeyMode(boolean pAnyKeyMode);
-    public abstract int getAnyInput();
 
+    /**
+     * Returns a value that indicates whether the any key mode is enabled
+     *
+     * @return Whether the any key mode is enabled
+     */
+    public abstract boolean isAnyKeyMode();
+
+    /**
+     * Enables any key mode, deactivating software mapping and allowing to get any key or axis input
+     * among those mapped.
+     *
+     * @param anyKeyMode TRUE or FALSE to enable or disable
+     */
+    public abstract void setAnyKeyMode(boolean pAnyKeyMode);
+
+    /**
+     * Returns internal value of a pressed key or axis if there is need to
+     * detect any press on the device
+     *
+     * @return Key or axis value if anything is pressed, -1 otherwise
+     */
+    public abstract int getAnyInput();
 
     /**
      * Truncates a label to a required length if needed, adding an ellipsis if possible.

@@ -71,3 +71,4 @@ with(objProgram.inputManager)
     use_fallback = false;
     visible = true;
 }
+

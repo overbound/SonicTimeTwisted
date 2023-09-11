@@ -42,8 +42,8 @@ import com.yoyogames.runner.RunnerJNILib;
  * The main class.
  * Delegates most of the logic to {@link InputDeviceManager}, {@link Mapping} and {@link RumbleThread}
  * <p>
- * Contains methods that should be interfaced with Sonic Time Twisted on Android. These methods
- * start with android_*.
+ * Contains methods that should be interfaced with Sonic Time Twisted on Android.
+ * These methods start with sttandroid_*.
  *
  * @author AlexKhayrullin
  */
@@ -90,28 +90,47 @@ public class SttAndroid extends ExtensionBase {
     public static final int cSTART = 128;
 
     /**
-     * Inputs, one per player. At the time of coding this, only one player is supported, but leaving
-     * this case unmanaged would be short-sighted.
+     * Mode in which the library only detects game pads
+     */
+    public static final int DEVICEMODE_GAMEPAD = 0b01;
+
+    /**
+     * Mode in which the library only detects keyboards
+     */
+    public static final int DEVICEMODE_KEYBOARD = 0b10;
+
+    /**
+     * Mode in which the library detects both keyboards and game pads
+     */
+    public static final int DEVICEMODE_BOTH = 0b11;
+
+    /**
+     * Inputs, one per player. At the time of coding this, only one player is supported.
+     * Cases with a second player are not tested, but the code is at least future-proofed.
      */
     protected InputDeviceManager[] inputs;
 
     /**
-     * Keyboard input manage
+     * Keyboard input manager. This library must differentiate between keyboards and controllers.
+     * The keyboard input is implemented under the assumption that if there are two players,
+     * both will use the same keyboard.
      */
     protected KeyboardManager keyboard;
 
     /**
-     *
+     * ID of the keyboard. Using this avoids some redundant detection.
      */
     protected int keyboardDeviceId;
 
     /**
-     * Whether the library is in double device detecting mode (detecting Joy-Cons) .
+     * Whether the library is in double device detecting mode
+     * (detecting Joy-Cons) .
      */
     protected byte doubleInputDetectingMode;
 
     /**
-     * During double device detecting mode, this is used for storing the first device.
+     * During double device detecting mode, this is used for storing the first
+     * device.
      */
     protected InputDevice doubleDeviceModeTempInputDevice;
 
@@ -121,11 +140,16 @@ public class SttAndroid extends ExtensionBase {
     protected RumbleThread rumbleThread;
 
     /**
-     * True if vibration should be delegatedto external devices
+     * True if vibration should be delegated to external devices.
+     * More of a future-proofing measure, since Android game pads don't support rumble
      */
     protected boolean delegateRumbleToExternalDevices;
 
-    protected int mode;
+    /**
+     * Specifies the type of devices to detect: game pad, keyboard or both.
+     * Compatible with bitwise operations, see MODE_* constants above.
+     */
+    protected int deviceMode;
 
     protected boolean anyPressRegistered = false;
 
@@ -147,7 +171,7 @@ public class SttAndroid extends ExtensionBase {
         keyboardDeviceId = -1;
 
         rumbleThread = null;
-        mode = 0;
+        deviceMode = 0;
         // intentionally set to TRUE because of what sttandroid_rumble_set_enabled() contains
         delegateRumbleToExternalDevices = true;
         sttandroid_mode_set(0.0);
@@ -159,7 +183,7 @@ public class SttAndroid extends ExtensionBase {
     }
 
     /**
-     * Tests whether a device can be used with the game.
+     * Tests whether a device is a usable game pad
      *
      * @param device InputDevice to test
      * @return Whether the device is usable
@@ -180,7 +204,9 @@ public class SttAndroid extends ExtensionBase {
         if (keyboardDeviceId == device.getId()) {
             return true;
         }
-        if (((mode & 2) == 2) && (!isDeviceGamepad(device)) && (device.getSources() & InputDevice.SOURCE_KEYBOARD) == InputDevice.SOURCE_KEYBOARD) {
+        if (((deviceMode & DEVICEMODE_KEYBOARD) == DEVICEMODE_KEYBOARD)
+                && (!isDeviceGamepad(device))
+                && (device.getSources() & InputDevice.SOURCE_KEYBOARD) == InputDevice.SOURCE_KEYBOARD) {
             keyboardDeviceId = device.getId();
             return device.getKeyboardType() == InputDevice.KEYBOARD_TYPE_ALPHABETIC;
         }
@@ -191,8 +217,8 @@ public class SttAndroid extends ExtensionBase {
      * Returns an input device manager for an InputDevice.
      * If a device doesn't have a manager registered, can be used and there is an open slot,
      * a new manager instance is created.
-     *
-     * A device should only be assigned if the event is that of a key press
+     * Alternatively, if it's a keyboard, it has special handling.
+     * A device should only be assigned if the event is that of a key press.
      *
      * @param device InputDevice to test
      * @param doAssign Whether the device should be assigned if it isn't already
@@ -208,7 +234,7 @@ public class SttAndroid extends ExtensionBase {
                 if (isDeviceKeyboard(device)) {
                     return keyboard;
                 } else {
-                    if (doAssign && ((mode & 1) == 1) && isDeviceGamepad(device)) {
+                    if (doAssign && ((deviceMode & DEVICEMODE_GAMEPAD) == DEVICEMODE_GAMEPAD) && isDeviceGamepad(device)) {
                         if (!inputs[0].hasAssignedDevice()) {
                             inputs[0].assignSingleDevice(device);
                             return inputs[0];
@@ -229,8 +255,8 @@ public class SttAndroid extends ExtensionBase {
      * Manages key presses:
      * - does nothing if external devices are disabled
      * - during the first step of double device detecting mode, memorizes the device
-     * - during the second step of double device detecting mode, compares both devices (they need to
-     * be different) and assigns both devices to the input device manager.
+     * - during the second step of double device detecting mode, compares both devices
+     * (they need to be different) and assigns both devices to the input device manager.
      * - otherwise, gets the input device manager to use and forwards it the event
      *
      * @param event The event to process
@@ -238,8 +264,7 @@ public class SttAndroid extends ExtensionBase {
      */
     @Override
     public boolean dispatchKeyEvent(KeyEvent event) {
-        // Log.d("yoyo", "KEY "+event.getKeyCode()+" "+(event.getAction() == KeyEvent.ACTION_DOWN ? "PRESSED" : "RELEASED"));
-        if (mode == 0) {
+        if (deviceMode == 0) {
             return false;
         }
         if (doubleInputDetectingMode > -1 && event.getAction() == KeyEvent.ACTION_DOWN) {
@@ -271,10 +296,7 @@ public class SttAndroid extends ExtensionBase {
             } else {
                 manager = getInputDeviceManagerToUse(event.getDevice(), false);
             }
-            // Log.d("yoyo", "  getting a manager");
-
             if (manager != null) {
-                // Log.d("yoyo", "  manager not null : "+manager.getClass().getCanonicalName());
                 return manager.processKeyEvent(event);
             }
         }
@@ -292,7 +314,7 @@ public class SttAndroid extends ExtensionBase {
      */
     @Override
     public boolean dispatchGenericMotionEvent(MotionEvent event) {
-        if (mode == 0) {
+        if (deviceMode == 0) {
             return false;
         }
         if (handleAnyPressRegistered && (!anyPressRegistered) && (isDeviceGamepad(event.getDevice()) || isDeviceKeyboard(event.getDevice()))) {
@@ -305,21 +327,25 @@ public class SttAndroid extends ExtensionBase {
         return false;
     }
 
-    public double sttandroid_input_is_any_pressed_handled() {
-        return handleAnyPressRegistered ? 1.0 : 0.0;
-    }
-
+    /**
+     * Enables or disables detection of any pressed key
+     *
+     * @param anyPressHandled 1 to enable, 0 to disable
+     * @return Arbitrary value because GameMaker Studio needs a return type
+     */
     public double sttandroid_input_set_any_pressed_handled(double anyPressHandled) {
         handleAnyPressRegistered = anyPressHandled > 0.5;
         anyPressRegistered &= handleAnyPressRegistered;
-
-        // Log.d("yoyo", "handleAnyPressRegistered : "+(handleAnyPressRegistered ? "1" : "0"));
         return 0.0;
     }
 
+    /**
+     * Returns whether a button has been pressed on any device
+     *
+     * @return 1 if true, 0 otherwise
+     */
     public double sttandroid_input_check_any_pressed() {
         if (anyPressRegistered) {
-            // Log.d("yoyo", "    <- "+(anyPressRegistered ? "1" : "0"));
             anyPressRegistered = false;
             return 1.0;
         }
@@ -334,21 +360,21 @@ public class SttAndroid extends ExtensionBase {
      */
     public double sttandroid_input_get_state(double inputNumber) {
         return (
-            (((this.mode & 1) == 1) ? Math.max(this.inputs[(int) inputNumber].getInputState((int) inputNumber), 0) : 0)
+            (((this.deviceMode & DEVICEMODE_GAMEPAD) == DEVICEMODE_GAMEPAD) ? Math.max(this.inputs[(int) inputNumber].getInputState((int) inputNumber), 0) : 0)
             |
-            (((this.mode & 2) == 2) ? this.keyboard.getInputState((int) inputNumber) : 0)
+            (((this.deviceMode & DEVICEMODE_KEYBOARD) == DEVICEMODE_KEYBOARD) ? this.keyboard.getInputState((int) inputNumber) : 0)
         );
     }
 
     public double sttandroid_gamepad_get_state(double inputNumber) {
-        return ((this.mode & 1) == 1) ? this.inputs[(int) inputNumber].getInputState((int) inputNumber) : 0;
+        return ((this.deviceMode & DEVICEMODE_GAMEPAD) == DEVICEMODE_GAMEPAD) ? this.inputs[(int) inputNumber].getInputState((int) inputNumber) : 0;
     }
 
     /**
      * Checks whether this instance has an associated device
      *
      * @param inputNumber Player number: 0 or 1
-     * @return 1 if a main device is associated with this instance, 0 otherwise
+     * @return 1 if true, 0 otherwise
      */
     public double sttandroid_gamepad_has_assigned(double inputNumber) {
         return this.inputs[(int) inputNumber].hasAssignedDevice() ? 1.0 : 0.0;
@@ -358,7 +384,7 @@ public class SttAndroid extends ExtensionBase {
      * Checks whether this instance has two devices associated
      *
      * @param inputNumber Player number: 0 or 1
-     * @return 1 if a second device is associated with this instance, 0 otherwise
+     * @return 1 if true, 0 otherwise
      */
     public double sttandroid_gamepad_is_double(double inputNumber) {
         return this.inputs[(int) inputNumber].isDoubleDevice() ? 1.0 : 0.0;
@@ -368,7 +394,7 @@ public class SttAndroid extends ExtensionBase {
      * Clears hardware mappings  for one input device manager
      *
      * @param inputNumber Player number: 0 or 1
-     * @return Random value because GameMaker Studio needs a return type.
+     * @return Arbitrary value because GameMaker Studio needs a return type
      */
     public double sttandroid_gamepad_hwmap_reset(double inputNumber) {
         this.inputs[(int) inputNumber].resetHardwareMappings();
@@ -379,7 +405,7 @@ public class SttAndroid extends ExtensionBase {
      * Makes a dedicated class initialize a hardware mapping session.
      *
      * @param inputNumber Player number: 0 or 1, determines the input device manager to update
-     * @return Random value because GameMaker Studio needs a return type.
+     * @return Arbitrary value because GameMaker Studio needs a return type
      */
     public double sttandroid_gamepad_hwmap_start(double inputNumber) {
         Mapping.startHardwareMapping(inputs[(int) inputNumber]);
@@ -389,7 +415,7 @@ public class SttAndroid extends ExtensionBase {
     /**
      * Lets the hardware mapping class know this class starts reading a new file.
      *
-     * @return Random value because GameMaker Studio needs a return type.
+     * @return Arbitrary value because GameMaker Studio needs a return type
      */
     public double sttandroid_gamepad_hwmap_newfile() {
         Mapping.startNewFile();
@@ -400,7 +426,7 @@ public class SttAndroid extends ExtensionBase {
      * Feeds a row from the hardware map.CSV file to the hardware mapping class.
      *
      * @param row The CSV row to analyze
-     * @return Random value because GameMaker Studio needs a return type.
+     * @return Arbitrary value because GameMaker Studio needs a return type
      */
     public double sttandroid_gamepad_hwmap_feed_row(String row) {
         Mapping.feedRow(row);
@@ -408,10 +434,9 @@ public class SttAndroid extends ExtensionBase {
     }
 
     /**
-     * Lets the hardware mapping class know the mapping has ended and prompts it to apply the read
-     * mappings.
+     * Lets the hardware mapping class know the mapping has ended and prompts it to apply the read mappings.
      *
-     * @return Random value because GameMaker Studio needs a return type.
+     * @return Arbitrary value because GameMaker Studio needs a return type
      */
     public double sttandroid_gamepad_hwmap_finish() {
         Mapping.endHardwareMapping();
@@ -420,8 +445,8 @@ public class SttAndroid extends ExtensionBase {
 
 
     /**
-     * Checks whether an input device has applied hardware mappings
-     * Checking just the first device is enough
+     * Checks whether an input device has applied hardware mappings.
+     * Checking just the first device is enough.
      *
      * @param inputNumber Player number: 0 or 1
      * @return 1 if the first device exists and has hardware mappings applied, 0 otherwise
@@ -434,7 +459,7 @@ public class SttAndroid extends ExtensionBase {
      * Starts the double device detection mode.
      *
      * @param inputNumber Player number: 0 or 1, determines the input device manager to update
-     * @return Random value because GameMaker Studio needs a return type.
+     * @return Arbitrary value because GameMaker Studio needs a return type
      */
     public double sttandroid_gamepad_doubledetect_start(double inputNumber) {
 
@@ -459,7 +484,7 @@ public class SttAndroid extends ExtensionBase {
     /**
      * Returns the current state of the double device detection mode.
      *
-     * @return State: 0 for inactive, 1 for detecting first input, 2 for second input
+     * @return State: 0 for inactive, 1 for detecting first input, 2 for detecting second input
      */
     public double sttandroid_gamepad_doubledetect_get_detect_state() {
 
@@ -472,7 +497,7 @@ public class SttAndroid extends ExtensionBase {
     /**
      * Exits the double device detection mode without applying changes
      *
-     * @return Random value because GameMaker Studio needs a return type.
+     * @return Arbitrary value because GameMaker Studio needs a return type
      */
     public double sttandroid_gamepad_doubledetect_cancel() {
         doubleInputDetectingMode = -2;
@@ -480,8 +505,8 @@ public class SttAndroid extends ExtensionBase {
     }
 
     /**
-     * Returns a value that indicates whether the last double device detection mode was
-     * successfully completed or cancelled.
+     * Returns a value that indicates whether the last double device detection mode
+     * was successfully completed or cancelled.
      *
      * @return 1 if last time was successful (or not ran), 0 otherwise
      */
@@ -493,7 +518,7 @@ public class SttAndroid extends ExtensionBase {
      * Disconnects a player's input.
      *
      * @param inputNumber Player number: 0 or 1
-     * @return Random value because GameMaker Studio needs a return type.
+     * @return Arbitrary value because GameMaker Studio needs a return type
      */
     public double sttandroid_gamepad_disconnect(double inputNumber) {
         inputs[(int) inputNumber].disconnect();
@@ -501,12 +526,12 @@ public class SttAndroid extends ExtensionBase {
     }
 
     /**
-     * Enables any key mode, deactivating software mapping and allowing to get any key or axis input
-     * among those mapped.
+     * Enables any key mode, deactivating software mapping and allowing to get any
+     * key or axis input among those mapped.
      *
      * @param inputNumber Player number: 0 or 1
      * @param value       1 or 0 to enable or disable
-     * @return Random value because GameMaker Studio needs a return type.
+     * @return Arbitrary value because GameMaker Studio needs a return type
      */
     public double sttandroid_gamepad_anykey_set_mode(double inputNumber, double value) {
         inputs[(int) inputNumber].setAnyKeyMode(value > 0.0);
@@ -514,7 +539,7 @@ public class SttAndroid extends ExtensionBase {
     }
 
     /**
-     * Returns a value that indicates whether the any key mode is enabled
+     * Returns a value that indicates whether the any key mode is enabled.
      *
      * @param inputNumber Player number: 0 or 1
      * @return 1 if the any key mode is enabled, 0 otherwise
@@ -527,8 +552,8 @@ public class SttAndroid extends ExtensionBase {
     /**
      * Returns any key or axis from an input in the any key mode.
      * <p>
-     * Returns a value X*10+Y where X is a Key code or Axis code, and Y is 0 for keys, 1 for axes
-     * if the axis value is positive and 2 for axes of the axis value is negative.
+     * Returns a value X*10+Y where X is a Key code or Axis code, and Y is 0 for keys, 1 for axes.
+     * if the axis value is positive and 2 for axes of the axis value is negative..
      *
      * @param inputNumber Player number: 0 or 1
      * @return Integer unique to a button press or axis state or -1 if nothing is pressed
@@ -616,7 +641,7 @@ public class SttAndroid extends ExtensionBase {
      * @param inputNumber   Player number: 0 or 1
      * @param inputCode     Constant for the mapped input as managed by Sonic Time Twisted
      * @param configuration A string with mapped values
-     * @return Random value because GameMaker Studio needs a return type.
+     * @return Arbitrary value because GameMaker Studio needs a return type
      */
     public double sttandroid_gamepad_swmap_set_both(double inputNumber, double inputCode,
                                                    String configuration) {
@@ -684,7 +709,7 @@ public class SttAndroid extends ExtensionBase {
      *
      * @param inputNumber Player number: 0 or 1
      * @param power       Vibration power: 0 to 1 with decimals
-     * @return Random value because GameMaker Studio needs a return type.
+     * @return Arbitrary value because GameMaker Studio needs a return type
      */
     public double sttandroid_rumble_perform(double inputNumber, double power) {
         if (delegateRumbleToExternalDevices) {
@@ -701,16 +726,16 @@ public class SttAndroid extends ExtensionBase {
      * Set this to TRUE to enable external devices (gamepads) and FALSE to disable them.
      *
      * @param mode two-bit int: bit 0 is whether gamepad is active, bit 1 is whether keyboard is active
-     * @return Random value because GameMaker Studio needs a return type.
+     * @return Arbitrary value because GameMaker Studio needs a return type
      */
     public double sttandroid_mode_set(double mode) {
         int newMode = (int)Math.round(mode);
-        if (((newMode & 1) == 0) && (this.mode & 1) != 0) {
+        if (((newMode & DEVICEMODE_GAMEPAD) == 0) && (this.deviceMode & DEVICEMODE_GAMEPAD) != 0) {
             inputs[0].disconnectAll();
             inputs[1].disconnectAll();
         }
-        this.mode = newMode;
-        if (this.mode != 3) {
+        this.deviceMode = newMode;
+        if (this.deviceMode != DEVICEMODE_BOTH) {
             handleAnyPressRegistered = false;
             anyPressRegistered = false;
         }
@@ -723,7 +748,7 @@ public class SttAndroid extends ExtensionBase {
      * @return 1 if gamepads are enabled, 0 otherwise
      */
     public double sttandroid_mode_get() {
-        return this.mode;
+        return this.deviceMode;
     }
 
     /**
@@ -731,7 +756,7 @@ public class SttAndroid extends ExtensionBase {
      * main device vibrate instead.
      *
      * @param isExternal Whether external devices must be used for vibrating.
-     * @return Random value because GameMaker Studio needs a return type.
+     * @return Arbitrary value because GameMaker Studio needs a return type
      */
     public double sttandroid_rumble_set_enabled(double isExternal) {
         boolean newValue = Math.round(isExternal) > 0;
@@ -762,14 +787,12 @@ public class SttAndroid extends ExtensionBase {
         return delegateRumbleToExternalDevices ? 1.0 : 0.0;
     }
 
-
-
     /**
      * Enables any key mode, deactivating software mapping and allowing to get any key or axis input
      * among those mapped.
      *
      * @param value       1 or 0 to enable or disable
-     * @return Random value because GameMaker Studio needs a return type.
+     * @return Arbitrary value because GameMaker Studio needs a return type
      */
     public double sttandroid_keyboard_anykey_set_mode(double value) {
         keyboard.setAnyKeyMode(value > 0.0);
@@ -876,7 +899,7 @@ public class SttAndroid extends ExtensionBase {
      * @param inputNumber   Player number: 0 or 1
      * @param inputCode     Constant for the mapped input as managed by Sonic Time Twisted
      * @param configuration A string with mapped values
-     * @return Random value because GameMaker Studio needs a return type.
+     * @return Arbitrary value because GameMaker Studio needs a return type
      */
     public double sttandroid_keyboard_swmap_set_both(double inputNumber, double inputCode,
                                                      String configuration) {
@@ -909,6 +932,11 @@ public class SttAndroid extends ExtensionBase {
         return 0.0;
     }
 
+    /**
+     * Tests whether the main device has a gyroscope
+     *
+     * @return 1 if true, 0 otherwise
+     */
     public double sttandroid_device_has_gyroscope() {
         return RunnerJNILib.GetApplicationContext().getPackageManager()
                 .hasSystemFeature(
@@ -916,15 +944,34 @@ public class SttAndroid extends ExtensionBase {
                 ) ? 1.0 : 0.0;
     }
 
+    /**
+     * Enables or disables analog input mode
+     *
+     * @param inputNumber Player number: 0 or 1
+     * @param enabled     1 to enable, 0 to disable
+     * @return Arbitrary value because GameMaker Studio needs a return type
+     */
     public double sttandroid_gamepad_set_analog_controls_enabled(double inputNumber, double enabled) {
         inputs[(int) inputNumber].setAnalogEnabled(enabled > 0.5);
         return 0.0;
     }
 
+    /**
+     * Returns the value of analog X axis if analog input mode enabled
+     *
+     * @param inputNumber Player number: 0 or 1
+     * @return Value of axis, from -1.0 to 1.0
+     */
     public double sttandroid_gamepad_get_analog_x_axis(double inputNumber) {
         return inputs[(int) inputNumber].getAxisX();
     }
 
+    /**
+     * Returns the value of analog Y axis if analog input mode enabled
+     *
+     * @param inputNumber Player number: 0 or 1
+     * @return Value of axis, from -1.0 to 1.0
+     */
     public double sttandroid_gamepad_get_analog_y_axis(double inputNumber) {
         return inputs[(int) inputNumber].getAxisY();
     }

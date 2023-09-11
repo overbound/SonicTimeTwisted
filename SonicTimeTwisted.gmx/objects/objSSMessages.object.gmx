@@ -330,6 +330,11 @@ if closeMenu == false {
                 }
                 set_smartphone_controls_enabled(false);
                 with(menu) menu_fn_open_menu(menu_to_use, true, other.is_touchscreen);
+                
+                with (objInput) {
+                    analog_enabled = false;
+                    analog_applied = false;
+                }
             }
         }
     }

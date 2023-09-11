@@ -101,11 +101,6 @@ public class InputDeviceManager extends AbstractManager {
     protected boolean hardwareMappingsFound;
 
     /**
-     * Whether the input should be in any key mode (used as a fallback if no device is connected)
-     */
-    protected boolean anyKeyMode;
-
-    /**
      *
      */
     protected double deadzone;

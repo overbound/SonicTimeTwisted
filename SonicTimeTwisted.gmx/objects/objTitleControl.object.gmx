@@ -587,7 +587,7 @@ if(menu.state == 0)
     // update interface based on the current input method
     // adds a little overhead, but nothing comparable with the rest of the game :)
     event_user(2);
-    if(is_fallback_touchscreen)
+    if(is_touchscreen)
     {
         // level select touchscreen version - tap on every displayed name, then touch the title screen with two fingers
         if(levelSelect &lt; 6)
@@ -1163,7 +1163,7 @@ if(state &gt;= 2)
 {
     if(allow_skipping)
     {
-        if(name &lt; 9 &amp;&amp; is_fallback_touchscreen)
+        if(name &lt; 9 &amp;&amp; is_touchscreen)
         {
            draw_sprite(sprTouchscreenFastForward, 0, view_wview[0] - 28, 4);
         }

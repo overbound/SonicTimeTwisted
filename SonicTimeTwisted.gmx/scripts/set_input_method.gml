@@ -151,4 +151,10 @@ with(objInputMethodDependant)
         }
     }
 }
+if (room == titlescreen)
+{
+    with(objTitleControl) {
+        event_user(2);
+    }
+}
 

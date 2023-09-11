@@ -469,15 +469,6 @@
           </args>
         </function>
         <function>
-          <name>sttandroid_input_is_any_pressed_handled</name>
-          <externalName>sttandroid_input_is_any_pressed_handled</externalName>
-          <kind>11</kind>
-          <help>sttandroid_input_is_any_pressed_handled()</help>
-          <returnType>2</returnType>
-          <argCount>0</argCount>
-          <args/>
-        </function>
-        <function>
           <name>sttandroid_input_set_any_pressed_handled</name>
           <externalName>sttandroid_input_set_any_pressed_handled</externalName>
           <kind>11</kind>
