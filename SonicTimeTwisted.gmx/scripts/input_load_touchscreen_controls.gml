@@ -125,3 +125,8 @@ else
     
 used_deadzone = 10;
 dpad_device_id = noone;
+
+// force some settings depending on platform post-factum, to override settings saved from previous versions of the game
+if (!(objProgram.device_info & DEVICE_TYPE_SMARTPHONE)) {
+    gyroinss = 0; // never use the gyroscope on consoles or PC
+}
