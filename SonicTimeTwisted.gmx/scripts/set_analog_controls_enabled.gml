@@ -1,6 +1,9 @@
 /// set_analog_controls_enabled(enabled_gamepad, enabled_touchscreen)
 if (is_touchscreen) {
     objProgram.inputManager.analog_enabled = argument1;
+    if (!argument1) {
+        objProgram.inputManager.analog_applied = false;
+    }
     if (objProgram.device_info & DEVICE_OS_ANDROID) {
         sttandroid_gamepad_set_analog_controls_enabled(0,false); 
     }
@@ -16,6 +19,9 @@ if (is_touchscreen) {
     return argument1;
 } else {
     objProgram.inputManager.analog_enabled = argument0;
+    if (!argument0) {
+        objProgram.inputManager.analog_applied = false;
+    }
     if (objProgram.device_info & DEVICE_OS_ANDROID) {
         sttandroid_gamepad_set_analog_controls_enabled(0,argument0); 
     }

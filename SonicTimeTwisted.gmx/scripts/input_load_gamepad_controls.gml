@@ -13,7 +13,6 @@ if(argument0) // argument0 - from INI, default values if false
     input_bind_buttons_or_axes(ini_read_string('gamepad_controls','c', gp_face1), pad, cC);
     input_bind_buttons_or_axes(ini_read_string('gamepad_controls','start', gp_face1), pad, cSTART);
         
-    rumble_strength = ini_read_real('gamepad_controls', 'rumble', 100);
 
     loaded = input_check_gamepad_bindings_complete();
     if(!loaded)
@@ -21,6 +20,7 @@ if(argument0) // argument0 - from INI, default values if false
         input_reset_gamepad_bindings();
     }
     
+    rumble_strength = ini_read_real('gamepad_controls', 'rumble', 100);
     gpanalog_in_zones = ini_read_real('input', 'analog_in_zones', 0);
     gpanalog_in_ss = ini_read_real('input', 'analog_in_ss', 0);
     gpanalog_in_gg = ini_read_real('input', 'analog_in_gg', 0);
@@ -46,6 +46,7 @@ if(!loaded)
     input_bind_button(pad, gp_padl, cLEFT);
     input_bind_button(pad, gp_padr, cRIGHT);
     
+    rumble_strength = 100;
     gpanalog_in_zones = 0;
     gpanalog_in_ss = 0;
     gpanalog_in_gg = 0;

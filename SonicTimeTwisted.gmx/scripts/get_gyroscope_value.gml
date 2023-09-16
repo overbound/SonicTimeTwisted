@@ -37,5 +37,4 @@ if (tilt != 0) {
         }
     }
 }
-show_debug_message("tilt: "+string(tilt)+"; gyro result: "+string(result));
 return result;

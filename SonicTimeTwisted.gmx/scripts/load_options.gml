@@ -56,9 +56,6 @@ if (stt_file_exists(file)) {
             
         deadzone_int = ini_read_real('input','deadzone',30);
         deadzone = deadzone_int/100;
-        analog_in_zones = ini_read_real('input','analog_in_zones',0) > 0.1;
-        analog_in_ss = ini_read_real('input','analog_in_ss',0) > 0.1;
-        analog_in_gg = ini_read_real('input','analog_in_gg',0) > 0.1;
     }
     
     with (objMusic)

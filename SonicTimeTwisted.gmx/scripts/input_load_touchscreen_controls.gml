@@ -30,13 +30,13 @@ if(argument0) // argument0 - from INI, default values if false
     rumble_strength = ini_read_real('smartphone', 'rumble_strength', 1);
     vkdetection = ini_read_real('smartphone','vkdetection', 200);
     
-    touchanalog_in_zones = ini_read_real('input', 'touch_analog_in_zones', 0);
-    touchanalog_in_ss = ini_read_real('input', 'touch_analog_in_ss', 0);
-    touchanalog_deadzone_min = ini_read_real('input', 'touch_analog_in_gg', 0);
-    touchanalog_deadzone_min = ini_read_real('input', 'touch_analog_deadzone_min', 0.2);
-    touchanalog_deadzone_max = ini_read_real('input', 'touch_analog_deadzone_max', 0.95);
-    touchanalog_ss_min_angle = ini_read_real('input', 'touch_analog_ss_min_angle', 15);
-    touchanalog_ss_max_angle = ini_read_real('input', 'touch_analog_ss_max_angle', 30);
+    touchanalog_in_zones = ini_read_real('input', 'touchanalog_in_zones', 0);
+    touchanalog_in_ss = ini_read_real('input', 'touchanalog_in_ss', 0);
+    touchanalog_deadzone_min = ini_read_real('input', 'touchanalog_in_gg', 0);
+    touchanalog_deadzone_min = ini_read_real('input', 'touchanalog_deadzone_min', 0.2);
+    touchanalog_deadzone_max = ini_read_real('input', 'touchanalog_deadzone_max', 0.95);
+    touchanalog_ss_min_angle = ini_read_real('input', 'touchanalog_ss_min_angle', 15);
+    touchanalog_ss_max_angle = ini_read_real('input', 'touchanalog_ss_max_angle', 30);
 }
 else
 {
