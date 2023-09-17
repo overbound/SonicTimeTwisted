@@ -308,7 +308,7 @@ if jumping == true &amp;&amp; jump_release == false{
 }
 
 // X - gyroscope
-if (objProgram.inputManager.analog_applied || (objProgram.inputManager.gyroinss &amp;&amp; objProgram.inputManager.gyromode)) {
+if (objProgram.inputManager.analog_applied || (objProgram.inputManager.is_touchscreen &amp;&amp; objProgram.inputManager.gyroinss &amp;&amp; objProgram.inputManager.gyromode)) {
     var analog_x = objProgram.inputManager.analog_x;
     xaxis = sign(analog_x);
     

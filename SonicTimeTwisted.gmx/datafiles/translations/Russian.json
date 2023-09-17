@@ -166,6 +166,8 @@
 		"_menu_options_Input": "Управление",
 		"_menu_options_Localization": "Локализация",
 		"_menu_options_WaD": "Предупреждения и дисклеймеры",
+		"_menu_options_Reset": "Сброс настроек",
+		"_menu_options_Reset_Confirm": "Восстановить настройки по умолчанию?\nСохранённые игры не будут удалены.",
 		
 		"_menu_gfx_Title": "Графика",
 		"_menu_gfx_ScreenSize": "Размер окна",
@@ -209,7 +211,7 @@
 		"_menu_gamepad_Deadzone": "Мёртвая зона",
 		"_menu_gamepad_Analog": "Аналоговое управление",
 		"_menu_gamepad_Warning": "Геймпад в данный момент не используется. Подключите геймпад и активируйте его нажатием кнопки или перемещением аналогового стика.",
-		"_menu_gamepad_Device_Length": 20,
+		"_menu_gamepad_Device_Length": 19,
 		"_menu_gamepad_Device_Disabled": "Отключено",
 		"_menu_gamepad_Device_Unknown": "Неизвестно",
 		

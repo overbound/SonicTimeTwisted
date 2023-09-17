@@ -166,6 +166,8 @@
 		"_menu_options_Input": "Input",
 		"_menu_options_Localization": "Localizzazione",
 		"_menu_options_WaD": "Avvertenze",
+		"_menu_options_Reset": "Reset",
+		"_menu_options_Reset_Confirm": "Reset all options to default?\nSaved games will be kept.",
 		
 		"_menu_gfx_Title": "Video",
 		"_menu_gfx_ScreenSize": "Grandezza Schermo",

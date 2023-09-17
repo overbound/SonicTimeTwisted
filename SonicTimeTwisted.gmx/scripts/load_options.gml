@@ -43,7 +43,11 @@ if (stt_file_exists(file)) {
         input_method = ini_read_real('input','method',-1);
         if(input_method == -1)
         {
-            input_method = input_method_fallback;
+            if(objProgram.device_info & DEVICE_TYPE_CONSOLE) {
+                input_method = INPUT_GAMEPAD;
+            } else {
+                input_method = INPUT_AUTO;
+            }
         }
         set_input_method(input_method, false);
         
@@ -70,5 +74,48 @@ if (stt_file_exists(file)) {
     if (!ds_map_exists(global.TR_map, global.TR_lang)) global.TR_lang = "en";
     stt_ini_close();
     return true;
+} else {
+    with(objScreen)
+    {
+        if (objProgram.device_info & DEVICE_TYPE_COMPUTER) {
+            video_mode = 2;
+        } else {
+            video_mode = 0;
+        }
+        interpolation = 0;
+        flashing_reduced = 1;
+        score_tally_mode = 0;
+        vsync = true;
+        timer_mode = 0;
+        show_shield = 1;
+      
+        // apply settings
+        apply_video_settings();
+    }
+    
+    with(objProgram.inputManager)
+    {
+        if(objProgram.device_info & DEVICE_TYPE_CONSOLE) {
+            input_method = INPUT_GAMEPAD;
+        } else {
+            input_method = INPUT_AUTO;
+        }
+        set_input_method(input_method, false);
+        
+        rumble_enabled = false;
+        input_rumble_trigger_script = input_method_dummy_script;
+        deadzone_int = 30;
+        deadzone = deadzone_int/100;
+    }
+    
+    with (objMusic)
+    {
+        sfxGain = 100;
+        bgmGain = 100;
+        masterGain = 75;
+        event_user(0);
+    }
+    
+    tr_set_default_lang();
+    return false;
 }
-return false;

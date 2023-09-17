@@ -4104,18 +4104,18 @@
             <script>scripts\get_mouse_x_with_scale.gml</script>
             <script>scripts\get_mouse_y_with_scale.gml</script>
           </scripts>
+          <script>scripts\input_method_auto.gml</script>
+          <script>scripts\input_method_auto_detect_gamepad_use.gml</script>
+          <script>scripts\input_method_auto_determine_gamepad_to_use.gml</script>
           <script>scripts\input_method_dummy_script.gml</script>
           <script>scripts\input_method_gamepad.gml</script>
           <script>scripts\input_method_gamepad_create_vars.gml</script>
           <script>scripts\input_method_init_physical.gml</script>
           <script>scripts\input_method_init_smartphone.gml</script>
           <script>scripts\input_method_keyboard.gml</script>
-          <script>scripts\input_method_auto.gml</script>
           <script>scripts\input_method_smartphone_switch.gml</script>
           <script>scripts\input_method_smartphone_switch_menu.gml</script>
           <script>scripts\set_smartphone_controls_enabled.gml</script>
-          <script>scripts\input_method_auto_detect_gamepad_use.gml</script>
-          <script>scripts\input_method_auto_determine_gamepad_to_use.gml</script>
         </scripts>
         <scripts name="Loading">
           <scripts name="Devices">
@@ -4430,6 +4430,8 @@
         <script>scripts\delete_settings.gml</script>
         <script>scripts\load_options.gml</script>
         <script>scripts\save_options.gml</script>
+        <script>scripts\load_options_platform_dependant.gml</script>
+        <script>scripts\save_options_platform_dependant.gml</script>
       </scripts>
       <scripts name="Video">
         <script>scripts\apply_video_settings.gml</script>

@@ -5,10 +5,11 @@ if (argument_count >= 3) {
 } else {
     objProgram.inputManager.input_method_autodetected = argument[0];
 }
-var autoDetectedMethod = objProgram.inputManager.input_method_autodetected;
+
+show_debug_message("set input method "+string(argument[0])+", as fallback: "+string(argument[1])+", detected: "+string(objProgram.inputManager.input_method_autodetected));
 
 objProgram.inputManager.input_method = argument[0];
-is_touchscreen = (argument[0] == INPUT_TOUCHSCREEN) || ((argument[0] == INPUT_AUTO) && (autoDetectedMethod == INPUT_TOUCHSCREEN));
+is_touchscreen = (argument[0] == INPUT_TOUCHSCREEN) || ((argument[0] == INPUT_AUTO) && (objProgram.inputManager.input_method_autodetected == INPUT_TOUCHSCREEN));
 if(argument[1])
 {
     objProgram.inputManager.input_method_fallback = argument[0];

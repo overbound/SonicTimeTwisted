@@ -8,6 +8,7 @@ menu_fn_add_option(tr("_menu_options_Localization"), 10);
 if (menu_type == 0)
 {
     menu_fn_add_option(tr("_menu_options_WaD"), 7);
+    menu_fn_add_option(tr("_menu_options_Reset"), 2);
 }
 menu_fn_add_option(tr("_menu_Back"), 4);
 

@@ -8,7 +8,7 @@ if(argument0) // argument0 - from INI, default values if false
     vkalpha = ini_read_real('smartphone','vkalpha',0.8);
     vkdeadzone = ini_read_real('smartphone','vkdeadzone',0.25);
     vkdeadzoness = ini_read_real('smartphone','vkdeadzoness',0.25);
-    gyroinss = ini_read_real('smartphone','gyroinss',1);
+    gyroinss = ini_read_real('smartphone','gyroinss',0);
     gyroinss_axis = ini_read_real('smartphone','gyroinss_axis',2);
     vksize = ini_read_real('smartphone','vksize',0);
     dpadx = ini_read_real('smartphone','dpadx',64 - margin);
@@ -23,7 +23,7 @@ if(argument0) // argument0 - from INI, default values if false
     gyro_switch_on_angle_x = ini_read_real('smartphone','gyro_switch_on_angle_x',0.15);
     gyro_analog_start_x = ini_read_real('smartphone','gyro_analog_start_x',0.139626);
     gyro_analog_end_x = ini_read_real('smartphone','gyro_analog_end_x',0.802851);
-    gg_mode = ini_read_real('smartphone','gg_mode',1);
+    gg_mode = ini_read_real('smartphone','gg_mode', 0);
     vibration_type = ini_read_real('smartphone','vibration_type',1);
     haptics_strength = round(ini_read_real('smartphone', 'haptics_strength', 50));
     haptics_duration = round(ini_read_real('smartphone', 'haptics_duration', 5));
@@ -86,7 +86,7 @@ else
     button_radius = 0; // derived from vksize
     
     // Gyroscope for special stages
-    gyroinss = 1; // 0 - use d-pad to turn, 1 - use gyroscope
+    gyroinss = 0; // 0 - use d-pad to turn, 1 - use gyroscope
     gyroinss_axis = 2; // 1, 2, 3 - x, y, z axes respectively; -1, -2, -3 - same axes, but inverted
     gyromode = 1; // 0 - gyroscope simply turns the buttons on and off; 1 - pseudo-analog mode
     gyro_switch_on_angle_x = 0.15; // angle on which the button is pressed
@@ -95,7 +95,7 @@ else
     vkdeadzoness = 0.25; // d-pad dead zone: 0.1 to 1
     
     // Special scheme for Galacnik Gauntlet
-    gg_mode = 1; // 0 - use d-pad and button, 1 - point on screen
+    gg_mode = 0; // 0 - use d-pad and button, 1 - point on screen
     
     // On start, the controls are invisible
     image_alpha = 0;
@@ -114,9 +114,9 @@ else
     vkdetection = 200;
     
     // analog controls for touchscreens
-    touchanalog_in_zones = false;
-    touchanalog_in_ss = false;
-    touchanalog_in_gg = false;
+    touchanalog_in_zones = 0;
+    touchanalog_in_ss = 0;
+    touchanalog_in_gg = 0;
     touchanalog_deadzone_min = 0.2;
     touchanalog_deadzone_max = 0.95;
     touchanalog_ss_min_angle = 15;

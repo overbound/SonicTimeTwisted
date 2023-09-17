@@ -9,10 +9,11 @@ switch(argument0)
         menu_fn_goto_submenu(menu_part_input_items);
         break;
     case 2:
-        // use this ID for a future option
+        menu_fn_open_confirmation_window(tr("_menu_options_Reset_Confirm"), 3, -2, true);
         break;
     case 3:
-        // use this ID for a future option
+        delete_settings();
+//        menu_fn_restart_game();
         break;
     case 5:
         // use this ID for a future option

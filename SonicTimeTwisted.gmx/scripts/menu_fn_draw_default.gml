@@ -418,7 +418,7 @@ switch(state)
                     draw_set_halign(fa_center);
                     draw_set_font(objResources.fontHudMin);
                     draw_set_colour(c_white);
-                    draw_text(internal__draw_menu_rect_x_center, internal__draw_confirmation_rect_y1 + margin, confirmation_text);
+                    draw_text(internal__draw_menu_rect_x_center + 4, internal__draw_confirmation_rect_y1 + margin, confirmation_text);
                 
                     var sprite_image;
                     var text_color;

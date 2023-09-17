@@ -21,9 +21,9 @@ if(argument0) // argument0 - from INI, default values if false
     }
     
     rumble_strength = ini_read_real('gamepad_controls', 'rumble', 100);
-    gpanalog_in_zones = ini_read_real('input', 'analog_in_zones', 0);
-    gpanalog_in_ss = ini_read_real('input', 'analog_in_ss', 0);
-    gpanalog_in_gg = ini_read_real('input', 'analog_in_gg', 0);
+    gpanalog_in_zones = ini_read_real('input', 'analog_in_zones', 1);
+    gpanalog_in_ss = ini_read_real('input', 'analog_in_ss', 1);
+    gpanalog_in_gg = ini_read_real('input', 'analog_in_gg', 1);
     gpanalog_deadzone_min = ini_read_real('input', 'analog_deadzone_min', 0.2);
     gpanalog_deadzone_max = ini_read_real('input', 'analog_deadzone_max', 0.95);
     gpanalog_ss_min_angle = ini_read_real('input', 'analog_ss_min_angle', 15);
@@ -47,9 +47,9 @@ if(!loaded)
     input_bind_button(pad, gp_padr, cRIGHT);
     
     rumble_strength = 100;
-    gpanalog_in_zones = 0;
-    gpanalog_in_ss = 0;
-    gpanalog_in_gg = 0;
+    gpanalog_in_zones = 1;
+    gpanalog_in_ss = 1;
+    gpanalog_in_gg = 1;
     gpanalog_deadzone_min = 0.2;
     gpanalog_deadzone_max = 0.95;
     gpanalog_ss_min_angle = 15;

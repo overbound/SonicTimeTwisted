@@ -139,35 +139,8 @@ special_level_add(SSF4, SSP4);
 special_level_add(SSF5, SSP5);
 special_level_add(SSF6, SSP6);
 special_level_add(SSF7, SSP7);
-/*
-special_level_add(SSF1, SSP7);
-special_level_add(SSF2, SSP1);
-special_level_add(SSF3, SSP3);
-special_level_add(SSF6, SSP4);
-special_level_add(SSF5, SSP5);
-special_level_add(SSF7, SSP2);
-special_level_add(SSF4, SSP6);
-*/
 
-if (objProgram.device_info &amp; DEVICE_OS_PLAYSTATION)
-{
-    show_debug_message("[STT-PS]: Allocating stuff for saving and loading...");
-    storage_map = ds_map_create(); // filename|content (as a string)
-    storage_buffers = ds_map_create(); // filename|buffer_id
-    async_id = -1;
-    async_busy = false;
-    async_loading = true; // we're loading savedata, not saving it.
-    first_run = true; // always assume it's the first run until we load the savedata...
-    
-    display_set_gui_size(room_width, room_height);
-    
-    stt_load_files();
-}
-else
-{
-    load_options();
-    event_user(1);
-}
+load_options_platform_dependant();
 </string>
           </argument>
         </arguments>
@@ -495,29 +468,6 @@ if (objProgram.device_info &amp; DEVICE_OS_PLAYSTATION)
         draw_set_valign(fa_top);
     }
 }
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="9" enumb="123">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>delete_settings();
 </string>
           </argument>
         </arguments>
