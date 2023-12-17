@@ -180,8 +180,8 @@
 		"_menu_gfx_Tally_Variable": "Змінна швидкість",
 		"_menu_gfx_Tally_Fixed": "Фікс. швидкість",
 		"_menu_gfx_Timer": "Формат часу",
-		"_menu_gfx_Timer_MMSSCS": "м'с\"сс",
-		"_menu_gfx_Timer_MMSS": "м:с",
+		"_menu_gfx_Timer_MMSSCS": "х'с\"сс",
+		"_menu_gfx_Timer_MMSS": "х:с",
 		
 		"_menu_sfx_Title": "Звук",
 		"_menu_sfx_MasterVolume": "Загальна гучність",
