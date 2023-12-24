@@ -64,3 +64,6 @@ func start_sync_java():
 
 func start_strips_generation():
     FontHelper.generate_strips(console)
+
+func start_json_checks():
+    LocalesHelper.check_jsons(console)

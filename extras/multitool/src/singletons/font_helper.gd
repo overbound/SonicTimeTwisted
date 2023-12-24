@@ -30,20 +30,6 @@ func generate_strips(console_node : TextEdit):
         return
     load_locales_data()
     save_strips(output_directory)
-    
-
-func get_locales_list() -> PackedStringArray:
-    var locales = PackedStringArray()
-    var locales_raw = FileAccess.get_file_as_string(get_project_datafiles_dir()+"/translations.txt")
-    if !locales_raw:
-        log_to_console(tr("Could not parse locales"))
-        return locales
-    var locales_names = locales_raw.split("\n")
-    for locale in locales_names:
-        locale = locale.strip_edges()
-        if locale != "" && locale != "English":
-            locales.append(locale)
-    return locales
 
 func load_fonts_data() -> bool:
     log_to_console(tr("Fetching font settings"))

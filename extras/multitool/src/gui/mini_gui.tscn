@@ -94,7 +94,7 @@ text = "Regenerate font strips"
 custom_minimum_size = Vector2(0, 24)
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Validate translation JSONs"
+text = "Validate i18n JSONs"
 
 [node name="Spacer2" type="Control" parent="Panel/MainHBox/VBoxContainer"]
 custom_minimum_size = Vector2(0, 20)
@@ -120,4 +120,5 @@ use_native_dialog = true
 [connection signal="pressed" from="Panel/MainHBox/VBoxContainer/ProjectPathGrid/Path/Button" to="." method="start_project_path_browse"]
 [connection signal="pressed" from="Panel/MainHBox/VBoxContainer/Buttons/SyncJava" to="." method="start_sync_java"]
 [connection signal="pressed" from="Panel/MainHBox/VBoxContainer/Buttons/RegenFont" to="." method="start_strips_generation"]
+[connection signal="pressed" from="Panel/MainHBox/VBoxContainer/Buttons/CheckMissingStrings" to="." method="start_json_checks"]
 [connection signal="dir_selected" from="ProjectBrowseWindow" to="." method="project_path_browse_callback"]
