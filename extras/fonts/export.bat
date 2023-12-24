@@ -1,1 +1,0 @@
-java -jar stt-font-exporter.jar . uk > export.log

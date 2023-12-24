@@ -21,10 +21,10 @@ func generate_strips(console_node : TextEdit):
     init_console(console_node)
     fonts_data.clear()
     locales_data.clear()
-    var fonts_data = get_parsed_json_if_exists(get_project_tools_dir()+"/fonts/fonts/fonts.json")
+    var fonts_data = get_parsed_json_if_exists(get_project_tools_dir()+"/fonts/fonts.json")
     var output_directory = get_project_datafiles_dir()+"/translations"
     if !fonts_data:
-        log_to_console(tr("Invalid JSON: ")+get_project_tools_dir()+"/fonts/fonts/fonts.json")
+        log_to_console(tr("Invalid JSON: ")+get_project_tools_dir()+"/fonts/fonts.json")
         return
     if !load_fonts_data():
         return
@@ -49,8 +49,8 @@ func load_fonts_data() -> bool:
     log_to_console(tr("Fetching font settings"))
     fonts_data.clear()
     var result = Dictionary()
-    print(get_project_extensions_dir()+"/fonts/fonts/fonts.json")
-    var fonts_json_data = get_parsed_json_if_exists(get_project_tools_dir()+"/fonts/fonts/fonts.json")
+    print(get_project_extensions_dir()+"/fonts/fonts.json")
+    var fonts_json_data = get_parsed_json_if_exists(get_project_tools_dir()+"/fonts/fonts.json")
     if !fonts_json_data:
         log_to_console(tr("Could not open font configuration file"))
         return false
@@ -64,9 +64,9 @@ func load_fonts_data() -> bool:
         font_data.contour_shadow = fonts_json_data["fonts"][font_name]["contour"]["shadow"] == "true"
         font_data.letters = Dictionary()
         
-        add_letters_from_file(get_project_tools_dir()+"/fonts/fonts/"+font_name+".png", fonts_json_data["base_sequence"], font_data.letters, font_data.height, font_data.width)
+        add_letters_from_file(get_project_tools_dir()+"/fonts/"+font_name+".png", fonts_json_data["base_sequence"], font_data.letters, font_data.height, font_data.width)
         for extension_name in fonts_json_data["extensions"]:
-            add_letters_from_file(get_project_tools_dir()+"/fonts/fonts/extensions/"+font_name+"."+extension_name+".png", fonts_json_data["extensions"][extension_name], font_data.letters, font_data.height, font_data.width)
+            add_letters_from_file(get_project_tools_dir()+"/fonts/extensions/"+font_name+"."+extension_name+".png", fonts_json_data["extensions"][extension_name], font_data.letters, font_data.height, font_data.width)
         var font_filename = "spr"+font_name.substr(0, 1).to_upper()+font_name.substr(1)
         result[font_filename] = font_data
     fonts_data = result
