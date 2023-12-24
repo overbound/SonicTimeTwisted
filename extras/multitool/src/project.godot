@@ -1,0 +1,33 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Sonic Time Twisted Tool"
+run/main_scene="res://main.tscn"
+config/features=PackedStringArray("4.2", "GL Compatibility")
+config/icon="res://icon.svg"
+
+[autoload]
+
+Context="*res://singletons/context.gd"
+JavaHelper="*res://singletons/java_helper.gd"
+LocalesHelper="*res://singletons/locales_helper.gd"
+FontHelper="*res://singletons/font_helper.gd"
+
+[display]
+
+window/size/viewport_width=600
+window/size/viewport_height=900
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"

@@ -16,6 +16,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 package com.example.sttandroid;
+// !DO NOT ERASE OR EDIT THIS LINE! import ${YYAndroidPackageName}.R;
+import com.yoyogames.runner.RunnerJNILib;
 
 import android.app.UiModeManager;
 import android.content.Context;
@@ -33,7 +35,6 @@ import com.example.sttandroid.lib.KeyboardManager;
 import com.example.sttandroid.lib.AbstractManager;
 import com.example.sttandroid.lib.Mapping;
 import com.example.sttandroid.lib.RumbleThread;
-import com.yoyogames.runner.RunnerJNILib;
 
 /**
  * The main class.

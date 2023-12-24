@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bdlo7c4qndh5c"]
+
+[ext_resource type="Script" path="res://singletons/context.gd" id="1_ifmr0"]
+
+[node name="Context" type="Node"]
+script = ExtResource("1_ifmr0")

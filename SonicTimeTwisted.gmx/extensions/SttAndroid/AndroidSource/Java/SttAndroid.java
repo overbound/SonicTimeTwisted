@@ -19,7 +19,6 @@ package ${YYAndroidPackageName};
 import ${YYAndroidPackageName}.R;
 import com.yoyogames.runner.RunnerJNILib;
 
-
 import android.app.UiModeManager;
 import android.content.Context;
 import android.content.pm.PackageManager;
@@ -36,7 +35,6 @@ import ${YYAndroidPackageName}.lib.KeyboardManager;
 import ${YYAndroidPackageName}.lib.AbstractManager;
 import ${YYAndroidPackageName}.lib.Mapping;
 import ${YYAndroidPackageName}.lib.RumbleThread;
-import com.yoyogames.runner.RunnerJNILib;
 
 /**
  * The main class.
@@ -1007,3 +1005,4 @@ public class SttAndroid extends ExtensionBase {
         }
     }
 }
+

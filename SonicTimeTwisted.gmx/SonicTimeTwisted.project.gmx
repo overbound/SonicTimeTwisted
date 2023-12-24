@@ -8,7 +8,7 @@
     <Config>Configs\PlayStation</Config>
     <Config>Configs\Browser</Config>
   </Configs>
-  <datafiles number="121" name="datafiles">
+  <datafiles number="129" name="datafiles">
     <datafile>
       <name>translations.txt</name>
       <exists>-1</exists>
@@ -41,7 +41,7 @@
       </ConfigOptions>
       <filename>translations.txt</filename>
     </datafile>
-    <datafiles number="121" name="translations">
+    <datafiles number="129" name="translations">
       <datafile>
         <name>English.json</name>
         <exists>-1</exists>
@@ -74,7 +74,7 @@
         </ConfigOptions>
         <filename>English.json</filename>
       </datafile>
-      <datafiles number="121" name="Russian">
+      <datafiles number="129" name="Russian">
         <datafile>
           <name>sprFontHud.png</name>
           <exists>-1</exists>
@@ -396,7 +396,7 @@
         </ConfigOptions>
         <filename>Russian.json</filename>
       </datafile>
-      <datafiles number="121" name="BrazilianPortuguese">
+      <datafiles number="129" name="BrazilianPortuguese">
         <datafile>
           <name>sprFontHud.png</name>
           <exists>-1</exists>
@@ -718,7 +718,7 @@
         </ConfigOptions>
         <filename>BrazilianPortuguese.json</filename>
       </datafile>
-      <datafiles number="121" name="French">
+      <datafiles number="129" name="French">
         <datafile>
           <name>sprFontHud.png</name>
           <exists>-1</exists>
@@ -1040,7 +1040,7 @@
         </ConfigOptions>
         <filename>French.json</filename>
       </datafile>
-      <datafiles number="121" name="Ukrainian">
+      <datafiles number="129" name="Ukrainian">
         <datafile>
           <name>sprFontHud.png</name>
           <exists>-1</exists>
@@ -1362,7 +1362,7 @@
         </ConfigOptions>
         <filename>Ukrainian.json</filename>
       </datafile>
-      <datafiles number="121" name="Italian">
+      <datafiles number="129" name="Italian">
         <datafile>
           <name>sprFontHud.png</name>
           <exists>-1</exists>
@@ -1716,7 +1716,7 @@
         </ConfigOptions>
         <filename>Spanish.json</filename>
       </datafile>
-      <datafiles number="121" name="Spanish">
+      <datafiles number="129" name="Spanish">
         <datafile>
           <name>sprFontHud.png</name>
           <exists>-1</exists>
@@ -2006,9 +2006,267 @@
           <filename>sprPastPost.png</filename>
         </datafile>
       </datafiles>
+      <datafile>
+        <name>Polish.json</name>
+        <exists>-1</exists>
+        <size>17319</size>
+        <exportAction>2</exportAction>
+        <exportDir></exportDir>
+        <overwrite>0</overwrite>
+        <freeData>-1</freeData>
+        <removeEnd>0</removeEnd>
+        <store>0</store>
+        <ConfigOptions>
+          <Config name="Default">
+            <CopyToMask>9223372036854775807</CopyToMask>
+          </Config>
+          <Config name="Android">
+            <CopyToMask>9223372036854775807</CopyToMask>
+          </Config>
+          <Config name="MacOS">
+            <CopyToMask>9223372036854775807</CopyToMask>
+          </Config>
+          <Config name="Linux">
+            <CopyToMask>9223372036854775807</CopyToMask>
+          </Config>
+          <Config name="PlayStation">
+            <CopyToMask>9223372036854775807</CopyToMask>
+          </Config>
+          <Config name="Browser">
+            <CopyToMask>9223372036854775807</CopyToMask>
+          </Config>
+        </ConfigOptions>
+        <filename>Polish.json</filename>
+      </datafile>
+      <datafiles number="129" name="Polish">
+        <datafile>
+          <name>sprFontHud.png</name>
+          <exists>-1</exists>
+          <size>2785</size>
+          <exportAction>2</exportAction>
+          <exportDir></exportDir>
+          <overwrite>0</overwrite>
+          <freeData>-1</freeData>
+          <removeEnd>0</removeEnd>
+          <store>0</store>
+          <ConfigOptions>
+            <Config name="Default">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="Android">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="MacOS">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="Linux">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="PlayStation">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="Browser">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+          </ConfigOptions>
+          <filename>sprFontHud.png</filename>
+        </datafile>
+        <datafile>
+          <name>sprFontHudMin.png</name>
+          <exists>-1</exists>
+          <size>2476</size>
+          <exportAction>2</exportAction>
+          <exportDir></exportDir>
+          <overwrite>0</overwrite>
+          <freeData>-1</freeData>
+          <removeEnd>0</removeEnd>
+          <store>0</store>
+          <ConfigOptions>
+            <Config name="Default">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="Android">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="MacOS">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="Linux">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="PlayStation">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="Browser">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+          </ConfigOptions>
+          <filename>sprFontHudMin.png</filename>
+        </datafile>
+        <datafile>
+          <name>sprFontLives.png</name>
+          <exists>-1</exists>
+          <size>1903</size>
+          <exportAction>2</exportAction>
+          <exportDir></exportDir>
+          <overwrite>0</overwrite>
+          <freeData>-1</freeData>
+          <removeEnd>0</removeEnd>
+          <store>0</store>
+          <ConfigOptions>
+            <Config name="Default">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="Android">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="MacOS">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="Linux">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="PlayStation">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="Browser">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+          </ConfigOptions>
+          <filename>sprFontLives.png</filename>
+        </datafile>
+        <datafile>
+          <name>sprFontMicro.png</name>
+          <exists>-1</exists>
+          <size>950</size>
+          <exportAction>2</exportAction>
+          <exportDir></exportDir>
+          <overwrite>0</overwrite>
+          <freeData>-1</freeData>
+          <removeEnd>0</removeEnd>
+          <store>0</store>
+          <ConfigOptions>
+            <Config name="Default">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="Android">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="MacOS">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="Linux">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="PlayStation">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="Browser">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+          </ConfigOptions>
+          <filename>sprFontMicro.png</filename>
+        </datafile>
+        <datafile>
+          <name>sprFontTitleLarge.png</name>
+          <exists>-1</exists>
+          <size>2359</size>
+          <exportAction>2</exportAction>
+          <exportDir></exportDir>
+          <overwrite>0</overwrite>
+          <freeData>-1</freeData>
+          <removeEnd>0</removeEnd>
+          <store>0</store>
+          <ConfigOptions>
+            <Config name="Default">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="Android">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="MacOS">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="Linux">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="PlayStation">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="Browser">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+          </ConfigOptions>
+          <filename>sprFontTitleLarge.png</filename>
+        </datafile>
+        <datafile>
+          <name>sprFontTitleSmall.png</name>
+          <exists>-1</exists>
+          <size>1824</size>
+          <exportAction>2</exportAction>
+          <exportDir></exportDir>
+          <overwrite>0</overwrite>
+          <freeData>-1</freeData>
+          <removeEnd>0</removeEnd>
+          <store>0</store>
+          <ConfigOptions>
+            <Config name="Default">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="Android">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="MacOS">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="Linux">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="PlayStation">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="Browser">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+          </ConfigOptions>
+          <filename>sprFontTitleSmall.png</filename>
+        </datafile>
+        <datafile>
+          <name>sprFontTitleSmallest.png</name>
+          <exists>-1</exists>
+          <size>1260</size>
+          <exportAction>2</exportAction>
+          <exportDir></exportDir>
+          <overwrite>0</overwrite>
+          <freeData>-1</freeData>
+          <removeEnd>0</removeEnd>
+          <store>0</store>
+          <ConfigOptions>
+            <Config name="Default">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="Android">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="MacOS">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="Linux">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="PlayStation">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+            <Config name="Browser">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+          </ConfigOptions>
+          <filename>sprFontTitleSmallest.png</filename>
+        </datafile>
+      </datafiles>
     </datafiles>
-    <datafiles number="121" name="android">
-      <datafiles number="121" name="gamepad">
+    <datafiles number="129" name="android">
+      <datafiles number="129" name="gamepad">
         <datafile>
           <name>045e_02fd_xbox_wireless_controller.csv</name>
           <exists>-1</exists>

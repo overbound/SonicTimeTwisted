@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cdx1el4ibup4c"]
+
+[ext_resource type="PackedScene" uid="uid://cko741js104eb" path="res://gui/mini_gui.tscn" id="1_j8ubu"]
+
+[node name="Main" type="Node"]
+
+[node name="MiniGui" parent="." instance=ExtResource("1_j8ubu")]

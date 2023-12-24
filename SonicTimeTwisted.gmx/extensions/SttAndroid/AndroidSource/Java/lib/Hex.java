@@ -45,3 +45,4 @@ public class Hex {
         return hexString;
     }
 }
+

@@ -136,3 +136,4 @@ public abstract class AbstractManager {
         return AbstractManager.BUTTON + event.getKeyCode() * 10;
     }
 }
+

@@ -1,0 +1,123 @@
+[gd_scene load_steps=2 format=3 uid="uid://cko741js104eb"]
+
+[ext_resource type="Script" path="res://gui/mini_gui.gd" id="1_ukeej"]
+
+[node name="MiniGui" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ukeej")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MainHBox" type="HBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Spacer" type="Control" parent="Panel/MainHBox"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MainHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel/MainHBox/VBoxContainer"]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+bbcode_enabled = true
+text = "[center]Sonic Time Twisted Multi-tool[/center]"
+fit_content = true
+
+[node name="ProjectPathGrid" type="GridContainer" parent="Panel/MainHBox/VBoxContainer"]
+layout_mode = 2
+columns = 2
+
+[node name="Label" type="Label" parent="Panel/MainHBox/VBoxContainer/ProjectPathGrid"]
+layout_mode = 2
+text = "Git project path"
+horizontal_alignment = 2
+
+[node name="Path" type="HBoxContainer" parent="Panel/MainHBox/VBoxContainer/ProjectPathGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PathInput" type="LineEdit" parent="Panel/MainHBox/VBoxContainer/ProjectPathGrid/Path"]
+layout_mode = 2
+size_flags_horizontal = 3
+editable = false
+
+[node name="Button" type="Button" parent="Panel/MainHBox/VBoxContainer/ProjectPathGrid/Path"]
+layout_mode = 2
+text = "Browse"
+
+[node name="EmptyCell" type="Control" parent="Panel/MainHBox/VBoxContainer/ProjectPathGrid"]
+layout_mode = 2
+
+[node name="StatusVersionLabel" type="Label" parent="Panel/MainHBox/VBoxContainer/ProjectPathGrid"]
+layout_mode = 2
+
+[node name="Spacer" type="Control" parent="Panel/MainHBox/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="Buttons" type="GridContainer" parent="Panel/MainHBox/VBoxContainer"]
+layout_mode = 2
+columns = 3
+
+[node name="SyncJava" type="Button" parent="Panel/MainHBox/VBoxContainer/Buttons"]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Sync Android Java code"
+
+[node name="RegenFont" type="Button" parent="Panel/MainHBox/VBoxContainer/Buttons"]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Regenerate font strips"
+
+[node name="CheckMissingStrings" type="Button" parent="Panel/MainHBox/VBoxContainer/Buttons"]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Validate translation JSONs"
+
+[node name="Spacer2" type="Control" parent="Panel/MainHBox/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="Console" type="TextEdit" parent="Panel/MainHBox/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Spacer2" type="Control" parent="Panel/MainHBox"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+
+[node name="ProjectBrowseWindow" type="FileDialog" parent="."]
+title = "Open a Directory"
+ok_button_text = "Select Current Folder"
+file_mode = 2
+access = 2
+use_native_dialog = true
+
+[node name="ProjectBrowseAlert" type="AcceptDialog" parent="."]
+
+[connection signal="pressed" from="Panel/MainHBox/VBoxContainer/ProjectPathGrid/Path/Button" to="." method="start_project_path_browse"]
+[connection signal="pressed" from="Panel/MainHBox/VBoxContainer/Buttons/SyncJava" to="." method="start_sync_java"]
+[connection signal="pressed" from="Panel/MainHBox/VBoxContainer/Buttons/RegenFont" to="." method="start_strips_generation"]
+[connection signal="dir_selected" from="ProjectBrowseWindow" to="." method="project_path_browse_callback"]
