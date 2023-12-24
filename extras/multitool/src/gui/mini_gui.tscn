@@ -4,7 +4,7 @@
 
 [sub_resource type="SystemFont" id="SystemFont_mwqbj"]
 font_names = PackedStringArray("Monospace")
-subpixel_positioning = 0
+font_weight = 800
 
 [node name="MiniGui" type="Control"]
 layout_mode = 3
