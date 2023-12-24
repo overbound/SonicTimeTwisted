@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://cko741js104eb"]
+[gd_scene load_steps=3 format=3 uid="uid://cko741js104eb"]
 
 [ext_resource type="Script" path="res://gui/mini_gui.gd" id="1_ukeej"]
+
+[sub_resource type="SystemFont" id="SystemFont_mwqbj"]
+font_names = PackedStringArray("Monospace")
+subpixel_positioning = 0
 
 [node name="MiniGui" type="Control"]
 layout_mode = 3
@@ -103,6 +107,13 @@ layout_mode = 2
 [node name="Console" type="TextEdit" parent="Panel/MainHBox/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_fonts/font = SubResource("SystemFont_mwqbj")
+theme_override_font_sizes/font_size = 12
+editable = false
+
+[node name="Spacer3" type="Control" parent="Panel/MainHBox/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
 
 [node name="Spacer2" type="Control" parent="Panel/MainHBox"]
 custom_minimum_size = Vector2(20, 0)

@@ -45,7 +45,7 @@ func find_missing_locale_keys(english_data : Dictionary, localized_data : Dictio
     var message_buffer = ""
     
     for section in sections:
-        var prefix = tr("Add this to the section \"$1\":").replace("$1", section)
+        var prefix = tr("Missing keys found. Add this to the section \"$1\":").replace("$1", section)
         var prefix_used = false
         for key in english_data[section]:
             if !(localized_data.has(section) && localized_data[section].has(key)):
