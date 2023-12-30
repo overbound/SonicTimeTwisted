@@ -10,7 +10,7 @@
   <bbox_left>0</bbox_left>
   <bbox_right>38</bbox_right>
   <bbox_top>0</bbox_top>
-  <bbox_bottom>4</bbox_bottom>
+  <bbox_bottom>2</bbox_bottom>
   <HTile>0</HTile>
   <VTile>0</VTile>
   <TextureGroups>
@@ -23,7 +23,7 @@
   </TextureGroups>
   <For3D>0</For3D>
   <width>39</width>
-  <height>5</height>
+  <height>3</height>
   <frames>
     <frame index="0">images\sprPlaneMask_0.png</frame>
   </frames>

@@ -252,7 +252,10 @@ through = 1;
           <argument>
             <kind>1</kind>
             <string>/// Plane Motion
+var prev_x = x;
+var player_landed = false;
 with objPlayer {
+   player_landed = landed;
    // clamping x instead of relying on speed, otherwise the player can fly off the plane
    other.x = clamp(other.x, x - 14, x + 4);
    if landed
@@ -272,8 +275,15 @@ with objPlayer {
       }
    }
 }
-
 y = floor(y);
+// make sure the plane cannot, in some cases, fly into solid ground
+if (player_landed)
+{
+    if (place_meeting(x, y, objSolid))
+    {
+        x = prev_x;
+    }
+}
 
 </string>
           </argument>
@@ -385,10 +395,18 @@ if not audio_is_playing(sndPropeller)
           <argument>
             <kind>1</kind>
             <string>///input
+
+var can_move_down = true;
+if (input_check(cDOWN))
+{
+    // make sure the plane cannot, in some cases, descend into solid ground
+    can_move_down = !place_meeting(x, y+2, objSolid);
+}
+
 with objPlayer {
     if landed {
     
-    if input_check(cDOWN) &amp;&amp; !input_check(cACTION) &amp;&amp; y+32 &lt; camera.bottom {
+    if input_check(cDOWN) &amp;&amp; can_move_down &amp;&amp; !input_check(cACTION) &amp;&amp; y+32 &lt; camera.bottom {
          other.y+=2;
     }
     
@@ -491,6 +509,33 @@ else
             x++;
         }
     }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>draw_self();
+if (debug_mode)
+{
+    draw_sprite(sprPlaneMask, 0, x, y);   
 }
 </string>
           </argument>

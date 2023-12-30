@@ -34,4 +34,15 @@ if landed == false {
             if facing==wall_direction && boarding == false player_wall_push(hit_wall, wall_direction);
         }
     }
+} else {
+    if (!argument0.active)
+    {
+        if ((x > argument0.x + 3)) && (x < argument0.x + 9)
+        {
+            argument0.active = true;
+            argument0.x = x - 6;        
+        }
+    }
 }
+
+
