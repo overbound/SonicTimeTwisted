@@ -277,11 +277,17 @@ with objPlayer {
 }
 y = floor(y);
 // make sure the plane cannot, in some cases, fly into solid ground
-if (player_landed)
+if (x != prev_x)
 {
     if (place_meeting(x, y, objSolid))
     {
         x = prev_x;
+        with objPlayer {
+            if (x &lt; other.x + 4) || (x &gt; other.x + 8)
+            {
+                other.active = false;
+            }
+        }
     }
 }
 
