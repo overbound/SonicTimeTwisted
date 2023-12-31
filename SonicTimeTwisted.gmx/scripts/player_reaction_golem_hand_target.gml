@@ -9,7 +9,7 @@ if collision_rectangle(argument0.bbox_left, argument0.bbox_bottom-4, argument0.b
     argument0.alarm[0] = 25;
     return true;
 } 
-if (spinning or state==player_state_glide or state==player_state_glide_slide) && argument0.hit == 0
+if (spinning or superform or invincibility or state==player_state_glide or state==player_state_glide_slide) && argument0.hit == 0
 {
     xspeed = -xspeed;
     
