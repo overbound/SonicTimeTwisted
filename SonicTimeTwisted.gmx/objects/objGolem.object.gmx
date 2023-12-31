@@ -506,6 +506,7 @@ if (timer) {
                         depth_mask = 3;
                         //reaction_script2 = player_reaction_golem_hand_target;
                         reaction_script2 = player_reaction_golem_hand;
+                        through = objLevel.player[0].superform || objLevel.player[0].invincibility;
                     }
 
                     if (other.sideDown == sideOn) {
