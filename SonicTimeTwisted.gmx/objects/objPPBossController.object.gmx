@@ -68,7 +68,30 @@ state = -1;
 instance_create(x,y-80,objMetalDamage);
 playerId = noone;
 ground = 2304;
+
 </string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>605</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>alarm used for the boss intro</string>
           </argument>
         </arguments>
       </action>
@@ -139,7 +162,16 @@ switch state {
 case 0:
     if alarm[0] == -1 {
     
-        alarm[0] = 540;
+        if objLevel.player[0].character_id == 3
+        {
+            // falling platforms start appearing earlier for Knuckles
+            alarm[0] = 480;
+        }
+        else
+        {
+            alarm[0] = 540;
+        }
+        alarm[1] = 540;
     
     }
     if objLevel.player[0].camera.bottom &lt; view_yview[view_current] + view_hview[view_current] {
@@ -199,11 +231,11 @@ case 1:
     
     with objGalanik {
     
-        if other.alarm[0] == 400 {
+        if other.alarm[1] == 400 {
             play_sfx(sndBreak,10);
         }
     
-        if other.alarm[0] == 40 {
+        if other.alarm[1] == 40 {
         
             play_sfx(sndGalanikLaugh,1);
             set_boss_music(room);
